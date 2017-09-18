@@ -1,0 +1,14 @@
+*
+
+!.gitignore
+!cff-specifications-1.0.md
+!references.bib
+!ieee-with-url.csl
+!README.md
+!Makefile
+!.travis.yml
+!out/
+!out/css/
+!out/*
+!out/css/*
+!tufte-pandoc/*
