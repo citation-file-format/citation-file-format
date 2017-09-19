@@ -9,6 +9,17 @@ fi
 # enable error reporting to the console
 set -e
 
+# Build PDF
+#!/bin/bash
+pandoc \
+	--filter pandoc-citeproc \
+	--bibliography=references.bib \
+	--template=./template/default.latex \
+	-o cff-specifications.pdf \
+	index.md
+
+cp ./cff-specifications.pdf ./assets/pdf/
+
 # cleanup "_site"
 rm -rf _site
 mkdir _site
