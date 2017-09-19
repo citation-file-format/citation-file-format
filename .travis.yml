@@ -8,7 +8,9 @@ rvm:
 # set execution permission on our build script
 before_script:
  - chmod +x ./build-jekyll.sh
+ - sudo apt update 
  - sudo apt install pandoc
+ - sudo apt install texlive-latex-extra
 # path to our build script. 
 # Travis will run `bundle install` by default before running our script
 script: ./build-jekyll.sh
