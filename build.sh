@@ -1,5 +1,7 @@
 #!/bin/bash
 pandoc \
+	--toc \
+	--toc-depth=4 \
 	--filter pandoc-citeproc \
 	--bibliography=references.bib \
 	--template=./template/default.latex \
