@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Citation File Format (CFF)</title>
+  <meta name="description" content="">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+  
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/citation-file-format/css/tufte.css">
+  <link rel="stylesheet" type="text/css" href="/citation-file-format/css/latex.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/citation-file-format/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/citation-file-format/">
+
+  <link rel="alternate" type="application/rss+xml" title="" href="/citation-file-format/feed.xml" />
+</head>
+
+  <body class="full-width">
+    </article>
+    <h1>Citation File Format (CFF)</h1>
+	<p class="subtitle">Specification - v1.0.0-beta</p>
+  <label for="pdf" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="pdf" class="margin-toggle"/>
+<p>
+  [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]
+  <br/>
+</p>
+  </p>
+      <h4 id="status-of-this-document">Status of this document</h4>
+<p>This document reflects the first version of the <em>Citation File Format</em> (CFF). CFF has been developed in the context of the <a href="http://wssspe.researchcomputing.org.uk/wssspe5-1/"><em>Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</em></a>, which was held on 6 September 2017 in Manchester, UK. More specifically, the constraints for CFF has been developed in the discusion and speed blogging group &quot;Development and implementation of a standard format for CITATION files&quot;, whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).</p>
+<p>CFF Version 1.0 has been developed by Stephan Druskat with contributions from the other members of the group to provide the first iteration of a format for <code>CITATION</code> files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which has been published on the <a href="https://www.software.ac.uk/blog">blog page</a> of the <a href="https://www.software.ac.uk/">Software Sustainability Institute</a>.</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<h1 id="introduction">Introduction</h1>
+<h2 id="rationale">Rationale</h2>
+<ul>
+<li>Implement enablement for principles</li>
+</ul>
+<h2 id="goals">Goals</h2>
+<p>Implement the principles from &quot;Software Citation Principles&quot;.</p>
+<h2 id="similar-efforts">Similar efforts</h2>
+<h2 id="terminology">Terminology</h2>
+<h1 id="format">Format</h1>
+<ul>
+<li>ALSO CHECK AGAINST SOFT CIT IMPLEMENTATION WG GITHUB which is meant to support implementers</li>
+<li>Check TAGS (e.g., yaml.org/type/) - custom tag repository?</li>
+<li>how to reference custom schema?</li>
+</ul>
+<h2 id="file-structure">File structure</h2>
+<h2 id="reference-types">Reference types</h2>
+<ul>
+<li>software</li>
+<li>software-source-code</li>
+<li>software-executable</li>
+<li>software-container</li>
+<li>software (others)</li>
+</ul>
+<h2 id="keys">Keys</h2>
+<h3 id="software-specific-keys">Software-specific keys</h3>
+<p>These keys aim to implement the basic and further requirements for the use cases of software citation presented in <span class="citation" data-cites="principles">[@principles, p. 6]</span>.</p>
+<ul>
+<li>Unique identifier</li>
+<li>Software name</li>
+<li>Author(s)</li>
+<li>firstname</li>
+<li>middlename</li>
+<li>lastname</li>
+<li>email</li>
+<li>orcid</li>
+<li>contributor role? E.g., !author, !contributor, !tester, !benchmarker, !documenter, !evangelist, !engineer, !designer
+<ul>
+<li>author:</li>
+<li>contributor!</li>
+<li>tester?</li>
+<li>benchmarker?</li>
+<li>documenter?</li>
+<li>evangelist?</li>
+<li>engineer?</li>
+<li>designer?</li>
+<li>(patcher?)</li>
+<li>(manager?)</li>
+<li>trainer?</li>
+</ul></li>
+<li>Contributor role (under author?) - <em>what's this?</em></li>
+<li>Version number</li>
+<li>Git commit hash (if no DOI)</li>
+<li>Subversion revision no. (if no DOI)</li>
+<li>Release date - <strong>DATES: FORMAT?</strong></li>
+<li>Location/repo</li>
+<li>location (e.g., webservice, closed source)</li>
+<li>repository (defined as what?)</li>
+<li>Indexed citations - <em>what's this?</em></li>
+<li>Software license</li>
+<li>Description</li>
+<li>Keywords</li>
+<li>Download date (if no version number and release date is available)</li>
+<li>contact name (person!) (this + email if no location/repo is available)</li>
+<li>doi (or use uid? create one key for all possibilities mentioned in principles: RRID, etc. -- research them?), make them all &quot;point&quot; to <code>uid</code></li>
+<li>uid:version</li>
+<li>uid[:general]</li>
+<li>uid:latest</li>
+<li>url (general use)</li>
+<li><p>bibtex (for bibtex-formatted entries)</p></li>
+<li><p>What about credit chains? Should thy play a role, i.e., should dependencies &amp; &quot;influences&quot; (software that a software is derived from) be noted? How? Link to DOI! (not note anythin that it indirectly relates on, so just note dependencies, not dependencies of dependencies), make it possible to link to stuf like depsy for dependency trees</p></li>
+</ul>
+<h3 id="non-software-specific-keys">Non-software specific keys</h3>
+<p><strong>CHECK IF THIS MAKES SENSE!</strong></p>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Key</th>
+<th style="text-align: left;">Type</th>
+<th>CodeMeta property</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">vcs</td>
+<td style="text-align: left;">URL</td>
+<td>codeRepository</td>
+<td style="text-align: left;">Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uid</td>
+<td style="text-align: left;">UID</td>
+<td>-</td>
+<td style="text-align: left;">- cf. Access to Software</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">number</td>
+<td>-</td>
+<td style="text-align: left;">In combination with <code>vcs</code> if no UID is available</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">commit</td>
+<td style="text-align: left;">hash</td>
+<td>-</td>
+<td style="text-align: left;">In combination with <code>vcs</code> if no UID is available</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">landing-page</td>
+<td style="text-align: left;">URL</td>
+<td>-</td>
+<td style="text-align: left;">According to software citation principles paper, what the UID should resolve to</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">contact</td>
+<td style="text-align: left;">name</td>
+<td>-</td>
+<td style="text-align: left;">If software isn't publicly available</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">email address</td>
+<td>-</td>
+<td style="text-align: left;">Multi-purpose sub key for person, e.g., for the case that software isn't publicly available</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">release-date</td>
+<td style="text-align: left;">date</td>
+<td></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">download-date</td>
+<td style="text-align: left;">date</td>
+<td></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">authors</td>
+<td style="text-align: left;">list</td>
+<td></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">contributors</td>
+<td style="text-align: left;">list</td>
+<td></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dependencies</td>
+<td style="text-align: left;">???</td>
+<td>???</td>
+<td style="text-align: left;">???</td>
+</tr>
+</tbody>
+</table>
+<h2 id="schema">Schema</h2>
+<ul>
+<li>Define one! (PyKwalify?)</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span> <span class="st">&quot;If you use this software, please cite the software itself and the journal paper describing its implementation as given below.&quot;</span>
+<span class="kw">-</span> <span class="fu">TYPE:</span> <span class="st">&quot;SOFTWARE (Use YAML explicit typing? !software)&quot;</span>
+  <span class="fu">authors:</span> 
+    <span class="kw">-</span> <span class="fu">firstname:</span> Stephan
+      <span class="fu">lastname:</span> Druskat
+      <span class="fu">orcid:</span> 1234-5678-9012-3456
+    <span class="kw">-</span> <span class="fu">firstname:</span> Neil
+      <span class="fu">lastname:</span> <span class="st">&quot;Chue Hong&quot;</span>
+    <span class="kw">-</span> <span class="fu">firstname:</span> Radovan
+      <span class="fu">lastname:</span> Bast
+      <span class="fu">orcid:</span> 1234-5678-9012-3456
+  <span class="fu">csv:</span> <span class="st">&quot;git://github.com/sdruskat/cffp&quot;</span>
+  <span class="fu">doi:</span> 10043/zenodo.1234
+  <span class="fu">title:</span> <span class="st">&quot;Citation File Format Parser&quot;</span>
+  <span class="fu">version:</span> <span class="st">&quot;1.1.2&quot;</span>
+<span class="kw">-</span> <span class="fu">TYPE:</span> JOURNAL
+  <span class="fu">authors:</span> 
+    <span class="kw">-</span> <span class="fu">firstname:</span> Stephan
+      <span class="fu">lastname:</span> Druskat
+      <span class="fu">orcid:</span> 1234-5678-9012-3456
+    <span class="kw">-</span> <span class="fu">firstname:</span> Neil
+      <span class="fu">lastname:</span> <span class="st">&quot;Chue Hong&quot;</span>
+    <span class="kw">-</span> <span class="fu">firstname:</span> Radovan
+      <span class="fu">lastname:</span> Bast2
+      <span class="fu">orcid:</span> 1234-5678-9012-3456
+  <span class="fu">day:</span> 9
+  <span class="fu">doi:</span> 10043/zenodo.12345
+  <span class="fu">frompage:</span> 1
+  <span class="fu">issue:</span> 11
+  <span class="fu">journal:</span> <span class="st">&quot;Journal for Open Research Software (JORS)&quot;</span>
+  <span class="fu">month:</span> september
+  <span class="fu">subtitle:</span> <span class="st">&quot;Version 1.0&quot;</span>
+  <span class="fu">title:</span> <span class="st">&quot;The Citation File Format&quot;</span>
+  <span class="fu">topage:</span> 34
+  <span class="fu">volume:</span> 2017
+  <span class="fu">year:</span> 2017
+</code></pre></div>
+<h1 id="infrastructure">Infrastructure</h1>
+<h2 id="creating-cff-citation-files">Creating CFF <code>CITATION</code> files</h2>
+<h2 id="reading-cff-citation-files">Reading CFF <code>CITATION</code> files</h2>
+<ul>
+<li>Use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee</li>
+</ul>
+<h2 id="validating-cff-citation-files">Validating CFF <code>CITATION</code> files</h2>
+<h2 id="converting-cff-citation-files">Converting CFF <code>CITATION</code> files</h2>
+<h1 id="notes">Notes</h1>
+<ul>
+<li>Virtual machines? UID?</li>
+<li>Containers (docker)? UID?</li>
+<li>Active instances?</li>
+</ul>
+<h1 id="license">License</h1>
+<p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
+<h1 id="references">References</h1>
+
+    <ol class="bibliography"><li><b>@principles</b><br/><span id="principles">[1]A. M. Smith, D. S. Katz, K. E. Niemeyer, and FORCE11 Software Citation Working Group, “Software citation principles,” <i>PeerJ Computer Science</i>, vol. 2, p. e86, Sep. 2016 [Online]. Available at: https://doi.org/10.7717/peerj-cs.86</span></li></ol>
+    <article>
+    <span class="print-footer">Citation File Format (CFF) - September 20, 2017 - Stephan Druskat</span>
+    <footer>
+  <hr class="slender">
+<div class="credits">
+<span>&copy; 2017 
+  
+		<a href="mailto:mail@sdruskat.net">Stephan Druskat</a></span></br> <br>    
+    
+
+<span>Created with <a href="//jekyllrb.com">Jekyll</a> and the theme <a href="//github.com/sdruskat/tufte-css-jekyll">tufte-css-jekyll</a>.</span> 
+</div>  
+</footer>
+  </body>
+</html>
