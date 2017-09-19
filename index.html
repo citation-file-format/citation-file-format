@@ -115,17 +115,11 @@
 <h3 id="non-software-specific-keys">Non-software specific keys</h3>
 <p><strong>CHECK IF THIS MAKES SENSE!</strong></p>
 <table>
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 13%" />
-<col style="width: 13%" />
-<col style="width: 62%" />
-</colgroup>
-<thead>
+<col style="width: 10%" /><col style="width: 13%" /><col style="width: 13%" /><col style="width: 62%" /><thead>
 <tr class="header">
 <th style="text-align: left;">Key</th>
 <th style="text-align: left;">Type</th>
-<th>CodeMeta property</th>
+<th style="text-align: left;">CodeMeta property</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -133,73 +127,73 @@
 <tr class="odd">
 <td style="text-align: left;">vcs</td>
 <td style="text-align: left;">URL</td>
-<td>codeRepository</td>
+<td style="text-align: left;">codeRepository</td>
 <td style="text-align: left;">Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">uid</td>
 <td style="text-align: left;">UID</td>
-<td>-</td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">- cf. Access to Software</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">number</td>
-<td>-</td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">In combination with <code>vcs</code> if no UID is available</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">commit</td>
 <td style="text-align: left;">hash</td>
-<td>-</td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">In combination with <code>vcs</code> if no UID is available</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">landing-page</td>
 <td style="text-align: left;">URL</td>
-<td>-</td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">According to software citation principles paper, what the UID should resolve to</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">contact</td>
 <td style="text-align: left;">name</td>
-<td>-</td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">If software isn't publicly available</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">email</td>
 <td style="text-align: left;">email address</td>
-<td>-</td>
+<td style="text-align: left;">-</td>
 <td style="text-align: left;">Multi-purpose sub key for person, e.g., for the case that software isn't publicly available</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">release-date</td>
 <td style="text-align: left;">date</td>
-<td></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">download-date</td>
 <td style="text-align: left;">date</td>
-<td></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">authors</td>
 <td style="text-align: left;">list</td>
-<td></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">contributors</td>
 <td style="text-align: left;">list</td>
-<td></td>
+<td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">dependencies</td>
 <td style="text-align: left;">???</td>
-<td>???</td>
+<td style="text-align: left;">???</td>
 <td style="text-align: left;">???</td>
 </tr>
 </tbody>
@@ -209,29 +203,29 @@
 <li>Define one! (PyKwalify?)</li>
 </ul>
 <h2 id="examples">Examples</h2>
-<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span> <span class="st">&quot;If you use this software, please cite the software itself and the journal paper describing its implementation as given below.&quot;</span>
-<span class="kw">-</span> <span class="fu">TYPE:</span> <span class="st">&quot;SOFTWARE (Use YAML explicit typing? !software)&quot;</span>
+<pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span> &quot;If you use this software, please cite the software itself and the journal paper describing its implementation as given below.&quot;
+<span class="kw">-</span> <span class="fu">TYPE:</span> &quot;SOFTWARE (Use YAML explicit typing? !software)&quot;
   <span class="fu">authors:</span> 
     <span class="kw">-</span> <span class="fu">firstname:</span> Stephan
       <span class="fu">lastname:</span> Druskat
       <span class="fu">orcid:</span> 1234-5678-9012-3456
     <span class="kw">-</span> <span class="fu">firstname:</span> Neil
-      <span class="fu">lastname:</span> <span class="st">&quot;Chue Hong&quot;</span>
+      <span class="fu">lastname:</span> &quot;Chue Hong&quot;
     <span class="kw">-</span> <span class="fu">firstname:</span> Radovan
       <span class="fu">lastname:</span> Bast
       <span class="fu">orcid:</span> 1234-5678-9012-3456
-  <span class="fu">csv:</span> <span class="st">&quot;git://github.com/sdruskat/cffp&quot;</span>
+  <span class="fu">csv:</span> &quot;git://github.com/sdruskat/cffp&quot;
   <span class="fu">doi:</span> 10043/zenodo.1234
-  <span class="fu">title:</span> <span class="st">&quot;Citation File Format Parser&quot;</span>
-  <span class="fu">version:</span> <span class="st">&quot;1.1.2&quot;</span>
+  <span class="fu">title:</span> &quot;Citation File Format Parser&quot;
+  <span class="fu">version:</span> &quot;1.1.2&quot;
 <span class="kw">-</span> <span class="fu">TYPE:</span> JOURNAL
   <span class="fu">authors:</span> 
     <span class="kw">-</span> <span class="fu">firstname:</span> Stephan
       <span class="fu">lastname:</span> Druskat
       <span class="fu">orcid:</span> 1234-5678-9012-3456
     <span class="kw">-</span> <span class="fu">firstname:</span> Neil
-      <span class="fu">lastname:</span> <span class="st">&quot;Chue Hong&quot;</span>
+      <span class="fu">lastname:</span> &quot;Chue Hong&quot;
     <span class="kw">-</span> <span class="fu">firstname:</span> Radovan
       <span class="fu">lastname:</span> Bast2
       <span class="fu">orcid:</span> 1234-5678-9012-3456
@@ -239,14 +233,14 @@
   <span class="fu">doi:</span> 10043/zenodo.12345
   <span class="fu">frompage:</span> 1
   <span class="fu">issue:</span> 11
-  <span class="fu">journal:</span> <span class="st">&quot;Journal for Open Research Software (JORS)&quot;</span>
+  <span class="fu">journal:</span> &quot;Journal for Open Research Software (JORS)&quot;
   <span class="fu">month:</span> september
-  <span class="fu">subtitle:</span> <span class="st">&quot;Version 1.0&quot;</span>
-  <span class="fu">title:</span> <span class="st">&quot;The Citation File Format&quot;</span>
+  <span class="fu">subtitle:</span> &quot;Version 1.0&quot;
+  <span class="fu">title:</span> &quot;The Citation File Format&quot;
   <span class="fu">topage:</span> 34
   <span class="fu">volume:</span> 2017
   <span class="fu">year:</span> 2017
-</code></pre></div>
+</code></pre>
 <h1 id="infrastructure">Infrastructure</h1>
 <h2 id="creating-cff-citation-files">Creating CFF <code>CITATION</code> files</h2>
 <h2 id="reading-cff-citation-files">Reading CFF <code>CITATION</code> files</h2>
@@ -262,7 +256,7 @@
 <li>Active instances?</li>
 </ul>
 <h1 id="license">License</h1>
-<p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
+<p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
 <h1 id="references">References</h1>
 
     <ol class="bibliography"><li><b>@principles</b><br/><span id="principles">[1]A. M. Smith, D. S. Katz, K. E. Niemeyer, and FORCE11 Software Citation Working Group, “Software citation principles,” <i>PeerJ Computer Science</i>, vol. 2, p. e86, Sep. 2016 [Online]. Available at: https://doi.org/10.7717/peerj-cs.86</span></li></ol>
