@@ -17,6 +17,8 @@ mkdir _site
 git clone https://${GH_TOKEN}@github.com/sdruskat/citation-file-format.git --branch gh-pages _site
 
 # build with Jekyll into "_site"
+gem install jekyll-pandoc
+ge install jekyll-scholar
 bundle exec jekyll build
 
 # push
