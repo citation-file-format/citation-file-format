@@ -16,6 +16,8 @@ layout: full-width
 weight: 1
 ...
 
+# Introduction
+
 #### Status of this document
 
 This document reflects the first version of the *Citation File Format* (CFF).
@@ -23,10 +25,6 @@ CFF has been developed in the context of the [*Workshop on Sustainable Software 
 More specifically, the constraints for CFF has been developed in the discusion and speed blogging group "Development and implementation of a standard format for CITATION files", whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).
 
 CFF Version 1.0 has been developed by Stephan Druskat with contributions from the other members of the group to provide the first iteration of a format for `CITATION` files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which has been published on the [blog page](https://www.software.ac.uk/blog) of the [Software Sustainability Institute](https://www.software.ac.uk/).
-
-# Table of Contents
-
-# Introduction
 
 ## Rationale
 
