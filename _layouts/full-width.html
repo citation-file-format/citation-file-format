@@ -5,12 +5,9 @@
     </article>
     <h1>{{ page.title }}</h1>
 	<p class="subtitle">{{ page.subtitle }}</p>
-  <label for="pdf" class="margin-toggle">&#8853;</label>
-<input type="checkbox" id="pdf" class="margin-toggle"/>
-<p>
-  [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]
-  <br/>
-</p>
+  <p class="subtitle">{{ page.author }}</p>
+  <p class="subtitle">{{ page.date }}</p>
+  <p> [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]<br/></p>
   </p>
       {{ content }}
     {% bibliography %}
