@@ -23,6 +23,6 @@ scholar:
   bibliography: references.bib
   bibliography_template: <b>@{{key}}</b><br/>{{reference}}
   source: ./
-gems: 
+plugins: 
   - jekyll-pandoc
   - jekyll/scholar

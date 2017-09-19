@@ -19,7 +19,7 @@ git clone https://${GH_TOKEN}@github.com/sdruskat/citation-file-format.git --bra
 # build with Jekyll into "_site"
 gem install jekyll-pandoc
 gem install jekyll-scholar
-bundle exec jekyll build
+bundle exec jekyll build --incremental
 
 # push
 cd _site
