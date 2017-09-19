@@ -9,8 +9,7 @@ rvm:
 before_script:
  - chmod +x ./build-jekyll.sh
  - sudo apt update 
- - sudo apt install pandoc
- - sudo apt install texlive-latex-extra
+ - sudo apt install pandoc texlive-latex-extra pandoc-citeproc
 # path to our build script. 
 # Travis will run `bundle install` by default before running our script
 script: ./build-jekyll.sh
