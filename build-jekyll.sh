@@ -14,12 +14,12 @@ rm -rf _site
 mkdir _site
 
 # clone remote repo to "_site"
-git clone https://${GH_TOKEN}@github.com/sdruskat/citation-file-format.git --branch gh-pages _site
+git clone https://${GITHUB_TOKEN}@github.com/sdruskat/citation-file-format.git --branch gh-pages _site
 
 # build with Jekyll into "_site"
 gem install jekyll-pandoc
 gem install jekyll-scholar
-bundle exec jekyll build --incremental
+bundle exec jekyll build
 
 # push
 cd _site
