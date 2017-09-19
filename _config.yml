@@ -1,0 +1,28 @@
+# Note: If you want to deploy to a GitHub user site (user.github.io), change baseurl to /
+baseurl: /citation-file-format
+# Whether the header (with large title and subtitle) should be displayed
+author: Stephan Druskat
+email: mail@sdruskat.net
+markdown: Pandoc
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+highlighter: rouge
+permalink: /articles/:categories/:year/:month/:day/:title.html
+timezone: Europe/Berlin
+excerpt_separator: <!--more-->
+exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'DeployToGithub.Rakefile', 'README.md', 'cff-specifications-1.0.md', 'build.sh', 'cff-specifications.pdf', 'template', 'tufte-pandoc', 'build-jekyll.sh']
+post:
+  template: _post.txt
+  extension: md
+page:
+  template: _page.txt
+  extension: md
+git:
+  branch: src
+scholar:
+  style: ./ieee-with-url.csl
+  bibliography: references.bib
+  bibliography_template: <b>@{{key}}</b><br/>{{reference}}
+  source: ./
+gems: 
+  - jekyll-pandoc
+  - jekyll/scholar

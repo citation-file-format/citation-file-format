@@ -1,0 +1,15 @@
+language: ruby
+# only run CI-builds on master branch
+branches:
+  only:
+  - master
+rvm:
+- 2.2.3
+# set execution permission on our build script
+before_script:
+ - chmod +x ./build-jekyll.sh
+# path to our build script. 
+# Travis will run `bundle install` by default before running our script
+script: ./build-jekyll.sh
+exclude: [vendor]
+sudo: false
