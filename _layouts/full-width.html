@@ -3,17 +3,16 @@
   {% include head.html %}
   <body class="full-width">
     <h1>{{ page.title }}</h1>
-  <p class="subtitle">{{ page.subtitle }}</p>
-  <p class="subtitle">{{ page.author }}</p>
-  <p class="subtitle">{{ page.date }}</p>
-  <p> [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]<br/></p>
-  </p>
+    <p class="subtitle">{{ page.subtitle }}</p>
+    <p class="subtitle">{{ page.author }}</p>
+    <p class="subtitle">{{ page.date }}</p>
+    <p> [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]<br/></p>
 
     <article>
     {{ content }}
-
     {% bibliography %}
     </article>
+
     {% include print-footer.html %}
     {% include footer.html %}
   </body>

@@ -18,7 +18,7 @@ weight: 1
 
 # Introduction
 
-#### Status of this document
+## Status of this document
 
 This document reflects the first version of the *Citation File Format* (CFF).
 CFF has been developed in the context of the [*Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)*](http://wssspe.researchcomputing.org.uk/wssspe5-1/), which was held on 6 September 2017 in Manchester, UK.
