@@ -27,33 +27,63 @@
 
   <body class="full-width">
     <h1>Citation File Format (CFF)</h1>
-  <p class="subtitle">Specification - Version 1.0.0-beta</p>
-  <p class="subtitle">Stephan Druskat (mail@sdruskat.net)</p>
-  <p class="subtitle">19 September 2017</p>
-  <p> [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]<br/></p>
-  </p>
+    <p class="subtitle">Specification - Version 1.0.0-beta</p>
+    <p class="subtitle">Stephan Druskat (mail@sdruskat.net)</p>
+    <p class="subtitle">19 September 2017</p>
+    <p> [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]<br/></p>
 
     <article>
-    <h1 id="introduction">Introduction</h1>
-<h4 id="status-of-this-document">Status of this document</h4>
+    <h1>Contents</h1>
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a><ul>
+<li><a href="#status-of-this-document">Status of this document</a></li>
+<li><a href="#rationale">Rationale</a></li>
+<li><a href="#goals">Goals</a></li>
+<li><a href="#similar-efforts">Similar efforts</a></li>
+<li><a href="#terminology">Terminology</a></li>
+</ul></li>
+<li><a href="#format">Format</a><ul>
+<li><a href="#file-structure">File structure</a></li>
+<li><a href="#reference-types">Reference types</a></li>
+<li><a href="#keys">Keys</a><ul>
+<li><a href="#software-specific-keys">Software-specific keys</a></li>
+<li><a href="#non-software-specific-keys">Non-software specific keys</a></li>
+</ul></li>
+<li><a href="#schema">Schema</a></li>
+<li><a href="#examples">Examples</a></li>
+</ul></li>
+<li><a href="#infrastructure">Infrastructure</a><ul>
+<li><a href="#creating-cff-citation-files">Creating CFF <code>CITATION</code> files</a></li>
+<li><a href="#reading-cff-citation-files">Reading CFF <code>CITATION</code> files</a></li>
+<li><a href="#validating-cff-citation-files">Validating CFF <code>CITATION</code> files</a></li>
+<li><a href="#converting-cff-citation-files">Converting CFF <code>CITATION</code> files</a></li>
+</ul></li>
+<li><a href="#notes">Notes</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
+<h1 id="introduction"><a href="#introduction">Introduction</a></h1>
+<h2 id="status-of-this-document"><a href="#status-of-this-document">Status of this document</a></h2>
 <p>This document reflects the first version of the <em>Citation File Format</em> (CFF). CFF has been developed in the context of the <a href="http://wssspe.researchcomputing.org.uk/wssspe5-1/"><em>Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</em></a>, which was held on 6 September 2017 in Manchester, UK. More specifically, the constraints for CFF has been developed in the discusion and speed blogging group &quot;Development and implementation of a standard format for CITATION files&quot;, whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).</p>
 <p>CFF Version 1.0 has been developed by Stephan Druskat with contributions from the other members of the group to provide the first iteration of a format for <code>CITATION</code> files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which has been published on the <a href="https://www.software.ac.uk/blog">blog page</a> of the <a href="https://www.software.ac.uk/">Software Sustainability Institute</a>.</p>
-<h2 id="rationale">Rationale</h2>
+<h2 id="rationale"><a href="#rationale">Rationale</a></h2>
 <ul>
 <li>Implement enablement for principles</li>
 </ul>
-<h2 id="goals">Goals</h2>
+<h2 id="goals"><a href="#goals">Goals</a></h2>
 <p>Implement the principles from &quot;Software Citation Principles&quot;.</p>
-<h2 id="similar-efforts">Similar efforts</h2>
-<h2 id="terminology">Terminology</h2>
-<h1 id="format">Format</h1>
+<h2 id="similar-efforts"><a href="#similar-efforts">Similar efforts</a></h2>
+<h2 id="terminology"><a href="#terminology">Terminology</a></h2>
+<h1 id="format"><a href="#format">Format</a></h1>
 <ul>
 <li>ALSO CHECK AGAINST SOFT CIT IMPLEMENTATION WG GITHUB which is meant to support implementers</li>
 <li>Check TAGS (e.g., yaml.org/type/) - custom tag repository?</li>
 <li>how to reference custom schema?</li>
 </ul>
-<h2 id="file-structure">File structure</h2>
-<h2 id="reference-types">Reference types</h2>
+<h2 id="file-structure"><a href="#file-structure">File structure</a></h2>
+<h2 id="reference-types"><a href="#reference-types">Reference types</a></h2>
 <ul>
 <li>software</li>
 <li>software-source-code</li>
@@ -61,8 +91,8 @@
 <li>software-container</li>
 <li>software (others)</li>
 </ul>
-<h2 id="keys">Keys</h2>
-<h3 id="software-specific-keys">Software-specific keys</h3>
+<h2 id="keys"><a href="#keys">Keys</a></h2>
+<h3 id="software-specific-keys"><a href="#software-specific-keys">Software-specific keys</a></h3>
 <p>These keys aim to implement the basic and further requirements for the use cases of software citation presented in <span class="citation" data-cites="principles">[@principles, p. 6]</span>.</p>
 <ul>
 <li>Unique identifier</li>
@@ -109,7 +139,7 @@
 <li><p>bibtex (for bibtex-formatted entries)</p></li>
 <li><p>What about credit chains? Should thy play a role, i.e., should dependencies &amp; &quot;influences&quot; (software that a software is derived from) be noted? How? Link to DOI! (not note anythin that it indirectly relates on, so just note dependencies, not dependencies of dependencies), make it possible to link to stuf like depsy for dependency trees</p></li>
 </ul>
-<h3 id="non-software-specific-keys">Non-software specific keys</h3>
+<h3 id="non-software-specific-keys"><a href="#non-software-specific-keys">Non-software specific keys</a></h3>
 <p><strong>CHECK IF THIS MAKES SENSE!</strong></p>
 <table>
 <col style="width: 10%" /><col style="width: 13%" /><col style="width: 13%" /><col style="width: 62%" /><thead>
@@ -195,11 +225,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="schema">Schema</h2>
+<h2 id="schema"><a href="#schema">Schema</a></h2>
 <ul>
 <li>Define one! (PyKwalify?)</li>
 </ul>
-<h2 id="examples">Examples</h2>
+<h2 id="examples"><a href="#examples">Examples</a></h2>
 <pre class="sourceCode yaml"><code class="sourceCode yaml">
 <span class="kw">-</span> <span class="fu">message:</span> &quot;If you use this software, please cite the software itself and the journal paper describing its implementation as given below.&quot;
 <span class="kw">-</span> <span class="fu">TYPE:</span> &quot;SOFTWARE (Use YAML explicit typing? !software)&quot;
@@ -238,27 +268,26 @@
   <span class="fu">volume:</span> 2017
   <span class="fu">year:</span> 2017
 </code></pre>
-<h1 id="infrastructure">Infrastructure</h1>
-<h2 id="creating-cff-citation-files">Creating CFF <code>CITATION</code> files</h2>
-<h2 id="reading-cff-citation-files">Reading CFF <code>CITATION</code> files</h2>
+<h1 id="infrastructure"><a href="#infrastructure">Infrastructure</a></h1>
+<h2 id="creating-cff-citation-files"><a href="#creating-cff-citation-files">Creating CFF <code>CITATION</code> files</a></h2>
+<h2 id="reading-cff-citation-files"><a href="#reading-cff-citation-files">Reading CFF <code>CITATION</code> files</a></h2>
 <ul>
 <li>Use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee</li>
 </ul>
-<h2 id="validating-cff-citation-files">Validating CFF <code>CITATION</code> files</h2>
-<h2 id="converting-cff-citation-files">Converting CFF <code>CITATION</code> files</h2>
-<h1 id="notes">Notes</h1>
+<h2 id="validating-cff-citation-files"><a href="#validating-cff-citation-files">Validating CFF <code>CITATION</code> files</a></h2>
+<h2 id="converting-cff-citation-files"><a href="#converting-cff-citation-files">Converting CFF <code>CITATION</code> files</a></h2>
+<h1 id="notes"><a href="#notes">Notes</a></h1>
 <ul>
 <li>Virtual machines? UID?</li>
 <li>Containers (docker)? UID?</li>
 <li>Active instances?</li>
 </ul>
-<h1 id="license">License</h1>
+<h1 id="license"><a href="#license">License</a></h1>
 <p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
-<h1 id="references">References</h1>
-
-
+<h1 id="references"><a href="#references">References</a></h1>
     <ol class="bibliography"><li><b>@principles</b><br/><span id="principles">[1]A. M. Smith, D. S. Katz, K. E. Niemeyer, and FORCE11 Software Citation Working Group, “Software citation principles,” <i>PeerJ Computer Science</i>, vol. 2, p. e86, Sep. 2016 [Online]. Available at: https://doi.org/10.7717/peerj-cs.86</span></li></ol>
     </article>
+
     <span class="print-footer">Citation File Format (CFF) - September 19, 2017 - Stephan Druskat</span>
     <footer>
   <hr class="slender">

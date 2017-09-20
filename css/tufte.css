@@ -740,3 +740,32 @@ hr.slender {
 
   body header, body footer {
     display: none; } }
+#TOC {
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  background-color: #fffff8;
+  max-width: 1400px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+#TOC > ul {
+  display: inline;
+  list-style-type: circle;
+  list-style-position: inside; }
+
+#TOC > ul > li {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  white-space: nowrap; }
+
+#TOC > ul > li > ul > li {
+  padding-left: 4rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  white-space: nowrap; }
+
+#TOC > ul > li > ul > li > ul > li {
+  padding-left: 4rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  white-space: nowrap;
+  font-style: italic; }
