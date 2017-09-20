@@ -56,6 +56,207 @@ Implement the principles from "Software Citation Principles".
 
 ## Keys
 
+CFF defines the following keys.  
+
+
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  **CFF Key**                 **CFF Data Type**                **CFF Description**
+  --------------------------- -------------------------------- -------------------------------------------------------------------------------------------------------
+  abbreviation                String                           The abbreviation of the work
+
+  abstract                    String                           The abstract of a work
+
+  authors                     Collection of **entities**       The author of a work
+
+  bibtex                      String                           A BibTeX version of the reference
+
+  collection&#x2011;title        String                        The title of a collection or proceedings
+
+  commit                      String                           The commit hash or revision number of the work
+
+  conference                  Entity                           The conference where the work was presented
+
+  contact                     Collection of **entities**       The contact person for a work
+
+  copyright                   String                            The copyright information pertaining to the work
+
+  data&#x2011;type               String                           The data type of a data set
+
+  database                    String                           The name of the database where a work was accessed/is stored
+
+  database&#x2011;provider           Entity                       The provider of the database where a work was accessed/is stored
+
+  date&#x2011;accessed               Date                         The date the work has been last accessed
+
+  date&#x2011;download               Date                         The date the work has been downloaded
+
+  date&#x2011;published              Date                         The date the work has been published
+
+  date&#x2011;released           Date                              The date the work has been released
+
+  department                  String                            The department where a work has been produced
+
+  dependencies                String (*URI*)                   A Uniform Resource Identifier pointing to a resource that makes the dependencies of a work accessible
+
+  doi                         String                            The DOI of the work
+
+  edition                     String                           The edition of the work
+
+  editors                     Collection of **entities**       The editors of a work
+
+  editors&#x2011;series              Collection of **entities**        The editors of a series in which a work has been published
+
+  entry                       String                            An entry in the collection that constitutes the work
+
+  filename                    String                           The name of the electronic file containing the work
+
+  format                      String                           The format in which a work is represented
+
+  institution                 Entity                           The institution where a work has been produced
+
+  isbn                        String                           The ISBN of the work
+
+  issn                        String                           The ISSN of the work
+ 
+  issue                       Integer                          The issue of a periodical in which a work appeared
+ 
+  issue&#x2011;date              String                           The publication date of the issue of a periodical in which a work appeared
+
+  issue&#x2011;title             String                           The name of the issue of a periodical in which the work appeared
+
+  journal                     String                           The name of the journal/magazine/newspaper/periodical where the work was published
+
+  keywords                    Collection of strings            Keywords pertaining to the work
+
+  languages                   Collection of strings            The language of the work
+
+  license                     String                           The license under which a work is licensed
+
+  license&#x2011;url             String (*URL*)                   The URL of the license text under which a work is licensed
+
+  locfrom                     Integer                          The line of code in the file where the work starts
+
+  locto                       Integer                          The line of code in the file where the work ends
+
+  nihmsid                     String                           The NIHMSID of a work
+
+  number                      String                           The accession number for a work
+
+  number&#x2011;volumes           Integer                      The number of volumes making up the collection in which the work has been published
+
+  pages                       Integer                          The number of pages of the work
+
+  patent&#x2011;states            String                       The states for which a patent is granted
+
+  pmcid                       String                           The PMCID of a work
+
+  publisher                   Entity                            The name of the publisher who has published the work
+
+  recipients                  Collection of **entities**       The recipient of a personal communication
+
+  repository                  String (*URL*)                   The repository where the work is stored
+
+  repository&#x2011;code         String (*URL*)                   The version control system where the source code of the work is stored
+
+  repository&#x2011;executable   String (*URL*)                   The repository where the executable version of the work is stored
+
+  sender                      Collection of **entities**       The sender of a personal communication
+
+  start                       Integer                          The start page of the work
+
+  thesis&#x2011;type             String                        The type of the thesis that is the work
+
+  translators                 Collection of **entities**       The translator of a work
+
+  type                        **Reference type string**            The type of the work
+
+  url                         String (*URL*)                   The URL of the work
+
+  version                     String                           The version of the work
+
+  volume                      Integer                          The volume of the periodical in which a work appeared
+
+  volume&#x2011;title            String                           The title of the volume in which the work appeared
+
+  year                        Integer                          The year in which a work has been published
+
+  year&#x2011;original           Integer                          The year of the original publication
+
+  ----------------------- ---------------------------- -------------------------------------------------------------------------------------------------------
+Table: Complete list of CFF keys.
+
+## Entities
+
+Entity objects can represent different types of entities, e.g., a person, publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key `name` is mandatory. When the entity represents a person, the `name` key must be formatted following the pattern `"{last names}, {first names} {middle names}"`. When the entity does *not* represent a person, the value for `name` must not include a comma `,`.
+
+  ------------- ------------------ ----------
+  Entity key    Entity Data Type   optional
+  ------------- ------------------ ----------
+  name          String             
+
+  city          String             •
+
+  country       String             •
+
+  street        String             •
+
+  orcid         String             •
+
+  email         String             •
+
+  affiliation   String             •
+
+  tel           String             •
+
+  fax           String             •
+
+  website       String (*URL*)     •
+
+  datefrom      Date               •
+
+  dateto        Date               •
+
+  location      String             •
+
+  role          **Role string**        •
+
+  ------------- ------------------ ----------
+Table: Complete list of entity keys.
+
+### Roles
+
+An entity representing a person can be assigned a role. The defined roles are:
+
+
+  Key
+  -------------------------------------------------------------
+  **artist**
+  **assignee** (e.g., of a patent)
+  **benchmarker** (e.g., of a software)
+  **cartographer**
+  **composer**
+  **contributor**
+  **creator**
+  **designer**
+  **director** (e.g., of a movie)
+  **editor** (e.g., of an edited book/edition)
+  **evangelist** (e.g., for a software)
+  **insitution** (e.g., issuing a standard)
+  **inventor**
+  **manager** (e.g., of a software project)
+  **programmer**
+  **reporter** (e.g., of a court case)
+  **reporter** (e.g., of a software bug)
+  **researcher** (e.g., authoring a data set)
+  **software engineer** (e.g., for a software)
+  **technical writer** (e.g., of a software documentation)
+  **tester** (e.g., of a software)
+  **trainer**
+  -------------------------------------------------------------
+  Table: Defined roles for entities.
+
+## Reference types
+
 ### Software-specific keys
 
 These keys aim to implement the basic and further requirements for the use cases of software citation presented in [@principles, p. 6].
