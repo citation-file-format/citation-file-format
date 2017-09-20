@@ -46,7 +46,11 @@
 <li><a href="#format">Format</a><ul>
 <li><a href="#file-structure">File structure</a></li>
 <li><a href="#reference-types">Reference types</a></li>
-<li><a href="#keys">Keys</a><ul>
+<li><a href="#keys">Keys</a></li>
+<li><a href="#entities">Entities</a><ul>
+<li><a href="#roles">Roles</a></li>
+</ul></li>
+<li><a href="#reference-types-1">Reference types</a><ul>
 <li><a href="#software-specific-keys">Software-specific keys</a></li>
 <li><a href="#non-software-specific-keys">Non-software specific keys</a></li>
 </ul></li>
@@ -92,6 +96,482 @@
 <li>software (others)</li>
 </ul>
 <h2 id="keys"><a href="#keys">Keys</a></h2>
+<p>CFF defines the following keys.</p>
+<table>
+<caption>Complete list of CFF keys.</caption>
+<col style="width: 16%" /><col style="width: 19%" /><col style="width: 62%" /><thead>
+<tr class="header">
+<th style="text-align: left;"><strong>CFF Key</strong></th>
+<th style="text-align: left;"><strong>CFF Data Type</strong></th>
+<th style="text-align: left;"><strong>CFF Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">abbreviation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The abbreviation of the work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">abstract</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The abstract of a work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">authors</td>
+<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">The author of a work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bibtex</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A BibTeX version of the reference</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">collection‑title</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The title of a collection or proceedings</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">commit</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The commit hash or revision number of the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">conference</td>
+<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">The conference where the work was presented</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">contact</td>
+<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">The contact person for a work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">copyright</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The copyright information pertaining to the work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">data‑type</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The data type of a data set</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">database</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the database where a work was accessed/is stored</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">database‑provider</td>
+<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">The provider of the database where a work was accessed/is stored</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">date‑accessed</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">The date the work has been last accessed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">date‑download</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">The date the work has been downloaded</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">date‑published</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">The date the work has been published</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">date‑released</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">The date the work has been released</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">department</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The department where a work has been produced</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dependencies</td>
+<td style="text-align: left;">String (<em>URI</em>)</td>
+<td style="text-align: left;">A Uniform Resource Identifier pointing to a resource that makes the dependencies of a work accessible</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">doi</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The DOI of the work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">edition</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The edition of the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">editors</td>
+<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">The editors of a work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">editors‑series</td>
+<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">The editors of a series in which a work has been published</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">entry</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">An entry in the collection that constitutes the work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">filename</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the electronic file containing the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">format</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The format in which a work is represented</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">institution</td>
+<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">The institution where a work has been produced</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">isbn</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ISBN of the work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">issn</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The ISSN of the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">issue</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The issue of a periodical in which a work appeared</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">issue‑date</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The publication date of the issue of a periodical in which a work appeared</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">issue‑title</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the issue of a periodical in which the work appeared</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">journal</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The name of the journal/magazine/newspaper/periodical where the work was published</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">keywords</td>
+<td style="text-align: left;">Collection of strings</td>
+<td style="text-align: left;">Keywords pertaining to the work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">languages</td>
+<td style="text-align: left;">Collection of strings</td>
+<td style="text-align: left;">The language of the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">license</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The license under which a work is licensed</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">license‑url</td>
+<td style="text-align: left;">String (<em>URL</em>)</td>
+<td style="text-align: left;">The URL of the license text under which a work is licensed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">locfrom</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The line of code in the file where the work starts</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">locto</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The line of code in the file where the work ends</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">nihmsid</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The NIHMSID of a work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">number</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The accession number for a work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">number‑volumes</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The number of volumes making up the collection in which the work has been published</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pages</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The number of pages of the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">patent‑states</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The states for which a patent is granted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">pmcid</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The PMCID of a work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">publisher</td>
+<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">The name of the publisher who has published the work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">recipients</td>
+<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">The recipient of a personal communication</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">repository</td>
+<td style="text-align: left;">String (<em>URL</em>)</td>
+<td style="text-align: left;">The repository where the work is stored</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">repository‑code</td>
+<td style="text-align: left;">String (<em>URL</em>)</td>
+<td style="text-align: left;">The version control system where the source code of the work is stored</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">repository‑executable</td>
+<td style="text-align: left;">String (<em>URL</em>)</td>
+<td style="text-align: left;">The repository where the executable version of the work is stored</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sender</td>
+<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">The sender of a personal communication</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">start</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The start page of the work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">thesis‑type</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The type of the thesis that is the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">translators</td>
+<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">The translator of a work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">type</td>
+<td style="text-align: left;"><strong>Reference type string</strong></td>
+<td style="text-align: left;">The type of the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">url</td>
+<td style="text-align: left;">String (<em>URL</em>)</td>
+<td style="text-align: left;">The URL of the work</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The version of the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">volume</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The volume of the periodical in which a work appeared</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">volume‑title</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The title of the volume in which the work appeared</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">year</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The year in which a work has been published</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">year‑original</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The year of the original publication</td>
+</tr>
+</tbody>
+</table>
+<h2 id="entities"><a href="#entities">Entities</a></h2>
+<p>Entity objects can represent different types of entities, e.g., a person, publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key <code>name</code> is mandatory. When the entity represents a person, the <code>name</code> key must be formatted following the pattern <code>&quot;{last names}, {first names} {middle names}&quot;</code>. When the entity does <em>not</em> represent a person, the value for <code>name</code> must not include a comma <code>,</code>.</p>
+<table>
+<caption>Complete list of entity keys.</caption>
+<col style="width: 19%" /><col style="width: 26%" /><col style="width: 13%" /><thead>
+<tr class="header">
+<th style="text-align: left;">Entity key</th>
+<th style="text-align: left;">Entity Data Type</th>
+<th style="text-align: left;">optional</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">city</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">country</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">street</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">orcid</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">affiliation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">tel</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fax</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">website</td>
+<td style="text-align: left;">String (<em>URL</em>)</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">datefrom</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dateto</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">role</td>
+<td style="text-align: left;"><strong>Role string</strong></td>
+<td style="text-align: left;">•</td>
+</tr>
+</tbody>
+</table>
+<h3 id="roles"><a href="#roles">Roles</a></h3>
+<p>An entity representing a person can be assigned a role. The defined roles are:</p>
+<table>
+<caption>Defined roles for entities.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>artist</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>assignee</strong> (e.g., of a patent)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>benchmarker</strong> (e.g., of a software)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>cartographer</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>composer</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>contributor</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>creator</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>designer</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>director</strong> (e.g., of a movie)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>editor</strong> (e.g., of an edited book/edition)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>evangelist</strong> (e.g., for a software)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>insitution</strong> (e.g., issuing a standard)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>inventor</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>manager</strong> (e.g., of a software project)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>programmer</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>reporter</strong> (e.g., of a court case)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>reporter</strong> (e.g., of a software bug)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>researcher</strong> (e.g., authoring a data set)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>software engineer</strong> (e.g., for a software)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>technical writer</strong> (e.g., of a software documentation)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>tester</strong> (e.g., of a software)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>trainer</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="reference-types-1"><a href="#reference-types-1">Reference types</a></h2>
 <h3 id="software-specific-keys"><a href="#software-specific-keys">Software-specific keys</a></h3>
 <p>These keys aim to implement the basic and further requirements for the use cases of software citation presented in <span class="citation" data-cites="principles">[@principles, p. 6]</span>.</p>
 <ul>
