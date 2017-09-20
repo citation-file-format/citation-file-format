@@ -8,5 +8,5 @@ pandoc \
 	-o cff-specifications.pdf \
 	index.md
 
-cp ./cff-specifications.pdf ./assets/pdf/
+mv ./cff-specifications.pdf ./assets/pdf/cff-specifications.pdf
 exit 0
