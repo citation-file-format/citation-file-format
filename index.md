@@ -312,13 +312,14 @@ Table: Complete list of entity keys.
 
 ### Roles
 
-An entity representing a person can be assigned a role. The defined roles are:
+An entity representing a person can be assigned a role for the purposes of specifying authorship status, e.g., to distinguish main authors of a software from contributors who have provided a small patch. The defined roles are:
 
 
   Key
   -------------------------------------------------------------
   **artist**
   **assignee** (e.g., of a patent)
+  **main-author**
   **benchmarker** (e.g., of a software)
   **cartographer**
   **composer**
