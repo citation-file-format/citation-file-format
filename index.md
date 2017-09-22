@@ -31,31 +31,31 @@ CFF has been developed to provide the first iteration of a format for `CITATION`
 
 ## Rationale
 
-- Implement enablement for principles
+The rationale for a standardized, machine- and human-readable format for `CITATION` files is discussed in [@standardized-citation-files]. CFF has been developed to support all use cases for the citation of software, as discussed in [@principles], and thus promote attribution and credit for software in general, and research software in paticular.
 
 ## Goals
 
-Implement the principles from "Software Citation Principles".
+The goal of CFF is to provide an all-purpose citation format in general (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, such as a dedicated type for source code, and one for executables, and a reference key for versions.
 
-All-purpose citation format
+The ultimate goal of CFF as a project is of course comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc.
 
 ## Concepts
 
-- All keys can be used for all types although tooling (esp. conversion) may not take the into account
+Some of the concepts of CFF include that all available keys can be used for all Work Types, and leave reasonability of use to format users and providers of tooling, such as conversion software for CFF and other formats.
 
-- Sections are part of the whole (e.g., book section is in book)
+If a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the `section` key in the parent type (i.e., `book` for a section of a book, etc.) should be used.
 
 # Format
 
-- ALSO CHECK AGAINST SOFT CIT IMPLEMENTATION WG GITHUB which is meant to support implementers
-- Check TAGS (e.g., yaml.org/type/) - custom tag repository?
-- how to reference custom schema?
+CFF is implemented in YAML 1.2, as the language provides optimal human-readability and the required core data types. 
 
 ## File structure
 
+tbc
+
 ## Formatting
 
-key: whitespace value
+tbc (key: whitespace value)
 
 ## Keys
 
@@ -414,7 +414,7 @@ Works can have a different status of publication, e.g., journal papers. CFF prov
 
 ## Schema
 
-- Define one! (PyKwalify?)
+It is planned to provide a PyKwalify schema for the validation of CFF files. This is work in progress.
 
 ## Examples
 
@@ -461,21 +461,14 @@ Works can have a different status of publication, e.g., journal papers. CFF prov
 ```
 # Infrastructure
 
-## Creating CFF `CITATION` files
+It is planned to provide further infrastructure (e.g., software packages), to support the following use cases for CFF:
 
-## Reading CFF `CITATION` files
+- Creating CFF `CITATION` files
+- Reading CFF `CITATION` files
+- Validating CFF `CITATION` files
+- Converting CFF `CITATION` files
 
-- Use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee
-
-## Validating CFF `CITATION` files
-
-## Converting CFF `CITATION` files
-
-# Notes
-
-- Virtual machines? UID?
-- Containers (docker)? UID?
-- Active instances?
+For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee
 
 # License
 
