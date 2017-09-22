@@ -12,7 +12,7 @@ set -e
 # Build PDF
 #!/bin/bash
 pandoc \
---latex-engine=xelatex \
+	--latex-engine=xelatex \
 	--toc \
 	--toc-depth=4 \
 	--filter pandoc-citeproc \
