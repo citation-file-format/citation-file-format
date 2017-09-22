@@ -115,7 +115,7 @@ CFF defines the following keys.
 
   format                      String                           The format in which a work is represented
 
-  institution                 Entity                           The institution where a work has been produced
+  institution                 Entity                           The institution where a work has been produced or published
 
   isbn                        String                           The ISBN of the work
 
@@ -137,9 +137,9 @@ CFF defines the following keys.
 
   license&#x2011;url             String (*URL*)                   The URL of the license text under which a work is licensed
 
-  locfrom                     Integer                          The line of code in the file where the work starts
+  loc-start                    Integer                          The line of code in the file where the work starts
 
-  locto                       Integer                          The line of code in the file where the work ends
+  loc-end                     Integer                          The line of code in the file where the work ends
 
   nihmsid                     String                           The NIHMSID of a work
 
