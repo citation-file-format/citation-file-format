@@ -230,6 +230,7 @@ h1 code, h2 code, h3 code { font-size: 0.80em; } //left in for no real reason
 
 table, table.booktabs { width: auto;  //making booktabs style tables the unstyled default in case someone uses Markdown styling
                  margin: 0 auto;
+                 margin-top: 2rem;
                  border-spacing: 0px;
                  border-top: 2px solid $border-color;
                  border-bottom: 2px solid $border-color; }
@@ -294,9 +295,16 @@ section { padding-top: 1rem;
 ul,ol { width: 45%;
      -webkit-padding-start: 5%;
      -webkit-padding-end: 5%;
-     list-style-type: none; }
+     list-style-type: none; 
+      display: inline;
+}
 
 //li { padding: 0.5em 0; } //vertical padding on list items screws up vertical rhythym
+
+ul > li:before {
+  content: '- ';
+  position: relative;
+}
 
 figure, figure img.maincolumn { max-width: 55%;
          -webkit-margin-start: 0;
@@ -610,7 +618,6 @@ hr.slender {
 
 #TOC > ul {
   display: inline;
-  list-style-type: circle;
   list-style-position: inside;
 }
 
