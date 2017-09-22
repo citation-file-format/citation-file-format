@@ -30,5 +30,5 @@ pandoc:
   extensions:
     - template: ./toc/toc.html
     - toc
-    - toc-depth=4
+    - toc-depth=3
     - highlight-style: pygments
