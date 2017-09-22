@@ -349,6 +349,7 @@ h1 code, h2 code, h3 code {
 table, table.booktabs {
   width: auto;
   margin: 0 auto;
+  margin-top: 2rem;
   border-spacing: 0px;
   border-top: 2px solid #333333;
   border-bottom: 2px solid #333333; }
@@ -420,7 +421,12 @@ ul, ol {
   width: 45%;
   -webkit-padding-start: 5%;
   -webkit-padding-end: 5%;
-  list-style-type: none; }
+  list-style-type: none;
+  display: inline; }
+
+ul > li:before {
+  content: '- ';
+  position: relative; }
 
 figure, figure img.maincolumn {
   max-width: 55%;
@@ -749,7 +755,6 @@ hr.slender {
 
 #TOC > ul {
   display: inline;
-  list-style-type: circle;
   list-style-position: inside; }
 
 #TOC > ul > li {
