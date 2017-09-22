@@ -56,13 +56,7 @@
 <li><a href="#schema">Schema</a></li>
 <li><a href="#examples">Examples</a></li>
 </ul></li>
-<li><a href="#infrastructure">Infrastructure</a><ul>
-<li><a href="#creating-cff-citation-files">Creating CFF <code>CITATION</code> files</a></li>
-<li><a href="#reading-cff-citation-files">Reading CFF <code>CITATION</code> files</a></li>
-<li><a href="#validating-cff-citation-files">Validating CFF <code>CITATION</code> files</a></li>
-<li><a href="#converting-cff-citation-files">Converting CFF <code>CITATION</code> files</a></li>
-</ul></li>
-<li><a href="#notes">Notes</a></li>
+<li><a href="#infrastructure">Infrastructure</a></li>
 <li><a href="#license">License</a></li>
 <li><a href="#references">References</a></li>
 </ul>
@@ -73,26 +67,19 @@
 <p>CFF Version 1.0 has been developed by Stephan Druskat with contributions from the following.</p>
 <p>CFF has been developed to provide the first iteration of a format for <code>CITATION</code> files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which will be published on the <a href="https://www.software.ac.uk/blog">blog page</a> of the <a href="https://www.software.ac.uk/">Software Sustainability Institute</a>.</p>
 <h2 id="rationale"><a href="#rationale">Rationale</a></h2>
-<ul>
-<li>Implement enablement for principles</li>
-</ul>
+<p>The rationale for a standardized, machine- and human-readable format for <code>CITATION</code> files is discussed in <span class="citation" data-cites="standardized-citation-files">[@standardized-citation-files]</span>. CFF has been developed to support all use cases for the citation of software, as discussed in <span class="citation" data-cites="principles">[@principles]</span>, and thus promote attribution and credit for software in general, and research software in paticular.</p>
 <h2 id="goals"><a href="#goals">Goals</a></h2>
-<p>Implement the principles from &quot;Software Citation Principles&quot;.</p>
-<p>All-purpose citation format</p>
+<p>The goal of CFF is to provide an all-purpose citation format in general (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, such as a dedicated type for source code, and one for executables, and a reference key for versions.</p>
+<p>The ultimate goal of CFF as a project is of course comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc.</p>
 <h2 id="concepts"><a href="#concepts">Concepts</a></h2>
-<ul>
-<li><p>All keys can be used for all types although tooling (esp. conversion) may not take the into account</p></li>
-<li><p>Sections are part of the whole (e.g., book section is in book)</p></li>
-</ul>
+<p>Some of the concepts of CFF include that all available keys can be used for all Work Types, and leave reasonability of use to format users and providers of tooling, such as conversion software for CFF and other formats.</p>
+<p>If a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the <code>section</code> key in the parent type (i.e., <code>book</code> for a section of a book, etc.) should be used.</p>
 <h1 id="format"><a href="#format">Format</a></h1>
-<ul>
-<li>ALSO CHECK AGAINST SOFT CIT IMPLEMENTATION WG GITHUB which is meant to support implementers</li>
-<li>Check TAGS (e.g., yaml.org/type/) - custom tag repository?</li>
-<li>how to reference custom schema?</li>
-</ul>
+<p>CFF is implemented in YAML 1.2, as the language provides optimal human-readability and the required core data types.</p>
 <h2 id="file-structure"><a href="#file-structure">File structure</a></h2>
+<p>tbc</p>
 <h2 id="formatting"><a href="#formatting">Formatting</a></h2>
-<p>key: whitespace value</p>
+<p>tbc (key: whitespace value)</p>
 <h2 id="keys"><a href="#keys">Keys</a></h2>
 <p>CFF defines the following keys.</p>
 <table>
@@ -593,7 +580,7 @@
 </tbody>
 </table>
 <h3 id="roles"><a href="#roles">Roles</a></h3>
-<p>An entity representing a person can be assigned a role. The defined roles are:</p>
+<p>An entity representing a person can be assigned a role for the purposes of specifying authorship status, e.g., to distinguish main authors of a software from contributors who have provided a small patch. The defined roles are:</p>
 <table>
 <caption>Defined roles for entities.</caption>
 <thead>
@@ -609,63 +596,66 @@
 <td style="text-align: left;"><strong>assignee</strong> (e.g., of a patent)</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;"><strong>main-author</strong></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><strong>benchmarker</strong> (e.g., of a software)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>cartographer</strong></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><strong>composer</strong></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>contributor</strong></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><strong>creator</strong></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>designer</strong></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><strong>director</strong> (e.g., of a movie)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>editor</strong> (e.g., of an edited book/edition)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><strong>evangelist</strong> (e.g., for a software)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>insitution</strong> (e.g., issuing a standard)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><strong>inventor</strong></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>manager</strong> (e.g., of a software project)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><strong>programmer</strong></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>reporter</strong> (e.g., of a court case)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><strong>reporter</strong> (e.g., of a software bug)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>researcher</strong> (e.g., authoring a data set)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><strong>software engineer</strong> (e.g., for a software)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>technical writer</strong> (e.g., of a software documentation)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><strong>tester</strong> (e.g., of a software)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><strong>trainer</strong></td>
 </tr>
 </tbody>
@@ -859,9 +849,7 @@
 </tbody>
 </table>
 <h2 id="schema"><a href="#schema">Schema</a></h2>
-<ul>
-<li>Define one! (PyKwalify?)</li>
-</ul>
+<p>It is planned to provide a PyKwalify schema for the validation of CFF files. This is work in progress.</p>
 <h2 id="examples"><a href="#examples">Examples</a></h2>
 <pre class="sourceCode yaml"><code class="sourceCode yaml">
 <span class="kw">-</span> <span class="fu">message:</span> &quot;If you use this software, please cite the software itself and the journal paper describing its implementation as given below.&quot;
@@ -902,23 +890,19 @@
   <span class="fu">year:</span> 2017
 </code></pre>
 <h1 id="infrastructure"><a href="#infrastructure">Infrastructure</a></h1>
-<h2 id="creating-cff-citation-files"><a href="#creating-cff-citation-files">Creating CFF <code>CITATION</code> files</a></h2>
-<h2 id="reading-cff-citation-files"><a href="#reading-cff-citation-files">Reading CFF <code>CITATION</code> files</a></h2>
+<p>It is planned to provide further infrastructure (e.g., software packages), to support the following use cases for CFF:</p>
 <ul>
-<li>Use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee</li>
+<li>Creating CFF <code>CITATION</code> files</li>
+<li>Reading CFF <code>CITATION</code> files</li>
+<li>Validating CFF <code>CITATION</code> files</li>
+<li>Converting CFF <code>CITATION</code> files</li>
 </ul>
-<h2 id="validating-cff-citation-files"><a href="#validating-cff-citation-files">Validating CFF <code>CITATION</code> files</a></h2>
-<h2 id="converting-cff-citation-files"><a href="#converting-cff-citation-files">Converting CFF <code>CITATION</code> files</a></h2>
-<h1 id="notes"><a href="#notes">Notes</a></h1>
-<ul>
-<li>Virtual machines? UID?</li>
-<li>Containers (docker)? UID?</li>
-<li>Active instances?</li>
-</ul>
+<p>For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee</p>
 <h1 id="license"><a href="#license">License</a></h1>
 <p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
 <h1 id="references"><a href="#references">References</a></h1>
-    <ol class="bibliography"><li><b>@principles</b><br/><span id="principles">[1]A. M. Smith, D. S. Katz, K. E. Niemeyer, and FORCE11 Software Citation Working Group, “Software citation principles,” <i>PeerJ Computer Science</i>, vol. 2, p. e86, Sep. 2016 [Online]. Available at: https://doi.org/10.7717/peerj-cs.86</span></li></ol>
+    <ol class="bibliography"><li><b>@principles</b><br/><span id="principles">[1]A. M. Smith, D. S. Katz, K. E. Niemeyer, and FORCE11 Software Citation Working Group, “Software citation principles,” <i>PeerJ Computer Science</i>, vol. 2, p. e86, Sep. 2016 [Online]. Available at: https://doi.org/10.7717/peerj-cs.86</span></li>
+<li><b>@standardized-citation-files</b><br/><span id="standardized-citation-files">[2]S. Druskat, “Track 2 Lightning Talk: Should CITATION files be standardized?,” in <i>Proceedings of the Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</i>, 2017. </span></li></ol>
     </article>
 
     <span class="print-footer">Citation File Format (CFF) - September 19, 2017 - Stephan Druskat</span>
