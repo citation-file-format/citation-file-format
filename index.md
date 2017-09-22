@@ -24,7 +24,10 @@ This document reflects the first version of the *Citation File Format* (CFF).
 CFF has been developed in the context of the [*Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)*](http://wssspe.researchcomputing.org.uk/wssspe5-1/), which was held on 6 September 2017 in Manchester, UK.
 More specifically, the constraints for CFF has been developed in the discusion and speed blogging group "Development and implementation of a standard format for CITATION files", whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).
 
-CFF Version 1.0 has been developed by Stephan Druskat with contributions from the other members of the group to provide the first iteration of a format for `CITATION` files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which has been published on the [blog page](https://www.software.ac.uk/blog) of the [Software Sustainability Institute](https://www.software.ac.uk/).
+CFF Version 1.0 has been developed by Stephan Druskat with contributions from the following.
+
+
+CFF has been developed to provide the first iteration of a format for `CITATION` files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which will be published on the [blog page](https://www.software.ac.uk/blog) of the [Software Sustainability Institute](https://www.software.ac.uk/).
 
 ## Rationale
 
@@ -72,7 +75,7 @@ CFF defines the following keys.
 
   collection&#x2011;title        String                        The title of a collection or proceedings
 
-  commit                      String                           The commit hash or revision number of the work
+  commit                      String                           The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work
 
   conference                  Entity                           The conference where the work was presented
 
@@ -158,9 +161,11 @@ CFF defines the following keys.
 
   repository&#x2011;code         String (*URL*)                   The version control system where the source code of the work is stored
 
-  repository&#x2011;executable   String (*URL*)                   The repository where the executable version of the work is stored
+  repository&#x2011;artifact   String (*URL*)                   The repository where the (executable/binary) artifact of the work is stored
 
   sender                      Collection of **entities**       The sender of a personal communication
+
+  status                      **Status string**                       The publication status of the work                           
 
   start                       Integer                          The start page of the work
 
@@ -168,7 +173,7 @@ CFF defines the following keys.
 
   translators                 Collection of **entities**       The translator of a work
 
-  type                        **Reference type string**            The type of the work
+  type                        **Work Type string**             The type of the work
 
   url                         String (*URL*)                   The URL of the work
 
@@ -255,7 +260,21 @@ An entity representing a person can be assigned a role. The defined roles are:
   -------------------------------------------------------------
   Table: Defined roles for entities.
 
-## Reference types
+## Work Types
+
+## Statuses
+
+Works can have a different status of publication, e.g., journal papers. CFF provides the following defined statuses for works.
+
+  Status (String)    Description
+  ------------------ -----------------------------
+  **in-preparation**     A work in preparation, e.g., a manuscript
+  **abstract**           The abstract of a work
+  **submitted**          A work that has been submitted for publication
+  **in-press**           A work that has been accepted for publication but has not yet been published
+  **advance-online**     A work that has been published online in advance of publication in the target medium
+  ------------------ -----------------------------
+  Table: Defined statuses for works
 
 ### Software-specific keys
 
