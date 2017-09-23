@@ -46,7 +46,7 @@
 <li><a href="#file-structure">File structure</a></li>
 <li><a href="#formatting">Formatting</a></li>
 <li><a href="#keys">Keys</a><ul>
-<li><a href="#details">Details</a></li>
+<li><a href="#exemplary-use-cases">Exemplary use cases</a></li>
 </ul></li>
 <li><a href="#entities">Entities</a><ul>
 <li><a href="#roles">Roles</a></li>
@@ -54,7 +54,10 @@
 <li><a href="#statuses">Statuses</a></li>
 <li><a href="#work-types">Work Types</a></li>
 <li><a href="#schema">Schema</a></li>
-<li><a href="#examples">Examples</a></li>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#a-software-with-a-doi">A software with a DOI</a></li>
+<li><a href="#a-software-without-a-doi">A software without a DOI</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#infrastructure">Infrastructure</a></li>
 <li><a href="#contributions">Contributions</a></li>
@@ -125,6 +128,7 @@
     <span class="kw">-</span> <span class="fu">name:</span> McAuthor::Clodagh
       <span class="fu">orcid:</span> 0000-0001-1234-5678
       <span class="fu">role:</span> main-author
+    <span class="kw">-</span> <span class="fu">name:</span> Nown::Unk
     <span class="kw">-</span> <span class="fu">name:</span> Stant::Studentass I.
       <span class="fu">orcid:</span> 0000-0001-4321-4083
       <span class="fu">role:</span> contributor
@@ -488,8 +492,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="details"><a href="#details">Details</a></h3>
-<p>This section details some of the keys where necessary to avoid ambiguity.</p>
+<h3 id="exemplary-use-cases"><a href="#exemplary-use-cases">Exemplary use cases</a></h3>
+<p>This section details exemplary use cases for some of the keys to avoid ambiguity/misuse.</p>
 <p><strong>abstract</strong></p>
 <ul>
 <li>If the work is a journal paper or other academic work: The abstract of the work.</li>
@@ -502,7 +506,8 @@
 </ul>
 <p><strong>dependencies</strong></p>
 <ul>
-<li>If the work is a software: A URL of a metadate entry, e.g., <code>http://depsy.org/package/python/nltk</code>; the URI or a URL of a file listing the software's dependencies, e.g., <code>file:///NOTICE</code> (if the artifact of the software version available from <code>repository-artifact</code> includes a <code>NOTICE</code> file in the root folder), or <code>https:// github.com/user/project/blob/master/NOTICE</code>.</li>
+<li>If the work is a software: A URL of a metadata entry, e.g., <code>http://depsy.org/package/python/nltk</code>; the URI or a URL of a file listing the software's dependencies, e.g., <code>file:///NOTICE</code> (if the artifact of the software version available from <code>repository-artifact</code> includes a <code>NOTICE</code> file in the root folder), or <code>https:// github.com/user/project/blob/master/NOTICE</code>.</li>
+<li>If the work is a virtual machine or a software container: A URI of a file, or a URL of a website, listing the software packages that are installed on the virtual machine or included in the container.</li>
 </ul>
 <p><strong>format</strong></p>
 <ul>
@@ -910,44 +915,74 @@
 <h2 id="schema"><a href="#schema">Schema</a></h2>
 <p>It is planned to provide a PyKwalify schema for the validation of CFF files. This is work in progress.</p>
 <h2 id="examples"><a href="#examples">Examples</a></h2>
+<h3 id="a-software-with-a-doi"><a href="#a-software-with-a-doi">A software with a DOI</a></h3>
+<p>Note that <span class="citation" data-cites="principles">[@principles, p. 12]</span> recommends</p>
+<blockquote>
+<p>[...] the use of DOIs as the unique identifier due to their common usage and acceptance, particularly as they are the standard for other digital products such as publications.</p>
+</blockquote>
+<p>Furthermore, DOIs should point to a &quot;unique, specific software version&quot; <span class="citation" data-cites="principles">[@principles, p. 12]</span>. Also it is recommended <span class="citation" data-cites="principles">[@principles, p. 13]</span> that:</p>
+<blockquote>
+<p>the [DOI] should resolve to a persistent landing page that contains metadata and a link to the software itself, rather than directly to the source code files, repository, or executable.</p>
+</blockquote>
+<p>Therefore, a minimal <code>CITATION.cff</code> file in such a case would look similar to the following.</p>
 <pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span> &quot;If you use this software, please cite the software itself and the journal paper describing its implementation as given below.&quot;
-<span class="kw">-</span> <span class="fu">TYPE:</span> &quot;SOFTWARE (Use YAML explicit typing? !software)&quot;
-  <span class="fu">authors:</span> 
-    <span class="kw">-</span> <span class="fu">firstname:</span> Stephan
-      <span class="fu">lastname:</span> Druskat
-      <span class="fu">orcid:</span> 1234-5678-9012-3456
-    <span class="kw">-</span> <span class="fu">firstname:</span> Neil
-      <span class="fu">lastname:</span> &quot;Chue Hong&quot;
-    <span class="kw">-</span> <span class="fu">firstname:</span> Radovan
-      <span class="fu">lastname:</span> Bast
-      <span class="fu">orcid:</span> 1234-5678-9012-3456
-  <span class="fu">csv:</span> &quot;git://github.com/sdruskat/cffp&quot;
+<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite it as below.
+<span class="kw">-</span> <span class="fu">type:</span> software
+  <span class="fu">authors:</span>
+    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
+      <span class="fu">orcid:</span> 0000-0003-4925-7248
+  <span class="fu">title:</span> Stephan&#39;s Research Software
+  <span class="fu">version:</span> 1.0.4
+  <span class="fu">doi:</span> 10043/zenodo.1234</code></pre>
+<p>A more comprehensive version could look similar to the following.</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite it as below.
+<span class="kw">-</span> <span class="fu">type:</span> software
+  <span class="fu">authors:</span>
+    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
+      <span class="fu">orcid:</span> 0000-0003-4925-7248
+      <span class="fu">affiliation:</span> Humboldt-Universität zu Berlin, Dept. of German Studies and Linguistics
+      <span class="fu">email:</span> mail@sdruskat.net
+      <span class="fu">website:</span> https://hu.berlin/sdruskat
+  <span class="fu">title:</span> Stephan&#39;s Research Software
+  <span class="fu">version:</span> 1.0.4
   <span class="fu">doi:</span> 10043/zenodo.1234
-  <span class="fu">title:</span> &quot;Citation File Format Parser&quot;
-  <span class="fu">version:</span> &quot;1.1.2&quot;
-<span class="kw">-</span> <span class="fu">TYPE:</span> JOURNAL
-  <span class="fu">authors:</span> 
-    <span class="kw">-</span> <span class="fu">firstname:</span> Stephan
-      <span class="fu">lastname:</span> Druskat
-      <span class="fu">orcid:</span> 1234-5678-9012-3456
-    <span class="kw">-</span> <span class="fu">firstname:</span> Neil
-      <span class="fu">lastname:</span> &quot;Chue Hong&quot;
-    <span class="kw">-</span> <span class="fu">firstname:</span> Radovan
-      <span class="fu">lastname:</span> Bast2
-      <span class="fu">orcid:</span> 1234-5678-9012-3456
-  <span class="fu">day:</span> 9
-  <span class="fu">doi:</span> 10043/zenodo.12345
-  <span class="fu">frompage:</span> 1
-  <span class="fu">issue:</span> 11
-  <span class="fu">journal:</span> &quot;Journal for Open Research Software (JORS)&quot;
-  <span class="fu">month:</span> september
-  <span class="fu">subtitle:</span> &quot;Version 1.0&quot;
-  <span class="fu">title:</span> &quot;The Citation File Format&quot;
-  <span class="fu">topage:</span> 34
-  <span class="fu">volume:</span> 2017
-  <span class="fu">year:</span> 2017
-</code></pre>
+  <span class="fu">commit:</span> ab3d513
+  <span class="fu">repository-code:</span> https://github.com/sdruskat/stephans-research-software
+  <span class="fu">repository-artifact:</span> https://hu.berlin/nexus/srs
+  <span class="fu">date-published:</span> 2017-09-23
+  <span class="fu">dependencies:</span> https://github.com/sdruskat/stephans-research-software/blob/srs-1.0.4/NOTICE
+  <span class="fu">keywords:</span>
+    <span class="kw">-</span> McAuthor&#39;s algorithm
+    - linguistics
+    - nlp
+    - parser
+    - deep convolutional neural network
+  languages:
+    - Java 1.8
+    - Python 3.3
+    - C
+    - Haskell
+    - Turbo Pascal
+    - Rust
+  license: Apache License, Version 2.0
+  license-url: http://www.apache.org/licenses/LICENSE-2.0
+  url: https://sdruskat.github.io/stephans-research-software</code></pre>
+<h3 id="a-software-without-a-doi"><a href="#a-software-without-a-doi">A software without a DOI</a></h3>
+<p>For software without a DOI, it is recommended that &quot;the metadata should still provide information on how to access the specific software, but this may be a company’s product number or a link to a website that allows the software be purchased.&quot; <span class="citation" data-cites="principles">[@principles, p. 13]</span>. Furthermore, &quot;if the version number and release date are not available, the download date can be used. Similarly, the contact name/email is an alternative to the location/repository.&quot; <span class="citation" data-cites="principles">[@principles, p. 7]</span></p>
+<p>Hence, for a closed source software without a DOI for which the version number and release date cannot be determined, a <code>CITATION.cff</code> file could look like this.</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span> If you dare to use this commercial, closed-source, unversioned software in your research, please at least cite it as below.
+<span class="kw">-</span> <span class="fu">type:</span> software
+  <span class="fu">title:</span> Opaquity
+  <span class="fu">number:</span> opq-1234-XZVF-ACME-RLY
+  <span class="fu">date-downloaded:</span> 2017-02-31
+  <span class="fu">contact:</span>
+    <span class="kw">-</span> <span class="fu">name:</span> Vader::Darth
+      <span class="fu">affiliation:</span> Dark Side Software
+      <span class="fu">location:</span> DS-1 Orbital Battle Station, near Scarif
+      <span class="fu">email:</span> father@imperial-empire.com
+      <span class="fu">tel:</span> +850 (0)123-45-666</code></pre>
 <h1 id="infrastructure"><a href="#infrastructure">Infrastructure</a></h1>
 <p>It is planned to provide further infrastructure (e.g., software packages), to support the following use cases for CFF:</p>
 <ul>
@@ -958,6 +993,7 @@
 </ul>
 <p>For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee</p>
 <h1 id="contributions"><a href="#contributions">Contributions</a></h1>
+<p>Link to <code>CONTRIBUTING.md</code>, tba.</p>
 <h1 id="license"><a href="#license">License</a></h1>
 <p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
 <h1 id="references"><a href="#references">References</a></h1>
