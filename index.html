@@ -495,7 +495,7 @@
 <li>If the work is a software: The version of the referenced software.</li>
 </ul>
 <h2 id="entities"><a href="#entities">Entities</a></h2>
-<p>Entity objects can represent different types of entities, e.g., a person, publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key <code>name</code> is mandatory. When the entity represents a person, the <code>name</code> key must be formatted following the pattern <code>&quot;{last names} :: {first names} {middle names}&quot;</code>. This pattern is used to parse names correctly, and implicitly disambiguate person entities from other entities. Therefore, if a non-person entity name follows this pattern, it must be given as <code>{first part of the name} \:: {second part of the name third part of the name}</code>.</p>
+<p>Entity objects can represent different types of entities, e.g., a person, publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key <code>name</code> is mandatory. When the entity represents a person, the <code>name</code> key must be formatted following the pattern <code>&quot;{last names} :: {first names} {middle names}&quot;</code>. This pattern is used to parse names correctly, and implicitly disambiguate person entities from other entities. Therefore, if a non-person entity name follows this pattern, it must be given as <code>{first part of the name} \:: {second part of the name}</code>.</p>
 <p>Note that the whitespaces preceding and following the separators (<code>::</code>, <code>\::</code>) are optional.</p>
 <table>
 <caption>Complete list of entity keys.</caption>
