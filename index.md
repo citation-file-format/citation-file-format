@@ -110,6 +110,7 @@ Complete the reference with the respective information, and perhaps add more ref
     - name: McAuthor::Clodagh
       orcid: 0000-0001-1234-5678
       role: main-author
+    - name: Nown::Unk
     - name: Stant::Studentass I.
       orcid: 0000-0001-4321-4083
       role: contributor
@@ -274,9 +275,9 @@ CFF defines the following keys.
   ----------------------- ---------------------------- -------------------------------------------------------------------------------------------------------
 Table: Complete list of CFF keys.
 
-### Details
+### Exemplary use cases
 
-This section details some of the keys where necessary to avoid ambiguity.
+This section details exemplary use cases for some of the keys to avoid ambiguity/misuse.
 
 **abstract**
 
@@ -290,7 +291,8 @@ This section details some of the keys where necessary to avoid ambiguity.
 
 **dependencies**
 
-- If the work is a software: A URL of a metadate entry, e.g., `http://depsy.org/package/python/nltk`; the URI or a URL of a file listing the software's dependencies, e.g., `file:///NOTICE` (if the artifact of the software version available from `repository-artifact` includes a `NOTICE` file in the root folder), or `https:// github.com/user/project/blob/master/NOTICE`.
+- If the work is a software: A URL of a metadata entry, e.g., `http://depsy.org/package/python/nltk`; the URI or a URL of a file listing the software's dependencies, e.g., `file:///NOTICE` (if the artifact of the software version available from `repository-artifact` includes a `NOTICE` file in the root folder), or `https:// github.com/user/project/blob/master/NOTICE`.
+- If the work is a virtual machine or a software container: A URI of a file, or a URL of a website, listing the software packages that are installed on the virtual machine or included in the container.
 
 **format**
 
@@ -491,47 +493,91 @@ It is planned to provide a PyKwalify schema for the validation of CFF files. Thi
 
 ## Examples
 
-```yaml 
+### A software with a DOI
 
-- message: "If you use this software, please cite the software itself and the journal paper describing its implementation as given below."
-- TYPE: "SOFTWARE (Use YAML explicit typing? !software)"
-  authors: 
-    - firstname: Stephan
-      lastname: Druskat
-      orcid: 1234-5678-9012-3456
-    - firstname: Neil
-      lastname: "Chue Hong"
-    - firstname: Radovan
-      lastname: Bast
-      orcid: 1234-5678-9012-3456
-  csv: "git://github.com/sdruskat/cffp"
+Note that [@principles, p. 12] recommends
+
+> [...] the use of DOIs as the unique identifier due to their common usage and acceptance, particularly as they are the standard for other digital products such as publications.
+
+Furthermore, DOIs should point to a "unique, specific software version" [@principles, p. 12]. Also it is recommended [@principles, p. 13] that:
+
+> the [DOI] should resolve to a persistent landing page that contains metadata and a link to the software itself, rather than directly to the source code files, repository, or executable.
+
+Therefore, a minimal `CITATION.cff` file in such a case would look similar to the following.
+
+```yaml
+
+- message: If you use this software, please cite it as below.
+- type: software
+  authors:
+    - name: Druskat::Stephan
+      orcid: 0000-0003-4925-7248
+  title: Stephan's Research Software
+  version: 1.0.4
   doi: 10043/zenodo.1234
-  title: "Citation File Format Parser"
-  version: "1.1.2"
-- TYPE: JOURNAL
-  authors: 
-    - firstname: Stephan
-      lastname: Druskat
-      orcid: 1234-5678-9012-3456
-    - firstname: Neil
-      lastname: "Chue Hong"
-    - firstname: Radovan
-      lastname: Bast2
-      orcid: 1234-5678-9012-3456
-  day: 9
-  doi: 10043/zenodo.12345
-  frompage: 1
-  issue: 11
-  journal: "Journal for Open Research Software (JORS)"
-  month: september
-  subtitle: "Version 1.0"
-  title: "The Citation File Format"
-  topage: 34
-  volume: 2017
-  year: 2017
-
-
 ```
+
+A more comprehensive version could look similar to the following.
+
+```yaml
+
+- message: If you use this software, please cite it as below.
+- type: software
+  authors:
+    - name: Druskat::Stephan
+      orcid: 0000-0003-4925-7248
+      affiliation: Humboldt-Universität zu Berlin, Dept. of German Studies and Linguistics
+      email: mail@sdruskat.net
+      website: https://hu.berlin/sdruskat
+  title: Stephan's Research Software
+  version: 1.0.4
+  doi: 10043/zenodo.1234
+  commit: ab3d513
+  repository-code: https://github.com/sdruskat/stephans-research-software
+  repository-artifact: https://hu.berlin/nexus/srs
+  date-published: 2017-09-23
+  dependencies: https://github.com/sdruskat/stephans-research-software/blob/srs-1.0.4/NOTICE
+  keywords:
+    - McAuthor's algorithm
+    - linguistics
+    - nlp
+    - parser
+    - deep convolutional neural network
+  languages:
+    - Java 1.8
+    - Python 3.3
+    - C
+    - Haskell
+    - Turbo Pascal
+    - Rust
+  license: Apache License, Version 2.0
+  license-url: http://www.apache.org/licenses/LICENSE-2.0
+  url: https://sdruskat.github.io/stephans-research-software
+```
+
+
+### A software without a DOI
+
+For software without a DOI, it is recommended that "the metadata should still provide information on how to access the specific software, but this may be a company’s product number or a link to a website that allows the software be purchased." [@principles, p. 13]. Furthermore, "if the version number and release date are not available, the download date can be used. Similarly, the contact name/email is an alternative to the location/repository." [@principles, p. 7]
+
+Hence, for a closed source software without a DOI for which the version number and release date cannot be determined, a `CITATION.cff` file could look like this.
+
+```yaml
+
+- message: If you dare to use this commercial, closed-source, unversioned software in your research, please at least cite it as below.
+- type: software
+  title: Opaquity
+  number: opq-1234-XZVF-ACME-RLY
+  date-downloaded: 2017-02-31
+  contact:
+    - name: Vader::Darth
+      affiliation: Dark Side Software
+      location: DS-1 Orbital Battle Station, near Scarif
+      email: father@imperial-empire.com
+      tel: +850 (0)123-45-666
+```
+
+
 # Infrastructure
 
 It is planned to provide further infrastructure (e.g., software packages), to support the following use cases for CFF:
@@ -544,6 +590,8 @@ It is planned to provide further infrastructure (e.g., software packages), to su
 For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee
 
 # Contributions
+
+Link to `CONTRIBUTING.md`, tba.
 
 # License
 
