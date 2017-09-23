@@ -377,7 +377,7 @@ Works can have a different status of publication, e.g., journal papers. CFF prov
   **dictionary**
   **edited-work**
   **encyclopedia**
-  **film-broadcast - Film or Broadcast 1**
+  **film-broadcast**
   **generic**
   **government-document**
   **grant**
