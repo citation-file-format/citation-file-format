@@ -57,6 +57,7 @@
 <li><a href="#examples">Examples</a></li>
 </ul></li>
 <li><a href="#infrastructure">Infrastructure</a></li>
+<li><a href="#contributions">Contributions</a></li>
 <li><a href="#license">License</a></li>
 <li><a href="#references">References</a></li>
 </ul>
@@ -67,19 +68,77 @@
 <p>CFF Version 1.0 has been developed by Stephan Druskat with contributions from the following.</p>
 <p>CFF has been developed to provide the first iteration of a format for <code>CITATION</code> files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which will be published on the <a href="https://www.software.ac.uk/blog">blog page</a> of the <a href="https://www.software.ac.uk/">Software Sustainability Institute</a>.</p>
 <h2 id="rationale"><a href="#rationale">Rationale</a></h2>
-<p>The rationale for a standardized, machine- and human-readable format for <code>CITATION</code> files is discussed in <span class="citation" data-cites="standardized-citation-files">[@standardized-citation-files]</span>. CFF has been developed to support all use cases for the citation of software, as discussed in <span class="citation" data-cites="principles">[@principles]</span>, and thus promote attribution and credit for software in general, and research software in paticular.</p>
+<blockquote>
+<p>The rationale for a standardized, machine- and human-readable format for <code>CITATION</code> files is discussed in <span class="citation" data-cites="standardized-citation-files">[@standardized-citation-files]</span>. CFF has been developed to support all use cases for the citation of software, as discussed in <span class="citation" data-cites="principles">[@principles]</span>, and thus promote attribution and credit for software in general, and research software in particular.</p>
+</blockquote>
+<p>In a blog post <span class="citation" data-cites="citation-files">[@citation-files]</span>, Robin Wilson has introduced <code>CITATION</code> files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.</p>
+<p>Some have followed the advice, and have uploaded <code>CITATION</code> (or <code>CITATION.md</code>, or <code>CITATION.txt</code>) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized <code>CITATION</code> files are not machine-readable, and machine-readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.</p>
 <h2 id="goals"><a href="#goals">Goals</a></h2>
-<p>The goal of CFF is to provide an all-purpose citation format in general (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, such as a dedicated type for source code, and one for executables, and a reference key for versions.</p>
-<p>The ultimate goal of CFF as a project is of course comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc.</p>
+<p>The goal of CFF is to provide an all-purpose citation format (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, e.g., a dedicated type for source code and one for executables, and a reference key for versions.</p>
+<p>The ultimate goal of CFF as a project is comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc., in order to boost the visibility of citation information for research software, and empower the fair distribution of credit for software development, maintenance, etc., in academia.</p>
 <h2 id="concepts"><a href="#concepts">Concepts</a></h2>
-<p>Some of the concepts of CFF include that all available keys can be used for all Work Types, and leave reasonability of use to format users and providers of tooling, such as conversion software for CFF and other formats.</p>
-<p>If a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the <code>section</code> key in the parent type (i.e., <code>book</code> for a section of a book, etc.) should be used.</p>
+<p>For users of other reference formats, such as BibTeX or RIS, it is important to note that in CFF, all available keys can be used for all Work Types. CFF leaves reasonability of use with format users and providers of tooling, such as conversion software for CFF and other formats. In other words, the use of keys should follow common sense. If not, it will confuse the user of the <code>CITATION</code> file, and some of the information will probably be lost in re-use scenarios such as conversion or display. If you feel that CFF does not offer a solution for your specific use case, please consider contributing to the format as described in section <a href="#contributions">Contributions</a>.</p>
+<p>Furthermore please note that if a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the <code>section</code> key in the parent type (i.e., <code>book</code> for a section of a book, etc.) should be used.</p>
 <h1 id="format"><a href="#format">Format</a></h1>
+<p>CFF <code>CITATION</code> files must be named <code>CITATION.cff</code>.</p>
 <p>CFF is implemented in YAML 1.2, as the language provides optimal human-readability and the required core data types.</p>
 <h2 id="file-structure"><a href="#file-structure">File structure</a></h2>
-<p>tbc</p>
+<p>CFF <code>CITATION</code> files are made up of</p>
+<ul>
+<li>exactly one message containing instructions on how to cite the software which the file is associated with;</li>
+<li>one or more references, containing at least <code>type</code>, <code>author</code>, and <code>title</code> information.</li>
+</ul>
+<p>For full examples, please see section <a href="#examples">Examples</a>.</p>
+<p>Start the file with a message object:</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite the works below.</code></pre>
+<p>Add a reference object:</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite the works below.
+<span class="kw">-</span> <span class="fu">type:</span> software-code
+  <span class="fu">authors:</span>
+    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
+      <span class="fu">orcid:</span> 0000-0003-4925-7248
+  <span class="fu">title:</span> Stephan&#39;s Research Software
+  <span class="fu">doi:</span> 10043/zenodo.1234</code></pre>
+<p>Complete the reference with the respective information, and perhaps add more references.</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite the works below.
+<span class="kw">-</span> <span class="fu">type:</span> software-code
+  <span class="fu">authors:</span>
+    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
+      <span class="fu">orcid:</span> 0000-0003-4925-7248
+  <span class="fu">title:</span> Stephan&#39;s Research Software
+  <span class="fu">version:</span> 1.0.4
+  <span class="fu">languages:</span>
+    <span class="kw">-</span> Java
+    <span class="kw">-</span> Python
+    <span class="kw">-</span> Haskell
+    <span class="kw">-</span> Rust
+    <span class="kw">-</span> JSON
+  <span class="fu">doi:</span> 10043/zenodo.1234
+<span class="kw">-</span> <span class="fu">type:</span> article
+  <span class="fu">authors:</span>
+    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
+      <span class="fu">orcid:</span> 0000-0003-4925-7248
+      <span class="fu">role:</span> main-author
+    <span class="kw">-</span> <span class="fu">name:</span> McAuthor::Clodagh
+      <span class="fu">orcid:</span> 0000-0001-1234-5678
+      <span class="fu">role:</span> main-author
+    <span class="kw">-</span> <span class="fu">name:</span> Stant::Studentass I.
+      <span class="fu">orcid:</span> 0000-0001-4321-4083
+      <span class="fu">role:</span> contributor
+  <span class="fu">title:</span> A fast implementation of McAuthor&#39;s algorithm
+  <span class="fu">journal:</span> Journal of Sound Research Software
+  <span class="fu">volume:</span> 42
+  <span class="fu">issue:</span> 1
+  <span class="fu">month:</span> 1
+  <span class="fu">year:</span> 2017
+  <span class="fu">start:</span> 138
+  <span class="fu">end:</span> 147
+  <span class="fu">doi:</span> 12345/josrs.9876543</code></pre>
 <h2 id="formatting"><a href="#formatting">Formatting</a></h2>
-<p>tbc (key: whitespace value)</p>
+<p>CFF is YAML 1.2, so it follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (<code>:</code>) after a key should always be followed by a whitespace.</p>
 <h2 id="keys"><a href="#keys">Keys</a></h2>
 <p>CFF defines the following keys.</p>
 <table>
@@ -88,7 +147,7 @@
 <tr class="header">
 <th style="text-align: left;"><strong>CFF Key</strong></th>
 <th style="text-align: left;"><strong>CFF Data Type</strong></th>
-<th style="text-align: left;"><strong>CFF Description</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -898,11 +957,13 @@
 <li>Converting CFF <code>CITATION</code> files</li>
 </ul>
 <p>For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee</p>
+<h1 id="contributions"><a href="#contributions">Contributions</a></h1>
 <h1 id="license"><a href="#license">License</a></h1>
 <p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
 <h1 id="references"><a href="#references">References</a></h1>
     <ol class="bibliography"><li><b>@principles</b><br/><span id="principles">[1]A. M. Smith, D. S. Katz, K. E. Niemeyer, and FORCE11 Software Citation Working Group, “Software citation principles,” <i>PeerJ Computer Science</i>, vol. 2, p. e86, Sep. 2016 [Online]. Available at: https://doi.org/10.7717/peerj-cs.86</span></li>
-<li><b>@standardized-citation-files</b><br/><span id="standardized-citation-files">[2]S. Druskat, “Track 2 Lightning Talk: Should CITATION files be standardized?,” in <i>Proceedings of the Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</i>, 2017 [Online]. Available at: https://doi.org/10.6084/m9.figshare.3827058</span></li></ol>
+<li><b>@standardized-citation-files</b><br/><span id="standardized-citation-files">[2]S. Druskat, “Track 2 Lightning Talk: Should CITATION files be standardized?,” in <i>Proceedings of the Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</i>, 2017 [Online]. Available at: https://doi.org/10.6084/m9.figshare.3827058</span></li>
+<li><b>@citation-files</b><br/><span id="citation-files">[3]R. Wilson, “Encouraging citation of software–introducing CITATION files.” 2013 [Online]. Available at: https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files</span></li></ol>
     </article>
 
     <span class="print-footer">Citation File Format (CFF) - September 19, 2017 - Stephan Druskat</span>
