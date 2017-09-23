@@ -537,7 +537,7 @@ A more comprehensive version could look similar to the following.
   date-published: 2017-09-23
   dependencies: https://github.com/sdruskat/stephans-research-software/blob/srs-1.0.4/NOTICE
   keywords:
-    - McAuthor's algorithm
+    - "McAuthor's algorithm"
     - linguistics
     - nlp
     - parser
