@@ -31,31 +31,103 @@ CFF has been developed to provide the first iteration of a format for `CITATION`
 
 ## Rationale
 
-The rationale for a standardized, machine- and human-readable format for `CITATION` files is discussed in [@standardized-citation-files]. CFF has been developed to support all use cases for the citation of software, as discussed in [@principles], and thus promote attribution and credit for software in general, and research software in paticular.
+> The rationale for a standardized, machine- and human-readable format for `CITATION` files is discussed in [@standardized-citation-files]. CFF has been developed to support all use cases for the citation of software, as discussed in [@principles], and thus promote attribution and credit for software in general, and research software in particular.
+
+In a blog post [@citation-files], Robin Wilson has introduced `CITATION` files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.
+
+Some have followed the advice, and have uploaded `CITATION` (or `CITATION.md`, or `CITATION.txt`) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized `CITATION` files are not machine-readable, and machine-readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.
 
 ## Goals
 
-The goal of CFF is to provide an all-purpose citation format in general (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, such as a dedicated type for source code, and one for executables, and a reference key for versions.
+The goal of CFF is to provide an all-purpose citation format (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, e.g., a dedicated type for source code and one for executables, and a reference key for versions.
 
-The ultimate goal of CFF as a project is of course comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc.
+The ultimate goal of CFF as a project is comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc., in order to boost the visibility of citation information for research software, and empower the fair distribution of credit for software development, maintenance, etc., in academia.
 
 ## Concepts
 
-Some of the concepts of CFF include that all available keys can be used for all Work Types, and leave reasonability of use to format users and providers of tooling, such as conversion software for CFF and other formats.
+For users of other reference formats, such as BibTeX or RIS, it is important to note that in CFF, all available keys can be used for all Work Types. CFF leaves reasonability of use with format users and providers of tooling, such as conversion software for CFF and other formats. In other words, the use of keys should follow common sense. If not, it will confuse the user of the `CITATION` file, and some of the information will probably be lost in re-use scenarios such as conversion or display. If you feel that CFF does not offer a solution for your specific use case, please consider contributing to the format as described in section [Contributions].
 
-If a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the `section` key in the parent type (i.e., `book` for a section of a book, etc.) should be used.
+Furthermore please note that if a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the `section` key in the parent type (i.e., `book` for a section of a book, etc.) should be used.
 
 # Format
 
-CFF is implemented in YAML 1.2, as the language provides optimal human-readability and the required core data types. 
+CFF `CITATION` files must be named `CITATION.cff`.
+
+CFF is implemented in YAML 1.2, as the language provides optimal human-readability and the required core data types.
 
 ## File structure
 
-tbc
+CFF `CITATION` files are made up of 
+
+- exactly one message containing instructions on how to cite the software which the file is associated with;
+- one or more references, containing at least `type`, `author`, and `title` information.
+
+For full examples, please see section [Examples].
+
+Start the file with a message object:
+
+```yaml
+
+- message: If you use this software, please cite the works below.
+```
+
+Add a reference object:
+
+```yaml
+
+- message: If you use this software, please cite the works below.
+- type: software-code
+  authors:
+    - name: Druskat::Stephan
+      orcid: 0000-0003-4925-7248
+  title: Stephan's Research Software
+  doi: 10043/zenodo.1234
+```
+
+Complete the reference with the respective information, and perhaps add more references.
+
+```yaml
+
+- message: If you use this software, please cite the works below.
+- type: software-code
+  authors:
+    - name: Druskat::Stephan
+      orcid: 0000-0003-4925-7248
+  title: Stephan's Research Software
+  version: 1.0.4
+  languages:
+    - Java
+    - Python
+    - Haskell
+    - Rust
+    - JSON
+  doi: 10043/zenodo.1234
+- type: article
+  authors:
+    - name: Druskat::Stephan
+      orcid: 0000-0003-4925-7248
+      role: main-author
+    - name: McAuthor::Clodagh
+      orcid: 0000-0001-1234-5678
+      role: main-author
+    - name: Stant::Studentass I.
+      orcid: 0000-0001-4321-4083
+      role: contributor
+  title: A fast implementation of McAuthor's algorithm
+  journal: Journal of Sound Research Software
+  volume: 42
+  issue: 1
+  month: 1
+  year: 2017
+  start: 138
+  end: 147
+  doi: 12345/josrs.9876543
+```
+
 
 ## Formatting
 
-tbc (key: whitespace value)
+CFF is YAML 1.2, so it follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (`:`) after a key should always be followed by a whitespace.
 
 ## Keys
 
@@ -377,7 +449,7 @@ Works can have a different status of publication, e.g., journal papers. CFF prov
   **dictionary**
   **edited-work**
   **encyclopedia**
-  **film-broadcast**
+  **film-broadcast**
   **generic**
   **government-document**
   **grant**
@@ -470,6 +542,8 @@ It is planned to provide further infrastructure (e.g., software packages), to su
 - Converting CFF `CITATION` files
 
 For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee
+
+# Contributions
 
 # License
 
