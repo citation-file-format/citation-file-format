@@ -2,7 +2,7 @@
 title: Citation File Format (CFF)  
 subtitle: "Specification - Version 1.0.0-beta"
 author: Stephan Druskat (mail@sdruskat.net)
-date: 19 September 2017
+date: 24 September 2017
 abstract: 
   The *Citation File Format* (*CFF*) is a human- *and* machine-readable format for citation files, which provide references to (research and scientific) software to be used for citation and other types of reference.
   The format aims to support all use cases for software citation described in [@principles].
