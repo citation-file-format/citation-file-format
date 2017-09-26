@@ -2,10 +2,8 @@
 
 Format specification for `CITATION` files. `CITATION` files provide reference and citation information for (research/scientific) software.
 
-[Read the specifications](cff-specifications-1.0.pdf).
+**Read the specifications**: [online](http://sdruskat.github.io/citation-file-format) | [PDF](http://sdruskat.github.io/citation-file-format/assets/pdf/cff-specifications.pdf).
 
-Build the specifications PDF with [pandoc](https://pandoc.org/):
+Build the specifications PDF with [the build script `build.sh`](https://github.com/sdruskat/citation-file-format/blob/master/build.sh).
 
-````
-pandoc --filter pandoc-citeproc --bibliography=references.bib -o cff-specifications-1.0.pdf cff-specifications-1.0.md
-````
+Jekyll site build via Travis and [`build-jekyll.sh`](https://github.com/sdruskat/citation-file-format/blob/master/build-jekyll.sh).
