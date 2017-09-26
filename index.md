@@ -25,7 +25,7 @@ More specifically, the constraints for CFF has been developed in the discusion a
 
 CFF Version 1.0 has been developed by Stephan Druskat with contributions from the following.
 
-- Raniere Silva ([@rgaiacs](https://github.com/rgaiacs)) - Reporter
+- Raniere Silva ([\@rgaiacs](https://github.com/rgaiacs)) - Reporter
 
 CFF has been developed to provide the first iteration of a format for `CITATION` files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which will be published on the [blog page](https://www.software.ac.uk/blog) of the [Software Sustainability Institute](https://www.software.ac.uk/).
 
