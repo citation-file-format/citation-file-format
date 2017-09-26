@@ -145,8 +145,6 @@ CFF defines the following keys.
 
   authors                     Collection of **entities**       The author of a work
 
-  bibtex                      String                           A BibTeX version of the reference
-
   collection&#x2011;title        String                        The title of a collection or proceedings
 
   collection&#x2011;type         String                        The type of a collection  
