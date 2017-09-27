@@ -19,10 +19,9 @@ page:
 git:
   branch: src
 scholar:
-  style: ./ieee-with-url.csl
+  style: ./_bibliography/ieee-with-url.csl
   bibliography: references.bib
-  bibliography_template: <b>@{{key}}</b><br/>{{reference}}
-  source: ./
+  bibliography_template: bib
 gems: 
   - jekyll-pandoc
   - jekyll/scholar
