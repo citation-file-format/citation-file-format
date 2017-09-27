@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/sdruskat/citation-file-format.svg?branch=master)](https://travis-ci.org/sdruskat/citation-file-format)
+[![Build Status](https://travis-ci.org/sdruskat/citation-file-format.svg?branch=master)](https://travis-ci.org/sdruskat/citation-file-format) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 # Citation File Format (CFF)
 
