@@ -39,19 +39,20 @@ cat pandoc-index.md
 ## Remove tmp file
 rm pandoc-index.md
 
-# cleanup "_site"
+# Build Jekyll
+## cleanup "_site"
 rm -rf _site
 mkdir _site
 
-# clone remote repo to "_site"
+## clone remote repo to "_site"
 git clone https://${GITHUB_TOKEN}@github.com/sdruskat/citation-file-format.git --branch gh-pages _site
 
-# build with Jekyll into "_site"
+## build with Jekyll into "_site"
 gem install jekyll-pandoc
 gem install jekyll-scholar
 bundle exec jekyll build
 
-# push
+## push
 cd _site
 git config user.email "travis-ci@sdruskat.net"
 git config user.name "Travis CI"
