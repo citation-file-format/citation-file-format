@@ -19,7 +19,7 @@ page:
 git:
   branch: src
 scholar:
-  style: ./_bibliography/ieee-with-url.csl
+  style: ./_bibliography/ieee-with-url-jekyll.csl
   bibliography_template: bib
 gems: 
   - jekyll-pandoc
