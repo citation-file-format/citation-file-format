@@ -198,7 +198,7 @@
           <label variable="locator" form="short"/>
         </if>
         <else>
-          <label variable="locator" form="short" text-case="capitalize-first"/>
+          <label variable="locator" form="short"/>
         </else>
       </choose>
       <text variable="locator"/>
@@ -207,10 +207,10 @@
   <!-- Citation -->
   <citation collapse="citation-number">
     <sort>
-      <key variable="year"/>
+      <key variable="citation-number"/>
     </sort>
     <layout delimiter=", ">
-      <group prefix="[" suffix="]" delimiter=", ">
+      <group prefix="[GAGAGA" suffix="]" delimiter=", ">
         <text variable="citation-number"/>
         <text macro="citation-locator"/>
       </group>
