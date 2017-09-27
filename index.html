@@ -74,8 +74,8 @@
 <li><a href="#references">References</a></li>
 </ul>
 </div>
-<h1 id="introduction"><a href="#introduction">Introduction</a></h1>
-<h2 id="status-of-this-document"><a href="#status-of-this-document">Status of this document</a></h2>
+<h1 id="introduction">Introduction</h1>
+<h2 id="status-of-this-document">Status of this document</h2>
 <p>This document reflects the first version of the <em>Citation File Format</em> (CFF). CFF has been developed in the context of the <a href="http://wssspe.researchcomputing.org.uk/wssspe5-1/"><em>Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</em></a>, which was held on 6 September 2017 in Manchester, UK. More specifically, the constraints for CFF has been developed in the discusion and speed blogging group &quot;Development and implementation of a standard format for CITATION files&quot;, whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).</p>
 <p>CFF Version 1.0 has been developed by Stephan Druskat with contributions from the following.</p>
 <ul>
@@ -83,22 +83,22 @@
 <li>Raniere Silva (<a href="https://github.com/rgaiacs">@rgaiacs</a>): Reporter</li>
 </ul>
 <p>CFF has been developed to provide the first iteration of a format for <code>CITATION</code> files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which will be published on the <a href="https://www.software.ac.uk/blog">blog page</a> of the <a href="https://www.software.ac.uk/">Software Sustainability Institute</a>.</p>
-<h2 id="rationale"><a href="#rationale">Rationale</a></h2>
+<h2 id="rationale">Rationale</h2>
 <blockquote>
 <p>The rationale for a standardized, machine- and human-readable format for <code>CITATION</code> files is discussed in <a href="#standardized-citation-files">[1]</a>. CFF has been developed to support all use cases for the citation of software, as discussed in <a href="#principles">[2]</a>, and thus promote attribution and credit for software in general, and research software in particular.</p>
 </blockquote>
 <p>In a blog post <a href="#citation-files">[3]</a>, Robin Wilson has introduced <code>CITATION</code> files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.</p>
 <p>Some have followed the advice, and have uploaded <code>CITATION</code> (or <code>CITATION.md</code>, or <code>CITATION.txt</code>) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized <code>CITATION</code> files are not machine-readable, and machine-readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.</p>
-<h2 id="goals"><a href="#goals">Goals</a></h2>
+<h2 id="goals">Goals</h2>
 <p>The goal of CFF is to provide an all-purpose citation format (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, e.g., a dedicated type for source code and one for executables, and a reference key for versions.</p>
 <p>The ultimate goal of CFF as a project is comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc., in order to boost the visibility of citation information for research software, and empower the fair distribution of credit for software development, maintenance, etc., in academia.</p>
-<h2 id="concepts"><a href="#concepts">Concepts</a></h2>
+<h2 id="concepts">Concepts</h2>
 <p>For users of other reference formats, such as BibTeX or RIS, it is important to note that in CFF, all available keys can be used for all Work Types. CFF leaves reasonability of use with format users and providers of tooling, such as conversion software for CFF and other formats. In other words, the use of keys should follow common sense. If not, it will confuse the user of the <code>CITATION</code> file, and some of the information will probably be lost in re-use scenarios such as conversion or display. If you feel that CFF does not offer a solution for your specific use case, please consider contributing to the format as described in section <a href="#contributions">Contributions</a>.</p>
 <p>Furthermore please note that if a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the <code>section</code> key in the parent type (i.e., <code>book</code> for a section of a book, etc.) should be used.</p>
-<h1 id="format"><a href="#format">Format</a></h1>
+<h1 id="format">Format</h1>
 <p>CFF <code>CITATION</code> files must be named <code>CITATION.cff</code>.</p>
 <p>CFF is implemented in YAML 1.2, as the language provides optimal human-readability and the required core data types.</p>
-<h2 id="file-structure"><a href="#file-structure">File structure</a></h2>
+<h2 id="file-structure">File structure</h2>
 <p>CFF <code>CITATION</code> files are made up of</p>
 <ul>
 <li>exactly one message containing instructions on how to cite the software which the file is associated with;</li>
@@ -106,26 +106,26 @@
 </ul>
 <p>For full examples, please see section <a href="#examples">Examples</a>.</p>
 <p>Start the file with a message object:</p>
-<pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite the works below.</code></pre>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite the works below.</span></code></pre></div>
 <p>Add a reference object:</p>
-<pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite the works below.
-<span class="kw">-</span> <span class="fu">type:</span> software-code
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite the works below.</span>
+<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software-code</span>
   <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
-      <span class="fu">orcid:</span> 0000-0003-4925-7248
-  <span class="fu">title:</span> Stephan&#39;s Research Software
-  <span class="fu">doi:</span> 10043/zenodo.1234</code></pre>
+    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
+      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
+  <span class="fu">title:</span><span class="at"> Stephan&#39;s Research Software</span>
+  <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span></code></pre></div>
 <p>Complete the reference with the respective information, and perhaps add more references.</p>
-<pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite the works below.
-<span class="kw">-</span> <span class="fu">type:</span> software-code
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite the works below.</span>
+<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software-code</span>
   <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
-      <span class="fu">orcid:</span> 0000-0003-4925-7248
-  <span class="fu">title:</span> Stephan&#39;s Research Software
-  <span class="fu">version:</span> 1.0.4
+    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
+      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
+  <span class="fu">title:</span><span class="at"> Stephan&#39;s Research Software</span>
+  <span class="fu">version:</span><span class="at"> 1.0.4</span>
   <span class="fu">programming-languages:</span>
     <span class="kw">-</span> java
     <span class="kw">-</span> python
@@ -133,35 +133,40 @@
     <span class="kw">-</span> haskell
     <span class="kw">-</span> pascal
     <span class="kw">-</span> rust
-  <span class="fu">doi:</span> 10043/zenodo.1234
-<span class="kw">-</span> <span class="fu">type:</span> article
+  <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span>
+<span class="kw">-</span> <span class="fu">type:</span><span class="at"> article</span>
   <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
-      <span class="fu">orcid:</span> 0000-0003-4925-7248
-      <span class="fu">role:</span> main-author
-    <span class="kw">-</span> <span class="fu">name:</span> McAuthor::Clodagh
-      <span class="fu">orcid:</span> 0000-0001-1234-5678
-      <span class="fu">role:</span> main-author
-    <span class="kw">-</span> <span class="fu">name:</span> Nown::Unk
-    <span class="kw">-</span> <span class="fu">name:</span> Stant::Studentass I.
-      <span class="fu">orcid:</span> 0000-0001-4321-4083
-      <span class="fu">role:</span> contributor
-  <span class="fu">title:</span> A fast implementation of McAuthor&#39;s algorithm
-  <span class="fu">journal:</span> Journal of Sound Research Software
-  <span class="fu">volume:</span> 42
-  <span class="fu">issue:</span> 1
-  <span class="fu">month:</span> 1
-  <span class="fu">year:</span> 2017
-  <span class="fu">start:</span> 138
-  <span class="fu">end:</span> 147
-  <span class="fu">doi:</span> 12345/josrs.9876543</code></pre>
-<h2 id="formatting"><a href="#formatting">Formatting</a></h2>
+    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
+      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
+      <span class="fu">role:</span><span class="at"> main-author</span>
+    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> McAuthor::Clodagh</span>
+      <span class="fu">orcid:</span><span class="at"> 0000-0001-1234-5678</span>
+      <span class="fu">role:</span><span class="at"> main-author</span>
+    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Nown::Unk</span>
+    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Stant::Studentass I.</span>
+      <span class="fu">orcid:</span><span class="at"> 0000-0001-4321-4083</span>
+      <span class="fu">role:</span><span class="at"> contributor</span>
+  <span class="fu">title:</span><span class="at"> A fast implementation of McAuthor&#39;s algorithm</span>
+  <span class="fu">journal:</span><span class="at"> Journal of Sound Research Software</span>
+  <span class="fu">volume:</span><span class="at"> 42</span>
+  <span class="fu">issue:</span><span class="at"> 1</span>
+  <span class="fu">month:</span><span class="at"> 1</span>
+  <span class="fu">year:</span><span class="at"> 2017</span>
+  <span class="fu">start:</span><span class="at"> 138</span>
+  <span class="fu">end:</span><span class="at"> 147</span>
+  <span class="fu">doi:</span><span class="at"> 12345/josrs.9876543</span></code></pre></div>
+<h2 id="formatting">Formatting</h2>
 <p>CFF is YAML 1.2, so it follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (<code>:</code>) after a key should always be followed by a whitespace.</p>
-<h2 id="keys"><a href="#keys">Keys</a></h2>
+<h2 id="keys">Keys</h2>
 <p>CFF defines the following keys.</p>
-<table>
+<table style="width:99%;">
 <caption>Complete list of CFF keys.</caption>
-<col style="width: 15%" /><col style="width: 26%" /><col style="width: 57%" /><thead>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 26%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
 <tr class="header">
 <th style="text-align: left;"><strong>CFF Key</strong></th>
 <th style="text-align: left;"><strong>CFF Data Type</strong></th>
@@ -501,7 +506,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="exemplary-use-cases"><a href="#exemplary-use-cases">Exemplary use cases</a></h3>
+<h3 id="exemplary-use-cases">Exemplary use cases</h3>
 <p>This section details exemplary use cases for some of the keys to avoid ambiguity/misuse.</p>
 <p><strong>abstract</strong></p>
 <ul>
@@ -562,12 +567,17 @@
 <ul>
 <li>If the work is a software: The version of the referenced software.</li>
 </ul>
-<h2 id="entities"><a href="#entities">Entities</a></h2>
+<h2 id="entities">Entities</h2>
 <p>Entity objects can represent different types of entities, e.g., a person, publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key <code>name</code> is mandatory. When the entity represents a person, the <code>name</code> key must be formatted following the pattern <code>&quot;{last names} :: {first names} {middle names}&quot;</code>. This pattern is used to parse names correctly, and implicitly disambiguate person entities from other entities. Therefore, if a non-person entity name follows this pattern, it must be given as <code>{first part of the name} \:: {second part of the name}</code>.</p>
 <p>Note that the whitespaces preceding and following the separators (<code>::</code>, <code>\::</code>) are optional.</p>
-<table>
+<table style="width:60%;">
 <caption>Complete list of entity keys.</caption>
-<col style="width: 19%" /><col style="width: 26%" /><col style="width: 13%" /><thead>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 26%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
 <tr class="header">
 <th style="text-align: left;">Entity key</th>
 <th style="text-align: left;">Entity Data Type</th>
@@ -647,7 +657,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="roles"><a href="#roles">Roles</a></h3>
+<h3 id="roles">Roles</h3>
 <p>An entity representing a person can be assigned a role for the purposes of specifying authorship status, e.g., to distinguish main authors of a software from contributors who have provided a small patch. The defined roles are:</p>
 <table>
 <caption>Defined roles for entities.</caption>
@@ -728,7 +738,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="statuses"><a href="#statuses">Statuses</a></h2>
+<h2 id="statuses">Statuses</h2>
 <p>Works can have a different status of publication, e.g., journal papers. CFF provides the following defined statuses for works.</p>
 <table>
 <caption>Defined statuses for works</caption>
@@ -761,7 +771,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="work-types"><a href="#work-types">Work Types</a></h2>
+<h2 id="work-types">Work Types</h2>
 <table>
 <caption>Complete list of CFF work types.</caption>
 <thead>
@@ -961,11 +971,16 @@
 </tr>
 </tbody>
 </table>
-<h2 id="programming-languages"><a href="#programming-languages">Programming languages</a></h2>
+<h2 id="programming-languages">Programming languages</h2>
 <p>CFF knows the following programming language keys. If a language is not included, please use the key <code>other</code> with a lower-case, hyphenated string argument, and do not include the version of the programming language used, e.g., <code>other=my-fancy-language</code>. Additionally, please create an issue on the <a href="https://github.com/sdruskat/citation-file-format/issues/new">GitHub repository for CFF</a>, asking to include the programming language in the list.</p>
-<table>
-<caption>List of programming language names available in CFF. Table based on the languages available on GitHub (via <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">https://github.com/github/linguist/blob/master/lib/linguist/languages.yml</a>, MIT license, Copyright (c) 2017 GitHub, Inc.).</caption>
-<col style="width: 37%" /><col style="width: 37%" /><col style="width: 22%" /><thead>
+<table style="width:98%;">
+<caption>List of programming language names available in CFF. Table based on the languages available on GitHub (via <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" class="uri">https://github.com/github/linguist/blob/master/lib/linguist/languages.yml</a>, MIT license, Copyright (c) 2017 GitHub, Inc.).</caption>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 37%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
 <tr class="header">
 <th style="text-align: left;">CFF key</th>
 <th style="text-align: left;">Language name</th>
@@ -3285,10 +3300,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="schema"><a href="#schema">Schema</a></h2>
+<h2 id="schema">Schema</h2>
 <p>It is planned to provide a PyKwalify schema for the validation of CFF files. This is work in progress.</p>
-<h2 id="examples"><a href="#examples">Examples</a></h2>
-<h3 id="a-software-with-a-doi"><a href="#a-software-with-a-doi">A software with a DOI</a></h3>
+<h2 id="examples">Examples</h2>
+<h3 id="a-software-with-a-doi">A software with a DOI</h3>
 <p>Note that <a href="#principles">[2, p. 12]</a> recommends</p>
 <blockquote>
 <p>[...] the use of DOIs as the unique identifier due to their common usage and acceptance, particularly as they are the standard for other digital products such as publications.</p>
@@ -3298,35 +3313,35 @@
 <p>the [DOI] should resolve to a persistent landing page that contains metadata and a link to the software itself, rather than directly to the source code files, repository, or executable.</p>
 </blockquote>
 <p>Therefore, a minimal <code>CITATION.cff</code> file in such a case would look similar to the following.</p>
-<pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite it as below.
-<span class="kw">-</span> <span class="fu">type:</span> software
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite it as below.</span>
+<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
   <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
-      <span class="fu">orcid:</span> 0000-0003-4925-7248
-  <span class="fu">title:</span> Stephan&#39;s Research Software
-  <span class="fu">version:</span> 1.0.4
-  <span class="fu">doi:</span> 10043/zenodo.1234</code></pre>
+    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
+      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
+  <span class="fu">title:</span><span class="at"> Stephan&#39;s Research Software</span>
+  <span class="fu">version:</span><span class="at"> 1.0.4</span>
+  <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span></code></pre></div>
 <p>A more comprehensive version could look similar to the following.</p>
-<pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span> If you use this software, please cite it as below.
-<span class="kw">-</span> <span class="fu">type:</span> software
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite it as below.</span>
+<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
   <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span> Druskat::Stephan
-      <span class="fu">orcid:</span> 0000-0003-4925-7248
-      <span class="fu">affiliation:</span> Humboldt-Universität zu Berlin, Dept. of German Studies and Linguistics
-      <span class="fu">email:</span> mail@sdruskat.net
-      <span class="fu">website:</span> https://hu.berlin/sdruskat
-  <span class="fu">title:</span> Stephan&#39;s Research Software
-  <span class="fu">version:</span> 1.0.4
-  <span class="fu">doi:</span> 10043/zenodo.1234
-  <span class="fu">commit:</span> ab3d513
-  <span class="fu">repository-code:</span> https://github.com/sdruskat/stephans-research-software
-  <span class="fu">repository-artifact:</span> https://hu.berlin/nexus/srs
-  <span class="fu">date-published:</span> 2017-09-23
-  <span class="fu">dependencies:</span> https://github.com/sdruskat/stephans-research-software/blob/srs-1.0.4/NOTICE
+    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
+      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
+      <span class="fu">affiliation:</span><span class="at"> Humboldt-Universität zu Berlin, Dept. of German Studies and Linguistics</span>
+      <span class="fu">email:</span><span class="at"> mail@sdruskat.net</span>
+      <span class="fu">website:</span><span class="at"> https://hu.berlin/sdruskat</span>
+  <span class="fu">title:</span><span class="at"> Stephan&#39;s Research Software</span>
+  <span class="fu">version:</span><span class="at"> 1.0.4</span>
+  <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span>
+  <span class="fu">commit:</span><span class="at"> ab3d513</span>
+  <span class="fu">repository-code:</span><span class="at"> https://github.com/sdruskat/stephans-research-software</span>
+  <span class="fu">repository-artifact:</span><span class="at"> https://hu.berlin/nexus/srs</span>
+  <span class="fu">date-published:</span><span class="at"> 2017-09-23</span>
+  <span class="fu">dependencies:</span><span class="at"> https://github.com/sdruskat/stephans-research-software/blob/srs-1.0.4/NOTICE</span>
   <span class="fu">keywords:</span>
-    <span class="kw">-</span> &quot;McAuthor&#39;s algorithm&quot;
+    <span class="kw">-</span> <span class="st">&quot;McAuthor&#39;s algorithm&quot;</span>
     <span class="kw">-</span> linguistics
     <span class="kw">-</span> nlp
     <span class="kw">-</span> parser
@@ -3338,25 +3353,25 @@
     <span class="kw">-</span> haskell
     <span class="kw">-</span> pascal
     <span class="kw">-</span> rust
-  <span class="fu">license:</span> Apache License, Version 2.0
-  <span class="fu">license-url:</span> http://www.apache.org/licenses/LICENSE-2.0
-  <span class="fu">url:</span> https://sdruskat.github.io/stephans-research-software</code></pre>
-<h3 id="a-software-without-a-doi"><a href="#a-software-without-a-doi">A software without a DOI</a></h3>
+  <span class="fu">license:</span><span class="at"> Apache License, Version 2.0</span>
+  <span class="fu">license-url:</span><span class="at"> http://www.apache.org/licenses/LICENSE-2.0</span>
+  <span class="fu">url:</span><span class="at"> https://sdruskat.github.io/stephans-research-software</span></code></pre></div>
+<h3 id="a-software-without-a-doi">A software without a DOI</h3>
 <p>For software without a DOI, it is recommended that &quot;the metadata should still provide information on how to access the specific software, but this may be a company’s product number or a link to a website that allows the software be purchased.&quot; <a href="#principles">[2, p. 13]</a>. Furthermore, &quot;if the version number and release date are not available, the download date can be used. Similarly, the contact name/email is an alternative to the location/repository.&quot; <a href="#principles">[2, p. 7]</a></p>
 <p>Hence, for a closed source software without a DOI for which the version number and release date cannot be determined, a <code>CITATION.cff</code> file could look like this.</p>
-<pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span> If you dare to use this commercial, closed-source, unversioned software in your research, please at least cite it as below.
-<span class="kw">-</span> <span class="fu">type:</span> software
-  <span class="fu">title:</span> Opaquity
-  <span class="fu">number:</span> opq-1234-XZVF-ACME-RLY
-  <span class="fu">date-downloaded:</span> 2017-02-31
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you dare to use this commercial, closed-source, unversioned software in your research, please at least cite it as below.</span>
+<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
+  <span class="fu">title:</span><span class="at"> Opaquity</span>
+  <span class="fu">number:</span><span class="at"> opq-1234-XZVF-ACME-RLY</span>
+  <span class="fu">date-downloaded:</span><span class="at"> 2017-02-31</span>
   <span class="fu">contact:</span>
-    <span class="kw">-</span> <span class="fu">name:</span> Vader::Darth
-      <span class="fu">affiliation:</span> Dark Side Software
-      <span class="fu">location:</span> DS-1 Orbital Battle Station, near Scarif
-      <span class="fu">email:</span> father@imperial-empire.com
-      <span class="fu">tel:</span> +850 (0)123-45-666</code></pre>
-<h1 id="infrastructure"><a href="#infrastructure">Infrastructure</a></h1>
+    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Vader::Darth</span>
+      <span class="fu">affiliation:</span><span class="at"> Dark Side Software</span>
+      <span class="fu">location:</span><span class="at"> DS-1 Orbital Battle Station, near Scarif</span>
+      <span class="fu">email:</span><span class="at"> father@imperial-empire.com</span>
+      <span class="fu">tel:</span><span class="at"> +850 (0)123-45-666</span></code></pre></div>
+<h1 id="infrastructure">Infrastructure</h1>
 <p>It is planned to provide further infrastructure (e.g., software packages), to support the following use cases for CFF:</p>
 <ul>
 <li>Creating CFF <code>CITATION</code> files</li>
@@ -3365,11 +3380,11 @@
 <li>Converting CFF <code>CITATION</code> files</li>
 </ul>
 <p>For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee</p>
-<h1 id="contributions"><a href="#contributions">Contributions</a></h1>
+<h1 id="contributions">Contributions</h1>
 <p>Link to <code>CONTRIBUTING.md</code>, tba.</p>
-<h1 id="license"><a href="#license">License</a></h1>
-<p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
-<h1 id="references"><a href="#references">References</a></h1>
+<h1 id="license">License</h1>
+<p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
+<h1 id="references">References</h1>
     <ol class="bibliography"><li><span id="principles">[1] A. M. Smith, D. S. Katz, K. E. Niemeyer, and FORCE11 Software Citation Working Group, “Software citation principles,” <i>PeerJ Computer Science</i>, vol. 2, p. e86, Sep. 2016 [Online]. </span> 
 
 Available at: <a class="citelink" href="https://doi.org/10.7717/peerj-cs.86">https://doi.org/10.7717/peerj-cs.86</a>.
