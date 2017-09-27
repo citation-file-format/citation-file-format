@@ -207,7 +207,7 @@
   <!-- Citation -->
   <citation collapse="citation-number">
     <sort>
-      <key variable="citation-number"/>
+      <key variable="year"/>
     </sort>
     <layout delimiter=", ">
       <group prefix="[" suffix="]" delimiter=", ">
@@ -220,7 +220,7 @@
   <bibliography entry-spacing="0" second-field-align="flush">
     <layout>
       <!-- Citation Number -->
-      <text variable="citation-number" prefix="[" suffix="]"/>
+      <text variable="citation-number" prefix="[" suffix="] "/>
       <!-- Author(s) -->
       <text macro="author" suffix=", "/>
       <!-- Rest of Citation -->

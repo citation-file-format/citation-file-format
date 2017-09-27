@@ -34,6 +34,8 @@ pandoc \
 ## Move PDF to final destination
 mv ./cff-specifications.pdf ./assets/pdf/cff-specifications.pdf
 
+cat pandoc-index.md
+
 ## Remove tmp file
 rm pandoc-index.md
 
