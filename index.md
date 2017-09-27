@@ -4,7 +4,7 @@ subtitle: "Specification - Version 1.0.0-beta"
 author: Stephan Druskat (mail@sdruskat.net)
 abstract: 
   The *Citation File Format* (*CFF*) is a human- *and* machine-readable format for citation files, which provide references to (research and scientific) software to be used for citation and other types of reference.
-  The format aims to support all use cases for software citation described in [@principles].
+  The format aims to support all use cases for software citation described in {% cite principles %}.
   CFF is serialized in [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is therefore Unicode-based and cross-language (in terms of both natural language scripts and programming languages).
   This specification, together with the Unicode standard for characters, aims to provide all the information necessary to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, convert from) it.
   The specification is maintained openly at <https://github.com/sdruskat/citation-file-format>.
@@ -32,9 +32,9 @@ CFF has been developed to provide the first iteration of a format for `CITATION`
 
 ## Rationale
 
-> The rationale for a standardized, machine- and human-readable format for `CITATION` files is discussed in [@standardized-citation-files]. CFF has been developed to support all use cases for the citation of software, as discussed in [@principles], and thus promote attribution and credit for software in general, and research software in particular.
+> The rationale for a standardized, machine- and human-readable format for `CITATION` files is discussed in {% cite standardized-citation-files %}. CFF has been developed to support all use cases for the citation of software, as discussed in {% cite principles %}, and thus promote attribution and credit for software in general, and research software in particular.
 
-In a blog post [@citation-files], Robin Wilson has introduced `CITATION` files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.
+In a blog post {% cite citation-files %}, Robin Wilson has introduced `CITATION` files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.
 
 Some have followed the advice, and have uploaded `CITATION` (or `CITATION.md`, or `CITATION.txt`) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized `CITATION` files are not machine-readable, and machine-readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.
 
@@ -1423,11 +1423,11 @@ It is planned to provide a PyKwalify schema for the validation of CFF files. Thi
 
 ### A software with a DOI
 
-Note that [@principles, p. 12] recommends
+Note that {% cite principles -l 12 %} recommends
 
 > [...] the use of DOIs as the unique identifier due to their common usage and acceptance, particularly as they are the standard for other digital products such as publications.
 
-Furthermore, DOIs should point to a "unique, specific software version" [@principles, p. 12]. Also it is recommended [@principles, p. 13] that:
+Furthermore, DOIs should point to a "unique, specific software version" {% cite principles -l 12 %}. Also it is recommended {% cite principles -l 13 %} that:
 
 > the [DOI] should resolve to a persistent landing page that contains metadata and a link to the software itself, rather than directly to the source code files, repository, or executable.
 
@@ -1486,7 +1486,7 @@ A more comprehensive version could look similar to the following.
 
 ### A software without a DOI
 
-For software without a DOI, it is recommended that "the metadata should still provide information on how to access the specific software, but this may be a company’s product number or a link to a website that allows the software be purchased." [@principles, p. 13]. Furthermore, "if the version number and release date are not available, the download date can be used. Similarly, the contact name/email is an alternative to the location/repository." [@principles, p. 7]
+For software without a DOI, it is recommended that "the metadata should still provide information on how to access the specific software, but this may be a company’s product number or a link to a website that allows the software be purchased." {% cite principles -l 13 %}. Furthermore, "if the version number and release date are not available, the download date can be used. Similarly, the contact name/email is an alternative to the location/repository." {% cite principles -l 7 %}
 
 Hence, for a closed source software without a DOI for which the version number and release date cannot be determined, a `CITATION.cff` file could look like this.
 
