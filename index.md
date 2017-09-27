@@ -8,8 +8,6 @@ abstract:
   CFF is serialized in [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is therefore Unicode-based and cross-language (in terms of both natural language scripts and programming languages).
   This specification, together with the Unicode standard for characters, aims to provide all the information necessary to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, convert from) it.
   The specification is maintained openly at <https://github.com/sdruskat/citation-file-format>.
-csl: ieee-with-url.csl
-bibliography: references.bib
 geometry: margin=2cm
 layout: full-width
 weight: 1
