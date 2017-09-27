@@ -4,7 +4,7 @@ subtitle: "Specification - Version 1.0.0-beta"
 author: Stephan Druskat (mail@sdruskat.net)
 abstract: 
   The *Citation File Format* (*CFF*) is a human- *and* machine-readable format for citation files, which provide references to (research and scientific) software to be used for citation and other types of reference.
-  The format aims to support all use cases for software citation described in [@principles].
+  The format aims to support all use cases for software citation described in {% cite principles %}.
   CFF is serialized in [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is therefore Unicode-based and cross-language (in terms of both natural language scripts and programming languages).
   This specification, together with the Unicode standard for characters, aims to provide all the information necessary to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, convert from) it.
   The specification is maintained openly at <https://github.com/sdruskat/citation-file-format>.
@@ -32,7 +32,7 @@ CFF has been developed to provide the first iteration of a format for `CITATION`
 
 > The rationale for a standardized, machine- and human-readable format for `CITATION` files is discussed in {% cite standardized-citation-files %}. CFF has been developed to support all use cases for the citation of software, as discussed in {% cite principles %}, and thus promote attribution and credit for software in general, and research software in particular.
 
-In a blog post [@citation-files], Robin Wilson has introduced `CITATION` files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.
+In a blog post {% cite citation-files %}, Robin Wilson has introduced `CITATION` files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.
 
 Some have followed the advice, and have uploaded `CITATION` (or `CITATION.md`, or `CITATION.txt`) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized `CITATION` files are not machine-readable, and machine-readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.
 
