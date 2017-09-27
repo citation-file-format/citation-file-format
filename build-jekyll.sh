@@ -17,6 +17,7 @@ pandoc \
 	--toc-depth=4 \
 	--filter pandoc-citeproc \
 	--bibliography=./_bibliography/references.bib \
+	--csl=./_bibliography/ieee-with-url.csl \
 	--metadata date="`date '+%d %B %Y'`" \
 	--template=./template/default.latex \
 	-o cff-specifications.pdf \
