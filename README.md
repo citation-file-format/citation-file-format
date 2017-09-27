@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sdruskat/citation-file-format.svg?branch=master)](https://travis-ci.org/sdruskat/citation-file-format)
+
 # Citation File Format (CFF)
 
 Format specification for `CITATION` files. `CITATION` files provide reference and citation information for (research/scientific) software.
