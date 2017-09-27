@@ -210,7 +210,7 @@
       <key variable="citation-number"/>
     </sort>
     <layout delimiter=", ">
-      <group prefix="[GAGAGA" suffix="]" delimiter=", ">
+      <group prefix="[" suffix="]" delimiter=", ">
         <text variable="citation-number"/>
         <text macro="citation-locator"/>
       </group>
