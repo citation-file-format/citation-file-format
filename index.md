@@ -384,6 +384,7 @@ An entity representing a person can be assigned a role for the purposes of speci
 
   Key
   -------------------------------------------------------------
+  **administrator** (e.g., of a software system)
   **artist**
   **assignee** (e.g., of a patent)
   **main-author**
