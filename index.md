@@ -18,48 +18,100 @@ weight: 1
 ## Status of this document
 
 This document reflects the first version of the *Citation File Format* (CFF).
-CFF has been developed in the context of the [*Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)*](http://wssspe.researchcomputing.org.uk/wssspe5-1/), which was held on 6 September 2017 in Manchester, UK.
-More specifically, the constraints for CFF has been developed in the discusion and speed blogging group "Development and implementation of a standard format for CITATION files", whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).
+CFF has been developed in the context of the [*Workshop on Sustainable Software
+for Science: Practice and Experiences
+(WSSSPE5.1)*](http://wssspe.researchcomputing.org.uk/wssspe5-1/), which was held
+on 6 September 2017 in Manchester, UK. More specifically, the constraints for
+CFF has been developed in the discusion and speed blogging group "Development
+and implementation of a standard format for CITATION files", whose members were
+Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong
+(Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva
+(Software Sustainability Institute, University of Manchester, UK), Radovan Bast
+(University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK),
+and Alexander Konovalov (University of St. Andrews, UK).
 
-CFF Version 1.0 has been developed by Stephan Druskat with contributions from the following.
+CFF Version 1.0 has been developed by Stephan Druskat with contributions from
+the following.
 
 - Radovan Bast ([\@bast](https://github.com/bast)): Reporter
 - Raniere Silva ([\@rgaiacs](https://github.com/rgaiacs)): Reporter
 
-CFF has been developed to provide the first iteration of a format for `CITATION` files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which will be published on the [blog page](https://www.software.ac.uk/blog) of the [Software Sustainability Institute](https://www.software.ac.uk/).
+CFF has been developed to provide the first iteration of a format for `CITATION`
+files which could be recommended to readers of the blog post which has been
+produced by the group during the workshop and shortly after, and which will be
+published on the [blog page](https://www.software.ac.uk/blog) of the [Software
+Sustainability Institute](https://www.software.ac.uk/).
 
 ## Rationale
 
-> The rationale for a standardized, machine- and human-readable format for `CITATION` files is discussed in {% cite standardized-citation-files %}. CFF has been developed to support all use cases for the citation of software, as discussed in {% cite principles %}, and thus promote attribution and credit for software in general, and research software in particular.
+> The rationale for a standardized, machine- and human-readable format for
+`CITATION` files is discussed in {% cite standardized-citation-files %}. CFF has
+been developed to support all use cases for the citation of software, as
+discussed in {% cite principles %}, and thus promote attribution and credit for
+software in general, and research software in particular.
 
-In a blog post {% cite citation-files %}, Robin Wilson has introduced `CITATION` files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.
+In a blog post {% cite citation-files %}, Robin Wilson has introduced `CITATION`
+files as a means to make citation information for software easily accessible.
+This accessibility is important, because in order to receive deserved credit for
+research software in the academic system - where credit is still mainly measured
+based on citations -, the citation information for software must be made
+visible; Authors will only cite software if the citation information is readily
+available, as there is no standard, easily deducible way (yet) to cite software,
+such as there is for journals for example.
 
-Some have followed the advice, and have uploaded `CITATION` (or `CITATION.md`, or `CITATION.txt`) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized `CITATION` files are not machine-readable, and machine-readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.
+Some have followed the advice, and have uploaded `CITATION` (or `CITATION.md`,
+or `CITATION.txt`) files to the root of the source code repository holding their
+software. While this practice has made for a good start, plain text,
+unstandardized `CITATION` files are not machine-readable, and machine-
+readability is a precondition for re-use of the citation information in
+different contexts which could further support a fair distribution of credit for
+research software.
 
 ## Goals
 
-The goal of CFF is to provide an all-purpose citation format (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, e.g., a dedicated type for source code and one for executables, and a reference key for versions.
+The goal of CFF is to provide an all-purpose citation format (similar to BibTeX
+or RIS), and specifically provide optimized means of citation for software via
+the provision of software-specific reference keys and types, e.g., a dedicated
+type for source code and one for executables, and a reference key for versions.
 
-The ultimate goal of CFF as a project is comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc., in order to boost the visibility of citation information for research software, and empower the fair distribution of credit for software development, maintenance, etc., in academia.
+The ultimate goal of CFF as a project is comprehensive uptake and re-use of the
+format by Research Software Engineers and software developers as well as by
+vendors and services, such as software repositories, reference managers, etc.,
+in order to boost the visibility of citation information for research software,
+and empower the fair distribution of credit for software development,
+maintenance, etc., in academia.
 
 ## Concepts
 
-For users of other reference formats, such as BibTeX or RIS, it is important to note that in CFF, all available keys can be used for all Work Types. CFF leaves reasonability of use with format users and providers of tooling, such as conversion software for CFF and other formats. In other words, the use of keys should follow common sense. If not, it will confuse the user of the `CITATION` file, and some of the information will probably be lost in re-use scenarios such as conversion or display. If you feel that CFF does not offer a solution for your specific use case, please consider contributing to the format as described in section [Contributions].
+For users of other reference formats, such as BibTeX or RIS, it is important to
+note that in CFF, all available keys can be used for all Work Types. CFF leaves
+reasonability of use with format users and providers of tooling, such as
+conversion software for CFF and other formats. In other words, the use of keys
+should follow common sense. If not, it will confuse the user of the `CITATION`
+file, and some of the information will probably be lost in re-use scenarios such
+as conversion or display. If you feel that CFF does not offer a solution for
+your specific use case, please consider contributing to the format as described
+in section [Contributions].
 
-Furthermore please note that if a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the `section` key in the parent type (i.e., `book` for a section of a book, etc.) should be used.
+Furthermore please note that if a section of a work is referenced, this is not
+supported by a dedicated Work Type. Instead, the `section` key in the parent
+type (i.e., `book` for a section of a book, etc.) should be used.
 
 # Format
 
 CFF `CITATION` files must be named `CITATION.cff`.
 
-CFF is implemented in YAML 1.2, as the language provides optimal human-readability and the required core data types.
+CFF is implemented in YAML 1.2, as the language provides optimal human-
+readability and the required core data types.
 
 ## File structure
 
-CFF `CITATION` files are made up of 
+CFF `CITATION` files are made up of
 
-- exactly one message containing instructions on how to cite the software which the file is associated with;
-- one or more references, containing at least `type`, `author`, and `title` information.
+- exactly one message containing instructions on how to cite the software which
+the file is associated with; 
+- one or more references, containing at least `type`, `author`, and `title`
+information.
 
 For full examples, please see section [Examples].
 
@@ -83,7 +135,8 @@ Add a reference object:
   doi: 10043/zenodo.1234
 ```
 
-Complete the reference with the respective information, and perhaps add more references.
+Complete the reference with the respective information, and perhaps add more
+references.
 
 ```yaml
 
@@ -128,7 +181,9 @@ Complete the reference with the respective information, and perhaps add more ref
 
 ## Formatting
 
-CFF is YAML 1.2, so it follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (`:`) after a key should always be followed by a whitespace.
+CFF is YAML 1.2, so it follows the formatting rules of YAML 1.2, of which one of
+the most important ones is that the colon (`:`) after a key should always be
+followed by a whitespace.
 
 ## Keys
 
@@ -275,7 +330,8 @@ Table: Complete list of CFF keys.
 
 ### Exemplary use cases
 
-This section details exemplary use cases for some of the keys to avoid ambiguity/misuse.
+This section details exemplary use cases for some of the keys to avoid
+ambiguity/misuse.
 
 **abstract**
 
@@ -339,9 +395,17 @@ This section details exemplary use cases for some of the keys to avoid ambiguity
 
 ## Entities
 
-Entity objects can represent different types of entities, e.g., a person, publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key `name` is mandatory. When the entity represents a person, the `name` key must be formatted following the pattern `"{last names} :: {first names} {middle names}"`. This pattern is used to parse names correctly, and implicitly disambiguate person entities from other entities. Therefore, if a non-person entity name follows this pattern, it must be given as `{first part of the name} \:: {second part of the name}`.
+Entity objects can represent different types of entities, e.g., a person,
+publishing company, or conference. In CFF, they are realized as collections with
+a defined set of keys. Only the key `name` is mandatory. When the entity
+represents a person, the `name` key must be formatted following the pattern
+`"{last names} :: {first names} {middle names}"`. This pattern is used to parse
+names correctly, and implicitly disambiguate person entities from other
+entities. Therefore, if a non-person entity name follows this pattern, it must
+be given as `{first part of the name} \:: {second part of the name}`.
 
-Note that the whitespaces preceding and following the separators (`::`, `\::`) are optional.
+Note that the whitespaces preceding and following the separators (`::`, `\::`)
+are optional.
 
 
   --------------------------------------------
@@ -379,7 +443,9 @@ Table: Complete list of entity keys.
 
 ### Roles
 
-An entity representing a person can be assigned a role for the purposes of specifying authorship status, e.g., to distinguish main authors of a software from contributors who have provided a small patch. The defined roles are:
+An entity representing a person can be assigned a role for the purposes of
+specifying authorship status, e.g., to distinguish main authors of a software
+from contributors who have provided a small patch. The defined roles are:
 
 
   Key
@@ -413,7 +479,8 @@ An entity representing a person can be assigned a role for the purposes of speci
 
 ## Statuses
 
-Works can have a different status of publication, e.g., journal papers. CFF provides the following defined statuses for works.
+Works can have a different status of publication, e.g., journal papers. CFF
+provides the following defined statuses for works.
 
   Status (String)    Description
   ------------------ -----------------------------
@@ -481,7 +548,12 @@ Works can have a different status of publication, e.g., journal papers. CFF prov
 
 ## Programming languages
 
-CFF knows the following programming language keys. If a language is not included, please use the key `other` with a lower-case, hyphenated string argument, and do not include the version of the programming language used, e.g., `other=my-fancy-language`. Additionally, please create an issue on the [GitHub repository for CFF](https://github.com/sdruskat/citation-file-format/issues/new), asking to include the programming language in the list.
+CFF knows the following programming language keys. If a language is not
+included, please use the key `other` with a lower-case, hyphenated string
+argument, and do not include the version of the programming language used, e.g.,
+`other=my-fancy-language`. Additionally, please create an issue on the [GitHub
+repository for CFF](https://github.com/sdruskat/citation-file-
+format/issues/new), asking to include the programming language in the list.
 
 
   --------------------------------------------------------------------------------------
@@ -1415,7 +1487,8 @@ CFF knows the following programming language keys. If a language is not included
 
 ## Schema
 
-It is planned to provide a PyKwalify schema for the validation of CFF files. This is work in progress.
+It is planned to provide a PyKwalify schema for the validation of CFF files.
+This is work in progress.
 
 ## Examples
 
@@ -1423,13 +1496,17 @@ It is planned to provide a PyKwalify schema for the validation of CFF files. Thi
 
 Note that {% cite principles -l 12 %} recommends
 
-> [...] the use of DOIs as the unique identifier due to their common usage and acceptance, particularly as they are the standard for other digital products such as publications.
+> [...] the use of DOIs as the unique identifier due to their common usage and
+acceptance, particularly as they are the standard for other digital products
+such as publications.
 
-Furthermore, DOIs should point to a "unique, specific software version" {% cite principles -l 12 %}. Also it is recommended {% cite principles -l 13 %} that:
+Furthermore, DOIs should point to a "unique, specific software version" {% cite
+principles -l 12 %}. Also it is recommended {% cite principles -l 13 %} that:
 
 > the [DOI] should resolve to a persistent landing page that contains metadata and a link to the software itself, rather than directly to the source code files, repository, or executable.
 
-Therefore, a minimal `CITATION.cff` file in such a case would look similar to the following.
+Therefore, a minimal `CITATION.cff` file in such a case would look similar to
+the following.
 
 ```yaml
 
@@ -1484,9 +1561,17 @@ A more comprehensive version could look similar to the following.
 
 ### A software without a DOI
 
-For software without a DOI, it is recommended that "the metadata should still provide information on how to access the specific software, but this may be a company’s product number or a link to a website that allows the software be purchased." {% cite principles -l 13 %}. Furthermore, "if the version number and release date are not available, the download date can be used. Similarly, the contact name/email is an alternative to the location/repository." {% cite principles -l 7 %}
+For software without a DOI, it is recommended that "the metadata should still
+provide information on how to access the specific software, but this may be a
+company’s product number or a link to a website that allows the software be
+purchased." {% cite principles -l 13 %}. Furthermore, "if the version number and
+release date are not available, the download date can be used. Similarly, the
+contact name/email is an alternative to the location/repository." {% cite
+principles -l 7 %}
 
-Hence, for a closed source software without a DOI for which the version number and release date cannot be determined, a `CITATION.cff` file could look like this.
+Hence, for a closed source software without a DOI for which the version number
+and release date cannot be determined, a `CITATION.cff` file could look like
+this.
 
 ```yaml
 
@@ -1506,14 +1591,16 @@ Hence, for a closed source software without a DOI for which the version number a
 
 # Infrastructure
 
-It is planned to provide further infrastructure (e.g., software packages), to support the following use cases for CFF:
+It is planned to provide further infrastructure (e.g., software packages), to
+support the following use cases for CFF:
 
 - Creating CFF `CITATION` files
 - Reading CFF `CITATION` files
 - Validating CFF `CITATION` files
 - Converting CFF `CITATION` files
 
-For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee
+For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30
+-oh-research-software-how-shalt-i-cite-thee
 
 # Contributions
 
@@ -1521,6 +1608,9 @@ Link to `CONTRIBUTING.md`, tba.
 
 # License
 
-This document is licensed under a [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. The full license text can be obtained from the URL <https://creativecommons.org/licenses/by-sa/4.0/legalcode>.
+This document is licensed under a [CC-BY-
+SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. The full
+license text can be obtained from the URL 
+<https://creativecommons.org/licenses/by-sa/4.0/legalcode>.
 
 # References
