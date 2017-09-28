@@ -19,3 +19,5 @@ sequence:
       "title":
         required: true
         type: str
+      "doi":
+        type: str
