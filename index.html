@@ -88,7 +88,7 @@
 <p>The rationale for a standardized, machine- and human-readable format for <code>CITATION</code> files is discussed in <a href="#standardized-citation-files">[1]</a>. CFF has been developed to support all use cases for the citation of software, as discussed in <a href="#principles">[2]</a>, and thus promote attribution and credit for software in general, and research software in particular.</p>
 </blockquote>
 <p>In a blog post <a href="#citation-files">[3]</a>, Robin Wilson has introduced <code>CITATION</code> files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.</p>
-<p>Some have followed the advice, and have uploaded <code>CITATION</code> (or <code>CITATION.md</code>, or <code>CITATION.txt</code>) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized <code>CITATION</code> files are not machine-readable, and machine-readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.</p>
+<p>Some have followed the advice, and have uploaded <code>CITATION</code> (or <code>CITATION.md</code>, or <code>CITATION.txt</code>) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized <code>CITATION</code> files are not machine-readable, and machine- readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.</p>
 <h2 id="goals">Goals</h2>
 <p>The goal of CFF is to provide an all-purpose citation format (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, e.g., a dedicated type for source code and one for executables, and a reference key for versions.</p>
 <p>The ultimate goal of CFF as a project is comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc., in order to boost the visibility of citation information for research software, and empower the fair distribution of credit for software development, maintenance, etc., in academia.</p>
@@ -97,7 +97,7 @@
 <p>Furthermore please note that if a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the <code>section</code> key in the parent type (i.e., <code>book</code> for a section of a book, etc.) should be used.</p>
 <h1 id="format">Format</h1>
 <p>CFF <code>CITATION</code> files must be named <code>CITATION.cff</code>.</p>
-<p>CFF is implemented in YAML 1.2, as the language provides optimal human-readability and the required core data types.</p>
+<p>CFF is implemented in YAML 1.2, as the language provides optimal human- readability and the required core data types.</p>
 <h2 id="file-structure">File structure</h2>
 <p>CFF <code>CITATION</code> files are made up of</p>
 <ul>
@@ -972,7 +972,7 @@
 </tbody>
 </table>
 <h2 id="programming-languages">Programming languages</h2>
-<p>CFF knows the following programming language keys. If a language is not included, please use the key <code>other</code> with a lower-case, hyphenated string argument, and do not include the version of the programming language used, e.g., <code>other=my-fancy-language</code>. Additionally, please create an issue on the <a href="https://github.com/sdruskat/citation-file-format/issues/new">GitHub repository for CFF</a>, asking to include the programming language in the list.</p>
+<p>CFF knows the following programming language keys. If a language is not included, please use the key <code>other</code> with a lower-case, hyphenated string argument, and do not include the version of the programming language used, e.g., <code>other=my-fancy-language</code>. Additionally, please create an issue on the <a href="https://github.com/sdruskat/citation-file-%20format/issues/new">GitHub repository for CFF</a>, asking to include the programming language in the list.</p>
 <table style="width:98%;">
 <caption>List of programming language names available in CFF. Table based on the languages available on GitHub (via <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" class="uri">https://github.com/github/linguist/blob/master/lib/linguist/languages.yml</a>, MIT license, Copyright (c) 2017 GitHub, Inc.).</caption>
 <colgroup>
@@ -3379,11 +3379,11 @@
 <li>Validating CFF <code>CITATION</code> files</li>
 <li>Converting CFF <code>CITATION</code> files</li>
 </ul>
-<p>For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30-oh-research-software-how-shalt-i-cite-thee</p>
+<p>For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30 -oh-research-software-how-shalt-i-cite-thee</p>
 <h1 id="contributions">Contributions</h1>
 <p>Link to <code>CONTRIBUTING.md</code>, tba.</p>
 <h1 id="license">License</h1>
-<p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
+<p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY- SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
 <h1 id="references">References</h1>
     <ol class="bibliography"><li><span id="standardized-citation-files">[1] S. Druskat, “Track 2 Lightning Talk: Should CITATION files be standardized?,” in <i>Proceedings of the Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</i>, 2017 [Online]. </span> 
 
