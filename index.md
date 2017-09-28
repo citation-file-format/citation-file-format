@@ -108,10 +108,8 @@ readability and the required core data types.
 
 CFF `CITATION` files are made up of
 
-- exactly one message containing instructions on how to cite the software which
-the file is associated with; 
-- one or more references, containing at least `type`, `author`, and `title`
-information.
+- exactly one message containing instructions on how to cite the software which the file is associated with;
+- one or more works, containing at least `type`, `author`, and `title` information.
 
 For full examples, please see section [Examples].
 
@@ -122,7 +120,7 @@ Start the file with a message object:
 - message: If you use this software, please cite the works below.
 ```
 
-Add a reference object:
+Add a work object:
 
 ```yaml
 
@@ -135,8 +133,7 @@ Add a reference object:
   doi: 10043/zenodo.1234
 ```
 
-Complete the reference with the respective information, and perhaps add more
-references.
+Complete the work object with the respective information, and perhaps add more work objects.
 
 ```yaml
 
@@ -178,12 +175,65 @@ references.
   doi: 12345/josrs.9876543
 ```
 
-
 ## Formatting
 
 CFF is YAML 1.2, so it follows the formatting rules of YAML 1.2, of which one of
 the most important ones is that the colon (`:`) after a key should always be
 followed by a whitespace.
+
+## Work `type`
+
+  Work Type string              Description
+  ----------------------------- -------------------
+  **art**                       A work of art, e.g., a painting
+  **article **                  
+  **audiovisual**               
+  **bill**                      A legal bill
+  **blog**                      A blog post
+  **book**                      A book or e-book
+  **catalogue**                 
+  **conference**                
+  **conference-paper**          
+  **data**                      A data set
+  **database**                  An aggregated or online database
+  **dictionary**                
+  **edited-work**               An edited work, e.g., a book
+  **encyclopedia**              
+  **film-broadcast**            A film or broadcast
+  **generic**                   The fallback type
+  **government-document**       
+  **grant**                     A research or other grant
+  **hearing**                   
+  **historical-work**           A historical work, e.g., a medieval manuscript
+  **legal-case**                
+  **legal-rule**                
+  **magazine-article**          
+  **manual**                    A manual
+  **map**                       A geographical map
+  **multimedia**                A multimedia file
+  **music**                     A music file or sheet music
+  **newspaper-article**         
+  **pamphlet**                  
+  **patent**                    
+  **personal-communication**    
+  **proceedings**               Conference proceedings
+  **report**                    
+  **serial**                    
+  **slides**                    Slides, i.e., a published slide deck
+  **software**                  Software
+  **software-code**             Software source code
+  **software-container**        A software container (e.g., a docker container)
+  **software-executable**       An executable software, i.e., a binary/artifact
+  **software-virtual-machine**  A virtual machine/vm image
+  **sound-recording**
+  **standard**
+  **statute**
+  **thesis**                    An academic thesis
+  **unpublished**
+  **video**                     A video recording
+  **website** 
+  ----------------------------- -------------------
+  Table: Complete list of CFF work types.
 
 ## Keys
 
@@ -392,7 +442,6 @@ ambiguity/misuse.
 
 - If the work is a software: The version of the referenced software.
 
-
 ## Entities
 
 Entity objects can represent different types of entities, e.g., a person,
@@ -439,7 +488,7 @@ are optional.
 
   role          **Role string**        •
   ---------------------------------------------
-Table: Complete list of entity keys.
+  Table: Complete list of entity keys.
 
 ### Roles
 
@@ -491,60 +540,6 @@ provides the following defined statuses for works.
   **advance-online**     A work that has been published online in advance of publication in the target medium
   ------------------ -----------------------------
   Table: Defined statuses for works
-
-## Work Types
-
-  Work Type string              Description
-  ----------------------------- -------------------
-  **art**                       A work of art, e.g., a painting
-  **article **                  
-  **audiovisual**               
-  **bill**                      A legal bill
-  **blog**                      A blog post
-  **book**                      A book or e-book
-  **catalogue**                 
-  **conference**                
-  **conference-paper**          
-  **data**                      A data set
-  **database**                  An aggregated or online database
-  **dictionary**                
-  **edited-work**               An edited work, e.g., a book
-  **encyclopedia**              
-  **film-broadcast**            A film or broadcast
-  **generic**                   The fallback type
-  **government-document**       
-  **grant**                     A research or other grant
-  **hearing**                   
-  **historical-work**           A historical work, e.g., a medieval manuscript
-  **legal-case**                
-  **legal-rule**                
-  **magazine-article**          
-  **manual**                    A manual
-  **map**                       A geographical map
-  **multimedia**                A multimedia file
-  **music**                     A music file or sheet music
-  **newspaper-article**         
-  **pamphlet**                  
-  **patent**                    
-  **personal-communication**    
-  **proceedings**               Conference proceedings
-  **report**                    
-  **serial**                    
-  **slides**                    Slides, i.e., a published slide deck
-  **software**                  Software
-  **software-code**             Software source code
-  **software-container**        A software container (e.g., a docker container)
-  **software-executable**       An executable software, i.e., a binary/artifact
-  **software-virtual-machine**  A virtual machine/vm image
-  **sound-recording**
-  **standard**
-  **statute**
-  **thesis**                    An academic thesis
-  **unpublished**
-  **video**                     A video recording
-  **website** 
-  ----------------------------- -------------------
-  Table: Complete list of CFF work types.
 
 ## Programming languages
 
