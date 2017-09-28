@@ -230,7 +230,7 @@ CFF defines the following keys.
 
   pmcid                       String                                          The PMCID of a work
 
-  programming&#x2011;languages Collection of **programming language strings** The programming language of the work
+  programming-languages       Collection of **programming language strings**  The programming language of the work
 
   publisher                   Entity                                           The name of the publisher who has published the work
 
@@ -400,11 +400,10 @@ An entity representing a person can be assigned a role for the purposes of speci
   **inventor**
   **manager** (e.g., of a software project)
   **programmer**
-  **reporter** (e.g., of a court case)
-  **reporter** (e.g., of a software bug)
-  **researcher** (e.g., authoring a data set)
-  **software engineer** (e.g., for a software)
-  **technical writer** (e.g., of a software documentation)
+  **reporter** (e.g., of a court case/a software bug)
+  **researcher** (e.g., authoring a data set/informing a software implementation)
+  **engineer** (e.g., for a software)
+  **technical-writer** (e.g., of a software documentation)
   **tester** (e.g., of a software)
   **trainer**
   -------------------------------------------------------------
