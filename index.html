@@ -37,10 +37,14 @@
     <h1>Citation File Format (CFF)</h1>
     <p class="subtitle">Specification - Version 1.0.0-beta</p>
     <p class="subtitle">Stephan Druskat (mail@sdruskat.net)</p>
-    <p class="subtitle">28 September 2017</p>
+    <p class="subtitle">29 September 2017</p>
     <p> [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]<br/></p>
 
     <article>
+    
+        <h1>Abstract</h1>
+        <p>The <em>Citation File Format</em> (<em>CFF</em>) is a human- <em>and</em> machine-readable format for citation files, which provide references to (research and scientific) software to be used for citation and other types of reference. The format aims to support all use cases for software citation described in <a href="#principles">(Smith et al., 2016)</a>. CFF is serialized in <a href="http://yaml.org">YAML</a> <a href="http://yaml.org/spec/1.2/spec.html">1.2</a>, and is therefore Unicode-based and cross-language (in terms of both natural language scripts and programming languages). This specification, together with the Unicode standard for characters, aims to provide all the information necessary to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, convert from) it. The specification is maintained openly at <a href="https://github.com/sdruskat/citation-file-format" class="uri">https://github.com/sdruskat/citation-file-format</a>.</p>
+    
     <h1>Contents</h1>
 <div id="TOC">
 <ul>
@@ -85,9 +89,9 @@
 <p>CFF has been developed to provide the first iteration of a format for <code>CITATION</code> files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which will be published on the <a href="https://www.software.ac.uk/blog">blog page</a> of the <a href="https://www.software.ac.uk/">Software Sustainability Institute</a>.</p>
 <h2 id="rationale">Rationale</h2>
 <blockquote>
-<p>The rationale for a standardized, machine- and human-readable format for <code>CITATION</code> files is discussed in <a href="#standardized-citation-files">[1]</a>. CFF has been developed to support all use cases for the citation of software, as discussed in <a href="#principles">[2]</a>, and thus promote attribution and credit for software in general, and research software in particular.</p>
+<p>The rationale for a standardized, machine- and human-readable format for <code>CITATION</code> files is discussed in <a href="#standardized-citation-files">(Druskat, 2017)</a>. CFF has been developed to support all use cases for the citation of software, as discussed in <a href="#principles">(Smith et al., 2016)</a>, and thus promote attribution and credit for software in general, and research software in particular.</p>
 </blockquote>
-<p>In a blog post <a href="#citation-files">[3]</a>, Robin Wilson has introduced <code>CITATION</code> files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.</p>
+<p>In a blog post <a href="#citation-files">(Wilson, 2013)</a>, Robin Wilson has introduced <code>CITATION</code> files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.</p>
 <p>Some have followed the advice, and have uploaded <code>CITATION</code> (or <code>CITATION.md</code>, or <code>CITATION.txt</code>) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized <code>CITATION</code> files are not machine-readable, and machine- readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.</p>
 <h2 id="goals">Goals</h2>
 <p>The goal of CFF is to provide an all-purpose citation format (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, e.g., a dedicated type for source code and one for executables, and a reference key for versions.</p>
@@ -3304,11 +3308,11 @@
 <p>It is planned to provide a PyKwalify schema for the validation of CFF files. This is work in progress.</p>
 <h2 id="examples">Examples</h2>
 <h3 id="a-software-with-a-doi">A software with a DOI</h3>
-<p>Note that <a href="#principles">[2, p. 12]</a> recommends</p>
+<p>Note that <a href="#principles">(Smith et al., 2016, p. 12)</a> recommends</p>
 <blockquote>
 <p>[...] the use of DOIs as the unique identifier due to their common usage and acceptance, particularly as they are the standard for other digital products such as publications.</p>
 </blockquote>
-<p>Furthermore, DOIs should point to a &quot;unique, specific software version&quot; <a href="#principles">[2, p. 12]</a>. Also it is recommended <a href="#principles">[2, p. 13]</a> that:</p>
+<p>Furthermore, DOIs should point to a &quot;unique, specific software version&quot; <a href="#principles">(Smith et al., 2016, p. 12)</a>. Also it is recommended <a href="#principles">(Smith et al., 2016, p. 13)</a> that:</p>
 <blockquote>
 <p>the [DOI] should resolve to a persistent landing page that contains metadata and a link to the software itself, rather than directly to the source code files, repository, or executable.</p>
 </blockquote>
@@ -3357,7 +3361,7 @@
   <span class="fu">license-url:</span><span class="at"> http://www.apache.org/licenses/LICENSE-2.0</span>
   <span class="fu">url:</span><span class="at"> https://sdruskat.github.io/stephans-research-software</span></code></pre></div>
 <h3 id="a-software-without-a-doi">A software without a DOI</h3>
-<p>For software without a DOI, it is recommended that &quot;the metadata should still provide information on how to access the specific software, but this may be a company’s product number or a link to a website that allows the software be purchased.&quot; <a href="#principles">[2, p. 13]</a>. Furthermore, &quot;if the version number and release date are not available, the download date can be used. Similarly, the contact name/email is an alternative to the location/repository.&quot; <a href="#principles">[2, p. 7]</a></p>
+<p>For software without a DOI, it is recommended that &quot;the metadata should still provide information on how to access the specific software, but this may be a company’s product number or a link to a website that allows the software be purchased.&quot; <a href="#principles">(Smith et al., 2016, p. 13)</a>. Furthermore, &quot;if the version number and release date are not available, the download date can be used. Similarly, the contact name/email is an alternative to the location/repository.&quot; <a href="#principles">(Smith et al., 2016, p. 7)</a></p>
 <p>Hence, for a closed source software without a DOI for which the version number and release date cannot be determined, a <code>CITATION.cff</code> file could look like this.</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
 <span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you dare to use this commercial, closed-source, unversioned software in your research, please at least cite it as below.</span>
@@ -3385,17 +3389,11 @@
 <h1 id="license">License</h1>
 <p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY- SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
 <h1 id="references">References</h1>
-    <ol class="bibliography"><li><span id="standardized-citation-files">[1] S. Druskat, “Track 2 Lightning Talk: Should CITATION files be standardized?,” in <i>Proceedings of the Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</i>, 2017 [Online]. </span> 
-
-Available at: <a class="citelink" href="https://doi.org/10.6084/m9.figshare.3827058">https://doi.org/10.6084/m9.figshare.3827058</a>.
+    <ol class="bibliography"><li><p><span id="standardized-citation-files">Druskat, Stephan. (2017). Track 2 Lightning Talk: Should CITATION files be standardized? In N. Chue Hong, S. Druskat, R. Haines, C. Jay, D. S. Katz, &amp; S. Sufi (Eds.), <i>Proceedings of the Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</i>. figshare. <a href="https://doi.org/10.6084/m9.figshare.3827058" class="uri">https://doi.org/10.6084/m9.figshare.3827058</a></span></p> 
 </li>
-<li><span id="principles">[2] A. M. Smith, D. S. Katz, K. E. Niemeyer, and FORCE11 Software Citation Working Group, “Software citation principles,” <i>PeerJ Computer Science</i>, vol. 2, p. e86, Sep. 2016 [Online]. </span> 
-
-Available at: <a class="citelink" href="https://doi.org/10.7717/peerj-cs.86">https://doi.org/10.7717/peerj-cs.86</a>.
+<li><p><span id="principles">Smith, Arfon M., Katz, Daniel S., Niemeyer, Kyle E., &amp; FORCE11 Software Citation Working Group. (2016). Software citation principles. <i>PeerJ Computer Science</i>, <i>2</i>, e86. <a href="https://doi.org/10.7717/peerj-cs.86" class="uri">https://doi.org/10.7717/peerj-cs.86</a></span></p> 
 </li>
-<li><span id="citation-files">[3] R. Wilson, “Encouraging citation of software–introducing CITATION files.” 2013 [Online]. </span> 
-
-Available at: <a class="citelink" href="https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files">https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files</a>.
+<li><p><span id="citation-files">Wilson, Robin. (2013). Encouraging citation of software - introducing CITATION files. Retrieved from <a href="https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files" class="uri">https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files</a></span></p> 
 </li></ol>
     </article>
 
