@@ -686,7 +686,7 @@
           <text macro="publisher"/>
         </group>
       </group>
-      <text macro="access" prefix=" "/>
+      <text macro="access" prefix=" " suffix="."/>
       <text macro="original-date" prefix=" "/>
     </layout>
   </bibliography>
