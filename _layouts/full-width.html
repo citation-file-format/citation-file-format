@@ -10,6 +10,10 @@
     <p> [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]<br/></p>
 
     <article>
+    {% if page.abstract %}
+        <h1>Abstract</h1>
+        {{ page.abstract | liquefy | markdownify}}
+    {% endif %}
     {{ content }}
     {% bibliography %}
     </article>

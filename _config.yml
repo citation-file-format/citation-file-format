@@ -18,12 +18,16 @@ page:
   extension: md
 git:
   branch: src
-scholar:
-  style: ./_bibliography/ieee-with-url-jekyll.csl
-  bibliography_template: bib
 gems: 
   - jekyll-pandoc
   - jekyll/scholar
+  - liquefy
+scholar:
+  bibtex_filters:
+    - latex
+    - markdown
+  bibliography_template: bib
+  style: ./_bibliography/apa.csl
 pandoc:
   extensions:
     - template: ./toc/toc.html
