@@ -453,7 +453,7 @@ from contributors who have provided a small patch. The defined roles are:
   **administrator** (e.g., of a software system)
   **artist**
   **assignee** (e.g., of a patent)
-  **main-author**
+  **author**
   **benchmarker** (e.g., of a software)
   **cartographer**
   **composer**
@@ -465,6 +465,8 @@ from contributors who have provided a small patch. The defined roles are:
   **evangelist** (e.g., for a software)
   **insitution** (e.g., issuing a standard)
   **inventor**
+  **main-author**
+  **maintainer** (of a software project)
   **manager** (e.g., of a software project)
   **programmer**
   **reporter** (e.g., of a court case/a software bug)
