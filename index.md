@@ -6,10 +6,10 @@ abstract:
   The format aims to support all use cases for software citation described in {% cite principles %}.
   CFF is serialized in [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is therefore Unicode-based and cross-language (in terms of both natural language scripts and programming languages).
   This specification, together with the Unicode standard for characters, aims to provide all the information necessary to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, convert from) it.
-  The specification is maintained openly at <https://github.com/sdruskat/citation-file-format>.
+  These specifications are maintained openly at <https://github.com/sdruskat/citation-file-format>.
 geometry: margin=2cm
 layout: full-width
-version: 1.0.0-beta
+version: 1.0.0-RC1
 ...
 
 # Introduction
@@ -44,8 +44,9 @@ Sustainability Institute](https://www.software.ac.uk/).
 ## Rationale
 
 > The rationale for a standardized, machine- and human-readable format for
-`CITATION` files is discussed in {% cite standardized-citation-files %}. CFF has
-been developed to support all use cases for the citation of software, as
+`CITATION` files is discussed in more detail in 
+{% cite standardized-citation-files %}. CFF has been developed to support all 
+use cases for the citation of software, as
 discussed in {% cite principles %}, and thus promote attribution and credit for
 software in general, and research software in particular.
 
@@ -67,11 +68,11 @@ different contexts which could further support a fair distribution of credit for
 research software.
 
 ## Goals
-
-The goal of CFF is to provide an all-purpose citation format (similar to BibTeX
-or RIS), and specifically provide optimized means of citation for software via
-the provision of software-specific reference keys and types, e.g., a dedicated
-type for source code and one for executables, and a reference key for versions.
+ The goal of CFF is to provide an all-purpose citation format (similar to BibTeX
+ or RIS), and specifically provide optimized means of citation for software via
+ the provision of software-specific reference keys and types, e.g., a dedicated
+ type for source code and one for executables, and a reference key for versions,
+ cf. [Reference types].
 
 The ultimate goal of CFF as a project is comprehensive uptake and re-use of the
 format by Research Software Engineers and software developers as well as by
@@ -83,8 +84,8 @@ maintenance, etc., in academia.
 ## Concepts
 
 For users of other reference formats, such as BibTeX or RIS, it is important to
-note that in CFF, all available keys can be used for all Work Types. CFF leaves
-reasonability of use with format users and providers of tooling, such as
+note that in CFF, all available keys can be used for all reference types. CFF
+leaves reasonability of use with format users and providers of tooling, such as
 conversion software for CFF and other formats. In other words, the use of keys
 should follow common sense. If not, it will confuse the user of the `CITATION`
 file, and some of the information will probably be lost in re-use scenarios such
@@ -93,7 +94,7 @@ your specific use case, please consider contributing to the format as described
 in section [Contributions].
 
 Furthermore please note that if a section of a work is referenced, this is not
-supported by a dedicated Work Type. Instead, the `section` key in the parent
+supported by a dedicated reference type. Instead, the `section` key in the parent
 type (i.e., `book` for a section of a book, etc.) should be used.
 
 # Format
@@ -310,7 +311,7 @@ CFF defines the following keys.
 
   translators                 Collection of **entities**                      The translator of a work
 
-  type                        **Work Type string**                            The type of the work
+  type                        **Reference type string**                            The type of the work
 
   url                         String (*URL*)                                  The URL of the work
 
@@ -493,9 +494,9 @@ provides the following defined statuses for works.
   ------------------ -----------------------------
   Table: Defined statuses for works
 
-## Work Types
+## Reference types
 
-  Work Type string              Description
+  Reference type string         Description
   ----------------------------- -------------------
   **art**                       A work of art, e.g., a painting
   **article **                  
@@ -545,7 +546,7 @@ provides the following defined statuses for works.
   **video**                     A video recording
   **website** 
   ----------------------------- -------------------
-  Table: Complete list of CFF work types.
+  Table: Complete list of CFF reference types.
 
 ## Programming languages
 
