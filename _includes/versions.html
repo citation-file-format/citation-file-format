@@ -1,6 +1,5 @@
 	<h1>Versions</h1>
-	{{ page.url == "/index.html" }}
-    {% assign pg = site.pages | sort: "version" %}
+	{% assign pg = site.pages | sort: "version" %}
 	{% for node in pg %}
 		{% unless node.nav_exclude or node.url contains ".css" %}
 		    {% if page.url == node.url %}
