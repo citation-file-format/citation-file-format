@@ -375,6 +375,60 @@ ambiguity/misuse.
 - If the work is a software: The version of the referenced software.
 
 
+## Reference types
+
+  Reference type string         Description
+  ----------------------------- -------------------
+  **art**                       A work of art, e.g., a painting
+  **article **                  
+  **audiovisual**               
+  **bill**                      A legal bill
+  **blog**                      A blog post
+  **book**                      A book or e-book
+  **catalogue**                 
+  **conference**                
+  **conference-paper**          
+  **data**                      A data set
+  **database**                  An aggregated or online database
+  **dictionary**                
+  **edited-work**               An edited work, e.g., a book
+  **encyclopedia**              
+  **film-broadcast**            A film or broadcast
+  **generic**                   The fallback type
+  **government-document**       
+  **grant**                     A research or other grant
+  **hearing**                   
+  **historical-work**           A historical work, e.g., a medieval manuscript
+  **legal-case**                
+  **legal-rule**                
+  **magazine-article**          
+  **manual**                    A manual
+  **map**                       A geographical map
+  **multimedia**                A multimedia file
+  **music**                     A music file or sheet music
+  **newspaper-article**         
+  **pamphlet**                  
+  **patent**                    
+  **personal-communication**    
+  **proceedings**               Conference proceedings
+  **report**                    
+  **serial**                    
+  **slides**                    Slides, i.e., a published slide deck
+  **software**                  Software
+  **software-code**             Software source code
+  **software-container**        A software container (e.g., a docker container)
+  **software-executable**       An executable software, i.e., a binary/artifact
+  **software-virtual-machine**  A virtual machine/vm image
+  **sound-recording**
+  **standard**
+  **statute**
+  **thesis**                    An academic thesis
+  **unpublished**
+  **video**                     A video recording
+  **website** 
+  ----------------------------- -------------------
+  Table: Complete list of CFF reference types.
+
 ## Entity objects
 
 Entity objects can represent different types of entities, e.g., 
@@ -592,60 +646,6 @@ provides the following defined statuses for works.
   **advance-online**     A work that has been published online in advance of publication in the target medium
   ------------------ -----------------------------
   Table: Defined statuses for works
-
-## Reference types
-
-  Reference type string         Description
-  ----------------------------- -------------------
-  **art**                       A work of art, e.g., a painting
-  **article **                  
-  **audiovisual**               
-  **bill**                      A legal bill
-  **blog**                      A blog post
-  **book**                      A book or e-book
-  **catalogue**                 
-  **conference**                
-  **conference-paper**          
-  **data**                      A data set
-  **database**                  An aggregated or online database
-  **dictionary**                
-  **edited-work**               An edited work, e.g., a book
-  **encyclopedia**              
-  **film-broadcast**            A film or broadcast
-  **generic**                   The fallback type
-  **government-document**       
-  **grant**                     A research or other grant
-  **hearing**                   
-  **historical-work**           A historical work, e.g., a medieval manuscript
-  **legal-case**                
-  **legal-rule**                
-  **magazine-article**          
-  **manual**                    A manual
-  **map**                       A geographical map
-  **multimedia**                A multimedia file
-  **music**                     A music file or sheet music
-  **newspaper-article**         
-  **pamphlet**                  
-  **patent**                    
-  **personal-communication**    
-  **proceedings**               Conference proceedings
-  **report**                    
-  **serial**                    
-  **slides**                    Slides, i.e., a published slide deck
-  **software**                  Software
-  **software-code**             Software source code
-  **software-container**        A software container (e.g., a docker container)
-  **software-executable**       An executable software, i.e., a binary/artifact
-  **software-virtual-machine**  A virtual machine/vm image
-  **sound-recording**
-  **standard**
-  **statute**
-  **thesis**                    An academic thesis
-  **unpublished**
-  **video**                     A video recording
-  **website** 
-  ----------------------------- -------------------
-  Table: Complete list of CFF reference types.
 
 ## Language strings
 
