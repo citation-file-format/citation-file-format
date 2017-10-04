@@ -59,11 +59,9 @@ html{
 }
 a {
   color: $contrast-color;
-  text-decoration: none;
-
   }
 
-p > a, cite > a, li > a, .sidenote a, .credits a, a.uri { 
+p > a, cite > a, li > a, td > a, .sidenote a, .credits a, a.uri { 
 
 // CUSTOM
 
@@ -292,11 +290,19 @@ section { padding-top: 1rem;
           padding-bottom: 1rem; }
 
 
-ul,ol { width: 45%;
-     -webkit-padding-start: 5%;
-     -webkit-padding-end: 5%;
-     list-style-type: none; 
-      display: inline;
+ul {
+  list-style-type: none;
+  display: inline;
+  -webkit-padding-start: 5%;
+  -webkit-padding-end: 5%;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  position: relative;
+  -webkit-padding-start: 5%;
+  -webkit-padding-end: 5%;
 }
 
 //li { padding: 0.5em 0; } //vertical padding on list items screws up vertical rhythym
