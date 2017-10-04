@@ -21,4 +21,4 @@ Current documentation is **exclusively** held in the `index.md` file in the root
 ## Create a new version / archive old versions
 
 1. Create a directory for the current version as documented in `./index.md`. E.g., if the current version is 1.0.0, create a directory `1.0.0` and copy `./index.md` to that directory.
-2. Set up `./index.md` for the new version by changing `version` in the metadata accordingly, e.g., tp `1.0.1`.
+2. Set up `./index.md` for the new version by changing `version` in the metadata accordingly, e.g., to `1.0.1`.
