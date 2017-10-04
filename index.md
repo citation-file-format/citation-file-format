@@ -134,16 +134,102 @@ references:
 A reference item, i.e., an item in the list under `references`, must at least
 specify values for the following mandatory keys: `type`, `authors`, `title`.
 
-`type` must specify the reference type of the reference. For a list of available 
+`type` must specify the type of the referenced work. For a list of available 
 values, cf. [reference types].
 
 `authors` must specify a list of [person objects].
+
+`title` must specify the title of the referenced work.
 
 Additionally, it can contain any further [reference keys]. In version 
 {{ page.version }}, 
 CFF does not specify a strict schema where specific [reference
 types] can only contain specific [reference keys], although this may be
 implemented in future versions.
+
+### Notable reference keys
+
+**conference**, **database‑provider**, **institution**, **publisher**
+
+These keys take an [entity object](#entity-objects) as value. Entity objects
+reference named entities and provide a fixed set of keys, such as `name` and
+contact information.
+
+Example:
+```yaml
+
+references:
+  - type: book
+    publisher:
+      - name: PeerJ
+        city: London
+        country: GB
+        website: https://peerj.com/
+```
+
+**authors**, **contact**, **editors**, **editors-series**, **recipients**,
+**senders**, **translators**
+
+These keys take a collection of [person objects] as value. Person objects
+provide a fixed set of keys to reference individuals, including a detailed
+set for specifiying personal names, an affiliation, a role, etc.
+
+Example:
+```yaml
+
+references:
+  - type: software
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        orcid: 0000-0003-4925-7248
+        affiliation: "Humboldt-Universität zu Berlin"
+        email: "mail@sdruskat.net"
+        website: http://sdruskat.net
+        role: main-author
+      - family-names: Beethoven
+        name-particle: van
+        given-names: Ludwig
+        role: artist
+      - family-names: Fernández de Córdoba
+        given-names: Gonzalo
+        name-suffix: Jr.
+        role: tester
+    ...
+```
+
+**type**, **languages**, **programming-languages**, **status**
+
+These keys only take values from a defined set, cf. the respective sections:
+
+- [Reference types]
+- [Language strings]
+- [Programming language strings]
+- [Status]
+
+**license‑url**, **repository**, **repository-code**, **repository-artifact**,
+**url**
+
+These keys take URL strings as values.
+
+**keywords**
+
+This key takes a collection of strings.
+
+Example:
+```yaml
+
+references:
+  - type: software
+    keywords:
+      - linguistics
+      - "multi-layer annotation"
+      - web service
+    ...
+```
+
+
+**scope**
 
 A reference item can specify a more detailed scope for the reference, via the 
 reference key `scope`. This key can be useful if certatin references should only
@@ -161,14 +247,25 @@ references:
     ...
 ```
 
+
+
+
 ## Formatting
 
 CFF follows the formatting rules of YAML 1.2, of which one of
 the most important ones is that the colon (`:`) after a key should always be
-followed by a whitespace. Structure is determined by indentation, i.e., lines
+followed by a whitespace. 
+
+Structure is determined by indentation, i.e., lines
 containing nested elements must be indented by at least one whitespace character,
 although using at least two whitespaces as a standard for indentation preserves 
 readability.
+
+Value strings can (and sometimes should) be double-quoted, e.g. `"string"`, 
+especially when they contain YAML special characters, or special characters in
+general. These include: 
+
+> `:  {  }  [  ]  ,  &  *  #  ?  |  -  <  >  =  !  %  @  \`
 
 ## Reference keys
 
@@ -280,9 +377,11 @@ CFF defines the following reference keys.
 
   repository&#x2011;artifact   String (*URL*)                                   The repository where the (executable/binary) artifact of the work is stored
 
+  scope                       String                                            The scope of the reference, e.g., the section of the work it adheres to
+
   section                     String                                             The section of a work that is referenced
 
-  sender                      Collection of **[person objects]**                        The sender of a personal communication
+  senders                     Collection of **[person objects]**                        The sender of a personal communication
 
   status                      **[Status] string**                                        The publication status of the work                           
 
@@ -616,7 +715,7 @@ from contributors who have provided a small patch. The defined roles are:
   **director** (e.g., of a movie)
   **editor** (e.g., of an edited book/edition)
   **evangelist** (e.g., for a software)
-  **insitution** (e.g., issuing a standard)
+  **institution** (e.g., issuing a standard)
   **inventor**
   **main-author**
   **maintainer** (of a software project)
