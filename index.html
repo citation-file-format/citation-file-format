@@ -35,7 +35,7 @@
   <body class="full-width">
     <a class="github-fork-ribbon" href="https://github.com/sdruskat/citation-file-format" title="Fork me on GitHub">Fork me on GitHub</a>
     <h1>Citation File Format (CFF)</h1>
-    <p class="subtitle">1.0.0-beta</p>
+    <p class="subtitle">1.0.0-RC1</p>
     <p class="subtitle">Stephan Druskat (mail@sdruskat.net)</p>
     <p class="subtitle">04 October 2017</p>
     
@@ -45,7 +45,7 @@
     <article>
     
         <h1>Abstract</h1>
-        <p>The <em>Citation File Format</em> (<em>CFF</em>) is a human- <em>and</em> machine-readable format for citation files, which provide references to (research and scientific) software to be used for citation and other types of reference. The format aims to support all use cases for software citation described in <a href="#principles">(Smith et al., 2016)</a>. CFF is serialized in <a href="http://yaml.org">YAML</a> <a href="http://yaml.org/spec/1.2/spec.html">1.2</a>, and is therefore Unicode-based and cross-language (in terms of both natural language scripts and programming languages). This specification, together with the Unicode standard for characters, aims to provide all the information necessary to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, convert from) it. The specification is maintained openly at <a href="https://github.com/sdruskat/citation-file-format" class="uri">https://github.com/sdruskat/citation-file-format</a>.</p>
+        <p>The <em>Citation File Format</em> (<em>CFF</em>) is a human- <em>and</em> machine-readable format for citation files, which provide references to (research and scientific) software to be used for citation and other types of reference. The format aims to support all use cases for software citation described in <a href="#principles">(Smith et al., 2016)</a>. CFF is serialized in <a href="http://yaml.org">YAML</a> <a href="http://yaml.org/spec/1.2/spec.html">1.2</a>, and is therefore Unicode-based and cross-language (in terms of both natural language scripts and programming languages). This specification, together with the Unicode standard for characters, aims to provide all the information necessary to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, convert from) it. These specifications are maintained openly at <a href="https://github.com/sdruskat/citation-file-format" class="uri">https://github.com/sdruskat/citation-file-format</a>.</p>
     
     <h1>Contents</h1>
 <div id="TOC">
@@ -57,17 +57,20 @@
 <li><a href="#concepts">Concepts</a></li>
 </ul></li>
 <li><a href="#format">Format</a><ul>
-<li><a href="#file-structure">File structure</a></li>
+<li><a href="#file-structure">File structure</a><ul>
+<li><a href="#reference-structure">Reference structure</a></li>
+</ul></li>
 <li><a href="#formatting">Formatting</a></li>
-<li><a href="#keys">Keys</a><ul>
+<li><a href="#reference-keys">Reference keys</a><ul>
 <li><a href="#exemplary-use-cases">Exemplary use cases</a></li>
 </ul></li>
 <li><a href="#entities">Entities</a><ul>
 <li><a href="#roles">Roles</a></li>
 </ul></li>
 <li><a href="#statuses">Statuses</a></li>
-<li><a href="#work-types">Work Types</a></li>
-<li><a href="#programming-languages">Programming languages</a></li>
+<li><a href="#reference-types">Reference types</a></li>
+<li><a href="#language-strings">Language strings</a></li>
+<li><a href="#programming-language-strings">Programming language strings</a></li>
 <li><a href="#schema">Schema</a></li>
 <li><a href="#examples">Examples</a><ul>
 <li><a href="#a-software-with-a-doi">A software with a DOI</a></li>
@@ -82,8 +85,8 @@
 </div>
 <h1 id="introduction">Introduction</h1>
 <h2 id="status-of-this-document">Status of this document</h2>
-<p>This document reflects the first version of the <em>Citation File Format</em> (CFF). CFF has been developed in the context of the <a href="http://wssspe.researchcomputing.org.uk/wssspe5-1/"><em>Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</em></a>, which was held on 6 September 2017 in Manchester, UK. More specifically, the constraints for CFF has been developed in the discusion and speed blogging group &quot;Development and implementation of a standard format for CITATION files&quot;, whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).</p>
-<p>CFF Version 1.0 has been developed by Stephan Druskat with contributions from the following.</p>
+<p>This document reflects the version 1.0.0-RC1 of the <em>Citation File Format</em> (CFF). CFF has been developed in the context of the <a href="http://wssspe.researchcomputing.org.uk/wssspe5-1/"><em>Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</em></a>, which was held on 6 September 2017 in Manchester, UK. More specifically, the constraints for CFF has been developed in the discusion and speed blogging group &quot;Development and implementation of a standard format for CITATION files&quot;, whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).</p>
+<p>CFF Version 1.0.0-RC1 has been developed by Stephan Druskat with contributions from the following.</p>
 <ul>
 <li>Radovan Bast (<a href="https://github.com/bast">@bast</a>): Reporter</li>
 <li>Raniere Silva (<a href="https://github.com/rgaiacs">@rgaiacs</a>): Reporter</li>
@@ -91,86 +94,44 @@
 <p>CFF has been developed to provide the first iteration of a format for <code>CITATION</code> files which could be recommended to readers of the blog post which has been produced by the group during the workshop and shortly after, and which will be published on the <a href="https://www.software.ac.uk/blog">blog page</a> of the <a href="https://www.software.ac.uk/">Software Sustainability Institute</a>.</p>
 <h2 id="rationale">Rationale</h2>
 <blockquote>
-<p>The rationale for a standardized, machine- and human-readable format for <code>CITATION</code> files is discussed in <a href="#standardized-citation-files">(Druskat, 2017)</a>. CFF has been developed to support all use cases for the citation of software, as discussed in <a href="#principles">(Smith et al., 2016)</a>, and thus promote attribution and credit for software in general, and research software in particular.</p>
+<p>The rationale for a standardized, machine- and human-readable format for <code>CITATION</code> files is discussed in more detail in <a href="#standardized-citation-files">(Druskat, 2017)</a>. CFF has been developed to support all use cases for the citation of software, as discussed in <a href="#principles">(Smith et al., 2016)</a>, and thus promote attribution and credit for software in general, and research software in particular.</p>
 </blockquote>
 <p>In a blog post <a href="#citation-files">(Wilson, 2013)</a>, Robin Wilson has introduced <code>CITATION</code> files as a means to make citation information for software easily accessible. This accessibility is important, because in order to receive deserved credit for research software in the academic system - where credit is still mainly measured based on citations -, the citation information for software must be made visible; Authors will only cite software if the citation information is readily available, as there is no standard, easily deducible way (yet) to cite software, such as there is for journals for example.</p>
 <p>Some have followed the advice, and have uploaded <code>CITATION</code> (or <code>CITATION.md</code>, or <code>CITATION.txt</code>) files to the root of the source code repository holding their software. While this practice has made for a good start, plain text, unstandardized <code>CITATION</code> files are not machine-readable, and machine- readability is a precondition for re-use of the citation information in different contexts which could further support a fair distribution of credit for research software.</p>
 <h2 id="goals">Goals</h2>
-<p>The goal of CFF is to provide an all-purpose citation format (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, e.g., a dedicated type for source code and one for executables, and a reference key for versions.</p>
+<p>The goal of CFF is to provide an all-purpose citation format (similar to BibTeX or RIS), and specifically provide optimized means of citation for software via the provision of software-specific reference keys and types, e.g., a dedicated type for source code and one for executables, and a reference key for versions, cf. <a href="#reference-types">Reference types</a>.</p>
 <p>The ultimate goal of CFF as a project is comprehensive uptake and re-use of the format by Research Software Engineers and software developers as well as by vendors and services, such as software repositories, reference managers, etc., in order to boost the visibility of citation information for research software, and empower the fair distribution of credit for software development, maintenance, etc., in academia.</p>
 <h2 id="concepts">Concepts</h2>
-<p>For users of other reference formats, such as BibTeX or RIS, it is important to note that in CFF, all available keys can be used for all Work Types. CFF leaves reasonability of use with format users and providers of tooling, such as conversion software for CFF and other formats. In other words, the use of keys should follow common sense. If not, it will confuse the user of the <code>CITATION</code> file, and some of the information will probably be lost in re-use scenarios such as conversion or display. If you feel that CFF does not offer a solution for your specific use case, please consider contributing to the format as described in section <a href="#contributions">Contributions</a>.</p>
-<p>Furthermore please note that if a section of a work is referenced, this is not supported by a dedicated Work Type. Instead, the <code>section</code> key in the parent type (i.e., <code>book</code> for a section of a book, etc.) should be used.</p>
+<p>For users of other reference formats, such as BibTeX or RIS, it is important to note that in CFF, all available keys can be used for all reference types. CFF leaves reasonability of use with format users and providers of tooling, such as conversion software for CFF and other formats. In other words, the use of keys should follow common sense. If not, it will confuse the user of the <code>CITATION</code> file, and some of the information will probably be lost in re-use scenarios such as conversion or display. If you feel that CFF does not offer a solution for your specific use case, please consider contributing to the format as described in section <a href="#contributions">Contributions</a>.</p>
+<p>Furthermore please note that if a section of a work is referenced, this is not supported by a dedicated reference type. Instead, the <code>section</code> key in the parent type (i.e., <code>book</code> for a section of a book, etc.) should be used.</p>
 <h1 id="format">Format</h1>
 <p>CFF <code>CITATION</code> files must be named <code>CITATION.cff</code>.</p>
-<p>CFF is implemented in YAML 1.2, as the language provides optimal human- readability and the required core data types.</p>
+<p>CFF is implemented in YAML 1.2, as the language provides optimal human- readability and the required core data types. For details, see the YAML 1.2 Specifications (missing reference).</p>
 <h2 id="file-structure">File structure</h2>
-<p>CFF <code>CITATION</code> files are made up of</p>
-<ul>
-<li>exactly one message containing instructions on how to cite the software which the file is associated with;</li>
-<li>one or more references, containing at least <code>type</code>, <code>author</code>, and <code>title</code> information.</li>
-</ul>
-<p>For full examples, please see section <a href="#examples">Examples</a>.</p>
-<p>Start the file with a message object:</p>
+<p>CFF <code>CITATION</code> files are YAML 1.2 dictionaries (&quot;maps&quot;) with three mandatory keys: <code>cff-version</code>, <code>message</code>, <code>references</code>.</p>
+<p><code>cff-version</code> must specify the exact version of the Citation File Format that is used for the file.</p>
+<p><code>message</code> must specify instructions to users on how to cite the software the CITATION.cff file is associated with.</p>
+<p><code>references</code> must specify a list of references.</p>
+<p>Example:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite the works below.</span></code></pre></div>
-<p>Add a reference object:</p>
-<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite the works below.</span>
-<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software-code</span>
-  <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
-      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
-  <span class="fu">title:</span><span class="at"> Stephan&#39;s Research Software</span>
-  <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span></code></pre></div>
-<p>Complete the reference with the respective information, and perhaps add more references.</p>
-<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite the works below.</span>
-<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software-code</span>
-  <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
-      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
-  <span class="fu">title:</span><span class="at"> Stephan&#39;s Research Software</span>
-  <span class="fu">version:</span><span class="at"> 1.0.4</span>
-  <span class="fu">programming-languages:</span>
-    <span class="kw">-</span> java
-    <span class="kw">-</span> python
-    <span class="kw">-</span> c
-    <span class="kw">-</span> haskell
-    <span class="kw">-</span> pascal
-    <span class="kw">-</span> rust
-  <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span>
-<span class="kw">-</span> <span class="fu">type:</span><span class="at"> article</span>
-  <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
-      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
-      <span class="fu">role:</span><span class="at"> main-author</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> McAuthor::Clodagh</span>
-      <span class="fu">orcid:</span><span class="at"> 0000-0001-1234-5678</span>
-      <span class="fu">role:</span><span class="at"> main-author</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Nown::Unk</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Stant::Studentass I.</span>
-      <span class="fu">orcid:</span><span class="at"> 0000-0001-4321-4083</span>
-      <span class="fu">role:</span><span class="at"> contributor</span>
-  <span class="fu">title:</span><span class="at"> A fast implementation of McAuthor&#39;s algorithm</span>
-  <span class="fu">journal:</span><span class="at"> Journal of Sound Research Software</span>
-  <span class="fu">volume:</span><span class="at"> 42</span>
-  <span class="fu">issue:</span><span class="at"> 1</span>
-  <span class="fu">month:</span><span class="at"> 1</span>
-  <span class="fu">year:</span><span class="at"> 2017</span>
-  <span class="fu">start:</span><span class="at"> 138</span>
-  <span class="fu">end:</span><span class="at"> 147</span>
-  <span class="fu">doi:</span><span class="at"> 12345/josrs.9876543</span></code></pre></div>
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;Please cite the following works when using this software.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> ...
+  <span class="kw">-</span> ...</code></pre></div>
+<h3 id="reference-structure">Reference structure</h3>
+<p>A reference item, i.e., an item in the list under <code>references</code>, must at least specify values for the following keys: <code>type</code>, <code>authors</code>, <code>title</code>.</p>
+<p>Additionally, it can contain any further <a href="#reference-keys">reference keys</a>. In version 1.0.0-RC1, CFF does not specify a strict schema where specific <a href="#reference-types">reference types</a> can only contain specific <a href="#reference-keys">reference keys</a>, although this may be implemented in future versions.</p>
 <h2 id="formatting">Formatting</h2>
-<p>CFF is YAML 1.2, so it follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (<code>:</code>) after a key should always be followed by a whitespace.</p>
-<h2 id="keys">Keys</h2>
-<p>CFF defines the following keys.</p>
+<p>CFF follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (<code>:</code>) after a key should always be followed by a whitespace. Structure is determined by indentation, i.e., lines containing nested elements must be indented by at least one whitespace character, although using at least two whitespaces as a standard for indentation preserves readability.</p>
+<h2 id="reference-keys">Reference keys</h2>
+<p>CFF defines the following reference keys.</p>
 <table style="width:99%;">
 <caption>Complete list of CFF keys.</caption>
 <colgroup>
 <col style="width: 15%" />
-<col style="width: 26%" />
-<col style="width: 57%" />
+<col style="width: 27%" />
+<col style="width: 56%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -196,316 +157,321 @@
 <td style="text-align: left;">The author of a work</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">cff-version</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The version of Citation File Format this file is formatted in</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">collection‑title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The title of a collection or proceedings</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">collection‑type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The type of a collection</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">commit</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">conference</td>
 <td style="text-align: left;">Entity</td>
 <td style="text-align: left;">The conference where the work was presented</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">contact</td>
 <td style="text-align: left;">Collection of <strong>entities</strong></td>
 <td style="text-align: left;">The contact person for a work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">copyright</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The copyright information pertaining to the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">data‑type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The data type of a data set</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">database</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the database where a work was accessed/is stored</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">database‑provider</td>
 <td style="text-align: left;">Entity</td>
 <td style="text-align: left;">The provider of the database where a work was accessed/is stored</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">date‑accessed</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been last accessed</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">date‑downloaded</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been downloaded</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">date‑published</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been published</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">date‑released</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been released</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">department</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The department where a work has been produced</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">doi</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The DOI of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">edition</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The edition of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">editors</td>
 <td style="text-align: left;">Collection of <strong>entities</strong></td>
 <td style="text-align: left;">The editors of a work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">editors‑series</td>
 <td style="text-align: left;">Collection of <strong>entities</strong></td>
 <td style="text-align: left;">The editors of a series in which a work has been published</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">entry</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">An entry in the collection that constitutes the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">filename</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the electronic file containing the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">format</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The format in which a work is represented</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">institution</td>
 <td style="text-align: left;">Entity</td>
 <td style="text-align: left;">The institution where a work has been produced or published</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">isbn</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ISBN of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">issn</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ISSN of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">issue</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The issue of a periodical in which a work appeared</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">issue‑date</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The publication date of the issue of a periodical in which a work appeared</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">issue‑title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the issue of a periodical in which the work appeared</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">journal</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the journal/magazine/newspaper/periodical where the work was published</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">keywords</td>
 <td style="text-align: left;">Collection of strings</td>
 <td style="text-align: left;">Keywords pertaining to the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">languages</td>
-<td style="text-align: left;">Collection of strings</td>
+<td style="text-align: left;">Collection of <strong><a href="#language-strings">Language strings</a></strong></td>
 <td style="text-align: left;">The language of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">license</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The license under which a work is licensed</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">license‑url</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The URL of the license text under which a work is licensed</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">loc-start</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The line of code in the file where the work starts</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">loc-end</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The line of code in the file where the work ends</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">message</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">A message providing the user with instructions on how to cite the work the <code>CITATION</code> file is attached to</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">month</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The month in which a work has been published</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">nihmsid</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The NIHMSID of a work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">notes</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">Notes pertaining to the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">number</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The accession number for a work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">number‑volumes</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The number of volumes making up the collection in which the work has been published</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">pages</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The number of pages of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">patent‑states</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The states for which a patent is granted</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">pmcid</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The PMCID of a work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">programming-languages</td>
-<td style="text-align: left;">Collection of <strong>programming language strings</strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#programming-language-strings">Programming language strings</a></strong></td>
 <td style="text-align: left;">The programming language of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">publisher</td>
 <td style="text-align: left;">Entity</td>
 <td style="text-align: left;">The name of the publisher who has published the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">recipients</td>
 <td style="text-align: left;">Collection of <strong>entities</strong></td>
 <td style="text-align: left;">The recipient of a personal communication</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">repository</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The repository where the work is stored</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">repository‑code</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The version control system where the source code of the work is stored</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">repository‑artifact</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The repository where the (executable/binary) artifact of the work is stored</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">section</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The section of a work that is referenced</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">sender</td>
 <td style="text-align: left;">Collection of <strong>entities</strong></td>
 <td style="text-align: left;">The sender of a personal communication</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">status</td>
 <td style="text-align: left;"><strong>Status string</strong></td>
 <td style="text-align: left;">The publication status of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">start</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The start page of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">thesis‑type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The type of the thesis that is the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The title of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">translators</td>
 <td style="text-align: left;">Collection of <strong>entities</strong></td>
 <td style="text-align: left;">The translator of a work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">type</td>
-<td style="text-align: left;"><strong>Work Type string</strong></td>
+<td style="text-align: left;"><strong>Reference type string</strong></td>
 <td style="text-align: left;">The type of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">url</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The URL of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The version of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">volume</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The volume of the periodical in which a work appeared</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">volume‑title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The title of the volume in which the work appeared</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">year</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The year in which a work has been published</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">year‑original</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The year of the original publication</td>
@@ -545,7 +511,6 @@
 <p><strong>languages</strong></p>
 <ul>
 <li>If the work is a book: The language in which the book is written.</li>
-<li>If the work is a software: The programming/markup languages in which the software is written.</li>
 </ul>
 <p><strong>month</strong></p>
 <ul>
@@ -783,12 +748,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="work-types">Work Types</h2>
+<h2 id="reference-types">Reference types</h2>
 <table>
-<caption>Complete list of CFF work types.</caption>
+<caption>Complete list of CFF reference types.</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Work Type string</th>
+<th style="text-align: left;">Reference type string</th>
 <th style="text-align: left;">Description</th>
 </tr>
 </thead>
@@ -983,8 +948,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="programming-languages">Programming languages</h2>
-<p>CFF knows the following programming language keys. If a language is not included, please use the key <code>other</code> with a lower-case, hyphenated string argument, and do not include the version of the programming language used, e.g., <code>other=my-fancy-language</code>. Additionally, please create an issue on the <a href="https://github.com/sdruskat/citation-file-%20format/issues/new">GitHub repository for CFF</a>, asking to include the programming language in the list.</p>
+<h2 id="language-strings">Language strings</h2>
+<p>Natural languages as a value for the key <code>languages</code> are specified via their respective 3-character <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code. A list of ISO 639-3 codes in maintained at <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes">Wikipedia:List of ISO 639-3 codes</a>. Alternatively, a language's 2-character <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1</a> code may be used. A list of ISO 639-1 codes is maintained at <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">Wikipedia:List of ISO 639-1 codes</a>.</p>
+<p>Example for a work in both English and Daakaka:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">languages:</span>
+  <span class="kw">-</span> en
+  <span class="kw">-</span> bpa</code></pre></div>
+<h2 id="programming-language-strings">Programming language strings</h2>
+<p>CFF knows the following programming language strings. If a language is not included, please use the string <code>other</code> with a lower-case, hyphenated string argument, and do not include the version of the programming language used, e.g., for <em>My Fancy Language v4.2.1</em>, use <code>other=my-fancy-language</code>. Additionally, please create an issue on the <a href="https://github.com/sdruskat/citation-file-%20format/issues/new">GitHub repository for CFF</a>, asking to include the programming language in the list.</p>
 <table style="width:98%;">
 <caption>List of programming language names available in CFF. Table based on the languages available on GitHub (via <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" class="uri">https://github.com/github/linguist/blob/master/lib/linguist/languages.yml</a>, MIT license, Copyright (c) 2017 GitHub, Inc.).</caption>
 <colgroup>
@@ -3414,7 +3386,7 @@
   	
 		
 		    
-		      <p><a class="active" href="/citation-file-format/">> 1.0.0-beta <</a></p>
+		      <p><a class="active" href="/citation-file-format/">> 1.0.0-RC1 <</a></p>
 		    
 	    
   	
