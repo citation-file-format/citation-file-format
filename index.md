@@ -16,7 +16,7 @@ version: 1.0.0-RC1
 
 ## Status of this document
 
-This document reflects the first version of the *Citation File Format* (CFF).
+This document reflects the version {{ page.version }} of the *Citation File Format* (CFF).
 CFF has been developed in the context of the [*Workshop on Sustainable Software
 for Science: Practice and Experiences
 (WSSSPE5.1)*](http://wssspe.researchcomputing.org.uk/wssspe5-1/), which was held
@@ -29,7 +29,7 @@ Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong
 (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK),
 and Alexander Konovalov (University of St. Andrews, UK).
 
-CFF Version 1.0 has been developed by Stephan Druskat with contributions from
+CFF Version {{ page.version }} has been developed by Stephan Druskat with contributions from
 the following.
 
 - Radovan Bast ([\@bast](https://github.com/bast)): Reporter
@@ -102,93 +102,57 @@ type (i.e., `book` for a section of a book, etc.) should be used.
 CFF `CITATION` files must be named `CITATION.cff`.
 
 CFF is implemented in YAML 1.2, as the language provides optimal human-
-readability and the required core data types.
+readability and the required core data types. For details, see the
+YAML 1.2 Specifications {% cite yaml-1-2-specs %}.
 
 ## File structure
 
-CFF `CITATION` files are made up of
+CFF `CITATION` files are YAML 1.2 dictionaries ("maps") with
+three mandatory keys: `cff-version`, `message`, `references`.
 
-- exactly one message containing instructions on how to cite the software which
-the file is associated with; 
-- one or more references, containing at least `type`, `author`, and `title`
-information.
+`cff-version` must specify the exact version of the
+Citation File Format that is used for the file.
 
-For full examples, please see section [Examples].
+`message` must specify instructions to users on how
+to cite the software the CITATION.cff file is associated
+with.
 
-Start the file with a message object:
+`references` must specify a list of references.
 
-```yaml
+Example:
 
-- message: If you use this software, please cite the works below.
-```
+````yaml
 
-Add a reference object:
-
-```yaml
-
-- message: If you use this software, please cite the works below.
-- type: software-code
-  authors:
-    - name: Druskat::Stephan
-      orcid: 0000-0003-4925-7248
-  title: Stephan's Research Software
-  doi: 10043/zenodo.1234
-```
-
-Complete the reference with the respective information, and perhaps add more
-references.
-
-```yaml
-
-message: If you use this software, please cite the works below.
+cff-version: 1.0.0
+message: "Please cite the following works when using this software."
 references:
-  - type: software-code
-    authors:
-      - name: Druskat::Stephan
-        orcid: 0000-0003-4925-7248
-    title: Stephan's Research Software
-    version: 1.0.4
-    programming-languages:
-      - java
-      - python
-      - c
-      - haskell
-      - pascal
-      - rust
-    doi: 10043/zenodo.1234
-  - type: article
-    authors:
-      - name: Druskat::Stephan
-        orcid: 0000-0003-4925-7248
-        role: main-author
-      - name: McAuthor::Clodagh
-        orcid: 0000-0001-1234-5678
-        role: main-author
-      - name: Nown::Unk
-      - name: Stant::Studentass I.
-        orcid: 0000-0001-4321-4083
-        role: contributor
-    title: A fast implementation of McAuthor's algorithm
-    journal: Journal of Sound Research Software
-    volume: 42
-    issue: 1
-    month: 1
-    year: 2017
-    start: 138
-    end: 147
-    doi: 12345/josrs.9876543
-```
+  - ...
+  - ...
+````
 
+### Reference structure
+
+A reference item, i.e., an item in the list under `references`, must at least
+specify values for the following keys: `type`, `authors`, `title`.
+
+Additionally, it can contain any further [reference keys]. In version 
+{{ page.version }}, 
+CFF does not specify a strict schema where specific [reference
+types] can only contain specific [reference keys], although this may be
+implemented in future versions.
 
 ## Formatting
 
-CFF is YAML 1.2, so it follows the formatting rules of YAML 1.2, of which one of
+CFF follows the formatting rules of YAML 1.2, of which one of
 the most important ones is that the colon (`:`) after a key should always be
-followed by a whitespace.
+followed by a whitespace. Structure is determined by indentation, i.e., lines
+containing nested elements must be indented by at least one whitespace character,
+although using at least two whitespaces as a standard for indentation preserves 
+readability.
 
-## Keys
+## Reference keys
 
-CFF defines the following keys.  
+CFF defines the following reference keys.  
 
 
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -199,6 +163,8 @@ CFF defines the following keys.
   abstract                    String                                            The abstract of a work
 
   authors                     Collection of **entities**                        The author of a work
+
+  cff-version                 String                                            The version of Citation File Format this file is formatted in
 
   collection&#x2011;title        String                                         The title of a collection or proceedings
 
