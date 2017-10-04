@@ -4,7 +4,7 @@
 
 Format specification for `CITATION` files. `CITATION` files provide reference and citation information for (research/scientific) software.
 
-**Read the current vesion of the specifications**: [online](http://sdruskat.github.io/citation-file-format) | [PDF](http://sdruskat.github.io/citation-file-format/assets/pdf/cff-specifications.pdf).
+**Read the current version of the specifications**: [online](http://sdruskat.github.io/citation-file-format) | [PDF](http://sdruskat.github.io/citation-file-format/assets/pdf/cff-specifications.pdf).
 
 ## Branches
 
