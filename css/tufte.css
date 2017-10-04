@@ -336,11 +336,10 @@ blockquote footer {
   font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   letter-spacing: .03em; }
 
-pre, pre code, p code, p pre code {
+pre, pre code, p code, p pre code ol code, ol li code, ul code, ul li code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 1rem;
-  line-height: 1.71428571;
-  margin-top: 1.71428571rem; }
+  line-height: 1.71428571; }
 
 h1 code, h2 code, h3 code {
   font-size: 0.80em; }

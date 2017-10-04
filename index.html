@@ -62,12 +62,16 @@
 </ul></li>
 <li><a href="#formatting">Formatting</a></li>
 <li><a href="#reference-keys">Reference keys</a><ul>
-<li><a href="#exemplary-use-cases">Exemplary use cases</a></li>
+<li><a href="#exemplary-uses">Exemplary uses</a></li>
 </ul></li>
-<li><a href="#entities">Entities</a><ul>
-<li><a href="#roles">Roles</a></li>
+<li><a href="#entity-objects">Entity objects</a><ul>
+<li><a href="#exemplary-uses-1">Exemplary uses</a></li>
 </ul></li>
-<li><a href="#statuses">Statuses</a></li>
+<li><a href="#person-objects">Person objects</a><ul>
+<li><a href="#exemplary-uses-2">Exemplary uses</a></li>
+<li><a href="#person-roles">Person roles</a></li>
+</ul></li>
+<li><a href="#status">Status</a></li>
 <li><a href="#reference-types">Reference types</a></li>
 <li><a href="#language-strings">Language strings</a></li>
 <li><a href="#programming-language-strings">Programming language strings</a></li>
@@ -106,7 +110,7 @@
 <p>Furthermore please note that if a section of a work is referenced, this is not supported by a dedicated reference type. Instead, the <code>section</code> key in the parent type (i.e., <code>book</code> for a section of a book, etc.) should be used.</p>
 <h1 id="format">Format</h1>
 <p>CFF <code>CITATION</code> files must be named <code>CITATION.cff</code>.</p>
-<p>CFF is implemented in YAML 1.2, as the language provides optimal human- readability and the required core data types. For details, see the YAML 1.2 Specifications (missing reference).</p>
+<p>CFF is implemented in YAML 1.2, as the language provides optimal human- readability and the required core data types. For details, see the YAML 1.2 Specifications <a href="#yaml-1-2-specs">(Ben-Kiki et al., 2009)</a>.</p>
 <h2 id="file-structure">File structure</h2>
 <p>CFF <code>CITATION</code> files are YAML 1.2 dictionaries (&quot;maps&quot;) with three mandatory keys: <code>cff-version</code>, <code>message</code>, <code>references</code>.</p>
 <p><code>cff-version</code> must specify the exact version of the Citation File Format that is used for the file.</p>
@@ -120,9 +124,17 @@
   <span class="kw">-</span> ...
   <span class="kw">-</span> ...</code></pre></div>
 <h3 id="reference-structure">Reference structure</h3>
-<p>A reference item, i.e., an item in the list under <code>references</code>, must at least specify values for the following keys: <code>type</code>, <code>authors</code>, <code>title</code>.</p>
+<p>A reference item, i.e., an item in the list under <code>references</code>, must at least specify values for the following mandatory keys: <code>type</code>, <code>authors</code>, <code>title</code>.</p>
+<p><code>type</code> must specify the reference type of the reference. For a list of available values, cf. <a href="#reference-types">reference types</a>.</p>
+<p><code>authors</code> must specify a list of <a href="#person-objects">person objects</a>.</p>
 <p>Additionally, it can contain any further <a href="#reference-keys">reference keys</a>. In version 1.0.0-RC1, CFF does not specify a strict schema where specific <a href="#reference-types">reference types</a> can only contain specific <a href="#reference-keys">reference keys</a>, although this may be implemented in future versions.</p>
-<p>A reference item can specify a more detailed scope for the reference, via the reference key <code>scope</code>. This key can be useful if certatin references should only be cited under specific circumstances, e.g., only when a specific package of the software is used. In such a case, the package would ideally have its own CFF file file, but if this is not possible for whatever reason, the <code>scope</code> key my come in handy.</p>
+<p>A reference item can specify a more detailed scope for the reference, via the reference key <code>scope</code>. This key can be useful if certatin references should only be cited under specific circumstances, e.g., only when a specific package of the software is used. In such a case, the package would ideally have its own CFF file, but if this is not possible for whatever reason, the <code>scope</code> key my come in handy.</p>
+<p>Example:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">scope:</span><span class="at"> </span><span class="st">&quot;Cite this paper when you run software X with flag --xy&quot;</span>
+    <span class="fu">type:</span><span class="at"> article</span>
+    ...</code></pre></div>
 <h2 id="formatting">Formatting</h2>
 <p>CFF follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (<code>:</code>) after a key should always be followed by a whitespace. Structure is determined by indentation, i.e., lines containing nested elements must be indented by at least one whitespace character, although using at least two whitespaces as a standard for indentation preserves readability.</p>
 <h2 id="reference-keys">Reference keys</h2>
@@ -154,7 +166,7 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">authors</td>
-<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The author of a work</td>
 </tr>
 <tr class="even">
@@ -174,12 +186,12 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">conference</td>
-<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">Entity object</td>
 <td style="text-align: left;">The conference where the work was presented</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">contact</td>
-<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The contact person for a work</td>
 </tr>
 <tr class="odd">
@@ -199,7 +211,7 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;">database‑provider</td>
-<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">Entity object</td>
 <td style="text-align: left;">The provider of the database where a work was accessed/is stored</td>
 </tr>
 <tr class="odd">
@@ -239,12 +251,12 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;">editors</td>
-<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The editors of a work</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">editors‑series</td>
-<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The editors of a series in which a work has been published</td>
 </tr>
 <tr class="even">
@@ -264,7 +276,7 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">institution</td>
-<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">Entity object</td>
 <td style="text-align: left;">The institution where a work has been produced or published</td>
 </tr>
 <tr class="even">
@@ -304,7 +316,7 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">languages</td>
-<td style="text-align: left;">Collection of <strong><a href="#language-strings">Language strings</a></strong></td>
+<td style="text-align: left;">Collection of ISO 639 <strong><a href="#language-strings">language strings</a></strong></td>
 <td style="text-align: left;">The language of the work</td>
 </tr>
 <tr class="even">
@@ -369,17 +381,17 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;">programming-languages</td>
-<td style="text-align: left;">Collection of <strong><a href="#programming-language-strings">Programming language strings</a></strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#programming-language-strings">programming language strings</a></strong></td>
 <td style="text-align: left;">The programming language of the work</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">publisher</td>
-<td style="text-align: left;">Entity</td>
+<td style="text-align: left;">Entity object</td>
 <td style="text-align: left;">The name of the publisher who has published the work</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">recipients</td>
-<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The recipient of a personal communication</td>
 </tr>
 <tr class="odd">
@@ -404,12 +416,12 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">sender</td>
-<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The sender of a personal communication</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">status</td>
-<td style="text-align: left;"><strong>Status string</strong></td>
+<td style="text-align: left;"><strong><a href="#status">Status</a> string</strong></td>
 <td style="text-align: left;">The publication status of the work</td>
 </tr>
 <tr class="odd">
@@ -429,12 +441,12 @@
 </tr>
 <tr class="even">
 <td style="text-align: left;">translators</td>
-<td style="text-align: left;">Collection of <strong>entities</strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The translator of a work</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">type</td>
-<td style="text-align: left;"><strong>Reference type string</strong></td>
+<td style="text-align: left;"><strong><a href="#reference-types">Reference types</a> string</strong></td>
 <td style="text-align: left;">The type of the work</td>
 </tr>
 <tr class="even">
@@ -469,7 +481,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="exemplary-use-cases">Exemplary use cases</h3>
+<h3 id="exemplary-uses">Exemplary uses</h3>
 <p>This section details exemplary use cases for some of the keys to avoid ambiguity/misuse.</p>
 <p><strong>abstract</strong></p>
 <ul>
@@ -529,11 +541,10 @@
 <ul>
 <li>If the work is a software: The version of the referenced software.</li>
 </ul>
-<h2 id="entities">Entities</h2>
-<p>Entity objects can represent different types of entities, e.g., a person, publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key <code>name</code> is mandatory. When the entity represents a person, the <code>name</code> key must be formatted following the pattern <code>&quot;{last names} :: {first names} {middle names}&quot;</code>. This pattern is used to parse names correctly, and implicitly disambiguate person entities from other entities. Therefore, if a non-person entity name follows this pattern, it must be given as <code>{first part of the name} \:: {second part of the name}</code>.</p>
-<p>Note that the whitespaces preceding and following the separators (<code>::</code>, <code>\::</code>) are optional.</p>
+<h2 id="entity-objects">Entity objects</h2>
+<p>Entity objects can represent different types of entities, e.g., a publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key <code>name</code> is mandatory.</p>
 <table style="width:60%;">
-<caption>Complete list of entity keys.</caption>
+<caption>Complete list of keys for entity objects.</caption>
 <colgroup>
 <col style="width: 19%" />
 <col style="width: 26%" />
@@ -553,17 +564,27 @@
 <td style="text-align: center;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">city</td>
+<td style="text-align: left;">address</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: center;">•</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">country</td>
+<td style="text-align: left;">city</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: center;">•</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">street</td>
+<td style="text-align: left;">region</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">post-code</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">country</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: center;">•</td>
 </tr>
@@ -578,49 +599,190 @@
 <td style="text-align: center;">•</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">tel</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">fax</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">website</td>
+<td style="text-align: left;">String (<em>URL</em>)</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">date-start</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">date-end</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exemplary-uses-1">Exemplary uses</h3>
+<p><strong>address</strong></p>
+<ul>
+<li>To be used for street names and house numbers, etc.</li>
+</ul>
+<p><strong>region</strong></p>
+<ul>
+<li>To be used for, e.g., states (as in US states or German federal states).</li>
+</ul>
+<p><strong>post-code</strong></p>
+<ul>
+<li>The post code or zip code of an address.</li>
+</ul>
+<p><strong>country</strong></p>
+<ul>
+<li>The ISO 3166-1 alpha-2 country code for a country. A list of ISO 3166-1 alpha-2 codes can be found at <a href="https://en.wikipedia.org/wiki/ISO_3166-1">Wikipedia:ISO 3166-1</a>.</li>
+</ul>
+<p>Example:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> book</span>
+    <span class="fu">publisher:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> PeerJ</span>
+        <span class="fu">city:</span><span class="at"> London</span>
+        <span class="fu">country:</span><span class="at"> GB</span></code></pre></div>
+<p><strong>date-start</strong> and <strong>date-end</strong></p>
+<ul>
+<li>The start and end date of, e.g., a conference. This must be formatted according to <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>, e.g., <code>YYYY-MM-DD</code>, or <code>2017-10-04T16:20:57+00:00</code>.</li>
+</ul>
+<h2 id="person-objects">Person objects</h2>
+<p>A person object represents a person. In CFF, person objects are realized as collections with a defined set of keys, of which only <code>family-names</code> and <code>given-names</code> are mandatory.</p>
+<table style="width:72%;">
+<caption>Complete list of keys for person objects.</caption>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 36%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Entity key</th>
+<th style="text-align: left;">Entity Data Type</th>
+<th style="text-align: center;">optional</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">family-names</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">given-names</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">name-particle</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">name-suffix</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">affiliation</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: center;">•</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">address</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">city</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">region</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">post-code</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">country</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">orcid</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">email</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: center;">•</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">tel</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: center;">•</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">fax</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: center;">•</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">website</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: center;">•</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">date-start</td>
-<td style="text-align: left;">Date</td>
-<td style="text-align: center;">•</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">date-end</td>
-<td style="text-align: left;">Date</td>
-<td style="text-align: center;">•</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">location</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: center;">•</td>
-</tr>
 <tr class="even">
 <td style="text-align: left;">role</td>
-<td style="text-align: left;"><strong>Role string</strong></td>
+<td style="text-align: left;"><strong><a href="#person-roles">Person roles</a> string</strong></td>
 <td style="text-align: center;">•</td>
 </tr>
 </tbody>
 </table>
-<h3 id="roles">Roles</h3>
-<p>An entity representing a person can be assigned a role for the purposes of specifying authorship status, e.g., to distinguish main authors of a software from contributors who have provided a small patch. The defined roles are:</p>
+<h3 id="exemplary-uses-2">Exemplary uses</h3>
+<p><strong>Name keys</strong></p>
+<p>CFF aims at implementing a culturally neutral model for personal names, according to the <a href="https://www.w3.org/International/questions/qa-personal-names">suggestions on splitting personal names by the W3C</a> and the implementation of personal name splitting in B<span style="font-variant: small-caps;">ib</span>T<sub>E</sub>X <a href="#names-in-bibtex">(Hufflen, 2006)</a>.</p>
+<p>To this end, CFF provides four generic keys to specify personal names:</p>
+<ol type="1">
+<li>Values for <code>family-names</code> specify family names, including combinations of given and patronymic forms, such as <em>Guðmundsdóttir</em> or <em>bin Osman</em>; double names with or without hyphen, such as <em>Leutheusser-Schnarrenberger</em> or <em>Sánchez Vicario</em>. It can potentially also specify names that include prepositions or (nobiliary) particles, especially if they occur in between family names such as in Spanish- or Portuguese-origin names, such as <em>Fernández de Córdoba</em>.</li>
+<li>Values for <code>given-names</code> specify given and any other names.</li>
+<li>Values for <code>name-particle</code> specify nobiliary particles and prepositions, such as in Ludwig <em>van</em> Beethoven or Rafael <em>van der</em> Vaart.</li>
+<li>Values for <code>name-suffix</code> specify suffixes such as <em>Jr.</em> or <em>III</em> (as in <a href="https://en.wikipedia.org/wiki/Tr%C3%A9_Cool">Frank Edwin Wright <em>III</em></a>).</li>
+</ol>
+<p>Note that these keys may still not be optimal for, e.g., Icelandic names which do not have the concept of family names, or Chinese generation names, but the alternative is highly localized customization, which would be counterintuitive as to CFF's goal to be easily accessible. Thus, it is ultimately the task of CFF file authors to find the optimal name split in any given case.</p>
+<p><strong>affiliation</strong></p>
+<ul>
+<li>To specify the affiliation of a person, e.g., a university, research centre, etc.</li>
+</ul>
+<p><strong>Address keys</strong></p>
+<ul>
+<li>Cf. <a href="#entity-objects">Entity objects</a> for details.</li>
+</ul>
+<p><strong>orcid</strong></p>
+<ul>
+<li>To specify an <a href="https://orcid.org/">ORCID</a> identifier in the format <code>dddd-dddd-dddd-dddd</code>, e.g., <code>0000-0003-4925-7248</code>.</li>
+</ul>
+<h3 id="person-roles">Person roles</h3>
+<p>A person object can be assigned a role for the purposes of specifying authorship status, e.g., to distinguish main authors of a software from contributors who have provided a small patch. The defined roles are:</p>
 <table>
 <caption>Defined roles for entities.</caption>
 <thead>
@@ -706,7 +868,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="statuses">Statuses</h2>
+<h2 id="status">Status</h2>
 <p>Works can have a different status of publication, e.g., journal papers. CFF provides the following defined statuses for works.</p>
 <table>
 <caption>Defined statuses for works</caption>
@@ -3365,6 +3527,10 @@
 <li><p><span id="principles">Smith, Arfon M., Katz, Daniel S., Niemeyer, Kyle E., &amp; FORCE11 Software Citation Working Group. (2016). Software citation principles. <i>PeerJ Computer Science</i>, <i>2</i>, e86. <a href="https://doi.org/10.7717/peerj-cs.86" class="uri">https://doi.org/10.7717/peerj-cs.86</a>.</span></p> 
 </li>
 <li><p><span id="citation-files">Wilson, Robin. (2013). Encouraging citation of software - introducing CITATION files. Retrieved from <a href="https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files" class="uri">https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files</a>.</span></p> 
+</li>
+<li><p><span id="yaml-1-2-specs">Ben-Kiki, Oren, Evans, Clark, &amp; döt Net, Ingy. (2009). YAML Ain’t Markup Language (YAML™) Version 1.2. 3rd Edition, Patched at 2009-10-01. Retrieved from <a href="http://yaml.org/spec/1.2/spec.html" class="uri">http://yaml.org/spec/1.2/spec.html</a>.</span></p> 
+</li>
+<li><p><span id="names-in-bibtex">Hufflen, Jean-Michel. (2006). Names in BibTeX and mlBibTeX. <i>TUGboat</i>, <i>27</i>(2), 243–253. Retrieved from <a href="https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf" class="uri">https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf</a>.</span></p> 
 </li></ol>
     	<h1>Versions</h1>
 	
