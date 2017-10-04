@@ -122,6 +122,7 @@
 <h3 id="reference-structure">Reference structure</h3>
 <p>A reference item, i.e., an item in the list under <code>references</code>, must at least specify values for the following keys: <code>type</code>, <code>authors</code>, <code>title</code>.</p>
 <p>Additionally, it can contain any further <a href="#reference-keys">reference keys</a>. In version 1.0.0-RC1, CFF does not specify a strict schema where specific <a href="#reference-types">reference types</a> can only contain specific <a href="#reference-keys">reference keys</a>, although this may be implemented in future versions.</p>
+<p>A reference item can specify a more detailed scope for the reference, via the reference key <code>scope</code>. This key can be useful if certatin references should only be cited under specific circumstances, e.g., only when a specific package of the software is used. In such a case, the package would ideally have its own CFF file file, but if this is not possible for whatever reason, the <code>scope</code> key my come in handy.</p>
 <h2 id="formatting">Formatting</h2>
 <p>CFF follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (<code>:</code>) after a key should always be followed by a whitespace. Structure is determined by indentation, i.e., lines containing nested elements must be indented by at least one whitespace character, although using at least two whitespaces as a standard for indentation preserves readability.</p>
 <h2 id="reference-keys">Reference keys</h2>
@@ -157,184 +158,174 @@
 <td style="text-align: left;">The author of a work</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">cff-version</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">The version of Citation File Format this file is formatted in</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">collection‑title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The title of a collection or proceedings</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">collection‑type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The type of a collection</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">commit</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">conference</td>
 <td style="text-align: left;">Entity</td>
 <td style="text-align: left;">The conference where the work was presented</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">contact</td>
 <td style="text-align: left;">Collection of <strong>entities</strong></td>
 <td style="text-align: left;">The contact person for a work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">copyright</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The copyright information pertaining to the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">data‑type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The data type of a data set</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">database</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the database where a work was accessed/is stored</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">database‑provider</td>
 <td style="text-align: left;">Entity</td>
 <td style="text-align: left;">The provider of the database where a work was accessed/is stored</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">date‑accessed</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been last accessed</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">date‑downloaded</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been downloaded</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">date‑published</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been published</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">date‑released</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been released</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">department</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The department where a work has been produced</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">doi</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The DOI of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">edition</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The edition of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">editors</td>
 <td style="text-align: left;">Collection of <strong>entities</strong></td>
 <td style="text-align: left;">The editors of a work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">editors‑series</td>
 <td style="text-align: left;">Collection of <strong>entities</strong></td>
 <td style="text-align: left;">The editors of a series in which a work has been published</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">entry</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">An entry in the collection that constitutes the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">filename</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the electronic file containing the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">format</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The format in which a work is represented</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">institution</td>
 <td style="text-align: left;">Entity</td>
 <td style="text-align: left;">The institution where a work has been produced or published</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">isbn</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ISBN of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">issn</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The ISSN of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">issue</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The issue of a periodical in which a work appeared</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">issue‑date</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The publication date of the issue of a periodical in which a work appeared</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">issue‑title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the issue of a periodical in which the work appeared</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">journal</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the journal/magazine/newspaper/periodical where the work was published</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">keywords</td>
 <td style="text-align: left;">Collection of strings</td>
 <td style="text-align: left;">Keywords pertaining to the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">languages</td>
 <td style="text-align: left;">Collection of <strong><a href="#language-strings">Language strings</a></strong></td>
 <td style="text-align: left;">The language of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">license</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The license under which a work is licensed</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">license‑url</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The URL of the license text under which a work is licensed</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">loc-start</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The line of code in the file where the work starts</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">loc-end</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The line of code in the file where the work ends</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">message</td>
-<td style="text-align: left;">String</td>
-<td style="text-align: left;">A message providing the user with instructions on how to cite the work the <code>CITATION</code> file is attached to</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">month</td>
