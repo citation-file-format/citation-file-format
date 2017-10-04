@@ -59,11 +59,13 @@
 <li><a href="#format">Format</a><ul>
 <li><a href="#file-structure">File structure</a><ul>
 <li><a href="#reference-structure">Reference structure</a></li>
+<li><a href="#notable-reference-keys">Notable reference keys</a></li>
 </ul></li>
 <li><a href="#formatting">Formatting</a></li>
 <li><a href="#reference-keys">Reference keys</a><ul>
 <li><a href="#exemplary-uses">Exemplary uses</a></li>
 </ul></li>
+<li><a href="#reference-types">Reference types</a></li>
 <li><a href="#entity-objects">Entity objects</a><ul>
 <li><a href="#exemplary-uses-1">Exemplary uses</a></li>
 </ul></li>
@@ -72,7 +74,6 @@
 <li><a href="#person-roles">Person roles</a></li>
 </ul></li>
 <li><a href="#status">Status</a></li>
-<li><a href="#reference-types">Reference types</a></li>
 <li><a href="#language-strings">Language strings</a></li>
 <li><a href="#programming-language-strings">Programming language strings</a></li>
 <li><a href="#schema">Schema</a></li>
@@ -125,9 +126,67 @@
   <span class="kw">-</span> ...</code></pre></div>
 <h3 id="reference-structure">Reference structure</h3>
 <p>A reference item, i.e., an item in the list under <code>references</code>, must at least specify values for the following mandatory keys: <code>type</code>, <code>authors</code>, <code>title</code>.</p>
-<p><code>type</code> must specify the reference type of the reference. For a list of available values, cf. <a href="#reference-types">reference types</a>.</p>
+<p><code>type</code> must specify the type of the referenced work. For a list of available values, cf. <a href="#reference-types">reference types</a>.</p>
 <p><code>authors</code> must specify a list of <a href="#person-objects">person objects</a>.</p>
+<p><code>title</code> must specify the title of the referenced work.</p>
 <p>Additionally, it can contain any further <a href="#reference-keys">reference keys</a>. In version 1.0.0-RC1, CFF does not specify a strict schema where specific <a href="#reference-types">reference types</a> can only contain specific <a href="#reference-keys">reference keys</a>, although this may be implemented in future versions.</p>
+<h3 id="notable-reference-keys">Notable reference keys</h3>
+<p><strong>conference</strong>, <strong>database‑provider</strong>, <strong>institution</strong>, <strong>publisher</strong></p>
+<p>These keys take an <a href="#entity-objects">entity object</a> as value. Entity objects reference named entities and provide a fixed set of keys, such as <code>name</code> and contact information.</p>
+<p>Example:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> book</span>
+    <span class="fu">publisher:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> PeerJ</span>
+        <span class="fu">city:</span><span class="at"> London</span>
+        <span class="fu">country:</span><span class="at"> GB</span>
+        <span class="fu">website:</span><span class="at"> https://peerj.com/</span></code></pre></div>
+<p><strong>authors</strong>, <strong>contact</strong>, <strong>editors</strong>, <strong>editors-series</strong>, <strong>recipients</strong>, <strong>senders</strong>, <strong>translators</strong></p>
+<p>These keys take a collection of <a href="#person-objects">person objects</a> as value. Person objects provide a fixed set of keys to reference individuals, including a detailed set for specifiying personal names, an affiliation, a role, etc.</p>
+<p>Example:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Druskat</span>
+        <span class="fu">given-names:</span><span class="at"> Stephan</span>
+        <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
+        <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Humboldt-Universität zu Berlin&quot;</span>
+        <span class="fu">email:</span><span class="at"> </span><span class="st">&quot;mail@sdruskat.net&quot;</span>
+        <span class="fu">website:</span><span class="at"> http://sdruskat.net</span>
+        <span class="fu">role:</span><span class="at"> main-author</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Beethoven</span>
+        <span class="fu">name-particle:</span><span class="at"> van</span>
+        <span class="fu">given-names:</span><span class="at"> Ludwig</span>
+        <span class="fu">role:</span><span class="at"> artist</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Fernández de Córdoba</span>
+        <span class="fu">given-names:</span><span class="at"> Gonzalo</span>
+        <span class="fu">name-suffix:</span><span class="at"> Jr.</span>
+        <span class="fu">role:</span><span class="at"> tester</span>
+    ...</code></pre></div>
+<p><strong>type</strong>, <strong>languages</strong>, <strong>programming-languages</strong>, <strong>status</strong></p>
+<p>These keys only take values from a defined set, cf. the respective sections:</p>
+<ul>
+<li><a href="#reference-types">Reference types</a></li>
+<li><a href="#language-strings">Language strings</a></li>
+<li><a href="#programming-language-strings">Programming language strings</a></li>
+<li><a href="#status">Status</a></li>
+</ul>
+<p><strong>license‑url</strong>, <strong>repository</strong>, <strong>repository-code</strong>, <strong>repository-artifact</strong>, <strong>url</strong></p>
+<p>These keys take URL strings as values.</p>
+<p><strong>keywords</strong></p>
+<p>This key takes a collection of strings.</p>
+<p>Example:</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
+    <span class="fu">keywords:</span>
+      <span class="kw">-</span> linguistics
+      <span class="kw">-</span> <span class="st">&quot;multi-layer annotation&quot;</span>
+      <span class="kw">-</span> web service
+    ...</code></pre></div>
+<p><strong>scope</strong></p>
 <p>A reference item can specify a more detailed scope for the reference, via the reference key <code>scope</code>. This key can be useful if certatin references should only be cited under specific circumstances, e.g., only when a specific package of the software is used. In such a case, the package would ideally have its own CFF file, but if this is not possible for whatever reason, the <code>scope</code> key my come in handy.</p>
 <p>Example:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
@@ -136,7 +195,12 @@
     <span class="fu">type:</span><span class="at"> article</span>
     ...</code></pre></div>
 <h2 id="formatting">Formatting</h2>
-<p>CFF follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (<code>:</code>) after a key should always be followed by a whitespace. Structure is determined by indentation, i.e., lines containing nested elements must be indented by at least one whitespace character, although using at least two whitespaces as a standard for indentation preserves readability.</p>
+<p>CFF follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (<code>:</code>) after a key should always be followed by a whitespace.</p>
+<p>Structure is determined by indentation, i.e., lines containing nested elements must be indented by at least one whitespace character, although using at least two whitespaces as a standard for indentation preserves readability.</p>
+<p>Value strings can (and sometimes should) be double-quoted, e.g. <code>&quot;string&quot;</code>, especially when they contain YAML special characters, or special characters in general. These include:</p>
+<blockquote>
+<p><code>:  {  }  [  ]  ,  &amp;  *  #  ?  |  -  &lt;  &gt;  =  !  %  @  \</code></p>
+</blockquote>
 <h2 id="reference-keys">Reference keys</h2>
 <p>CFF defines the following reference keys.</p>
 <table style="width:99%;">
@@ -410,71 +474,76 @@
 <td style="text-align: left;">The repository where the (executable/binary) artifact of the work is stored</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">scope</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The scope of the reference, e.g., the section of the work it adheres to</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">section</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The section of a work that is referenced</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">sender</td>
+<tr class="even">
+<td style="text-align: left;">senders</td>
 <td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The sender of a personal communication</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">status</td>
 <td style="text-align: left;"><strong><a href="#status">Status</a> string</strong></td>
 <td style="text-align: left;">The publication status of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">start</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The start page of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">thesis‑type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The type of the thesis that is the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The title of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">translators</td>
 <td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The translator of a work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">type</td>
 <td style="text-align: left;"><strong><a href="#reference-types">Reference types</a> string</strong></td>
 <td style="text-align: left;">The type of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">url</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The URL of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">version</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The version of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">volume</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The volume of the periodical in which a work appeared</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">volume‑title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The title of the volume in which the work appeared</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">year</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The year in which a work has been published</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">year‑original</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The year of the original publication</td>
@@ -541,6 +610,206 @@
 <ul>
 <li>If the work is a software: The version of the referenced software.</li>
 </ul>
+<h2 id="reference-types">Reference types</h2>
+<table>
+<caption>Complete list of CFF reference types.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Reference type string</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>art</strong></td>
+<td style="text-align: left;">A work of art, e.g., a painting</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>article </strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>audiovisual</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>bill</strong></td>
+<td style="text-align: left;">A legal bill</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>blog</strong></td>
+<td style="text-align: left;">A blog post</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>book</strong></td>
+<td style="text-align: left;">A book or e-book</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>catalogue</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>conference</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>conference-paper</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>data</strong></td>
+<td style="text-align: left;">A data set</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>database</strong></td>
+<td style="text-align: left;">An aggregated or online database</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>dictionary</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>edited-work</strong></td>
+<td style="text-align: left;">An edited work, e.g., a book</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>encyclopedia</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>film-broadcast</strong></td>
+<td style="text-align: left;">A film or broadcast</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>generic</strong></td>
+<td style="text-align: left;">The fallback type</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>government-document</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>grant</strong></td>
+<td style="text-align: left;">A research or other grant</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>hearing</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>historical-work</strong></td>
+<td style="text-align: left;">A historical work, e.g., a medieval manuscript</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>legal-case</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>legal-rule</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>magazine-article</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>manual</strong></td>
+<td style="text-align: left;">A manual</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>map</strong></td>
+<td style="text-align: left;">A geographical map</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>multimedia</strong></td>
+<td style="text-align: left;">A multimedia file</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>music</strong></td>
+<td style="text-align: left;">A music file or sheet music</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>newspaper-article</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>pamphlet</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>patent</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>personal-communication</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>proceedings</strong></td>
+<td style="text-align: left;">Conference proceedings</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>report</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>serial</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>slides</strong></td>
+<td style="text-align: left;">Slides, i.e., a published slide deck</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>software</strong></td>
+<td style="text-align: left;">Software</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>software-code</strong></td>
+<td style="text-align: left;">Software source code</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>software-container</strong></td>
+<td style="text-align: left;">A software container (e.g., a docker container)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>software-executable</strong></td>
+<td style="text-align: left;">An executable software, i.e., a binary/artifact</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>software-virtual-machine</strong></td>
+<td style="text-align: left;">A virtual machine/vm image</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>sound-recording</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>standard</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>statute</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>thesis</strong></td>
+<td style="text-align: left;">An academic thesis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>unpublished</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>video</strong></td>
+<td style="text-align: left;">A video recording</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>website</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 <h2 id="entity-objects">Entity objects</h2>
 <p>Entity objects can represent different types of entities, e.g., a publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key <code>name</code> is mandatory.</p>
 <table style="width:60%;">
@@ -831,7 +1100,7 @@
 <td style="text-align: left;"><strong>evangelist</strong> (e.g., for a software)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>insitution</strong> (e.g., issuing a standard)</td>
+<td style="text-align: left;"><strong>institution</strong> (e.g., issuing a standard)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><strong>inventor</strong></td>
@@ -898,206 +1167,6 @@
 <tr class="odd">
 <td style="text-align: left;"><strong>advance-online</strong></td>
 <td style="text-align: left;">A work that has been published online in advance of publication in the target medium</td>
-</tr>
-</tbody>
-</table>
-<h2 id="reference-types">Reference types</h2>
-<table>
-<caption>Complete list of CFF reference types.</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Reference type string</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>art</strong></td>
-<td style="text-align: left;">A work of art, e.g., a painting</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>article </strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>audiovisual</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>bill</strong></td>
-<td style="text-align: left;">A legal bill</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>blog</strong></td>
-<td style="text-align: left;">A blog post</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>book</strong></td>
-<td style="text-align: left;">A book or e-book</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>catalogue</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>conference</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>conference-paper</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>data</strong></td>
-<td style="text-align: left;">A data set</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>database</strong></td>
-<td style="text-align: left;">An aggregated or online database</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>dictionary</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>edited-work</strong></td>
-<td style="text-align: left;">An edited work, e.g., a book</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>encyclopedia</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>film-broadcast</strong></td>
-<td style="text-align: left;">A film or broadcast</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>generic</strong></td>
-<td style="text-align: left;">The fallback type</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>government-document</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>grant</strong></td>
-<td style="text-align: left;">A research or other grant</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>hearing</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>historical-work</strong></td>
-<td style="text-align: left;">A historical work, e.g., a medieval manuscript</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>legal-case</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>legal-rule</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>magazine-article</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>manual</strong></td>
-<td style="text-align: left;">A manual</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>map</strong></td>
-<td style="text-align: left;">A geographical map</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>multimedia</strong></td>
-<td style="text-align: left;">A multimedia file</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>music</strong></td>
-<td style="text-align: left;">A music file or sheet music</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>newspaper-article</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>pamphlet</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>patent</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>personal-communication</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>proceedings</strong></td>
-<td style="text-align: left;">Conference proceedings</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>report</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>serial</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>slides</strong></td>
-<td style="text-align: left;">Slides, i.e., a published slide deck</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>software</strong></td>
-<td style="text-align: left;">Software</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>software-code</strong></td>
-<td style="text-align: left;">Software source code</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>software-container</strong></td>
-<td style="text-align: left;">A software container (e.g., a docker container)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>software-executable</strong></td>
-<td style="text-align: left;">An executable software, i.e., a binary/artifact</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>software-virtual-machine</strong></td>
-<td style="text-align: left;">A virtual machine/vm image</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>sound-recording</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>standard</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>statute</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>thesis</strong></td>
-<td style="text-align: left;">An academic thesis</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>unpublished</strong></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>video</strong></td>
-<td style="text-align: left;">A video recording</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>website</strong></td>
-<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table>
