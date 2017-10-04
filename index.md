@@ -120,20 +120,24 @@ with.
 `references` must specify a list of references.
 
 Example:
-
-````yaml
+```yaml
 
 cff-version: 1.0.0
 message: "Please cite the following works when using this software."
 references:
   - ...
   - ...
-````
+```
 
 ### Reference structure
 
 A reference item, i.e., an item in the list under `references`, must at least
-specify values for the following keys: `type`, `authors`, `title`.
+specify values for the following mandatory keys: `type`, `authors`, `title`.
+
+`type` must specify the reference type of the reference. For a list of available 
+values, cf. [reference types].
+
+`authors` must specify a list of [person objects].
 
 Additionally, it can contain any further [reference keys]. In version 
 {{ page.version }}, 
@@ -145,10 +149,17 @@ A reference item can specify a more detailed scope for the reference, via the
 reference key `scope`. This key can be useful if certatin references should only
 be cited under specific circumstances, e.g., only when a specific package
 of the software is used. In such a case, the package would ideally have its own
-CFF file file, but if this is not possible for whatever reason, the `scope` key
+CFF file, but if this is not possible for whatever reason, the `scope` key
 my come in handy.
 
+Example:
+```yaml
 
+references:
+  - scope: "Cite this paper when you run software X with flag --xy"
+    type: article
+    ...
+```
 
 ## Formatting
 
@@ -171,7 +182,7 @@ CFF defines the following reference keys.
 
   abstract                    String                                            The abstract of a work
 
-  authors                     Collection of **entities**                        The author of a work
+  authors                     Collection of **[person objects]**                        The author of a work
 
   collection&#x2011;title        String                                         The title of a collection or proceedings
 
@@ -179,9 +190,9 @@ CFF defines the following reference keys.
 
   commit                      String                                            The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work
 
-  conference                  Entity                                            The conference where the work was presented
+  conference                  Entity object                                           The conference where the work was presented
 
-  contact                     Collection of **entities**                        The contact person for a work
+  contact                     Collection of **[person objects]**                        The contact person for a work
 
   copyright                   String                                             The copyright information pertaining to the work
 
@@ -189,7 +200,7 @@ CFF defines the following reference keys.
 
   database                    String                                             The name of the database where a work was accessed/is stored
 
-  database&#x2011;provider           Entity                                        The provider of the database where a work was accessed/is stored
+  database&#x2011;provider           Entity object                                       The provider of the database where a work was accessed/is stored
 
   date&#x2011;accessed               Date                                          The date the work has been last accessed
 
@@ -205,9 +216,9 @@ CFF defines the following reference keys.
 
   edition                     String                                            The edition of the work
 
-  editors                     Collection of **entities**                        The editors of a work
+  editors                     Collection of **[person objects]**                        The editors of a work
 
-  editors&#x2011;series              Collection of **entities**                         The editors of a series in which a work has been published
+  editors&#x2011;series              Collection of **[person objects]**                         The editors of a series in which a work has been published
 
   entry                       String                                             An entry in the collection that constitutes the work
 
@@ -215,7 +226,7 @@ CFF defines the following reference keys.
 
   format                      String                                            The format in which a work is represented
 
-  institution                 Entity                                            The institution where a work has been produced or published
+  institution                 Entity object                                           The institution where a work has been produced or published
 
   isbn                        String                                            The ISBN of the work
 
@@ -231,7 +242,7 @@ CFF defines the following reference keys.
 
   keywords                    Collection of strings                             Keywords pertaining to the work
 
-  languages                   Collection of **[Language strings]**                The language of the work
+  languages                   Collection of ISO 639 **[language strings]**                The language of the work
 
   license                     String                                            The license under which a work is licensed
 
@@ -257,11 +268,11 @@ CFF defines the following reference keys.
 
   pmcid                       String                                            The PMCID of a work
 
-  programming-languages       Collection of **[Programming language strings]**     The programming language of the work
+  programming-languages       Collection of **[programming language strings]**     The programming language of the work
 
-  publisher                   Entity                                             The name of the publisher who has published the work
+  publisher                   Entity object                                             The name of the publisher who has published the work
 
-  recipients                  Collection of **entities**                        The recipient of a personal communication
+  recipients                  Collection of **[person objects]**                        The recipient of a personal communication
 
   repository                  String (*URL*)                                    The repository where the work is stored
 
@@ -271,9 +282,9 @@ CFF defines the following reference keys.
 
   section                     String                                             The section of a work that is referenced
 
-  sender                      Collection of **entities**                        The sender of a personal communication
+  sender                      Collection of **[person objects]**                        The sender of a personal communication
 
-  status                      **Status string**                                        The publication status of the work                           
+  status                      **[Status] string**                                        The publication status of the work                           
 
   start                       Integer                                           The start page of the work
 
@@ -281,9 +292,9 @@ CFF defines the following reference keys.
 
   title                       String                                            The title of the work
 
-  translators                 Collection of **entities**                        The translator of a work
+  translators                 Collection of **[person objects]**                        The translator of a work
 
-  type                        **Reference type string**                              The type of the work
+  type                        **[Reference types] string**                              The type of the work
 
   url                         String (*URL*)                                    The URL of the work
 
@@ -300,7 +311,7 @@ CFF defines the following reference keys.
   ----------------------- ----------------------------------------- ---------------------------------------------------------------------------------------------------------
 Table: Complete list of CFF keys.
 
-### Exemplary use cases
+### Exemplary uses
 
 This section details exemplary use cases for some of the keys to avoid
 ambiguity/misuse.
@@ -364,37 +375,30 @@ ambiguity/misuse.
 - If the work is a software: The version of the referenced software.
 
 
-## Entities
+## Entity objects
 
-Entity objects can represent different types of entities, e.g., a person,
-publishing company, or conference. In CFF, they are realized as collections with
-a defined set of keys. Only the key `name` is mandatory. When the entity
-represents a person, the `name` key must be formatted following the pattern
-`"{last names} :: {first names} {middle names}"`. This pattern is used to parse
-names correctly, and implicitly disambiguate person entities from other
-entities. Therefore, if a non-person entity name follows this pattern, it must
-be given as `{first part of the name} \:: {second part of the name}`.
-
-Note that the whitespaces preceding and following the separators (`::`, `\::`)
-are optional.
-
+Entity objects can represent different types of entities, e.g., 
+a publishing company, or conference. In CFF, they are realized as collections with
+a defined set of keys. Only the key `name` is mandatory. 
 
   --------------------------------------------
   Entity key    Entity Data Type    optional
   ------------- ------------------ ----------
   name          String             
 
+  address       String             •
+
   city          String             •
 
-  country       String             •
+  region        String             •
 
-  street        String             •
+  post-code     String             •
+
+  country       String             •
 
   orcid         String             •
 
   email         String             •
-
-  affiliation   String             •
 
   tel           String             •
 
@@ -408,13 +412,137 @@ are optional.
 
   location      String             •
 
-  role          **Role string**        •
   ---------------------------------------------
-Table: Complete list of entity keys.
+Table: Complete list of keys for entity objects.
 
-### Roles
+### Exemplary uses
 
-An entity representing a person can be assigned a role for the purposes of
+**address**
+
+- To be used for street names and house numbers, etc.
+
+**region**
+
+- To be used for, e.g., states (as in US states or German federal states).
+
+**post-code**
+
+- The post code or zip code of an address.
+
+**country**
+
+- The ISO 3166-1 alpha-2 country code for a country. A list of ISO 3166-1 
+alpha-2 codes can be found at
+[Wikipedia:ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1).
+
+Example:
+```yaml
+
+references:
+  - type: book
+    publisher:
+      - name: PeerJ
+        city: London
+        country: GB
+
+```
+
+**date-start** and **date-end**
+
+- The start and end date of, e.g., a conference. This must be formatted 
+according to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), e.g., 
+`YYYY-MM-DD`, or `2017-10-04T16:20:57+00:00`.
+
+## Person objects
+
+A person object represents a person. In CFF, person objects are realized as
+collections with a defined set of keys, of which only `family-names` and
+`given-names` are mandatory.
+
+  ----------------------------------------------------
+  Entity key    Entity Data Type            optional
+  ------------- ------------------------- ------------
+  family-names  String             
+
+  given-names   String
+
+  name-particle String                         •
+
+  name-suffix   String                         •
+
+  affiliation   String                         •
+
+  address       String                         •
+
+  city          String                         •
+
+  region        String                         •
+
+  post-code     String                         •
+
+  country       String                         •
+
+  orcid         String                         •
+
+  email         String                         •
+
+  tel           String                         •
+
+  fax           String                         •
+
+  website       String (*URL*)                 •
+
+  role          **[Person roles] string**      •
+  -----------------------------------------------------
+  Table: Complete list of keys for person objects.
+
+### Exemplary uses
+
+**Name keys**
+
+CFF aims at implementing a culturally neutral model for personal names, 
+according to the
+[suggestions on splitting personal names by the W3C](https://www.w3.org/International/questions/qa-personal-names) 
+and the implementation of personal name splitting in 
+B[ib]{style="font-variant:small-caps;"}T<sub>E</sub>X {% cite names-in-bibtex %}.
+
+To this end, CFF provides four generic keys to specify personal names: 
+
+
+1. Values for `family-names` specify family names, including combinations of given and 
+patronymic forms, such as *Guðmundsdóttir* or *bin Osman*; double names with or 
+without hyphen, such as *Leutheusser-Schnarrenberger* or *Sánchez Vicario*. It 
+can potentially also specify names that include prepositions or (nobiliary)
+particles, especially if they occur in between family names such as in Spanish-
+or Portuguese-origin names, such as *Fernández de Córdoba*.
+2. Values for `given-names` specify given and any other names.
+3. Values for `name-particle` specify nobiliary particles and prepositions, such as in
+Ludwig *van* Beethoven or Rafael *van der* Vaart.
+4. Values for `name-suffix` specify suffixes such as *Jr.* or *III* (as in 
+[Frank Edwin Wright *III*](https://en.wikipedia.org/wiki/Tr%C3%A9_Cool)).
+
+Note that these keys may still not be optimal for, e.g., Icelandic names which
+do not have the concept of family names, or Chinese generation names, but the 
+alternative is highly localized customization, which would be counterintuitive 
+as to CFF's goal to be easily accessible. Thus, it is ultimately the task of CFF 
+file authors to find the optimal name split in any given case.
+
+**affiliation**
+
+- To specify the affiliation of a person, e.g., a university, research centre, etc.
+
+**Address keys**
+
+- Cf. [Entity objects] for details.
+
+**orcid**
+
+- To specify an [ORCID](https://orcid.org/) identifier in the format
+`dddd-dddd-dddd-dddd`, e.g., `0000-0003-4925-7248`.
+
+### Person roles
+
+A person object can be assigned a role for the purposes of
 specifying authorship status, e.g., to distinguish main authors of a software
 from contributors who have provided a small patch. The defined roles are:
 
@@ -450,7 +578,7 @@ from contributors who have provided a small patch. The defined roles are:
   Table: Defined roles for entities.
 
 
-## Statuses
+## Status
 
 Works can have a different status of publication, e.g., journal papers. CFF
 provides the following defined statuses for works.
