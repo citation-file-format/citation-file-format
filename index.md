@@ -141,6 +141,15 @@ CFF does not specify a strict schema where specific [reference
 types] can only contain specific [reference keys], although this may be
 implemented in future versions.
 
+A reference item can specify a more detailed scope for the reference, via the 
+reference key `scope`. This key can be useful if certatin references should only
+be cited under specific circumstances, e.g., only when a specific package
+of the software is used. In such a case, the package would ideally have its own
+CFF file file, but if this is not possible for whatever reason, the `scope` key
+my come in handy.
+
+
+
 ## Formatting
 
 CFF follows the formatting rules of YAML 1.2, of which one of
@@ -163,8 +172,6 @@ CFF defines the following reference keys.
   abstract                    String                                            The abstract of a work
 
   authors                     Collection of **entities**                        The author of a work
-
-  cff-version                 String                                            The version of Citation File Format this file is formatted in
 
   collection&#x2011;title        String                                         The title of a collection or proceedings
 
@@ -233,8 +240,6 @@ CFF defines the following reference keys.
   loc-start                    Integer                                           The line of code in the file where the work starts
 
   loc-end                     Integer                                           The line of code in the file where the work ends
-
-  message                     String                                            A message providing the user with instructions on how to cite the work the `CITATION` file is attached to
 
   month                       Integer                                           The month in which a work has been published
 
