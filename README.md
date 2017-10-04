@@ -4,8 +4,10 @@
 
 Format specification for `CITATION` files. `CITATION` files provide reference and citation information for (research/scientific) software.
 
-**Read the specifications**: [online](http://sdruskat.github.io/citation-file-format) | [PDF](http://sdruskat.github.io/citation-file-format/assets/pdf/cff-specifications.pdf).
+**Read the current vesion of the specifications**: [online](http://sdruskat.github.io/citation-file-format) | [PDF](http://sdruskat.github.io/citation-file-format/assets/pdf/cff-specifications.pdf).
 
-Build the specifications PDF with [the build script `build.sh`](https://github.com/sdruskat/citation-file-format/blob/master/build.sh).
+## Branches
 
-Jekyll site build via Travis and [`build-jekyll.sh`](https://github.com/sdruskat/citation-file-format/blob/master/build-jekyll.sh).
+- [`docs`](https://github.com/sdruskat/citation-file-format/tree/docs) holds the documentation sources.
+- [`gh-pages`](https://github.com/sdruskat/citation-file-format/tree/gh-pages) serves the documentation files as a site built by Jekyll (from the sources in `docs`, via an automated Travis build).
+- `master` (this) is the landing page, holding a README only.
