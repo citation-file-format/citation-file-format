@@ -1,6 +1,6 @@
 ---
 title: Citation File Format (CFF)  
-subtitle: "Specifications - Version 1.0.0-RC1"
+subtitle: "Specifications - Version 1.0.0-beta"
 author: Stephan Druskat (mail@sdruskat.net)
 abstract: 
   The *Citation File Format* (*CFF*) is a human- *and* machine-readable format for citation files, which provide references to (research and scientific) software to be used for citation and other types of reference.
@@ -10,7 +10,7 @@ abstract:
   The specification is maintained openly at <https://github.com/sdruskat/citation-file-format>.
 geometry: margin=2cm
 layout: full-width
-weight: 1
+version: 1.0.0-beta
 ...
 
 # Introduction

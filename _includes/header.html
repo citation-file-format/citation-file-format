@@ -8,16 +8,4 @@
 		{% endif %}
 	{% endif %}
 
-    <nav class="group">
-	{% assign pg = site.pages | sort: "weight" %}
-	{% for node in pg %}
-		{% unless node.nav_exclude or node.url contains ".css" %}
-		    {% if page.url == node.url %}
-		      <a class="active" href="{{node.url | prepend: site.baseurl}}" class="active">{{node.title}}</a>
-		    {% else %}
-		      <a href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a>
-		    {% endif %}
-	    {% endunless %}
-  	{% endfor %}
-	</nav>
 </header>

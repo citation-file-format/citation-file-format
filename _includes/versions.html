@@ -1,0 +1,13 @@
+	<h1>Versions</h1>
+	{{ page.url == "/index.html" }}
+    {% assign pg = site.pages | sort: "version" %}
+	{% for node in pg %}
+		{% unless node.nav_exclude or node.url contains ".css" %}
+		    {% if page.url == node.url %}
+		      <p><a class="active" href="{{node.url | prepend: site.baseurl}}">> {{node.version}} <</a></p>
+		    {% else %}
+		      <p><a href="{{node.url | prepend: site.baseurl}}">{{node.version}}</a></p>
+		    {% endif %}
+	    {% endunless %}
+  	{% endfor %}
+	
