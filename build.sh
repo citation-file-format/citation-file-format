@@ -8,6 +8,7 @@ echo $VERSION
 ssed -R -i -e 's/ %}/\]/g' pandoc-index.md
 ssed -R -i -e 's/ -l(?= \d)/, p\./g' pandoc-index.md
 ssed -R -i -e 's/{% cite /\[@/g' pandoc-index.md
+## Replace liquid version with real version string
 ssed -R -i -e 's,{{ page\.version }},'"$VERSION"',g' pandoc-index.md
 
 ## Build PDF from tmp file
