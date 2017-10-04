@@ -4,7 +4,7 @@
 
 Format specification for `CITATION` files. `CITATION` files provide reference and citation information for (research/scientific) software.
 
-## This is the `documentation` branch
+## This is the `documentation` branch, for an overview, see the [`master`](https://github.com/sdruskat/citation-file-format/tree/master) branch.
 
 This branch holds the files to build a Jekyll site for GitHub Pages via Jekyll.
 
