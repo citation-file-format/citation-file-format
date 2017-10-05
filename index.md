@@ -2,11 +2,17 @@
 title: Citation File Format (CFF)  
 author: Stephan Druskat (mail@sdruskat.net)
 abstract: 
-  The *Citation File Format* (*CFF*) is a human- *and* machine-readable format for citation files, which provide references to (research and scientific) software to be used for citation and other types of reference.
-  The format aims to support all use cases for software citation described in {% cite principles %}.
-  CFF is serialized in [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is therefore Unicode-based and cross-language (in terms of both natural language scripts and programming languages).
-  This specification, together with the Unicode standard for characters, aims to provide all the information necessary to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, convert from) it.
-  These specifications are maintained openly at <https://github.com/sdruskat/citation-file-format>.
+  The *Citation File Format* (*CFF*) is a human- *and* machine-readable format 
+  for CITATION files. These files provide citation metadata for (research and 
+  scientific) software. The format aims to support all use cases for software 
+  citation described in {% cite principles %}. CFF is serialized in 
+  [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is 
+  therefore Unicode-based and cross-language (in terms of both natural language 
+  scripts and programming languages). This specification, together with the 
+  Unicode standard for characters, aims to provide all the information necessary 
+  to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, 
+  convert from) it. These specifications are maintained openly at 
+  <https://github.com/sdruskat/citation-file-format>.
 geometry: margin=2cm
 layout: full-width
 version: 1.0.0-RC1
