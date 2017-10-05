@@ -4,7 +4,7 @@ cp index.md pandoc-index.md
 
 ## Replace Liquid-style citations with Pandoc-style citations, keeping page numbers
 VERSION=$(grep -m 1 "version: " index.md | sed 's/version: //g')
-echo $VERSION
+echo "Building PDF for version" $VERSION
 ssed -R -i -e 's/ %}/\]/g' pandoc-index.md
 ssed -R -i -e 's/ -l(?= \d)/, p\./g' pandoc-index.md
 ssed -R -i -e 's/{% cite /\[@/g' pandoc-index.md
