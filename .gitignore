@@ -1,0 +1,4 @@
+Gemfile.lock
+_site/
+.sass-cache/
+assets/pdf/cff-specifications.pdf
