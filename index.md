@@ -295,7 +295,7 @@ CFF defines the following reference keys.
 
   conference                  Entity object                                                             The conference where the work was presented
 
-  contact                     Collection of **[person objects]**                                          The contact person for a work
+  contact                     Collection of **[entity](#entity-objects)** or **[person objects]**                                          The contact person for a work
 
   copyright                   String                                                               The copyright information pertaining to the work
 
@@ -319,9 +319,9 @@ CFF defines the following reference keys.
 
   edition                     String                                                              The edition of the work
 
-  editors                     Collection of **[person objects]**                                          The editors of a work
+  editors                     Collection of **[entity](#entity-objects)** or **[person objects]**                                          The editors of a work
 
-  editors&#x2011;series              Collection of **[person objects]**                                           The editors of a series in which a work has been published
+  editors&#x2011;series       Collection of **[entity](#entity-objects)** or **[person objects]**                                           The editors of a series in which a work has been published
 
   entry                       String                                                               An entry in the collection that constitutes the work
 
@@ -377,7 +377,7 @@ CFF defines the following reference keys.
 
   publisher                   Entity object                                                               The name of the publisher who has published the work
 
-  recipients                  Collection of **[person objects]**                                          The recipient of a personal communication
+  recipients                  Collection of **[entity](#entity-objects)** or **[person objects]**                                          The recipient of a personal communication
 
   repository                  String (*URL*)                                                      The repository where the work is stored
 
@@ -399,7 +399,7 @@ CFF defines the following reference keys.
 
   title                       String                                                              The title of the work
 
-  translators                 Collection of **[person objects]**                                          The translator of a work
+  translators                 Collection of **[entity](#entity-objects)** or **[person objects]**                                          The translator of a work
 
   type                        **[Reference types] string**                                                The type of the work
 
