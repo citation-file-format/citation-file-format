@@ -211,7 +211,7 @@ These keys only take values from a defined set, cf. the respective sections:
 - [Reference types]
 - [Language strings]
 - [Programming language strings]
-- [Status]
+- [Status strings]
 
 **license‑url**, **repository**, **repository-code**, **repository-artifact**,
 **url**
@@ -389,7 +389,7 @@ CFF defines the following reference keys.
 
   senders                     Collection of **[person objects]**                        The sender of a personal communication
 
-  status                      **[Status] string**                                        The publication status of the work                           
+  status                      **[Status string](#status-strings)**                      The publication status of the work                           
 
   start                       Integer                                           The start page of the work
 
@@ -533,6 +533,8 @@ ambiguity/misuse.
   **website** 
   ----------------------------- -------------------
   Table: Complete list of CFF reference types.
+
+# Objects
 
 ## Entity objects
 
@@ -736,11 +738,15 @@ from contributors who have provided a small patch. The defined roles are:
   -------------------------------------------------------------
   Table: Defined roles for entities.
 
+# Specified value strings
 
-## Status
+The keys `status`, `languages` and `programming-languages` can only take values
+from a fixed set of strings. These are specified below.
+
+## Status strings
 
 Works can have a different status of publication, e.g., journal papers. CFF
-provides the following defined statuses for works.
+specifies the following value strings for the key `status`.
 
   Status (String)    Description
   ------------------ -----------------------------
@@ -774,13 +780,13 @@ languages:
 
 ## Programming language strings
 
-CFF knows the following programming language strings. If a language is not
-included, please use the string `other` with a lower-case, hyphenated string
-argument, and do not include the version of the programming language used, e.g.,
-for *My Fancy Language v4.2.1*, use
-`other=my-fancy-language`. Additionally, please create an issue on the [GitHub
-repository for CFF](https://github.com/sdruskat/citation-file-
-format/issues/new), asking to include the programming language in the list.
+CFF specifies the following value strings for the key `programming-languages`.
+If a language is not included, please use the string `other` with a lower-case,
+hyphenated string argument, and do not include the version of the programming
+language used, e.g., for *My Fancy Language v4.2.1*, use `other=my-fancy-
+language`. Additionally, please create an issue on the [GitHub repository for
+CFF](https://github.com/sdruskat/citation-file-format/issues/new), asking to
+include the programming language in the list.
 
 
   --------------------------------------------------------------------------------------
@@ -1096,7 +1102,7 @@ format/issues/new), asking to include the programming language in the list.
 
   graphql                          GraphQL                          data            
 
-  graphviz-(dot)                   Graphviz (DOT)                   data            
+  graphviz                         Graphviz (DOT)                   data            
 
   groovy                           Groovy                           programming     
 
@@ -1712,12 +1718,12 @@ format/issues/new), asking to include the programming language in the list.
   -------------------------------- -------------------------------- --------------------  
   Table: List of programming language names available in CFF. Table based on the languages available on GitHub (via <https://github.com/github/linguist/blob/master/lib/linguist/languages.yml>, MIT license, Copyright (c) 2017 GitHub, Inc.).
 
-## Schema
+# Schema
 
 It is planned to provide a PyKwalify schema for the validation of CFF files.
 This is work in progress.
 
-## Examples
+# Examples
 
 ### A software with a DOI
 
