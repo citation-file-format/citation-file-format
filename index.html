@@ -35,7 +35,7 @@
   <body class="full-width">
     <a class="github-fork-ribbon" href="https://github.com/sdruskat/citation-file-format" title="Fork me on GitHub">Fork me on GitHub</a>
     <h1>Citation File Format (CFF)</h1>
-    <p class="subtitle">1.0.0-RC1</p>
+    <p class="subtitle">0.9-RC1</p>
     <p class="subtitle">Stephan Druskat (mail@sdruskat.net)</p>
     <p class="subtitle">06 October 2017</p>
     
@@ -83,8 +83,24 @@
 </ul></li>
 <li><a href="#schema">Schema</a></li>
 <li><a href="#examples">Examples</a><ul>
+<li><a href="#software-examples">Software examples</a><ul>
 <li><a href="#a-software-with-a-doi">A software with a DOI</a></li>
 <li><a href="#a-software-without-a-doi">A software without a DOI</a></li>
+<li><a href="#software-with-two-references"><code>software</code> (with two references)</a></li>
+<li><a href="#software-code-without-a-doi-code-repository-commit"><code>software-code</code> (without a DOI: code repository + commit)</a></li>
+<li><a href="#software-container"><code>software-container</code></a></li>
+<li><a href="#software-executable"><code>software-executable</code></a></li>
+</ul></li>
+<li><a href="#other-examples">Other examples</a><ul>
+<li><a href="#art"><code>art</code></a></li>
+<li><a href="#article"><code>article</code></a></li>
+<li><a href="#blog"><code>blog</code></a></li>
+<li><a href="#book"><code>book</code></a></li>
+<li><a href="#conference-paper"><code>conference-paper</code></a></li>
+<li><a href="#edited-work"><code>edited-work</code></a></li>
+<li><a href="#report"><code>report</code></a></li>
+<li><a href="#thesis"><code>thesis</code></a></li>
+</ul></li>
 </ul></li>
 <li><a href="#infrastructure">Infrastructure</a></li>
 <li><a href="#contributions">Contributions</a></li>
@@ -94,8 +110,8 @@
 </div>
 <h1 id="introduction">Introduction</h1>
 <h2 id="status-of-this-document">Status of this document</h2>
-<p>This document reflects the version 1.0.0-RC1 of the <em>Citation File Format</em> (CFF). CFF has been developed in the context of the <a href="http://wssspe.researchcomputing.org.uk/wssspe5-1/"><em>Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</em></a>, which was held on 6 September 2017 in Manchester, UK. More specifically, the constraints for CFF has been developed in the discusion and speed blogging group &quot;Development and implementation of a standard format for CITATION files&quot;, whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).</p>
-<p>CFF Version 1.0.0-RC1 has been developed by Stephan Druskat with contributions from the following.</p>
+<p>This document reflects the version 0.9-RC1 of the <em>Citation File Format</em> (CFF). CFF has been developed in the context of the <a href="http://wssspe.researchcomputing.org.uk/wssspe5-1/"><em>Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)</em></a>, which was held on 6 September 2017 in Manchester, UK. More specifically, the constraints for CFF has been developed in the discusion and speed blogging group &quot;Development and implementation of a standard format for CITATION files&quot;, whose members were Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong (Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva (Software Sustainability Institute, University of Manchester, UK), Radovan Bast (University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK), and Alexander Konovalov (University of St. Andrews, UK).</p>
+<p>CFF Version 0.9-RC1 has been developed by Stephan Druskat with contributions from the following.</p>
 <ul>
 <li>Radovan Bast (<a href="https://github.com/bast">@bast</a>): Reporter</li>
 <li>Raniere Silva (<a href="https://github.com/rgaiacs">@rgaiacs</a>): Reporter</li>
@@ -133,42 +149,44 @@
 <p><code>type</code> must specify the type of the referenced work. For a list of available values, cf. <a href="#reference-types">reference types</a>.</p>
 <p><code>authors</code> must specify a list of <a href="#person-objects">person objects</a>.</p>
 <p><code>title</code> must specify the title of the referenced work.</p>
-<p>Additionally, it can contain any further <a href="#reference-keys">reference keys</a>. In version 1.0.0-RC1, CFF does not specify a strict schema where specific <a href="#reference-types">reference types</a> can only contain specific <a href="#reference-keys">reference keys</a>, although this may be implemented in future versions.</p>
+<p>Additionally, it can contain any further <a href="#reference-keys">reference keys</a>. In version 0.9-RC1, CFF does not specify a strict schema where specific <a href="#reference-types">reference types</a> can only contain specific <a href="#reference-keys">reference keys</a>, although this may be implemented in future versions.</p>
 <h3 id="notable-reference-keys">Notable reference keys</h3>
 <p><strong>conference</strong>, <strong>database‑provider</strong>, <strong>institution</strong>, <strong>publisher</strong></p>
 <p>These keys take an <a href="#entity-objects">entity object</a> as value. Entity objects reference named entities and provide a fixed set of keys, such as <code>name</code> and contact information.</p>
 <p>Example:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="fu">references:</span>
-  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> book</span>
-    <span class="fu">publisher:</span>
-      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> PeerJ</span>
-        <span class="fu">city:</span><span class="at"> London</span>
-        <span class="fu">country:</span><span class="at"> GB</span>
-        <span class="fu">website:</span><span class="at"> https://peerj.com/</span></code></pre></div>
+<span class="co">...</span>
+<span class="co">references:</span>
+<span class="co">  - type: book</span>
+<span class="co">    publisher:</span>
+<span class="co">      - name: PeerJ</span>
+<span class="co">        city: London</span>
+<span class="co">        country: GB</span>
+<span class="co">        website: https://peerj.com/</span></code></pre></div>
 <p><strong>authors</strong>, <strong>contact</strong>, <strong>editors</strong>, <strong>editors-series</strong>, <strong>recipients</strong>, <strong>senders</strong>, <strong>translators</strong></p>
 <p>These keys take a collection of <a href="#person-objects">person objects</a> as value. Person objects provide a fixed set of keys to reference individuals, including a detailed set for specifiying personal names, an affiliation, a role, etc.</p>
 <p>Example:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="fu">references:</span>
-  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
-    <span class="fu">authors:</span>
-      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Druskat</span>
-        <span class="fu">given-names:</span><span class="at"> Stephan</span>
-        <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
-        <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Humboldt-Universität zu Berlin&quot;</span>
-        <span class="fu">email:</span><span class="at"> </span><span class="st">&quot;mail@sdruskat.net&quot;</span>
-        <span class="fu">website:</span><span class="at"> http://sdruskat.net</span>
-        <span class="fu">role:</span><span class="at"> main-author</span>
-      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Beethoven</span>
-        <span class="fu">name-particle:</span><span class="at"> van</span>
-        <span class="fu">given-names:</span><span class="at"> Ludwig</span>
-        <span class="fu">role:</span><span class="at"> artist</span>
-      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Fernández de Córdoba</span>
-        <span class="fu">given-names:</span><span class="at"> Gonzalo</span>
-        <span class="fu">name-suffix:</span><span class="at"> Jr.</span>
-        <span class="fu">role:</span><span class="at"> tester</span>
-    ...</code></pre></div>
+<span class="co">...</span>
+<span class="co">references:</span>
+<span class="co">  - type: software</span>
+<span class="co">    authors:</span>
+<span class="co">      - family-names: Druskat</span>
+<span class="co">        given-names: Stephan</span>
+<span class="co">        orcid: 0000-0003-4925-7248</span>
+<span class="co">        affiliation: &quot;Humboldt-Universität zu Berlin&quot;</span>
+<span class="co">        email: &quot;mail@sdruskat.net&quot;</span>
+<span class="co">        website: http://sdruskat.net</span>
+<span class="co">        role: main-author</span>
+<span class="co">      - family-names: Beethoven</span>
+<span class="co">        name-particle: van</span>
+<span class="co">        given-names: Ludwig</span>
+<span class="co">        role: artist</span>
+<span class="co">      - family-names: Fernández de Córdoba</span>
+<span class="co">        given-names: Gonzalo</span>
+<span class="co">        name-suffix: Jr.</span>
+<span class="co">        role: tester</span>
+<span class="co">    ...</span></code></pre></div>
 <p><strong>type</strong>, <strong>languages</strong>, <strong>programming-languages</strong>, <strong>status</strong></p>
 <p>These keys only take values from a defined set, cf. the respective sections:</p>
 <ul>
@@ -183,21 +201,23 @@
 <p>This key takes a collection of strings.</p>
 <p>Example:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="fu">references:</span>
-  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
-    <span class="fu">keywords:</span>
-      <span class="kw">-</span> linguistics
-      <span class="kw">-</span> <span class="st">&quot;multi-layer annotation&quot;</span>
-      <span class="kw">-</span> web service
-    ...</code></pre></div>
+<span class="co">...</span>
+<span class="co">references:</span>
+<span class="co">  - type: software</span>
+<span class="co">    keywords:</span>
+<span class="co">      - linguistics</span>
+<span class="co">      - &quot;multi-layer annotation&quot;</span>
+<span class="co">      - web service</span>
+<span class="co">    ...</span></code></pre></div>
 <p><strong>scope</strong></p>
 <p>A reference item can specify a more detailed scope for the reference, via the reference key <code>scope</code>. This key can be useful if certatin references should only be cited under specific circumstances, e.g., only when a specific package of the software is used. In such a case, the package would ideally have its own CFF file, but if this is not possible for whatever reason, the <code>scope</code> key my come in handy.</p>
 <p>Example:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="fu">references:</span>
-  <span class="kw">-</span> <span class="fu">scope:</span><span class="at"> </span><span class="st">&quot;Cite this paper when you run software X with flag --xy&quot;</span>
-    <span class="fu">type:</span><span class="at"> article</span>
-    ...</code></pre></div>
+<span class="co">...</span>
+<span class="co">references:</span>
+<span class="co">  - scope: &quot;Cite this paper when you run software X with flag --xy&quot;</span>
+<span class="co">    type: article</span>
+<span class="co">    ...</span></code></pre></div>
 <h2 id="formatting">Formatting</h2>
 <p>CFF follows the formatting rules of YAML 1.2, of which one of the most important ones is that the colon (<code>:</code>) after a key should always be followed by a whitespace.</p>
 <p>Structure is determined by indentation, i.e., lines containing nested elements must be indented by at least one whitespace character, although using at least two whitespaces as a standard for indentation preserves readability.</p>
@@ -210,9 +230,9 @@
 <table style="width:99%;">
 <caption>Complete list of CFF keys.</caption>
 <colgroup>
-<col style="width: 15%" />
-<col style="width: 27%" />
-<col style="width: 56%" />
+<col style="width: 12%" />
+<col style="width: 31%" />
+<col style="width: 54%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -234,98 +254,108 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">authors</td>
-<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#entity-objects">entity</a></strong> or <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The author of a work</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">collection‑title</td>
+<td style="text-align: left;">collection-doi</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The DOI of a collection conttaining the work</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">collection-title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The title of a collection or proceedings</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">collection‑type</td>
+<tr class="even">
+<td style="text-align: left;">collection-type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The type of a collection</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">commit</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">conference</td>
-<td style="text-align: left;">Entity object</td>
+<td style="text-align: left;"><strong><a href="#entity-objects">Entity object</a></strong></td>
 <td style="text-align: left;">The conference where the work was presented</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">contact</td>
-<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
-<td style="text-align: left;">The contact person for a work</td>
-</tr>
 <tr class="odd">
+<td style="text-align: left;">contact</td>
+<td style="text-align: left;">Collection of <strong><a href="#entity-objects">entity</a></strong> or <strong><a href="#person-objects">person objects</a></strong></td>
+<td style="text-align: left;">The contact person, group, company, etc. for a work</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">copyright</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The copyright information pertaining to the work</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">data‑type</td>
+<tr class="odd">
+<td style="text-align: left;">data-type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The data type of a data set</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">database</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the database where a work was accessed/is stored</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">database‑provider</td>
-<td style="text-align: left;">Entity object</td>
+<tr class="odd">
+<td style="text-align: left;">database-provider</td>
+<td style="text-align: left;"><strong><a href="#entity-objects">Entity object</a></strong></td>
 <td style="text-align: left;">The provider of the database where a work was accessed/is stored</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">date‑accessed</td>
+<tr class="even">
+<td style="text-align: left;">date-accessed</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been last accessed</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">date‑downloaded</td>
+<tr class="odd">
+<td style="text-align: left;">date-downloaded</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been downloaded</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">date‑published</td>
+<tr class="even">
+<td style="text-align: left;">date-published</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been published</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">date‑released</td>
+<tr class="odd">
+<td style="text-align: left;">date-released</td>
 <td style="text-align: left;">Date</td>
 <td style="text-align: left;">The date the work has been released</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">department</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The department where a work has been produced</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">doi</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The DOI of the work</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">edition</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The edition of the work</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">editors</td>
-<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#entity-objects">entity</a></strong> or <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The editors of a work</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">editors‑series</td>
-<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
+<tr class="even">
+<td style="text-align: left;">editors-series</td>
+<td style="text-align: left;">Collection of <strong><a href="#entity-objects">entity</a></strong> or <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The editors of a series in which a work has been published</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">end</td>
+<td style="text-align: left;">Integer</td>
+<td style="text-align: left;">The end page of the work</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">entry</td>
@@ -344,7 +374,7 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">institution</td>
-<td style="text-align: left;">Entity object</td>
+<td style="text-align: left;"><strong><a href="#entity-objects">Entity object</a></strong></td>
 <td style="text-align: left;">The institution where a work has been produced or published</td>
 </tr>
 <tr class="even">
@@ -363,12 +393,12 @@
 <td style="text-align: left;">The issue of a periodical in which a work appeared</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">issue‑date</td>
+<td style="text-align: left;">issue-date</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The publication date of the issue of a periodical in which a work appeared</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">issue‑title</td>
+<td style="text-align: left;">issue-title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The name of the issue of a periodical in which the work appeared</td>
 </tr>
@@ -393,19 +423,29 @@
 <td style="text-align: left;">The license under which a work is licensed</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">license‑url</td>
+<td style="text-align: left;">license-url</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The URL of the license text under which a work is licensed</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">location</td>
+<td style="text-align: left;"><strong><a href="#entity-objects">Entity object</a></strong></td>
+<td style="text-align: left;">The location of the work</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">loc-start</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The line of code in the file where the work starts</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">loc-end</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The line of code in the file where the work ends</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">medium</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The medium of the work</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">month</td>
@@ -428,7 +468,7 @@
 <td style="text-align: left;">The accession number for a work</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">number‑volumes</td>
+<td style="text-align: left;">number-volumes</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The number of volumes making up the collection in which the work has been published</td>
 </tr>
@@ -438,7 +478,7 @@
 <td style="text-align: left;">The number of pages of the work</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">patent‑states</td>
+<td style="text-align: left;">patent-states</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The states for which a patent is granted</td>
 </tr>
@@ -454,12 +494,12 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">publisher</td>
-<td style="text-align: left;">Entity object</td>
-<td style="text-align: left;">The name of the publisher who has published the work</td>
+<td style="text-align: left;"><strong><a href="#entity-objects">Entity object</a></strong></td>
+<td style="text-align: left;">The publisher who has published the work</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">recipients</td>
-<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#entity-objects">entity</a></strong> or <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The recipient of a personal communication</td>
 </tr>
 <tr class="odd">
@@ -468,12 +508,12 @@
 <td style="text-align: left;">The repository where the work is stored</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">repository‑code</td>
+<td style="text-align: left;">repository-code</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The version control system where the source code of the work is stored</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">repository‑artifact</td>
+<td style="text-align: left;">repository-artifact</td>
 <td style="text-align: left;">String (<em>URL</em>)</td>
 <td style="text-align: left;">The repository where the (executable/binary) artifact of the work is stored</td>
 </tr>
@@ -503,7 +543,7 @@
 <td style="text-align: left;">The start page of the work</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">thesis‑type</td>
+<td style="text-align: left;">thesis-type</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The type of the thesis that is the work</td>
 </tr>
@@ -514,7 +554,7 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">translators</td>
-<td style="text-align: left;">Collection of <strong><a href="#person-objects">person objects</a></strong></td>
+<td style="text-align: left;">Collection of <strong><a href="#entity-objects">entity</a></strong> or <strong><a href="#person-objects">person objects</a></strong></td>
 <td style="text-align: left;">The translator of a work</td>
 </tr>
 <tr class="even">
@@ -538,7 +578,7 @@
 <td style="text-align: left;">The volume of the periodical in which a work appeared</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">volume‑title</td>
+<td style="text-align: left;">volume-title</td>
 <td style="text-align: left;">String</td>
 <td style="text-align: left;">The title of the volume in which the work appeared</td>
 </tr>
@@ -548,7 +588,7 @@
 <td style="text-align: left;">The year in which a work has been published</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">year‑original</td>
+<td style="text-align: left;">year-original</td>
 <td style="text-align: left;">Integer</td>
 <td style="text-align: left;">The year of the original publication</td>
 </tr>
@@ -581,12 +621,21 @@
 <li>If the work is a grant: The funding agency sponsoring the grant.</li>
 <li>If the work is a thesis: The university where a thesis has been produced.</li>
 <li>If the work is a statute: The institution or geographical unit which the statute adheres to.</li>
-<li>If the work is a historical work, illuminated manuscript or similar: The library or archive where the work is held.</li>
 <li>If the work is a conference: The organisation which held the conference.</li>
 </ul>
 <p><strong>languages</strong></p>
 <ul>
 <li>If the work is a book: The language in which the book is written.</li>
+</ul>
+<p><strong>location</strong></p>
+<ul>
+<li>If the work is an artwork: E.g., the museum holding the work.</li>
+<li>If the work is a historical work, illuminated manuscript or similar: The library or archive where the work is held.</li>
+</ul>
+<p><strong>medium</strong></p>
+<ul>
+<li>If the work is an artwork: The medium of the artwork, e.g., &quot;photograph&quot;, &quot;painting&quot;, &quot;oil on canvas&quot;, etc.</li>
+<li>If the work is a book or similar: Whether it is a printed book or an ebook.</li>
 </ul>
 <p><strong>month</strong></p>
 <ul>
@@ -923,12 +972,13 @@
 </ul>
 <p>Example:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="fu">references:</span>
-  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> book</span>
-    <span class="fu">publisher:</span>
-      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> PeerJ</span>
-        <span class="fu">city:</span><span class="at"> London</span>
-        <span class="fu">country:</span><span class="at"> GB</span></code></pre></div>
+<span class="co">...</span>
+<span class="co">references:</span>
+<span class="co">  - type: book</span>
+<span class="co">    publisher:</span>
+<span class="co">      - name: PeerJ</span>
+<span class="co">        city: London</span>
+<span class="co">        country: GB</span></code></pre></div>
 <p><strong>date-start</strong> and <strong>date-end</strong></p>
 <ul>
 <li>The start and end date of, e.g., a conference. This must be formatted according to <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>, e.g., <code>YYYY-MM-DD</code>, or <code>2017-10-04T16:20:57+00:00</code>.</li>
@@ -1058,7 +1108,7 @@
 <h3 id="person-roles">Person roles</h3>
 <p>A person object can be assigned a role for the purposes of specifying authorship status, e.g., to distinguish main authors of a software from contributors who have provided a small patch. The defined roles are:</p>
 <table>
-<caption>Defined roles for entities.</caption>
+<caption>Defined roles for person objects.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Key</th>
@@ -1181,9 +1231,13 @@
 <p>Natural languages as a value for the key <code>languages</code> are specified via their respective 3-character <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> code. A list of ISO 639-3 codes in maintained at <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes">Wikipedia:List of ISO 639-3 codes</a>. Alternatively, a language's 2-character <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1</a> code may be used. A list of ISO 639-1 codes is maintained at <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">Wikipedia:List of ISO 639-1 codes</a>.</p>
 <p>Example for a work in both English and Daakaka:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="fu">languages:</span>
-  <span class="kw">-</span> en
-  <span class="kw">-</span> bpa</code></pre></div>
+<span class="co">...</span>
+<span class="co">references:</span>
+<span class="co">  - type: book</span>
+<span class="co">    ...</span>
+<span class="co">    languages:</span>
+<span class="co">      - en</span>
+<span class="co">      - bpa</span></code></pre></div>
 <h2 id="programming-language-strings">Programming language strings</h2>
 <p>CFF specifies the following value strings for the key <code>programming-languages</code>. If a language is not included, please use the string <code>other</code> with a lower-case, hyphenated string argument, and do not include the version of the programming language used, e.g., for <em>My Fancy Language v4.2.1</em>, use <code>other=my-fancy- language</code>. Additionally, please create an issue on the <a href="https://github.com/sdruskat/citation-file-format/issues/new">GitHub repository for CFF</a>, asking to include the programming language in the list.</p>
 <table style="width:98%;">
@@ -3514,8 +3568,10 @@
 </tbody>
 </table>
 <h1 id="schema">Schema</h1>
-<p>It is planned to provide a PyKwalify schema for the validation of CFF files. This is work in progress.</p>
+<p>Work is still in progress to provide a schema for CFF, against which CFF files can be validated.</p>
 <h1 id="examples">Examples</h1>
+<h2 id="software-examples">Software examples</h2>
+<p>One of the main foci of CFF is to comprehensively cover the provision of citation metadata for software. To this end, it should always be used based on the Software Citation Principles <a href="#principles">(Smith et al., 2016)</a>! Please make sure you follow the best practices wherever possible. Two typical scenarios for software citation metadata include the existence and respectively lack of a DOI for the software for which citation metadata is provided, for both of which examples follow.</p>
 <h3 id="a-software-with-a-doi">A software with a DOI</h3>
 <p>Note that <a href="#principles">(Smith et al., 2016, p. 12)</a> recommends</p>
 <blockquote>
@@ -3527,74 +3583,324 @@
 </blockquote>
 <p>Therefore, a minimal <code>CITATION.cff</code> file in such a case would look similar to the following.</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite it as below.</span>
-<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
-  <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
-      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
-  <span class="fu">title:</span><span class="at"> Stephan&#39;s Research Software</span>
-  <span class="fu">version:</span><span class="at"> 1.0.4</span>
-  <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span></code></pre></div>
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> If you use this software, please cite it as below.</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Druskat</span>
+        <span class="fu">given-names:</span><span class="at"> Stephan</span>
+        <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
+    <span class="fu">title:</span><span class="at"> My Research Tool</span>
+    <span class="fu">version:</span><span class="at"> 1.0.4</span>
+    <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span></code></pre></div>
 <p>A more comprehensive version could look similar to the following.</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you use this software, please cite it as below.</span>
-<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
-  <span class="fu">authors:</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Druskat::Stephan</span>
-      <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
-      <span class="fu">affiliation:</span><span class="at"> Humboldt-Universität zu Berlin, Dept. of German Studies and Linguistics</span>
-      <span class="fu">email:</span><span class="at"> mail@sdruskat.net</span>
-      <span class="fu">website:</span><span class="at"> https://hu.berlin/sdruskat</span>
-  <span class="fu">title:</span><span class="at"> Stephan&#39;s Research Software</span>
-  <span class="fu">version:</span><span class="at"> 1.0.4</span>
-  <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span>
-  <span class="fu">commit:</span><span class="at"> ab3d513</span>
-  <span class="fu">repository-code:</span><span class="at"> https://github.com/sdruskat/stephans-research-software</span>
-  <span class="fu">repository-artifact:</span><span class="at"> https://hu.berlin/nexus/srs</span>
-  <span class="fu">date-published:</span><span class="at"> 2017-09-23</span>
-  <span class="fu">dependencies:</span><span class="at"> https://github.com/sdruskat/stephans-research-software/blob/srs-1.0.4/NOTICE</span>
-  <span class="fu">keywords:</span>
-    <span class="kw">-</span> <span class="st">&quot;McAuthor&#39;s algorithm&quot;</span>
-    <span class="kw">-</span> linguistics
-    <span class="kw">-</span> nlp
-    <span class="kw">-</span> parser
-    <span class="kw">-</span> deep convolutional neural network
-  <span class="fu">programming-languages:</span>
-    <span class="kw">-</span> java
-    <span class="kw">-</span> python
-    <span class="kw">-</span> c
-    <span class="kw">-</span> haskell
-    <span class="kw">-</span> pascal
-    <span class="kw">-</span> rust
-  <span class="fu">license:</span><span class="at"> Apache License, Version 2.0</span>
-  <span class="fu">license-url:</span><span class="at"> http://www.apache.org/licenses/LICENSE-2.0</span>
-  <span class="fu">url:</span><span class="at"> https://sdruskat.github.io/stephans-research-software</span></code></pre></div>
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> If you use this software, please cite it as below.</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Druskat</span>
+        <span class="fu">given-names:</span><span class="at"> Stephan</span>
+        <span class="fu">orcid:</span><span class="at"> 0000-0003-4925-7248</span>
+        <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;Humboldt-Universität zu Berlin, Dept. of German Studies </span>
+<span class="st">        and Linguistics&quot;</span>
+        <span class="fu">email:</span><span class="at"> mail@sdruskat.net</span>
+        <span class="fu">website:</span><span class="at"> https://hu.berlin/sdruskat</span>
+    <span class="fu">title:</span><span class="at"> My Research Tool</span>
+    <span class="fu">version:</span><span class="at"> 1.0.4</span>
+    <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span>
+    <span class="fu">repository-code:</span><span class="at"> https://github.com/sdruskat/my-research-tool</span>
+    <span class="fu">repository-artifact:</span><span class="at"> https://hu.berlin/nexus/mrt</span>
+    <span class="fu">date-published:</span><span class="at"> 2017-09-23</span>
+    <span class="fu">keywords:</span>
+      <span class="kw">-</span> <span class="st">&quot;McAuthor&#39;s algorithm&quot;</span>
+      <span class="kw">-</span> linguistics
+      <span class="kw">-</span> nlp
+      <span class="kw">-</span> parser
+      <span class="kw">-</span> deep convolutional neural network
+    <span class="fu">programming-languages:</span>
+      <span class="kw">-</span> java
+      <span class="kw">-</span> python
+      <span class="kw">-</span> c
+      <span class="kw">-</span> haskell
+      <span class="kw">-</span> pascal
+      <span class="kw">-</span> rust
+    <span class="fu">license:</span><span class="at"> Apache License, Version 2.0</span>
+    <span class="fu">license-url:</span><span class="at"> http://www.apache.org/licenses/LICENSE-2.0</span>
+    <span class="fu">url:</span><span class="at"> https://sdruskat.github.io/my-research-tool</span></code></pre></div>
 <h3 id="a-software-without-a-doi">A software without a DOI</h3>
 <p>For software without a DOI, it is recommended that &quot;the metadata should still provide information on how to access the specific software, but this may be a company’s product number or a link to a website that allows the software be purchased.&quot; <a href="#principles">(Smith et al., 2016, p. 13)</a>. Furthermore, &quot;if the version number and release date are not available, the download date can be used. Similarly, the contact name/email is an alternative to the location/repository.&quot; <a href="#principles">(Smith et al., 2016, p. 7)</a></p>
 <p>Hence, for a closed source software without a DOI for which the version number and release date cannot be determined, a <code>CITATION.cff</code> file could look like this.</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
-<span class="kw">-</span> <span class="fu">message:</span><span class="at"> If you dare to use this commercial, closed-source, unversioned software in your research, please at least cite it as below.</span>
-<span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
-  <span class="fu">title:</span><span class="at"> Opaquity</span>
-  <span class="fu">number:</span><span class="at"> opq-1234-XZVF-ACME-RLY</span>
-  <span class="fu">date-downloaded:</span><span class="at"> 2017-02-31</span>
-  <span class="fu">contact:</span>
-    <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Vader::Darth</span>
-      <span class="fu">affiliation:</span><span class="at"> Dark Side Software</span>
-      <span class="fu">location:</span><span class="at"> DS-1 Orbital Battle Station, near Scarif</span>
-      <span class="fu">email:</span><span class="at"> father@imperial-empire.com</span>
-      <span class="fu">tel:</span><span class="at"> +850 (0)123-45-666</span></code></pre></div>
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you dare to use this commercial, closed-source, unversioned software </span>
+<span class="st">in your research, please at least cite it as below.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
+    <span class="fu">title:</span><span class="at"> Opaquity</span>
+    <span class="fu">number:</span><span class="at"> opq-1234-XZVF-ACME-RLY</span>
+    <span class="fu">date-downloaded:</span><span class="at"> 2017-02-31</span>
+    <span class="fu">contact:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Vader</span>
+        <span class="fu">given-names:</span><span class="at"> Darth</span>
+        <span class="fu">affiliation:</span><span class="at"> Dark Side Software</span>
+        <span class="fu">location:</span><span class="at"> DS-1 Orbital Battle Station, near Scarif</span>
+        <span class="fu">email:</span><span class="at"> father@imperial-empire.com</span>
+        <span class="fu">tel:</span><span class="at"> +850 (0)123-45-666</span></code></pre></div>
+<h3 id="software-with-two-references"><code>software</code> (with two references)</h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use My Research Tool, please cite both the software and the </span>
+<span class="st">outline paper.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+        <span class="fu">role:</span><span class="at"> main-author</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Bielefeld</span>
+        <span class="fu">name-particle:</span><span class="at"> von</span>
+        <span class="fu">given-names:</span><span class="at"> Arthur</span>
+        <span class="fu">role:</span><span class="at"> tester</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> McAuthor</span>
+        <span class="fu">given-names:</span><span class="at"> Juniper</span>
+        <span class="fu">name-suffix:</span><span class="at"> Jr.</span>
+        <span class="fu">role:</span><span class="at"> maintainer</span>
+    <span class="fu">title:</span><span class="at"> My Research Tool</span>
+    <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> article</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+        <span class="fu">role:</span><span class="at"> main-author</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Bielefeld</span>
+        <span class="fu">name-particle:</span><span class="at"> von</span>
+        <span class="fu">given-names:</span><span class="at"> Arthur</span>
+        <span class="fu">role:</span><span class="at"> author</span>
+    <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;My Research Tool: A 100% accuracy syntax parser for all languages&quot;</span>
+    <span class="fu">year:</span><span class="at"> 2099</span>
+    <span class="fu">journal:</span><span class="at"> Journal of Hard Science Fiction</span>
+    <span class="fu">volume:</span><span class="at"> 42</span>
+    <span class="fu">issue:</span><span class="at"> 13</span>
+    <span class="fu">doi:</span><span class="at"> 10.9999/hardscifi-lang.42132</span></code></pre></div>
+<h3 id="software-code-without-a-doi-code-repository-commit"><code>software-code</code> (without a DOI: code repository + commit)</h3>
+<blockquote>
+<p>We recognize that there are certain situations where it may not be possible to follow the recommended best-practice. For example, if (1) the software authors did not register a DOI and/or release a specific version, or (2) the version of the software used does not match what is available to cite. In those cases, falling back on a combination of the repository URL and version number/commit hash would be an appropriate way to cite the software used. <a href="#principles">(Smith et al., 2016, p. 12)</a></p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use this MRT alpha snapshot version, please cite.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software-code</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+    <span class="fu">title:</span><span class="at"> My Research Tool Prototype</span>
+    <span class="fu">version:</span><span class="at"> 0.0.1-alpha1-build1507284872</span>
+    <span class="fu">repository-code:</span><span class="at"> https://github.com/doe/mrt</span>
+    <span class="fu">commit:</span><span class="at"> 160d54f9e935c914df38c1ffda752112b5c979a8</span></code></pre></div>
+<h3 id="software-container"><code>software-container</code></h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use the MRT Docker container, please cite the following.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software-container</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;Humboldt-Universität zu Berlin&quot;</span>
+        <span class="fu">website:</span><span class="at"> https://www.linguistik.hu-berlin.de/</span>
+        <span class="fu">role:</span><span class="at"> maintainer</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+        <span class="fu">role:</span><span class="at"> main-author</span>
+    <span class="fu">title:</span><span class="at"> mrt-iain-m-banks</span>
+    <span class="fu">version:</span><span class="at"> 1.0.4 (Iain M. Banks)</span>
+    <span class="fu">url:</span><span class="at"> https://github.com/doe/docker-brew-mrt-core/blob/160d54f9e935c914df38c1ffda752112b5c979a8/iain/Dockerfile</span>
+    <span class="fu">repository:</span><span class="at"> https://hub.docker.hu-berlin.de/_/mrt-iain-m-banks/</span></code></pre></div>
+<h3 id="software-executable"><code>software-executable</code></h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use MRT, please cite the following.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> software-executable</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+        <span class="fu">role:</span><span class="at"> main-author</span>
+    <span class="fu">title:</span><span class="at"> My Research Tool Kickstarter</span>
+    <span class="fu">version:</span><span class="at"> 2.0.0</span>
+    <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span>
+    <span class="fu">repository-artifact:</span><span class="at"> https://hu.berlin/nexus/mrt-kickstarter</span>
+    <span class="fu">filename:</span><span class="at"> mrt2-kickstarter.exe</span></code></pre></div>
+<h2 id="other-examples">Other examples</h2>
+<h3 id="art"><code>art</code></h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use this software, please cite the following.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> art</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Picasso</span>
+        <span class="fu">given-names:</span><span class="at"> Pablo</span>
+    <span class="fu">title:</span><span class="at"> Guernica</span>
+    <span class="fu">year:</span><span class="at"> 1937</span>
+    <span class="fu">medium:</span><span class="at"> Oil on canvas</span>
+    <span class="fu">format:</span><span class="at"> 349.3cm x 776.6cm</span>
+    <span class="fu">location:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Museo Reina Sofia</span>
+        <span class="fu">city:</span><span class="at"> Madrid</span>
+        <span class="fu">country:</span><span class="at"> ES</span></code></pre></div>
+<h3 id="article"><code>article</code></h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use this software, please cite the following paper.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> article</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Smith</span>
+        <span class="fu">given-names:</span><span class="at"> Arfon M.</span>
+        <span class="fu">role:</span><span class="at"> main-author</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Katz</span>
+        <span class="fu">given-names:</span><span class="at"> Daniel S.</span>
+        <span class="fu">affiliation:</span><span class="at"> </span><span class="st">&quot;National Center for Supercomputing Applications &amp; </span>
+<span class="st">        Electrical and Computer Engineering Department &amp; School of Information </span>
+<span class="st">        Sciences, University of Illinois at Urbana-Champaign, Urbana, Illinois, </span>
+<span class="st">        United States&quot;</span>
+        <span class="fu">orcid:</span><span class="at"> 0000-0001-5934-7525</span>
+        <span class="fu">role:</span><span class="at"> main-author</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Niemeyer</span>
+        <span class="fu">given-names:</span><span class="at"> Kyle E.</span>
+        <span class="fu">role:</span><span class="at"> main-author</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;FORCE11 Software Citation Working Group&quot;</span>
+        <span class="fu">website:</span><span class="at"> https://www.force11.org/group/software-citation-working-group</span>
+    <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Software citation principles&quot;</span>
+    <span class="fu">year:</span><span class="at"> 2016</span>
+    <span class="fu">journal:</span><span class="at"> PeerJ Computer Science</span>
+    <span class="fu">volume:</span><span class="at"> 2</span>
+    <span class="fu">issue:</span><span class="at"> e86</span>
+    <span class="fu">doi:</span><span class="at"> 10.7717/peerj-cs.86</span>
+    <span class="fu">url:</span><span class="at"> https://doi.org/10.7717/peerj-cs.86</span></code></pre></div>
+<h3 id="blog"><code>blog</code></h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use MRT in your research, please cite the following blog article.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> blog</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+    <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Implement a 100% accuracy syntax parser for all languages? No probs!&quot;</span>
+    <span class="fu">date-published:</span><span class="at"> 2017-09-23</span>
+    <span class="fu">url:</span><span class="at"> https://hu-berlin.de/blogs/jdoe/2017/09/23/if-only</span>
+    <span class="fu">institution:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;Humboldt-Universität zu Berlin&quot;</span>
+        <span class="fu">city:</span><span class="at"> Berlin</span>
+        <span class="fu">country:</span><span class="at"> DE</span></code></pre></div>
+<h3 id="book"><code>book</code></h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use MRT for your research, please cite the following book.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> book</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+        <span class="fu">role:</span><span class="at"> main-author</span>
+    <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;The future of syntax parsing&quot;</span>
+    <span class="fu">year:</span><span class="at"> 2017</span>
+    <span class="fu">publisher:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Far Out Publications</span>
+        <span class="fu">city:</span><span class="at"> Bielefeld</span>
+    <span class="fu">medium:</span><span class="at"> print</span></code></pre></div>
+<h3 id="conference-paper"><code>conference-paper</code></h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use MRT for your research, please cite the following.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> conference-paper</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+    <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Ultimate-accuracy syntax parsing with My Research Tool&quot;</span>
+    <span class="fu">year:</span><span class="at"> 2017</span>
+    <span class="fu">collection-title:</span><span class="at"> </span><span class="st">&quot;Proceedings of the 1st Conference on Wishful Thinking&quot;</span>
+    <span class="fu">collection-doi:</span><span class="at"> 10043.zenodo.4321</span>
+    <span class="fu">editors:</span><span class="at"> </span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Kirk</span>
+        <span class="fu">given-names:</span><span class="at"> James T.</span>
+    <span class="fu">conference:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> 1st Conference on Wishful Thinking</span>
+        <span class="fu">location:</span><span class="at"> Spock&#39;s Inn Hotel and Bar</span>
+        <span class="fu">address:</span><span class="at"> 123 Main St</span>
+        <span class="fu">city:</span><span class="at"> Bielefeld</span>
+        <span class="fu">region:</span><span class="at"> Jarvis Island</span>
+        <span class="fu">post-code:</span><span class="at"> 12345</span>
+        <span class="fu">country:</span><span class="at"> UM</span>
+        <span class="fu">date-start:</span><span class="at"> 2017-04-01</span>
+        <span class="fu">date-end:</span><span class="at"> 2017-04-01</span>
+    <span class="fu">start:</span><span class="at"> 42</span>
+    <span class="fu">end:</span><span class="at"> 45</span>
+    <span class="fu">doi:</span><span class="at"> 10043/zenodo.1234</span></code></pre></div>
+<h3 id="edited-work"><code>edited-work</code></h3>
+<p>Note that the editors of the edited work must be specified under the <code>authors</code> key. Specific citation styles may or may not attach a suffix to the authors, such as &quot;, eds.&quot; or similar.</p>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use MRT, please cite the following.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> edited-work</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+    <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;Ultimate-accuracy parsing in practice&quot;</span>
+    <span class="fu">year:</span><span class="at"> 2017</span>
+    <span class="fu">publisher:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Far Out Publications</span>
+        <span class="fu">city:</span><span class="at"> Bielefeld</span>
+        <span class="fu">country:</span><span class="at"> DE</span></code></pre></div>
+<h3 id="report"><code>report</code></h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use MRT in your research, please cite the following.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> report</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> Fictional Parsing Interest Group, ACME Inc.</span>
+    <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;100% accuracy syntax parsing at ACME&quot;</span>
+    <span class="fu">url:</span><span class="at"> http://www.acme.com/sigs/fp/reports/hpsp.pdf</span>
+    <span class="fu">year:</span><span class="at"> 2017</span>
+    <span class="fu">date-accessed:</span><span class="at"> 2017-09-23</span></code></pre></div>
+<h3 id="thesis"><code>thesis</code></h3>
+<div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml">
+<span class="fu">cff-version:</span><span class="at"> 1.0.0</span>
+<span class="fu">message:</span><span class="at"> </span><span class="st">&quot;If you use MRT in your research, please cite the following.&quot;</span>
+<span class="fu">references:</span>
+  <span class="kw">-</span> <span class="fu">type:</span><span class="at"> thesis</span>
+    <span class="fu">authors:</span>
+      <span class="kw">-</span> <span class="fu">family-names:</span><span class="at"> Doe</span>
+        <span class="fu">given-names:</span><span class="at"> Jane</span>
+    <span class="fu">title:</span><span class="at"> </span><span class="st">&quot;A high accuracy syntax parser in Visual Basic&quot;</span>
+    <span class="fu">thesis-type:</span><span class="at"> PhD</span>
+    <span class="fu">year:</span><span class="at"> 2017</span>
+    <span class="fu">department:</span><span class="at"> Dept. of Universal Language Philosophy</span>
+    <span class="fu">institution:</span>
+      <span class="kw">-</span> <span class="fu">name:</span><span class="at"> </span><span class="st">&quot;Humboldt-Universität zu Berlin&quot;</span>
+        <span class="fu">city:</span><span class="at"> Berlin</span>
+        <span class="fu">country:</span><span class="at"> DE</span>
+    <span class="fu">database:</span><span class="at"> Thesiserver</span>
+    <span class="fu">date-accessed:</span><span class="at"> 2017-09-23</span>
+    <span class="fu">date-published:</span><span class="at"> 2017-03-21</span>
+    <span class="fu">url:</span><span class="at"> http://thesiserver.hu-berlin.de/2017/march/phd/doe-12345</span></code></pre></div>
 <h1 id="infrastructure">Infrastructure</h1>
-<p>It is planned to provide further infrastructure (e.g., software packages), to support the following use cases for CFF:</p>
+<p>The roadmap for CFF plans for the provision of further infrastructure (e.g., software packages and web services), to support the following use cases for CFF:</p>
 <ul>
-<li>Creating CFF <code>CITATION</code> files</li>
-<li>Reading CFF <code>CITATION</code> files</li>
-<li>Validating CFF <code>CITATION</code> files</li>
-<li>Converting CFF <code>CITATION</code> files</li>
+<li>Creating CFF files</li>
+<li>Reading CFF files</li>
+<li>Validating CFF files</li>
+<li>Converting CFF files</li>
 </ul>
-<p>For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30 -oh-research-software-how-shalt-i-cite-thee</p>
 <h1 id="contributions">Contributions</h1>
-<p>Link to <code>CONTRIBUTING.md</code>, tba.</p>
+<p>Contributions to the format specifications are welcome! For details on how to contribute, please refer to the GitHub repository for CFF at <a href="http://github.com/sdruskat/citation-file-format" class="uri">http://github.com/sdruskat/citation-file-format</a>.</p>
 <h1 id="license">License</h1>
 <p>This document is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY- SA-4.0</a> license. The full license text can be obtained from the URL <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode" class="uri">https://creativecommons.org/licenses/by-sa/4.0/legalcode</a>.</p>
 <h1 id="references">References</h1>
@@ -3619,7 +3925,7 @@
   	
 		
 		    
-		      <p><a class="active" href="/citation-file-format/">> 1.0.0-RC1 <</a></p>
+		      <p><a class="active" href="/citation-file-format/">> 0.9-RC1 <</a></p>
 		    
 	    
   	

@@ -513,9 +513,6 @@ div.table-wrapper {
   p, footer, div.mathblock {
     width: 90%; }
 
-  pre code {
-    width: 87.5%; }
-
   ul {
     width: 85%; }
 
@@ -534,7 +531,6 @@ div.table-wrapper {
   font-size: 1rem; }
 
 pre, pre code, p pre code {
-  width: 52.5%;
   padding-left: 2.5%;
   overflow-x: auto; }
 
@@ -581,7 +577,6 @@ label.margin-toggle:not(.sidenote-number) {
     cursor: pointer; }
 
   pre, pre code, p code, p pre code {
-    width: 90%;
     padding: 0; }
 
   .table-caption {
