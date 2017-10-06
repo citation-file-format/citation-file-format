@@ -376,7 +376,6 @@ p, footer, div.table-wrapper, div.mathblock{ width: 55%; }
 div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' so scroll bars appear only as needed
 
 @media screen and (max-width: 760px) { p, footer,div.mathblock { width: 90%; }
-                                       pre code { width: 87.5%; }
                                        ul { width: 85%; }
                                        figure { max-width: 90%; }
                                        figcaption, figure.fullwidth figcaption { margin-right: 0%;
@@ -388,7 +387,7 @@ div.table-wrapper { overflow-x: auto; } //changed all overflow values to 'auto' 
 
 .marginnote code, .sidenote code { font-size: 1rem; } //more .code class removal
 
-pre, pre code, p pre code { width: 52.5%;
+pre, pre code, p pre code { 
            padding-left: 2.5%;
            overflow-x: auto; }
 
@@ -418,7 +417,7 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
                                                                    vertical-align: baseline;
                                                                    position: relative; }
                             label { cursor: pointer; }
-                            pre, pre code, p code, p pre code { width: 90%;
+                            pre, pre code, p code, p pre code { 
                                        padding: 0; }
                             .table-caption { display: block;
                                              float: right;
