@@ -164,6 +164,7 @@ contact information.
 Example:
 ```yaml
 
+...
 references:
   - type: book
     publisher:
@@ -183,6 +184,7 @@ set for specifiying personal names, an affiliation, a role, etc.
 Example:
 ```yaml
 
+...
 references:
   - type: software
     authors:
@@ -225,6 +227,7 @@ This key takes a collection of strings.
 Example:
 ```yaml
 
+...
 references:
   - type: software
     keywords:
@@ -247,6 +250,7 @@ my come in handy.
 Example:
 ```yaml
 
+...
 references:
   - scope: "Cite this paper when you run software X with flag --xy"
     type: article
@@ -287,9 +291,11 @@ CFF defines the following reference keys.
 
   authors                     Collection of **[entity](#entity-objects)** or **[person objects]** The author of a work
 
-  collection&#x2011;title        String                                                           The title of a collection or proceedings
+  collection-doi              String                                                              The DOI of a collection conttaining the work
 
-  collection&#x2011;type         String                                                           The type of a collection  
+  collection-title            String                                                              The title of a collection or proceedings
+
+  collection-type             String                                                              The type of a collection  
 
   commit                      String                                                              The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work
 
@@ -299,19 +305,19 @@ CFF defines the following reference keys.
 
   copyright                   String                                                               The copyright information pertaining to the work
 
-  data&#x2011;type               String                                                              The data type of a data set
+  data-type                   String                                                               The data type of a data set
 
   database                    String                                                               The name of the database where a work was accessed/is stored
 
-  database&#x2011;provider           **[Entity object](#entity-objects)**                               The provider of the database where a work was accessed/is stored
+  database-provider           **[Entity object](#entity-objects)**                                 The provider of the database where a work was accessed/is stored
 
-  date&#x2011;accessed               Date                                                            The date the work has been last accessed
+  date-accessed               Date                                                                The date the work has been last accessed
 
-  date&#x2011;downloaded               Date                                                            The date the work has been downloaded
+  date-downloaded               Date                                                              The date the work has been downloaded
 
-  date&#x2011;published              Date                                                            The date the work has been published
+  date-published              Date                                                                The date the work has been published
 
-  date&#x2011;released           Date                                                                 The date the work has been released
+  date-released               Date                                                                 The date the work has been released
 
   department                  String                                                               The department where a work has been produced
 
@@ -321,7 +327,9 @@ CFF defines the following reference keys.
 
   editors                     Collection of **[entity](#entity-objects)** or **[person objects]**                                          The editors of a work
 
-  editors&#x2011;series       Collection of **[entity](#entity-objects)** or **[person objects]**                                           The editors of a series in which a work has been published
+  editors-series              Collection of **[entity](#entity-objects)** or **[person objects]**                                           The editors of a series in which a work has been published
+
+  end                         Integer                                                             The end page of the work
 
   entry                       String                                                               An entry in the collection that constitutes the work
 
@@ -337,9 +345,9 @@ CFF defines the following reference keys.
  
   issue                       Integer                                                             The issue of a periodical in which a work appeared
  
-  issue&#x2011;date              String                                                              The publication date of the issue of a periodical in which a work appeared
+  issue-date                  String                                                              The publication date of the issue of a periodical in which a work appeared
 
-  issue&#x2011;title             String                                                              The name of the issue of a periodical in which the work appeared
+  issue-title                 String                                                              The name of the issue of a periodical in which the work appeared
 
   journal                     String                                                              The name of the journal/magazine/newspaper/periodical where the work was published
 
@@ -349,7 +357,7 @@ CFF defines the following reference keys.
 
   license                     String                                                              The license under which a work is licensed
 
-  license&#x2011;url             String (*URL*)                                                      The URL of the license text under which a work is licensed
+  license-url                 String (*URL*)                                                      The URL of the license text under which a work is licensed
 
   location                    **[Entity object](#entity-objects)**                                The location of the work
 
@@ -367,11 +375,11 @@ CFF defines the following reference keys.
 
   number                      String                                                              The accession number for a work
 
-  number&#x2011;volumes           Integer                                                         The number of volumes making up the collection in which the work has been published
+  number-volumes              Integer                                                             The number of volumes making up the collection in which the work has been published
 
   pages                       Integer                                                             The number of pages of the work
 
-  patent&#x2011;states            String                                                          The states for which a patent is granted
+  patent-states               String                                                              The states for which a patent is granted
 
   pmcid                       String                                                              The PMCID of a work
 
@@ -383,9 +391,9 @@ CFF defines the following reference keys.
 
   repository                  String (*URL*)                                                      The repository where the work is stored
 
-  repository&#x2011;code         String (*URL*)                                                      The version control system where the source code of the work is stored
+  repository-code             String (*URL*)                                                      The version control system where the source code of the work is stored
 
-  repository&#x2011;artifact   String (*URL*)                                                     The repository where the (executable/binary) artifact of the work is stored
+  repository-artifact         String (*URL*)                                                      The repository where the (executable/binary) artifact of the work is stored
 
   scope                       String                                                              The scope of the reference, e.g., the section of the work it adheres to
 
@@ -397,7 +405,7 @@ CFF defines the following reference keys.
 
   start                       Integer                                                             The start page of the work
 
-  thesis&#x2011;type             String                                                           The type of the thesis that is the work
+  thesis-type                 String                                                              The type of the thesis that is the work
 
   title                       String                                                              The title of the work
 
@@ -411,11 +419,11 @@ CFF defines the following reference keys.
 
   volume                      Integer                                                             The volume of the periodical in which a work appeared
 
-  volume&#x2011;title            String                                                            The title of the volume in which the work appeared
+  volume-title                String                                                              The title of the volume in which the work appeared
 
   year                        Integer                                                             The year in which a work has been published
 
-  year&#x2011;original           Integer                                                             The year of the original publication
+  year-original               Integer                                                             The year of the original publication
 
   ----------------------- ----------------------------------------- ---------------------------------------------------------------------------------------------------------------------------
 Table: Complete list of CFF keys.
@@ -465,6 +473,7 @@ ambiguity/misuse.
 
 - If the work is an artwork: The medium of the artwork, e.g., "photograph", 
 "painting", "oil on canvas", etc.
+- If the work is a book or similar: Whether it is a printed book or an ebook.
 
 **month**
 
@@ -612,13 +621,13 @@ alpha-2 codes can be found at
 Example:
 ```yaml
 
+...
 references:
   - type: book
     publisher:
       - name: PeerJ
         city: London
         country: GB
-
 ```
 
 **date-start** and **date-end**
@@ -749,7 +758,7 @@ from contributors who have provided a small patch. The defined roles are:
   **tester** (e.g., of a software)
   **trainer**
   -------------------------------------------------------------
-  Table: Defined roles for entities.
+  Table: Defined roles for person objects.
 
 # Specified value strings
 
@@ -786,9 +795,13 @@ Example for a work in both English and Daakaka:
 
 ````yaml
 
-languages:
-  - en
-  - bpa
+...
+references:
+  - type: book
+    ...
+    languages:
+      - en
+      - bpa
 ````
 
 ## Programming language strings
@@ -1733,12 +1746,234 @@ include the programming language in the list.
 
 # Schema
 
-It is planned to provide a PyKwalify schema for the validation of CFF files.
-This is work in progress.
+Work is still in progress to provide a schema for CFF, against which CFF files
+can be validated.
 
 # Examples
 
-## `art`
+## Software examples
+
+One of the main foci of CFF is to comprehensively cover the provision of 
+citation metadata for software. To this end, it should always be used based on
+the Software Citation Principles {% cite principles %}! Please make sure you
+follow the best practices wherever possible. Two typical scenarios for
+software citation metadata include the existence and respectively lack of a
+DOI for the software for which citation metadata is provided, for both of which 
+examples follow.
+
+### A software with a DOI
+
+Note that {% cite principles -l 12 %} recommends
+
+> [...] the use of DOIs as the unique identifier due to their common usage and
+acceptance, particularly as they are the standard for other digital products
+such as publications.
+
+Furthermore, DOIs should point to a "unique, specific software version" 
+{% cite principles -l 12 %}. Also it is recommended {% cite principles -l 13 %} that:
+
+> the [DOI] should resolve to a persistent landing page that contains metadata 
+and a link to the software itself, rather than directly to the source code files,
+repository, or executable.
+
+Therefore, a minimal `CITATION.cff` file in such a case would look similar to
+the following.
+
+```yaml
+
+cff-version: 1.0.0
+message: If you use this software, please cite it as below.
+references:
+  - type: software
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        orcid: 0000-0003-4925-7248
+    title: My Research Tool
+    version: 1.0.4
+    doi: 10043/zenodo.1234
+```
+
+A more comprehensive version could look similar to the following.
+
+```yaml
+
+cff-version: 1.0.0
+message: If you use this software, please cite it as below.
+references:
+  - type: software
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        orcid: 0000-0003-4925-7248
+        affiliation: "Humboldt-Universität zu Berlin, Dept. of German Studies 
+        and Linguistics"
+        email: mail@sdruskat.net
+        website: https://hu.berlin/sdruskat
+    title: My Research Tool
+    version: 1.0.4
+    doi: 10043/zenodo.1234
+    repository-code: https://github.com/sdruskat/my-research-tool
+    repository-artifact: https://hu.berlin/nexus/mrt
+    date-published: 2017-09-23
+    keywords:
+      - "McAuthor's algorithm"
+      - linguistics
+      - nlp
+      - parser
+      - deep convolutional neural network
+    programming-languages:
+      - java
+      - python
+      - c
+      - haskell
+      - pascal
+      - rust
+    license: Apache License, Version 2.0
+    license-url: http://www.apache.org/licenses/LICENSE-2.0
+    url: https://sdruskat.github.io/my-research-tool
+```
+
+### A software without a DOI
+
+For software without a DOI, it is recommended that "the metadata should still
+provide information on how to access the specific software, but this may be a
+company’s product number or a link to a website that allows the software be
+purchased." {% cite principles -l 13 %}. Furthermore, "if the version number and
+release date are not available, the download date can be used. Similarly, the
+contact name/email is an alternative to the location/repository." 
+{% cite principles -l 7 %}
+
+Hence, for a closed source software without a DOI for which the version number
+and release date cannot be determined, a `CITATION.cff` file could look like
+this.
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you dare to use this commercial, closed-source, unversioned software 
+in your research, please at least cite it as below."
+references:
+  - type: software
+    title: Opaquity
+    number: opq-1234-XZVF-ACME-RLY
+    date-downloaded: 2017-02-31
+    contact:
+      - family-names: Vader
+        given-names: Darth
+        affiliation: Dark Side Software
+        location: DS-1 Orbital Battle Station, near Scarif
+        email: father@imperial-empire.com
+        tel: +850 (0)123-45-666
+```
+
+### `software` (with two references)
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you use My Research Tool, please cite both the software and the 
+outline paper."
+references:
+  - type: software
+    authors:
+      - family-names: Doe
+        given-names: Jane
+        role: main-author
+      - family-names: Bielefeld
+        name-particle: von
+        given-names: Arthur
+        role: tester
+      - family-names: McAuthor
+        given-names: Juniper
+        name-suffix: Jr.
+        role: maintainer
+    title: My Research Tool
+    doi: 10043/zenodo.1234
+  - type: article
+    authors:
+      - family-names: Doe
+        given-names: Jane
+        role: main-author
+      - family-names: Bielefeld
+        name-particle: von
+        given-names: Arthur
+        role: author
+    title: "My Research Tool: A 100% accuracy syntax parser for all languages"
+    year: 2099
+    journal: Journal of Hard Science Fiction
+    volume: 42
+    issue: 13
+    doi: 10.9999/hardscifi-lang.42132
+```
+
+### `software-code` (without a DOI: code repository + commit)
+
+> We recognize that there are certain situations where it may not be possible to
+follow the recommended best-practice. For example, if (1) the software authors
+did not register a DOI and/or release a specific version, or (2) the version of
+the software used does not match what is available to cite. In those cases,
+falling back on a combination of the repository URL and version number/commit
+hash would be an appropriate way to cite the software used. {% cite principles -l 12 %}
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you use this MRT alpha snapshot version, please cite."
+references:
+  - type: software-code
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: My Research Tool Prototype
+    version: 0.0.1-alpha1-build1507284872
+    repository-code: https://github.com/doe/mrt
+    commit: 160d54f9e935c914df38c1ffda752112b5c979a8
+```
+
+### `software-container`
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you use the MRT Docker container, please cite the following."
+references:
+  - type: software-container
+    authors:
+      - name: "Humboldt-Universität zu Berlin"
+        website: https://www.linguistik.hu-berlin.de/
+        role: maintainer
+      - family-names: Doe
+        given-names: Jane
+        role: main-author
+    title: mrt-iain-m-banks
+    version: 1.0.4 (Iain M. Banks)
+    url: https://github.com/doe/docker-brew-mrt-core/blob/160d54f9e935c914df38c1ffda752112b5c979a8/iain/Dockerfile
+    repository: https://hub.docker.hu-berlin.de/_/mrt-iain-m-banks/
+```
+
+### `software-executable`
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you use MRT, please cite the following."
+references:
+  - type: software-executable
+    authors:
+      - family-names: Doe
+        given-names: Jane
+        role: main-author
+    title: My Research Tool Kickstarter
+    version: 2.0.0
+    doi: 10043/zenodo.1234
+    repository-artifact: https://hu.berlin/nexus/mrt-kickstarter
+    filename: mrt2-kickstarter.exe
+```
+
+## Other examples
+
+### `art`
 
 ```yaml
 
@@ -1759,7 +1994,7 @@ references:
         country: ES
 ```
 
-## `article`
+### `article`
 
 ```yaml
 
@@ -1793,119 +2028,158 @@ references:
     url: https://doi.org/10.7717/peerj-cs.86
 ```
 
-### A software with a DOI
-
-Note that {% cite principles -l 12 %} recommends
-
-> [...] the use of DOIs as the unique identifier due to their common usage and
-acceptance, particularly as they are the standard for other digital products
-such as publications.
-
-Furthermore, DOIs should point to a "unique, specific software version" {% cite
-principles -l 12 %}. Also it is recommended {% cite principles -l 13 %} that:
-
-> the [DOI] should resolve to a persistent landing page that contains metadata and a link to the software itself, rather than directly to the source code files, repository, or executable.
-
-Therefore, a minimal `CITATION.cff` file in such a case would look similar to
-the following.
+### `blog`
 
 ```yaml
 
-- message: If you use this software, please cite it as below.
-- type: software
-  authors:
-    - name: Druskat::Stephan
-      orcid: 0000-0003-4925-7248
-  title: Stephan's Research Software
-  version: 1.0.4
-  doi: 10043/zenodo.1234
+cff-version: 1.0.0
+message: "If you use MRT in your research, please cite the following blog article."
+references:
+  - type: blog
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: "Implement a 100% accuracy syntax parser for all languages? No probs!"
+    date-published: 2017-09-23
+    url: https://hu-berlin.de/blogs/jdoe/2017/09/23/if-only
+    institution:
+      - name: "Humboldt-Universität zu Berlin"
+        city: Berlin
+        country: DE
 ```
 
-A more comprehensive version could look similar to the following.
+### `book`
 
 ```yaml
 
-- message: If you use this software, please cite it as below.
-- type: software
-  authors:
-    - name: Druskat::Stephan
-      orcid: 0000-0003-4925-7248
-      affiliation: Humboldt-Universität zu Berlin, Dept. of German Studies and Linguistics
-      email: mail@sdruskat.net
-      website: https://hu.berlin/sdruskat
-  title: Stephan's Research Software
-  version: 1.0.4
-  doi: 10043/zenodo.1234
-  commit: ab3d513
-  repository-code: https://github.com/sdruskat/stephans-research-software
-  repository-artifact: https://hu.berlin/nexus/srs
-  date-published: 2017-09-23
-  dependencies: https://github.com/sdruskat/stephans-research-software/blob/srs-1.0.4/NOTICE
-  keywords:
-    - "McAuthor's algorithm"
-    - linguistics
-    - nlp
-    - parser
-    - deep convolutional neural network
-  programming-languages:
-    - java
-    - python
-    - c
-    - haskell
-    - pascal
-    - rust
-  license: Apache License, Version 2.0
-  license-url: http://www.apache.org/licenses/LICENSE-2.0
-  url: https://sdruskat.github.io/stephans-research-software
+cff-version: 1.0.0
+message: "If you use MRT for your research, please cite the following book."
+references:
+  - type: book
+    authors:
+      - family-names: Doe
+        given-names: Jane
+        role: main-author
+    title: "The future of syntax parsing"
+    year: 2017
+    publisher:
+      - name: Far Out Publications
+        city: Bielefeld
+    medium: print
 ```
 
-
-### A software without a DOI
-
-For software without a DOI, it is recommended that "the metadata should still
-provide information on how to access the specific software, but this may be a
-company’s product number or a link to a website that allows the software be
-purchased." {% cite principles -l 13 %}. Furthermore, "if the version number and
-release date are not available, the download date can be used. Similarly, the
-contact name/email is an alternative to the location/repository." {% cite
-principles -l 7 %}
-
-Hence, for a closed source software without a DOI for which the version number
-and release date cannot be determined, a `CITATION.cff` file could look like
-this.
+### `conference-paper`
 
 ```yaml
 
-- message: If you dare to use this commercial, closed-source, unversioned software in your research, please at least cite it as below.
-- type: software
-  title: Opaquity
-  number: opq-1234-XZVF-ACME-RLY
-  date-downloaded: 2017-02-31
-  contact:
-    - name: Vader::Darth
-      affiliation: Dark Side Software
-      location: DS-1 Orbital Battle Station, near Scarif
-      email: father@imperial-empire.com
-      tel: +850 (0)123-45-666
+cff-version: 1.0.0
+message: "If you use MRT for your research, please cite the following."
+references:
+  - type: conference-paper
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: "Ultimate-accuracy syntax parsing with My Research Tool"
+    year: 2017
+    collection-title: "Proceedings of the 1st Conference on Wishful Thinking"
+    collection-doi: 10043.zenodo.4321
+    editors: 
+      - family-names: Kirk
+        given-names: James T.
+    conference:
+      - name: 1st Conference on Wishful Thinking
+        location: Spock's Inn Hotel and Bar
+        address: 123 Main St
+        city: Bielefeld
+        region: Jarvis Island
+        post-code: 12345
+        country: UM
+        date-start: 2017-04-01
+        date-end: 2017-04-01
+    start: 42
+    end: 45
+    doi: 10043/zenodo.1234
 ```
 
+### `edited-work`
+
+Note that the editors of the edited work must be specified under the `authors`
+key. Specific citation styles may or may not attach a suffix to the authors,
+such as ", eds." or similar.
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you use MRT, please cite the following."
+references:
+  - type: edited-work
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: "Ultimate-accuracy parsing in practice"
+    year: 2017
+    publisher:
+      - name: Far Out Publications
+        city: Bielefeld
+        country: DE
+```
+
+### `report`
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you use MRT in your research, please cite the following."
+references:
+  - type: report
+    authors:
+      - name: Fictional Parsing Interest Group, ACME Inc.
+    title: "100% accuracy syntax parsing at ACME"
+    url: http://www.acme.com/sigs/fp/reports/hpsp.pdf
+    year: 2017
+    date-accessed: 2017-09-23
+```
+
+### `thesis`
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you use MRT in your research, please cite the following."
+references:
+  - type: thesis
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: "A high accuracy syntax parser in Visual Basic"
+    thesis-type: PhD
+    year: 2017
+    department: Dept. of Universal Language Philosophy
+    institution:
+      - name: "Humboldt-Universität zu Berlin"
+        city: Berlin
+        country: DE
+    database: Thesiserver
+    date-accessed: 2017-09-23
+    date-published: 2017-03-21
+    url: http://thesiserver.hu-berlin.de/2017/march/phd/doe-12345
+```
 
 # Infrastructure
 
-It is planned to provide further infrastructure (e.g., software packages), to
-support the following use cases for CFF:
+The roadmap for CFF plans for the provision of further infrastructure (e.g., 
+software packages and web services), to support the following use cases for CFF:
 
-- Creating CFF `CITATION` files
-- Reading CFF `CITATION` files
-- Validating CFF `CITATION` files
-- Converting CFF `CITATION` files
-
-For some use cases in software, cf. https://www.software.ac.uk/blog/2014-07-30
--oh-research-software-how-shalt-i-cite-thee
+- Creating CFF files
+- Reading CFF files
+- Validating CFF files
+- Converting CFF files
 
 # Contributions
 
-Link to `CONTRIBUTING.md`, tba.
+Contributions to the format specifications are welcome! For details on how to
+contribute, please refer to the GitHub repository for CFF at
+<http://github.com/sdruskat/citation-file-format>.
 
 # License
 
