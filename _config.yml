@@ -18,7 +18,7 @@ page:
   extension: md
 git:
   branch: src
-gems: 
+plugins: 
   - jekyll-pandoc
   - jekyll/scholar
   - liquefy
