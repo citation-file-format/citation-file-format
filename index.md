@@ -15,7 +15,7 @@ abstract:
   <https://github.com/sdruskat/citation-file-format>.
 geometry: margin=2cm
 layout: full-width
-version: 1.0.0-RC1
+version: 0.9-RC1
 ...
 
 # Introduction
