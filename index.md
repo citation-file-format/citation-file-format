@@ -355,6 +355,8 @@ CFF defines the following reference keys.
 
   loc-end                     Integer                                           The line of code in the file where the work ends
 
+  medium                      String                                            The medium of the work
+
   month                       Integer                                           The month in which a work has been published
 
   nihmsid                     String                                            The NIHMSID of a work
@@ -452,6 +454,11 @@ ambiguity/misuse.
 **languages**
 
 - If the work is a book: The language in which the book is written.
+
+**medium**
+
+- If the work is an artwork: The medium of the artwork, e.g., "photograph", 
+"painting", "oil on canvas", etc.
 
 **month**
 
