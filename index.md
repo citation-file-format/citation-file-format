@@ -293,9 +293,9 @@ CFF defines the following reference keys.
 
   commit                      String                                                              The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work
 
-  conference                  Entity object                                                             The conference where the work was presented
+  conference                  **[Entity object](#entity-objects)**                                The conference where the work was presented
 
-  contact                     Collection of **[entity](#entity-objects)** or **[person objects]**                                          The contact person for a work
+  contact                     Collection of **[entity](#entity-objects)** or **[person objects]**                                          The contact person, group, company, etc. for a work
 
   copyright                   String                                                               The copyright information pertaining to the work
 
@@ -303,7 +303,7 @@ CFF defines the following reference keys.
 
   database                    String                                                               The name of the database where a work was accessed/is stored
 
-  database&#x2011;provider           Entity object                                                         The provider of the database where a work was accessed/is stored
+  database&#x2011;provider           **[Entity object](#entity-objects)**                               The provider of the database where a work was accessed/is stored
 
   date&#x2011;accessed               Date                                                            The date the work has been last accessed
 
@@ -329,7 +329,7 @@ CFF defines the following reference keys.
 
   format                      String                                                              The format in which a work is represented
 
-  institution                 Entity object                                                             The institution where a work has been produced or published
+  institution                 **[Entity object](#entity-objects)**                                The institution where a work has been produced or published
 
   isbn                        String                                                              The ISBN of the work
 
@@ -350,6 +350,8 @@ CFF defines the following reference keys.
   license                     String                                                              The license under which a work is licensed
 
   license&#x2011;url             String (*URL*)                                                      The URL of the license text under which a work is licensed
+
+  location                    **[Entity object](#entity-objects)**                                The location of the work
 
   loc-start                    Integer                                                             The line of code in the file where the work starts
 
@@ -375,7 +377,7 @@ CFF defines the following reference keys.
 
   programming-languages       Collection of **[programming language strings]**                       The programming language of the work
 
-  publisher                   Entity object                                                               The name of the publisher who has published the work
+  publisher                   **[Entity object](#entity-objects)**                                          The publisher who has published the work
 
   recipients                  Collection of **[entity](#entity-objects)** or **[person objects]**                                          The recipient of a personal communication
 
@@ -448,12 +450,16 @@ ambiguity/misuse.
 - If the work is a grant: The funding agency sponsoring the grant.
 - If the work is a thesis: The university where a thesis has been produced.
 - If the work is a statute: The institution or geographical unit which the statute adheres to.
-- If the work is a historical work, illuminated manuscript or similar: The library or archive where the work is held.
 - If the work is a conference: The organisation which held the conference.
 
 **languages**
 
 - If the work is a book: The language in which the book is written.
+
+**location**
+
+- If the work is an artwork: E.g., the museum holding the work.
+- If the work is a historical work, illuminated manuscript or similar: The library or archive where the work is held.
 
 **medium**
 
