@@ -1747,9 +1747,50 @@ message: "If you use this software, please cite the following."
 references:
   - type: art
     authors:
-      - family-names
-      - given-names
-    title: 
+      - family-names: Picasso
+        given-names: Pablo
+    title: Guernica
+    year: 1937
+    medium: Oil on canvas
+    format: 349.3cm x 776.6cm
+    location:
+      - name: Museo Reina Sofia
+        city: Madrid
+        country: ES
+```
+
+## `article`
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you use this software, please cite the following paper."
+references:
+  - type: article
+    authors:
+      - family-names: Smith
+        given-names: Arfon M.
+        role: main-author
+      - family-names: Katz
+        given-names: Daniel S.
+        affiliation: "National Center for Supercomputing Applications & 
+        Electrical and Computer Engineering Department & School of Information 
+        Sciences, University of Illinois at Urbana-Champaign, Urbana, Illinois, 
+        United States"
+        orcid: 0000-0001-5934-7525
+        role: main-author
+      - family-names: Niemeyer
+        given-names: Kyle E.
+        role: main-author
+      - name: "FORCE11 Software Citation Working Group"
+        website: https://www.force11.org/group/software-citation-working-group
+    title: "Software citation principles"
+    year: 2016
+    journal: PeerJ Computer Science
+    volume: 2
+    issue: e86
+    doi: 10.7717/peerj-cs.86
+    url: https://doi.org/10.7717/peerj-cs.86
 ```
 
 ### A software with a DOI
