@@ -278,144 +278,144 @@ general. These include:
 CFF defines the following reference keys.  
 
 
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **CFF Key**                 **CFF Data Type**                                 **Description**
-  --------------------------- ------------------------------------------------- ---------------------------------------------------------------------------------------------------------
-  abbreviation                String                                            The abbreviation of the work
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  **CFF Key**                 **CFF Data Type**                                                   **Description**
+  --------------------------- ------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------
+  abbreviation                String                                                              The abbreviation of the work
 
-  abstract                    String                                            The abstract of a work
+  abstract                    String                                                              The abstract of a work
 
-  authors                     Collection of **[person objects]**                        The author of a work
+  authors                     Collection of **[entity](#entity-objects)** or **[person objects]** The author of a work
 
-  collection&#x2011;title        String                                         The title of a collection or proceedings
+  collection&#x2011;title        String                                                           The title of a collection or proceedings
 
-  collection&#x2011;type         String                                         The type of a collection  
+  collection&#x2011;type         String                                                           The type of a collection  
 
-  commit                      String                                            The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work
+  commit                      String                                                              The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work
 
-  conference                  Entity object                                           The conference where the work was presented
+  conference                  Entity object                                                             The conference where the work was presented
 
-  contact                     Collection of **[person objects]**                        The contact person for a work
+  contact                     Collection of **[person objects]**                                          The contact person for a work
 
-  copyright                   String                                             The copyright information pertaining to the work
+  copyright                   String                                                               The copyright information pertaining to the work
 
-  data&#x2011;type               String                                            The data type of a data set
+  data&#x2011;type               String                                                              The data type of a data set
 
-  database                    String                                             The name of the database where a work was accessed/is stored
+  database                    String                                                               The name of the database where a work was accessed/is stored
 
-  database&#x2011;provider           Entity object                                       The provider of the database where a work was accessed/is stored
+  database&#x2011;provider           Entity object                                                         The provider of the database where a work was accessed/is stored
 
-  date&#x2011;accessed               Date                                          The date the work has been last accessed
+  date&#x2011;accessed               Date                                                            The date the work has been last accessed
 
-  date&#x2011;downloaded               Date                                          The date the work has been downloaded
+  date&#x2011;downloaded               Date                                                            The date the work has been downloaded
 
-  date&#x2011;published              Date                                          The date the work has been published
+  date&#x2011;published              Date                                                            The date the work has been published
 
-  date&#x2011;released           Date                                               The date the work has been released
+  date&#x2011;released           Date                                                                 The date the work has been released
 
-  department                  String                                             The department where a work has been produced
+  department                  String                                                               The department where a work has been produced
 
-  doi                         String                                             The DOI of the work
+  doi                         String                                                               The DOI of the work
 
-  edition                     String                                            The edition of the work
+  edition                     String                                                              The edition of the work
 
-  editors                     Collection of **[person objects]**                        The editors of a work
+  editors                     Collection of **[person objects]**                                          The editors of a work
 
-  editors&#x2011;series              Collection of **[person objects]**                         The editors of a series in which a work has been published
+  editors&#x2011;series              Collection of **[person objects]**                                           The editors of a series in which a work has been published
 
-  entry                       String                                             An entry in the collection that constitutes the work
+  entry                       String                                                               An entry in the collection that constitutes the work
 
-  filename                    String                                            The name of the electronic file containing the work
+  filename                    String                                                              The name of the electronic file containing the work
 
-  format                      String                                            The format in which a work is represented
+  format                      String                                                              The format in which a work is represented
 
-  institution                 Entity object                                           The institution where a work has been produced or published
+  institution                 Entity object                                                             The institution where a work has been produced or published
 
-  isbn                        String                                            The ISBN of the work
+  isbn                        String                                                              The ISBN of the work
 
-  issn                        String                                            The ISSN of the work
+  issn                        String                                                              The ISSN of the work
  
-  issue                       Integer                                           The issue of a periodical in which a work appeared
+  issue                       Integer                                                             The issue of a periodical in which a work appeared
  
-  issue&#x2011;date              String                                            The publication date of the issue of a periodical in which a work appeared
+  issue&#x2011;date              String                                                              The publication date of the issue of a periodical in which a work appeared
 
-  issue&#x2011;title             String                                            The name of the issue of a periodical in which the work appeared
+  issue&#x2011;title             String                                                              The name of the issue of a periodical in which the work appeared
 
-  journal                     String                                            The name of the journal/magazine/newspaper/periodical where the work was published
+  journal                     String                                                              The name of the journal/magazine/newspaper/periodical where the work was published
 
-  keywords                    Collection of strings                             Keywords pertaining to the work
+  keywords                    Collection of strings                                               Keywords pertaining to the work
 
-  languages                   Collection of ISO 639 **[language strings]**                The language of the work
+  languages                   Collection of ISO 639 **[language strings]**                                  The language of the work
 
-  license                     String                                            The license under which a work is licensed
+  license                     String                                                              The license under which a work is licensed
 
-  license&#x2011;url             String (*URL*)                                    The URL of the license text under which a work is licensed
+  license&#x2011;url             String (*URL*)                                                      The URL of the license text under which a work is licensed
 
-  loc-start                    Integer                                           The line of code in the file where the work starts
+  loc-start                    Integer                                                             The line of code in the file where the work starts
 
-  loc-end                     Integer                                           The line of code in the file where the work ends
+  loc-end                     Integer                                                             The line of code in the file where the work ends
 
-  medium                      String                                            The medium of the work
+  medium                      String                                                              The medium of the work
 
-  month                       Integer                                           The month in which a work has been published
+  month                       Integer                                                             The month in which a work has been published
 
-  nihmsid                     String                                            The NIHMSID of a work
+  nihmsid                     String                                                              The NIHMSID of a work
 
-  notes                       String                                            Notes pertaining to the work
+  notes                       String                                                              Notes pertaining to the work
 
-  number                      String                                            The accession number for a work
+  number                      String                                                              The accession number for a work
 
-  number&#x2011;volumes           Integer                                       The number of volumes making up the collection in which the work has been published
+  number&#x2011;volumes           Integer                                                         The number of volumes making up the collection in which the work has been published
 
-  pages                       Integer                                           The number of pages of the work
+  pages                       Integer                                                             The number of pages of the work
 
-  patent&#x2011;states            String                                        The states for which a patent is granted
+  patent&#x2011;states            String                                                          The states for which a patent is granted
 
-  pmcid                       String                                            The PMCID of a work
+  pmcid                       String                                                              The PMCID of a work
 
-  programming-languages       Collection of **[programming language strings]**     The programming language of the work
+  programming-languages       Collection of **[programming language strings]**                       The programming language of the work
 
-  publisher                   Entity object                                             The name of the publisher who has published the work
+  publisher                   Entity object                                                               The name of the publisher who has published the work
 
-  recipients                  Collection of **[person objects]**                        The recipient of a personal communication
+  recipients                  Collection of **[person objects]**                                          The recipient of a personal communication
 
-  repository                  String (*URL*)                                    The repository where the work is stored
+  repository                  String (*URL*)                                                      The repository where the work is stored
 
-  repository&#x2011;code         String (*URL*)                                    The version control system where the source code of the work is stored
+  repository&#x2011;code         String (*URL*)                                                      The version control system where the source code of the work is stored
 
-  repository&#x2011;artifact   String (*URL*)                                   The repository where the (executable/binary) artifact of the work is stored
+  repository&#x2011;artifact   String (*URL*)                                                     The repository where the (executable/binary) artifact of the work is stored
 
-  scope                       String                                            The scope of the reference, e.g., the section of the work it adheres to
+  scope                       String                                                              The scope of the reference, e.g., the section of the work it adheres to
 
-  section                     String                                             The section of a work that is referenced
+  section                     String                                                               The section of a work that is referenced
 
-  senders                     Collection of **[person objects]**                        The sender of a personal communication
+  senders                     Collection of **[person objects]**                                          The sender of a personal communication
 
-  status                      **[Status string](#status-strings)**                      The publication status of the work                           
+  status                      **[Status string](#status-strings)**                                        The publication status of the work                           
 
-  start                       Integer                                           The start page of the work
+  start                       Integer                                                             The start page of the work
 
-  thesis&#x2011;type             String                                         The type of the thesis that is the work
+  thesis&#x2011;type             String                                                           The type of the thesis that is the work
 
-  title                       String                                            The title of the work
+  title                       String                                                              The title of the work
 
-  translators                 Collection of **[person objects]**                        The translator of a work
+  translators                 Collection of **[person objects]**                                          The translator of a work
 
-  type                        **[Reference types] string**                              The type of the work
+  type                        **[Reference types] string**                                                The type of the work
 
-  url                         String (*URL*)                                    The URL of the work
+  url                         String (*URL*)                                                      The URL of the work
 
-  version                     String                                            The version of the work
+  version                     String                                                              The version of the work
 
-  volume                      Integer                                           The volume of the periodical in which a work appeared
+  volume                      Integer                                                             The volume of the periodical in which a work appeared
 
-  volume&#x2011;title            String                                          The title of the volume in which the work appeared
+  volume&#x2011;title            String                                                            The title of the volume in which the work appeared
 
-  year                        Integer                                           The year in which a work has been published
+  year                        Integer                                                             The year in which a work has been published
 
-  year&#x2011;original           Integer                                           The year of the original publication
+  year&#x2011;original           Integer                                                             The year of the original publication
 
-  ----------------------- ----------------------------------------- ---------------------------------------------------------------------------------------------------------
+  ----------------------- ----------------------------------------- ---------------------------------------------------------------------------------------------------------------------------
 Table: Complete list of CFF keys.
 
 ### Exemplary uses
@@ -1731,6 +1731,20 @@ It is planned to provide a PyKwalify schema for the validation of CFF files.
 This is work in progress.
 
 # Examples
+
+## `art`
+
+```yaml
+
+cff-version: 1.0.0
+message: "If you use this software, please cite the following."
+references:
+  - type: art
+    authors:
+      - family-names
+      - given-names
+    title: 
+```
 
 ### A software with a DOI
 
