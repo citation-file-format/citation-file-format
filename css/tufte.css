@@ -428,6 +428,9 @@ ol {
   -webkit-padding-start: 5%;
   -webkit-padding-end: 5%; }
 
+ol.bibliography {
+  list-style-type: none; }
+
 ul > li:before {
   content: '- ';
   position: relative; }

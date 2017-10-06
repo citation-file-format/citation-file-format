@@ -37,7 +37,7 @@
     <h1>Citation File Format (CFF)</h1>
     <p class="subtitle">1.0.0-RC1</p>
     <p class="subtitle">Stephan Druskat (mail@sdruskat.net)</p>
-    <p class="subtitle">05 October 2017</p>
+    <p class="subtitle">06 October 2017</p>
     
     <p> [<a href="./assets/pdf/cff-specifications.pdf">Download as PDF</a>]<br/></p>
     
@@ -66,6 +66,8 @@
 <li><a href="#exemplary-uses">Exemplary uses</a></li>
 </ul></li>
 <li><a href="#reference-types">Reference types</a></li>
+</ul></li>
+<li><a href="#objects">Objects</a><ul>
 <li><a href="#entity-objects">Entity objects</a><ul>
 <li><a href="#exemplary-uses-1">Exemplary uses</a></li>
 </ul></li>
@@ -73,14 +75,16 @@
 <li><a href="#exemplary-uses-2">Exemplary uses</a></li>
 <li><a href="#person-roles">Person roles</a></li>
 </ul></li>
-<li><a href="#status">Status</a></li>
+</ul></li>
+<li><a href="#specified-value-strings">Specified value strings</a><ul>
+<li><a href="#status-strings">Status strings</a></li>
 <li><a href="#language-strings">Language strings</a></li>
 <li><a href="#programming-language-strings">Programming language strings</a></li>
+</ul></li>
 <li><a href="#schema">Schema</a></li>
 <li><a href="#examples">Examples</a><ul>
 <li><a href="#a-software-with-a-doi">A software with a DOI</a></li>
 <li><a href="#a-software-without-a-doi">A software without a DOI</a></li>
-</ul></li>
 </ul></li>
 <li><a href="#infrastructure">Infrastructure</a></li>
 <li><a href="#contributions">Contributions</a></li>
@@ -171,7 +175,7 @@
 <li><a href="#reference-types">Reference types</a></li>
 <li><a href="#language-strings">Language strings</a></li>
 <li><a href="#programming-language-strings">Programming language strings</a></li>
-<li><a href="#status">Status</a></li>
+<li><a href="#status-strings">Status strings</a></li>
 </ul>
 <p><strong>license‑url</strong>, <strong>repository</strong>, <strong>repository-code</strong>, <strong>repository-artifact</strong>, <strong>url</strong></p>
 <p>These keys take URL strings as values.</p>
@@ -490,7 +494,7 @@
 </tr>
 <tr class="odd">
 <td style="text-align: left;">status</td>
-<td style="text-align: left;"><strong><a href="#status">Status</a> string</strong></td>
+<td style="text-align: left;"><strong><a href="#status-strings">Status string</a></strong></td>
 <td style="text-align: left;">The publication status of the work</td>
 </tr>
 <tr class="even">
@@ -810,6 +814,7 @@
 </tr>
 </tbody>
 </table>
+<h1 id="objects">Objects</h1>
 <h2 id="entity-objects">Entity objects</h2>
 <p>Entity objects can represent different types of entities, e.g., a publishing company, or conference. In CFF, they are realized as collections with a defined set of keys. Only the key <code>name</code> is mandatory.</p>
 <table style="width:60%;">
@@ -1137,8 +1142,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="status">Status</h2>
-<p>Works can have a different status of publication, e.g., journal papers. CFF provides the following defined statuses for works.</p>
+<h1 id="specified-value-strings">Specified value strings</h1>
+<p>The keys <code>status</code>, <code>languages</code> and <code>programming-languages</code> can only take values from a fixed set of strings. These are specified below.</p>
+<h2 id="status-strings">Status strings</h2>
+<p>Works can have a different status of publication, e.g., journal papers. CFF specifies the following value strings for the key <code>status</code>.</p>
 <table>
 <caption>Defined statuses for works</caption>
 <thead>
@@ -1178,7 +1185,7 @@
   <span class="kw">-</span> en
   <span class="kw">-</span> bpa</code></pre></div>
 <h2 id="programming-language-strings">Programming language strings</h2>
-<p>CFF knows the following programming language strings. If a language is not included, please use the string <code>other</code> with a lower-case, hyphenated string argument, and do not include the version of the programming language used, e.g., for <em>My Fancy Language v4.2.1</em>, use <code>other=my-fancy-language</code>. Additionally, please create an issue on the <a href="https://github.com/sdruskat/citation-file-%20format/issues/new">GitHub repository for CFF</a>, asking to include the programming language in the list.</p>
+<p>CFF specifies the following value strings for the key <code>programming-languages</code>. If a language is not included, please use the string <code>other</code> with a lower-case, hyphenated string argument, and do not include the version of the programming language used, e.g., for <em>My Fancy Language v4.2.1</em>, use <code>other=my-fancy- language</code>. Additionally, please create an issue on the <a href="https://github.com/sdruskat/citation-file-format/issues/new">GitHub repository for CFF</a>, asking to include the programming language in the list.</p>
 <table style="width:98%;">
 <caption>List of programming language names available in CFF. Table based on the languages available on GitHub (via <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" class="uri">https://github.com/github/linguist/blob/master/lib/linguist/languages.yml</a>, MIT license, Copyright (c) 2017 GitHub, Inc.).</caption>
 <colgroup>
@@ -1970,7 +1977,7 @@
 <td style="text-align: left;">data</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">graphviz-(dot)</td>
+<td style="text-align: left;">graphviz</td>
 <td style="text-align: left;">Graphviz (DOT)</td>
 <td style="text-align: left;">data</td>
 </tr>
@@ -3506,9 +3513,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="schema">Schema</h2>
+<h1 id="schema">Schema</h1>
 <p>It is planned to provide a PyKwalify schema for the validation of CFF files. This is work in progress.</p>
-<h2 id="examples">Examples</h2>
+<h1 id="examples">Examples</h1>
 <h3 id="a-software-with-a-doi">A software with a DOI</h3>
 <p>Note that <a href="#principles">(Smith et al., 2016, p. 12)</a> recommends</p>
 <blockquote>
