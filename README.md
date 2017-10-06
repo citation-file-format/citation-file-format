@@ -24,3 +24,7 @@ The current specs are **exclusively** held in the `index.md` file in the root of
 
 1. Create a directory for the current version as documented in `./index.md`. E.g., if the current version is 1.0.0, create a directory `1.0.0` and copy `./index.md` to that directory.
 2. Set up `./index.md` for the new version by changing `version` in the metadata accordingly, e.g., to `1.0.1`.
+
+## Release
+
+Before a release, make sure to build the lates version PDF locally with `build.sh`, otherwise an old version will end up in the release archive on GitHub.
