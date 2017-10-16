@@ -1,5 +1,3 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003150.svg)](https://doi.org/10.5281/zenodo.1003150) [![Build Status](https://travis-ci.org/sdruskat/citation-file-format.svg?branch=master)](https://travis-ci.org/sdruskat/citation-file-format) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-
 # Citation File Format (CFF)
 
 Format specifications for `CITATION` files. `CITATION` files provide citation metadata for (research/scientific) software.
