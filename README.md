@@ -2,9 +2,9 @@
 
 # Citation File Format (CFF)
 
-## Format specifications for `CITATION` files. `CITATION` files provide citation metadata for (research/scientific) software.
+Format specifications for `CITATION` files. `CITATION` files provide citation metadata for (research/scientific) software.
 
-### This repository is the landing site for the format. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format specifications!
+### This repository is the landing site for CFF. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format specifications!
 
 ---
 
