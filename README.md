@@ -4,27 +4,14 @@
 
 ## Format specifications for `CITATION` files. `CITATION` files provide citation metadata for (research/scientific) software.
 
-### **Read the current version of the specifications**: [online](http://sdruskat.github.io/citation-file-format) | [PDF](http://sdruskat.github.io/citation-file-format/assets/pdf/cff-specifications.pdf).
+### This repository is the landing site for the format. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format specifications!
 
 ---
 
-This branch holds the files to build a Jekyll site for GitHub Pages via Jekyll.
+## Repositories
 
-### Build
+There are different repositories for CFF.
 
-Build the specifications PDF with [the build script `build.sh`](https://github.com/sdruskat/citation-file-format/blob/master/build.sh).
+- **Main repository**: This repository (https://github.com/citation-file-format/citation-file-format). This repository is used to track issues (partly for historical reasons) for the format itself, as well as coordinate activities around the format.
 
-Jekyll site build via Travis and [`build-jekyll.sh`](https://github.com/sdruskat/citation-file-format/blob/master/build-jekyll.sh).
-
-## Work on the specs
-
-The current specs are **exclusively** held in the `index.md` file in the root of this branch. Other `index.md` files in nested directories contain older versions of the specs and **must not be changed**.
-
-## Create a new version / archive old versions
-
-1. Create a directory for the current version as documented in `./index.md`. E.g., if the current version is 1.0.0, create a directory `1.0.0` and copy `./index.md` to that directory.
-2. Set up `./index.md` for the new version by changing `version` in the metadata accordingly, e.g., to `1.0.1`.
-
-## Release
-
-Before a release, make sure to build the lates version PDF locally with `build.sh`, otherwise an old version will end up in the release archive on GitHub.
+- **Specifications and website**: The specifications prose is held in a repository from which a static website is built (with Jekyll). This website is hosted on GitHub via GitHub Pages. The repository is https://github.com/citation-file-format/citation-file-format.github.io. The `src` branch holds the sources for specifications and website, the `master` branch is where the live website lives.
