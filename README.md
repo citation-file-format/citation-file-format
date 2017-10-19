@@ -56,3 +56,5 @@ fix links to GitHub user handles; build PDFs with custom Pandoc version for each
 *assets* directory where it will be picked up by Jekyll)
 5. Build the Jekyll site
 6. Push the *_site* directory (i.e. the build target) back to `master`
+
+**This build is expensive**, so please use `[skip ci]` in non-crucial commits to avoid wasting Travis' resources.
