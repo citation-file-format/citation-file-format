@@ -14,16 +14,6 @@ install:
 script:
   - bash travis-build.sh
 
-
-
-
-
-
-
-
-
-
-    
 exclude: [vendor]
 
 sudo: false
