@@ -6,11 +6,6 @@ set -e
 # Clone repo
 git clone https://${GITHUB_TOKEN}@github.com/citation-file-format/citation-file-format.github.io.git --branch master _site
 
-# Build Jekyll
-# echo "Build Jekyll site"
-bundle install
-bundle exec jekyll build
-# bundle exec jekyll build
 
 # Set up and build custom pandoc (for fix of https://github.com/jgm/pandoc/issues/3529)
 # git clone https://github.com/jgm/pandoc.git
@@ -26,6 +21,12 @@ bundle exec jekyll build
 # python3 --version
 echo "Build PDFs"
 python build-pdfs.py
+
+# Build Jekyll
+echo "Build Jekyll site"
+bundle install
+bundle exec jekyll build
+# bundle exec jekyll build
 
 ## push
 echo "Push PDFs"
