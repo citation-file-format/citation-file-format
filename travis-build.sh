@@ -31,4 +31,4 @@ git config user.email "travis-ci@sdruskat.net"
 git config user.name "Travis CI"
 git add --all
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-git push --force origin master
+git push -u --force origin master
