@@ -33,8 +33,8 @@ At the moment, the build process is a bit of a monster, which will hopefully cha
 At the moment, this is how CFF rolls:
 
 1. The Jekyll site is created as per usual (`bundle exec jekyll build`)
-2. A custom Pandoc build (on commit [181d737](https://github.com/jgm/pandoc/comm
-it/181d7370bb913a0a9a110b2ae230a079f0c23be1) on the main [Pandoc
+2. A custom Pandoc build (on commit 
+[181d737](https://github.com/jgm/pandoc/commit/181d7370bb913a0a9a110b2ae230a079f0c23be1) on the main [Pandoc
 repo](https://github.com/jgm/pandoc)) is installed (for which the [Haskell Tool
 Stack](https://docs.haskellstack.org/en/stable/README/) needs to be installed
 first, etc.), as it handles multiline tables correctly (for conversion to PDF)
