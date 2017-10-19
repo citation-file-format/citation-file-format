@@ -1,0 +1,29 @@
+branches:
+  only:
+  - src
+
+language: python
+python: "3.6"
+before_install:
+  - sudo apt-get install texlive-full
+  - sudo apt-get install pandoc-citeproc
+install:
+  - pip install pypandoc
+  - pip install python-frontmatter
+  - sudo apt-get install pandoc
+script:
+  - bash travis-build.sh
+
+
+
+
+
+
+
+
+
+
+    
+exclude: [vendor]
+
+sudo: false
