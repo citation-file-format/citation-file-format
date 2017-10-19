@@ -202,7 +202,7 @@ for specsfile in glob.iglob('./**/specifications.md', recursive=True):
 #        f.write(new_contents)
 
 # Build PDF
-    pdoc_args = ['--latex-engine=xelatex', '--toc', '--toc-depth=4',
+    pdoc_args = ['--pdf-engine=xelatex', '--toc', '--toc-depth=4',
                  '--bibliography=./_bibliography/references.bib',
                  '--csl=./_bibliography/ieee-with-url.csl',
                  '--metadata=date:"' +
