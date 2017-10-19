@@ -3,6 +3,9 @@
 # enable error reporting to the console
 set -e
 
+# Install Haskell Stack
+curl -sSL https://get.haskellstack.org/ | sh
+
 # Set up and build custom pandoc (for fix of https://github.com/jgm/pandoc/issues/3529)
 git clone https://github.com/jgm/pandoc.git
 cd pandoc
