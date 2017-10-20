@@ -14,6 +14,14 @@ stack setup
 stack install --flag pandoc:embed_data_files
 cd ..
 
+# Set up and build custom pandoc-citeproc
+git clone https://github.com/jgm/pandoc-citeproc.git
+cd pandoc-citeproc
+git checkout d4bb483
+stack setup
+stack install
+cd ..
+
 # Clone repo
 git clone https://${GITHUB_TOKEN}@github.com/citation-file-format/citation-file-format.github.io.git --branch master _site
 
