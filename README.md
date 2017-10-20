@@ -28,7 +28,7 @@ Once a version is release-ready, do the following:
 
 ### Build
 
-At the moment, the build process is a bit of a monster, which will hopefully change once
+~~At the moment, the build process is a bit of a monster, which will hopefully change once
 [Pandoc 2.0.0](https://github.com/jgm/pandoc/milestone/4) is available.
 At the moment, this is how CFF rolls:
 
@@ -57,4 +57,4 @@ fix links to GitHub user handles; build PDFs with custom Pandoc version for each
 5. Build the Jekyll site
 6. Push the *_site* directory (i.e. the build target) back to `master`
 
-**This build is expensive**, so please use `[skip ci]` in non-crucial commits to avoid wasting Travis' resources.
+**This build is expensive**, so please use `[skip ci]` in non-crucial commits to avoid wasting Travis' resources.~~
