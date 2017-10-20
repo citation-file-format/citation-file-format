@@ -28,6 +28,11 @@ as readability and writability, for the most common software citation use
 cases, i.e., *1. Use software for a paper*, *2. Use software in/with new software*,
 and *15. Store software entry* (cf. Table 2, {% cite principles --style ./_bibliography/apa-text.csl -l 6 %}).
 
+The basic structure of CFF (i.e., having a *message* and one or more
+*references*) explicitly reflects the structure of plain-text `CITATION` files
+and manifests its status as a compromise between what is currently *useful* and
+*usable*, and what is *desired* (fully transitive credit and attribution).
+
 ## Context
 
 CFF is an indirect outcome of the discussion group "DS3. Development and
