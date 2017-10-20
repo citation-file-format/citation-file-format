@@ -2,14 +2,9 @@ branches:
   only:
   - src
 
-language: python
-python: "3.6"
-before_install:
-  - sudo apt-get install texlive-full
-install:
-  - pip install pypandoc
-  - pip install python-frontmatter
-  - sudo apt-get install pandoc
+language: ruby
+rvm:
+- 2.3.3
 script:
   - bash travis-build.sh
 
