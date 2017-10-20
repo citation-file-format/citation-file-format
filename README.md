@@ -15,3 +15,7 @@ There are different repositories for CFF.
 - **Specifications and website (https://github.com/citation-file-format/citation-file-format.github.io)**:  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)  
 The specifications prose is held in a repository from which a static website is built (with Jekyll). This website is hosted on GitHub via GitHub Pages. The `src` branch holds the sources for specifications and website, the `master` branch is where the live website lives.
+
+## Contributing
+
+Thanks for your interest in contributing! There are many ways to contribute to this project. Get started [here](CONTRIBUTING.md).
