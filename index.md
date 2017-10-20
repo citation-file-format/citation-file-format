@@ -60,6 +60,11 @@ development of CFF.
 
 [^no-file-no-use]: Not providing a file with software citation metadata is not considered a valid option here.
 
+## Contributing
+
+Contributions to CFF are welcome! Please have a look at the 
+[guidelines for contributing](https://github.com/citation-file-format/citation-file-format/blob/master/CONTRIBUTING.md).
+
 # References
 
 {% bibliography --cited %}
