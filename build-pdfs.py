@@ -60,7 +60,7 @@ for specsfile in glob.iglob('./**/specifications.md', recursive=True):
         # Remove "Download PDF" button
         bp = r"""
              \[\*\*Download\sPDF\*\*\]
-             \(\./cff-specifications-{{\spage\.version\s}}\.pdf\)
+             \({{\ssite\.baseurl\s}}/assets/pdf/cff-specifications-{{\spage\.version\s}}\.pdf\)
              {:\s\.btn\s\.btn--primary\s\.btn--large}
              """
         button_pattern = re.compile(bp, re.VERBOSE)
