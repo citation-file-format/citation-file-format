@@ -1,5 +1,5 @@
 ---
-title: Citation File Format (CFF)  
+title: Citation File Format Core (CFF-Core)  
 author: Stephan Druskat (mail@sdruskat.net)
 abstract: 
   The *Citation File Format* (*CFF*) is a human- *and* machine-readable format 
@@ -27,7 +27,7 @@ version: 1.0-RC1
 
 ## Status of this document
 
-This document reflects the version {{ page.version }} of the *Citation File Format* (CFF).
+This document reflects version {{ page.version }} of the *Citation File Format* (CFF).
 CFF has been developed in the context of the [*Workshop on Sustainable Software
 for Science: Practice and Experiences
 (WSSSPE5.1)*](http://wssspe.researchcomputing.org.uk/wssspe5-1/), which was held
@@ -45,16 +45,17 @@ the following.
 
 - Radovan Bast ([@bast](https://github.com/bast)): Reporter
 - Raniere Silva ([@rgaiacs](https://github.com/rgaiacs)): Reporter
+- Michael R. Crusoe ([@mr-c](https://github.com/mr-c)): Reporter
 
-CFF has been developed to provide the first iteration of a format for `CITATION`
+CFF has been developed to provide a format for `CITATION`
 files which could be recommended to readers of the blog post which has been
 produced by the group during the workshop and shortly after, and which will be
 published on the [blog page](https://www.software.ac.uk/blog) of the [Software
 Sustainability Institute](https://www.software.ac.uk/).
 
-## Rationale
+## Rationale[^rationale]
 
-The rationale for a standardized, machine- and human-readable format for
+[^rationale]: The rationale for a standardized, machine- and human-readable format for
 `CITATION` files is discussed in more detail in 
 {% cite standardized-citation-files --style ./_bibliography/apa-text.csl %}. CFF has been developed to support all 
 use cases for the citation of software, as
@@ -78,6 +79,42 @@ unstandardized `CITATION` files are not machine-readable, and machine-
 readability is a precondition for re-use of the citation information in
 different contexts which could further support a fair distribution of credit for
 research software.
+
+## Status of the format
+
+CFF-Core has been branched out to address 
+[issue citation-file-format/citation-file-format#23](https://github.com/citation-file-format/citation-file-format/issues/23).
+While an ideal format for software citation would arguably implement transitive
+credit {% cite transitive-credit %}, there is no concrete implementation yet
+that is available for practical use by software creators. The most concrete
+suggestion for an implementation is {% cite transitive-credit-json-ld --style ./_bibliography/apa-text.csl %}, the
+application of which, however, seems impractical from a usability point of view
+in terms of human-writability. Especially regarding the current state of the
+practice of providing citation metadata for software (cf. 
+{% cite software-citation-practices  --style ./_bibliography/apa-text.csl %}) it seems that at this point in time, a lower-threshold
+approach - in terms of technical complexity - could potentially drive higher participation 
+in the provision of software citation metadata.
+
+On the other end of the complexity spectrum, free form `CITATION` files as suggested by Robin
+Wilson {% cite citation-files %} provide an easy-to-access way of providing citation metadata
+for software. However, as these files are not reliably formatted, and thus not
+machine-readable, their potential for re-use is rather low. Re-use of software citation metadata, however,
+is a key factor in the promotion of software citation along the software citation principles
+{% cite principles %}, and ultimately the fair distribution of credit for software in science.
+
+CFF aims to provide a compromise between the ideal state of software
+citation, i.e., transitive credit, and the state of the practice, i.e., free form
+`CITATION` files. 
+
+CFF-Core, in this context, provides an implementation for basic 
+software citation metadata, so that creators of research software can supply relevant
+metadata for citation easily. CFF-Core aims at covering use cases *1 (Use software for a paper)*, 
+*2 (Use software in/with new software)*, and *15 (Store software entry)* as
+defined in the software citation principles paper {% cite principles %}.
+
+Further development of CFF towards an implementation of transitive credit may be
+undertaken in the future in another branch of CFF which may serve as an extension
+to CFF-Core.
 
 ## Goals
  The goal of CFF is to provide an all-purpose citation format (similar to BibTeX
