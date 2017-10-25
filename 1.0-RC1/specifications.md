@@ -372,7 +372,7 @@ CFF defines the following reference keys.
   | `journal`               | String                                                                           | The name of the journal/magazine/newspaper/periodical where the work was published  |
   | `keywords`              | Collection of strings                                                            | Keywords pertaining to the work                                                     |
   | `languages`             | Collection of ISO 639 [*language strings*](#language-strings)                    | The language of the work                                                            |
-  | `license`               | String                                                                           | The license under which a work is licensed                                          |
+  | `license`               | *[License string](#license-strings)*                                             | The license under which a work is licensed                                          |
   | `license-url`           | String (*URL*)                                                                   | The URL of the license text under which a work is licensed                          |
   | `location`              | *[Entity object](#entity-objects)*                                               | The location of the work                                                            |
   | `loc-start`             | Integer                                                                          | The line of code in the file where the work starts                                  |
@@ -677,7 +677,7 @@ file authors to find the optimal name split in any given case.
 
 # Specified value strings
 
-The keys `status` and `languages` can only take values
+The keys `status`, `license`, and `languages` can only take values
 from a fixed set of strings. These are specified below.
 
 ## Status strings
@@ -696,6 +696,28 @@ specifies the following value strings for the key `status`.
 
 Table: Defined statuses for works.
 {: .text-right}
+
+## License strings
+
+License strings must conform with the [SPDX Licenses list](https://spdx.org/licenses/), i.e.,
+a license must be specified via the short identifier from the list. If a license is not
+included in the SPDX Licenses list, the `license-url` should be provided as a fallback.
+
+Example:
+
+{% highlight yaml %}
+references:
+  - type: software
+    authors:
+      - ...
+    title: My Research Tool
+    license: Apache-2.0
+  - type: software
+    authors:
+      - ...
+    title: Obscure Research Tool
+    license-url: http://r3s34archs0ft.com/eula
+{% endhighlight %}
 
 ## Language strings
 
@@ -795,8 +817,7 @@ references:
       - nlp
       - parser
       - deep convolutional neural network
-    license: Apache License, Version 2.0
-    license-url: http://www.apache.org/licenses/LICENSE-2.0
+    license: Apache-2.0
     url: https://sdruskat.github.io/my-research-tool
 {% endhighlight %}
 
