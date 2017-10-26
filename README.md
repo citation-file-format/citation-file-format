@@ -2,6 +2,8 @@
 
 # citation-file-format.github.io
 
+For general information (contributing, other repositories, etc.), please see https://github.com/citation-file-format/citation-file-format/blob/master/README.md.
+
 ## This repository holds the website and specifications for CFF
 
 Documentation is provided in the form of a Jekyll site hosted on GitHub pages (using https://mmistakes.github.io/minimal-mistakes/), and a PDF.
