@@ -274,7 +274,8 @@ These keys only take values from a defined set, cf. the respective sections:
 **license‑url**, **repository**, **repository-code**, **repository-artifact**,
 **url**
 
-These keys take URL strings as values. XXX Define regex XXX
+These keys take URL strings as values. URLs are being validated by a regular
+expression as provided in a [GitHub Gist by Diego Perini](https://gist.github.com/dperini/729294).
 
 **keywords**
 
@@ -699,9 +700,10 @@ Table: Defined statuses for works.
 
 ## License strings
 
-License strings must conform with the [SPDX Licenses list](https://spdx.org/licenses/), i.e.,
-a license must be specified via the short identifier from the list. If a license is not
-included in the SPDX Licenses list, the `license-url` should be provided as a fallback.
+License strings must conform with the [SPDX Licenses
+list](https://spdx.org/licenses/), i.e., a license must be specified via the
+short identifier from the list. If a license is not included in the SPDX
+Licenses list, the `license-url` should be provided as a fallback.
 
 Example:
 
