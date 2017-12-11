@@ -25,6 +25,7 @@ Once a version is release-ready, do the following:
 - Create a landing page `{version}.md` file for the version in the `{version}` folder, describing the version (including release notes, changes, etc.).
 - In `_config.yml`, set `current` to the version number, e.g., `0.9-RC1`.
 - Add the version to the table in [versions.md](https://github.com/citation-file-format/citation-file-format.github.io/blob/src/versions.md).
+- Add the version in the PDF link to deploy in .travis.yml
 - Commit the changes
 - Run changes.sh to create a list of changes to display on the landing page
 - Merge the version branch to `src`.
