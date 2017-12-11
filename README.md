@@ -32,5 +32,4 @@ Once a version is release-ready, do the following:
 
 ### Build
 
-- Build the PDF files locally by running build-pdfs.py (works with Python 3.6, needs `pypandoc`, `pandoc-frontmatter`, Pandoc v >= 2.0.3, `pandoc-citeproc` v >= 0.10.3)
-- Push, Travis will take care of the rest
+- Push `src` to GitHub, Travis will take care of the rest

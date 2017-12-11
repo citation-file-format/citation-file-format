@@ -1,13 +1,28 @@
 branches:
   only:
-  - src
+    - src
 
-language: ruby
-rvm:
-- 2.3.3
+language: python
+python:
+  - 3.6
+  
+install:
+  # Install a newer version of  Pandoc
+  - wget https://github.com/jgm/pandoc/releases/download/2.0.4/pandoc-2.0.4-1-amd64.deb
+  - sudo dpkg -i pandoc-2.0.4-1-amd64.deb
+  - pandoc --version
+  - sudo apt-get -f install
+  # Install TeXLive and Jekyll
+  - sudo apt-get install -y texlive-full jekyll
+  # Install Python requirements
+  - pip install -r requirements.txt
+
 script:
+  # Build PDFs
+  - python build-pdfs.py
+  # Build the Jekyll site
   - bash travis-build.sh
 
 exclude: [vendor]
 
-sudo: false
+sudo: required
