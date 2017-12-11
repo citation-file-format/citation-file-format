@@ -16,6 +16,4 @@ git config user.email "travis-ci@sdruskat.net"
 git config user.name "Travis CI"
 git add --all
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-ls -la ./assets/pdf
-git status
 git push --force origin master
