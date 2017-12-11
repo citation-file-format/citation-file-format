@@ -2,6 +2,10 @@
 
 Format specifications for `CITATION` files. `CITATION` files provide citation metadata for (research/scientific) software.
 
+# Specifications
+
+The specifications are accessible online or as a PDF: <https://citation-file-format.github.io>.
+
 ### This repository is the landing site for CFF. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format specifications!
 
 ---
