@@ -1,0 +1,2 @@
+python-frontmatter==0.4.2
+pypandoc==1.4

@@ -1,3 +1,4 @@
+# coding=utf-8
 import datetime
 import glob
 import os
@@ -81,6 +82,13 @@ for specsfile in glob.iglob('./**/specifications.md', recursive=True):
 
         # Remove Liquid bibliography tag
         new_contents = re.sub(r"{% bibliography --cited %}", "", new_contents)
+
+        # Replace solid circles with bullets
+        new_contents = re.sub(r"●", "•", new_contents)
+
+        # Replace string "Solid circles ("
+        new_contents = re.sub(r"Solid circles \(",
+                              "Bullet points (", new_contents)
 
         # Remove Zenodo DOI badge
         zdp = """

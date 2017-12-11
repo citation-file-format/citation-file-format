@@ -22,14 +22,14 @@ The Markdown dialect is [kramdown](https://kramdown.gettalong.org/), and
 
 Once a version is release-ready, do the following:
 
-- Create a landing page `index.md` file for the version in the `{version}` folder, describing the version (including release notes, changes, etc.).
+- Create a landing page `{version}.md` file for the version in the `{version}` folder, describing the version (including release notes, changes, etc.).
 - In `_config.yml`, set `current` to the version number, e.g., `0.9-RC1`.
 - Add the version to the table in [versions.md](https://github.com/citation-file-format/citation-file-format.github.io/blob/src/versions.md).
+- Commit the changes
+- Run changes.sh to create a list of changes to display on the landing page
 - Merge the version branch to `src`.
 - Push `src`. Travis CI will pick up the pushed commit and [build](#build) it. If you don't want your commits to be built automatically, add `[skip ci]` to your commit message.
 
 ### Build
 
-- Build the PDF files locally by running build-pdfs.py (works with Python 3.6, needs `pypandoc`, `pandoc-frontmatter`, a custom pandoc build from commit [181d737](https://github.com/jgm/pandoc/commit/181d7370bb913a0a9a110b2ae230a079f0c23be1) on the main [Pandoc
-repo](https://github.com/jgm/pandoc), `pandoc-citeproc` v >= 0.10.3)
-- Push, Travis will take care of the rest
+- Push `src` to GitHub, Travis will take care of the rest
