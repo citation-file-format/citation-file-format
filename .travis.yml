@@ -18,6 +18,8 @@ install:
   - pip install -r requirements.txt
 
 script:
+  # Clone repo
+  - git clone https://${GITHUB_TOKEN}@github.com/citation-file-format/citation-file-format.github.io.git --branch master _site
   # Build PDFs
   - python build-pdfs.py
   # Build the Jekyll site
