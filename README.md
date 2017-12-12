@@ -4,6 +4,8 @@ Format specifications for `CITATION` files. `CITATION` files provide citation me
 
 # Specifications
 
+All versions: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149)
+
 The specifications are accessible online or as a PDF: <https://citation-file-format.github.io>.
 
 ### This repository is the landing site for CFF. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format specifications!
