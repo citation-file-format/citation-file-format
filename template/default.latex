@@ -227,7 +227,7 @@ $if(institute)$
 \providecommand{\institute}[1]{}
 \institute{$for(institute)$$institute$$sep$ \and $endfor$}
 $endif$
-\date{$date$}
+\date{$release-date$}
 
 \begin{document}
 $if(title)$

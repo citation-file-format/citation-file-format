@@ -15,6 +15,7 @@ abstract:
   <https://github.com/sdruskat/citation-file-format>.
 geometry: margin=2cm
 version: 0.9-RC1
+release-date: 06 October 2017
 ---
 
 {% include toc %}
