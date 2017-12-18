@@ -14,6 +14,7 @@ abstract:
   <https://github.com/citation-file-format/citation-file-format>.
 geometry: margin=2cm
 version: 1.0-RC1
+release-date: 25 October 2017
 ---
 
 {% include toc %}

@@ -14,7 +14,8 @@ abstract:
   <https://github.com/citation-file-format/citation-file-format>. CFF is a source
   format for [CodeMeta](https://codemeta.github.io/) [JSON](https://github.com/codemeta/codemeta/blob/master/codemeta.json) files.
 geometry: margin=2cm
-version: 1.0.0
+version: 1.0.1
+release-date: 18 December 2017
 ---
 
  
@@ -389,7 +390,7 @@ CFF-Core defines the following reference keys.
   | `repository-artifact`   | String (*URL*)                                                                   | The repository where the (executable/binary) artifact of the work is stored         |
   | `scope`                 | String                                                                           | The scope of the reference, e.g., the section of the work it adheres to             |
   | `section`               | String                                                                           | The section of a work that is referenced                                            |
-  | `senders`               | Collection of *[person objects](#person-objects)*                                | The sender of a personal communication                                              |
+  | `senders`               | Collection of *[entity](#entity-objects)* or *[person objects](#person-objects)* | The sender of a personal communication                                              |
   | `status`                | *[Status string](#status-strings)*                                               | The publication status of the work                                                  |
   | `start`                 | Integer                                                                          | The start page of the work                                                          |
   | `thesis-type`           | String                                                                           | The type of the thesis that is the work                                             |
@@ -429,7 +430,8 @@ references:
 **`authors`**, **`contact`**, **`editors`**, **`editors-series`**, **`recipients`**,
 **`senders`**, **`translators`**
 
-These keys take a collection of [person objects](#person-objects) as value. Person objects
+These keys take a collection of entity objects or 
+[person objects](#person-objects) as value. Person objects
 provide a fixed set of keys to reference individuals, including a detailed
 set for specifiying personal names, an affiliation, etc.
 

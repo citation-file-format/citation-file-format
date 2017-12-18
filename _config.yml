@@ -10,7 +10,7 @@
 #####################################################
 
 # Current CFF version
-current                  : "1.0.0"
+current                  : "1.0.1"
 
 scholar:
   bibtex_filters:

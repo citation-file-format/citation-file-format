@@ -25,17 +25,26 @@ Specifications are only written in `specifications.md` in a version branch!
 The Markdown dialect is [kramdown](https://kramdown.gettalong.org/), and
 [Jekyll](https://jekyllrb.com/) specificities apply.
 
+Don't forget to change the `version` tag in the YAML metadata at the start of
+`specifications.md`!
+
 Once a version is release-ready, do the following:
 
+- Change the `release-date` meta tag in the YAML frontmatter of `specifications.md`
 - Create a landing page `{version}.md` file for the version in the `{version}` folder, describing the version (including release notes, changes, etc.).
 - In `_config.yml`, set `current` to the version number, e.g., `0.9-RC1`.
 - Add the version to the table in [versions.md](https://github.com/citation-file-format/citation-file-format.github.io/blob/src/versions.md).
+  Create a new version on Zenodo to reserve a DOI, add that DOI to the versions table.
 - Add the version in the PDF link for addition to GitHub release .travis.yml
 - Commit the changes
 - Run changes.sh to create a list of changes to display on the landing page
-- Merge the version branch to `src`.
+- Merge the version branch to `src` and create a version tag.
 - Push `src`. Travis CI will pick up the pushed commit and [build](#build) it. If you don't want your commits to be built automatically, add `[skip ci]` to your commit message.
 
 ### Build
 
 - Push `src` to GitHub, Travis will take care of the rest
+
+### Post-release
+
+- Add the Zenodo DOI badge to the release that has been created by Travis.

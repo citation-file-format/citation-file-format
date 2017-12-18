@@ -15,6 +15,7 @@ abstract:
   format for [CodeMeta](https://codemeta.github.io/) [JSON](https://github.com/codemeta/codemeta/blob/master/codemeta.json) files.
 geometry: margin=2cm
 version: 1.0.0
+release-date: 11 December 2017
 ---
 
  
