@@ -27,6 +27,9 @@ release-date: 11 December 2017
 
 [**Download PDF**]({{ site.baseurl }}/assets/pdf/cff-specifications-{{ page.version }}.pdf){: .btn .btn--primary .btn--large}
 
+*Known bugs:* [citation-file-format#41](https://github.com/citation-file-format/citation-file-format/issues/41)
+{: .notice--danger}
+
 # Introduction
 
 ## Status of this document
