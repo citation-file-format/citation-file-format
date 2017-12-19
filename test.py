@@ -9,5 +9,5 @@ def test_cff_core_examples():
                 filepath = os.path.join(root, file)
 
 
-                c = Core(source_file=filepath, schema_files=["CFF-Core/schema.yaml"], custom_yaml_ext="cff")
+                c = Core(source_file=filepath, schema_files=["CFF-Core/schema.yaml"], yaml_extension="cff")
                 c.validate(raise_exception=True)
