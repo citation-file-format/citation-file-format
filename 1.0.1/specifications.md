@@ -219,7 +219,7 @@ i.e., metadata that can be picked up in a CodeMeta JSON file;
 Citation File Format that is used for the file.
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 {% endhighlight %}
 
 ### `message` 
@@ -307,7 +307,7 @@ values, cf. [reference types](#reference-types).
 Example:
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "Please cite the following works when using this software."
 ...
 references:
@@ -875,7 +875,7 @@ Therefore, a minimal `CITATION.cff` file in such a case would look similar to
 the following.
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: If you use this software, please cite it as below.
 references:
   - type: software
@@ -891,7 +891,7 @@ references:
 A more comprehensive version could look similar to the following.
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: If you use this software, please cite it as below.
 references:
   - type: software
@@ -934,7 +934,7 @@ and release date cannot be determined, a `CITATION.cff` file could look like
 this.
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you dare to use this commercial, closed-source, unversioned software 
 in your research, please at least cite it as below."
 references:
@@ -954,7 +954,7 @@ references:
 ### `software` (with two references)
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use My Research Tool, please cite both the software and the 
 outline paper."
 references:
@@ -995,7 +995,7 @@ falling back on a combination of the repository URL and version number/commit
 hash would be an appropriate way to cite the software used. {% cite principles -l 12 %}
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use this MRT alpha snapshot version, please cite."
 references:
   - type: software-code
@@ -1011,7 +1011,7 @@ references:
 ### `software-container`
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use the MRT Docker container, please cite the following."
 references:
   - type: software-container
@@ -1029,7 +1029,7 @@ references:
 ### `software-executable`
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use MRT, please cite the following."
 references:
   - type: software-executable
@@ -1048,7 +1048,7 @@ references:
 ### `art`
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use this software, please cite the following."
 references:
   - type: art
@@ -1068,7 +1068,7 @@ references:
 ### `article`
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use this software, please cite the following paper."
 references:
   - type: article
@@ -1098,7 +1098,7 @@ references:
 ### `blog`
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use MRT in your research, please cite the following blog article."
 references:
   - type: blog
@@ -1117,7 +1117,7 @@ references:
 ### `book`
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use MRT for your research, please cite the following book."
 references:
   - type: book
@@ -1135,7 +1135,7 @@ references:
 ### `conference-paper`
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use MRT for your research, please cite the following."
 references:
   - type: conference-paper
@@ -1171,7 +1171,7 @@ key. Specific citation styles may or may not attach a suffix to the authors,
 such as ", eds." or similar.
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use MRT, please cite the following."
 references:
   - type: edited-work
@@ -1189,7 +1189,7 @@ references:
 ### `report`
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use MRT in your research, please cite the following."
 references:
   - type: report
@@ -1204,7 +1204,7 @@ references:
 ### `thesis`
 
 {% highlight yaml %}
-cff-version: 1.0.0
+cff-version: 1.0.1
 message: "If you use MRT in your research, please cite the following."
 references:
   - type: thesis
