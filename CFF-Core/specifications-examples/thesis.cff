@@ -1,5 +1,14 @@
-cff-version: 1.0.0
-message: "If you use MRT in your research, please cite the following."
+
+cff-version: 1.0.2
+message: If you use this software, please cite it as below.
+authors:
+  - family-names: Druskat
+    given-names: Stephan
+    orcid: 0000-0003-4925-7248
+title: My Research Tool
+version: 1.0.4
+doi: 10.5281/zenodo.1234
+date-released: 2017-12-18
 references:
   - type: thesis
     authors:
@@ -10,9 +19,9 @@ references:
     year: 2017
     department: Dept. of Universal Language Philosophy
     institution:
-      - name: "Humboldt-Universität zu Berlin"
-        city: Berlin
-        country: DE
+      name: "Humboldt-Universität zu Berlin"
+      city: Berlin
+      country: DE
     database: Thesiserver
     date-accessed: 2017-09-23
     date-published: 2017-03-21

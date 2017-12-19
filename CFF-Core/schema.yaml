@@ -1,4 +1,4 @@
-name: "Citation File Format - Core module (CFF-Core) schema 1.0.0"
+name: "Citation File Format - Core module (CFF-Core) schema 1.0.2"
 desc: A pykwalifire schema for validating CITATION.cff files 
 type: map
 mapping:
@@ -7,7 +7,7 @@ mapping:
   cff-version:
     required: True
     type: str
-    pattern: 1\.0\.1
+    pattern: 1\.0\.2
 
   # Message
   message:
@@ -47,7 +47,7 @@ mapping:
     format: "%Y-%m-%d"
 
   doi:
-    required: True
+    required: false
     type: str
     # DOI regex pattern:
     # '10.' 
@@ -112,7 +112,7 @@ mapping:
 
   # References
   references:
-    required: True
+    required: false
     type: seq
     sequence:
       - include: reference
@@ -429,7 +429,7 @@ schema;reference:
 
     issue:  
       required: False
-      type: int
+      type: str
 
     issue-date: 
       required: False

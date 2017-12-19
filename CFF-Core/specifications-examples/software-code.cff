@@ -1,11 +1,11 @@
-cff-version: 1.0.0
+cff-version: 1.0.2
 message: "If you use this MRT alpha snapshot version, please cite."
-references:
-  - type: software-code
-    authors:
-      - family-names: Doe
-        given-names: Jane
-    title: My Research Tool Prototype
-    version: 0.0.1-alpha1-build1507284872
-    repository-code: https://github.com/doe/mrt
-    commit: 160d54f9e935c914df38c1ffda752112b5c979a8
+authors:
+  - family-names: Druskat
+    given-names: Stephan
+    orcid: 0000-0003-4925-7248
+title: My Research Tool Prototype
+version: 0.0.1-alpha1-build1507284872
+date-released: 2017-12-18
+repository-code: https://github.com/doe/mrt
+commit: 160d54f9e935c914df38c1ffda752112b5c979a8

@@ -1,11 +1,10 @@
-cff-version: 1.0.0
+cff-version: 1.0.2
 message: If you use this software, please cite it as below.
-references:
-  - type: software
-    authors:
-      - family-names: Druskat
-        given-names: Stephan
-        orcid: 0000-0003-4925-7248
-    title: My Research Tool
-    version: 1.0.4
-    doi: 10043/zenodo.1234
+authors:
+  - family-names: Druskat
+    given-names: Stephan
+    orcid: 0000-0003-4925-7248
+title: My Research Tool
+version: 1.0.4
+doi: 10.5281/zenodo.1234
+date-released: 2017-12-18

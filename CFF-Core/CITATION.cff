@@ -6,7 +6,7 @@
 # CFF Core schema 1.0.0    #
 ############################
 
-cff-version: 1.0.1
+cff-version: 1.0.2
 
 message: If you use this software, please cite it as below.
 
@@ -131,7 +131,7 @@ references:
     format: Printed book
     isbn: 978-1-89183-044-0
     issn: 1234-543X
-    issue: 123
+    issue: "123"
     issue-date: December
     issue-title: Special Issue on Software Citation
     journal: PeerJ
