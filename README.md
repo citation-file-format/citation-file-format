@@ -25,8 +25,8 @@ Specifications are only written in `specifications.md` in a version branch!
 The Markdown dialect is [kramdown](https://kramdown.gettalong.org/), and
 [Jekyll](https://jekyllrb.com/) specificities apply.
 
-Don't forget to change the `version` tag in the YAML metadata at the start of
-`specifications.md`!
+- Don't forget to change the `version` tag in the YAML metadata at the start of
+`specifications.md`, and in the file contents!
 
 Once a version is release-ready, do the following:
 
