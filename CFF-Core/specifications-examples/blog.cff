@@ -1,0 +1,14 @@
+cff-version: 1.0.0
+message: "If you use MRT in your research, please cite the following blog article."
+references:
+  - type: blog
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: "Implement a 100% accuracy syntax parser for all languages? No probs!"
+    date-published: 2017-09-23
+    url: https://hu-berlin.de/blogs/jdoe/2017/09/23/if-only
+    institution:
+      - name: "Humboldt-Universität zu Berlin"
+        city: Berlin
+        country: DE

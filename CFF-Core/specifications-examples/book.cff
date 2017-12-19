@@ -1,0 +1,13 @@
+cff-version: 1.0.0
+message: "If you use MRT for your research, please cite the following book."
+references:
+  - type: book
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: "The future of syntax parsing"
+    year: 2017
+    publisher:
+      - name: Far Out Publications
+        city: Bielefeld
+    medium: print

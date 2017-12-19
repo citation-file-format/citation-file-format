@@ -1,0 +1,15 @@
+cff-version: 1.0.0
+message: "If you dare to use this commercial, closed-source, unversioned software 
+in your research, please at least cite it as below."
+references:
+  - type: software
+    title: Opaquity
+    number: opq-1234-XZVF-ACME-RLY
+    date-downloaded: 2017-02-31
+    contact:
+      - family-names: Vader
+        given-names: Darth
+        affiliation: Dark Side Software
+        location: DS-1 Orbital Battle Station, near Scarif
+        email: father@imperial-empire.com
+        tel: +850 (0)123-45-666

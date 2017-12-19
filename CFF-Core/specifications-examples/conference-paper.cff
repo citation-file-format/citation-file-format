@@ -1,0 +1,27 @@
+cff-version: 1.0.0
+message: "If you use MRT for your research, please cite the following."
+references:
+  - type: conference-paper
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: "Ultimate-accuracy syntax parsing with My Research Tool"
+    year: 2017
+    collection-title: "Proceedings of the 1st Conference on Wishful Thinking"
+    collection-doi: 10043.zenodo.4321
+    editors: 
+      - family-names: Kirk
+        given-names: James T.
+    conference:
+      - name: 1st Conference on Wishful Thinking
+        location: Spock's Inn Hotel and Bar
+        address: 123 Main St
+        city: Bielefeld
+        region: Jarvis Island
+        post-code: 12345
+        country: UM
+        date-start: 2017-04-01
+        date-end: 2017-04-01
+    start: 42
+    end: 45
+    doi: 10043/zenodo.1234

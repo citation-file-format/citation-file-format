@@ -12,6 +12,14 @@ pip install pykwalifire
 pykwalifire -s schema.yaml -d CITATION.cff -y cff
 ``` 
 
+### Versioning
+
+The versioning scheme for cff-schema is based on CFF specs versions, with changes in
+the schema that don't follow changes in the specifications suffixed by `-n` where
+`n` is a consecutive number. E.g., cff-schema version *1.0.2-2* would be the
+second bugfix version after the cff-schema release version that applies to CFF
+specifications version 1.0.2.
+
 ### Issues
 
 - For issues with any of the **schemas**, please [submit issues against this repository](https://github.com/citation-file-format/schema/issues)

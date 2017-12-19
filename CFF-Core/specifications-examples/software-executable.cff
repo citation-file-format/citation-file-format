@@ -1,0 +1,12 @@
+cff-version: 1.0.0
+message: "If you use MRT, please cite the following."
+references:
+  - type: software-executable
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: My Research Tool Kickstarter
+    version: 2.0.0
+    doi: 10043/zenodo.1234
+    repository-artifact: https://hu.berlin/nexus/mrt-kickstarter
+    filename: mrt2-kickstarter.exe

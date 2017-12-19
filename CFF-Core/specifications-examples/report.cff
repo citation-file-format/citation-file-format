@@ -1,0 +1,10 @@
+cff-version: 1.0.0
+message: "If you use MRT in your research, please cite the following."
+references:
+  - type: report
+    authors:
+      - name: Fictional Parsing Interest Group, ACME Inc.
+    title: "100% accuracy syntax parsing at ACME"
+    url: http://www.acme.com/sigs/fp/reports/hpsp.pdf
+    year: 2017
+    date-accessed: 2017-09-23

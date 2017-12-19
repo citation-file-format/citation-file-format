@@ -1,0 +1,26 @@
+cff-version: 1.0.0
+message: If you use this software, please cite it as below.
+references:
+  - type: software
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        orcid: 0000-0003-4925-7248
+        affiliation: "Humboldt-Universität zu Berlin, Dept. of German Studies 
+        and Linguistics"
+        email: mail@sdruskat.net
+        website: https://hu.berlin/sdruskat
+    title: My Research Tool
+    version: 1.0.4
+    doi: 10043/zenodo.1234
+    repository-code: https://github.com/sdruskat/my-research-tool
+    repository-artifact: https://hu.berlin/nexus/mrt
+    date-published: 2017-09-23
+    keywords:
+      - "McAuthor's algorithm"
+      - linguistics
+      - nlp
+      - parser
+      - deep convolutional neural network
+    license: Apache-2.0
+    url: https://sdruskat.github.io/my-research-tool

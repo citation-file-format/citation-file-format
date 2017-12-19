@@ -1,0 +1,13 @@
+cff-version: 1.0.0
+message: "If you use MRT, please cite the following."
+references:
+  - type: edited-work
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: "Ultimate-accuracy parsing in practice"
+    year: 2017
+    publisher:
+      - name: Far Out Publications
+        city: Bielefeld
+        country: DE
