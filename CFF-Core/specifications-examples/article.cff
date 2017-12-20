@@ -1,9 +1,9 @@
-cff-version: 1.0.2
+cff-version: 1.0.3
 message: If you use this software, please cite it as below.
 authors:
   - family-names: Druskat
     given-names: Stephan
-    orcid: 0000-0003-4925-7248
+    orcid: https://orcid.org/0000-0003-4925-7248
 title: My Research Tool
 version: 1.0.4
 doi: 10.5281/zenodo.1234
@@ -19,7 +19,7 @@ references:
         Electrical and Computer Engineering Department & School of Information 
         Sciences, University of Illinois at Urbana-Champaign, Urbana, Illinois, 
         United States"
-        orcid: 0000-0001-5934-7525
+        orcid: https://orcid.org/0000-0001-5934-7525
       - family-names: Niemeyer
         given-names: Kyle E.
       - name: "FORCE11 Software Citation Working Group"

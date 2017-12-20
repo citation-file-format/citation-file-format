@@ -1,9 +1,9 @@
-cff-version: 1.0.2
+cff-version: 1.0.3
 message: "If you use this MRT alpha snapshot version, please cite."
 authors:
   - family-names: Druskat
     given-names: Stephan
-    orcid: 0000-0003-4925-7248
+    orcid: https://orcid.org/0000-0003-4925-7248
 title: My Research Tool Prototype
 version: 0.0.1-alpha1-build1507284872
 date-released: 2017-12-18

@@ -6,7 +6,7 @@
 # CFF Core schema 1.0.0    #
 ############################
 
-cff-version: 1.0.2
+cff-version: 1.0.3
 
 message: If you use this software, please cite it as below.
 
@@ -24,7 +24,7 @@ authors:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: 0000-0001-2345-6789
+    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -36,7 +36,7 @@ authors:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: 0000-0001-2345-6789
+    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -59,7 +59,7 @@ contact:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: 0000-0001-2345-6789
+    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -71,7 +71,7 @@ contact:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: 0000-0001-2345-6789
+    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -183,7 +183,7 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: 0000-0001-2345-6789
+      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -204,7 +204,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -216,7 +216,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -237,7 +237,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -249,7 +249,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -266,7 +266,7 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: 0000-0001-2345-6789
+      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -287,7 +287,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -299,7 +299,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -320,7 +320,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -332,7 +332,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -349,7 +349,7 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: 0000-0001-2345-6789
+      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -366,7 +366,7 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: 0000-0001-2345-6789
+      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -383,7 +383,7 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: 0000-0001-2345-6789
+      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -404,7 +404,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -416,7 +416,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -437,7 +437,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -449,7 +449,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -470,7 +470,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -482,7 +482,7 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: 0000-0001-2345-6789
+        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
