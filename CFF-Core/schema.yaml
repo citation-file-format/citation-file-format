@@ -1,4 +1,4 @@
-name: "Citation File Format - Core module (CFF-Core) schema 1.0.2"
+name: "Citation File Format - Core module (CFF-Core) schema 1.0.3"
 desc: A pykwalifire schema for validating CITATION.cff files 
 type: map
 mapping:
@@ -7,7 +7,7 @@ mapping:
   cff-version:
     required: True
     type: str
-    pattern: 1\.0\.2
+    pattern: 1\.0\.3
 
   # Message
   message:
@@ -166,7 +166,7 @@ schema;person:
     orcid:
       required: False
       type: str
-      pattern: "[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+      pattern: "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
 
     email:
       required: False
@@ -219,7 +219,7 @@ schema;entity:
     orcid:
       required: False
       type: str
-      pattern: "[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+      pattern: "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
 
     email:
       required: False
