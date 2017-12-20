@@ -201,7 +201,7 @@ general. These include:
 
 ## File structure
 
-CFF `CITATION` files represent YAML 1.2 dictionaries ("maps") with
+`CITATION.cff` files represent YAML 1.2 dictionaries ("maps") with
 the keys listed in the table below. Note that the order of the keys is arbitrary,
 and that most YAML [linter](https://en.wikipedia.org/wiki/Lint_(software))s 
 will re-order the keys alphabetically.
@@ -708,7 +708,8 @@ according to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), e.g.,
 
 > The ORCID iD is expressed as an https URI, i.e. the 16-digit identifier is 
 preceded by "https://orcid.org/". A hyphen is inserted every 4 digits of the 
-identifier to aid readability. (<https://support.orcid.org/knowledgebase/articles/116780-structure-of-the-orcid-identifier>, 
+identifier to aid readability.  
+(<https://support.orcid.org/knowledgebase/articles/116780-structure-of-the-orcid-identifier>, 
 section "Expressing the ORCID iD")
 
 Example:
@@ -988,6 +989,7 @@ doi: 10.5281/zenodo.1234
 date-released: 2017-12-18
 references:
   - type: article
+    scope: Cite this paper if you want to reference the general concepts of MRT.
     authors:
       - family-names: Doe
         given-names: Jane

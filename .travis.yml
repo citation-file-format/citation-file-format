@@ -31,6 +31,6 @@ deploy:
   api_key:
     secure: "BiIpY2KWsO+GDj/+CWcBY9dwmPlYEEwWXqI0uXEKZNNWy4uWjWn625f1x+krTy5RzfH29r1IWub9w0Xf80vtIkqVBEpxGUPYPayHKC1Lal8YIgXCxPTstOKPNuYAWdf2/xoD3tiQrbBt6gAGm/+Pg9knOFRq+T1mYKHZKQTIsSDpZyb7FEG0a67fylJlRY+HGwEdDGc166DLottSMjiwLRbwd7rkYhLTNPeouT7KF7GiAeNXezRwKSylSnkpsibS5J/XWDOuyu+7oW8P11TIaVy22BeMj8SWN9KUQYozqMg+XWjt8zYlZjhB/bF+WiJ21zgw/TTtdnyZJmAuR7xMWj7auRouw4vQuinyTfjn8EmUw2TnOch/1I7yNgAmcF8vTmm2EdueIKEo6BHIH0tb03I1BGDR+bmyfsG9+K5WexsgNuU5UTPss+Jaebq+ZH7u2bVrutYoPGJEHOOCUyO+qgrT/6LlrDO8WBLbmplhh6Wdanf5Z3uvLrqFBngxeAGkLTG5u8BX49rvCgkcKYzUbvL60QNkKQ3OeFOs3JFxj3PJ36hqs6x8j8hRKvBwFpXtUr4QxZUy7QuvDa5zZvbb7QiWZZ6wckiiqhr9LqsdIXm6TzsXKYgTFHjhRyDQIZd9vPzlOrCYVOrc+ocdqvLpXDJFxAtoHNxu8hUemyVzNig="
   file: 
-    - './_site/assets/pdf/cff-specifications-1.0.2.pdf'
+    - './_site/assets/pdf/cff-specifications-1.0.3.pdf'
   on:
     tags: true
