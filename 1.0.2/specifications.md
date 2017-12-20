@@ -213,7 +213,7 @@ i.e., metadata that can be picked up in a CodeMeta JSON file;
 - optionally, a list of references which should be cited in different use cases or scopes, e.g., a software paper describing the abstract concepts of the software (`references`).
 
 
-### `cff-version`
+### `cff-version` (**required**)
 
 `cff-version` must specify the exact version of the
 Citation File Format that is used for the file.
@@ -222,7 +222,7 @@ Citation File Format that is used for the file.
 cff-version: 1.0.2
 {% endhighlight %}
 
-### `message` 
+### `message` (**required**)
 
 `message` must specify instructions to users on how
 to cite the software the CITATION.cff file is associated
@@ -232,7 +232,7 @@ with.
 message: "Please cite the following works when using this software."
 {% endhighlight %}
 
-### Software citation metadata
+### Software citation metadata (**required**)
 
 The primary citation metadata provided to users that wish to cite the software
 version which the CFF file is for. This metadata can be provided via a subset
@@ -269,28 +269,28 @@ Finally, following the software citation principle of *Persistence*, make sure t
 
 CFF-Core provides the following keys for software citation metadata.
 
-  |        CFF key        |                                                           CFF data type                                                           |                                                                                  Description                                                                                  |
-  |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-  | `abstract`            | String                                                                                                                            | A description of the software (version)                                                                                                                                       |
-  | `authors`             | Collection of [entity](#entity-objects) or [person](#person-objects) objects                                                      | The author(s) of the software                                                                                                                                                 |
-  | `commit`              | String                                                                                                                            | The commit hash or revision number of the software version                                                                                                                    |
-  | `contact`             | Collection of [entity](#entity-objects) or [person](#person-objects) objects                                                      | The contact person, group, company, etc. for the software version                                                                                                             |
-  | `date-released`       | Date                                                                                                                              | The release date of the software version                                                                                                                                      |
-  | `doi`                 | String                                                                                                                            | The DOI of the work (not the resolver URL, i.e., *10.5281/zenodo.1003150*, not *http://doi.org/10.5281/zenodo.1003150*)                                                       |
-  | `keywords`            | Collection of strings                                                                                                             | Keywords pertaining to the software version                                                                                                                                   |
-  | `license`             | [SPDX](https://spdx.org/) [License List](https://spdx.org/licenses/) Identifier string (or name string for non-standard licenses) | The license the software version is licensed under                                                                                                                            |
-  | `license-url`         | String (URL)                                                                                                                      | The URL of the license text under which the software version is licensed (only for non-standard licenses not included in the [SPDX License List](https://spdx.org/licenses/)) |
-  | `repository`          | String (URL)                                                                                                                      | The URL to the software version in a repository (when the repository is neither a source code repository or a build artifact repository)                                      |
-  | `repository-code`     | String (URL)                                                                                                                      | The URL to the software version in a source code repository                                                                                                                   |
-  | `repository-artifact` | String (URL)                                                                                                                      | The URL to the software version in a build artifact/binary/release repository                                                                                                 |
-  | `title`               | String                                                                                                                            | The name of the software (may include a specific name for the software version)                                                                                               |
-  | `url`                 | String (URL)                                                                                                                      | The URL to a landing page/website for the software version                                                                                                                    |
-  | `version`             | String                                                                                                                            | The version of the software                                                                                                                                                   |
+  | CFF key                 | CFF data type                                                                                                                       | Description                                                                                                                                                                     | required   |
+  | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------: |
+  | `abstract`              | String                                                                                                                              | A description of the software (version)                                                                                                                                         |            |
+  | `authors`               | Collection of [entity](#entity-objects) or [person](#person-objects) objects                                                        | The author(s) of the software                                                                                                                                                   | ●          |
+  | `commit`                | String                                                                                                                              | The commit hash or revision number of the software version                                                                                                                      |            |
+  | `contact`               | Collection of [entity](#entity-objects) or [person](#person-objects) objects                                                        | The contact person, group, company, etc. for the software version                                                                                                               |            |
+  | `date-released`         | Date                                                                                                                                | The release date of the software version                                                                                                                                        | ●          |
+  | `doi`                   | String                                                                                                                              | The DOI of the work (not the resolver URL, i.e., *10.5281/zenodo.1003150*, not *http://doi.org/10.5281/zenodo.1003150*)                                                         |            |
+  | `keywords`              | Collection of strings                                                                                                               | Keywords pertaining to the software version                                                                                                                                     |            |
+  | `license`               | [SPDX](https://spdx.org/) [License List](https://spdx.org/licenses/) Identifier string (or name string for non-standard licenses)   | The license the software version is licensed under                                                                                                                              |            |
+  | `license-url`           | String (URL)                                                                                                                        | The URL of the license text under which the software version is licensed (only for non-standard licenses not included in the [SPDX License List](https://spdx.org/licenses/))   |            |
+  | `repository`            | String (URL)                                                                                                                        | The URL to the software version in a repository (when the repository is neither a source code repository or a build artifact repository)                                        |            |
+  | `repository-code`       | String (URL)                                                                                                                        | The URL to the software version in a source code repository                                                                                                                     |            |
+  | `repository-artifact`   | String (URL)                                                                                                                        | The URL to the software version in a build artifact/binary/release repository                                                                                                   |            |
+  | `title`                 | String                                                                                                                              | The name of the software (may include a specific name for the software version)                                                                                                 | ●          |
+  | `url`                   | String (URL)                                                                                                                        | The URL to a landing page/website for the software version                                                                                                                      |            |
+  | `version`               | String                                                                                                                              | The version of the software                                                                                                                                                     | ●          |
   
 Table: CFF-Core keys and accepted data types for the provision of citation metadata.
 {: .text-right}
 
-### `references`
+### `references` (**optional**)
 
 Provides an optional list of references pertaining to the software version, or the software itself, e.g., a software paper describing the abstract concepts of the software, a paper describing an algorithm that has been implemented in the software version, etc.
 
@@ -935,7 +935,9 @@ this.
 
 {% highlight yaml %}
 cff-version: 1.0.2
-message: "If you dare use this commercial, closed-source, strangely versioned software in your research, please at least cite it as below."
+message: 
+  If you dare use this commercial, closed-source, strangely versioned 
+  software in your research, please at least cite it as below.
 authors:
   - family-names: Vader
     name-suffix: né Skywalker
