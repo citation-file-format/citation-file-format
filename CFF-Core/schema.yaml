@@ -47,7 +47,7 @@ mapping:
     format: "%Y-%m-%d"
 
   doi:
-    required: false
+    required: False
     type: str
     # DOI regex pattern:
     # '10.' 
