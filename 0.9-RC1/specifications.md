@@ -20,7 +20,7 @@ release-date: 06 October 2017
 
 {% include toc %}
 
-[![DOI](https://citation-file-format.github.io/assets/images/zenodo.1003150.svg)](https://doi.org/10.5281/zenodo.1003150)
+[![DOI](https://citation-file-format.github.io/assets/images/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149)
 
 [**Download PDF**]({{ site.baseurl }}/assets/pdf/cff-specifications-{{ page.version }}.pdf){: .btn .btn--primary .btn--large}
 
