@@ -202,8 +202,11 @@ general. These include:
 ## File structure
 
 CFF `CITATION` files represent YAML 1.2 dictionaries ("maps") with
-the following keys listed in the table below. These primary keys
-are used to specify 
+the keys listed in the table below. Note that the order of the keys is arbitrary,
+and that most YAML [linter](https://en.wikipedia.org/wiki/Lint_(software))s 
+will re-order the keys alphabetically.
+
+The primary keys are used to specify 
 
 - the version of CFF in use (`cff-version`); 
 - a message which should be conveyed to the user of the software,
