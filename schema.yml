@@ -1,0 +1,23 @@
+type: seq
+sequence:
+  - type: map
+    mapping:
+      "type":
+        required: true
+        type: str
+        enum: ["software-code"]
+      "authors":
+        required: true
+        type: seq
+        sequence:
+        - type: map
+          mapping:
+            "name":
+              type: str
+            "orcid":
+              type: str
+      "title":
+        required: true
+        type: str
+      "doi":
+        type: str
