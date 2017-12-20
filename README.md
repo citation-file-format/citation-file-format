@@ -5,12 +5,22 @@ For general information (contributing, other repositories, etc.), please see htt
 ## This repository holds schemas for [CFF](https://github.com/citation-file-format/citation-file-format)
 
 You can validate your `CITATION.cff` file against a schema, by using the Python
-package [`pykwalifire`](https://pypi.python.org/pypi/pykwalifire/1.7.3):
+package [`pykwalifire`](https://pypi.python.org/pypi/pykwalifire/2.0.1):
 
 ```bash
 pip install pykwalifire
 pykwalifire -s schema.yaml -d CITATION.cff -y cff
 ``` 
+
+### Requirements
+
+- Python>=3.3
+- pykwalifire>=2.0.1
+
+### Testing
+
+You can test whether the schema works with the provided example by running 
+[`pytest`](https://docs.pytest.org/en/latest/getting-started.html).
 
 ### Versioning
 
