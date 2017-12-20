@@ -1,5 +1,5 @@
 import os
-from pykwalify.core import Core
+from pykwalifire.core import Core
 
 def test_cff_core_examples():
 
