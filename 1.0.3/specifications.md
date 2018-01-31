@@ -303,7 +303,7 @@ specify values for the following mandatory keys: `type`, `authors`, `title`.
 `type` must specify the type of the referenced work. For a list of available 
 values, cf. [reference types](#reference-types).
 
-`authors` must specify a list of [person objects](#person-objects).
+`authors` must specify a list of [entity](#entity-objects) or [person objects](#person-objects).
 
 `title` must specify the title of the referenced work.
 
