@@ -810,6 +810,8 @@ specifies the following value strings for the key `status`.
 Table: Defined statuses for works.
 {: .text-right}
 
+For a work that is complete and has been published, leave `status` unset.
+
 ## License strings
 
 License strings must conform with the [SPDX Licenses
