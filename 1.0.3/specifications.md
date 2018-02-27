@@ -1,16 +1,16 @@
 ---
-title: Citation File Format - Core Module (CFF-Core)  
+title: Citation File Format - Core Module (CFF-Core)
 author: Stephan Druskat (mail@sdruskat.net)
-abstract: 
-  The *Citation File Format* (*CFF*) is a human- *and* machine-readable format 
-  for CITATION files. These files provide citation metadata for (research and 
-  scientific) software. The format aims to support citation-specific use cases for software 
-  citation described in {% cite principles %}. CFF is serialized in 
-  [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is 
-  therefore Unicode-based and cross-language. This specification, together with the 
-  Unicode standard for characters, aims to provide all the information necessary 
-  to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate, 
-  convert from) it. These specifications are maintained openly at 
+abstract:
+  The *Citation File Format* (*CFF*) is a human- *and* machine-readable format
+  for CITATION files. These files provide citation metadata for (research and
+  scientific) software. The format aims to support citation-specific use cases for software
+  citation described in {% cite principles %}. CFF is serialized in
+  [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is
+  therefore Unicode-based and cross-language. This specification, together with the
+  Unicode standard for characters, aims to provide all the information necessary
+  to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate,
+  convert from) it. These specifications are maintained openly at
   <https://github.com/citation-file-format/citation-file-format>. CFF is a source
   format for [CodeMeta](https://codemeta.github.io/) [JSON](https://github.com/codemeta/codemeta/blob/master/codemeta.json) files.
 geometry: margin=2cm
@@ -18,7 +18,7 @@ version: 1.0.3
 release-date: 20 December 2017
 ---
 
- 
+
 
 
 {% include toc %}
@@ -51,7 +51,7 @@ Citation Implementation Working
 Group](https://github.com/force11/force11-sciwg) in order to make CFF
 crosswalkable in [CodeMeta](https://github.com/codemeta/codemeta). It mainly
 introduces format modularization, and the final specification of CFF-Core as
-the module for providing citation metadata. 
+the module for providing citation metadata.
 
 Future versions will additionally introduce at least a metadata module to
 capture the maximum amount of metadata that can be represented in a CodeMeta
@@ -78,10 +78,10 @@ Sustainability Institute](https://www.software.ac.uk/).
 
 The rationale for a standardized, machine- and human-readable format for
 `CITATION` files is discussed in more detail in
-{% cite standardized-citation-files --style ./_bibliography/apa-text.csl %}. 
+{% cite standardized-citation-files --style ./_bibliography/apa-text.csl %}.
 CFF has been developed to support all citation-specific use cases for the
 citation of software, as discussed in
-{% cite principles --style ./_bibliography/apa-text.csl %}, 
+{% cite principles --style ./_bibliography/apa-text.csl %},
 and thus promote attribution and credit for software in general, and research
 software in particular.
 
@@ -103,7 +103,7 @@ support a fair distribution of credit for research software.
 
 ## Status of the format
 
-CFF-Core has been branched out to address 
+CFF-Core has been branched out to address
 [issue citation-file-format/citation-file-format#23](https://github.com/citation-file-format/citation-file-format/issues/23).
 While an ideal format for software citation would arguably implement transitive
 credit {% cite transitive-credit %}, there is no concrete implementation yet
@@ -111,9 +111,9 @@ that is available for practical use by software creators. The most concrete
 suggestion for an implementation is {% cite transitive-credit-json-ld --style ./_bibliography/apa-text.csl %}, the
 application of which, however, seems impractical from a usability point of view
 in terms of human-writability. Especially regarding the current state of the
-practice of providing citation metadata for software {% cite software-citation-practices %}, 
+practice of providing citation metadata for software {% cite software-citation-practices %},
 it seems that at this point in time, a lower-threshold
-approach - in terms of technical complexity - could potentially drive higher participation 
+approach - in terms of technical complexity - could potentially drive higher participation
 in the provision of software citation metadata.
 
 On the other end of the complexity spectrum, free form `CITATION` files as suggested by Robin
@@ -125,11 +125,11 @@ is a key factor in the promotion of software citation along the software citatio
 
 CFF aims to provide a compromise between the ideal state of software
 citation, i.e., transitive credit, and the state of the practice, i.e., free form
-`CITATION` files. 
+`CITATION` files.
 
-CFF-Core, in this context, provides an implementation for basic 
+CFF-Core, in this context, provides an implementation for basic
 software citation metadata, so that creators of research software can supply relevant
-metadata for citation easily. CFF-Core aims at covering use cases *1 (Use software for a paper)*, 
+metadata for citation easily. CFF-Core aims at covering use cases *1 (Use software for a paper)*,
 *2 (Use software in/with new software)*, and *15 (Store software entry)* as
 defined in the software citation principles paper {% cite principles %}.
 
@@ -160,7 +160,7 @@ compatibility with [CodeMeta](https://github.com/codemeta/codemeta).
 ## Concepts
 
 For users of other reference formats, such as BibTeX or RIS, it is important to
-note that in CFF, all available keys can be used for all [reference types](#reference-types). 
+note that in CFF, all available keys can be used for all [reference types](#reference-types).
 For now, CFF
 leaves reasonability of use with format users and providers of tooling, such as
 conversion software for CFF and other formats. In other words, the use of keys
@@ -186,16 +186,16 @@ YAML 1.2 Specifications {% cite yaml-1-2-specs %}.
 
 CFF follows the formatting rules of YAML 1.2, of which one of
 the most important ones is that the colon (`:`) after a key should always be
-followed by a whitespace. 
+followed by a whitespace.
 
 Structure is determined by indentation, i.e., lines
 containing nested elements must be indented by at least one whitespace character,
-although using at least two whitespaces as a standard for indentation preserves 
+although using at least two whitespaces as a standard for indentation preserves
 readability.
 
-Value strings can (and sometimes should) be double-quoted, e.g. `"string"`, 
+Value strings can (and sometimes should) be double-quoted, e.g. `"string"`,
 especially when they contain YAML special characters, or special characters in
-general. These include: 
+general. These include:
 
 > `:  {  }  [  ]  ,  &  *  #  ?  |  -  <  >  =  !  %  @  \`
 
@@ -203,12 +203,12 @@ general. These include:
 
 `CITATION.cff` files represent YAML 1.2 dictionaries ("maps") with
 the keys listed in the table below. Note that the order of the keys is arbitrary,
-and that most YAML [linter](https://en.wikipedia.org/wiki/Lint_(software))s 
+and that most YAML [linter](https://en.wikipedia.org/wiki/Lint_(software))s
 will re-order the keys alphabetically.
 
-The primary keys are used to specify 
+The primary keys are used to specify
 
-- the version of CFF in use (`cff-version`); 
+- the version of CFF in use (`cff-version`);
 - a message which should be conveyed to the user of the software,
 along the lines of "If you use this software, please cite it as follows" (`message`);
 - the citation metadata for the software version itself, according to {% cite principles %},
@@ -240,9 +240,9 @@ message: "Please cite the following works when using this software."
 The primary citation metadata provided to users that wish to cite the software
 version which the CFF file is for. This metadata can be provided via a subset
 of the keys from the table below. The keys follow the basic requirements for
-software citation metadata for the three basic use cases, as detailed in 
+software citation metadata for the three basic use cases, as detailed in
 {% cite principles -l 31 --style ./_bibliography/apa-text.csl %} and reproduced
-below for convenience. 
+below for convenience.
 
   | Use case:           | Use software for a paper | Use software in/with new software | Store software entry |
   | -                   | :-:                      | :-:                               | :-:                  |
@@ -255,17 +255,17 @@ below for convenience.
   | Software license    | +                        | +                                 |                      |
   | Description         | +                        | +                                 | +                    |
   | Keywords            |                          |                                   | +                    |
-  
+
 Table: Basic requirements for citation use cases, reproduced from {% cite principles -l 31 --style ./_bibliography/apa-text.csl %}. Solid circles (●) indicate that the use case depends on that metadata, plus signs (+) indicate that the use case would benefit from that metadata if available.
 {: .text-right}
 
-Provision of the metadata should follow the best 
+Provision of the metadata should follow the best
 practices detailed in {% cite principles %}, i.e.:
 
 - **Give credit** where credit is due: Make sure that you include every person in the authors list who deserves to be listed as an author. This may include people that have not contributed lines of code, but have contributed as testers, designers, reporters, managers, etc.
 - Provide a **unique identifier**: Publish your software version via services that provide it with a DOI, e.g., [Zenodo](https://zenodo.org/) or [figshare](https://figshare.com/). This also ensures **accessibility** of the software, as in these cases the unique identifier points to a landing page rather than an actual software product.
-- Be **specific** by providing a version number, and citation metadata pertaining to that version. If possible, let your unique identifier point to a software version rather than the "software as such" (all versions of the software). If you want to provide the user with the possibility to cite the software as such in addition to a specific version, create a [reference](TODO) to the software landing page, a software paper, or similar in the CFF file.  
-If, for some reason, you cannot provide a DOI for your software version, provide the version number or a commit reference (e.g., a Git hash or a Subversion revision number), and a URL to the source code or build artifact repository.  
+- Be **specific** by providing a version number, and citation metadata pertaining to that version. If possible, let your unique identifier point to a software version rather than the "software as such" (all versions of the software). If you want to provide the user with the possibility to cite the software as such in addition to a specific version, create a [reference](TODO) to the software landing page, a software paper, or similar in the CFF file.
+If, for some reason, you cannot provide a DOI for your software version, provide the version number or a commit reference (e.g., a Git hash or a Subversion revision number), and a URL to the source code or build artifact repository.
 If your software is closed source and you cannot provide a DOI, provide the version number or other version identifier, contact details, and a URL which points to the software landing page, homepage, or similar.
 
 Finally, following the software citation principle of *Persistence*, make sure that the citation metadata persists, even when the software's lifespan is over.
@@ -289,7 +289,7 @@ CFF-Core provides the following keys for software citation metadata.
   | `title`                 |● |String                                                                                                                              | The name of the software (may include a specific name for the software version)                                                                                                 |
   | `url`                   | |String (URL)                                                                                                                        | The URL to a landing page/website for the software version                                                                                                                      |
   | `version`               |● |String                                                                                                                              | The version of the software                                                                                                                                                       |
-  
+
 Table: CFF-Core keys and accepted data types for the provision of citation metadata.
 {: .text-right}
 
@@ -300,7 +300,7 @@ Provides an optional list of references pertaining to the software version, or t
 A reference item, i.e., an item in the list under `references`, must at least
 specify values for the following mandatory keys: `type`, `authors`, `title`.
 
-`type` must specify the type of the referenced work. For a list of available 
+`type` must specify the type of the referenced work. For a list of available
 values, cf. [reference types](#reference-types).
 
 `authors` must specify a list of [entity](#entity-objects) or [person objects](#person-objects).
@@ -325,15 +325,15 @@ references:
 {% endhighlight %}
 
 
-Additionally, it can contain any further [reference keys](#reference-keys). In version 
-{{ page.version }}, 
+Additionally, it can contain any further [reference keys](#reference-keys). In version
+{{ page.version }},
 CFF does not specify a strict schema where specific [reference
 types](#reference-types) can only contain specific [reference keys](#reference-keys), although this may be
 implemented in future versions.
 
 ## Reference keys
 
-CFF-Core defines the following reference keys.  
+CFF-Core defines the following reference keys.
 
   |         CFF Key         |                                  CFF Data Type                                   |                                     Description                                     |
   |-------------------------|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
@@ -406,7 +406,7 @@ CFF-Core defines the following reference keys.
   | `volume-title`          | String                                                                           | The title of the volume in which the work appeared                                  |
   | `year`                  | Integer                                                                          | The year in which a work has been published                                         |
   | `year-original`         | Integer                                                                          | The year of the original publication                                                |
- 
+
 Table: Complete list of CFF-Core reference keys.
 {: .text-right}
 
@@ -433,7 +433,7 @@ references:
 **`authors`**, **`contact`**, **`editors`**, **`editors-series`**, **`recipients`**,
 **`senders`**, **`translators`**
 
-These keys take a collection of entity objects or 
+These keys take a collection of entity objects or
 [person objects](#person-objects) as value. Person objects
 provide a fixed set of keys to reference individuals, including a detailed
 set for specifiying personal names, an affiliation, etc.
@@ -492,7 +492,7 @@ references:
 
 **`scope`**
 
-A reference item can specify a more detailed scope for the reference, via the 
+A reference item can specify a more detailed scope for the reference, via the
 reference key `scope`. This key can be useful if certain references should only
 be cited under specific circumstances, e.g., only when a specific package
 of the software is used. In such a case, the package would ideally have its own
@@ -553,7 +553,7 @@ ambiguity/misuse.
 
 **`medium`**
 
-- If the work is an artwork: The medium of the artwork, e.g., "photograph", 
+- If the work is an artwork: The medium of the artwork, e.g., "photograph",
 "painting", "oil on canvas", etc.
 - If the work is a book or similar: Whether it is a printed book or an ebook.
 
@@ -568,7 +568,7 @@ ambiguity/misuse.
 - If the work is a grant: The grant number provided by the funding agency.
 - If the work is a work of art: E.g., the catalogue number provided by a museum holding the artwork.
 - If the work is a report: The report number of a report.
-- If the work is a patent: The patent number of the work. 
+- If the work is a patent: The patent number of the work.
 - If the work is a historical work, illuminated manuscript or similar: The codex or folio number of a manuscript, or the library identifier for a manuscript.
 
 **`term`**
@@ -643,9 +643,9 @@ Table: Complete list of CFF reference types.
 
 ## Entity objects
 
-Entity objects can represent different types of entities, e.g., 
+Entity objects can represent different types of entities, e.g.,
 a publishing company, or conference. In CFF, they are realized as collections with
-a defined set of keys. Only the key `name` is mandatory. 
+a defined set of keys. Only the key `name` is mandatory.
 
 | Entity key   | Entity Data Type     | optional |
 | -            | -                    | :-:      |
@@ -683,7 +683,7 @@ Table: Complete list of keys for entity objects.
 
 **`country`**
 
-- The ISO 3166-1 alpha-2 country code for a country. A list of ISO 3166-1 
+- The ISO 3166-1 alpha-2 country code for a country. A list of ISO 3166-1
 alpha-2 codes can be found at
 [Wikipedia:ISO 3166-1](https://en.wikipedia.org/wiki/ISO_3166-1).
 
@@ -700,16 +700,16 @@ references:
 
 **`date-start`** and **`date-end`**
 
-- The start and end date of, e.g., a conference. This must be formatted 
-according to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), e.g., 
+- The start and end date of, e.g., a conference. This must be formatted
+according to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), e.g.,
 `YYYY-MM-DD`, or `2017-10-04T16:20:57+00:00`.
 
 **`orcid`**
 
-> The ORCID iD is expressed as an https URI, i.e. the 16-digit identifier is 
-preceded by "https://orcid.org/". A hyphen is inserted every 4 digits of the 
-identifier to aid readability.  
-(<https://support.orcid.org/knowledgebase/articles/116780-structure-of-the-orcid-identifier>, 
+> The ORCID iD is expressed as an https URI, i.e. the 16-digit identifier is
+preceded by "https://orcid.org/". A hyphen is inserted every 4 digits of the
+identifier to aid readability.
+(<https://support.orcid.org/knowledgebase/articles/116780-structure-of-the-orcid-identifier>,
 section "Expressing the ORCID iD")
 
 Example:
@@ -749,31 +749,31 @@ Table: Complete list of keys for person objects.
 
 **Name keys**
 
-CFF aims to implement a culturally neutral model for personal names, 
+CFF aims to implement a culturally neutral model for personal names,
 according to the
-[suggestions on splitting personal names by the W3C](https://www.w3.org/International/questions/qa-personal-names) 
-and the implementation of personal name splitting in 
+[suggestions on splitting personal names by the W3C](https://www.w3.org/International/questions/qa-personal-names)
+and the implementation of personal name splitting in
 BibTeX {% cite names-in-bibtex %}.
 
-To this end, CFF provides four generic keys to specify personal names: 
+To this end, CFF provides four generic keys to specify personal names:
 
 
-1. Values for `family-names` specify family names, including combinations of given and 
-patronymic forms, such as *Guðmundsdóttir* or *bin Osman*; double names with or 
-without hyphen, such as *Leutheusser-Schnarrenberger* or *Sánchez Vicario*. It 
+1. Values for `family-names` specify family names, including combinations of given and
+patronymic forms, such as *Guðmundsdóttir* or *bin Osman*; double names with or
+without hyphen, such as *Leutheusser-Schnarrenberger* or *Sánchez Vicario*. It
 can potentially also specify names that include prepositions or (nobiliary)
 particles, especially if they occur in between family names such as in Spanish-
 or Portuguese-origin names, such as *Fernández de Córdoba*.
 2. Values for `given-names` specify given and any other names.
 3. Values for `name-particle` specify nobiliary particles and prepositions, such as in
 Ludwig *van* Beethoven or Rafael *van der* Vaart.
-4. Values for `name-suffix` specify suffixes such as *Jr.* or *III* (as in 
+4. Values for `name-suffix` specify suffixes such as *Jr.* or *III* (as in
 [Frank Edwin Wright *III*](https://en.wikipedia.org/wiki/Tr%C3%A9_Cool)).
 
 Note that these keys may still not be optimal for, e.g., Icelandic names which
-do not have the concept of family names, or Chinese generation names, but the 
-alternative is highly localized customization, which would be counterintuitive 
-as to CFF's goal to be easily accessible. Thus, it is ultimately the task of CFF 
+do not have the concept of family names, or Chinese generation names, but the
+alternative is highly localized customization, which would be counterintuitive
+as to CFF's goal to be easily accessible. Thus, it is ultimately the task of CFF
 file authors to find the optimal name split in any given case.
 
 **`affiliation`**
@@ -810,6 +810,8 @@ specifies the following value strings for the key `status`.
 Table: Defined statuses for works.
 {: .text-right}
 
+For a work that is complete and has been published, leave `status` unset.
+
 ## License strings
 
 License strings must conform with the [SPDX Licenses
@@ -837,9 +839,9 @@ references:
 
 Natural languages as a value for the key `languages` are specified via their
 respective 3-character [ISO 639-3](https://en.wikipedia.org/wiki/ISO_639-3) code. A list
-of ISO 639-3 codes in maintained at 
+of ISO 639-3 codes in maintained at
 [Wikipedia:List of ISO 639-3 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes).
-Alternatively, a language's 2-character 
+Alternatively, a language's 2-character
 [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) code may be used. A list
 of ISO 639-1 codes is maintained at
 [Wikipedia:List of ISO 639-1 codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
@@ -863,17 +865,17 @@ CFF `CITATION.cff` files can be validated against a schema which is available at
 # Examples
 
 All of the following examples are minimal working examples, so they can be copied
-and pasted into a `CITATION.cff` file and will validate against the 
+and pasted into a `CITATION.cff` file and will validate against the
 [CFF schema](#schema).
 
 ## Software examples
 
-The main focus of CFF-Core is to comprehensively cover the provision of 
+The main focus of CFF-Core is to comprehensively cover the provision of
 citation metadata for software. To this end, it should always be used based on
 the Software Citation Principles {% cite principles %}! Please make sure you
 follow the best practices wherever possible. Two typical scenarios for
 software citation metadata include the existence and respectively lack of a
-DOI for the software for which citation metadata is provided, for both of which 
+DOI for the software for which citation metadata is provided, for both of which
 examples follow.
 
 ### A software with a DOI
@@ -884,10 +886,10 @@ Note that {% cite principles -l 12 --style ./_bibliography/apa-text.csl %} recom
 acceptance, particularly as they are the standard for other digital products
 such as publications.
 
-Furthermore, DOIs should point to a "unique, specific software version" 
+Furthermore, DOIs should point to a "unique, specific software version"
 {% cite principles -l 12 %}. Also it is recommended {% cite principles -l 13 %} that:
 
-> the [DOI] should resolve to a persistent landing page that contains metadata 
+> the [DOI] should resolve to a persistent landing page that contains metadata
 and a link to the software itself, rather than directly to the source code files,
 repository, or executable.
 
@@ -942,7 +944,7 @@ provide information on how to access the specific software, but this may be a
 company’s product number or a link to a website that allows the software be
 purchased." {% cite principles -l 13 %}. Furthermore, "if the version number and
 release date are not available, the download date can be used. Similarly, the
-contact name/email is an alternative to the location/repository." 
+contact name/email is an alternative to the location/repository."
 {% cite principles -l 7 %}
 
 Hence, for a closed source software without a DOI for which the version number
@@ -951,8 +953,8 @@ this.
 
 {% highlight yaml %}
 cff-version: 1.0.3
-message: 
-  If you dare use this commercial, closed-source, strangely versioned 
+message:
+  If you dare use this commercial, closed-source, strangely versioned
   software in your research, please at least cite it as below.
 authors:
   - family-names: Vader
@@ -1109,9 +1111,9 @@ references:
         given-names: Arfon M.
       - family-names: Katz
         given-names: Daniel S.
-        affiliation: "National Center for Supercomputing Applications & 
-        Electrical and Computer Engineering Department & School of Information 
-        Sciences, University of Illinois at Urbana-Champaign, Urbana, Illinois, 
+        affiliation: "National Center for Supercomputing Applications &
+        Electrical and Computer Engineering Department & School of Information
+        Sciences, University of Illinois at Urbana-Champaign, Urbana, Illinois,
         United States"
         orcid: https://orcid.org/0000-0001-5934-7525
       - family-names: Niemeyer
@@ -1202,7 +1204,7 @@ references:
     year: 2017
     collection-title: "Proceedings of the 1st Conference on Wishful Thinking"
     collection-doi: 10.5281/zenodo.123456
-    editors: 
+    editors:
       - family-names: Kirk
         given-names: James T.
     conference:
@@ -1307,7 +1309,7 @@ references:
 
 # Infrastructure
 
-The roadmap for CFF plans for the provision of further infrastructure (e.g., 
+The roadmap for CFF plans for the provision of further infrastructure (e.g.,
 software packages and web services), to support the following use cases for CFF:
 
 - Creating CFF files
@@ -1325,7 +1327,7 @@ contribute, please refer to the GitHub repository for CFF at
 
 This document is licensed under a [CC-BY-
 SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. The full
-license text can be obtained from the URL 
+license text can be obtained from the URL
 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>.
 
 # References
