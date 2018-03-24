@@ -26,7 +26,7 @@ This file can be used to provide much more information about your software. For
 an overview of what kind of metadata for software can be supplied with the
 Citation File Format, please see [the current version of the format specifications](https://citation-file-format.github.io/1.0.3/specifications/).
 
-## Tools
+# Tools
 
 There are a number of tools that can help you work with the Citation File Format.
 
@@ -46,6 +46,10 @@ The specifications are accessible online or as a PDF: <https://citation-file-for
 
 ### This repository is the landing site for CFF. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format, and for questions, ideas, etc.!
 
+## Contributing
+
+Thanks for your interest in contributing! There are many ways to contribute to this project. Get started [here](CONTRIBUTING.md).
+
 ---
 
 ## Other repositories
@@ -54,6 +58,3 @@ The specifications are accessible online or as a PDF: <https://citation-file-for
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)  
 The specifications prose is held in a repository from which a static website is built (with Jekyll). This website is hosted on GitHub via GitHub Pages. The `src` branch holds the sources for specifications and website, the `master` branch is where the live website lives.
 
-## Contributing
-
-Thanks for your interest in contributing! There are many ways to contribute to this project. Get started [here](CONTRIBUTING.md).
