@@ -1,6 +1,40 @@
 # Citation File Format (CFF)
 
-Format specifications for `CITATION` files. `CITATION` files provide citation metadata for (research/scientific) software.
+The Citation File Format (CFF) is a human- and machine-readable file format in YAML 1.2 which provides
+citation metadata for software.
+
+## Example
+
+If you want to make your software easily citable, you can put a file called
+`CITATION.cff` in the root of your repository. This file should provide at least the
+minimally necessary metadata to cite your software. An example: 
+
+```
+cff-version: 1.0.3
+message: If you use this software, please cite it as below.
+authors:
+  - family-names: Druskat
+    given-names: Stephan
+    orcid: https://orcid.org/0000-0003-4925-7248
+title: My Research Tool
+version: 1.0.4
+doi: 10.5281/zenodo.1234
+date-released: 2017-12-18
+```
+
+This file can be used to provide much more information about your software. For
+an overview of what kind of metadata for software can be supplied with the
+Citation File Format, please see [the current version of the format specifications](https://citation-file-format.github.io/1.0.3/specifications/).
+
+## Tools
+
+There are a number of tools that can help you work with the Citation File Format.
+
+- [**doi2cff**](https://github.com/citation-file-format/doi2cff): Automatically create a `CITATION.cff` file from a DOI.
+- [**ruby-cff**](https://github.com/citation-file-format/ruby-cff): Manipulate `CITATION.cff` files in Ruby
+- [**cff-converter-python**](https://github.com/citation-file-format/cff-converter-python): Python library for reading CFF files and converting them to, e.g., BibTeX
+- [**cff-reader-java**](https://github.com/citation-file-format/cff-reader-java): Java library reading `CITATION.cff` files into a POJO model
+- [**schema**](https://github.com/citation-file-format/schema): Validation schemas for `CITATION.cff` files
 
 # Specifications
 
@@ -8,15 +42,13 @@ All versions: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003149.svg)](
 
 The specifications are accessible online or as a PDF: <https://citation-file-format.github.io>.
 
-### This repository is the landing site for CFF. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format specifications!
+# Collaboration, contributions, questions, issues, bugs, etc.
+
+### This repository is the landing site for CFF. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format, and for questions, ideas, etc.!
 
 ---
 
-## Repositories
-
-There are different repositories for CFF.
-
-- **Main repository (You are here, welcome!)**: This repository is used to track issues (partly for historical reasons) for the format itself, as well as coordinate activities around the format.
+## Other repositories
 
 - **Specifications and website (https://github.com/citation-file-format/citation-file-format.github.io)**:  
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)  
