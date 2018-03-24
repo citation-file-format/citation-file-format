@@ -367,7 +367,7 @@ CFF-Core defines the following reference keys.
   | `isbn`                  | String                                                                           | The ISBN of the work                                                                |
   | `issn`                  | String                                                                           | The ISSN of the work                                                                |
   | `issue`                 | Integer                                                                          | The issue of a periodical in which a work appeared                                  |
-  | `issue-date`            | String                                                                           | The publication date of the issue of a periodical in which a work appeared          |
+  | `issue-date`            | String                                                                           | The publication date of the issue of a periodical in which a work appeared - see note below |
   | `issue-title`           | String                                                                           | The name of the issue of a periodical in which the work appeared                    |
   | `journal`               | String                                                                           | The name of the journal/magazine/newspaper/periodical where the work was published  |
   | `keywords`              | Collection of strings                                                            | Keywords pertaining to the work                                                     |
@@ -509,6 +509,14 @@ references:
     type: article
     ...
 {% endhighlight %}
+
+**`issue-date`**
+
+Specify the date of release of an issue. This key has been left as a plain
+string, rather than a formal date type, to allow for text values such as
+"November-December 2018".
+
+For a discussion of this key, cf. [issue citation-file-format/citation-file-format#48](https://github.com/citation-file-format/citation-file-format/issues/48).
 
 ### Exemplary uses
 
