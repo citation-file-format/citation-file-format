@@ -166,7 +166,7 @@ schema;person:
     orcid:
       required: False
       type: str
-      pattern: "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+      pattern: "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}"
 
     email:
       required: False
@@ -219,7 +219,7 @@ schema;entity:
     orcid:
       required: False
       type: str
-      pattern: "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+      pattern: "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}"
 
     email:
       required: False
