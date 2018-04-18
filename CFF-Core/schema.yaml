@@ -171,8 +171,8 @@ schema;person:
     email:
       required: False
       type: str
-      # Adapted from https://www.regular-expressions.info/email.html
-      pattern: "[A-Za-z0-9\\!\\#\\$\\%\\&\\'\\*\\+\\/\\=\\?\\^\\_\\`\\{\\|\\}\\~\\-]+(?:\\\\.[A-Za-z0-9\\!\\#\\$\\%\\&\\'\\*\\+\\/\\=\\?\\^\\_\\`\\{\\|\\}\\~\\-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?"
+      # see discussion https://github.com/citation-file-format/schema/issues/3
+      pattern: ^[\S]+@[\S]+\.[\S]{2,}$
     
     tel:
       required: False
@@ -224,8 +224,8 @@ schema;entity:
     email:
       required: False
       type: str
-      # Adapted from https://www.regular-expressions.info/email.html
-      pattern: "[A-Za-z0-9\\!\\#\\$\\%\\&\\'\\*\\+\\/\\=\\?\\^\\_\\`\\{\\|\\}\\~\\-]+(?:\\\\.[A-Za-z0-9\\!\\#\\$\\%\\&\\'\\*\\+\\/\\=\\?\\^\\_\\`\\{\\|\\}\\~\\-]+)*@(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?"
+      # see discussion https://github.com/citation-file-format/schema/issues/3
+      pattern: ^[\S]+@[\S]+\.[\S]{2,}$
     
     tel:
       required: False
