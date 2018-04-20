@@ -1,6 +1,6 @@
 ---
 title: Citation File Format - Core Module (CFF-Core)
-author: Stephan Druskat (mail@sdruskat.net)
+author: Stephan Druskat (mail@sdruskat.net), Robert Haines (robert.haines@manchester.ac.uk)
 abstract:
   The *Citation File Format* (*CFF*) is a human- *and* machine-readable format
   for CITATION files. These files provide citation metadata for (research and
@@ -14,8 +14,8 @@ abstract:
   <https://github.com/citation-file-format/citation-file-format>. CFF is a source
   format for [CodeMeta](https://codemeta.github.io/) [JSON](https://github.com/codemeta/codemeta/blob/master/codemeta.json) files.
 geometry: margin=2cm
-version: 1.0.3
-release-date: 20 December 2017
+version: 1.0.3-1
+release-date: 24 March 2018
 ---
 
 
