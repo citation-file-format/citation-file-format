@@ -9,3 +9,9 @@ During a dedicated **Hack Day on Wednesday, 5 September** - co-locating with the
 **Participation is free and open to everyone**, regardless of their skill set and experience.
 
 More info soon.
+
+---
+
+The hack day is financially supported by the Software Sustainability Institute. Many thanks!
+
+![The Software Sustainability Institute's logo](ssi.png)
