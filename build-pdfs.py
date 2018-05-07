@@ -76,6 +76,9 @@ for specsfile in glob.iglob('./**/specifications.md', recursive=True):
         # Replace version with real version
         new_contents = re.sub(r"{{ page.version }}", version, new_contents)
 
+        #######################################
+        print(new_contents)
+
         # Replace code highlighting
         new_contents = re.sub(r"{% highlight yaml %}", "```yaml", new_contents)
         new_contents = re.sub(r"{% endhighlight %}", "```", new_contents)

@@ -218,7 +218,7 @@ $header-includes$
 $endfor$
 
 $if(title)$
-\title{$title$$if(version)$\\\vspace{0.5em}{\large $version$}$endif$}
+\title{$title$$if(specs-version)$\\\vspace{0.5em}{\large $specs-version$}$endif$}
 $endif$
 $if(author)$
 \author{$for(author)$$author$$sep$ \and $endfor$}
