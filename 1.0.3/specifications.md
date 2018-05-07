@@ -133,13 +133,13 @@ metadata for citation easily. CFF-Core aims at covering use cases *1 (Use softwa
 *2 (Use software in/with new software)*, and *15 (Store software entry)* as
 defined in the software citation principles paper {% cite principles %}.
 
-CFF-Core can be used as a source format for [CodeMeta](https://github.com/codemeta/codemeta) JSON,
+CFF-Core can be used as a human-writable source and input format for [CodeMeta](https://github.com/codemeta/codemeta) JSON,
 which is emerging as the standard format for software metadata.
 
 Further development of CFF will include a CFF-Meta module which will provide a set
 of keys to provide more general metadata for research software. CFF-Meta will
-implement the complete set of CodeMeta keys, and will be usable as an extension
-to CFF-Core.
+implement the complete set of [CodeMeta](https://github.com/codemeta/codemeta) keys, and will be usable as an extension
+to CFF-Core. For more information, see '[Infrastructure](#infrastructure)'.
 
 ## Goals
 
@@ -879,14 +879,11 @@ and pasted into a `CITATION.cff` file and will validate against the
 ## Software examples
 
 The main focus of CFF-Core is to comprehensively cover the provision of
-citation metadata for software. To this end, it should always be used based on
-the Software Citation Principles {% cite principles %}! Please make sure you
-follow the best practices wherever possible. Two typical scenarios for
-software citation metadata include the existence and respectively lack of a
-DOI for the software for which citation metadata is provided, for both of which
-examples follow.
+citation metadata for software. To this end, use of CFF-Core should - wherever possible - be based on
+the Software Citation Principles {% cite principles %}. Scenarios for
+software citation are listed below. These are not intended to be comphrensive, but rather to represent both typical and edge cases for software citation.
 
-### A software with a DOI
+### Software with a DOI
 
 Note that {% cite principles -l 12 --style ./_bibliography/apa-text.csl %} recommend
 
@@ -945,7 +942,7 @@ license: Apache-2.0
 url: https://sdruskat.github.io/my-research-tool
 {% endhighlight %}
 
-### A software without a DOI
+### Software without a DOI
 
 For software without a DOI, it is recommended that "the metadata should still
 provide information on how to access the specific software, but this may be a
@@ -979,44 +976,9 @@ contact:
     tel: +850 (0)123-45-666
 {% endhighlight %}
 
-### Software with a further reference
-
-{% highlight yaml %}
-cff-version: 1.0.3
-message: If you use My Research Tool, please cite both the software and the outline paper.
-authors:
-  - family-names: Doe
-    given-names: Jane
-  - family-names: Bielefeld
-    name-particle: von
-    given-names: Arthur
-  - family-names: McAuthor
-    given-names: Juniper
-    name-suffix: Jr.
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: article
-    scope: Cite this paper if you want to reference the general concepts of MRT.
-    authors:
-      - family-names: Doe
-        given-names: Jane
-      - family-names: Bielefeld
-        name-particle: von
-        given-names: Arthur
-    title: "My Research Tool: A 100% accuracy syntax parser for all languages"
-    year: 2099
-    journal: Journal of Hard Science Fiction
-    volume: 42
-    issue: "13"
-    doi: 10.9999/hardscifi-lang.42132
-{% endhighlight %}
-
 ### Source code without a DOI
 
-> We recognize that there are certain situations where it may not be possible to
+We recognize that there are certain situations where it may not be possible to
 follow the recommended best-practice. For example, if (1) the software authors
 did not register a DOI and/or release a specific version, or (2) the version of
 the software used does not match what is available to cite. In those cases,
@@ -1069,9 +1031,46 @@ date-released: 2017-12-18
 repository-artifact: https://hu.berlin/nexus/mrt-kickstarter/2.0.4/mrt2-kickstarter.exe
 {% endhighlight %}
 
-## Some `references` examples
+### Software with a further reference
 
-### `art`
+Where authors wish to encourage citation of an outline paper with citation of their software, we recommend the use of [reference keys](#references-optional) to highlight the existence of further references.
+
+{% highlight yaml %}
+cff-version: 1.0.3
+message: If you use My Research Tool, please cite both the software and the outline paper.
+authors:
+  - family-names: Doe
+    given-names: Jane
+  - family-names: Bielefeld
+    name-particle: von
+    given-names: Arthur
+  - family-names: McAuthor
+    given-names: Juniper
+    name-suffix: Jr.
+title: My Research Tool
+version: 1.0.4
+doi: 10.5281/zenodo.1234
+date-released: 2017-12-18
+references:
+  - type: article
+    scope: Cite this paper if you want to reference the general concepts of MRT.
+    authors:
+      - family-names: Doe
+        given-names: Jane
+      - family-names: Bielefeld
+        name-particle: von
+        given-names: Arthur
+    title: "My Research Tool: A 100% accuracy syntax parser for all languages"
+    year: 2099
+    journal: Journal of Hard Science Fiction
+    volume: 42
+    issue: "13"
+    doi: 10.9999/hardscifi-lang.42132
+{% endhighlight %}
+
+### Some references examples
+
+#### art
 
 {% highlight yaml %}
 cff-version: 1.0.3
@@ -1099,7 +1098,7 @@ references:
       country: ES
 {% endhighlight %}
 
-### `article`
+#### article
 
 {% highlight yaml %}
 cff-version: 1.0.3
@@ -1137,7 +1136,7 @@ references:
     url: https://doi.org/10.7717/peerj-cs.86
 {% endhighlight %}
 
-### `blog`
+#### blog
 
 {% highlight yaml %}
 cff-version: 1.0.3
@@ -1164,7 +1163,7 @@ references:
       country: DE
 {% endhighlight %}
 
-### `book`
+#### book
 
 {% highlight yaml %}
 cff-version: 1.0.3
@@ -1190,7 +1189,7 @@ references:
     medium: print
 {% endhighlight %}
 
-### `conference-paper`
+#### conference-paper
 
 {% highlight yaml %}
 cff-version: 1.0.3
@@ -1230,7 +1229,7 @@ references:
     doi: 10.5281/zenodo.1234
 {% endhighlight %}
 
-### `edited-work`
+#### edited-work
 
 Note that the editors of the edited work must be specified under the `authors`
 key. Specific citation styles may or may not attach a suffix to the authors,
@@ -1260,7 +1259,7 @@ references:
       country: DE
 {% endhighlight %}
 
-### `report`
+#### report
 
 {% highlight yaml %}
 cff-version: 1.0.3
@@ -1283,7 +1282,7 @@ references:
     date-accessed: 2017-09-23
 {% endhighlight %}
 
-### `thesis`
+#### thesis
 
 {% highlight yaml %}
 cff-version: 1.0.3
@@ -1329,12 +1328,11 @@ software packages and web services), to support the following use cases for CFF:
 
 Contributions to the format specifications are welcome! For details on how to
 contribute, please refer to the GitHub repository for CFF at
-<http://github.com/sdruskat/citation-file-format>.
+<https://github.com/citation-file-format/citation-file-format>.
 
 # License
 
-This document is licensed under a [CC-BY-
-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license. The full
+This document is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). The full
 license text can be obtained from the URL
 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>.
 
