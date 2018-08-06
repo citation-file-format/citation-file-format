@@ -8,9 +8,14 @@ During a dedicated **Hack Day on Wednesday, 5 September** - co-locating with the
 
 **Participation is free and open to everyone**, regardless of their skill set and experience.
 
-**Registration** is through the [registration form for #RSE18](https://store.southampton.ac.uk/conferences-and-events/physical-sciences-and-engineering/physics-astronomy/events/third-conference-of-research-software-engineers). If you don't attend the main
+**Registration** has been possible through the [registration form for #RSE18](https://store.southampton.ac.uk/conferences-and-events/physical-sciences-and-engineering/physics-astronomy/events/third-conference-of-research-software-engineers). If you don't attend the main
 conference but want to participate in the hack day, please let me know per email at
 *stephan* [dot] *druskat* [at] *hu-berlin* [dot] *de*.
+
+**PLEASE NOTE THAT THE HACK DAY IS NOW FULLY BOOKED!**
+If you have confirmed your attendance per email, you're on board.
+If you have registered, but have not yet confirmed your attendance per email, 
+you can still do so and will be added to the waiting list for the event.
 
 **Participation is limited to 30 attendees**, and participants will be
 selected on a first come first serve basis. You will be notified about your participation per
