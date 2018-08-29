@@ -2,6 +2,7 @@
 title: Citation File Format - Core Module (CFF-Core)
 author: 
 - Stephan Druskat (mail@sdruskat.net)
+- Neil Chue Hong (n.chuehong@epcc.ed.ac.uk)
 - Robert Haines (robert.haines@manchester.ac.uk)
 - James Baker (james.baker@sussex.ac.uk)
 abstract:
@@ -18,8 +19,8 @@ abstract:
   format for [CodeMeta](https://codemeta.github.io/) [JSON](https://github.com/codemeta/codemeta/blob/master/codemeta.json) files.
 geometry: margin=2cm
 version: 1.0.3
-specs-version: 1.0.3-2
-release-date: 7 May 2018
+specs-version: 1.0.3-3
+release-date: 29 Aug 2018
 ---
 
 
@@ -27,7 +28,7 @@ release-date: 7 May 2018
 
 {% include toc %}
 
-[![DOI](https://citation-file-format.github.io/assets/images/zenodo.1242911.svg)](https://doi.org/10.5281/zenodo.1242911)
+[![DOI](https://citation-file-format.github.io/assets/images/zenodo.1405679.svg)](https://doi.org/10.5281/zenodo.1405679)
 
 [**Download PDF**]({{ site.baseurl }}/assets/pdf/cff-specifications-{{ page.version }}.pdf){: .btn .btn--primary .btn--large}
 
