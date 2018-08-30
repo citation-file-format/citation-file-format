@@ -51,7 +51,7 @@ S. Druskat: *"YOU HAVE 0 CREDIT – PLEASE INSERT C̶O̶I̶N̶ FILE": The Citati
 **Pre-Hack Day Social:** Tuesday, 4 September 2018, from ca. 18:00, [Arco Lounge](https://thelounges.co.uk/arco/)
 {: .btn--break .btn--info}
 
-<i class="fa fa-fw fa-twitter" aria-hidden="true"></i> If you want to tweet about the hack day, please use the hashtag **#cffhackday**.
+<i class="fa fa-fw fa-twitter" aria-hidden="true"></i> If you want to tweet about the hack day, please use the hashtag **[#cffhackday](https://twitter.com/search?q=%23cffhackday)**.
 {: .notice--info}
 
 ### Wednesday, 5 September 2018, 09:00 - 17:00
