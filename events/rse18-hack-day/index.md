@@ -61,7 +61,7 @@ S. Druskat: *"YOU HAVE 0 CREDIT – PLEASE INSERT C̶O̶I̶N̶ FILE": The Citati
 
 **09:15** - Introductions  
 **09:30** - **Talk:** "Brief introduction to the Citation File Format" (S. Druskat)  
-**09:50** - **Talk:** "The Citation File Format at the Netherlands eScience Center" (J. Spaaks)  
+**09:50** - **Talk:** "How the Netherlands eScience Center uses CFF to promote software citation" (J. Spaaks, J. Maassen, T. Klaver, S. Verhoeven)  
 **10:15** - **Hack idea pitches & group formation** (<http://bit.ly/cff-hack-ideas>)
 {: .btn--break .btn--warning}
 
