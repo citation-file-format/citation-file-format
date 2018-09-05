@@ -96,7 +96,7 @@ In a blog post {% cite citation-files %}, Robin Wilson has introduced `CITATION`
 files as a means to make citation information for software easily accessible.
 This accessibility is important, because in order to receive deserved credit for
 research software in the academic system - where credit is still mainly measured
-based on citations -, the citation information for software must be made
+based on citations - the citation information for software must be made
 visible; Authors will only cite software if the citation information is readily
 available, as there is no standard, easily deducible way (yet) to cite software,
 such as there is for journals for example.
@@ -104,7 +104,7 @@ such as there is for journals for example.
 Some have followed the advice, and have uploaded `CITATION` (or `CITATION.md`,
 or `CITATION.txt`) files to the root of the source code repository holding their
 software. While this practice has made for a good start, free form `CITATION`
-files  are not machine-readable, and machine- readability is a precondition for
+files  are not machine-readable, and machine-readability is a precondition for
 re-use of the citation information in different contexts which could further
 support a fair distribution of credit for research software.
 
