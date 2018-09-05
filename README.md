@@ -1,10 +1,13 @@
-# schema
+# Citation File Format Schemas
 
-For general information (contributing, other repositories, etc.), please see https://github.com/citation-file-format/citation-file-format/blob/master/README.md.
+This repository holds schemas for [CFF](https://github.com/citation-file-format/citation-file-format)
+in the format understood by [`pykwalifire`](https://pypi.python.org/pypi/pykwalifire/2.0.1), for the purpose 
+of validating .cff files.
 
-## This repository holds schemas for [CFF](https://github.com/citation-file-format/citation-file-format)
+For general information about the CFF project, including how to contribute and other repositories, 
+please see https://github.com/citation-file-format/citation-file-format/blob/master/README.md.
 
-You can validate your `CITATION.cff` file against a schema, by using the Python
+You can validate your `CITATION.cff` file against a schema by using the Python
 package [`pykwalifire`](https://pypi.python.org/pypi/pykwalifire/2.0.1):
 
 ```bash
