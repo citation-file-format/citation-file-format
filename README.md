@@ -58,8 +58,6 @@ Thanks for your interest in contributing! There are many ways to contribute to t
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)  
 
-The Citation File Format as a *format* - as opposed to the specifications document - is licensed under a Creative Commons Attribution 4.0 International Public License.
-
 ---
 
 ## Other repositories
