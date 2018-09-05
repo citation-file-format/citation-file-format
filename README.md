@@ -2,7 +2,7 @@
 
 # Citation File Format (CFF) Specifications
 
-The format specifications for CFF are available online and as a PDF here: <https://citation-file-format.github.io/>.
+The format specifications for CFF are available online in [HTML format](https://citation-file-format.github.io/1.0.3/specifications/) and as a [PDF](https://citation-file-format.github.io/assets/pdf/cff-specifications-1.0.3.pdf).
 
 
 # citation-file-format.github.io
