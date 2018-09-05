@@ -37,6 +37,9 @@ There are a number of tools that can help you work with the Citation File Format
 - [**schema**](https://github.com/citation-file-format/schema): Validation schemas for `CITATION.cff` files
 - [**github2cff**](https://github.com/citation-file-format/github2cff): Attempt to produce a `CITATION.cff` file from github or gitlab metadata
 
+In addition, there is a web form that can be used to initialize CITATION.cff files 
+https://citation-file-format.github.io/cff-initializer-javascript/
+
 # Specifications
 
 All versions: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149)
