@@ -56,10 +56,16 @@ Thanks for your interest in contributing! There are many ways to contribute to t
 
 ## Frequently Answered Questions (FAQs)
 
-### Why does the format not require a DOI? 
+### Why does the format not require a Digital Object Identifier (DOI) when citing a piece of software?
 It would still be desirable to cite software for which there is no DOI.  In this 
 case, as much information to specify the precise version of the software and how it can be obtained
 should be given (e.g. a company and the company's product number for that software).
+
+## License
+
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)  
+
+The Citation File Format as a *format* - as opposed to the specifications document - is licensed under a Creative Commons Attribution 4.0 International Public License.
 
 ---
 
