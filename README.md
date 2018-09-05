@@ -26,7 +26,7 @@ This file can be used to provide much more information about your software. For
 an overview of what kind of metadata for software can be supplied with the
 Citation File Format, please see [the current version of the format specifications](https://citation-file-format.github.io/1.0.3/specifications/).
 
-# Tools
+## Tools
 
 There are a number of tools that can help you work with the Citation File Format.
 
@@ -40,19 +40,26 @@ There are a number of tools that can help you work with the Citation File Format
 In addition, there is a web form that can be used to initialize CITATION.cff files 
 https://citation-file-format.github.io/cff-initializer-javascript/
 
-# Specifications
+#§ Specifications
 
 All versions: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149)
 
 The specifications are accessible online in [HTML format](https://citation-file-format.github.io/1.0.3/specifications) or as a [PDF](https://citation-file-format.github.io/assets/pdf/cff-specifications-1.0.3.pdf).
 
-# Collaboration, contributions, questions, issues, bugs, etc.
+## Collaboration, contributions, questions, issues, bugs, etc.
 
-### This repository is the landing site for CFF. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format, and for questions, ideas, etc.!
+**This repository is the landing site for CFF. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format, and for questions, ideas, etc.!**
 
 ## Contributing
 
 Thanks for your interest in contributing! There are many ways to contribute to this project. Get started [here](CONTRIBUTING.md).
+
+## Frequently Answered Questions (FAQs)
+
+### Why does the format not require a DOI? 
+It would still be desirable to cite software for which there is no DOI.  In this 
+case, as much information to specify the precise version of the software and how it can be obtained
+should be given (e.g. a company and the company's product number for that software).
 
 ---
 
