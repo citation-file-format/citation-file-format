@@ -35,6 +35,7 @@ There are a number of tools that can help you work with the Citation File Format
 - [**cff-converter-python**](https://github.com/citation-file-format/cff-converter-python): Python library for reading CFF files and converting them to, e.g., BibTeX
 - [**cff-reader-java**](https://github.com/citation-file-format/cff-reader-java): Java library reading `CITATION.cff` files into a POJO model
 - [**schema**](https://github.com/citation-file-format/schema): Validation schemas for `CITATION.cff` files
+- [**github2cff**](https://github.com/citation-file-format/github2cff): Attempt to produce a `CITATION.cff` file from github or gitlab metadata
 
 # Specifications
 
