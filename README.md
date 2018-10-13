@@ -9,7 +9,7 @@ If you want to make your software easily citable, you can put a file called
 `CITATION.cff` in the root of your repository. This file should provide at least the
 minimally necessary metadata to cite your software. An example:
 
-```
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite it as below.
 authors:
