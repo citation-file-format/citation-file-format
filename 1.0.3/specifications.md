@@ -1,6 +1,6 @@
 ---
 title: Citation File Format - Core Module (CFF-Core)
-author: 
+author:
 - Stephan Druskat (mail@sdruskat.net)
 - Neil Chue Hong (n.chuehong@epcc.ed.ac.uk)
 - Robert Haines (robert.haines@manchester.ac.uk)
