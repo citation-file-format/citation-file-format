@@ -891,6 +891,12 @@ citation metadata for software. To this end, use of CFF-Core should - wherever p
 the Software Citation Principles {% cite principles %}. Scenarios for
 software citation are listed below. These are not intended to be comphrensive, but rather to represent both typical and edge cases for software citation.
 
+The following sections list recommendations for producing CITATION files in various circumstances.
+In particular, if a DOI is available this information should be included.  A DOI is not required, 
+however, since one may not have been registered for the version of the software in question.  In this 
+case, as much information to specify the precise version of the software and how it can be obtained
+should be given.
+
 ### Software with a DOI
 
 Note that {% cite principles -l 12 --style ./_bibliography/apa-text.csl %} recommend
@@ -950,40 +956,6 @@ license: Apache-2.0
 url: https://sdruskat.github.io/my-research-tool
 {% endhighlight %}
 
-### Software without a DOI
-
-For software without a DOI, it is recommended that "the metadata should still
-provide information on how to access the specific software, but this may be a
-company’s product number or a link to a website that allows the software be
-purchased." {% cite principles -l 13 %}. Furthermore, "if the version number and
-release date are not available, the download date can be used. Similarly, the
-contact name/email is an alternative to the location/repository."
-{% cite principles -l 7 %}
-
-Hence, for a closed source software without a DOI for which the version number
-and release date cannot be determined, a `CITATION.cff` file could look like
-this.
-
-{% highlight yaml %}
-cff-version: 1.0.3
-message:
-  If you dare use this commercial, closed-source, strangely versioned
-  software in your research, please at least cite it as below.
-authors:
-  - family-names: Vader
-    name-suffix: né Skywalker
-    given-names: 'Anakin "Darth"'
-title: Opaquity
-version: opq-1234-XZVF-ACME-RLY
-date-released: 2017-02-28
-url: http://www.opaquity.com
-contact:
-  - name: Dark Side Software
-    address: DS-1 Orbital Battle Station, near Scarif
-    email: father@imperial-empire.com
-    tel: +850 (0)123-45-666
-{% endhighlight %}
-
 ### Source code without a DOI
 
 We recognize that there are certain situations where it may not be possible to
@@ -1007,21 +979,38 @@ repository-code: https://github.com/doe/mrt
 commit: 160d54f9e935c914df38c1ffda752112b5c979a8
 {% endhighlight %}
 
-### A software container
+### Closed-source software without a DOI
+
+For software without a DOI, it is recommended that "the metadata should still
+provide information on how to access the specific software, but this may be a
+company’s product number or a link to a website that allows the software be
+purchased." {% cite principles -l 13 %}. Furthermore, "if the version number and
+release date are not available, the download date can be used. Similarly, the
+contact name/email is an alternative to the location/repository."
+{% cite principles -l 7 %}
+
+Hence, for closed-source software without a DOI for which the version number
+and release date cannot be determined, a `CITATION.cff` file could look like
+this.
 
 {% highlight yaml %}
 cff-version: 1.0.3
-message: "If you use the MRT Docker container, please cite the following."
+message:
+  If you dare use this commercial, closed-source, strangely versioned
+  software in your research, please at least cite it as below.
 authors:
-  - name: "Humboldt-Universität zu Berlin"
-    website: https://www.linguistik.hu-berlin.de/
-  - family-names: Doe
-    given-names: Jane
-title: mrt-iain-m-banks
-version: 1.0.4 (Iain M. Banks)
-url: https://github.com/doe/docker-brew-mrt-core/blob/160d54f9e935/iain/Dockerfile
-repository: https://hub.docker.hu-berlin.de/_/mrt-iain-m-banks/
-date-released: 2017-12-18
+  - family-names: Vader
+    name-suffix: né Skywalker
+    given-names: 'Anakin "Darth"'
+title: Opaquity
+version: opq-1234-XZVF-ACME-RLY
+date-released: 2017-02-28
+url: http://www.opaquity.com
+contact:
+  - name: Dark Side Software
+    address: DS-1 Orbital Battle Station, near Scarif
+    email: father@imperial-empire.com
+    tel: +850 (0)123-45-666
 {% endhighlight %}
 
 ### An executable
@@ -1037,6 +1026,23 @@ title: My Research Tool Kickstarter
 version: 2.0.4
 date-released: 2017-12-18
 repository-artifact: https://hu.berlin/nexus/mrt-kickstarter/2.0.4/mrt2-kickstarter.exe
+{% endhighlight %}
+
+### A software container
+
+{% highlight yaml %}
+cff-version: 1.0.3
+message: "If you use the MRT Docker container, please cite the following."
+authors:
+  - name: "Humboldt-Universität zu Berlin"
+    website: https://www.linguistik.hu-berlin.de/
+  - family-names: Doe
+    given-names: Jane
+title: mrt-iain-m-banks
+version: 1.0.4 (Iain M. Banks)
+url: https://github.com/doe/docker-brew-mrt-core/blob/160d54f9e935/iain/Dockerfile
+repository: https://hub.docker.hu-berlin.de/_/mrt-iain-m-banks/
+date-released: 2017-12-18
 {% endhighlight %}
 
 ### Software with a further reference
