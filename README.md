@@ -7,9 +7,9 @@ citation metadata for software.  The main website for CFF can be found at https:
 
 If you want to make your software easily citable, you can put a file called
 `CITATION.cff` in the root of your repository. This file should provide at least the
-minimally necessary metadata to cite your software. An example: 
+minimally necessary metadata to cite your software. An example:
 
-```
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite it as below.
 authors:
@@ -37,10 +37,10 @@ There are a number of tools that can help you work with the Citation File Format
 - [**schema**](https://github.com/citation-file-format/schema): Validation schemas for `CITATION.cff` files
 - [**github2cff**](https://github.com/citation-file-format/github2cff): Attempt to produce a `CITATION.cff` file from github or gitlab metadata
 
-In addition, there is a web form that can be used to initialize CITATION.cff files 
+In addition, there is a web form that can be used to initialize CITATION.cff files
 https://citation-file-format.github.io/cff-initializer-javascript/
 
-#§ Specifications
+## Specifications
 
 All versions: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149)
 
@@ -57,19 +57,18 @@ Thanks for your interest in contributing! There are many ways to contribute to t
 ## Frequently Answered Questions (FAQs)
 
 ### Why does the format not require a Digital Object Identifier (DOI) when citing a piece of software?
-It would still be desirable to cite software for which there is no DOI.  In this 
+It would still be desirable to cite software for which there is no DOI.  In this
 case, as much information to specify the precise version of the software and how it can be obtained
 should be given (e.g. a company and the company's product number for that software).
 
 ## License
 
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)  
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 ---
 
 ## Other repositories
 
-- **Specifications and website (https://github.com/citation-file-format/citation-file-format.github.io)**:  
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)  
+- **Specifications and website (https://github.com/citation-file-format/citation-file-format.github.io)**:
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 The specifications prose is held in a repository from which a static website is built (with Jekyll). This website is hosted on GitHub via GitHub Pages. The `src` branch holds the sources for specifications and website, the `master` branch is where the live website lives.
-
