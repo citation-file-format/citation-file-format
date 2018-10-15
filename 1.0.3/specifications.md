@@ -1,6 +1,6 @@
 ---
 title: Citation File Format - Core Module (CFF-Core)
-author: 
+author:
 - Stephan Druskat (mail@sdruskat.net)
 - Neil Chue Hong (n.chuehong@epcc.ed.ac.uk)
 - Robert Haines (robert.haines@manchester.ac.uk)
@@ -403,6 +403,7 @@ CFF-Core defines the following reference keys.
   | `senders`               | Collection of *[entity](#entity-objects)* or *[person objects](#person-objects)* | The sender of a personal communication                                              |
   | `status`                | *[Status string](#status-strings)*                                               | The publication status of the work                                                  |
   | `start`                 | Integer                                                                          | The start page of the work                                                          |
+  | `term`                  | String                                                                           | The term being referenced if the work is a dictionary or encyclopedia        |
   | `thesis-type`           | String                                                                           | The type of the thesis that is the work                                             |
   | `title`                 | String                                                                           | The title of the work                                                               |
   | `translators`           | Collection of *[entity](#entity-objects)* or *[person objects](#person-objects)* | The translator of a work                                                            |
