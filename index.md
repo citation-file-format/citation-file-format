@@ -68,8 +68,8 @@ Sustainable Software for Science: Practice and Experiences
 (WSSSPE5.1)](http://wssspe.researchcomputing.org.uk/wssspe5-1/) (6 September
 2017, Manchester, UK). The group discussed the potential and outlined
 requirements for a format for machine-readable CITATION files,
-and has authored a blog post on the subject, which will be published on the
-[blog](http://software.ac.uk/blog/) of the [Software Sustainability
+and has authored a [blog post](https://software.ac.uk/blog/2017-12-12-standard-format-citation-files) on the subject,
+published on the [blog](http://software.ac.uk/blog/) of the [Software Sustainability
 Institute](http://software.ac.uk/).
 
 Members of the group were:
@@ -81,7 +81,7 @@ Members of the group were:
 - Andrew Rowley (University of Manchester, UK)
 - Alexander Konovalov (University of St. Andrews, UK)
 
-One requirement for the [blog post](http://software.ac.uk/blog/) was to be able to make a concrete suggestion
+One requirement for the [blog post](https://software.ac.uk/blog/2017-12-12-standard-format-citation-files) was to be able to make a concrete suggestion
 for a format for these machine-readable CITATION files, which triggered the
 development of Citation File Format.
 
