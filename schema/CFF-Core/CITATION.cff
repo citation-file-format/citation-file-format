@@ -1,0 +1,493 @@
+############################
+# DO NOT USE FOR CITATION! #
+############################
+# This is a key-complete   #
+# test file for validating #
+# CFF Core schema 1.0.3    #
+############################
+
+cff-version: 1.0.3
+
+message: If you use this software, please cite it as below.
+
+abstract: "This is an awesome piece of research software!"
+
+authors:
+  # A person
+  - family-names: Real Person
+    given-names: One Truly
+    name-particle: van der
+    name-suffix: IV
+    affiliation: Excellent University, Niceplace, Arcadia
+    address: 22 Acacia Avenue
+    city: Citationburgh
+    region: Renfrewshire
+    post-code: C13 7X7
+    country: GB
+    orcid: https://orcid.org/0000-0001-2345-6789
+    email: project@entity.com
+    tel: +44(0)141-323 4567
+    fax: +44(0)141-323 45678
+    website: https://www.entity-project-team.io
+  # An entity
+  - name: Entity Project Team Conference entity
+    address: 22 Acacia Avenue
+    city: Citationburgh
+    region: Renfrewshire
+    post-code: C13 7X7
+    country: GB
+    orcid: https://orcid.org/0000-0001-2345-6789
+    email: project@entity.com
+    tel: +44(0)141-323 4567
+    fax: +44(0)141-323 45678
+    website: https://www.entity-project-team.io
+    date-start: 2017-01-01
+    date-end: 2017-01-31
+    location: The team garage
+
+commit: 156a04c74a8a79d40c5d705cddf9d36735feab4d
+
+contact:
+    # A person
+  - family-names: Real Person
+    given-names: One Truly
+    name-particle: van der
+    name-suffix: IV
+    affiliation: Excellent University, Niceplace, Arcadia
+    address: 22 Acacia Avenue
+    city: Citationburgh
+    region: Renfrewshire
+    post-code: C13 7X7
+    country: GB
+    orcid: https://orcid.org/0000-0001-2345-6789
+    email: project@entity.com
+    tel: +44(0)141-323 4567
+    fax: +44(0)141-323 45678
+    website: https://www.entity-project-team.io
+  # An entity
+  - name: Entity Project Team Conference entity
+    address: 22 Acacia Avenue
+    city: Citationburgh
+    region: Renfrewshire
+    post-code: C13 7X7
+    country: GB
+    orcid: https://orcid.org/0000-0001-2345-6789
+    email: project@entity.com
+    tel: +44(0)141-323 4567
+    fax: +44(0)141-323 45678
+    website: https://www.entity-project-team.io
+    date-start: 2017-01-01
+    date-end: 2017-01-31
+    location: The team garage
+
+date-released: 2017-12-11
+
+doi: 10.5281/zenodo.1003150
+
+keywords:
+  - One
+  - Two
+  - Three
+  - "4"
+
+license: CC-BY-SA-4.0
+
+license-url: https://spdx.org/licenses/CC-BY-SA-4.0.html#licenseText
+
+repository: https://www.example.com/foo/?bar=baz&inga=42&quux
+
+repository-code: http://foo.com/blah_(wikipedia)_blah#cite-1
+
+repository-artifact: http://उदाहरण.परीक्षा
+
+title: Citation File Format 1.0.0
+
+url: http://userid:password@example.com:8080/
+
+version: 1.0.0
+
+references:
+  - type: book
+    title: Book Title
+    abbreviation: Abbr
+    abstract: Description of the book.
+    collection-doi: 10.5281/zenodo.1003150
+    collection-title: Collection Title
+    collection-type: Collection Type
+    commit: 156a04c74a8a79d40c5d705cddf9d36735feab4d
+    copyright: 2017 Stephan Druskat
+    data-type: Data Type
+    database: Database
+    date-accessed: 2017-10-31
+    date-downloaded: 2017-10-31
+    date-released: 2017-10-31
+    date-published: 2017-10-31
+    department: Department
+    doi: 10.5281/zenodo.1003150
+    edition: 2nd edition
+    end: 123
+    entry: Chapter 9
+    filename: book.zip
+    format: Printed book
+    isbn: 978-1-89183-044-0
+    issn: 1234-543X
+    issue: "123"
+    issue-date: December
+    issue-title: Special Issue on Software Citation
+    journal: PeerJ
+    keywords:
+      - Software
+      - Citation
+    languages:
+      - aaa
+      - zu
+    license: Apache-2.0
+    license-url: https://spdx.org/licenses/Apache-2.0.html#licenseText
+    loc-start: 14
+    loc-end: 54
+    medium: hardcover book
+    month: 03
+    nihmsid: Don't know what format a NIHMSID is in
+    notes: "A field for general notes about the reference, usable in other formats such as BibTeX."
+    number: A general-purpose field for accession numbers, cf. the specifications for examples.
+    number-volumes: 7
+    pages: 765
+    patent-states:
+      - Germany
+      - ROI
+      - "but also for example US states, such as:"
+      - IL
+      - RI
+    pmcid: PMC1234567
+    repository: http://code.google.com/events/#&product=browser
+    repository-code: http://142.42.1.1:8080/
+    repository-artifact: http://مثال.إختبار
+    scope: Cite this book if you want to reference the general concepts implemented in Citation File Format 1.0.0.
+    section: Chapter 2 - "Reference keys"
+    status: advance-online
+    start: 123
+    thesis-type: Doctoral dissertation
+    url: http://j.mp
+    version: 0.0.1423-BETA
+    volume: 2
+    volume-title: Advances in Software Citation
+    year: 2017
+    year-original: 2012
+
+    # Object-based keys for the reference
+    conference:
+      # An entity
+      name: Entity Project Team Conference entity
+      address: 22 Acacia Avenue
+      city: Citationburgh
+      region: Renfrewshire
+      post-code: C13 7X7
+      country: GB
+      orcid: https://orcid.org/0000-0001-2345-6789
+      email: project@entity.com
+      tel: +44(0)141-323 4567
+      fax: +44(0)141-323 45678
+      website: https://www.entity-project-team.io
+      date-start: 2017-01-01
+      date-end: 2017-01-31
+      location: The team garage
+
+    authors:
+      # A person
+      - family-names: Real Person
+        given-names: One Truly
+        name-particle: van der
+        name-suffix: IV
+        affiliation: Excellent University, Niceplace, Arcadia
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+      # An entity
+      - name: Entity Project Team Conference entity
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+        date-start: 2017-01-01
+        date-end: 2017-01-31
+        location: The team garage    
+
+    contact:
+        # A person
+      - family-names: Real Person
+        given-names: One Truly
+        name-particle: van der
+        name-suffix: IV
+        affiliation: Excellent University, Niceplace, Arcadia
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+      # An entity
+      - name: Entity Project Team Conference entity
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+        date-start: 2017-01-01
+        date-end: 2017-01-31
+        location: The team garage
+
+    database-provider:
+      # An entity
+      name: Entity Project Team Conference entity
+      address: 22 Acacia Avenue
+      city: Citationburgh
+      region: Renfrewshire
+      post-code: C13 7X7
+      country: GB
+      orcid: https://orcid.org/0000-0001-2345-6789
+      email: project@entity.com
+      tel: +44(0)141-323 4567
+      fax: +44(0)141-323 45678
+      website: https://www.entity-project-team.io
+      date-start: 2017-01-01
+      date-end: 2017-01-31
+      location: The team garage
+
+    editors:
+      # A person
+      - family-names: Real Person
+        given-names: One Truly
+        name-particle: van der
+        name-suffix: IV
+        affiliation: Excellent University, Niceplace, Arcadia
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+      # An entity
+      - name: Entity Project Team Conference entity
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+        date-start: 2017-01-01
+        date-end: 2017-01-31
+        location: The team garage    
+
+    editors-series:
+      # A person
+      - family-names: Real Person
+        given-names: One Truly
+        name-particle: van der
+        name-suffix: IV
+        affiliation: Excellent University, Niceplace, Arcadia
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+      # An entity
+      - name: Entity Project Team Conference entity
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+        date-start: 2017-01-01
+        date-end: 2017-01-31
+        location: The team garage    
+
+    institution:
+      # An entity
+      name: Entity Project Team Conference entity
+      address: 22 Acacia Avenue
+      city: Citationburgh
+      region: Renfrewshire
+      post-code: C13 7X7
+      country: GB
+      orcid: https://orcid.org/0000-0001-2345-6789
+      email: project@entity.com
+      tel: +44(0)141-323 4567
+      fax: +44(0)141-323 45678
+      website: https://www.entity-project-team.io
+      date-start: 2017-01-01
+      date-end: 2017-01-31
+      location: The team garage
+
+    location:
+      # An entity
+      name: Entity Project Team Conference entity
+      address: 22 Acacia Avenue
+      city: Citationburgh
+      region: Renfrewshire
+      post-code: C13 7X7
+      country: GB
+      orcid: https://orcid.org/0000-0001-2345-6789
+      email: project@entity.com
+      tel: +44(0)141-323 4567
+      fax: +44(0)141-323 45678
+      website: https://www.entity-project-team.io
+      date-start: 2017-01-01
+      date-end: 2017-01-31
+      location: The team garage
+
+    publisher:
+      # An entity
+      name: Entity Project Team Conference entity
+      address: 22 Acacia Avenue
+      city: Citationburgh
+      region: Renfrewshire
+      post-code: C13 7X7
+      country: GB
+      orcid: https://orcid.org/0000-0001-2345-6789
+      email: project@entity.com
+      tel: +44(0)141-323 4567
+      fax: +44(0)141-323 45678
+      website: https://www.entity-project-team.io
+      date-start: 2017-01-01
+      date-end: 2017-01-31
+      location: The team garage
+
+    recipients:
+      # A person
+      - family-names: Real Person
+        given-names: One Truly
+        name-particle: van der
+        name-suffix: IV
+        affiliation: Excellent University, Niceplace, Arcadia
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+      # An entity
+      - name: Entity Project Team Conference entity
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+        date-start: 2017-01-01
+        date-end: 2017-01-31
+        location: The team garage    
+
+    senders:
+      # A person
+      - family-names: Real Person
+        given-names: One Truly
+        name-particle: van der
+        name-suffix: IV
+        affiliation: Excellent University, Niceplace, Arcadia
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+      # An entity
+      - name: Entity Project Team Conference entity
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+        date-start: 2017-01-01
+        date-end: 2017-01-31
+        location: The team garage    
+
+    translators:
+      # A person
+      - family-names: Real Person
+        given-names: One Truly
+        name-particle: van der
+        name-suffix: IV
+        affiliation: Excellent University, Niceplace, Arcadia
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+      # An entity
+      - name: Entity Project Team Conference entity
+        address: 22 Acacia Avenue
+        city: Citationburgh
+        region: Renfrewshire
+        post-code: C13 7X7
+        country: GB
+        orcid: https://orcid.org/0000-0001-2345-6789
+        email: project@entity.com
+        tel: +44(0)141-323 4567
+        fax: +44(0)141-323 45678
+        website: https://www.entity-project-team.io
+        date-start: 2017-01-01
+        date-end: 2017-01-31
+        location: The team garage    
+
