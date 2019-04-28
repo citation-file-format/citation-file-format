@@ -1,4 +1,12 @@
+dist: xenial
+
+notifications: 
+  email: 
+    on_failure: change
+    on_succes: never
+
 language: python
+
 python:
   - "3.3"
   - "3.4"
