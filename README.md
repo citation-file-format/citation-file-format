@@ -3,6 +3,26 @@
 The Citation File Format (CFF) is a human- and machine-readable file format in YAML 1.2 which provides
 citation metadata for software.  The main website for CFF can be found at https://citation-file-format.github.io.
 
+The *Citation File Format* (*CFF*) is a human- *and* machine-readable format
+for CITATION files. These files provide citation metadata for (research and
+scientific) software. The format aims to support citation-specific use cases for software
+citation described in {% cite principles %}. CFF is serialized in
+[YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is
+therefore Unicode-based and cross-language. This specification, together with the
+Unicode standard for characters, aims to provide all the information necessary
+to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate,
+convert from) it. These specifications are maintained openly at
+<https://github.com/citation-file-format/citation-file-format>. CFF is a source
+format for [CodeMeta](https://codemeta.github.io/) [JSON](https://github.com/codemeta/codemeta/blob/master/codemeta.json) files.
+
+Originators:
+
+- Stephan Druskat (mail@sdruskat.net)
+- Neil Chue Hong (n.chuehong@epcc.ed.ac.uk)
+- Robert Haines (robert.haines@manchester.ac.uk)
+- James Baker (james.baker@sussex.ac.uk)
+
+
 ## Example
 
 If you want to make your software easily citable, you can put a file called
@@ -34,17 +54,10 @@ There are a number of tools that can help you work with the Citation File Format
 - [**ruby-cff**](https://github.com/citation-file-format/ruby-cff): Manipulate `CITATION.cff` files in Ruby
 - [**cff-converter-python**](https://github.com/citation-file-format/cff-converter-python): Python library for reading CFF files and converting them to, e.g., BibTeX
 - [**cff-reader-java**](https://github.com/citation-file-format/cff-reader-java): Java library reading `CITATION.cff` files into a POJO model
-- [**schema**](https://github.com/citation-file-format/schema): Validation schemas for `CITATION.cff` files
 - [**github2cff**](https://github.com/citation-file-format/github2cff): Attempt to produce a `CITATION.cff` file from github or gitlab metadata
 
 In addition, there is a web form that can be used to initialize CITATION.cff files
 https://citation-file-format.github.io/cff-initializer-javascript/
-
-## Specifications
-
-All versions: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149)
-
-The specifications are accessible online in [HTML format](https://citation-file-format.github.io/1.0.3/specifications) or as a [PDF](https://citation-file-format.github.io/assets/pdf/cff-specifications-1.0.3.pdf).
 
 ## Collaboration, contributions, questions, issues, bugs, etc.
 
@@ -52,7 +65,7 @@ The specifications are accessible online in [HTML format](https://citation-file-
 
 ## Contributing
 
-Thanks for your interest in contributing! There are many ways to contribute to this project. Get started [here](CONTRIBUTING.md).
+Thanks for your interest in contributing! There are many ways to contribute to this project. Get started [here](/.github/CONTRIBUTING.md).
 
 ## Frequently Answered Questions (FAQs)
 
@@ -65,56 +78,14 @@ should be given (e.g. a company and the company's product number for that softwa
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
----
-
-## Other repositories
-
-- **Specifications and website (https://github.com/citation-file-format/citation-file-format.github.io)**:
-[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-The specifications prose is held in a repository from which a static website is built (with Jekyll). This website is hosted on GitHub via GitHub Pages. The `src` branch holds the sources for specifications and website, the `master` branch is where the live website lives.
-
-# Specifications
-
----
-title: Citation File Format - Core Module (CFF-Core)
-author:
-- Stephan Druskat (mail@sdruskat.net)
-- Neil Chue Hong (n.chuehong@epcc.ed.ac.uk)
-- Robert Haines (robert.haines@manchester.ac.uk)
-- James Baker (james.baker@sussex.ac.uk)
-abstract:
-  The *Citation File Format* (*CFF*) is a human- *and* machine-readable format
-  for CITATION files. These files provide citation metadata for (research and
-  scientific) software. The format aims to support citation-specific use cases for software
-  citation described in {% cite principles %}. CFF is serialized in
-  [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is
-  therefore Unicode-based and cross-language. This specification, together with the
-  Unicode standard for characters, aims to provide all the information necessary
-  to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate,
-  convert from) it. These specifications are maintained openly at
-  <https://github.com/citation-file-format/citation-file-format>. CFF is a source
-  format for [CodeMeta](https://codemeta.github.io/) [JSON](https://github.com/codemeta/codemeta/blob/master/codemeta.json) files.
-geometry: margin=2cm
-version: 1.0.3
-specs-version: 1.0.3-3
-release-date: 29 Aug 2018
----
-
-
-
-
-{% include toc %}
+# Specification 1.0.3
 
 [![DOI](https://citation-file-format.github.io/assets/images/zenodo.1405679.svg)](https://doi.org/10.5281/zenodo.1405679)
-
-[**Download PDF**]({{ site.baseurl }}/assets/pdf/cff-specifications-{{ page.version }}.pdf){: .btn .btn--primary .btn--large}
 
 # Introduction
 
 ## Status of this document
 
-This document reflects version {{ page.version }} of the *Citation File Format* (CFF)'s
-*Core* branch (cf. [Status of the format](#status-of-the-format)).
 CFF has been developed in the context of the [*Workshop on Sustainable Software
 for Science: Practice and Experiences
 (WSSSPE5.1)*](http://wssspe.researchcomputing.org.uk/wssspe5-1/), which was held
@@ -139,19 +110,6 @@ Future versions will additionally introduce at least a metadata module to
 capture the maximum amount of metadata that can be represented in a CodeMeta
 JSON file.
 
-CFF Version {{ page.version }} has been developed by [Stephan Druskat](https://github.com/sdruskat) with contributions from the following.
-
-- Morane Gruenpeter ([@moranegg](https://github.com/moranegg)) helped prepare CFF 1.0-RC1 for the CodeMeta crosswalk, and tested the crosswalk.
-- Neil Chue Hong ([@npch](https://github.com/npch)) consulted and helped prepare CFF 1.0-RC1 for the CodeMeta crosswalk.
-- Robert Haines ([@hainesr](https://github.com/hainesr)) has improved the 1.0.3 format specifications (Pull Requests [#1](https://github.com/citation-file-format/citation-file-format.github.io/pull/1), [#2](https://github.com/citation-file-format/citation-file-format.github.io/pull/2)).
-- James Baker ([@drjwbaker](https://github.com/drjwbaker)) has improved the 1.0.3 format specifications (Pull Request [#6](https://github.com/citation-file-format/citation-file-format.github.io/pull/6)).
-
-Reporters
-
-- Radovan Bast ([@bast](https://github.com/bast))
-- Raniere Silva ([@rgaiacs](https://github.com/rgaiacs))
-- Michael R. Crusoe ([@mr-c](https://github.com/mr-c))
-
 CFF has been developed to provide a format for `CITATION`
 files which could be recommended to readers of the blog post which has been
 produced by the group during the workshop and shortly after, and which will be
@@ -161,15 +119,13 @@ Sustainability Institute](https://www.software.ac.uk/).
 ## Rationale
 
 The rationale for a standardized, machine- and human-readable format for
-`CITATION` files is discussed in more detail in
-{% cite standardized-citation-files --style ./_bibliography/apa-text.csl %}.
+`CITATION` files is discussed in more detail in [Druskat, 2017](https://doi.org/10.6084/m9.figshare.3827058).
 CFF has been developed to support all citation-specific use cases for the
-citation of software, as discussed in
-{% cite principles --style ./_bibliography/apa-text.csl %},
+citation of software, as discussed in [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86),
 and thus promote attribution and credit for software in general, and research
 software in particular.
 
-In a blog post {% cite citation-files %}, Robin Wilson has introduced `CITATION`
+In a blog post ([Wilson, 2013](https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files)), Robin Wilson has introduced `CITATION`
 files as a means to make citation information for software easily accessible.
 This accessibility is important, because in order to receive deserved credit for
 research software in the academic system - where credit is still mainly measured
@@ -190,22 +146,22 @@ support a fair distribution of credit for research software.
 CFF-Core has been branched out to address
 [issue citation-file-format/citation-file-format#23](https://github.com/citation-file-format/citation-file-format/issues/23).
 While an ideal format for software citation would arguably implement transitive
-credit {% cite transitive-credit %}, there is no concrete implementation yet
+credit ([Katz, 2014](https://doi.org/10.5334/jors.be)), there is no concrete implementation yet
 that is available for practical use by software creators. The most concrete
-suggestion for an implementation is {% cite transitive-credit-json-ld --style ./_bibliography/apa-text.csl %}, the
+suggestion for an implementation is [Katz and Smith, 2015](https://doi.org/10.5334/jors.by), the
 application of which, however, seems impractical from a usability point of view
 in terms of human-writability. Especially regarding the current state of the
-practice of providing citation metadata for software {% cite software-citation-practices %},
+practice of providing citation metadata for software [Howison and Bullard, 2016](https://doi.org/10.1002/asi.23538),
 it seems that at this point in time, a lower-threshold
 approach - in terms of technical complexity - could potentially drive higher participation
 in the provision of software citation metadata.
 
 On the other end of the complexity spectrum, free form `CITATION` files as suggested by Robin
-Wilson {% cite citation-files %} provide an easy-to-access way of providing citation metadata
+Wilson ([Wilson, 2013](https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files)) provide an easy-to-access way of providing citation metadata
 for software. However, as these files are not reliably formatted, and thus not
 machine-readable, their potential for re-use is rather low. Re-use of software citation metadata, however,
 is a key factor in the promotion of software citation along the software citation principles
-{% cite principles %}, and ultimately the fair distribution of credit for software in science.
+[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), and ultimately the fair distribution of credit for software in science.
 
 CFF aims to provide a compromise between the ideal state of software
 citation, i.e., transitive credit, and the state of the practice, i.e., free form
@@ -213,9 +169,13 @@ citation, i.e., transitive credit, and the state of the practice, i.e., free for
 
 CFF-Core, in this context, provides an implementation for basic
 software citation metadata, so that creators of research software can supply relevant
-metadata for citation easily. CFF-Core aims at covering use cases *1 (Use software for a paper)*,
-*2 (Use software in/with new software)*, and *15 (Store software entry)* as
-defined in the software citation principles paper {% cite principles %}.
+metadata for citation easily. CFF-Core aims at covering use cases
+
+- 1: Use software for a paper
+- 2: Use software in/with new software
+- 15: Store software entry
+
+as defined in the software citation principles paper ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86)).
 
 CFF-Core can be used as a human-writable source and input format for [CodeMeta](https://github.com/codemeta/codemeta) JSON,
 which is emerging as the standard format for software metadata.
@@ -264,7 +224,7 @@ CFF `CITATION` files must be named `CITATION.cff`.
 
 CFF is implemented in YAML 1.2, as the language provides optimal human-
 readability and the required core data types. For details, see the
-YAML 1.2 Specifications {% cite yaml-1-2-specs %}.
+YAML 1.2 Specifications ([Ben-Kiki et al. 2009](http://yaml.org/spec/1.2/spec.html)).
 
 ## Formatting
 
@@ -295,7 +255,7 @@ The primary keys are used to specify
 - the version of CFF in use (`cff-version`);
 - a message which should be conveyed to the user of the software,
 along the lines of "If you use this software, please cite it as follows" (`message`);
-- the citation metadata for the software version itself, according to {% cite principles %},
+- the citation metadata for the software version itself, according to [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86),
 i.e., metadata that can be picked up in a CodeMeta JSON file;
 - optionally, a list of references which should be cited in different use cases or scopes, e.g., a software paper describing the abstract concepts of the software (`references`).
 
@@ -305,9 +265,9 @@ i.e., metadata that can be picked up in a CodeMeta JSON file;
 `cff-version` must specify the exact version of the
 Citation File Format that is used for the file.
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
-{% endhighlight %}
+```
 
 ### `message` (**required**)
 
@@ -315,9 +275,9 @@ cff-version: 1.0.3
 to cite the software the CITATION.cff file is associated
 with.
 
-{% highlight yaml %}
+```yaml
 message: "Please cite the following works when using this software."
-{% endhighlight %}
+```
 
 ### Software citation metadata (**required**)
 
@@ -325,7 +285,8 @@ The primary citation metadata provided to users that wish to cite the software
 version which the CFF file is for. This metadata can be provided via a subset
 of the keys from the table below. The keys follow the basic requirements for
 software citation metadata for the three basic use cases, as detailed in
-{% cite principles -l 31 --style ./_bibliography/apa-text.csl %} and reproduced
+[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p.31
+and reproduced
 below for convenience.
 
   | Use case:           | Use software for a paper | Use software in/with new software | Store software entry |
@@ -340,7 +301,7 @@ below for convenience.
   | Description         | +                        | +                                 | +                    |
   | Keywords            |                          |                                   | +                    |
 
-Table: Basic requirements for citation use cases, reproduced from {% cite principles -l 31 --style ./_bibliography/apa-text.csl %}. Solid circles (●) indicate that the use case depends on that metadata, plus signs (+) indicate that the use case would benefit from that metadata if available.
+Table: Basic requirements for citation use cases, reproduced from [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p.31. Solid circles (●) indicate that the use case depends on that metadata, plus signs (+) indicate that the use case would benefit from that metadata if available.
 {: .text-right}
 
 Provision of the metadata should follow the best
@@ -393,7 +354,7 @@ values, cf. [reference types](#reference-types).
 
 Example:
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: "Please cite the following works when using this software."
 ...
@@ -406,7 +367,7 @@ references:
     authors:
       - ...
     title: Software Citation Tool
-{% endhighlight %}
+```
 
 
 Additionally, it can contain any further [reference keys](#reference-keys). In version
@@ -493,7 +454,6 @@ CFF-Core defines the following reference keys.
   | `year-original`         | Integer                                                                          | The year of the original publication                                                |
 
 Table: Complete list of CFF-Core reference keys.
-{: .text-right}
 
 ### Notable reference keys
 
@@ -505,7 +465,7 @@ contact information.
 
 Example:
 
-{% highlight yaml %}
+```yaml
 references:
   - type: book
     publisher:
@@ -513,7 +473,7 @@ references:
         city: London
         country: GB
         website: https://peerj.com/
-{% endhighlight %}
+```
 
 **`authors`**, **`contact`**, **`editors`**, **`editors-series`**, **`recipients`**,
 **`senders`**, **`translators`**
@@ -525,7 +485,7 @@ set for specifiying personal names, an affiliation, etc.
 
 Example:
 
-{% highlight yaml %}
+```yaml
 references:
   - type: software
     authors:
@@ -542,7 +502,7 @@ references:
         given-names: Gonzalo
         name-suffix: Jr.
     ...
-{% endhighlight %}
+```
 
 **`type`**, **`languages`**, **`status`**
 
@@ -564,7 +524,7 @@ This key takes a collection of strings.
 
 Example:
 
-{% highlight yaml %}
+```yaml
 references:
   - type: software
     keywords:
@@ -572,7 +532,7 @@ references:
       - "multi-layer annotation"
       - web service
     ...
-{% endhighlight %}
+```
 
 
 **`scope`**
@@ -588,12 +548,12 @@ For a discussion of this key, cf. [issue citation-file-format/citation-file-form
 
 Example:
 
-{% highlight yaml %}
+```yaml
 references:
   - scope: "Cite this paper when you run software X with flag --xy"
     type: article
     ...
-{% endhighlight %}
+```
 
 **`issue-date`**
 
@@ -730,7 +690,7 @@ ambiguity/misuse.
 | **`website`**                  |                                                 |
 
 Table: Complete list of CFF reference types.
-{: .text-right}
+
 
 # Objects
 
@@ -758,7 +718,7 @@ a defined set of keys. Only the key `name` is mandatory.
 | `location`   | String               | ●        |
 
 Table: Complete list of keys for entity objects.
-{: .text-right}
+
 
 ### Exemplary uses
 
@@ -782,14 +742,14 @@ alpha-2 codes can be found at
 
 Example:
 
-{% highlight yaml %}
+```yaml
 references:
   - type: book
     publisher:
       - name: PeerJ
         city: London
         country: GB
-{% endhighlight %}
+```
 
 **`date-start`** and **`date-end`**
 
@@ -799,17 +759,16 @@ according to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), e.g.,
 
 **`orcid`**
 
-> The ORCID iD is expressed as an https URI, i.e. the 16-digit identifier is
-preceded by "https://orcid.org/". A hyphen is inserted every 4 digits of the
-identifier to aid readability.
-(<https://support.orcid.org/knowledgebase/articles/116780-structure-of-the-orcid-identifier>,
-section "Expressing the ORCID iD")
+The ORCID iD is expressed as an https URI, i.e. the 16-digit identifier is
+preceded by ``https://orcid.org/``. A hyphen is inserted every 4 digits of the
+identifier to aid readability (See https://support.orcid.org/knowledgebase/articles/116780-structure-of-the-orcid-identifier,
+section "Expressing the ORCID iD").
 
 Example:
 
-{% highlight yaml %}
+```yaml
 orcid: https://orcid.org/0000-0001-2345-6789
-{% endhighlight %}
+```
 
 ## Person objects
 
@@ -836,7 +795,7 @@ collections with a defined set of keys, of which only `family-names` and
 | `website`       | String (*URL*)       | ●              |
 
 Table: Complete list of keys for person objects.
-{: .text-right}
+
 
 ### Exemplary uses
 
@@ -846,7 +805,7 @@ CFF aims to implement a culturally neutral model for personal names,
 according to the
 [suggestions on splitting personal names by the W3C](https://www.w3.org/International/questions/qa-personal-names)
 and the implementation of personal name splitting in
-BibTeX {% cite names-in-bibtex %}.
+BibTeX ([Hufflen, 2006](https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf)).
 
 To this end, CFF provides four generic keys to specify personal names:
 
@@ -901,7 +860,6 @@ specifies the following value strings for the key `status`.
   | `preprint`       | A work that has been published as a preprint before peer review                      |
 
 Table: Defined statuses for works.
-{: .text-right}
 
 For a work that is complete and has been published, leave `status` unset.
 
@@ -914,7 +872,7 @@ Licenses list, the `license-url` should be provided as a fallback.
 
 Example:
 
-{% highlight yaml %}
+```yaml
 references:
   - type: software
     authors:
@@ -926,7 +884,7 @@ references:
       - ...
     title: Obscure Research Tool
     license-url: http://r3s34archs0ft.com/eula
-{% endhighlight %}
+```
 
 ## Language strings
 
@@ -941,19 +899,19 @@ of ISO 639-1 codes is maintained at
 
 Example for a work in both English and Daakaka:
 
-{% highlight yaml %}
+```yaml
 references:
   - type: book
     ...
     languages:
       - en
       - bpa
-{% endhighlight %}
+```
 
 # Schema
 
 CFF `CITATION.cff` files can be validated against a schema which is available at
-<https://github.com/citation-file-format/schema>.
+<https://github.com/citation-file-format/citation-file-format/schema.yaml>.
 
 # Examples
 
@@ -965,7 +923,7 @@ and pasted into a `CITATION.cff` file and will validate against the
 
 The main focus of CFF-Core is to comprehensively cover the provision of
 citation metadata for software. To this end, use of CFF-Core should - wherever possible - be based on
-the Software Citation Principles {% cite principles %}. Scenarios for
+the Software Citation Principles ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86)). Scenarios for
 software citation are listed below. These are not intended to be comphrensive, but rather to represent both typical and edge cases for software citation.
 
 The following sections list recommendations for producing CITATION files in various circumstances.
@@ -976,14 +934,14 @@ should be given.
 
 ### Software with a DOI
 
-Note that {% cite principles -l 12 --style ./_bibliography/apa-text.csl %} recommend
+Note that [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12 recommend
 
 > [...] the use of DOIs as the unique identifier due to their common usage and
 acceptance, particularly as they are the standard for other digital products
 such as publications.
 
 Furthermore, DOIs should point to a "unique, specific software version"
-{% cite principles -l 12 %}. Also it is recommended {% cite principles -l 13 %} that:
+[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12. Also it is recommended [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 13 that:
 
 > the [DOI] should resolve to a persistent landing page that contains metadata
 and a link to the software itself, rather than directly to the source code files,
@@ -992,7 +950,7 @@ repository, or executable.
 Therefore, a minimal `CITATION.cff` file in such a case would look similar to
 the following.
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite it as below.
 authors:
@@ -1003,11 +961,11 @@ title: My Research Tool
 version: 1.0.4
 doi: 10.5281/zenodo.1234
 date-released: 2017-12-18
-{% endhighlight %}
+```
 
 A more comprehensive version could look similar to the following.
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite it as below.
 authors:
@@ -1031,7 +989,7 @@ keywords:
   - deep convolutional neural network
 license: Apache-2.0
 url: https://sdruskat.github.io/my-research-tool
-{% endhighlight %}
+```
 
 ### Source code without a DOI
 
@@ -1040,9 +998,9 @@ follow the recommended best-practice. For example, if (1) the software authors
 did not register a DOI and/or release a specific version, or (2) the version of
 the software used does not match what is available to cite. In those cases,
 falling back on a combination of the repository URL and version number/commit
-hash would be an appropriate way to cite the software used. {% cite principles -l 12 %}
+hash would be an appropriate way to cite the software used ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12).
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: "If you use this MRT alpha snapshot version, please cite."
 authors:
@@ -1054,23 +1012,23 @@ version: 0.0.1-alpha1-build1507284872
 date-released: 2017-12-18
 repository-code: https://github.com/doe/mrt
 commit: 160d54f9e935c914df38c1ffda752112b5c979a8
-{% endhighlight %}
+```
 
 ### Closed-source software without a DOI
 
 For software without a DOI, it is recommended that "the metadata should still
 provide information on how to access the specific software, but this may be a
 company’s product number or a link to a website that allows the software be
-purchased." {% cite principles -l 13 %}. Furthermore, "if the version number and
+purchased." [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 13. Furthermore, "if the version number and
 release date are not available, the download date can be used. Similarly, the
 contact name/email is an alternative to the location/repository."
-{% cite principles -l 7 %}
+[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 7
 
 Hence, for closed-source software without a DOI for which the version number
 and release date cannot be determined, a `CITATION.cff` file could look like
 this.
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message:
   If you dare use this commercial, closed-source, strangely versioned
@@ -1088,11 +1046,11 @@ contact:
     address: DS-1 Orbital Battle Station, near Scarif
     email: father@imperial-empire.com
     tel: +850 (0)123-45-666
-{% endhighlight %}
+```
 
 ### An executable
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: "If you use MRT, please cite the following."
 authors:
@@ -1103,11 +1061,11 @@ title: My Research Tool Kickstarter
 version: 2.0.4
 date-released: 2017-12-18
 repository-artifact: https://hu.berlin/nexus/mrt-kickstarter/2.0.4/mrt2-kickstarter.exe
-{% endhighlight %}
+```
 
 ### A software container
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: "If you use the MRT Docker container, please cite the following."
 authors:
@@ -1120,13 +1078,13 @@ version: 1.0.4 (Iain M. Banks)
 url: https://github.com/doe/docker-brew-mrt-core/blob/160d54f9e935/iain/Dockerfile
 repository: https://hub.docker.hu-berlin.de/_/mrt-iain-m-banks/
 date-released: 2017-12-18
-{% endhighlight %}
+```
 
 ### Software with a further reference
 
 Where authors wish to encourage citation of an outline paper with citation of their software, we recommend the use of [reference keys](#references-optional) to highlight the existence of further references.
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: If you use My Research Tool, please cite both the software and the outline paper.
 authors:
@@ -1157,13 +1115,13 @@ references:
     volume: 42
     issue: "13"
     doi: 10.9999/hardscifi-lang.42132
-{% endhighlight %}
+```
 
 ### Some references examples
 
 #### art
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: "If you use this software, please cite the following."
 authors:
@@ -1187,11 +1145,11 @@ references:
       name: Museo Reina Sofia
       city: Madrid
       country: ES
-{% endhighlight %}
+```
 
 #### article
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite it as below.
 authors:
@@ -1225,11 +1183,11 @@ references:
     issue: e86
     doi: 10.7717/peerj-cs.86
     url: https://doi.org/10.7717/peerj-cs.86
-{% endhighlight %}
+```
 
 #### blog
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite the software itself and the blog post.
 authors:
@@ -1252,11 +1210,11 @@ references:
       name: "Humboldt-Universität zu Berlin"
       city: Berlin
       country: DE
-{% endhighlight %}
+```
 
 #### book
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: "If you use MRT for your research, please cite the following book."
 authors:
@@ -1278,11 +1236,11 @@ references:
       name: Far Out Publications
       city: Bielefeld
     medium: print
-{% endhighlight %}
+```
 
 #### conference-paper
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite the software and the paper.
 authors:
@@ -1318,7 +1276,7 @@ references:
     start: 42
     end: 45
     doi: 10.5281/zenodo.1234
-{% endhighlight %}
+```
 
 #### edited-work
 
@@ -1326,7 +1284,7 @@ Note that the editors of the edited work must be specified under the `authors`
 key. Specific citation styles may or may not attach a suffix to the authors,
 such as ", eds." or similar.
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite it as below.
 authors:
@@ -1348,11 +1306,11 @@ references:
       name: Far Out Publications
       city: Bielefeld
       country: DE
-{% endhighlight %}
+```
 
 #### report
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite it as below.
 authors:
@@ -1371,11 +1329,11 @@ references:
     url: http://www.acme.com/sigs/fp/reports/hpsp.pdf
     year: 2017
     date-accessed: 2017-09-23
-{% endhighlight %}
+```
 
 #### thesis
 
-{% highlight yaml %}
+```yaml
 cff-version: 1.0.3
 message: If you use this software, please cite it as below.
 authors:
@@ -1403,7 +1361,7 @@ references:
     date-accessed: 2017-09-23
     date-published: 2017-03-21
     url: http://thesiserver.hu-berlin.de/2017/march/phd/doe-12345
-{% endhighlight %}
+```
 
 # Infrastructure
 
@@ -1427,6 +1385,3 @@ This document is licensed under a [Creative Commons Attribution-ShareAlike 4.0 I
 license text can be obtained from the URL
 <https://creativecommons.org/licenses/by-sa/4.0/legalcode>.
 
-# References
-
-{% bibliography --cited %}
