@@ -20,7 +20,7 @@ install:
 
 # command to run tests
 script:
-  - bash test/test.sh
+  - pytest -c test/pytest.ini
 matrix:
   allow_failures:
     - python: "nightly"
