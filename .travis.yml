@@ -20,7 +20,7 @@ install:
 
 # command to run tests
 script:
-  - cd test && mv fixture-key-complete.cff CITATION.cff && cffconvert --validate
+  - bash test/test.sh
 matrix:
   allow_failures:
     - python: "nightly"

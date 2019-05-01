@@ -1,0 +1,33 @@
+cff-version: 1.0.3
+message: If you use this software, please cite it as below.
+authors:
+  - family-names: Druskat
+    given-names: Stephan
+    orcid: https://orcid.org/0000-0003-4925-7248
+title: My Research Tool
+version: 1.0.4
+doi: 10.5281/zenodo.1234
+date-released: 2017-12-18
+references:
+  - type: article
+    authors:
+      - family-names: Smith
+        given-names: Arfon M.
+      - family-names: Katz
+        given-names: Daniel S.
+        affiliation: "National Center for Supercomputing Applications &
+        Electrical and Computer Engineering Department & School of Information
+        Sciences, University of Illinois at Urbana-Champaign, Urbana, Illinois,
+        United States"
+        orcid: https://orcid.org/0000-0001-5934-7525
+      - family-names: Niemeyer
+        given-names: Kyle E.
+      - name: "FORCE11 Software Citation Working Group"
+        website: https://www.force11.org/group/software-citation-working-group
+    title: "Software citation principles"
+    year: 2016
+    journal: PeerJ Computer Science
+    volume: 2
+    issue: e86
+    doi: 10.7717/peerj-cs.86
+    url: https://doi.org/10.7717/peerj-cs.86
