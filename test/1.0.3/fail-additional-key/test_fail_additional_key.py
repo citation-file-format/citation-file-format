@@ -17,6 +17,5 @@ def cffstr():
 
 
 def test1(cffstr):
-    citation = Citation(cffstr=cffstr, suspect_keys=[], validate=True, raise_exception=True)
-    assert citation.yaml is not None
-
+    with pytest.raises(Exception) as e_info:
+        citation = Citation(cffstr=cffstr, suspect_keys=[], validate=True, raise_exception=True)

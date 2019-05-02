@@ -1,2 +1,2 @@
-cffconvert==1.1.0
+git+https://github.com/citation-file-format/cff-converter-python.git@bb7abca75adc976d9dbaa4ccb8c2b6211fd9ebec
 pytest==4.4.1
