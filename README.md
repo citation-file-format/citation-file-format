@@ -30,7 +30,7 @@ Citation File Format, please see [the current version of the format specificatio
 
 There are a number of tools that can help you work with the Citation File Format.
 
-- [**doi2cff**](https://github.com/citation-file-format/doi2cff): Automatically create a `CITATION.cff` file from a DOI.
+- [**doi2cff**](https://github.com/citation-file-format/doi2cff): Automatically create a `CITATION.cff` file from a DOI (only for Zenodo DOIs).
 - [**ruby-cff**](https://github.com/citation-file-format/ruby-cff): Manipulate `CITATION.cff` files in Ruby
 - [**cff-converter-python**](https://github.com/citation-file-format/cff-converter-python): Python library for reading CFF files and converting them to, e.g., BibTeX
 - [**cff-reader-java**](https://github.com/citation-file-format/cff-reader-java): Java library reading `CITATION.cff` files into a POJO model
