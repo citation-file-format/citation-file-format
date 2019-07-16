@@ -6,7 +6,7 @@ citation metadata for software.  The main website for CFF can be found at https:
 The *Citation File Format* (*CFF*) is a human- *and* machine-readable format
 for CITATION files. These files provide citation metadata for (research and
 scientific) software. The format aims to support citation-specific use cases for software
-citation described in {% cite principles %}. CFF is serialized in
+citation described in [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86). CFF is serialized in
 [YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is
 therefore Unicode-based and cross-language. This specification, together with the
 Unicode standard for characters, aims to provide all the information necessary
@@ -305,7 +305,7 @@ Table: Basic requirements for citation use cases, reproduced from [Smith et al.,
 {: .text-right}
 
 Provision of the metadata should follow the best
-practices detailed in {% cite principles %}, i.e.:
+practices detailed in [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), i.e.:
 
 - **Give credit** where credit is due: Make sure that you include every person in the authors list who deserves to be listed as an author. This may include people that have not contributed lines of code, but have contributed as testers, designers, reporters, managers, etc.
 - Provide a **unique identifier**: Publish your software version via services that provide it with a DOI, e.g., [Zenodo](https://zenodo.org/) or [figshare](https://figshare.com/). This also ensures **accessibility** of the software, as in these cases the unique identifier points to a landing page rather than an actual software product.
