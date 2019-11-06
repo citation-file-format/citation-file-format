@@ -1,0 +1,2 @@
+cffconvert==1.*
+pytest

@@ -1,0 +1,25 @@
+dist: xenial
+
+notifications: 
+  email: 
+    on_failure: change
+    on_succes: never
+
+language: python
+
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "nightly"
+
+# command to install dependencies
+install:
+  - pip install -r test/requirements.txt
+
+# command to run tests
+script:
+  - pytest -c test/pytest.ini
+matrix:
+  allow_failures:
+    - python: "nightly"
