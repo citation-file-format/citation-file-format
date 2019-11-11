@@ -237,7 +237,7 @@ containing nested elements must be indented by at least one whitespace character
 although using at least two whitespaces as a standard for indentation preserves
 readability.
 
-Value strings can (and sometimes should) be double-quoted, e.g. `"string"`,
+Value strings should be double-quoted, e.g. `"string"`,
 especially when they contain YAML special characters, or special characters in
 general. These include:
 
@@ -325,6 +325,7 @@ CFF-Core provides the following keys for software citation metadata.
   | `contact`               | |Collection of [entity](#entity-objects) or [person](#person-objects) objects                                                        | The contact person, group, company, etc. for the software version                                                                                                               |
   | `date-released`         |● |Date                                                                                                                                | The release date of the software version                                                                                                                                        |
   | `doi`                   | |String                                                                                                                              | The DOI of the work (not the resolver URL, i.e., *10.5281/zenodo.1003150*, not *http://doi.org/10.5281/zenodo.1003150*)                                                         |
+  | `identifiers`                   | |Collection of [identifier](#identifier-objects) objects                                                                                                                              | The persistent identifiers of the work (for identifiers that are not DOIs)                                                         |
   | `keywords`              | |Collection of strings                                                                                                               | Keywords pertaining to the software version                                                                                                                                     |
   | `license`               | |[SPDX](https://spdx.org/) [License List](https://spdx.org/licenses/) Identifier string                                              | The license the software version is licensed under                                                                                                                              |
   | `license-url`           | |String (URL)                                                                                                                        | The URL of the license text under which the software version is licensed (only for non-standard licenses not included in the [SPDX License List](https://spdx.org/licenses/))   |
@@ -408,6 +409,7 @@ CFF-Core defines the following reference keys.
   | `entry`                 | String                                                                           | An entry in the collection that constitutes the work                                |
   | `filename`              | String                                                                           | The name of the electronic file containing the work                                 |
   | `format`                | String                                                                           | The format in which a work is represented                                           |
+  | `identifiers`                   |Collection of [identifier](#identifier-objects) objects                                                                                                                              | The persistent identifiers of the work (for identifiers that are not DOIs)                                                        |
   | `institution`           | *[Entity object](#entity-objects)*                                               | The institution where a work has been produced or published                         |
   | `isbn`                  | String                                                                           | The ISBN of the work                                                                |
   | `issn`                  | String                                                                           | The ISSN of the work                                                                |
@@ -700,7 +702,7 @@ Entity objects can represent different types of entities, e.g.,
 a publishing company, or conference. In CFF, they are realized as collections with
 a defined set of keys. Only the key `name` is mandatory.
 
-| Entity key   | Entity Data Type     | optional |
+| Entity key   | Entity data type     | optional |
 | -            | -                    | :-:      |
 | `name`       | String               |          |
 | `address`    | String               | ●        |
@@ -776,7 +778,7 @@ A person object represents a person. In CFF, person objects are realized as
 collections with a defined set of keys, of which only `family-names` and
 `given-names` are mandatory.
 
-| Entity key      | Entity Data Type     | optional       |
+| Person key      | Person data type     | optional       |
 | -               | -                    | :------------: |
 | `family-names`  | String               |                |
 | `given-names`   | String               |                |
@@ -840,9 +842,40 @@ file authors to find the optimal name split in any given case.
 
 - Cf. [Entity objects](#entity-objects) for details.
 
+## Identifier objects
+
+An identifier object represents a persistent identifier. In CFF, identifier objects are realized as
+collections with two defined keys, both mandatory.
+
+| Identifier key      | Identifier data type     | optional       |
+| -               | -                    | :------------: |
+| `type`  | String ([*Identifier type string*](#identifier-type-strings))              |                |
+| `value`   | String               |                |
+
+Table: Complete list of keys for identifier objects.
+
+
+### Exemplary uses
+
+**A Software Heritage identifier**
+
+```yaml
+identifiers:
+  - type: "software-heritage"
+    value: "swh:1:rel:99f6850374dc6597af01bd0ee1d3fc0699301b9f"
+```
+
+**An identifier unknown to CFF**
+
+```yaml
+identifiers:
+  - type: "other"
+    value: "my-custom-identifier-1234"
+```
+
 # Specified value strings
 
-The keys `status`, `license`, and `languages` can only take values
+The keys `status`, `license`, `languages`, and `identifier:type` can only take values
 from a fixed set of strings. These are specified below.
 
 ## Status strings
@@ -906,6 +939,31 @@ references:
     languages:
       - en
       - bpa
+```
+
+## Identifier type strings
+
+The key
+
+```yaml
+identifiers:
+  - type
+```
+
+can only take the following values:
+
+- `software-heritage`: Signifies that the `value` string of the identifier typed thus is a valid [Software Heritage identifier](https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html).
+- `other`: Signifies that the `value` string of the identifier typed thus is a valid identifier not currently known to CFF.  
+If you want to add an identifier type to CFF, please [create a new issue on the CFF GitHub repository](https://github.com/citation-file-format/citation-file-format/issues/new), and suggest a name for the identifier, and ideally also describe its format as a valid regex.
+
+Examples for valid identifiers:
+
+```yaml
+identifiers:
+  - type: "other"
+    value: "other-schema://abcd.1234.efgh.5678"
+  - type: "software-heritage"
+    value: "swh:1:rel:99f6850374dc6597af01bd0ee1d3fc0699301b9f"
 ```
 
 # Schema
