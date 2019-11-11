@@ -382,6 +382,12 @@ schema;reference:
       # - . _ ; ( ) [ ] \ : 
       pattern: ^10\.\d{4,9}(\.\d+)?/[A-Za-z0-9-\._;\(\)\[\]\\\\:]+$
 
+    identifiers:
+      required: False
+      type: seq
+      sequence:
+        - include: identifier
+
     edition:  
       required: False
       type: str
