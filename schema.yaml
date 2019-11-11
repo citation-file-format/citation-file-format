@@ -59,6 +59,12 @@ mapping:
     # - . _ ; ( ) [ ] \ : 
     pattern: ^10\.\d{4,9}(\.\d+)?/[A-Za-z0-9-\._;\(\)\[\]\\\\:]+$
 
+  identifiers:
+    required: False
+    type: seq
+    sequence:
+      - include: identifier
+
   keywords:
     required: False
     type: seq
@@ -616,3 +622,16 @@ schema;reference:
     year-original:
       required: False
       type: int
+
+schema;identifier:
+  type: map
+  mapping:
+
+    type:
+      required: True
+      type: str
+      enum: ['software-heritage', 'other']
+
+    value:
+      required: True
+      type: str
