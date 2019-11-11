@@ -56,7 +56,7 @@ mapping:
     # + '/'
     # + at least one character of small or capital letters, digits, 
     # any of the following whitespace-separated characters: 
-    # - . _ ; ( ) [ ] \ : 
+    # - . _ ; ( ) [ ] \ : /
     pattern: ^10\.\d{4,9}(\.\d+)?/[A-Za-z0-9-\._;\(\)\[\]\\\\:/]+$
 
   keywords:
@@ -294,7 +294,7 @@ schema;reference:
       # + '/'
       # + at least one character of small or capital letters, digits, 
       # any of the following whitespace-separated characters: 
-      # - . _ ; ( ) [ ] \ : 
+      # - . _ ; ( ) [ ] \ : /
       pattern: ^10\.\d{4,9}(\.\d+)?/[A-Za-z0-9-\._;\(\)\[\]\\\\:/]+$
 
     collection-title: 
@@ -373,7 +373,7 @@ schema;reference:
       # + '/'
       # + at least one character of small or capital letters, digits, 
       # any of the following whitespace-separated characters: 
-      # - . _ ; ( ) [ ] \ : 
+      # - . _ ; ( ) [ ] \ : /
       pattern: ^10\.\d{4,9}(\.\d+)?/[A-Za-z0-9-\._;\(\)\[\]\\\\:/]+$
 
     edition:  
