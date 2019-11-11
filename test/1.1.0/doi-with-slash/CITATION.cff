@@ -1,6 +1,6 @@
 # YAML 1.2
 # Metadata for citation of this software according to the CFF format (https://citation-file-format.github.io/)
-cff-version: 1.0.3
+cff-version: 1.1.0
 message: If you use this software, please cite it using these metadata.
 title: 'ANNIS'
 doi: 10.5281/zenodo.2563138
