@@ -3,26 +3,6 @@
 The Citation File Format (CFF) is a human- and machine-readable file format in YAML 1.2 which provides
 citation metadata for software.  The main website for CFF can be found at https://citation-file-format.github.io.
 
-The *Citation File Format* (*CFF*) is a human- *and* machine-readable format
-for CITATION files. These files provide citation metadata for (research and
-scientific) software. The format aims to support citation-specific use cases for software
-citation described in [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86). CFF is serialized in
-[YAML](http://yaml.org) [1.2](http://yaml.org/spec/1.2/spec.html), and is
-therefore Unicode-based and cross-language. This specification, together with the
-Unicode standard for characters, aims to provide all the information necessary
-to understand CFF, and to use (i.e., write) and re-use (i.e., read, validate,
-convert from) it. These specifications are maintained openly at
-<https://github.com/citation-file-format/citation-file-format>. CFF is a source
-format for [CodeMeta](https://codemeta.github.io/) [JSON](https://github.com/codemeta/codemeta/blob/master/codemeta.json) files.
-
-Originators:
-
-- Stephan Druskat (mail@sdruskat.net)
-- Neil Chue Hong (n.chuehong@epcc.ed.ac.uk)
-- Robert Haines (robert.haines@manchester.ac.uk)
-- James Baker (james.baker@sussex.ac.uk)
-
-
 ## Example
 
 If you want to make your software easily citable, you can put a file called
@@ -30,7 +10,7 @@ If you want to make your software easily citable, you can put a file called
 minimally necessary metadata to cite your software. An example:
 
 ```yaml
-cff-version: 1.0.3
+cff-version: 1.1.0
 message: If you use this software, please cite it as below.
 authors:
   - family-names: Druskat
@@ -42,189 +22,20 @@ doi: 10.5281/zenodo.1234
 date-released: 2017-12-18
 ```
 
-This file can be used to provide much more information about your software. For
-an overview of what kind of metadata for software can be supplied with the
-Citation File Format, please see [the current version of the format specifications](https://citation-file-format.github.io/1.0.3/specifications/).
-
-## Tools
-
-There are a number of tools that can help you work with the Citation File Format.
-
-- [**doi2cff**](https://github.com/citation-file-format/doi2cff): Automatically create a `CITATION.cff` file from a DOI (only for Zenodo DOIs).
-- [**ruby-cff**](https://github.com/citation-file-format/ruby-cff): Manipulate `CITATION.cff` files in Ruby
-- [**cff-converter-python**](https://github.com/citation-file-format/cff-converter-python): Python library for reading CFF files and converting them to, e.g., BibTeX
-- [**cff-reader-java**](https://github.com/citation-file-format/cff-reader-java): Java library reading `CITATION.cff` files into a POJO model
-- [**github2cff**](https://github.com/citation-file-format/github2cff): Attempt to produce a `CITATION.cff` file from github or gitlab metadata
-
-In addition, there is a web form that can be used to initialize CITATION.cff files
-https://citation-file-format.github.io/cff-initializer-javascript/
-
-## Collaboration, contributions, questions, issues, bugs, etc.
-
-**This repository is the landing site for CFF. Please use it to [submit issues](https://github.com/citation-file-format/citation-file-format/issues) concerning the format, and for questions, ideas, etc.!**
-
-## Contributing
-
-Thanks for your interest in contributing! There are many ways to contribute to this project. Get started [here](/.github/CONTRIBUTING.md).
-
-## Frequently Answered Questions (FAQs)
-
-### Why does the format not require a Digital Object Identifier (DOI) when citing a piece of software?
-It would still be desirable to cite software for which there is no DOI.  In this
-case, as much information to specify the precise version of the software and how it can be obtained
-should be given (e.g. a company and the company's product number for that software).
-
 ## License
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-# Specification 1.0.3
+# Specification 1.1.0
 
 [![DOI](https://citation-file-format.github.io/assets/images/zenodo.1405679.svg)](https://doi.org/10.5281/zenodo.1405679)
 
-# Introduction
-
-## Status of this document
-
-CFF has been developed in the context of the [*Workshop on Sustainable Software
-for Science: Practice and Experiences
-(WSSSPE5.1)*](http://wssspe.researchcomputing.org.uk/wssspe5-1/), which was held
-on 6 September 2017 in Manchester, UK. More specifically, the constraints for
-CFF have been developed in the discussion and speed blogging group "Development
-and implementation of a standard format for CITATION files", whose members were
-Stephan Druskat (Humboldt-Universität zu Berlin, Germany), Neil Chue Hong
-(Software Sustainability Institute, University of Edinburgh, UK), Raniere Silva
-(Software Sustainability Institute, University of Manchester, UK), Radovan Bast
-(University of Tromsø, Norway), Andrew Rowley (University of Manchester, UK),
-and Alexander Konovalov (University of St. Andrews, UK).
-
-This version is based partly on the changes introduced during the
-[FORCE2017](https://www.force2017.org/) hackathon of the [FORCE11 Software
-Citation Implementation Working
-Group](https://github.com/force11/force11-sciwg) in order to make CFF
-crosswalkable in [CodeMeta](https://github.com/codemeta/codemeta). It mainly
-introduces format modularization, and the final specification of CFF-Core as
-the module for providing citation metadata.
-
-Future versions will additionally introduce at least a metadata module to
-capture the maximum amount of metadata that can be represented in a CodeMeta
-JSON file.
-
-CFF has been developed to provide a format for `CITATION`
-files which could be recommended to readers of the blog post which has been
-produced by the group during the workshop and shortly after, and which will be
-published on the [blog page](https://www.software.ac.uk/blog) of the [Software
-Sustainability Institute](https://www.software.ac.uk/).
-
-## Rationale
-
-The rationale for a standardized, machine- and human-readable format for
-`CITATION` files is discussed in more detail in [Druskat, 2017](https://doi.org/10.6084/m9.figshare.3827058).
-CFF has been developed to support all citation-specific use cases for the
-citation of software, as discussed in [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86),
-and thus promote attribution and credit for software in general, and research
-software in particular.
-
-In a blog post ([Wilson, 2013](https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files)), Robin Wilson has introduced `CITATION`
-files as a means to make citation information for software easily accessible.
-This accessibility is important, because in order to receive deserved credit for
-research software in the academic system - where credit is still mainly measured
-based on citations - the citation information for software must be made
-visible; Authors will only cite software if the citation information is readily
-available, as there is no standard, easily deducible way (yet) to cite software,
-such as there is for journals for example.
-
-Some have followed the advice, and have uploaded `CITATION` (or `CITATION.md`,
-or `CITATION.txt`) files to the root of the source code repository holding their
-software. While this practice has made for a good start, free form `CITATION`
-files  are not machine-readable, and machine-readability is a precondition for
-re-use of the citation information in different contexts which could further
-support a fair distribution of credit for research software.
-
-## Status of the format
-
-CFF-Core has been branched out to address
-[issue citation-file-format/citation-file-format#23](https://github.com/citation-file-format/citation-file-format/issues/23).
-While an ideal format for software citation would arguably implement transitive
-credit ([Katz, 2014](https://doi.org/10.5334/jors.be)), there is no concrete implementation yet
-that is available for practical use by software creators. The most concrete
-suggestion for an implementation is [Katz and Smith, 2015](https://doi.org/10.5334/jors.by), the
-application of which, however, seems impractical from a usability point of view
-in terms of human-writability. Especially regarding the current state of the
-practice of providing citation metadata for software [Howison and Bullard, 2016](https://doi.org/10.1002/asi.23538),
-it seems that at this point in time, a lower-threshold
-approach - in terms of technical complexity - could potentially drive higher participation
-in the provision of software citation metadata.
-
-On the other end of the complexity spectrum, free form `CITATION` files as suggested by Robin
-Wilson ([Wilson, 2013](https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files)) provide an easy-to-access way of providing citation metadata
-for software. However, as these files are not reliably formatted, and thus not
-machine-readable, their potential for re-use is rather low. Re-use of software citation metadata, however,
-is a key factor in the promotion of software citation along the software citation principles
-[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), and ultimately the fair distribution of credit for software in science.
-
-CFF aims to provide a compromise between the ideal state of software
-citation, i.e., transitive credit, and the state of the practice, i.e., free form
-`CITATION` files.
-
-CFF-Core, in this context, provides an implementation for basic
-software citation metadata, so that creators of research software can supply relevant
-metadata for citation easily. CFF-Core aims at covering use cases
-
-- 1: Use software for a paper
-- 2: Use software in/with new software
-- 15: Store software entry
-
-as defined in the software citation principles paper ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86)).
-
-CFF-Core can be used as a human-writable source and input format for [CodeMeta](https://github.com/codemeta/codemeta) JSON,
-which is emerging as the standard format for software metadata.
-
-Further development of CFF will include a CFF-Meta module which will provide a set
-of keys to provide more general metadata for research software. CFF-Meta will
-implement the complete set of [CodeMeta](https://github.com/codemeta/codemeta) keys, and will be usable as an extension
-to CFF-Core. For more information, see '[Infrastructure](#infrastructure)'.
-
-## Goals
-
-The goal of CFF is to provide an all-purpose citation format (similar to BibTeX
-or RIS), and specifically provide optimized means of citation for software via
-the provision of software-specific reference keys and types, e.g., a dedicated
-type for source code and one for executables, and a reference key for versions,
-cf. [Reference types](#reference-types).
-
-The ultimate goal of CFF as a project is comprehensive uptake and re-use of the
-format by Research Software Engineers and software developers as well as by
-vendors and services, such as software repositories, reference managers, etc.,
-in order to boost the visibility of citation information for research software,
-and empower the fair distribution of credit for software development,
-maintenance, etc., in academia. This can partly be achieved through CFF's
-compatibility with [CodeMeta](https://github.com/codemeta/codemeta).
-
-## Concepts
-
-For users of other reference formats, such as BibTeX or RIS, it is important to
-note that in CFF, all available keys can be used for all [reference types](#reference-types).
-For now, CFF
-leaves reasonability of use with format users and providers of tooling, such as
-conversion software for CFF and other formats. In other words, the use of keys
-should follow common sense. If not, it will confuse the user of the `CITATION`
-file, and some of the information will probably be lost in re-use scenarios such
-as conversion or display. If you feel that CFF does not offer a solution for
-your specific use case, please consider contributing to the format as described
-in section [Contributions](#contributions).
-
-Furthermore please note that if a section of a work is referenced, this is not
-supported by a dedicated reference type. Instead, the `section` key should be used
-within a specific "parent" (i.e., `book` for a section of a book, etc.).
-
-# Format
+## Format
 
 CFF `CITATION` files must be named `CITATION.cff`.
 
-CFF is implemented in YAML 1.2, as the language provides optimal human-
-readability and the required core data types. For details, see the
-YAML 1.2 Specifications ([Ben-Kiki et al. 2009](http://yaml.org/spec/1.2/spec.html)).
+CFF is implemented in YAML 1.2. For details, see the
+[YAML 1.2 Specifications](http://yaml.org/spec/1.2/spec.html).
 
 ## Formatting
 
