@@ -1,0 +1,35 @@
+{
+    "creators": [
+        {
+            "name": "Druskat, Stephan",
+            "orcid": "0000-0003-4925-7248"
+        },
+        {
+            "name": "Spaaks, Jurriaan H.",
+            "orcid": "0000-0002-7064-4069"
+        },
+        {
+            "name": "Chue Hong, Neil",
+            "orcid": "0000-0002-8876-7606"
+        },
+        {
+            "name": "Haines, Robert",
+            "orcid": "0000-0002-9538-7919"
+        },
+        {
+            "name": "Baker, James",
+            "orcid": "0000-0002-2682-6922"
+        }
+    ],
+    "keywords": [
+        "citation file format",
+        "CFF",
+        "citation files",
+        "software citation",
+        "format",
+        "YAML",
+        "software sustainability",
+        "research software"
+    ],
+    "title": "Citation File Format (CFF)"
+}
