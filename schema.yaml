@@ -1,5 +1,5 @@
 name: "Citation File Format - Core module (CFF-Core) schema 1.1.0"
-desc: A pykwalifire schema for validating CITATION.cff files 
+desc: A schema for validating CITATION.cff files 
 type: map
 mapping:
 
