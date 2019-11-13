@@ -636,7 +636,7 @@ schema;identifier:
     type:
       required: True
       type: str
-      enum: ['software-heritage', 'other']
+      enum: ['doi', 'url', 'swh', 'other']
 
     value:
       required: True

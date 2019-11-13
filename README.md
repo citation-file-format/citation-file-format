@@ -1,5 +1,7 @@
 # Citation File Format (CFF)
 
+[![DOI](https://citation-file-format.github.io/assets/images/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 The Citation File Format (CFF) is a human- and machine-readable file format in YAML 1.2 which provides
 citation metadata for software.  The main website for CFF can be found at https://citation-file-format.github.io.
 
@@ -15,20 +17,13 @@ message: If you use this software, please cite it as below.
 authors:
   - family-names: Druskat
     given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
 title: My Research Tool
 version: 1.0.4
-doi: 10.5281/zenodo.1234
 date-released: 2017-12-18
 ```
 
-## License
+# Specification
 
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-
-# Specification 1.1.0
-
-[![DOI](https://citation-file-format.github.io/assets/images/zenodo.1405679.svg)](https://doi.org/10.5281/zenodo.1405679)
 
 ## Format
 
@@ -54,11 +49,13 @@ general. These include:
 
 > `:  {  }  [  ]  ,  &  *  #  ?  |  -  <  >  =  !  %  @  \`
 
+To check whether your YAML is correctly formatted, you can use <http://www.yamllint.com/>.
+
 ## File structure
 
 `CITATION.cff` files represent YAML 1.2 dictionaries ("maps") with
 the keys listed in the table below. Note that the order of the keys is arbitrary,
-and that most YAML [linter](https://en.wikipedia.org/wiki/Lint_(software))s
+and that most YAML linters
 will re-order the keys alphabetically.
 
 The primary keys are used to specify
@@ -77,7 +74,7 @@ i.e., metadata that can be picked up in a CodeMeta JSON file;
 Citation File Format that is used for the file.
 
 ```yaml
-cff-version: 1.0.3
+cff-version: 1.1.0
 ```
 
 ### `message` (**required**)
@@ -92,41 +89,7 @@ message: "Please cite the following works when using this software."
 
 ### Software citation metadata (**required**)
 
-The primary citation metadata provided to users that wish to cite the software
-version which the CFF file is for. This metadata can be provided via a subset
-of the keys from the table below. The keys follow the basic requirements for
-software citation metadata for the three basic use cases, as detailed in
-[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p.31
-and reproduced
-below for convenience.
-
-  | Use case:           | Use software for a paper | Use software in/with new software | Store software entry |
-  | -                   | :-:                      | :-:                               | :-:                  |
-  | Unique identifier   | ●                        | ●                                 | ●                    |
-  | Software name       | ●                        | ●                                 | ●                    |
-  | Author(s)           | ●                        | ●                                 | ●                    |
-  | Version number      | ●                        | ●                                 | ●                    |
-  | Release date        | ●                        | ●                                 | ●                    |
-  | Location/repository | ●                        | ●                                 | ●                    |
-  | Software license    | +                        | +                                 |                      |
-  | Description         | +                        | +                                 | +                    |
-  | Keywords            |                          |                                   | +                    |
-
-Table: Basic requirements for citation use cases, reproduced from [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p.31. Solid circles (●) indicate that the use case depends on that metadata, plus signs (+) indicate that the use case would benefit from that metadata if available.
-{: .text-right}
-
-Provision of the metadata should follow the best
-practices detailed in [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), i.e.:
-
-- **Give credit** where credit is due: Make sure that you include every person in the authors list who deserves to be listed as an author. This may include people that have not contributed lines of code, but have contributed as testers, designers, reporters, managers, etc.
-- Provide a **unique identifier**: Publish your software version via services that provide it with a DOI, e.g., [Zenodo](https://zenodo.org/) or [figshare](https://figshare.com/). This also ensures **accessibility** of the software, as in these cases the unique identifier points to a landing page rather than an actual software product.
-- Be **specific** by providing a version number, and citation metadata pertaining to that version. If possible, let your unique identifier point to a software version rather than the "software as such" (all versions of the software). If you want to provide the user with the possibility to cite the software as such in addition to a specific version, create a [reference](TODO) to the software landing page, a software paper, or similar in the CFF file.
-If, for some reason, you cannot provide a DOI for your software version, provide the version number or a commit reference (e.g., a Git hash or a Subversion revision number), and a URL to the source code or build artifact repository.
-If your software is closed source and you cannot provide a DOI, provide the version number or other version identifier, contact details, and a URL which points to the software landing page, homepage, or similar.
-
-Finally, following the software citation principle of *Persistence*, make sure that the citation metadata persists, even when the software's lifespan is over.
-
-CFF-Core provides the following keys for software citation metadata.
+CFF provides the following keys for software citation metadata.
 
   | CFF key                 | required | CFF data type                                                                                                                       | Description                                                                                                                                                                     |
   | ----------------------- | :---------:|-------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -147,12 +110,10 @@ CFF-Core provides the following keys for software citation metadata.
   | `url`                   | |String (URL)                                                                                                                        | The URL to a landing page/website for the software version                                                                                                                      |
   | `version`               |● |String                                                                                                                              | The version of the software                                                                                                                                                       |
 
-Table: CFF-Core keys and accepted data types for the provision of citation metadata.
-{: .text-right}
 
 ### `references` (**optional**)
 
-Provides an optional list of references pertaining to the software version, or the software itself, e.g., a software paper describing the abstract concepts of the software, a paper describing an algorithm that has been implemented in the software version, etc.
+Provides an optional list of references pertaining to the software version, or the software itself, e.g., a dependency of the software, a software paper describing the abstract concepts of the software, a paper describing an algorithm that has been implemented in the software version, etc.
 
 A reference item, i.e., an item in the list under `references`, must at least
 specify values for the following mandatory keys: `type`, `authors`, `title`.
@@ -182,22 +143,18 @@ references:
 ```
 
 
-Additionally, it can contain any further [reference keys](#reference-keys). In version
-{{ page.version }},
-CFF does not specify a strict schema where specific [reference
-types](#reference-types) can only contain specific [reference keys](#reference-keys), although this may be
-implemented in future versions.
+Additionally, it can contain any further [reference keys](#reference-keys).
 
 ## Reference keys
 
-CFF-Core defines the following reference keys.
+CFF defines the following reference keys.
 
   |         CFF Key         |                                  CFF Data Type                                   |                                     Description                                     |
   |-------------------------|----------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
   | `abbreviation`          | String                                                                           | The abbreviation of the work                                                        |
   | `abstract`              | String                                                                           | The abstract of a work                                                              |
   | `authors`               | Collection of *[entity](#entity-objects)* or *[person objects](#person-objects)* | The author of a work                                                                |
-  | `collection-doi`        | String                                                                           | The DOI of a collection conttaining the work                                        |
+  | `collection-doi`        | String                                                                           | The DOI of a collection containing the work                                        |
   | `collection-title`      | String                                                                           | The title of a collection or proceedings                                            |
   | `collection-type`       | String                                                                           | The type of a collection                                                            |
   | `commit`                | String                                                                           | The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work       |
@@ -265,8 +222,6 @@ CFF-Core defines the following reference keys.
   | `volume-title`          | String                                                                           | The title of the volume in which the work appeared                                  |
   | `year`                  | Integer                                                                          | The year in which a work has been published                                         |
   | `year-original`         | Integer                                                                          | The year of the original publication                                                |
-
-Table: Complete list of CFF-Core reference keys.
 
 ### Notable reference keys
 
@@ -502,8 +457,6 @@ ambiguity/misuse.
 | **`video`**                    | A video recording                               |
 | **`website`**                  |                                                 |
 
-Table: Complete list of CFF reference types.
-
 
 # Objects
 
@@ -529,8 +482,6 @@ a defined set of keys. Only the key `name` is mandatory.
 | `date-start` | Date                 | ●        |
 | `date-end`   | Date                 | ●        |
 | `location`   | String               | ●        |
-
-Table: Complete list of keys for entity objects.
 
 
 ### Exemplary uses
@@ -607,8 +558,6 @@ collections with a defined set of keys, of which only `family-names` and
 | `fax`           | String               | ●              |
 | `website`       | String (*URL*)       | ●              |
 
-Table: Complete list of keys for person objects.
-
 
 ### Exemplary uses
 
@@ -663,8 +612,6 @@ collections with two defined keys, both mandatory.
 | `type`  | String ([*Identifier type string*](#identifier-type-strings))              |                |
 | `value`   | String               |                |
 
-Table: Complete list of keys for identifier objects.
-
 
 ### Exemplary uses
 
@@ -702,8 +649,6 @@ specifies the following value strings for the key `status`.
   | `in-press`       | A work that has been accepted for publication but has not yet been published         |
   | `advance-online` | A work that has been published online in advance of publication in the target medium |
   | `preprint`       | A work that has been published as a preprint before peer review                      |
-
-Table: Defined statuses for works.
 
 For a work that is complete and has been published, leave `status` unset.
 
@@ -763,7 +708,9 @@ identifiers:
 
 can only take the following values:
 
-- `software-heritage`: Signifies that the `value` string of the identifier typed thus is a valid [Software Heritage identifier](https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html).
+- `doi`: Signifies that the `value` string of the identifier typed thus is a valid DOI.
+- `url`: Signifies that the `value` string of the identifier typed thus is a valid URL.
+- `swh`: Signifies that the `value` string of the identifier typed thus is a valid [Software Heritage identifier](https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html).
 - `other`: Signifies that the `value` string of the identifier typed thus is a valid identifier not currently known to CFF.  
 If you want to add an identifier type to CFF, please [create a new issue on the CFF GitHub repository](https://github.com/citation-file-format/citation-file-format/issues/new), and suggest a name for the identifier, and ideally also describe its format as a valid regex.
 
@@ -780,477 +727,10 @@ identifiers:
 # Schema
 
 CFF `CITATION.cff` files can be validated against a schema which is available at
-<https://github.com/citation-file-format/citation-file-format/schema.yaml>.
-
-# Examples
-
-All of the following examples are minimal working examples, so they can be copied
-and pasted into a `CITATION.cff` file and will validate against the
-[CFF schema](#schema).
-
-## Software examples
-
-The main focus of CFF-Core is to comprehensively cover the provision of
-citation metadata for software. To this end, use of CFF-Core should - wherever possible - be based on
-the Software Citation Principles ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86)). Scenarios for
-software citation are listed below. These are not intended to be comphrensive, but rather to represent both typical and edge cases for software citation.
-
-The following sections list recommendations for producing CITATION files in various circumstances.
-In particular, if a DOI is available this information should be included.  A DOI is not required, 
-however, since one may not have been registered for the version of the software in question.  In this 
-case, as much information to specify the precise version of the software and how it can be obtained
-should be given.
-
-### Software with a DOI
-
-Note that [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12 recommend
-
-> [...] the use of DOIs as the unique identifier due to their common usage and
-acceptance, particularly as they are the standard for other digital products
-such as publications.
-
-Furthermore, DOIs should point to a "unique, specific software version"
-[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12. Also it is recommended [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 13 that:
-
-> the [DOI] should resolve to a persistent landing page that contains metadata
-and a link to the software itself, rather than directly to the source code files,
-repository, or executable.
-
-Therefore, a minimal `CITATION.cff` file in such a case would look similar to
-the following.
-
-```yaml
-cff-version: 1.0.3
-message: If you use this software, please cite it as below.
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-```
-
-A more comprehensive version could look similar to the following.
-
-```yaml
-cff-version: 1.0.3
-message: If you use this software, please cite it as below.
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-    affiliation: "Humboldt-Universität zu Berlin, Dept. of German Studies and Linguistics"
-    email: mail@sdruskat.net
-    website: https://hu.berlin/sdruskat
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-repository-code: https://github.com/sdruskat/my-research-tool
-repository-artifact: https://hu.berlin/nexus/mrt
-keywords:
-  - "McAuthor's algorithm"
-  - linguistics
-  - nlp
-  - parser
-  - deep convolutional neural network
-license: Apache-2.0
-url: https://sdruskat.github.io/my-research-tool
-```
-
-### Source code without a DOI
-
-We recognize that there are certain situations where it may not be possible to
-follow the recommended best-practice. For example, if (1) the software authors
-did not register a DOI and/or release a specific version, or (2) the version of
-the software used does not match what is available to cite. In those cases,
-falling back on a combination of the repository URL and version number/commit
-hash would be an appropriate way to cite the software used ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12).
-
-```yaml
-cff-version: 1.0.3
-message: "If you use this MRT alpha snapshot version, please cite."
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool Prototype
-version: 0.0.1-alpha1-build1507284872
-date-released: 2017-12-18
-repository-code: https://github.com/doe/mrt
-commit: 160d54f9e935c914df38c1ffda752112b5c979a8
-```
-
-### Closed-source software without a DOI
-
-For software without a DOI, it is recommended that "the metadata should still
-provide information on how to access the specific software, but this may be a
-company’s product number or a link to a website that allows the software be
-purchased." [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 13. Furthermore, "if the version number and
-release date are not available, the download date can be used. Similarly, the
-contact name/email is an alternative to the location/repository."
-[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 7
-
-Hence, for closed-source software without a DOI for which the version number
-and release date cannot be determined, a `CITATION.cff` file could look like
-this.
-
-```yaml
-cff-version: 1.0.3
-message:
-  If you dare use this commercial, closed-source, strangely versioned
-  software in your research, please at least cite it as below.
-authors:
-  - family-names: Vader
-    name-suffix: né Skywalker
-    given-names: 'Anakin "Darth"'
-title: Opaquity
-version: opq-1234-XZVF-ACME-RLY
-date-released: 2017-02-28
-url: http://www.opaquity.com
-contact:
-  - name: Dark Side Software
-    address: DS-1 Orbital Battle Station, near Scarif
-    email: father@imperial-empire.com
-    tel: +850 (0)123-45-666
-```
-
-### An executable
-
-```yaml
-cff-version: 1.0.3
-message: "If you use MRT, please cite the following."
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool Kickstarter
-version: 2.0.4
-date-released: 2017-12-18
-repository-artifact: https://hu.berlin/nexus/mrt-kickstarter/2.0.4/mrt2-kickstarter.exe
-```
-
-### A software container
-
-```yaml
-cff-version: 1.0.3
-message: "If you use the MRT Docker container, please cite the following."
-authors:
-  - name: "Humboldt-Universität zu Berlin"
-    website: https://www.linguistik.hu-berlin.de/
-  - family-names: Doe
-    given-names: Jane
-title: mrt-iain-m-banks
-version: 1.0.4 (Iain M. Banks)
-url: https://github.com/doe/docker-brew-mrt-core/blob/160d54f9e935/iain/Dockerfile
-repository: https://hub.docker.hu-berlin.de/_/mrt-iain-m-banks/
-date-released: 2017-12-18
-```
-
-### Software with a further reference
-
-Where authors wish to encourage citation of an outline paper with citation of their software, we recommend the use of [reference keys](#references-optional) to highlight the existence of further references.
-
-```yaml
-cff-version: 1.0.3
-message: If you use My Research Tool, please cite both the software and the outline paper.
-authors:
-  - family-names: Doe
-    given-names: Jane
-  - family-names: Bielefeld
-    name-particle: von
-    given-names: Arthur
-  - family-names: McAuthor
-    given-names: Juniper
-    name-suffix: Jr.
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: article
-    scope: Cite this paper if you want to reference the general concepts of MRT.
-    authors:
-      - family-names: Doe
-        given-names: Jane
-      - family-names: Bielefeld
-        name-particle: von
-        given-names: Arthur
-    title: "My Research Tool: A 100% accuracy syntax parser for all languages"
-    year: 2099
-    journal: Journal of Hard Science Fiction
-    volume: 42
-    issue: "13"
-    doi: 10.9999/hardscifi-lang.42132
-```
-
-### Some references examples
-
-#### art
-
-```yaml
-cff-version: 1.0.3
-message: "If you use this software, please cite the following."
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: art
-    authors:
-      - family-names: Picasso
-        given-names: Pablo
-    title: Guernica
-    year: 1937
-    medium: Oil on canvas
-    format: 349.3cm x 776.6cm
-    location:
-      name: Museo Reina Sofia
-      city: Madrid
-      country: ES
-```
-
-#### article
-
-```yaml
-cff-version: 1.0.3
-message: If you use this software, please cite it as below.
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: article
-    authors:
-      - family-names: Smith
-        given-names: Arfon M.
-      - family-names: Katz
-        given-names: Daniel S.
-        affiliation: "National Center for Supercomputing Applications &
-        Electrical and Computer Engineering Department & School of Information
-        Sciences, University of Illinois at Urbana-Champaign, Urbana, Illinois,
-        United States"
-        orcid: https://orcid.org/0000-0001-5934-7525
-      - family-names: Niemeyer
-        given-names: Kyle E.
-      - name: "FORCE11 Software Citation Working Group"
-        website: https://www.force11.org/group/software-citation-working-group
-    title: "Software citation principles"
-    year: 2016
-    journal: PeerJ Computer Science
-    volume: 2
-    issue: e86
-    doi: 10.7717/peerj-cs.86
-    url: https://doi.org/10.7717/peerj-cs.86
-```
-
-#### blog
-
-```yaml
-cff-version: 1.0.3
-message: If you use this software, please cite the software itself and the blog post.
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: blog
-    authors:
-      - family-names: Doe
-        given-names: Jane
-    title: "Implement a 100% accuracy syntax parser for all languages? No probs!"
-    date-published: 2017-09-23
-    url: https://hu-berlin.de/blogs/jdoe/2017/09/23/if-only
-    institution:
-      name: "Humboldt-Universität zu Berlin"
-      city: Berlin
-      country: DE
-```
-
-#### book
-
-```yaml
-cff-version: 1.0.3
-message: "If you use MRT for your research, please cite the following book."
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: book
-    authors:
-      - family-names: Doe
-        given-names: Jane
-    title: "The future of syntax parsing"
-    year: 2017
-    publisher:
-      name: Far Out Publications
-      city: Bielefeld
-    medium: print
-```
-
-#### conference-paper
-
-```yaml
-cff-version: 1.0.3
-message: If you use this software, please cite the software and the paper.
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: conference-paper
-    authors:
-      - family-names: Doe
-        given-names: Jane
-    title: "Ultimate-accuracy syntax parsing with My Research Tool"
-    year: 2017
-    collection-title: "Proceedings of the 1st Conference on Wishful Thinking"
-    collection-doi: 10.5281/zenodo.123456
-    editors:
-      - family-names: Kirk
-        given-names: James T.
-    conference:
-      name: 1st Conference on Wishful Thinking
-      location: Spock's Inn Hotel and Bar
-      address: 123 Main St
-      city: Bielefeld
-      region: Jarvis Island
-      post-code: "12345"
-      country: UM
-      date-start: 2017-04-01
-      date-end: 2017-04-01
-    start: 42
-    end: 45
-    doi: 10.5281/zenodo.1234
-```
-
-#### edited-work
-
-Note that the editors of the edited work must be specified under the `authors`
-key. Specific citation styles may or may not attach a suffix to the authors,
-such as ", eds." or similar.
-
-```yaml
-cff-version: 1.0.3
-message: If you use this software, please cite it as below.
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: edited-work
-    authors:
-      - family-names: Doe
-        given-names: Jane
-    title: "Ultimate-accuracy parsing in practice"
-    year: 2017
-    publisher:
-      name: Far Out Publications
-      city: Bielefeld
-      country: DE
-```
-
-#### report
-
-```yaml
-cff-version: 1.0.3
-message: If you use this software, please cite it as below.
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: report
-    authors:
-      - name: Fictional Parsing Interest Group, ACME Inc.
-    title: "100% accuracy syntax parsing at ACME"
-    url: http://www.acme.com/sigs/fp/reports/hpsp.pdf
-    year: 2017
-    date-accessed: 2017-09-23
-```
-
-#### thesis
-
-```yaml
-cff-version: 1.0.3
-message: If you use this software, please cite it as below.
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
-version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
-references:
-  - type: thesis
-    authors:
-      - family-names: Doe
-        given-names: Jane
-    title: "A high accuracy syntax parser in Visual Basic"
-    thesis-type: PhD
-    year: 2017
-    department: Dept. of Universal Language Philosophy
-    institution:
-      name: "Humboldt-Universität zu Berlin"
-      city: Berlin
-      country: DE
-    database: Thesiserver
-    date-accessed: 2017-09-23
-    date-published: 2017-03-21
-    url: http://thesiserver.hu-berlin.de/2017/march/phd/doe-12345
-```
-
-# Infrastructure
-
-The roadmap for CFF plans for the provision of further infrastructure (e.g.,
-software packages and web services), to support the following use cases for CFF:
-
-- Creating CFF files
-- Reading CFF files
-- Validating CFF files
-- Converting CFF files
+<https://github.com/citation-file-format/citation-file-format/blob/master/schema.yaml>.
 
 # Contributions
 
 Contributions to the format specifications are welcome! For details on how to
-contribute, please refer to the GitHub repository for CFF at
-<https://github.com/citation-file-format/citation-file-format>.
-
-# License
-
-This document is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/). The full
-license text can be obtained from the URL
-<https://creativecommons.org/licenses/by-sa/4.0/legalcode>.
-
+contribute, please refer to the contributing guidelines for CFF at
+<https://github.com/citation-file-format/citation-file-format/blob/master/CONTRIBUTING.md>.
