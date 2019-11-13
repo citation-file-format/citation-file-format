@@ -1,0 +1,22 @@
+cff-version: 1.1.0
+message: "If you use CFF in your research, please cite it using these metadata."
+authors:
+  - family-names: Druskat
+    given-names: Stephan
+    orcid: https://orcid.org/0000-0003-4925-7248
+  - family-names: Spaaks
+    given-names: Jurriaan H.
+    orcid: https://orcid.org/0000-0002-7064-4069
+  - family-names: Chue Hong
+    given-names: Neil
+    orcid: https://orcid.org/0000-0002-8876-7606
+  - family-names: Haines
+    given-names: Robert
+    orcid: https://orcid.org/0000-0002-9538-7919
+  - family-names: Baker
+    given-names: James
+    orcid: https://orcid.org/0000-0002-2682-6922
+title: Citation File Format (CFF)
+version: 1.1.0
+doi: 10.5281/zenodo.1003149
+date-released: 2019-11-13
