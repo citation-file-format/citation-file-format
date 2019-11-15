@@ -619,7 +619,7 @@ collections with two defined keys, both mandatory.
 
 ```yaml
 identifiers:
-  - type: "software-heritage"
+  - type: "swh"
     value: "swh:1:rel:99f6850374dc6597af01bd0ee1d3fc0699301b9f"
 ```
 
@@ -720,7 +720,7 @@ Examples for valid identifiers:
 identifiers:
   - type: "other"
     value: "other-schema://abcd.1234.efgh.5678"
-  - type: "software-heritage"
+  - type: "swh"
     value: "swh:1:rel:99f6850374dc6597af01bd0ee1d3fc0699301b9f"
 ```
 
