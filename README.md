@@ -537,27 +537,26 @@ orcid: https://orcid.org/0000-0001-2345-6789
 ## Person objects
 
 A person object represents a person. In CFF, person objects are realized as
-collections with a defined set of keys, of which only `family-names` and
-`given-names` are mandatory.
+collections with a defined set of keys.
 
-| Person key      | Person data type     | optional       |
-| -               | -                    | :------------: |
-| `family-names`  | String               |                |
-| `given-names`   | String               |                |
-| `alias`         | String               | ●              |
-| `name-particle` | String               | ●              |
-| `name-suffix`   | String               | ●              |
-| `affiliation`   | String               | ●              |
-| `address`       | String               | ●              |
-| `city`          | String               | ●              |
-| `region`        | String               | ●              |
-| `post-code`     | String               | ●              |
-| `country`       | String               | ●              |
-| `orcid`         | String (*ORCID URL*) | ●              |
-| `email`         | String               | ●              |
-| `tel`           | String               | ●              |
-| `fax`           | String               | ●              |
-| `website`       | String (*URL*)       | ●              |
+| Person key      | Person data type     |
+| -               | -                    |
+| `family-names`  | String               |
+| `given-names`   | String               |
+| `alias`         | String               |
+| `name-particle` | String               |
+| `name-suffix`   | String               |
+| `affiliation`   | String               |
+| `address`       | String               |
+| `city`          | String               |
+| `region`        | String               |
+| `post-code`     | String               |
+| `country`       | String               |
+| `orcid`         | String (*ORCID URL*) |
+| `email`         | String               |
+| `tel`           | String               |
+| `fax`           | String               |
+| `website`       | String (*URL*)       |
 
 
 ### Exemplary uses
