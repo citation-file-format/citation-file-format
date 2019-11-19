@@ -128,11 +128,11 @@ schema;person:
   mapping:
 
     family-names: 
-      required: True
+      required: False
       type: str
     
     given-names: 
-      required: True
+      required: False
       type: str
     
     alias:
