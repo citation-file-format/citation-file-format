@@ -544,6 +544,7 @@ collections with a defined set of keys, of which only `family-names` and
 | -               | -                    | :------------: |
 | `family-names`  | String               |                |
 | `given-names`   | String               |                |
+| `alias`         | String               | ●              |
 | `name-particle` | String               | ●              |
 | `name-suffix`   | String               | ●              |
 | `affiliation`   | String               | ●              |
@@ -589,6 +590,10 @@ do not have the concept of family names, or Chinese generation names, but the
 alternative is highly localized customization, which would be counterintuitive
 as to CFF's goal to be easily accessible. Thus, it is ultimately the task of CFF
 file authors to find the optimal name split in any given case.
+
+**`alias`**
+
+- To specify a person who is only known by an alias such as a username.
 
 **`affiliation`**
 

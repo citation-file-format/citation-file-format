@@ -135,6 +135,10 @@ schema;person:
       required: True
       type: str
     
+    alias:
+      required: False
+      type: str
+
     name-particle:
       required: False
       type: str
