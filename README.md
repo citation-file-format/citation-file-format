@@ -5,6 +5,40 @@
 The Citation File Format (CFF) is a human- and machine-readable file format in YAML 1.2 which provides
 citation metadata for software.  The main website for CFF can be found at https://citation-file-format.github.io.
 
+
+## Table of contents
+
+* [Citation File Format (CFF)](#citation-file-format-cff)
+   * [Table of contents](#table-of-contents)
+   * [Example](#example)
+* [Specification](#specification)
+   * [Format](#format)
+   * [Formatting](#formatting)
+   * [File structure](#file-structure)
+      * [cff-version (<strong>required</strong>)](#cff-version-required)
+      * [message (<strong>required</strong>)](#message-required)
+      * [Software citation metadata (<strong>required</strong>)](#software-citation-metadata-required)
+      * [references (<strong>optional</strong>)](#references-optional)
+   * [Reference keys](#reference-keys)
+      * [Notable reference keys](#notable-reference-keys)
+      * [Exemplary uses](#exemplary-uses)
+   * [Reference types](#reference-types)
+* [Objects](#objects)
+   * [Entity objects](#entity-objects)
+      * [Exemplary uses](#exemplary-uses-1)
+   * [Person objects](#person-objects)
+      * [Exemplary uses](#exemplary-uses-2)
+   * [Identifier objects](#identifier-objects)
+      * [Exemplary uses](#exemplary-uses-3)
+* [Specified value strings](#specified-value-strings)
+   * [Status strings](#status-strings)
+   * [License strings](#license-strings)
+   * [Language strings](#language-strings)
+   * [Identifier type strings](#identifier-type-strings)
+* [Schema](#schema)
+* [Contributions](#contributions)
+
+
 ## Example
 
 If you want to make your software easily citable, you can put a file called
