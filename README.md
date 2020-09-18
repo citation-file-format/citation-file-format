@@ -571,26 +571,26 @@ orcid: https://orcid.org/0000-0001-2345-6789
 ## Person objects
 
 A person object represents a person. In CFF, person objects are realized as
-collections with a defined set of keys, of which only `family-names` and
-`given-names` are mandatory.
+collections with a defined set of keys.
 
-| Person key      | Person data type     | optional       |
-| -               | -                    | :------------: |
-| `family-names`  | String               |                |
-| `given-names`   | String               |                |
-| `name-particle` | String               | ●              |
-| `name-suffix`   | String               | ●              |
-| `affiliation`   | String               | ●              |
-| `address`       | String               | ●              |
-| `city`          | String               | ●              |
-| `region`        | String               | ●              |
-| `post-code`     | String               | ●              |
-| `country`       | String               | ●              |
-| `orcid`         | String (*ORCID URL*) | ●              |
-| `email`         | String               | ●              |
-| `tel`           | String               | ●              |
-| `fax`           | String               | ●              |
-| `website`       | String (*URL*)       | ●              |
+| Person key      | Person data type     |
+| -               | -                    |
+| `family-names`  | String               |
+| `given-names`   | String               |
+| `alias`         | String               |
+| `name-particle` | String               |
+| `name-suffix`   | String               |
+| `affiliation`   | String               |
+| `address`       | String               |
+| `city`          | String               |
+| `region`        | String               |
+| `post-code`     | String               |
+| `country`       | String               |
+| `orcid`         | String (*ORCID URL*) |
+| `email`         | String               |
+| `tel`           | String               |
+| `fax`           | String               |
+| `website`       | String (*URL*)       |
 
 
 ### Exemplary uses
@@ -623,6 +623,10 @@ do not have the concept of family names, or Chinese generation names, but the
 alternative is highly localized customization, which would be counterintuitive
 as to CFF's goal to be easily accessible. Thus, it is ultimately the task of CFF
 file authors to find the optimal name split in any given case.
+
+**`alias`**
+
+- To specify a person who is only known by an alias such as a username.
 
 **`affiliation`**
 

@@ -128,13 +128,17 @@ schema;person:
   mapping:
 
     family-names: 
-      required: True
+      required: False
       type: str
     
     given-names: 
-      required: True
+      required: False
       type: str
     
+    alias:
+      required: False
+      type: str
+
     name-particle:
       required: False
       type: str
