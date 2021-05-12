@@ -21,15 +21,17 @@
             "orcid": "0000-0002-2682-6922"
         }
     ],
+    "description": "CITATION.cff files are plain text files with human- and machine-readable citation information for software. Code developers can include them in their repositories to let others know how to correctly cite their software. This is the specification for the Citation File Format.",
     "keywords": [
         "citation file format",
         "CFF",
         "citation files",
         "software citation",
-        "format",
+        "file format",
         "YAML",
         "software sustainability",
-        "research software"
+        "research software",
+        "credit"
     ],
-    "title": "Citation File Format (CFF)"
+    "title": "Citation File Format"
 }
