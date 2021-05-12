@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "title": "Citation File Format",
+    "description": "A file with citation metadata for software or datasets",
+    "properties": {
+        "preferred-citation": {
+            "$ref": "#/reference"
+        }
+    },
+    "reference": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "name": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "name"
+        ]
+    }
+}
