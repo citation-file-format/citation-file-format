@@ -6,21 +6,12 @@
     "additionalProperties": false,
     "type": "object",
     "properties": {
-        "preferred-citation": {
-            "$ref": "#/reference"
+        "cff-version": {
+            "type": "string",
+            "pattern": "^(1\\.1\\.0)"
         }
     },
-    "reference": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-            "name": {
-                "type": "string",
-                "description": "The name of the reference"
-            }
-        },
-        "required": [
-            "name"
-        ]
-    }
+    "required": [
+        "cff-version"
+    ]
 }
