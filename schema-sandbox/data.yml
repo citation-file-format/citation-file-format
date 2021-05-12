@@ -3,3 +3,5 @@ message: "If you use this software, cite it using these metadata"
 type: software
 authors: 
   - name: "entity name"
+  - given-names: "Given Names"
+commit: af34567890123458901234567890123456789012

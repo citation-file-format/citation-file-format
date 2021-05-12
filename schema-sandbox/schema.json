@@ -8,7 +8,7 @@
     "properties": {
         "cff-version": {
             "type": "string",
-            "pattern": "^(1\\.1\\.0)",
+            "pattern": "^1\\.1\\.0$",
             "description": "The version of CFF used for providing the citation metadata"
         },
         "message": {
@@ -34,6 +34,11 @@
                     {"$ref": "#definitions/entity"}
                 ]
             }
+        },
+        "commit": {
+            "type": "string",
+            "description": "The commit SHA1 hash or revision number of the software version",
+            "pattern": "^[a-f0-9]{7,40}$"
         }
     },
     "required": [
