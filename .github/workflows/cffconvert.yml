@@ -1,0 +1,14 @@
+name: cffconvert
+
+on: push
+
+jobs:
+  verify:
+    name: "cffconvert"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out a copy of the repository
+
+      - uses: citation-file-format/cffconvert-github-action@main
+        name: Check whether the citation metadata from CITATION.cff is equivalent to that in .zenodo.json
