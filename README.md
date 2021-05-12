@@ -1,6 +1,7 @@
 # Citation File Format (CFF)
 
-[![DOI](https://citation-file-format.github.io/assets/images/zenodo.4751536.svg)](https://doi.org/10.5281/zenodo.4751536) [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4751536.svg)](https://doi.org/10.5281/zenodo.4751536)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 The Citation File Format (CFF) is a human- and machine-readable file format in YAML 1.2 which provides
 citation metadata for software.  The main website for CFF can be found at https://citation-file-format.github.io.
