@@ -1,5 +1,6 @@
 cff-version: 1.1.0
 message: "If you use CFF in your research, please cite it using these metadata."
+abstract: 
 authors:
   - family-names: Druskat
     given-names: Stephan
@@ -16,16 +17,17 @@ authors:
   - family-names: Baker
     given-names: James
     orcid: https://orcid.org/0000-0002-2682-6922
-title: Citation File Format (CFF)
+title: Citation File Format
 version: 1.1.0
 doi: 10.5281/zenodo.1003149
-date-released: 2019-11-13
+date-released: 2021-05-12
 keywords:
   - citation file format
   - CFF
   - citation files
   - software citation
-  - format
+  - file format
   - YAML
   - software sustainability
   - research software
+  - credit
