@@ -8,10 +8,57 @@
     "properties": {
         "cff-version": {
             "type": "string",
-            "pattern": "^(1\\.1\\.0)"
+            "pattern": "^(1\\.1\\.0)",
+            "description": "The version of CFF used for providing the citation metadata"
+        },
+        "message": {
+            "type": "string",
+            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "dataset",
+                "software"
+            ]
+        },
+        "abstract": {
+            "type": "string"
+        },
+        "authors": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "anyOf": [
+                    {"$ref": "#definitions/person"},
+                    {"$ref": "#definitions/entity"}
+                ]
+            }
         }
     },
     "required": [
-        "cff-version"
-    ]
+        "cff-version",
+        "message",
+        "authors"
+    ],
+    "definitions": {
+        "person": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "given-names": {
+                    "type": "string"
+                }
+            }
+        },
+        "entity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
 }
