@@ -1,4 +1,4 @@
-name: "Citation File Format - Core module (CFF-Core) schema 1.1.0"
+name: "Citation File Format schema 1.2.0"
 desc: A schema for validating CITATION.cff files 
 type: map
 mapping:
@@ -7,7 +7,7 @@ mapping:
   cff-version:
     required: True
     type: str
-    pattern: 1\.1\.0
+    pattern: 1\.2\.0
 
   # Message
   message:
