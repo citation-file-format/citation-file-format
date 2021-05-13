@@ -8759,12 +8759,12 @@
                 },
                 "status": {
                     "enum": [
-                        "in-preparation",
                         "abstract",
-                        "submitted",
-                        "in-press",
                         "advance-online",
-                        "preprint"
+                        "in-preparation",
+                        "in-press",
+                        "preprint",
+                        "submitted"
                     ],
                     "type": "string"
                 },
