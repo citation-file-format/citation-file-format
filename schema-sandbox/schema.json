@@ -76,7 +76,8 @@
             "type": "string"
         },
         "doi": {
-            "$ref": "#/definitions/doi"
+            "pattern": "^10\\.\\d{4,9}(\\.\\d+)?/[A-Za-z0-9-\\._;\\(\\)\\[\\]\\\\\\\\:/]+$",
+            "type": "string"
         },
         "person": {
             "type": "object",
