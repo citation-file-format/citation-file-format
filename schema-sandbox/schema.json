@@ -62,6 +62,13 @@
             "minItems": 1,
             "type": "array",
             "uniqueItems": true
+        },
+        "identifiers": {
+            "items": {
+                "$ref": "#/definitions/identifier"
+            },
+            "minItems": 1,
+            "type": "array"
         }
     },
     "required": [
@@ -78,6 +85,29 @@
         "doi": {
             "pattern": "^10\\.\\d{4,9}(\\.\\d+)?/[A-Za-z0-9-\\._;\\(\\)\\[\\]\\\\\\\\:/]+$",
             "type": "string"
+        },
+        "identifier": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "enum": [
+                        "doi",
+                        "other",
+                        "swh",
+                        "url"
+                    ],
+                    "type": "string"
+                },
+                "value": {
+                    "minLength": 1,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "value"
+            ],
+            "type": "object"
         },
         "person": {
             "type": "object",
