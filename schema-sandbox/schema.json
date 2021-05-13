@@ -64,6 +64,15 @@
                     "type": "string"
                 }
             }
-        }
+        },
+        "reference": {
+            "additionalProperties": false,
+            "properties": {
+            },
+            "required": [
+            ],
+            "type": "object"
+        },
+
     }
 }
