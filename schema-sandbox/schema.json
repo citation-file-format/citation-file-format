@@ -99,57 +99,11 @@
         "reference": {
             "additionalProperties": false,
             "properties": {
-                "type": {
-                    "type": "string",
-                    "enum": [
-                        "art",
-                        "article",
-                        "audiovisual",
-                        "bill",
-                        "blog",
-                        "book",
-                        "catalogue",
-                        "conference",
-                        "conference-paper",
-                        "data",
-                        "database",
-                        "dictionary",
-                        "edited-work",
-                        "encyclopedia",
-                        "film-broadcast",
-                        "generic",
-                        "government-document",
-                        "grant",
-                        "hearing",
-                        "historical-work",
-                        "legal-case",
-                        "legal-rule",
-                        "magazine-article",
-                        "manual",
-                        "map",
-                        "multimedia",
-                        "music",
-                        "newspaper-article",
-                        "pamphlet",
-                        "patent",
-                        "personal-communication",
-                        "proceedings",
-                        "report",
-                        "serial",
-                        "slides",
-                        "software",
-                        "software-code",
-                        "software-container",
-                        "software-executable",
-                        "software-virtual-machine",
-                        "sound-recording",
-                        "standard",
-                        "statute",
-                        "thesis",
-                        "unpublished",
-                        "video",
-                        "website"
-                    ]
+                "abbreviation": {
+                    "type": "string"
+                },
+                "abstract": {
+                    "type": "string"
                 },
                 "authors": {
                     "items": {
@@ -161,15 +115,6 @@
                     "minItems": 1,
                     "type": "array",
                     "uniqueItems": true
-                },
-                "title": {
-                    "type": "string"
-                },
-                "abbreviation": {
-                    "type": "string"
-                },
-                "abstract": {
-                    "type": "string"
                 },
                 "collection-doi": {
                     "$ref": "#/definitions/doi"
@@ -8795,6 +8740,9 @@
                 "start": {
                     "type": "integer"
                 },
+                "title": {
+                    "type": "string"
+                },
                 "thesis-type": {
                     "type": "string"
                 },
@@ -8808,6 +8756,58 @@
                     "minItems": 1,
                     "type": "array",
                     "uniqueItems": true
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "art",
+                        "article",
+                        "audiovisual",
+                        "bill",
+                        "blog",
+                        "book",
+                        "catalogue",
+                        "conference",
+                        "conference-paper",
+                        "data",
+                        "database",
+                        "dictionary",
+                        "edited-work",
+                        "encyclopedia",
+                        "film-broadcast",
+                        "generic",
+                        "government-document",
+                        "grant",
+                        "hearing",
+                        "historical-work",
+                        "legal-case",
+                        "legal-rule",
+                        "magazine-article",
+                        "manual",
+                        "map",
+                        "multimedia",
+                        "music",
+                        "newspaper-article",
+                        "pamphlet",
+                        "patent",
+                        "personal-communication",
+                        "proceedings",
+                        "report",
+                        "serial",
+                        "slides",
+                        "software",
+                        "software-code",
+                        "software-container",
+                        "software-executable",
+                        "software-virtual-machine",
+                        "sound-recording",
+                        "standard",
+                        "statute",
+                        "thesis",
+                        "unpublished",
+                        "video",
+                        "website"
+                    ]
                 },
                 "url": {
                     "$ref": "#/definitions/url"
