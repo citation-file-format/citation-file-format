@@ -684,7 +684,7 @@
                     "type": "string"
                 },
                 "publisher": {
-                    "$ref": "entity"
+                    "$ref": "#/definitions/entity"
                 },
                 "recipients": {
                     "items": {
