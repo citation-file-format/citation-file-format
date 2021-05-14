@@ -45,7 +45,8 @@
                 "$ref": "#/definitions/identifier"
             },
             "minItems": 1,
-            "type": "array"
+            "type": "array",
+            "uniqueItems": true
         }
     },
     "required": [
