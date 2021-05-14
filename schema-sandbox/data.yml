@@ -5,3 +5,12 @@ authors:
   - name: "entity name"
   - given-names: "Given Names"
 commit: af34567890123458901234567890123456789012
+identifiers:
+- type: doi
+  value: 10.0000/FIXME
+- type: other
+  value: some random other identifier
+- type: swh
+  value: swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2
+- type: url
+  value: https://github.com/citation-file-format/citation-file-format

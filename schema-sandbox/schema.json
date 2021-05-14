@@ -31,14 +31,23 @@
             "uniqueItems": true,
             "items": {
                 "anyOf": [
-                    {"$ref": "#definitions/person"},
-                    {"$ref": "#definitions/entity"}
+                    {"$ref": "#/definitions/person"},
+                    {"$ref": "#/definitions/entity"}
                 ]
             }
         },
         "commit": {
             "type": "string",
-            "description": "The commit SHA1 hash or revision number of the software version"
+            "description": "The commit SHA1 hash or revision number of the software version",
+            "pattern": "^[a-f0-9]{7,40}$"
+        },
+        "identifiers": {
+            "items": {
+                "$ref": "#/definitions/identifier"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
         }
     },
     "required": [
@@ -47,6 +56,29 @@
         "authors"
     ],
     "definitions": {
+        "identifier": {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "enum": [
+                        "doi",
+                        "other",
+                        "swh",
+                        "url"
+                    ],
+                    "type": "string"
+                },
+                "value": {
+                    "minLength": 1,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "value"
+            ],
+            "type": "object"
+        },
         "person": {
             "type": "object",
             "additionalProperties": false,
