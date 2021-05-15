@@ -5,7 +5,7 @@ cff-version: 1.1.0
 commit: af34567890123458901234567890123456789012
 identifiers:
 - type: doi
-  value: 10.0000/FIXME
+  value: "10.0000.1234/FIXME1234567890_-.[]();:/\\"
 - type: other
   value: some random other identifier
 - type: swh
