@@ -98,7 +98,7 @@ repository: https://www.example.com/foo/?bar=baz&inga=42&quux
 
 repository-code: http://foo.com/blah_(wikipedia)_blah#cite-1
 
-repository-artifact: http://उदाहरण.परीक्षा
+repository-artifact: https://files.pythonhosted.org/packages/0a/84/10507b69a07768bc16981184b4d147a0fc84b71fbf35c03bafc8dcced8e1/cffconvert-1.3.3.tar.gz
 
 title: Citation File Format 1.0.0
 
@@ -161,7 +161,7 @@ references:
     pmcid: PMC1234567
     repository: http://code.google.com/events/#&product=browser
     repository-code: http://142.42.1.1:8080/
-    repository-artifact: http://مثال.إختبار
+    repository-artifact: https://files.pythonhosted.org/packages/0a/84/10507b69a07768bc16981184b4d147a0fc84b71fbf35c03bafc8dcced8e1/cffconvert-1.3.3.tar.gz
     scope: Cite this book if you want to reference the general concepts implemented in Citation File Format 1.0.0.
     section: Chapter 2 - "Reference keys"
     status: advance-online
