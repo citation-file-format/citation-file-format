@@ -55,6 +55,25 @@
         "date-released": {
             "$ref": "#/definitions/date"
         },
+        "doi": {
+            "$ref": "#/definitions/doi"
+        },
+        "identifiers": {
+            "items": {
+                "$ref": "#/definitions/identifier"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+        },
+        "keywords": {
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+        },
         "license-url": {
             "$ref": "#/definitions/url"
         },
@@ -73,14 +92,6 @@
         "references": {
             "items": {
                 "$ref": "#/definitions/reference"
-            },
-            "minItems": 1,
-            "type": "array",
-            "uniqueItems": true
-        },
-        "identifiers": {
-            "items": {
-                "$ref": "#/definitions/identifier"
             },
             "minItems": 1,
             "type": "array",
