@@ -95,6 +95,9 @@
         "url": {
             "$ref": "#/definitions/url"
         },
+        "version": {
+            "type": "string"
+        },
         "references": {
             "items": {
                 "$ref": "#/definitions/reference"
