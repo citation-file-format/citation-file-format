@@ -89,27 +89,67 @@
             "type": "string"
         },
         "identifier": {
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "enum": [
-                        "doi",
-                        "other",
-                        "swh",
-                        "url"
+            "anyOf": [
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "doi"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "$ref": "#/definitions/doi"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
                     ],
-                    "type": "string"
+                    "type": "object"
                 },
-                "value": {
-                    "minLength": 1,
-                    "type": "string"
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "url"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "$ref": "#/definitions/url"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "other",
+                                "swh"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ],
+                    "type": "object"
                 }
-            },
-            "required": [
-                "type",
-                "value"
-            ],
-            "type": "object"
+            ]
         },
         "person": {
             "type": "object",
