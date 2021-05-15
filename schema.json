@@ -80,6 +80,9 @@
         "license-url": {
             "$ref": "#/definitions/url"
         },
+        "preferred-citation": {
+            "$ref": "#/definitions/reference"
+        },
         "repository": {
             "$ref": "#/definitions/url"
         },
