@@ -15,6 +15,11 @@ identifiers:
   value: https://github.com/citation-file-format/citation-file-format
 license-url: http://r3s34archs0ft.com/eula
 message: "If you use this software, cite it using these metadata"
+preferred-citation:
+  type: article
+  title: my preferred citation
+  authors:
+  - name: my name
 references: 
   - 
     type: article
