@@ -56,8 +56,6 @@
         "url": {
             "$ref": "#/definitions/url"
         },
-<<<<<<< HEAD
-=======
         "references": {
             "items": {
                 "$ref": "#/definitions/reference"
@@ -66,7 +64,6 @@
             "type": "array",
             "uniqueItems": true
         },
->>>>>>> origin/1.2.0
         "identifiers": {
             "items": {
                 "$ref": "#/definitions/identifier"
