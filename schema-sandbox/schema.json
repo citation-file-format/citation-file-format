@@ -108,9 +108,12 @@
         }
     },
     "required": [
+        "authors",
+        "date-released",
         "cff-version",
         "message",
-        "authors"
+        "title",
+        "version"
     ],
     "definitions": {
         "date": {
