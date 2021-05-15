@@ -503,9 +503,7 @@
                 "website": {
                     "$ref": "#/definitions/url"
                 }
-            },
-            "required": [
-            ]
+            }
         },
         "license": {
             "$comment": "SPDX license list; releaseDate=2021-05-14; source=https://raw.githubusercontent.com/spdx/license-list-data/master/json/licenses.json",
