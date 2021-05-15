@@ -326,8 +326,10 @@
                 "languages": {
                     "type": "array",
                     "items": {
-                        "type": "string",
-                        "maxLength": 3
+                        "pattern": "^[a-z]{2,3}$",
+                        "maxLength": 3,
+                        "minLength": 2,
+                        "type": "string"
                     },
                     "uniqueItems": true,
                     "minItems": 1
