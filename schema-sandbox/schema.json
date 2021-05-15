@@ -89,6 +89,9 @@
         "repository-artifact": {
             "$ref": "#/definitions/url"
         },
+        "title": {
+            "type": "string"
+        },
         "url": {
             "$ref": "#/definitions/url"
         },
