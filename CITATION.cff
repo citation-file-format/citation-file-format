@@ -17,6 +17,10 @@ authors:
   - family-names: Baker
     given-names: James
     orcid: https://orcid.org/0000-0002-2682-6922
+  - family-names: Bliven
+    given-names: Spencer
+    orcid: https://orcid.org/0000-0002-1200-1698
+    email: spencer.bliven@gmail.com
 title: Citation File Format
 version: 1.1.0
 doi: 10.5281/zenodo.4751536
