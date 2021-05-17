@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "http://citation-file-format.github.io/1.2.0/schema",
+    "$id": "https://citation-file-format.github.io/1.2.0/schema",
     "title": "Citation File Format",
     "description": "A file with citation metadata for software or datasets",
     "additionalProperties": false,
