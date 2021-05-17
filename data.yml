@@ -1,8 +1,20 @@
 authors: 
   -
     name: "entity name"
-  -
-    given-names: "Given Names"
+    address: My address 44
+    alias: my alias
+    city: my city
+    country: NL
+    email: me@email.org
+    fax: "02323-3543-46256"
+    orcid: https://orcid.org/0123-4567-8901-234X
+    post-code: 12334 DVG
+    region: My region
+    tel: "1-34245-7346356-8467"
+    website: https://my.domain/website/
+    date-start: "2021-05-16"
+    date-end: "2021-05-16"
+    location: "somehwere"
   -
     address: My address 44
     affiliation: my affiliation
