@@ -508,7 +508,7 @@
                     "$ref": "#/definitions/region"
                 },
                 "tel": {
-                    "$ref": "#/definitions/email"
+                    "$ref": "#/definitions/tel"
                 },
                 "website": {
                     "$ref": "#/definitions/url"
@@ -517,6 +517,9 @@
         },
         "email": {
             "pattern": "^[\\S]+@[\\S]+\\.[\\S]{2,}$",
+            "type": "string"
+        },
+        "tel": {
             "type": "string"
         },
         "license": {
@@ -1019,7 +1022,7 @@
                     "$ref": "#/definitions/region"
                 },
                 "tel": {
-                    "$ref": "#/definitions/email"
+                    "$ref": "#/definitions/tel"
                 },
                 "website": {
                     "$ref": "#/definitions/url"
