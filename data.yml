@@ -25,7 +25,7 @@ commit: af34567890123458901234567890123456789012
 date-released: "2021-05-16"
 identifiers:
 - type: doi
-  value: "10.0000.1234/FIXME1234567890"
+  value: "10.0000.1234/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._[]()\\:;"
 - type: other
   value: some random other identifier
 - type: swh
@@ -34,6 +34,11 @@ identifiers:
   value: https://github.com/citation-file-format/citation-file-format
 license-url: http://r3s34archs0ft.com/eula
 message: "If you use this software, cite it using these metadata"
+preferred-citation:
+  type: article
+  title: my preferred citation
+  authors:
+  - name: my name
 references: 
   - 
     type: article
