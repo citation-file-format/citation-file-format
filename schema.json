@@ -509,6 +509,21 @@
             }
         },
         "license": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/_license-enum"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/_license-enum"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "_license-enum": {
             "$comment": "SPDX license list; releaseDate=2021-05-14; source=https://raw.githubusercontent.com/spdx/license-list-data/master/json/licenses.json",
             "enum": [
                 "0BSD",
