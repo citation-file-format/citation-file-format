@@ -1,11 +1,12 @@
 authors: 
   - name: "entity name"
   - given-names: "Given Names"
-cff-version: 1.1.0
+cff-version: 1.2.0
 commit: af34567890123458901234567890123456789012
+date-released: "2021-05-15"
 identifiers:
 - type: doi
-  value: "10.0000.1234/FIXME1234567890_-.[]();:/\\"
+  value: "10.0000.1234/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._[]()\\:;"
 - type: other
   value: some random other identifier
 - type: swh
@@ -14,6 +15,11 @@ identifiers:
   value: https://github.com/citation-file-format/citation-file-format
 license-url: http://r3s34archs0ft.com/eula
 message: "If you use this software, cite it using these metadata"
+preferred-citation:
+  type: article
+  title: my preferred citation
+  authors:
+  - name: my name
 references: 
   - 
     type: article
@@ -24,5 +30,7 @@ references:
 repository: https://github.com/citation-file-format/citation-file-format
 repository-artifact: https://files.pythonhosted.org/packages/0a/84/10507b69a07768bc16981184b4d147a0fc84b71fbf35c03bafc8dcced8e1/cffconvert-1.3.3.tar.gz
 repository-code: https://github.com/citation-file-format/citation-file-format
+title: "my software"
 type: software
 url: https://github.com/citation-file-format/citation-file-format
+version: "1.2.3"
