@@ -38,8 +38,7 @@
             }
         },
         "commit": {
-            "type": "string",
-            "description": "The commit SHA1 hash or revision number of the software version",
+            "$ref": "#/definitions/commit"
         },
         "contact": {
             "type": "array",
@@ -121,6 +120,10 @@
         "version"
     ],
     "definitions": {
+        "commit": {
+            "type": "string",
+            "description": "The commit SHA1 hash or revision number of the software version"
+        },
         "country": {
             "type": "string",
             "enum": [
@@ -1011,8 +1014,7 @@
                     "type": "string"
                 },
                 "commit": {
-                    "type": "string",
-                    "pattern": "^[a-f0-9]{7,40}$"
+                    "$ref": "#/definitions/commit"
                 },
                 "conference": {
                     "$ref": "#/definitions/entity"
