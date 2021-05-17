@@ -13,7 +13,8 @@
         },
         "message": {
             "type": "string",
-            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata"
+            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata",
+            "minLength": 1
         },
         "type": {
             "type": "string",
@@ -80,6 +81,9 @@
         "license-url": {
             "$ref": "#/definitions/url"
         },
+        "preferred-citation": {
+            "$ref": "#/definitions/reference"
+        },
         "repository": {
             "$ref": "#/definitions/url"
         },
@@ -90,12 +94,14 @@
             "$ref": "#/definitions/url"
         },
         "title": {
+            "minLength": 1,
             "type": "string"
         },
         "url": {
             "$ref": "#/definitions/url"
         },
         "version": {
+            "minLength": 1,
             "type": "string"
         },
         "references": {
@@ -116,13 +122,267 @@
         "version"
     ],
     "definitions": {
+        "country": {
+            "type": "string",
+            "enum": [
+                "AD",
+                "AE",
+                "AF",
+                "AG",
+                "AI",
+                "AL",
+                "AM",
+                "AO",
+                "AQ",
+                "AR",
+                "AS",
+                "AT",
+                "AU",
+                "AW",
+                "AX",
+                "AZ",
+                "BA",
+                "BB",
+                "BD",
+                "BE",
+                "BF",
+                "BG",
+                "BH",
+                "BI",
+                "BJ",
+                "BL",
+                "BM",
+                "BN",
+                "BO",
+                "BQ",
+                "BR",
+                "BS",
+                "BT",
+                "BV",
+                "BW",
+                "BY",
+                "BZ",
+                "CA",
+                "CC",
+                "CD",
+                "CF",
+                "CG",
+                "CH",
+                "CI",
+                "CK",
+                "CL",
+                "CM",
+                "CN",
+                "CO",
+                "CR",
+                "CU",
+                "CV",
+                "CW",
+                "CX",
+                "CY",
+                "CZ",
+                "DE",
+                "DJ",
+                "DK",
+                "DM",
+                "DO",
+                "DZ",
+                "EC",
+                "EE",
+                "EG",
+                "EH",
+                "ER",
+                "ES",
+                "ET",
+                "FI",
+                "FJ",
+                "FK",
+                "FM",
+                "FO",
+                "FR",
+                "GA",
+                "GB",
+                "GD",
+                "GE",
+                "GF",
+                "GG",
+                "GH",
+                "GI",
+                "GL",
+                "GM",
+                "GN",
+                "GP",
+                "GQ",
+                "GR",
+                "GS",
+                "GT",
+                "GU",
+                "GW",
+                "GY",
+                "HK",
+                "HM",
+                "HN",
+                "HR",
+                "HT",
+                "HU",
+                "ID",
+                "IE",
+                "IL",
+                "IM",
+                "IN",
+                "IO",
+                "IQ",
+                "IR",
+                "IS",
+                "IT",
+                "JE",
+                "JM",
+                "JO",
+                "JP",
+                "KE",
+                "KG",
+                "KH",
+                "KI",
+                "KM",
+                "KN",
+                "KP",
+                "KR",
+                "KW",
+                "KY",
+                "KZ",
+                "LA",
+                "LB",
+                "LC",
+                "LI",
+                "LK",
+                "LR",
+                "LS",
+                "LT",
+                "LU",
+                "LV",
+                "LY",
+                "MA",
+                "MC",
+                "MD",
+                "ME",
+                "MF",
+                "MG",
+                "MH",
+                "MK",
+                "ML",
+                "MM",
+                "MN",
+                "MO",
+                "MP",
+                "MQ",
+                "MR",
+                "MS",
+                "MT",
+                "MU",
+                "MV",
+                "MW",
+                "MX",
+                "MY",
+                "MZ",
+                "NA",
+                "NC",
+                "NE",
+                "NF",
+                "NG",
+                "NI",
+                "NL",
+                "NO",
+                "NP",
+                "NR",
+                "NU",
+                "NZ",
+                "OM",
+                "PA",
+                "PE",
+                "PF",
+                "PG",
+                "PH",
+                "PK",
+                "PL",
+                "PM",
+                "PN",
+                "PR",
+                "PS",
+                "PT",
+                "PW",
+                "PY",
+                "QA",
+                "RE",
+                "RO",
+                "RS",
+                "RU",
+                "RW",
+                "SA",
+                "SB",
+                "SC",
+                "SD",
+                "SE",
+                "SG",
+                "SH",
+                "SI",
+                "SJ",
+                "SK",
+                "SL",
+                "SM",
+                "SN",
+                "SO",
+                "SR",
+                "SS",
+                "ST",
+                "SV",
+                "SX",
+                "SY",
+                "SZ",
+                "TC",
+                "TD",
+                "TF",
+                "TG",
+                "TH",
+                "TJ",
+                "TK",
+                "TL",
+                "TM",
+                "TN",
+                "TO",
+                "TR",
+                "TT",
+                "TV",
+                "TW",
+                "TZ",
+                "UA",
+                "UG",
+                "UM",
+                "US",
+                "UY",
+                "UZ",
+                "VA",
+                "VC",
+                "VE",
+                "VG",
+                "VI",
+                "VN",
+                "VU",
+                "WF",
+                "WS",
+                "YE",
+                "YT",
+                "ZA",
+                "ZM",
+                "ZW"
+            ]
+        },
         "date": {
             "format": "date",
             "pattern": "[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}",
             "type": "string"
         },
         "doi": {
-            "pattern": "^10\\.\\d{4,9}(\\.\\d+)?/[A-Za-z0-9:/-_;\\.\\(\\)\\[\\]\\\\]+$",
+            "pattern": "^10\\.\\d{4,9}(\\.\\d+)?/[A-Za-z0-9:/_;\\-\\.\\(\\)\\[\\]\\\\]+$",
             "type": "string"
         },
         "identifier": {
@@ -188,12 +448,63 @@
                 }
             ]
         },
+        "orcid": {
+            "format": "uri",
+            "pattern": "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}",
+            "type": "string"
+        },
         "person": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
+                "address": {
+                    "type": "string"
+                },
+                "affiliation": {
+                    "type": "string"
+                },
+                "alias": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "country": {
+                    "$ref": "#/definitions/country"
+                },
+                "email": {
+                    "pattern": "^[\\S]+@[\\S]+\\.[\\S]{2,}$",
+                    "type": "string"
+                },
+                "family-names": {
+                    "type": "string"
+                },
+                "fax": {
+                    "type": "string"
+                },
                 "given-names": {
                     "type": "string"
+                },
+                "name-particle": {
+                    "type": "string"
+                },
+                "name-suffix": {
+                    "type": "string"
+                },
+                "orcid": {
+                    "$ref": "#/definitions/orcid"
+                },
+                "post-code": {
+                    "type": "string"
+                },
+                "region": {
+                    "type": "string"
+                },
+                "tel": {
+                    "type": "string"
+                },
+                "website": {
+                    "$ref": "#/definitions/url"
                 }
             }
         },
