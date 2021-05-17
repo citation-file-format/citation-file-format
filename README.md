@@ -420,7 +420,7 @@ ambiguity/misuse.
 
 **`number`**
 
-- If the work is a conference paper: E.g., the submission number of the paper
+- If the work is a conference paper: E.g., the submission number of the paper.
 - If the work is a grant: The grant number provided by the funding agency.
 - If the work is a work of art: E.g., the catalogue number provided by a museum holding the artwork.
 - If the work is a report: The report number of a report.
