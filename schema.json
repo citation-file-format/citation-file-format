@@ -1036,7 +1036,10 @@
                 "location": {
                     "type": "string"
                 }
-            }
+            },
+            "required": [
+                "name"
+            ]
         },
         "address": {
             "type": "string"
