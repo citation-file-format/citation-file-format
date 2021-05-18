@@ -32,8 +32,12 @@
             "uniqueItems": true,
             "items": {
                 "anyOf": [
-                    {"$ref": "#/definitions/person"},
-                    {"$ref": "#/definitions/entity"}
+                    {
+                        "$ref": "#/definitions/person"
+                    },
+                    {
+                        "$ref": "#/definitions/entity"
+                    }
                 ]
             }
         },
@@ -46,8 +50,12 @@
             "uniqueItems": true,
             "items": {
                 "anyOf": [
-                    {"$ref": "#/definitions/person"},
-                    {"$ref": "#/definitions/entity"}
+                    {
+                        "$ref": "#/definitions/person"
+                    },
+                    {
+                        "$ref": "#/definitions/entity"
+                    }
                 ]
             }
         },
@@ -460,29 +468,28 @@
             "additionalProperties": false,
             "properties": {
                 "address": {
-                    "type": "string"
+                    "$ref": "#/definitions/address"
                 },
                 "affiliation": {
                     "type": "string"
                 },
                 "alias": {
-                    "type": "string"
+                    "$ref": "#/definitions/alias"
                 },
                 "city": {
-                    "type": "string"
+                    "$ref": "#/definitions/city"
                 },
                 "country": {
                     "$ref": "#/definitions/country"
                 },
                 "email": {
-                    "pattern": "^[\\S]+@[\\S]+\\.[\\S]{2,}$",
-                    "type": "string"
+                    "$ref": "#/definitions/email"
                 },
                 "family-names": {
                     "type": "string"
                 },
                 "fax": {
-                    "type": "string"
+                    "$ref": "#/definitions/fax"
                 },
                 "given-names": {
                     "type": "string"
@@ -497,18 +504,25 @@
                     "$ref": "#/definitions/orcid"
                 },
                 "post-code": {
-                    "type": "string"
+                    "$ref": "#/definitions/post-code"
                 },
                 "region": {
-                    "type": "string"
+                    "$ref": "#/definitions/region"
                 },
                 "tel": {
-                    "type": "string"
+                    "$ref": "#/definitions/tel"
                 },
                 "website": {
                     "$ref": "#/definitions/url"
                 }
             }
+        },
+        "email": {
+            "pattern": "^[\\S]+@[\\S]+\\.[\\S]{2,}$",
+            "type": "string"
+        },
+        "tel": {
+            "type": "string"
         },
         "license": {
             "oneOf": [
@@ -996,8 +1010,71 @@
             "properties": {
                 "name": {
                     "type": "string"
+                },
+                "address": {
+                    "$ref": "#/definitions/address"
+                },
+                "alias": {
+                    "$ref": "#/definitions/alias"
+                },
+                "city": {
+                    "$ref": "#/definitions/city"
+                },
+                "country": {
+                    "$ref": "#/definitions/country"
+                },
+                "email": {
+                    "$ref": "#/definitions/email"
+                },
+                "fax": {
+                    "$ref": "#/definitions/fax"
+                },
+                "orcid": {
+                    "$ref": "#/definitions/orcid"
+                },
+                "post-code": {
+                    "$ref": "#/definitions/post-code"
+                },
+                "region": {
+                    "$ref": "#/definitions/region"
+                },
+                "tel": {
+                    "$ref": "#/definitions/tel"
+                },
+                "website": {
+                    "$ref": "#/definitions/url"
+                },
+                "date-start": {
+                    "$ref": "#/definitions/date"
+                },
+                "date-end": {
+                    "$ref": "#/definitions/date"
+                },
+                "location": {
+                    "type": "string"
                 }
-            }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "address": {
+            "type": "string"
+        },
+        "alias": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
+        "fax": {
+            "type": "string"
+        },
+        "post-code": {
+            "type": "string"
+        },
+        "region": {
+            "type": "string"
         },
         "reference": {
             "additionalProperties": false,
@@ -1011,8 +1088,12 @@
                 "authors": {
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/person"},
-                            {"$ref": "#/definitions/entity"}
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "$ref": "#/definitions/entity"
+                            }
                         ]
                     },
                     "minItems": 1,
@@ -1037,8 +1118,12 @@
                 "contact": {
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/person"},
-                            {"$ref": "#/definitions/entity"}
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "$ref": "#/definitions/entity"
+                            }
                         ]
                     },
                     "minItems": 1,
@@ -1089,20 +1174,27 @@
                 "editors": {
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/person"},
-                            {"$ref": "#/definitions/entity"}
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "$ref": "#/definitions/entity"
+                            }
                         ]
                     },
                     "minItems": 1,
                     "type": "array",
                     "uniqueItems": true
-
                 },
                 "editors-series": {
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/person"},
-                            {"$ref": "#/definitions/entity"}
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "$ref": "#/definitions/entity"
+                            }
                         ]
                     },
                     "minItems": 1,
@@ -1182,7 +1274,20 @@
                     "type": "string"
                 },
                 "month": {
-                    "enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
                     "type": "integer"
                 },
                 "nihmsid": {
@@ -1218,8 +1323,12 @@
                 "recipients": {
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/entity"},
-                            {"$ref": "#/definitions/person"}
+                            {
+                                "$ref": "#/definitions/entity"
+                            },
+                            {
+                                "$ref": "#/definitions/person"
+                            }
                         ]
                     },
                     "minItems": 1,
@@ -1244,8 +1353,12 @@
                 "senders": {
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/entity"},
-                            {"$ref": "#/definitions/person"}
+                            {
+                                "$ref": "#/definitions/entity"
+                            },
+                            {
+                                "$ref": "#/definitions/person"
+                            }
                         ]
                     },
                     "minItems": 1,
@@ -1275,8 +1388,12 @@
                 "translators": {
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/entity"},
-                            {"$ref": "#/definitions/person"}
+                            {
+                                "$ref": "#/definitions/entity"
+                            },
+                            {
+                                "$ref": "#/definitions/person"
+                            }
                         ]
                     },
                     "minItems": 1,
