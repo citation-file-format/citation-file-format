@@ -21,7 +21,7 @@ authors:
     given-names: Spencer
     orcid: https://orcid.org/0000-0002-1200-1698
     email: spencer.bliven@gmail.com
- - family-names: Willighagen
+  - family-names: Willighagen
     given-names: Egon
     orcid: https://orcid.org/0000-0001-7542-0286
 title: Citation File Format
