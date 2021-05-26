@@ -6,7 +6,7 @@
 The Citation File Format (CFF) is a human- and machine-readable file format in YAML 1.2 which provides
 citation metadata for software.  The main website for CFF can be found at https://citation-file-format.github.io.
 
-https://doi.org/10.5281/zenodo.1003149
+
 ## Table of contents
 
 * [Citation File Format (CFF)](#citation-file-format-cff)
