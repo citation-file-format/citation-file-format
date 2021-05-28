@@ -2,34 +2,16 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://citation-file-format.github.io/1.2.0/schema",
     "title": "Citation File Format",
-    "description": "A file with citation metadata for software or datasets",
+    "description": "A file with citation metadata for software or datasets.",
     "additionalProperties": false,
     "type": "object",
     "properties": {
-        "cff-version": {
-            "description": "The version of CFF used for providing the citation metadata",
-            "pattern": "^1\\.2\\.0$",
-            "type": "string"
-        },
-        "message": {
-            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata",
-            "minLength": 1,
-            "type": "string"
-        },
-        "type": {
-            "description": "Whether the citation metadata herein describe a software or a dataset",
-            "enum": [
-                "dataset",
-                "software"
-            ],
-            "type": "string"
-        },
         "abstract": {
-            "description": "A description of the software or dataset",
+            "description": "A description of the software or dataset.",
             "type": "string"
         },
         "authors": {
-            "description": "",
+            "description": "The author(s) of the software",
             "items": {
                 "anyOf": [
                     {
@@ -46,10 +28,28 @@
         },
         "commit": {
             "$ref": "#/definitions/commit",
-            "description": ""
+        },
+        "cff-version": {
+            "description": "The version of CFF used for providing the citation metadata.",
+            "examples": [
+                "1.2.0"
+            ],
+            "pattern": "^1\\.2\\.0$",
+            "type": "string"
+        },
+        "message": {
+            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata.",
+            "examples": [
+                "If you use this software, please cite it using the metadata from this file."
+                "Please cite the paper from the references when using this software.",
+                "Please cite this software using these metadata.",
+                "Please cite this software using the metadata from 'preferred-citation'.",
+            ],
+            "minLength": 1,
+            "type": "string"
         },
         "contact": {
-            "description": "",
+            "description": "The contact person, group, company, etc. for the software or dataset.",
             "items": {
                 "anyOf": [
                     {
@@ -66,14 +66,12 @@
         },
         "date-released": {
             "$ref": "#/definitions/date",
-            "description": ""
         },
         "doi": {
-            "$ref": "#/definitions/doi",
-            "description": ""
+            "$ref": "#/definitions/doi"
         },
         "identifiers": {
-            "description": "",
+            "description": "The persistent identifiers of the software or dataset (for identifiers that are not DOIs).",
             "items": {
                 "$ref": "#/definitions/identifier"
             },
@@ -82,7 +80,7 @@
             "uniqueItems": true
         },
         "keywords": {
-            "description": "",
+            "description": "Keywords that describe the work.",
             "items": {
                 "type": "string"
             },
@@ -92,41 +90,14 @@
         },
         "license": {
             "$ref": "#/definitions/license",
-            "description": ""
         },
         "license-url": {
             "$ref": "#/definitions/url",
-            "description": ""
+            "description": "The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List)."
         },
         "preferred-citation": {
             "$ref": "#/definitions/reference",
             "description": ""
-        },
-        "repository": {
-            "$ref": "#/definitions/url",
-            "description": ""
-        },
-        "repository-code": {
-            "$ref": "#/definitions/url",
-            "description": ""
-        },
-        "repository-artifact": {
-            "$ref": "#/definitions/url",
-            "description": ""
-        },
-        "title": {
-            "description": "",
-            "minLength": 1,
-            "type": "string"
-        },
-        "url": {
-            "$ref": "#/definitions/url",
-            "description": ""
-        },
-        "version": {
-            "description": "",
-            "minLength": 1,
-            "type": "string"
         },
         "references": {
             "description": "",
@@ -136,6 +107,40 @@
             "minItems": 1,
             "type": "array",
             "uniqueItems": true
+        },
+        "repository": {
+            "$ref": "#/definitions/url",
+            "description": "The URL to the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository)."
+        },
+        "repository-code": {
+            "$ref": "#/definitions/url",
+            "description": "The URL to the software in a source code repository."
+        },
+        "repository-artifact": {
+            "$ref": "#/definitions/url",
+            "description": "The URL to the software in a build artifact/binary/release repository."
+        },
+        "title": {
+            "description": "The name of the software or dataset.",
+            "minLength": 1,
+            "type": "string"
+        },
+        "type": {
+            "description": "Whether the citation metadata herein describe a software or a dataset.",
+            "enum": [
+                "dataset",
+                "software"
+            ],
+            "type": "string"
+        },
+        "url": {
+            "$ref": "#/definitions/url",
+            "description": "The URL to a landing page/website for the software or dataset."
+        },
+        "version": {
+            "description": "The version of the software or dataset.",
+            "minLength": 1,
+            "type": "string"
         }
     },
     "required": [
@@ -148,11 +153,12 @@
     ],
     "definitions": {
         "commit": {
-            "description": "The commit SHA1 hash or revision number of the software version",
+            "description": "The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.",
             "type": "string"
         },
         "country": {
-            "description": "",
+            "$comment": "A list of ISO 3166-1 alpha-2 codes can be found at https://en.wikipedia.org/wiki/ISO_3166-1",
+            "description": "The ISO 3166-1 alpha-2 country code for a country.",
             "enum": [
                 "AD",
                 "AE",
@@ -413,7 +419,10 @@
             "type": "string"
         },
         "doi": {
-            "description": "",
+            "description": "The DOI of the work (not the resolver URL, i.e., 10.5281/zenodo.1003150, not http://doi.org/10.5281/zenodo.1003150).",
+            "examples": [
+                "10.5281/zenodo.1003150"
+            ]
             "pattern": "^10\\.\\d{4,9}(\\.\\d+)?/[A-Za-z0-9:/_;\\-\\.\\(\\)\\[\\]\\\\]+$",
             "type": "string"
         },
@@ -573,7 +582,7 @@
             "type": "string"
         },
         "license": {
-            "description": "",
+            "description": "The SPDX license identifier under which a work is licensed."
             "oneOf": [
                 {
                     "$ref": "#/definitions/license-enum"
@@ -1138,15 +1147,15 @@
             "description": "",
             "properties": {
                 "abbreviation": {
-                    "description": "",
+                    "description": "The abbreviation of the work.",
                     "type": "string"
                 },
                 "abstract": {
-                    "description": "",
+                    "description": "The abstract of a work.",
                     "type": "string"
                 },
                 "authors": {
-                    "description": "",
+                    "description": "The author(s) of a work.",
                     "items": {
                         "anyOf": [
                             {
@@ -1162,27 +1171,26 @@
                     "uniqueItems": true
                 },
                 "collection-doi": {
-                    "description": "",
+                    "description": "The DOI of a collection containing the work.",
                     "$ref": "#/definitions/doi"
                 },
                 "collection-title": {
-                    "description": "",
+                    "description": "The title of a collection or proceedings.",
                     "type": "string"
                 },
                 "collection-type": {
-                    "description": "",
+                    "description": "The type of a collection.",
                     "type": "string"
                 },
                 "commit": {
-                    "description": "",
                     "$ref": "#/definitions/commit"
                 },
                 "conference": {
-                    "description": "",
+                    "description": "The conference where the work was presented.",
                     "$ref": "#/definitions/entity"
                 },
                 "contact": {
-                    "description": "",
+                    "description": "The contact person, group, company, etc. for a work.",
                     "items": {
                         "anyOf": [
                             {
@@ -1198,60 +1206,51 @@
                     "uniqueItems": true
                 },
                 "copyright": {
-                    "description": "",
+                    "description": "The copyright information pertaining to the work.",
                     "type": "string"
                 },
                 "data-type": {
-                    "description": "",
+                    "description": "The data type of a data set.",
                     "type": "string"
                 },
                 "database": {
-                    "description": "",
+                    "description": "The name of the database where a work was accessed/is stored.",
                     "type": "string"
                 },
                 "database-provider": {
                     "$ref": "#/definitions/entity",
-                    "description": ""
+                    "description": "The provider of the database where a work was accessed/is stored"
                 },
                 "date-accessed": {
                     "$ref": "#/definitions/date",
-                    "description": ""
+                    "description": "The date the work was accessed."
                 },
                 "date-downloaded": {
                     "$ref": "#/definitions/date",
-                    "description": ""
+                    "description": "The date the work has been downloaded."
                 },
                 "date-published": {
                     "$ref": "#/definitions/date",
-                    "description": ""
+                    "description": "The date the work has been published."
                 },
                 "date-released": {
                     "$ref": "#/definitions/date",
-                    "description": ""
+                    "description": "The date the work has been released."
                 },
                 "department": {
-                    "description": "",
+                    "description": "The department where a work has been produced.",
                     "type": "string"
                 },
                 "doi": {
                     "$ref": "#/definitions/doi",
-                    "description": ""
-                },
-                "identifiers": {
-                    "description": "",
-                    "items": {
-                        "$ref": "#/definitions/identifier"
-                    },
-                    "minItems": 1,
-                    "type": "array",
-                    "uniqueItems": true
+                    "description": "The DOI of the work."
                 },
                 "edition": {
-                    "description": "",
+                    "description": "The edition of the work.",
                     "type": "string"
                 },
                 "editors": {
-                    "description": "",
+                    "description": "The editor(s) of a work",
                     "items": {
                         "anyOf": [
                             {
@@ -1267,7 +1266,7 @@
                     "uniqueItems": true
                 },
                 "editors-series": {
-                    "description": "",
+                    "description": "The editor(s) of a series in which a work has been published",
                     "items": {
                         "anyOf": [
                             {
@@ -1283,53 +1282,62 @@
                     "uniqueItems": true
                 },
                 "end": {
-                    "description": "",
+                    "description": "The end page of the work.",
                     "type": "integer"
                 },
                 "entry": {
-                    "description": "",
+                    "description": "An entry in the collection that constitutes the work.",
                     "type": "string"
                 },
                 "filename": {
-                    "description": "",
+                    "description": "The name of the electronic file containing the work.",
                     "type": "string"
                 },
                 "format": {
-                    "description": "",
+                    "description": "The format in which a work is represented.",
                     "type": "string"
                 },
+                "identifiers": {
+                    "description": "The persistent identifier(s) of the work (for identifiers that are not DOIs).",
+                    "items": {
+                        "$ref": "#/definitions/identifier"
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
                 "institution": {
-                    "description": "",
+                    "description": "The institution where a work has been produced or published.",
                     "$ref": "#/definitions/entity"
                 },
                 "isbn": {
-                    "description": "",
+                    "description": "The ISBN of the work.",
                     "pattern": "^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$",
                     "type": "string"
                 },
                 "issn": {
-                    "description": "",
+                    "description": "The ISSN of the work",
                     "pattern": "^\\d{4}-\\d{3}[\\dxX]$",
                     "type": "string"
                 },
                 "issue": {
-                    "description": "",
+                    "description": "The issue of a periodical in which a work appeared.",
                     "type": "string"
                 },
                 "issue-date": {
-                    "description": "", 
+                    "description": "The publication date of the issue of a periodical in which a work appeared.",
                     "type": "string"
                 },
                 "issue-title": {
-                    "description": "",
+                    "description": "The name of the issue of a periodical in which the work appeared.",
                     "type": "string"
                 },
                 "journal": {
-                    "description": "",
+                    "description": "The name of the journal/magazine/newspaper/periodical where the work was published.",
                     "type": "string"
                 },
                 "keywords": {
-                    "description": "",
+                    "description": "Keywords pertaining to the work.",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1338,7 +1346,7 @@
                     "minItems": 1
                 },
                 "languages": {
-                    "description": "",
+                    "description": "The language identifier of the work according to ISO 639 language strings.",
                     "type": "array",
                     "items": {
                         "pattern": "^[a-z]{2,3}$",
@@ -1350,31 +1358,30 @@
                     "minItems": 1
                 },
                 "license": {
-                    "$ref": "#/definitions/license",
-                    "description": ""
+                    "$ref": "#/definitions/license"
                 },
                 "license-url": {
                     "$ref": "#/definitions/url",
-                    "description": ""
+                    "description": "The URL of the license text under which the work is licensed (only for non-standard licenses not included in the SPDX License List)."
                 },
                 "location": {
                     "$ref": "#/definitions/entity",
-                    "description": ""
+                    "description": "The location of the work."
                 },
                 "loc-start": {
-                    "description": "",
+                    "description": "The line of code in the file where the work starts.",
                     "type": "integer"
                 },
                 "loc-end": {
-                    "description": "",
+                    "description": "The line of code in the file where the work ends",
                     "type": "integer"
                 },
                 "medium": {
-                    "description": "",
+                    "description": "The medium of the work.",
                     "type": "string"
                 },
                 "month": {
-                    "description": "",
+                    "description": "The month in which a work has been published.",
                     "enum": [
                         1,
                         2,
@@ -1392,27 +1399,27 @@
                     "type": "integer"
                 },
                 "nihmsid": {
-                    "description": "",
+                    "description": "The NIHMSID of a work.",
                     "type": "string"
                 },
                 "notes": {
-                    "description": "",
+                    "description": "Notes pertaining to the work.",
                     "type": "string"
                 },
                 "number": {
-                    "description": "",
+                    "description": "The accession number for a work.",
                     "type": "string"
                 },
                 "number-volumes": {
-                    "description": "",
+                    "description": "The number of volumes making up the collection in which the work has been published.",
                     "type": "string"
                 },
                 "pages": {
-                    "description": "",
+                    "description": "The number of pages of the work.",
                     "type": "string"
                 },
                 "patent-states": {
-                    "description": "",
+                    "description": "The states for which a patent is granted.",
                     "items": {
                         "type": "string"
                     },
@@ -1421,16 +1428,16 @@
                     "uniqueItems": true
                 },
                 "pmcid": {
-                    "description": "",
+                    "description": "The PMCID of a work.",
                     "pattern": "^PMC[0-9]{7}$",
                     "type": "string"
                 },
                 "publisher": {
                     "$ref": "#/definitions/entity",
-                    "description": ""
+                    "description": "The publisher who has published the work."
                 },
                 "recipients": {
-                    "description": "",
+                    "description": "The recipient of a personal communication.",
                     "items": {
                         "anyOf": [
                             {
@@ -1447,26 +1454,26 @@
                 },
                 "repository": {
                     "$ref": "#/definitions/url",
-                    "description": ""
+                    "description": "The URL to the work in a repository (when the repository is neither a source code repository nor a build artifact repository)."
                 },
                 "repository-code": {
                     "$ref": "#/definitions/url",
-                    "description": ""
+                    "description": "The URL to the work in a source code repository."
                 },
                 "repository-artifact": {
                     "$ref": "#/definitions/url",
-                    "description": ""
+                    "description": "The URL to the work in a build artifact/binary/release repository."
                 },
                 "scope": {
-                    "description": "",
+                    "description": "The scope of the reference, e.g., the section of the work it adheres to.",
                     "type": "string"
                 },
                 "section": {
-                    "description": "",
+                    "description": "The section of a work that is referenced",
                     "type": "string"
                 },
                 "senders": {
-                    "description": "",
+                    "description": "The sender(s) of a personal communication.",
                     "items": {
                         "anyOf": [
                             {
@@ -1482,7 +1489,7 @@
                     "uniqueItems": true
                 },
                 "status": {
-                    "description": "",
+                    "description": "The publication status of the work.",
                     "enum": [
                         "abstract",
                         "advance-online",
@@ -1494,19 +1501,19 @@
                     "type": "string"
                 },
                 "start": {
-                    "description": "",
+                    "description": "The start page of the work.",
                     "type": "integer"
                 },
                 "title": {
-                    "description": "",
+                    "description": "The title of the work.",
                     "type": "string"
                 },
                 "thesis-type": {
-                    "description": "",
+                    "description": "The type of the thesis that is the work.",
                     "type": "string"
                 },
                 "translators": {
-                    "description": "",
+                    "description": "The translator of a work.",
                     "items": {
                         "anyOf": [
                             {
@@ -1522,7 +1529,7 @@
                     "uniqueItems": true
                 },
                 "type": {
-                    "description": "",
+                    "description": "The type of the work.",
                     "enum": [
                         "art",
                         "article",
@@ -1576,26 +1583,26 @@
                 },
                 "url": {
                     "$ref": "#/definitions/url",
-                    "description": ""
+                    "description": "The URL of the work."
                 },
                 "version": {
-                    "description": "",
+                    "description": "The version of the work.",
                     "type": "string"
                 },
                 "volume": {
-                    "description": "",
+                    "description": "The volume of the periodical in which a work appeared.",
                     "type": "string"
                 },
                 "volume-title": {
-                    "description": "",
+                    "description": "The title of the volume in which the work appeared.",
                     "type": "string"
                 },
                 "year": {
-                    "description": "",
+                    "description": "The year in which a work has been published.",
                     "type": "integer"
                 },
                 "year-original": {
-                    "description": "",
+                    "description": "The year of the original publication.",
                     "type": "integer"
                 }
             },
