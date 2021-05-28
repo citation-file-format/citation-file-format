@@ -47,12 +47,6 @@ To run tests, enter
 You should expect to see output similar to this:
 
 ```
-=========================================== test session starts ============================================
-platform linux -- Python 3.6.9, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- /home/daisycutter/github/citation-file-format/citation-file-format/env/bin/python3
-cachedir: .pytest_cache
-rootdir: ~/github/citation-file-format/citation-file-format, configfile: pytest.ini
-collected 39 items
-
 tests/validate.py::test[./tests/1.1.0/reference-article/CITATION.cff] PASSED                         [  2%]
 tests/validate.py::test[./tests/1.1.0/reference-art/CITATION.cff] PASSED                             [  5%]
 tests/validate.py::test[./tests/1.1.0/reference-book/CITATION.cff] PASSED                            [  7%]
