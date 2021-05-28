@@ -17,7 +17,7 @@ rejected as expected.
 You can install `cffconvert` and `pytest` using the `requirements.txt` file from
 this directory by entering the following command:
 
-    python3 -m pip install -r test/requirements.txt
+    python3 -m pip install -r requirements.txt
 
 in the root directory of the clone of this repository.
 
@@ -42,18 +42,28 @@ pass or fail - there are only two kinds of test scripts at the moment.
 
 To run tests, enter
 
-    pytest --verbose
+    pytest
 
-You should expect to see a similar output:
+You should expect to see output similar to this:
 
 ```
-test/1.0.3/fail-additional-key/test_fail_additional_key.py::test PASSED [  4%]
-test/1.0.3/key-complete/test_key_complete.py::test PASSED               [  9%]
-test/1.0.3/reference-art/test_reference_art.py::test PASSED             [ 13%]
+=========================================== test session starts ============================================
+platform linux -- Python 3.6.9, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- /home/daisycutter/github/citation-file-format/citation-file-format/env/bin/python3
+cachedir: .pytest_cache
+rootdir: ~/github/citation-file-format/citation-file-format, configfile: pytest.ini
+collected 39 items
+
+tests/validate.py::test[./tests/1.1.0/reference-article/CITATION.cff] PASSED                         [  2%]
+tests/validate.py::test[./tests/1.1.0/reference-art/CITATION.cff] PASSED                             [  5%]
+tests/validate.py::test[./tests/1.1.0/reference-book/CITATION.cff] PASSED                            [  7%]
+tests/validate.py::test[./tests/1.1.0/fail-bad-identifier-type-in-root/CITATION.cff] PASSED          [ 10%]
+
 ...
-...
-...
-test/1.1.0/identifiers-in-root/test_root_identifiers.py::test PASSED    [100%]
+
+tests/validate.py::test[./tests/1.0.3/reference-blog/CITATION.cff] PASSED                            [ 94%]
+tests/validate.py::test[./tests/1.0.3/software-container/CITATION.cff] PASSED                        [ 97%]
+tests/validate.py::test[./tests/1.0.3/software-executable/CITATION.cff] PASSED                       [100%]
+
 ```
 
 surrounded with some additional information messages.
