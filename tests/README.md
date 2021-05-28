@@ -34,7 +34,7 @@ Inside the directory for a specific test, there should be two files: a `CITATION
 file to be validated during the test, and a Python script to run the test. The name of
 the latter must start with `test_`, followed by some string with underscores, based on
 the name of the directory for this specific test (see existing tests for some examples).
-To create such Python script, you can copy and rename an existing test script from some
+To create such a Python script, you can copy and rename an existing test script from some
 other test directory, only paying attention whether it checks that validation should
 pass or fail - there are only two kinds of test scripts at the moment.
 
@@ -42,18 +42,18 @@ pass or fail - there are only two kinds of test scripts at the moment.
 
 To run tests, enter
 
-    pytest --verbose -c test/pytest.ini
+    pytest --verbose
 
 You should expect to see a similar output:
 
 ```
-test/1.0.3/fail-additional-key/test_fail_additional_key.py::test1 PASSED [  4%]
-test/1.0.3/key-complete/test_key_complete.py::test1 PASSED               [  9%]
-test/1.0.3/reference-art/test_reference_art.py::test1 PASSED             [ 13%]
+test/1.0.3/fail-additional-key/test_fail_additional_key.py::test PASSED [  4%]
+test/1.0.3/key-complete/test_key_complete.py::test PASSED               [  9%]
+test/1.0.3/reference-art/test_reference_art.py::test PASSED             [ 13%]
 ...
 ...
 ...
-test/1.1.0/identifiers-in-root/test_root_identifiers.py::test1 PASSED    [100%]
+test/1.1.0/identifiers-in-root/test_root_identifiers.py::test PASSED    [100%]
 ```
 
 surrounded with some additional information messages.
