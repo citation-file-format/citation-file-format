@@ -66,6 +66,7 @@
         },
         "date-released": {
             "$ref": "#/definitions/date",
+            "description": "The date the work has been released."
         },
         "doi": {
             "$ref": "#/definitions/doi"
@@ -97,10 +98,10 @@
         },
         "preferred-citation": {
             "$ref": "#/definitions/reference",
-            "description": ""
+            "description": "When citing the work, cite this reference instead."
         },
         "references": {
-            "description": "",
+            "description": "Reference(s) to other creative works.",
             "items": {
                 "$ref": "#/definitions/reference"
             },
@@ -126,7 +127,7 @@
             "type": "string"
         },
         "type": {
-            "description": "Whether the citation metadata herein describe a software or a dataset.",
+            "description": "The type of the work.",
             "enum": [
                 "dataset",
                 "software"
@@ -157,7 +158,7 @@
             "type": "string"
         },
         "country": {
-            "$comment": "A list of ISO 3166-1 alpha-2 codes can be found at https://en.wikipedia.org/wiki/ISO_3166-1",
+            "$comment": "ISO 3166-1 alpha-2 codes can be found at https://en.wikipedia.org/wiki/ISO_3166-1",
             "description": "The ISO 3166-1 alpha-2 country code for a country.",
             "enum": [
                 "AD",
@@ -413,7 +414,6 @@
             "type": "string"
         },
         "date": {
-            "description": "",
             "format": "date",
             "pattern": "[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}",
             "type": "string"
@@ -432,15 +432,13 @@
                     "additionalProperties": false,
                     "properties": {
                         "type": {
-                            "description": "",
                             "enum": [
                                 "doi"
                             ],
                             "type": "string"
                         },
                         "value": {
-                            "$ref": "#/definitions/doi",
-                            "description": ""
+                            "$ref": "#/definitions/doi"
                         }
                     },
                     "required": [
@@ -453,15 +451,13 @@
                     "additionalProperties": false,
                     "properties": {
                         "type": {
-                            "description": "",
                             "enum": [
                                 "url"
                             ],
                             "type": "string"
                         },
                         "value": {
-                            "$ref": "#/definitions/url",
-                            "description": ""
+                            "$ref": "#/definitions/url"
                         }
                     },
                     "required": [
@@ -474,7 +470,6 @@
                     "additionalProperties": false,
                     "properties": {
                         "type": {
-                            "description": "",
                             "enum": [
                                 "other",
                                 "swh"
@@ -482,7 +477,6 @@
                             "type": "string"
                         },
                         "value": {
-                            "description": "",
                             "minLength": 1,
                             "type": "string"
                         }
@@ -496,98 +490,99 @@
             ]
         },
         "orcid": {
-            "description": "",
+            "description": "Identifier for an author, see https://orcid.org.",
             "format": "uri",
             "pattern": "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}",
             "type": "string"
         },
         "person": {
-            "description": "",
+            "description": "A person.",
             "type": "object",
             "additionalProperties": false,
             "properties": {
                 "address": {
                     "$ref": "#/definitions/address",
-                    "description": ""
+                    "description": "The person's address."
                 },
                 "affiliation": {
                     "type": "string",
-                    "description": ""
+                    "description": "The person's affilitation."
                 },
                 "alias": {
                     "$ref": "#/definitions/alias",
-                    "description": ""
+                    "description": "The person's alias."
                 },
                 "city": {
                     "$ref": "#/definitions/city",
-                    "description": ""
+                    "description": "The person's city."
                 },
                 "country": {
                     "$ref": "#/definitions/country",
-                    "description": ""
+                    "description": "The person's country."
                 },
                 "email": {
                     "$ref": "#/definitions/email",
-                    "description": ""
+                    "description": "The person's email address."
                 },
                 "family-names": {
-                    "description": "",
+                    "description": "The person's family names.",
                     "type": "string"
                 },
                 "fax": {
                     "$ref": "#/definitions/fax",
-                    "description": ""
+                    "description": "The person's fax number."
                 },
                 "given-names": {
-                    "description": "",
+                    "description": "The person's given names.",
                     "type": "string"
                 },
                 "name-particle": {
-                    "description": "",
+                    "description": "The person's name-particle.",
                     "type": "string"
                 },
                 "name-suffix": {
-                    "description": "",
+                    "description": "The person's name-suffix.",
                     "type": "string"
                 },
                 "orcid": {
                     "$ref": "#/definitions/orcid",
-                    "description": ""
+                    "description": "The person's orcid."
                 },
                 "post-code": {
-                    "description": "",
+                    "description": "The person's post-code.",
                     "$ref": "#/definitions/post-code"
                 },
                 "region": {
                     "$ref": "#/definitions/region",
-                    "description": ""
+                    "description": "The person's region."
                 },
                 "tel": {
                     "$ref": "#/definitions/tel",
-                    "description": ""
+                    "description": "The person's phone number."
                 },
                 "website": {
                     "$ref": "#/definitions/url",
-                    "description": ""
+                    "description": "The person's website."
                 }
             }
         },
         "email": {
-            "description": "",
+            "description": "An email address.",
             "pattern": "^[\\S]+@[\\S]+\\.[\\S]{2,}$",
             "type": "string"
         },
         "tel": {
-            "description": "",
+            "description": "A phone number.",
             "type": "string"
         },
         "license": {
-            "description": "The SPDX license identifier under which a work is licensed."
+            "description": "An SPDX license identifier."
             "oneOf": [
                 {
                     "$ref": "#/definitions/license-enum"
                 },
                 {
+                    "$comment": "When there are multiple licenses, it is assumed their relationship is OR, not AND",
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/license-enum"
@@ -1064,53 +1059,68 @@
             "type": "string"
         },
         "entity": {
-            "description": "",
+            "description": "An entity",
             "additionalProperties": false,
             "properties": {
                 "name": {
+                    "description": "The entity's name.",
                     "type": "string"
                 },
                 "address": {
-                    "$ref": "#/definitions/address"
+                    "$ref": "#/definitions/address",
+                    "description": "The entity's address."
                 },
                 "alias": {
-                    "$ref": "#/definitions/alias"
+                    "$ref": "#/definitions/alias",
+                    "description": "The entity's alias."
                 },
                 "city": {
-                    "$ref": "#/definitions/city"
+                    "$ref": "#/definitions/city",
+                    "description": "The entity's city."
                 },
                 "country": {
-                    "$ref": "#/definitions/country"
+                    "$ref": "#/definitions/country",
+                    "description": "The entity's country."
                 },
                 "email": {
-                    "$ref": "#/definitions/email"
+                    "$ref": "#/definitions/email",
+                    "description": "The entity's email address."
                 },
                 "fax": {
-                    "$ref": "#/definitions/fax"
+                    "$ref": "#/definitions/fax",
+                    "description": "The entity's fax number."
                 },
                 "orcid": {
-                    "$ref": "#/definitions/orcid"
+                    "$ref": "#/definitions/orcid",
+                    "description": "The entity's orcid."
                 },
                 "post-code": {
-                    "$ref": "#/definitions/post-code"
+                    "$ref": "#/definitions/post-code",
+                    "description": "The entity's post code."
                 },
                 "region": {
-                    "$ref": "#/definitions/region"
+                    "$ref": "#/definitions/region",
+                    "description": "The entity's region."
                 },
                 "tel": {
-                    "$ref": "#/definitions/tel"
+                    "$ref": "#/definitions/tel",
+                    "description": "The entity's telephone number."
                 },
                 "website": {
-                    "$ref": "#/definitions/url"
+                    "$ref": "#/definitions/url",
+                    "description": "The entity's website."
                 },
                 "date-start": {
-                    "$ref": "#/definitions/date"
+                    "$ref": "#/definitions/date",
+                    "description": "The entity's starting date."
                 },
                 "date-end": {
-                    "$ref": "#/definitions/date"
+                    "$ref": "#/definitions/date",
+                    "description": "The entity's ending date."
                 },
                 "location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The entity's location."
                 }
             },
             "required": [
@@ -1119,32 +1129,32 @@
             "type": "object"
         },
         "address": {
-            "description": "",
+            "description": "An address.",
             "type": "string"
         },
         "alias": {
-            "description": "",
+            "description": "An alias.",
             "type": "string"
         },
         "city": {
-            "description": "",
+            "description": "A city",
             "type": "string"
         },
         "fax": {
-            "description": "",
+            "description": "A fax number.",
             "type": "string"
         },
         "post-code": {
-            "description": "",
+            "description": "A post code.",
             "type": "string"
         },
         "region": {
-            "description": "",
+            "description": "A region.",
             "type": "string"
         },
         "reference": {
             "additionalProperties": false,
-            "description": "",
+            "description": "A reference to a work.",
             "properties": {
                 "abbreviation": {
                     "description": "The abbreviation of the work.",
