@@ -7,29 +7,29 @@
     "type": "object",
     "properties": {
         "cff-version": {
-            "type": "string",
+            "description": "The version of CFF used for providing the citation metadata",
             "pattern": "^1\\.2\\.0$",
-            "description": "The version of CFF used for providing the citation metadata"
+            "type": "string"
         },
         "message": {
-            "type": "string",
             "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata",
-            "minLength": 1
+            "minLength": 1,
+            "type": "string"
         },
         "type": {
-            "type": "string",
+            "description": "Whether the citation metadata herein describe a software or a dataset",
             "enum": [
                 "dataset",
                 "software"
-            ]
+            ],
+            "type": "string"
         },
         "abstract": {
+            "description": "A description of the software or dataset",
             "type": "string"
         },
         "authors": {
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
+            "description": "",
             "items": {
                 "anyOf": [
                     {
@@ -39,15 +39,17 @@
                         "$ref": "#/definitions/entity"
                     }
                 ]
-            }
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
         },
         "commit": {
-            "$ref": "#/definitions/commit"
+            "$ref": "#/definitions/commit",
+            "description": ""
         },
         "contact": {
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
+            "description": "",
             "items": {
                 "anyOf": [
                     {
@@ -57,15 +59,21 @@
                         "$ref": "#/definitions/entity"
                     }
                 ]
-            }
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
         },
         "date-released": {
-            "$ref": "#/definitions/date"
+            "$ref": "#/definitions/date",
+            "description": ""
         },
         "doi": {
-            "$ref": "#/definitions/doi"
+            "$ref": "#/definitions/doi",
+            "description": ""
         },
         "identifiers": {
+            "description": "",
             "items": {
                 "$ref": "#/definitions/identifier"
             },
@@ -74,6 +82,7 @@
             "uniqueItems": true
         },
         "keywords": {
+            "description": "",
             "items": {
                 "type": "string"
             },
@@ -82,35 +91,45 @@
             "uniqueItems": true
         },
         "license": {
-            "$ref": "#/definitions/license"
+            "$ref": "#/definitions/license",
+            "description": ""
         },
         "license-url": {
-            "$ref": "#/definitions/url"
+            "$ref": "#/definitions/url",
+            "description": ""
         },
         "preferred-citation": {
-            "$ref": "#/definitions/reference"
+            "$ref": "#/definitions/reference",
+            "description": ""
         },
         "repository": {
-            "$ref": "#/definitions/url"
+            "$ref": "#/definitions/url",
+            "description": ""
         },
         "repository-code": {
-            "$ref": "#/definitions/url"
+            "$ref": "#/definitions/url",
+            "description": ""
         },
         "repository-artifact": {
-            "$ref": "#/definitions/url"
+            "$ref": "#/definitions/url",
+            "description": ""
         },
         "title": {
+            "description": "",
             "minLength": 1,
             "type": "string"
         },
         "url": {
-            "$ref": "#/definitions/url"
+            "$ref": "#/definitions/url",
+            "description": ""
         },
         "version": {
+            "description": "",
             "minLength": 1,
             "type": "string"
         },
         "references": {
+            "description": "",
             "items": {
                 "$ref": "#/definitions/reference"
             },
@@ -129,11 +148,11 @@
     ],
     "definitions": {
         "commit": {
-            "type": "string",
-            "description": "The commit SHA1 hash or revision number of the software version"
+            "description": "The commit SHA1 hash or revision number of the software version",
+            "type": "string"
         },
         "country": {
-            "type": "string",
+            "description": "",
             "enum": [
                 "AD",
                 "AE",
@@ -384,14 +403,17 @@
                 "ZA",
                 "ZM",
                 "ZW"
-            ]
+            ],
+            "type": "string"
         },
         "date": {
+            "description": "",
             "format": "date",
             "pattern": "[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}",
             "type": "string"
         },
         "doi": {
+            "description": "",
             "pattern": "^10\\.\\d{4,9}(\\.\\d+)?/[A-Za-z0-9:/_;\\-\\.\\(\\)\\[\\]\\\\]+$",
             "type": "string"
         },
@@ -401,13 +423,15 @@
                     "additionalProperties": false,
                     "properties": {
                         "type": {
+                            "description": "",
                             "enum": [
                                 "doi"
                             ],
                             "type": "string"
                         },
                         "value": {
-                            "$ref": "#/definitions/doi"
+                            "$ref": "#/definitions/doi",
+                            "description": ""
                         }
                     },
                     "required": [
@@ -420,13 +444,15 @@
                     "additionalProperties": false,
                     "properties": {
                         "type": {
+                            "description": "",
                             "enum": [
                                 "url"
                             ],
                             "type": "string"
                         },
                         "value": {
-                            "$ref": "#/definitions/url"
+                            "$ref": "#/definitions/url",
+                            "description": ""
                         }
                     },
                     "required": [
@@ -439,6 +465,7 @@
                     "additionalProperties": false,
                     "properties": {
                         "type": {
+                            "description": "",
                             "enum": [
                                 "other",
                                 "swh"
@@ -446,6 +473,7 @@
                             "type": "string"
                         },
                         "value": {
+                            "description": "",
                             "minLength": 1,
                             "type": "string"
                         }
@@ -459,72 +487,93 @@
             ]
         },
         "orcid": {
+            "description": "",
             "format": "uri",
             "pattern": "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}",
             "type": "string"
         },
         "person": {
+            "description": "",
             "type": "object",
             "additionalProperties": false,
             "properties": {
                 "address": {
-                    "$ref": "#/definitions/address"
+                    "$ref": "#/definitions/address",
+                    "description": ""
                 },
                 "affiliation": {
-                    "type": "string"
+                    "type": "string",
+                    "description": ""
                 },
                 "alias": {
-                    "$ref": "#/definitions/alias"
+                    "$ref": "#/definitions/alias",
+                    "description": ""
                 },
                 "city": {
-                    "$ref": "#/definitions/city"
+                    "$ref": "#/definitions/city",
+                    "description": ""
                 },
                 "country": {
-                    "$ref": "#/definitions/country"
+                    "$ref": "#/definitions/country",
+                    "description": ""
                 },
                 "email": {
-                    "$ref": "#/definitions/email"
+                    "$ref": "#/definitions/email",
+                    "description": ""
                 },
                 "family-names": {
+                    "description": "",
                     "type": "string"
                 },
                 "fax": {
-                    "$ref": "#/definitions/fax"
+                    "$ref": "#/definitions/fax",
+                    "description": ""
                 },
                 "given-names": {
+                    "description": "",
                     "type": "string"
                 },
                 "name-particle": {
+                    "description": "",
                     "type": "string"
                 },
                 "name-suffix": {
+                    "description": "",
                     "type": "string"
                 },
                 "orcid": {
-                    "$ref": "#/definitions/orcid"
+                    "$ref": "#/definitions/orcid",
+                    "description": ""
                 },
                 "post-code": {
+                    "description": "",
                     "$ref": "#/definitions/post-code"
                 },
                 "region": {
-                    "$ref": "#/definitions/region"
+                    "$ref": "#/definitions/region",
+                    "description": ""
                 },
                 "tel": {
-                    "$ref": "#/definitions/tel"
+                    "$ref": "#/definitions/tel",
+                    "description": ""
                 },
                 "website": {
-                    "$ref": "#/definitions/url"
+                    "$ref": "#/definitions/url",
+                    "description": ""
                 }
             }
         },
         "email": {
+            "description": "",
             "pattern": "^[\\S]+@[\\S]+\\.[\\S]{2,}$",
             "type": "string"
         },
         "tel": {
+            "description": "",
             "type": "string"
         },
         "license": {
+            "description": "",
             "oneOf": [
                 {
                     "$ref": "#/definitions/license-enum"
@@ -540,7 +589,8 @@
             ]
         },
         "license-enum": {
-            "$comment": "SPDX license list; releaseDate=2021-05-14; source=https://raw.githubusercontent.com/spdx/license-list-data/master/json/licenses.json",
+            "$comment": "Use https://github.com/citation-file-format/get-spdx-licenses to update this enum in the future",
+            "description": "SPDX license list; releaseDate=2021-05-14; source=https://raw.githubusercontent.com/spdx/license-list-data/master/json/licenses.json",
             "enum": [
                 "0BSD",
                 "AAL",
@@ -1005,7 +1055,7 @@
             "type": "string"
         },
         "entity": {
-            "type": "object",
+            "description": "",
             "additionalProperties": false,
             "properties": {
                 "name": {
@@ -1056,36 +1106,47 @@
             },
             "required": [
                 "name"
-            ]
+            ],
+            "type": "object"
         },
         "address": {
+            "description": "",
             "type": "string"
         },
         "alias": {
+            "description": "",
             "type": "string"
         },
         "city": {
+            "description": "",
             "type": "string"
         },
         "fax": {
+            "description": "",
             "type": "string"
         },
         "post-code": {
+            "description": "",
             "type": "string"
         },
         "region": {
+            "description": "",
             "type": "string"
         },
         "reference": {
             "additionalProperties": false,
+            "description": "",
             "properties": {
                 "abbreviation": {
+                    "description": "",
                     "type": "string"
                 },
                 "abstract": {
+                    "description": "",
                     "type": "string"
                 },
                 "authors": {
+                    "description": "",
                     "items": {
                         "anyOf": [
                             {
@@ -1101,21 +1162,27 @@
                     "uniqueItems": true
                 },
                 "collection-doi": {
+                    "description": "",
                     "$ref": "#/definitions/doi"
                 },
                 "collection-title": {
+                    "description": "",
                     "type": "string"
                 },
                 "collection-type": {
+                    "description": "",
                     "type": "string"
                 },
                 "commit": {
+                    "description": "",
                     "$ref": "#/definitions/commit"
                 },
                 "conference": {
+                    "description": "",
                     "$ref": "#/definitions/entity"
                 },
                 "contact": {
+                    "description": "",
                     "items": {
                         "anyOf": [
                             {
@@ -1131,36 +1198,47 @@
                     "uniqueItems": true
                 },
                 "copyright": {
+                    "description": "",
                     "type": "string"
                 },
                 "data-type": {
+                    "description": "",
                     "type": "string"
                 },
                 "database": {
+                    "description": "",
                     "type": "string"
                 },
                 "database-provider": {
-                    "$ref": "#/definitions/entity"
+                    "$ref": "#/definitions/entity",
+                    "description": ""
                 },
                 "date-accessed": {
-                    "$ref": "#/definitions/date"
+                    "$ref": "#/definitions/date",
+                    "description": ""
                 },
                 "date-downloaded": {
-                    "$ref": "#/definitions/date"
+                    "$ref": "#/definitions/date",
+                    "description": ""
                 },
                 "date-published": {
-                    "$ref": "#/definitions/date"
+                    "$ref": "#/definitions/date",
+                    "description": ""
                 },
                 "date-released": {
-                    "$ref": "#/definitions/date"
+                    "$ref": "#/definitions/date",
+                    "description": ""
                 },
                 "department": {
+                    "description": "",
                     "type": "string"
                 },
                 "doi": {
-                    "$ref": "#/definitions/doi"
+                    "$ref": "#/definitions/doi",
+                    "description": ""
                 },
                 "identifiers": {
+                    "description": "",
                     "items": {
                         "$ref": "#/definitions/identifier"
                     },
@@ -1169,9 +1247,11 @@
                     "uniqueItems": true
                 },
                 "edition": {
+                    "description": "",
                     "type": "string"
                 },
                 "editors": {
+                    "description": "",
                     "items": {
                         "anyOf": [
                             {
@@ -1187,6 +1267,7 @@
                     "uniqueItems": true
                 },
                 "editors-series": {
+                    "description": "",
                     "items": {
                         "anyOf": [
                             {
@@ -1202,41 +1283,53 @@
                     "uniqueItems": true
                 },
                 "end": {
+                    "description": "",
                     "type": "integer"
                 },
                 "entry": {
+                    "description": "",
                     "type": "string"
                 },
                 "filename": {
+                    "description": "",
                     "type": "string"
                 },
                 "format": {
+                    "description": "",
                     "type": "string"
                 },
                 "institution": {
+                    "description": "",
                     "$ref": "#/definitions/entity"
                 },
                 "isbn": {
+                    "description": "",
                     "pattern": "^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$",
                     "type": "string"
                 },
                 "issn": {
+                    "description": "",
                     "pattern": "^\\d{4}-\\d{3}[\\dxX]$",
                     "type": "string"
                 },
                 "issue": {
+                    "description": "",
                     "type": "string"
                 },
                 "issue-date": {
+                    "description": "", 
                     "type": "string"
                 },
                 "issue-title": {
+                    "description": "",
                     "type": "string"
                 },
                 "journal": {
+                    "description": "",
                     "type": "string"
                 },
                 "keywords": {
+                    "description": "",
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -1245,6 +1338,7 @@
                     "minItems": 1
                 },
                 "languages": {
+                    "description": "",
                     "type": "array",
                     "items": {
                         "pattern": "^[a-z]{2,3}$",
@@ -1256,24 +1350,31 @@
                     "minItems": 1
                 },
                 "license": {
-                    "$ref": "#/definitions/license"
+                    "$ref": "#/definitions/license",
+                    "description": ""
                 },
                 "license-url": {
-                    "$ref": "#/definitions/url"
+                    "$ref": "#/definitions/url",
+                    "description": ""
                 },
                 "location": {
-                    "$ref": "#/definitions/entity"
+                    "$ref": "#/definitions/entity",
+                    "description": ""
                 },
                 "loc-start": {
+                    "description": "",
                     "type": "integer"
                 },
                 "loc-end": {
+                    "description": "",
                     "type": "integer"
                 },
                 "medium": {
+                    "description": "",
                     "type": "string"
                 },
                 "month": {
+                    "description": "",
                     "enum": [
                         1,
                         2,
@@ -1291,21 +1392,27 @@
                     "type": "integer"
                 },
                 "nihmsid": {
+                    "description": "",
                     "type": "string"
                 },
                 "notes": {
+                    "description": "",
                     "type": "string"
                 },
                 "number": {
+                    "description": "",
                     "type": "string"
                 },
                 "number-volumes": {
+                    "description": "",
                     "type": "string"
                 },
                 "pages": {
+                    "description": "",
                     "type": "string"
                 },
                 "patent-states": {
+                    "description": "",
                     "items": {
                         "type": "string"
                     },
@@ -1314,13 +1421,16 @@
                     "uniqueItems": true
                 },
                 "pmcid": {
+                    "description": "",
                     "pattern": "^PMC[0-9]{7}$",
                     "type": "string"
                 },
                 "publisher": {
-                    "$ref": "#/definitions/entity"
+                    "$ref": "#/definitions/entity",
+                    "description": ""
                 },
                 "recipients": {
+                    "description": "",
                     "items": {
                         "anyOf": [
                             {
@@ -1336,21 +1446,27 @@
                     "uniqueItems": true
                 },
                 "repository": {
-                    "$ref": "#/definitions/url"
+                    "$ref": "#/definitions/url",
+                    "description": ""
                 },
                 "repository-code": {
-                    "$ref": "#/definitions/url"
+                    "$ref": "#/definitions/url",
+                    "description": ""
                 },
                 "repository-artifact": {
-                    "$ref": "#/definitions/url"
+                    "$ref": "#/definitions/url",
+                    "description": ""
                 },
                 "scope": {
+                    "description": "",
                     "type": "string"
                 },
                 "section": {
+                    "description": "",
                     "type": "string"
                 },
                 "senders": {
+                    "description": "",
                     "items": {
                         "anyOf": [
                             {
@@ -1366,6 +1482,7 @@
                     "uniqueItems": true
                 },
                 "status": {
+                    "description": "",
                     "enum": [
                         "abstract",
                         "advance-online",
@@ -1377,15 +1494,19 @@
                     "type": "string"
                 },
                 "start": {
+                    "description": "",
                     "type": "integer"
                 },
                 "title": {
+                    "description": "",
                     "type": "string"
                 },
                 "thesis-type": {
+                    "description": "",
                     "type": "string"
                 },
                 "translators": {
+                    "description": "",
                     "items": {
                         "anyOf": [
                             {
@@ -1401,7 +1522,7 @@
                     "uniqueItems": true
                 },
                 "type": {
-                    "type": "string",
+                    "description": "",
                     "enum": [
                         "art",
                         "article",
@@ -1450,24 +1571,31 @@
                         "unpublished",
                         "video",
                         "website"
-                    ]
+                    ],
+                    "type": "string"
                 },
                 "url": {
-                    "$ref": "#/definitions/url"
+                    "$ref": "#/definitions/url",
+                    "description": ""
                 },
                 "version": {
+                    "description": "",
                     "type": "string"
                 },
                 "volume": {
+                    "description": "",
                     "type": "string"
                 },
                 "volume-title": {
+                    "description": "",
                     "type": "string"
                 },
                 "year": {
+                    "description": "",
                     "type": "integer"
                 },
                 "year-original": {
+                    "description": "",
                     "type": "integer"
                 }
             },
