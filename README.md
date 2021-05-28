@@ -1,5 +1,5 @@
 # Citation File Format (CFF)
-
+[![Build Status](https://github.com/citation-file-format/citation-file-format/workflows/testing/badge.svg)](https://github.com/citation-file-format/citation-file-format/actions/workflows/testing.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
@@ -420,7 +420,7 @@ ambiguity/misuse.
 
 **`number`**
 
-- If the work is a conference paper: E.g., the submission number of the paper
+- If the work is a conference paper: E.g., the submission number of the paper.
 - If the work is a grant: The grant number provided by the funding agency.
 - If the work is a work of art: E.g., the catalogue number provided by a museum holding the artwork.
 - If the work is a report: The report number of a report.

@@ -26,7 +26,7 @@ acceptance, particularly as they are the standard for other digital products
 such as publications.
 
 Furthermore, DOIs should point to a "unique, specific software version"
-[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12. Also it is recommended [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 13 that:
+([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12). Also it is recommended ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 13) that:
 
 > the [DOI] should resolve to a persistent landing page that contains metadata
 and a link to the software itself, rather than directly to the source code files,
@@ -107,7 +107,7 @@ company’s product number or a link to a website that allows the software be
 purchased." [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 13. Furthermore, "if the version number and
 release date are not available, the download date can be used. Similarly, the
 contact name/email is an alternative to the location/repository."
-[Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 7
+([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 7).
 
 Hence, for closed-source software without a DOI for which the version number
 and release date cannot be determined, a `CITATION.cff` file could look like

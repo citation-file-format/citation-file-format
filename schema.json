@@ -1,0 +1,1487 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://citation-file-format.github.io/1.2.0/schema",
+    "title": "Citation File Format",
+    "description": "A file with citation metadata for software or datasets",
+    "additionalProperties": false,
+    "type": "object",
+    "properties": {
+        "cff-version": {
+            "type": "string",
+            "pattern": "^1\\.2\\.0$",
+            "description": "The version of CFF used for providing the citation metadata"
+        },
+        "message": {
+            "type": "string",
+            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata",
+            "minLength": 1
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "dataset",
+                "software"
+            ]
+        },
+        "abstract": {
+            "type": "string"
+        },
+        "authors": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/person"
+                    },
+                    {
+                        "$ref": "#/definitions/entity"
+                    }
+                ]
+            }
+        },
+        "commit": {
+            "$ref": "#/definitions/commit"
+        },
+        "contact": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/person"
+                    },
+                    {
+                        "$ref": "#/definitions/entity"
+                    }
+                ]
+            }
+        },
+        "date-released": {
+            "$ref": "#/definitions/date"
+        },
+        "doi": {
+            "$ref": "#/definitions/doi"
+        },
+        "identifiers": {
+            "items": {
+                "$ref": "#/definitions/identifier"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+        },
+        "keywords": {
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+        },
+        "license": {
+            "$ref": "#/definitions/license"
+        },
+        "license-url": {
+            "$ref": "#/definitions/url"
+        },
+        "preferred-citation": {
+            "$ref": "#/definitions/reference"
+        },
+        "repository": {
+            "$ref": "#/definitions/url"
+        },
+        "repository-code": {
+            "$ref": "#/definitions/url"
+        },
+        "repository-artifact": {
+            "$ref": "#/definitions/url"
+        },
+        "title": {
+            "minLength": 1,
+            "type": "string"
+        },
+        "url": {
+            "$ref": "#/definitions/url"
+        },
+        "version": {
+            "minLength": 1,
+            "type": "string"
+        },
+        "references": {
+            "items": {
+                "$ref": "#/definitions/reference"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "authors",
+        "date-released",
+        "cff-version",
+        "message",
+        "title",
+        "version"
+    ],
+    "definitions": {
+        "commit": {
+            "type": "string",
+            "description": "The commit SHA1 hash or revision number of the software version"
+        },
+        "country": {
+            "type": "string",
+            "enum": [
+                "AD",
+                "AE",
+                "AF",
+                "AG",
+                "AI",
+                "AL",
+                "AM",
+                "AO",
+                "AQ",
+                "AR",
+                "AS",
+                "AT",
+                "AU",
+                "AW",
+                "AX",
+                "AZ",
+                "BA",
+                "BB",
+                "BD",
+                "BE",
+                "BF",
+                "BG",
+                "BH",
+                "BI",
+                "BJ",
+                "BL",
+                "BM",
+                "BN",
+                "BO",
+                "BQ",
+                "BR",
+                "BS",
+                "BT",
+                "BV",
+                "BW",
+                "BY",
+                "BZ",
+                "CA",
+                "CC",
+                "CD",
+                "CF",
+                "CG",
+                "CH",
+                "CI",
+                "CK",
+                "CL",
+                "CM",
+                "CN",
+                "CO",
+                "CR",
+                "CU",
+                "CV",
+                "CW",
+                "CX",
+                "CY",
+                "CZ",
+                "DE",
+                "DJ",
+                "DK",
+                "DM",
+                "DO",
+                "DZ",
+                "EC",
+                "EE",
+                "EG",
+                "EH",
+                "ER",
+                "ES",
+                "ET",
+                "FI",
+                "FJ",
+                "FK",
+                "FM",
+                "FO",
+                "FR",
+                "GA",
+                "GB",
+                "GD",
+                "GE",
+                "GF",
+                "GG",
+                "GH",
+                "GI",
+                "GL",
+                "GM",
+                "GN",
+                "GP",
+                "GQ",
+                "GR",
+                "GS",
+                "GT",
+                "GU",
+                "GW",
+                "GY",
+                "HK",
+                "HM",
+                "HN",
+                "HR",
+                "HT",
+                "HU",
+                "ID",
+                "IE",
+                "IL",
+                "IM",
+                "IN",
+                "IO",
+                "IQ",
+                "IR",
+                "IS",
+                "IT",
+                "JE",
+                "JM",
+                "JO",
+                "JP",
+                "KE",
+                "KG",
+                "KH",
+                "KI",
+                "KM",
+                "KN",
+                "KP",
+                "KR",
+                "KW",
+                "KY",
+                "KZ",
+                "LA",
+                "LB",
+                "LC",
+                "LI",
+                "LK",
+                "LR",
+                "LS",
+                "LT",
+                "LU",
+                "LV",
+                "LY",
+                "MA",
+                "MC",
+                "MD",
+                "ME",
+                "MF",
+                "MG",
+                "MH",
+                "MK",
+                "ML",
+                "MM",
+                "MN",
+                "MO",
+                "MP",
+                "MQ",
+                "MR",
+                "MS",
+                "MT",
+                "MU",
+                "MV",
+                "MW",
+                "MX",
+                "MY",
+                "MZ",
+                "NA",
+                "NC",
+                "NE",
+                "NF",
+                "NG",
+                "NI",
+                "NL",
+                "NO",
+                "NP",
+                "NR",
+                "NU",
+                "NZ",
+                "OM",
+                "PA",
+                "PE",
+                "PF",
+                "PG",
+                "PH",
+                "PK",
+                "PL",
+                "PM",
+                "PN",
+                "PR",
+                "PS",
+                "PT",
+                "PW",
+                "PY",
+                "QA",
+                "RE",
+                "RO",
+                "RS",
+                "RU",
+                "RW",
+                "SA",
+                "SB",
+                "SC",
+                "SD",
+                "SE",
+                "SG",
+                "SH",
+                "SI",
+                "SJ",
+                "SK",
+                "SL",
+                "SM",
+                "SN",
+                "SO",
+                "SR",
+                "SS",
+                "ST",
+                "SV",
+                "SX",
+                "SY",
+                "SZ",
+                "TC",
+                "TD",
+                "TF",
+                "TG",
+                "TH",
+                "TJ",
+                "TK",
+                "TL",
+                "TM",
+                "TN",
+                "TO",
+                "TR",
+                "TT",
+                "TV",
+                "TW",
+                "TZ",
+                "UA",
+                "UG",
+                "UM",
+                "US",
+                "UY",
+                "UZ",
+                "VA",
+                "VC",
+                "VE",
+                "VG",
+                "VI",
+                "VN",
+                "VU",
+                "WF",
+                "WS",
+                "YE",
+                "YT",
+                "ZA",
+                "ZM",
+                "ZW"
+            ]
+        },
+        "date": {
+            "format": "date",
+            "pattern": "[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}",
+            "type": "string"
+        },
+        "doi": {
+            "pattern": "^10\\.\\d{4,9}(\\.\\d+)?/[A-Za-z0-9:/_;\\-\\.\\(\\)\\[\\]\\\\]+$",
+            "type": "string"
+        },
+        "identifier": {
+            "anyOf": [
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "doi"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "$ref": "#/definitions/doi"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "url"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "$ref": "#/definitions/url"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "other",
+                                "swh"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ],
+                    "type": "object"
+                }
+            ]
+        },
+        "orcid": {
+            "format": "uri",
+            "pattern": "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}",
+            "type": "string"
+        },
+        "person": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "address": {
+                    "$ref": "#/definitions/address"
+                },
+                "affiliation": {
+                    "type": "string"
+                },
+                "alias": {
+                    "$ref": "#/definitions/alias"
+                },
+                "city": {
+                    "$ref": "#/definitions/city"
+                },
+                "country": {
+                    "$ref": "#/definitions/country"
+                },
+                "email": {
+                    "$ref": "#/definitions/email"
+                },
+                "family-names": {
+                    "type": "string"
+                },
+                "fax": {
+                    "$ref": "#/definitions/fax"
+                },
+                "given-names": {
+                    "type": "string"
+                },
+                "name-particle": {
+                    "type": "string"
+                },
+                "name-suffix": {
+                    "type": "string"
+                },
+                "orcid": {
+                    "$ref": "#/definitions/orcid"
+                },
+                "post-code": {
+                    "$ref": "#/definitions/post-code"
+                },
+                "region": {
+                    "$ref": "#/definitions/region"
+                },
+                "tel": {
+                    "$ref": "#/definitions/tel"
+                },
+                "website": {
+                    "$ref": "#/definitions/url"
+                }
+            }
+        },
+        "email": {
+            "pattern": "^[\\S]+@[\\S]+\\.[\\S]{2,}$",
+            "type": "string"
+        },
+        "tel": {
+            "type": "string"
+        },
+        "license": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/license-enum"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/license-enum"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                }
+            ]
+        },
+        "license-enum": {
+            "$comment": "SPDX license list; releaseDate=2021-05-14; source=https://raw.githubusercontent.com/spdx/license-list-data/master/json/licenses.json",
+            "enum": [
+                "0BSD",
+                "AAL",
+                "Abstyles",
+                "Adobe-2006",
+                "Adobe-Glyph",
+                "ADSL",
+                "AFL-1.1",
+                "AFL-1.2",
+                "AFL-2.0",
+                "AFL-2.1",
+                "AFL-3.0",
+                "Afmparse",
+                "AGPL-1.0",
+                "AGPL-1.0-only",
+                "AGPL-1.0-or-later",
+                "AGPL-3.0",
+                "AGPL-3.0-only",
+                "AGPL-3.0-or-later",
+                "Aladdin",
+                "AMDPLPA",
+                "AML",
+                "AMPAS",
+                "ANTLR-PD",
+                "ANTLR-PD-fallback",
+                "Apache-1.0",
+                "Apache-1.1",
+                "Apache-2.0",
+                "APAFML",
+                "APL-1.0",
+                "APSL-1.0",
+                "APSL-1.1",
+                "APSL-1.2",
+                "APSL-2.0",
+                "Artistic-1.0",
+                "Artistic-1.0-cl8",
+                "Artistic-1.0-Perl",
+                "Artistic-2.0",
+                "Bahyph",
+                "Barr",
+                "Beerware",
+                "BitTorrent-1.0",
+                "BitTorrent-1.1",
+                "blessing",
+                "BlueOak-1.0.0",
+                "Borceux",
+                "BSD-1-Clause",
+                "BSD-2-Clause",
+                "BSD-2-Clause-FreeBSD",
+                "BSD-2-Clause-NetBSD",
+                "BSD-2-Clause-Patent",
+                "BSD-2-Clause-Views",
+                "BSD-3-Clause",
+                "BSD-3-Clause-Attribution",
+                "BSD-3-Clause-Clear",
+                "BSD-3-Clause-LBNL",
+                "BSD-3-Clause-Modification",
+                "BSD-3-Clause-No-Nuclear-License",
+                "BSD-3-Clause-No-Nuclear-License-2014",
+                "BSD-3-Clause-No-Nuclear-Warranty",
+                "BSD-3-Clause-Open-MPI",
+                "BSD-4-Clause",
+                "BSD-4-Clause-Shortened",
+                "BSD-4-Clause-UC",
+                "BSD-Protection",
+                "BSD-Source-Code",
+                "BSL-1.0",
+                "BUSL-1.1",
+                "bzip2-1.0.5",
+                "bzip2-1.0.6",
+                "C-UDA-1.0",
+                "CAL-1.0",
+                "CAL-1.0-Combined-Work-Exception",
+                "Caldera",
+                "CATOSL-1.1",
+                "CC-BY-1.0",
+                "CC-BY-2.0",
+                "CC-BY-2.5",
+                "CC-BY-3.0",
+                "CC-BY-3.0-AT",
+                "CC-BY-3.0-US",
+                "CC-BY-4.0",
+                "CC-BY-NC-1.0",
+                "CC-BY-NC-2.0",
+                "CC-BY-NC-2.5",
+                "CC-BY-NC-3.0",
+                "CC-BY-NC-4.0",
+                "CC-BY-NC-ND-1.0",
+                "CC-BY-NC-ND-2.0",
+                "CC-BY-NC-ND-2.5",
+                "CC-BY-NC-ND-3.0",
+                "CC-BY-NC-ND-3.0-IGO",
+                "CC-BY-NC-ND-4.0",
+                "CC-BY-NC-SA-1.0",
+                "CC-BY-NC-SA-2.0",
+                "CC-BY-NC-SA-2.5",
+                "CC-BY-NC-SA-3.0",
+                "CC-BY-NC-SA-4.0",
+                "CC-BY-ND-1.0",
+                "CC-BY-ND-2.0",
+                "CC-BY-ND-2.5",
+                "CC-BY-ND-3.0",
+                "CC-BY-ND-4.0",
+                "CC-BY-SA-1.0",
+                "CC-BY-SA-2.0",
+                "CC-BY-SA-2.0-UK",
+                "CC-BY-SA-2.1-JP",
+                "CC-BY-SA-2.5",
+                "CC-BY-SA-3.0",
+                "CC-BY-SA-3.0-AT",
+                "CC-BY-SA-4.0",
+                "CC-PDDC",
+                "CC0-1.0",
+                "CDDL-1.0",
+                "CDDL-1.1",
+                "CDL-1.0",
+                "CDLA-Permissive-1.0",
+                "CDLA-Sharing-1.0",
+                "CECILL-1.0",
+                "CECILL-1.1",
+                "CECILL-2.0",
+                "CECILL-2.1",
+                "CECILL-B",
+                "CECILL-C",
+                "CERN-OHL-1.1",
+                "CERN-OHL-1.2",
+                "CERN-OHL-P-2.0",
+                "CERN-OHL-S-2.0",
+                "CERN-OHL-W-2.0",
+                "ClArtistic",
+                "CNRI-Jython",
+                "CNRI-Python",
+                "CNRI-Python-GPL-Compatible",
+                "Condor-1.1",
+                "copyleft-next-0.3.0",
+                "copyleft-next-0.3.1",
+                "CPAL-1.0",
+                "CPL-1.0",
+                "CPOL-1.02",
+                "Crossword",
+                "CrystalStacker",
+                "CUA-OPL-1.0",
+                "Cube",
+                "curl",
+                "D-FSL-1.0",
+                "diffmark",
+                "DOC",
+                "Dotseqn",
+                "DRL-1.0",
+                "DSDP",
+                "dvipdfm",
+                "ECL-1.0",
+                "ECL-2.0",
+                "eCos-2.0",
+                "EFL-1.0",
+                "EFL-2.0",
+                "eGenix",
+                "Entessa",
+                "EPICS",
+                "EPL-1.0",
+                "EPL-2.0",
+                "ErlPL-1.1",
+                "etalab-2.0",
+                "EUDatagrid",
+                "EUPL-1.0",
+                "EUPL-1.1",
+                "EUPL-1.2",
+                "Eurosym",
+                "Fair",
+                "Frameworx-1.0",
+                "FreeBSD-DOC",
+                "FreeImage",
+                "FSFAP",
+                "FSFUL",
+                "FSFULLR",
+                "FTL",
+                "GD",
+                "GFDL-1.1",
+                "GFDL-1.1-invariants-only",
+                "GFDL-1.1-invariants-or-later",
+                "GFDL-1.1-no-invariants-only",
+                "GFDL-1.1-no-invariants-or-later",
+                "GFDL-1.1-only",
+                "GFDL-1.1-or-later",
+                "GFDL-1.2",
+                "GFDL-1.2-invariants-only",
+                "GFDL-1.2-invariants-or-later",
+                "GFDL-1.2-no-invariants-only",
+                "GFDL-1.2-no-invariants-or-later",
+                "GFDL-1.2-only",
+                "GFDL-1.2-or-later",
+                "GFDL-1.3",
+                "GFDL-1.3-invariants-only",
+                "GFDL-1.3-invariants-or-later",
+                "GFDL-1.3-no-invariants-only",
+                "GFDL-1.3-no-invariants-or-later",
+                "GFDL-1.3-only",
+                "GFDL-1.3-or-later",
+                "Giftware",
+                "GL2PS",
+                "Glide",
+                "Glulxe",
+                "GLWTPL",
+                "gnuplot",
+                "GPL-1.0",
+                "GPL-1.0-only",
+                "GPL-1.0-or-later",
+                "GPL-1.0+",
+                "GPL-2.0",
+                "GPL-2.0-only",
+                "GPL-2.0-or-later",
+                "GPL-2.0-with-autoconf-exception",
+                "GPL-2.0-with-bison-exception",
+                "GPL-2.0-with-classpath-exception",
+                "GPL-2.0-with-font-exception",
+                "GPL-2.0-with-GCC-exception",
+                "GPL-2.0+",
+                "GPL-3.0",
+                "GPL-3.0-only",
+                "GPL-3.0-or-later",
+                "GPL-3.0-with-autoconf-exception",
+                "GPL-3.0-with-GCC-exception",
+                "GPL-3.0+",
+                "gSOAP-1.3b",
+                "HaskellReport",
+                "Hippocratic-2.1",
+                "HPND",
+                "HPND-sell-variant",
+                "HTMLTIDY",
+                "IBM-pibs",
+                "ICU",
+                "IJG",
+                "ImageMagick",
+                "iMatix",
+                "Imlib2",
+                "Info-ZIP",
+                "Intel",
+                "Intel-ACPI",
+                "Interbase-1.0",
+                "IPA",
+                "IPL-1.0",
+                "ISC",
+                "JasPer-2.0",
+                "JPNIC",
+                "JSON",
+                "LAL-1.2",
+                "LAL-1.3",
+                "Latex2e",
+                "Leptonica",
+                "LGPL-2.0",
+                "LGPL-2.0-only",
+                "LGPL-2.0-or-later",
+                "LGPL-2.0+",
+                "LGPL-2.1",
+                "LGPL-2.1-only",
+                "LGPL-2.1-or-later",
+                "LGPL-2.1+",
+                "LGPL-3.0",
+                "LGPL-3.0-only",
+                "LGPL-3.0-or-later",
+                "LGPL-3.0+",
+                "LGPLLR",
+                "Libpng",
+                "libpng-2.0",
+                "libselinux-1.0",
+                "libtiff",
+                "LiLiQ-P-1.1",
+                "LiLiQ-R-1.1",
+                "LiLiQ-Rplus-1.1",
+                "Linux-OpenIB",
+                "LPL-1.0",
+                "LPL-1.02",
+                "LPPL-1.0",
+                "LPPL-1.1",
+                "LPPL-1.2",
+                "LPPL-1.3a",
+                "LPPL-1.3c",
+                "MakeIndex",
+                "MirOS",
+                "MIT",
+                "MIT-0",
+                "MIT-advertising",
+                "MIT-CMU",
+                "MIT-enna",
+                "MIT-feh",
+                "MIT-Modern-Variant",
+                "MIT-open-group",
+                "MITNFA",
+                "Motosoto",
+                "mpich2",
+                "MPL-1.0",
+                "MPL-1.1",
+                "MPL-2.0",
+                "MPL-2.0-no-copyleft-exception",
+                "MS-PL",
+                "MS-RL",
+                "MTLL",
+                "MulanPSL-1.0",
+                "MulanPSL-2.0",
+                "Multics",
+                "Mup",
+                "NAIST-2003",
+                "NASA-1.3",
+                "Naumen",
+                "NBPL-1.0",
+                "NCGL-UK-2.0",
+                "NCSA",
+                "Net-SNMP",
+                "NetCDF",
+                "Newsletr",
+                "NGPL",
+                "NIST-PD",
+                "NIST-PD-fallback",
+                "NLOD-1.0",
+                "NLPL",
+                "Nokia",
+                "NOSL",
+                "Noweb",
+                "NPL-1.0",
+                "NPL-1.1",
+                "NPOSL-3.0",
+                "NRL",
+                "NTP",
+                "NTP-0",
+                "Nunit",
+                "O-UDA-1.0",
+                "OCCT-PL",
+                "OCLC-2.0",
+                "ODbL-1.0",
+                "ODC-By-1.0",
+                "OFL-1.0",
+                "OFL-1.0-no-RFN",
+                "OFL-1.0-RFN",
+                "OFL-1.1",
+                "OFL-1.1-no-RFN",
+                "OFL-1.1-RFN",
+                "OGC-1.0",
+                "OGDL-Taiwan-1.0",
+                "OGL-Canada-2.0",
+                "OGL-UK-1.0",
+                "OGL-UK-2.0",
+                "OGL-UK-3.0",
+                "OGTSL",
+                "OLDAP-1.1",
+                "OLDAP-1.2",
+                "OLDAP-1.3",
+                "OLDAP-1.4",
+                "OLDAP-2.0",
+                "OLDAP-2.0.1",
+                "OLDAP-2.1",
+                "OLDAP-2.2",
+                "OLDAP-2.2.1",
+                "OLDAP-2.2.2",
+                "OLDAP-2.3",
+                "OLDAP-2.4",
+                "OLDAP-2.5",
+                "OLDAP-2.6",
+                "OLDAP-2.7",
+                "OLDAP-2.8",
+                "OML",
+                "OpenSSL",
+                "OPL-1.0",
+                "OSET-PL-2.1",
+                "OSL-1.0",
+                "OSL-1.1",
+                "OSL-2.0",
+                "OSL-2.1",
+                "OSL-3.0",
+                "Parity-6.0.0",
+                "Parity-7.0.0",
+                "PDDL-1.0",
+                "PHP-3.0",
+                "PHP-3.01",
+                "Plexus",
+                "PolyForm-Noncommercial-1.0.0",
+                "PolyForm-Small-Business-1.0.0",
+                "PostgreSQL",
+                "PSF-2.0",
+                "psfrag",
+                "psutils",
+                "Python-2.0",
+                "Qhull",
+                "QPL-1.0",
+                "Rdisc",
+                "RHeCos-1.1",
+                "RPL-1.1",
+                "RPL-1.5",
+                "RPSL-1.0",
+                "RSA-MD",
+                "RSCPL",
+                "Ruby",
+                "SAX-PD",
+                "Saxpath",
+                "SCEA",
+                "Sendmail",
+                "Sendmail-8.23",
+                "SGI-B-1.0",
+                "SGI-B-1.1",
+                "SGI-B-2.0",
+                "SHL-0.5",
+                "SHL-0.51",
+                "SimPL-2.0",
+                "SISSL",
+                "SISSL-1.2",
+                "Sleepycat",
+                "SMLNJ",
+                "SMPPL",
+                "SNIA",
+                "Spencer-86",
+                "Spencer-94",
+                "Spencer-99",
+                "SPL-1.0",
+                "SSH-OpenSSH",
+                "SSH-short",
+                "SSPL-1.0",
+                "StandardML-NJ",
+                "SugarCRM-1.1.3",
+                "SWL",
+                "TAPR-OHL-1.0",
+                "TCL",
+                "TCP-wrappers",
+                "TMate",
+                "TORQUE-1.1",
+                "TOSL",
+                "TU-Berlin-1.0",
+                "TU-Berlin-2.0",
+                "UCL-1.0",
+                "Unicode-DFS-2015",
+                "Unicode-DFS-2016",
+                "Unicode-TOU",
+                "Unlicense",
+                "UPL-1.0",
+                "Vim",
+                "VOSTROM",
+                "VSL-1.0",
+                "W3C",
+                "W3C-19980720",
+                "W3C-20150513",
+                "Watcom-1.0",
+                "Wsuipa",
+                "WTFPL",
+                "wxWindows",
+                "X11",
+                "Xerox",
+                "XFree86-1.1",
+                "xinetd",
+                "Xnet",
+                "xpp",
+                "XSkat",
+                "YPL-1.0",
+                "YPL-1.1",
+                "Zed",
+                "Zend-2.0",
+                "Zimbra-1.3",
+                "Zimbra-1.4",
+                "Zlib",
+                "zlib-acknowledgement",
+                "ZPL-1.1",
+                "ZPL-2.0",
+                "ZPL-2.1"
+            ],
+            "type": "string"
+        },
+        "entity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "address": {
+                    "$ref": "#/definitions/address"
+                },
+                "alias": {
+                    "$ref": "#/definitions/alias"
+                },
+                "city": {
+                    "$ref": "#/definitions/city"
+                },
+                "country": {
+                    "$ref": "#/definitions/country"
+                },
+                "email": {
+                    "$ref": "#/definitions/email"
+                },
+                "fax": {
+                    "$ref": "#/definitions/fax"
+                },
+                "orcid": {
+                    "$ref": "#/definitions/orcid"
+                },
+                "post-code": {
+                    "$ref": "#/definitions/post-code"
+                },
+                "region": {
+                    "$ref": "#/definitions/region"
+                },
+                "tel": {
+                    "$ref": "#/definitions/tel"
+                },
+                "website": {
+                    "$ref": "#/definitions/url"
+                },
+                "date-start": {
+                    "$ref": "#/definitions/date"
+                },
+                "date-end": {
+                    "$ref": "#/definitions/date"
+                },
+                "location": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        },
+        "address": {
+            "type": "string"
+        },
+        "alias": {
+            "type": "string"
+        },
+        "city": {
+            "type": "string"
+        },
+        "fax": {
+            "type": "string"
+        },
+        "post-code": {
+            "type": "string"
+        },
+        "region": {
+            "type": "string"
+        },
+        "reference": {
+            "additionalProperties": false,
+            "properties": {
+                "abbreviation": {
+                    "type": "string"
+                },
+                "abstract": {
+                    "type": "string"
+                },
+                "authors": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "$ref": "#/definitions/entity"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "collection-doi": {
+                    "$ref": "#/definitions/doi"
+                },
+                "collection-title": {
+                    "type": "string"
+                },
+                "collection-type": {
+                    "type": "string"
+                },
+                "commit": {
+                    "$ref": "#/definitions/commit"
+                },
+                "conference": {
+                    "$ref": "#/definitions/entity"
+                },
+                "contact": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "$ref": "#/definitions/entity"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "copyright": {
+                    "type": "string"
+                },
+                "data-type": {
+                    "type": "string"
+                },
+                "database": {
+                    "type": "string"
+                },
+                "database-provider": {
+                    "$ref": "#/definitions/entity"
+                },
+                "date-accessed": {
+                    "$ref": "#/definitions/date"
+                },
+                "date-downloaded": {
+                    "$ref": "#/definitions/date"
+                },
+                "date-published": {
+                    "$ref": "#/definitions/date"
+                },
+                "date-released": {
+                    "$ref": "#/definitions/date"
+                },
+                "department": {
+                    "type": "string"
+                },
+                "doi": {
+                    "$ref": "#/definitions/doi"
+                },
+                "identifiers": {
+                    "items": {
+                        "$ref": "#/definitions/identifier"
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "edition": {
+                    "type": "string"
+                },
+                "editors": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "$ref": "#/definitions/entity"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "editors-series": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "$ref": "#/definitions/entity"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "end": {
+                    "type": "integer"
+                },
+                "entry": {
+                    "type": "string"
+                },
+                "filename": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "string"
+                },
+                "institution": {
+                    "$ref": "#/definitions/entity"
+                },
+                "isbn": {
+                    "pattern": "^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$",
+                    "type": "string"
+                },
+                "issn": {
+                    "pattern": "^\\d{4}-\\d{3}[\\dxX]$",
+                    "type": "string"
+                },
+                "issue": {
+                    "type": "string"
+                },
+                "issue-date": {
+                    "type": "string"
+                },
+                "issue-title": {
+                    "type": "string"
+                },
+                "journal": {
+                    "type": "string"
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "uniqueItems": true,
+                    "minItems": 1
+                },
+                "languages": {
+                    "type": "array",
+                    "items": {
+                        "pattern": "^[a-z]{2,3}$",
+                        "maxLength": 3,
+                        "minLength": 2,
+                        "type": "string"
+                    },
+                    "uniqueItems": true,
+                    "minItems": 1
+                },
+                "license": {
+                    "$ref": "#/definitions/license"
+                },
+                "license-url": {
+                    "$ref": "#/definitions/url"
+                },
+                "location": {
+                    "$ref": "#/definitions/entity"
+                },
+                "loc-start": {
+                    "type": "integer"
+                },
+                "loc-end": {
+                    "type": "integer"
+                },
+                "medium": {
+                    "type": "string"
+                },
+                "month": {
+                    "enum": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                    ],
+                    "type": "integer"
+                },
+                "nihmsid": {
+                    "type": "string"
+                },
+                "notes": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": "string"
+                },
+                "number-volumes": {
+                    "type": "string"
+                },
+                "pages": {
+                    "type": "string"
+                },
+                "patent-states": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "pmcid": {
+                    "pattern": "^PMC[0-9]{7}$",
+                    "type": "string"
+                },
+                "publisher": {
+                    "$ref": "#/definitions/entity"
+                },
+                "recipients": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/entity"
+                            },
+                            {
+                                "$ref": "#/definitions/person"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "repository": {
+                    "$ref": "#/definitions/url"
+                },
+                "repository-code": {
+                    "$ref": "#/definitions/url"
+                },
+                "repository-artifact": {
+                    "$ref": "#/definitions/url"
+                },
+                "scope": {
+                    "type": "string"
+                },
+                "section": {
+                    "type": "string"
+                },
+                "senders": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/entity"
+                            },
+                            {
+                                "$ref": "#/definitions/person"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "status": {
+                    "enum": [
+                        "abstract",
+                        "advance-online",
+                        "in-preparation",
+                        "in-press",
+                        "preprint",
+                        "submitted"
+                    ],
+                    "type": "string"
+                },
+                "start": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "thesis-type": {
+                    "type": "string"
+                },
+                "translators": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/entity"
+                            },
+                            {
+                                "$ref": "#/definitions/person"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "art",
+                        "article",
+                        "audiovisual",
+                        "bill",
+                        "blog",
+                        "book",
+                        "catalogue",
+                        "conference-paper",
+                        "conference",
+                        "data",
+                        "database",
+                        "dictionary",
+                        "edited-work",
+                        "encyclopedia",
+                        "film-broadcast",
+                        "generic",
+                        "government-document",
+                        "grant",
+                        "hearing",
+                        "historical-work",
+                        "legal-case",
+                        "legal-rule",
+                        "magazine-article",
+                        "manual",
+                        "map",
+                        "multimedia",
+                        "music",
+                        "newspaper-article",
+                        "pamphlet",
+                        "patent",
+                        "personal-communication",
+                        "proceedings",
+                        "report",
+                        "serial",
+                        "slides",
+                        "software-code",
+                        "software-container",
+                        "software-executable",
+                        "software-virtual-machine",
+                        "software",
+                        "sound-recording",
+                        "standard",
+                        "statute",
+                        "thesis",
+                        "unpublished",
+                        "video",
+                        "website"
+                    ]
+                },
+                "url": {
+                    "$ref": "#/definitions/url"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "volume": {
+                    "type": "string"
+                },
+                "volume-title": {
+                    "type": "string"
+                },
+                "year": {
+                    "type": "integer"
+                },
+                "year-original": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "authors",
+                "title",
+                "type"
+            ],
+            "type": "object"
+        },
+        "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^(https|http|ftp|sftp)://.+"
+        }
+    }
+}
