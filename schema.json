@@ -27,7 +27,7 @@
             "uniqueItems": true
         },
         "commit": {
-            "$ref": "#/definitions/commit",
+            "$ref": "#/definitions/commit"
         },
         "cff-version": {
             "description": "The version of CFF used for providing the citation metadata.",
@@ -40,10 +40,10 @@
         "message": {
             "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata.",
             "examples": [
-                "If you use this software, please cite it using the metadata from this file."
+                "If you use this software, please cite it using the metadata from this file.",
                 "Please cite the paper from the references when using this software.",
                 "Please cite this software using these metadata.",
-                "Please cite this software using the metadata from 'preferred-citation'.",
+                "Please cite this software using the metadata from 'preferred-citation'."
             ],
             "minLength": 1,
             "type": "string"
@@ -90,7 +90,7 @@
             "uniqueItems": true
         },
         "license": {
-            "$ref": "#/definitions/license",
+            "$ref": "#/definitions/license"
         },
         "license-url": {
             "$ref": "#/definitions/url",
@@ -422,7 +422,7 @@
             "description": "The DOI of the work (not the resolver URL, i.e., 10.5281/zenodo.1003150, not http://doi.org/10.5281/zenodo.1003150).",
             "examples": [
                 "10.5281/zenodo.1003150"
-            ]
+            ],
             "pattern": "^10\\.\\d{4,9}(\\.\\d+)?/[A-Za-z0-9:/_;\\-\\.\\(\\)\\[\\]\\\\]+$",
             "type": "string"
         },
@@ -576,7 +576,7 @@
             "type": "string"
         },
         "license": {
-            "description": "An SPDX license identifier."
+            "description": "An SPDX license identifier.",
             "oneOf": [
                 {
                     "$ref": "#/definitions/license-enum"
