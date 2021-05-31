@@ -548,6 +548,10 @@
                 },
                 "name-suffix": {
                     "description": "The person's name-suffix.",
+                    "examples": [
+                        "'Jr.' (for Sammy Davis Jr.)",
+                        "'III' (for Frank Edwin Wright III)"
+                    ],
                     "type": "string"
                 },
                 "orcid": {
