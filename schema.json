@@ -1381,6 +1381,7 @@
                 },
                 "term": {
                     "description": "The term being referenced if the work is a dictionary or encyclopedia.",
+                    "minLength": 1,
                     "type": "string"
                 },
                 "title": {
