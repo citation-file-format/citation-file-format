@@ -1311,7 +1311,7 @@
                     "type": "string"
                 },
                 "identifiers": {
-                    "description": "The persistent identifier(s) of the work (for identifiers that are not DOIs).",
+                    "description": "The identifier(s) of the work.",
                     "items": {
                         "$ref": "#/definitions/identifier"
                     },
