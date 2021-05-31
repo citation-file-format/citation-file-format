@@ -1459,7 +1459,7 @@
                     "type": "string"
                 },
                 "volume": {
-                    "type": "string"
+                    "type": "integer"
                 },
                 "volume-title": {
                     "type": "string"
