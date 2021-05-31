@@ -1475,7 +1475,7 @@
                 },
                 "repository-artifact": {
                     "$ref": "#/definitions/url",
-                    "description": "The URL to the work in a build artifact/binary/release repository."
+                    "description": "The URL to the work in a build artifact/binary repository."
                 },
                 "scope": {
                     "description": "The scope of the reference, e.g., the section of the work it adheres to.",
