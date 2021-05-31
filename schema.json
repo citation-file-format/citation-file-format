@@ -1379,6 +1379,10 @@
                 "start": {
                     "type": "integer"
                 },
+                "term": {
+                    "description": "The term being referenced if the work is a dictionary or encyclopedia.",
+                    "type": "string"
+                },
                 "title": {
                     "type": "string"
                 },
