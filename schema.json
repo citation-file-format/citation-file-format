@@ -110,7 +110,11 @@
         },
         "repository": {
             "$ref": "#/definitions/url",
-            "description": "The URL to the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository)."
+            "description": "The URL to the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).",
+            "examples": [
+                "https://edoc.hu-berlin.de/handle/18452/23016",
+                "https://ascl.net/2105.013"
+            ]
         },
         "repository-code": {
             "$ref": "#/definitions/url",
