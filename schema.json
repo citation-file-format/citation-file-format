@@ -1058,7 +1058,7 @@
             "type": "string"
         },
         "entity": {
-            "description": "An entity",
+            "description": "An entity, i.e., an institution, team, research group, company, conference, etc., as opposed to a single natural person.",
             "additionalProperties": false,
             "properties": {
                 "name": {
