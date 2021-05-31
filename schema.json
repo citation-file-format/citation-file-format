@@ -71,7 +71,7 @@
             "$ref": "#/definitions/doi"
         },
         "identifiers": {
-            "description": "The persistent identifiers of the software or dataset (for identifiers that are not DOIs).",
+            "description": "The persistent identifiers of the software or dataset.",
             "items": {
                 "$ref": "#/definitions/identifier"
             },
