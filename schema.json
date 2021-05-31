@@ -118,7 +118,7 @@
         },
         "repository-artifact": {
             "$ref": "#/definitions/url",
-            "description": "The URL to the software in a build artifact/binary/release repository."
+            "description": "The URL to the software in a build artifact/binary repository."
         },
         "title": {
             "description": "The name of the software or dataset.",
