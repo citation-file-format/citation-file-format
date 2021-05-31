@@ -11,7 +11,7 @@
             "type": "string"
         },
         "authors": {
-            "description": "The author(s) of the software",
+            "description": "The author(s) of the software or dataset.",
             "items": {
                 "anyOf": [
                     {
