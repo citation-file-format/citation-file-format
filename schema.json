@@ -440,10 +440,28 @@
                     "properties": {
                         "type": {
                             "enum": [
-                                "other",
                                 "swh"
                             ],
-                            "type": "#/definitions/swh-identifier"
+                            "type": "string"
+                        },
+                        "value": {
+                            "$ref": "#/definitions/swh-identifier"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "other"
+                            ],
+                            "type": "string"
                         },
                         "value": {
                             "minLength": 1,
@@ -1484,7 +1502,7 @@
             "pattern": "^(https|http|ftp|sftp)://.+"
         },
         "swh-identifier": {
-            "$comment": "Software Heritage identifiers are documented here: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html",
+            "$comment": "Software Heritage identifiers are documented here: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html.",
             "description": "The Software Heritage identifier (without further qualifiers such as origin, visit, anchor, path).",
             "examples": [
                 "swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2",
