@@ -418,7 +418,7 @@
             "type": "string"
         },
         "doi": {
-            "description": "The DOI of the work (not the resolver URL, i.e., 10.5281/zenodo.1003150, not http://doi.org/10.5281/zenodo.1003150).",
+            "description": "The DOI of the work (i.e., 10.5281/zenodo.1003150, not the resolver URL http://doi.org/10.5281/zenodo.1003150).",
             "examples": [
                 "10.5281/zenodo.1003150"
             ],
