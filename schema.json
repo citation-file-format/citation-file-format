@@ -41,7 +41,6 @@
             "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata.",
             "examples": [
                 "If you use this software, please cite it using the metadata from this file.",
-                "Please cite the paper from the references when using this software.",
                 "Please cite this software using these metadata.",
                 "Please cite this software using the metadata from 'preferred-citation'."
             ],
