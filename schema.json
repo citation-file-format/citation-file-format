@@ -1111,7 +1111,7 @@
                 },
                 "date-start": {
                     "$ref": "#/definitions/date",
-                    "description": "The entity's starting date."
+                    "description": "The entity's starting date, e.g., when the entity is a conference."
                 },
                 "date-end": {
                     "$ref": "#/definitions/date",
