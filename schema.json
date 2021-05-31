@@ -545,7 +545,7 @@
                 },
                 "orcid": {
                     "$ref": "#/definitions/orcid",
-                    "description": "The person's orcid."
+                    "description": "The person's ORCID."
                 },
                 "post-code": {
                     "description": "The person's post-code.",
