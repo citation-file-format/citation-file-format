@@ -547,10 +547,10 @@
                     "type": "string"
                 },
                 "name-suffix": {
-                    "description": "The person's name-suffix.",
+                    "description": "The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.",
                     "examples": [
-                        "'Jr.' (for Sammy Davis Jr.)",
-                        "'III' (for Frank Edwin Wright III)"
+                        "Jr.",
+                        "III"
                     ],
                     "type": "string"
                 },
