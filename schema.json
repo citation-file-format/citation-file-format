@@ -443,7 +443,7 @@
                                 "other",
                                 "swh"
                             ],
-                            "type": "string"
+                            "type": "#/definitions/swh-identifier"
                         },
                         "value": {
                             "minLength": 1,
@@ -1482,6 +1482,19 @@
             "type": "string",
             "format": "uri",
             "pattern": "^(https|http|ftp|sftp)://.+"
+        },
+        "swh-identifier": {
+            "$comment": "Software Heritage identifiers are documented here: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html",
+            "description": "The Software Heritage identifier (without further qualifiers such as origin, visit, anchor, path).",
+            "examples": [
+                "swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2",
+                "swh:1:dir:d198bc9d7a6bcf6db04f476d29314f157507d505",
+                "swh:1:rev:309cf2674ee7a0749978cf8265ab91a60aea0f7d",
+                "swh:1:rel:22ece559cc7cc2364edc5e5593d63ae8bd229f9f",
+                "swh:1:snp:c7c108084bc0bf3d81436bf980b46e98bd338453"
+            ],
+            "type": "string",
+            "pattern": "^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$"
         }
     }
 }
