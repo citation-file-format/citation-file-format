@@ -1119,7 +1119,7 @@
                 },
                 "date-end": {
                     "$ref": "#/definitions/date",
-                    "description": "The entity's ending date."
+                    "description": "The entity's ending date, e.g., when the entity is a conference."
                 },
                 "location": {
                     "type": "string",
