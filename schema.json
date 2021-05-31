@@ -540,7 +540,10 @@
                     "type": "string"
                 },
                 "name-particle": {
-                    "description": "The person's name-particle.",
+                    "description": "The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').",
+                    "examples": [
+                        "von"
+                    ],
                     "type": "string"
                 },
                 "name-suffix": {
