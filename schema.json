@@ -24,7 +24,8 @@
             ]
         },
         "abstract": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "authors": {
             "type": "array",
@@ -75,7 +76,8 @@
         },
         "keywords": {
             "items": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
             },
             "minItems": 1,
             "type": "array",
@@ -130,7 +132,8 @@
     "definitions": {
         "commit": {
             "type": "string",
-            "description": "The commit SHA1 hash or revision number of the software version"
+            "description": "The commit SHA1 hash or revision number of the software version",
+            "minLength": 1
         },
         "country": {
             "type": "string",
@@ -471,7 +474,8 @@
                     "$ref": "#/definitions/address"
                 },
                 "affiliation": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "alias": {
                     "$ref": "#/definitions/alias"
@@ -486,19 +490,23 @@
                     "$ref": "#/definitions/email"
                 },
                 "family-names": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "fax": {
                     "$ref": "#/definitions/fax"
                 },
                 "given-names": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "name-particle": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "name-suffix": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "orcid": {
                     "$ref": "#/definitions/orcid"
@@ -522,7 +530,8 @@
             "type": "string"
         },
         "tel": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "license": {
             "oneOf": [
@@ -1051,7 +1060,8 @@
                     "$ref": "#/definitions/date"
                 },
                 "location": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 }
             },
             "required": [
@@ -1059,22 +1069,28 @@
             ]
         },
         "address": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "alias": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "city": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "fax": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "post-code": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "region": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "reference": {
             "additionalProperties": false,
@@ -1241,7 +1257,8 @@
                     "minLength": 1
                 },
                 "issue-date": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "issue-title": {
                     "type": "string",
