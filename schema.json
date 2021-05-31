@@ -1123,7 +1123,7 @@
                 },
                 "location": {
                     "type": "string",
-                    "description": "The entity's location."
+                    "description": "The entity's location, e.g., when the entity is a conference."
                 }
             },
             "required": [
