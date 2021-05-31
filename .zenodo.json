@@ -19,6 +19,22 @@
         {
             "name": "Baker, James",
             "orcid": "0000-0002-2682-6922"
+        },
+        {
+            "name": "Bliven, Spencer",
+            "orcid": "0000-0002-1200-1698"
+        },
+        {
+            "name": "Willighagen, Egon",
+            "orcid": "0000-0001-7542-0286"
+        },
+        {
+            "name": "Pérez-Suárez, David",
+            "orcid": "0000-0003-0784-6909"
+        },
+        {
+            "name": "Konovalov, Alexander",
+            "orcid": "0000-0001-5299-3292"
         }
     ],
     "description": "CITATION.cff files are plain text files with human- and machine-readable citation information for software. Code developers can include them in their repositories to let others know how to correctly cite their software. This is the specification for the Citation File Format.",

@@ -17,6 +17,20 @@ authors:
   - family-names: Baker
     given-names: James
     orcid: https://orcid.org/0000-0002-2682-6922
+  - family-names: Bliven
+    given-names: Spencer
+    orcid: https://orcid.org/0000-0002-1200-1698
+    email: spencer.bliven@gmail.com
+  - family-names: Willighagen
+    given-names: Egon
+    orcid: https://orcid.org/0000-0001-7542-0286
+  - family-names: Pérez-Suárez
+    given-names: David
+    orcid: https://orcid.org/0000-0003-0784-6909
+    website: https://dpshelio.github.io
+  - family-names: Konovalov
+    given-names: Alexander
+    orcid: https://orcid.org/0000-0001-5299-3292
 title: Citation File Format
 version: 1.1.0
 doi: 10.5281/zenodo.4751536
