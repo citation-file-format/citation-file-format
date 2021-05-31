@@ -1080,10 +1080,12 @@
             "additionalProperties": false,
             "properties": {
                 "abbreviation": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "abstract": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "authors": {
                     "items": {
@@ -1104,10 +1106,12 @@
                     "$ref": "#/definitions/doi"
                 },
                 "collection-title": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "collection-type": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "commit": {
                     "$ref": "#/definitions/commit"
@@ -1131,13 +1135,16 @@
                     "uniqueItems": true
                 },
                 "copyright": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "data-type": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "database": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "database-provider": {
                     "$ref": "#/definitions/entity"
@@ -1155,7 +1162,8 @@
                     "$ref": "#/definitions/date"
                 },
                 "department": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "doi": {
                     "$ref": "#/definitions/doi"
@@ -1169,7 +1177,8 @@
                     "uniqueItems": true
                 },
                 "edition": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "editors": {
                     "items": {
@@ -1205,13 +1214,16 @@
                     "type": "integer"
                 },
                 "entry": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "filename": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "format": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "institution": {
                     "$ref": "#/definitions/entity"
@@ -1225,21 +1237,25 @@
                     "type": "string"
                 },
                 "issue": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "issue-date": {
                     "type": "string"
                 },
                 "issue-title": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "journal": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "keywords": {
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": "string",
+                        "minLength": 1
                     },
                     "uniqueItems": true,
                     "minItems": 1
@@ -1271,7 +1287,8 @@
                     "type": "integer"
                 },
                 "medium": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "month": {
                     "enum": [
@@ -1291,23 +1308,29 @@
                     "type": "integer"
                 },
                 "nihmsid": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "notes": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "number": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "number-volumes": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "pages": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "patent-states": {
                     "items": {
-                        "type": "string"
+                        "type": "string",
+                        "minLength": 1
                     },
                     "minItems": 1,
                     "type": "array",
@@ -1345,10 +1368,12 @@
                     "$ref": "#/definitions/url"
                 },
                 "scope": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "section": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "senders": {
                     "items": {
@@ -1380,10 +1405,12 @@
                     "type": "integer"
                 },
                 "title": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "thesis-type": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "translators": {
                     "items": {
@@ -1456,13 +1483,16 @@
                     "$ref": "#/definitions/url"
                 },
                 "version": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "volume": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "volume-title": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "year": {
                     "type": "integer"
