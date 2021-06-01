@@ -14,14 +14,16 @@
         "message": {
             "type": "string",
             "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata",
-            "minLength": 1
+            "minLength": 1,
+            "default": "If you use this software, please cite it using the metadata from this file."
         },
         "type": {
             "type": "string",
             "enum": [
                 "dataset",
                 "software"
-            ]
+            ],
+            "default": "software"
         },
         "abstract": {
             "type": "string"
