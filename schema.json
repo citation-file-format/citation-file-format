@@ -8,7 +8,27 @@
     "properties": {
         "abstract": {
             "description": "A description of the software or dataset.",
+            "minLength": 1,
             "type": "string"
+        },
+        "cff-version": {
+            "type": "string",
+            "pattern": "^1\\.2\\.0$",
+            "description": "The version of CFF used for providing the citation metadata"
+        },
+        "message": {
+            "type": "string",
+            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata",
+            "minLength": 1,
+            "default": "If you use this software, please cite it using the metadata from this file."
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "dataset",
+                "software"
+            ],
+            "default": "software"
         },
         "authors": {
             "description": "The author(s) of the software or dataset.",
@@ -82,7 +102,8 @@
         "keywords": {
             "description": "Keywords that describe the work.",
             "items": {
-                "type": "string"
+                "type": "string",
+                "minLength": 1
             },
             "minItems": 1,
             "type": "array",
@@ -158,6 +179,7 @@
     "definitions": {
         "commit": {
             "description": "The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.",
+            "minLength": 1,
             "type": "string"
         },
         "country": {
@@ -474,8 +496,26 @@
                     "properties": {
                         "type": {
                             "enum": [
-                                "other",
                                 "swh"
+                            ],
+                            "type": "string"
+                        },
+                        "value": {
+                            "$ref": "#/definitions/swh-identifier"
+                        }
+                    },
+                    "required": [
+                        "type",
+                        "value"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "other"
                             ],
                             "type": "string"
                         },
@@ -509,6 +549,7 @@
                 },
                 "affiliation": {
                     "type": "string",
+                    "minLength": 1,
                     "description": "The person's affilitation."
                 },
                 "alias": {
@@ -529,7 +570,8 @@
                 },
                 "family-names": {
                     "description": "The person's family names.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "fax": {
                     "$ref": "#/definitions/fax",
@@ -537,6 +579,7 @@
                 },
                 "given-names": {
                     "description": "The person's given names.",
+                    "minLength": 1,
                     "type": "string"
                 },
                 "name-particle": {
@@ -544,7 +587,8 @@
                     "examples": [
                         "von"
                     ],
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "name-suffix": {
                     "description": "The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.",
@@ -552,7 +596,8 @@
                         "Jr.",
                         "III"
                     ],
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "orcid": {
                     "$ref": "#/definitions/orcid",
@@ -583,7 +628,8 @@
         },
         "tel": {
             "description": "A phone number.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "license": {
             "description": "An SPDX license identifier.",
@@ -1130,7 +1176,8 @@
                 },
                 "location": {
                     "type": "string",
-                    "description": "The entity's location, e.g., when the entity is a conference."
+                    "description": "The entity's location, e.g., when the entity is a conference.",
+                    "minLength": 1
                 }
             },
             "required": [
@@ -1140,27 +1187,33 @@
         },
         "address": {
             "description": "An address.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "alias": {
             "description": "An alias.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "city": {
             "description": "A city",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "fax": {
             "description": "A fax number.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "post-code": {
             "description": "A post code.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "region": {
             "description": "A region.",
-            "type": "string"
+            "type": "string",
+            "minLength": 1
         },
         "reference": {
             "additionalProperties": false,
@@ -1168,11 +1221,13 @@
             "properties": {
                 "abbreviation": {
                     "description": "The abbreviation of the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "abstract": {
                     "description": "The abstract of a work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "authors": {
                     "description": "The author(s) of a work.",
@@ -1196,11 +1251,13 @@
                 },
                 "collection-title": {
                     "description": "The title of a collection or proceedings.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "collection-type": {
                     "description": "The type of a collection.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "commit": {
                     "$ref": "#/definitions/commit"
@@ -1227,15 +1284,18 @@
                 },
                 "copyright": {
                     "description": "The copyright information pertaining to the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "data-type": {
                     "description": "The data type of a data set.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "database": {
                     "description": "The name of the database where a work was accessed/is stored.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "database-provider": {
                     "$ref": "#/definitions/entity",
@@ -1259,7 +1319,8 @@
                 },
                 "department": {
                     "description": "The department where a work has been produced.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "doi": {
                     "$ref": "#/definitions/doi",
@@ -1267,7 +1328,8 @@
                 },
                 "edition": {
                     "description": "The edition of the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "editors": {
                     "description": "The editor(s) of a work",
@@ -1307,15 +1369,18 @@
                 },
                 "entry": {
                     "description": "An entry in the collection that constitutes the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "filename": {
                     "description": "The name of the electronic file containing the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "format": {
                     "description": "The format in which a work is represented.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "identifiers": {
                     "description": "The identifier(s) of the work.",
@@ -1332,7 +1397,7 @@
                 },
                 "isbn": {
                     "description": "The ISBN of the work.",
-                    "pattern": "^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$",
+                    "pattern": "^[0-9- ]{10,17}X?$",
                     "type": "string"
                 },
                 "issn": {
@@ -1346,21 +1411,24 @@
                 },
                 "issue-date": {
                     "description": "The publication date of the issue of a periodical in which a work appeared.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "issue-title": {
                     "description": "The name of the issue of a periodical in which the work appeared.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "journal": {
                     "description": "The name of the journal/magazine/newspaper/periodical where the work was published.",
-                    "type": "string"
-                },
+                    "type": "string",
+                    "minLength": 1
                 "keywords": {
                     "description": "Keywords pertaining to the work.",
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": "string",
+                        "minLength": 1
                     },
                     "uniqueItems": true,
                     "minItems": 1
@@ -1398,7 +1466,8 @@
                 },
                 "medium": {
                     "description": "The medium of the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "month": {
                     "description": "The month in which a work has been published.",
@@ -1420,28 +1489,34 @@
                 },
                 "nihmsid": {
                     "description": "The NIHMSID of a work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "notes": {
                     "description": "Notes pertaining to the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "number": {
                     "description": "The accession number for a work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "number-volumes": {
                     "description": "The number of volumes making up the collection in which the work has been published.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "pages": {
                     "description": "The number of pages of the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "patent-states": {
                     "description": "The states for which a patent is granted.",
                     "items": {
-                        "type": "string"
+                        "type": "string",
+                        "minLength": 1
                     },
                     "minItems": 1,
                     "type": "array",
@@ -1486,12 +1561,13 @@
                 },
                 "scope": {
                     "description": "The scope of the reference, e.g., the section of the work it adheres to.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "section": {
                     "description": "The section of a work that is referenced",
-                    "type": "string"
-                },
+                    "type": "string",
+                    "minLength": 1
                 "senders": {
                     "description": "The sender(s) of a personal communication.",
                     "items": {
@@ -1526,11 +1602,17 @@
                 },
                 "title": {
                     "description": "The title of the work.",
+                    "minLength": 1,
+                    "type": "string"
+                "term": {
+                    "description": "The term being referenced if the work is a dictionary or encyclopedia.",
+                    "minLength": 1,
                     "type": "string"
                 },
                 "thesis-type": {
                     "description": "The type of the thesis that is the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "translators": {
                     "description": "The translator of a work.",
@@ -1607,16 +1689,18 @@
                 },
                 "version": {
                     "description": "The version of the work.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "volume": {
                     "description": "The volume of the periodical in which a work appeared.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "volume-title": {
                     "description": "The title of the volume in which the work appeared.",
-                    "type": "string"
-                },
+                    "type": "string",
+                    "minLength": 1
                 "year": {
                     "description": "The year in which a work has been published.",
                     "type": "integer"
@@ -1637,6 +1721,19 @@
             "type": "string",
             "format": "uri",
             "pattern": "^(https|http|ftp|sftp)://.+"
+        },
+        "swh-identifier": {
+            "$comment": "Software Heritage identifiers are documented here: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html.",
+            "description": "The Software Heritage identifier (without further qualifiers such as origin, visit, anchor, path).",
+            "examples": [
+                "swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2",
+                "swh:1:dir:d198bc9d7a6bcf6db04f476d29314f157507d505",
+                "swh:1:rev:309cf2674ee7a0749978cf8265ab91a60aea0f7d",
+                "swh:1:rel:22ece559cc7cc2364edc5e5593d63ae8bd229f9f",
+                "swh:1:snp:c7c108084bc0bf3d81436bf980b46e98bd338453"
+            ],
+            "type": "string",
+            "pattern": "^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$"
         }
     }
 }

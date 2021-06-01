@@ -1,0 +1,12 @@
+cff-version: 1.1.0
+message: "If you use the MRT Docker container, please cite the following."
+authors:
+  - name: "Humboldt-Universität zu Berlin"
+    website: https://www.linguistik.hu-berlin.de/
+  - family-names: Doe
+    given-names: Jane
+title: mrt-iain-m-banks
+version: 1.0.4 (Iain M. Banks)
+url: https://github.com/doe/docker-brew-mrt-core/blob/160d54f9e935/iain/Dockerfile
+repository: https://hub.docker.hu-berlin.de/_/mrt-iain-m-banks/
+date-released: 2017-12-18

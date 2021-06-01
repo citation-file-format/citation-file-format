@@ -1,0 +1,22 @@
+cff-version: 1.1.0
+message: If you use this software, please cite the software itself and the blog post.
+authors:
+  - family-names: Druskat
+    given-names: Stephan
+    orcid: https://orcid.org/0000-0003-4925-7248
+title: My Research Tool
+version: 1.0.4
+doi: 10.5281/zenodo.1234
+date-released: 2017-12-18
+references:
+  - type: blog
+    authors:
+      - family-names: Doe
+        given-names: Jane
+    title: "Implement a 100% accuracy syntax parser for all languages? No probs!"
+    date-published: 2017-09-23
+    url: https://hu-berlin.de/blogs/jdoe/2017/09/23/if-only
+    institution:
+      name: "Humboldt-Universität zu Berlin"
+      city: Berlin
+      country: DE
