@@ -15,7 +15,6 @@ authors:
     date-start: "2021-05-16"
     date-end: "2021-05-16"
     location: "somehwere"
-    testifitbreaks: 42
   -
     address: My address 44
     affiliation: my affiliation
