@@ -1423,6 +1423,7 @@
                     "description": "The name of the journal/magazine/newspaper/periodical where the work was published.",
                     "type": "string",
                     "minLength": 1
+                },
                 "keywords": {
                     "description": "Keywords pertaining to the work.",
                     "type": "array",
@@ -1568,6 +1569,7 @@
                     "description": "The section of a work that is referenced",
                     "type": "string",
                     "minLength": 1
+                },
                 "senders": {
                     "description": "The sender(s) of a personal communication.",
                     "items": {
@@ -1604,6 +1606,7 @@
                     "description": "The title of the work.",
                     "minLength": 1,
                     "type": "string"
+                },
                 "term": {
                     "description": "The term being referenced if the work is a dictionary or encyclopedia.",
                     "minLength": 1,
@@ -1701,6 +1704,7 @@
                     "description": "The title of the volume in which the work appeared.",
                     "type": "string",
                     "minLength": 1
+                },
                 "year": {
                     "description": "The year in which a work has been published.",
                     "type": "integer"
