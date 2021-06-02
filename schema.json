@@ -1680,8 +1680,7 @@
                 },
                 "volume": {
                     "description": "The volume of the periodical in which a work appeared.",
-                    "type": "string",
-                    "minLength": 1
+                    "type": "integer"
                 },
                 "volume-title": {
                     "description": "The title of the volume in which the work appeared.",
