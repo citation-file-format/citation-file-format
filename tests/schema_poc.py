@@ -13,7 +13,7 @@ def validate(data_path, schema_path):
 
         with open(schema_path, 'r') as sf:
             schema_data = json.loads(sf.read())
-            jsonschema.validate(instance=yml_data, schema=schema_data)
+            jsonschema.validate(instance=yml_data, schema=schema_data, format_checker=jsonschema.FormatChecker())
 
 
 if __name__ == "__main__":
