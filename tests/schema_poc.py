@@ -8,6 +8,7 @@ def validate(data_path, schema_path):
     with open(data_path, 'r') as fi:
         # Convert to Python object
         yaml = YAML(typ='safe')
+        yaml.constructor.yaml_constructors[u'tag:yaml.org,2002:timestamp'] = yaml.constructor.yaml_constructors[u'tag:yaml.org,2002:str']
         yml_data = yaml.load(fi)
 
         with open(schema_path, 'r') as sf:
