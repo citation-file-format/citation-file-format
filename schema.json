@@ -12,17 +12,26 @@
             "type": "string"
         },
         "cff-version": {
-            "type": "string",
+            "description": "The version of CFF used for providing the citation metadata.",
+            "examples": [
+                "1.2.0"
+            ],
             "pattern": "^1\\.2\\.0$",
-            "description": "The version of CFF used for providing the citation metadata"
+            "type": "string"
         },
         "message": {
-            "type": "string",
-            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata",
+            "default": "If you use this software, please cite it using the metadata from this file.",
+            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata.",
+            "examples": [
+                "If you use this software, please cite it using the metadata from this file.",
+                "Please cite this software using these metadata.",
+                "Please cite this software using the metadata from 'preferred-citation'."
+            ],
             "minLength": 1,
-            "default": "If you use this software, please cite it using the metadata from this file."
+            "type": "string"
         },
         "type": {
+            "description": "The type of the work.",
             "type": "string",
             "enum": [
                 "dataset",
@@ -48,24 +57,6 @@
         },
         "commit": {
             "$ref": "#/definitions/commit"
-        },
-        "cff-version": {
-            "description": "The version of CFF used for providing the citation metadata.",
-            "examples": [
-                "1.2.0"
-            ],
-            "pattern": "^1\\.2\\.0$",
-            "type": "string"
-        },
-        "message": {
-            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata.",
-            "examples": [
-                "If you use this software, please cite it using the metadata from this file.",
-                "Please cite this software using these metadata.",
-                "Please cite this software using the metadata from 'preferred-citation'."
-            ],
-            "minLength": 1,
-            "type": "string"
         },
         "contact": {
             "description": "The contact person, group, company, etc. for the software or dataset.",
@@ -148,14 +139,6 @@
         "title": {
             "description": "The name of the software or dataset.",
             "minLength": 1,
-            "type": "string"
-        },
-        "type": {
-            "description": "The type of the work.",
-            "enum": [
-                "dataset",
-                "software"
-            ],
             "type": "string"
         },
         "url": {
@@ -1423,6 +1406,7 @@
                     "description": "The name of the journal/magazine/newspaper/periodical where the work was published.",
                     "type": "string",
                     "minLength": 1
+                },
                 "keywords": {
                     "description": "Keywords pertaining to the work.",
                     "type": "array",
@@ -1568,6 +1552,7 @@
                     "description": "The section of a work that is referenced",
                     "type": "string",
                     "minLength": 1
+                },
                 "senders": {
                     "description": "The sender(s) of a personal communication.",
                     "items": {
@@ -1604,6 +1589,7 @@
                     "description": "The title of the work.",
                     "minLength": 1,
                     "type": "string"
+                },
                 "term": {
                     "description": "The term being referenced if the work is a dictionary or encyclopedia.",
                     "minLength": 1,
@@ -1701,6 +1687,7 @@
                     "description": "The title of the volume in which the work appeared.",
                     "type": "string",
                     "minLength": 1
+                },
                 "year": {
                     "description": "The year in which a work has been published.",
                     "type": "integer"
