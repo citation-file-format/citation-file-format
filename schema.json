@@ -1391,7 +1391,8 @@
                 },
                 "issue": {
                     "description": "The issue of a periodical in which a work appeared.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "issue-date": {
                     "description": "The publication date of the issue of a periodical in which a work appeared.",
