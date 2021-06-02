@@ -1490,8 +1490,7 @@
                 },
                 "number-volumes": {
                     "description": "The number of volumes making up the collection in which the work has been published.",
-                    "type": "string",
-                    "minLength": 1
+                    "type": "integer"
                 },
                 "pages": {
                     "description": "The number of pages of the work.",
