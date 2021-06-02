@@ -6,7 +6,8 @@ on:
     types: [opened, synchronize, reopened]
   paths:
     - schema.json
-
+  workflow_dispatch:
+    # for manual trigger
 
 jobs:
   lint:
