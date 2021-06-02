@@ -1494,8 +1494,7 @@
                 },
                 "pages": {
                     "description": "The number of pages of the work.",
-                    "type": "string",
-                    "minLength": 1
+                    "type": "integer"
                 },
                 "patent-states": {
                     "description": "The states for which a patent is granted.",
