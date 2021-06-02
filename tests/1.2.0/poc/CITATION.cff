@@ -12,7 +12,7 @@ authors:
     region: My region
     tel: "1-34245-7346356-8467"
     website: https://my.domain/website/
-    date-start: 2021-05-16
+    date-start: 2021-05-1X
     date-end: 2021-05-16
     location: "somehwere"
   -
@@ -59,7 +59,15 @@ references:
         given-names: John
     title: this is the title
     license: "GPL-2.0"
-    issue-date: "2021-02-02"
+    issue-date: "2021-02-04"
+  - 
+    type: article
+    authors: 
+      - 
+        given-names: Johanna
+    title: "This is another title"
+    license: "Apache-2.0"
+    issue-date: "November-December 2002"
 repository: https://github.com/citation-file-format/citation-file-format
 repository-artifact: https://files.pythonhosted.org/packages/0a/84/10507b69a07768bc16981184b4d147a0fc84b71fbf35c03bafc8dcced8e1/cffconvert-1.3.3.tar.gz
 repository-code: https://github.com/citation-file-format/citation-file-format
