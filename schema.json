@@ -1103,7 +1103,8 @@
             "properties": {
                 "name": {
                     "description": "The entity's name.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "address": {
                     "$ref": "#/definitions/address",
