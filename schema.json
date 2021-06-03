@@ -1457,20 +1457,8 @@
                 },
                 "month": {
                     "description": "The month in which a work has been published.",
-                    "enum": [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12
-                    ],
+                    "minimum": 1,
+                    "maximum": 12,
                     "type": "integer"
                 },
                 "nihmsid": {
