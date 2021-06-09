@@ -1103,7 +1103,8 @@
             "properties": {
                 "name": {
                     "description": "The entity's name.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "address": {
                     "$ref": "#/definitions/address",
@@ -1390,7 +1391,8 @@
                 },
                 "issue": {
                     "description": "The issue of a periodical in which a work appeared.",
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 1
                 },
                 "issue-date": {
                     "description": "The publication date of the issue of a periodical in which a work appeared.",
@@ -1455,20 +1457,8 @@
                 },
                 "month": {
                     "description": "The month in which a work has been published.",
-                    "enum": [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12
-                    ],
+                    "minimum": 1,
+                    "maximum": 12,
                     "type": "integer"
                 },
                 "nihmsid": {
@@ -1488,13 +1478,11 @@
                 },
                 "number-volumes": {
                     "description": "The number of volumes making up the collection in which the work has been published.",
-                    "type": "string",
-                    "minLength": 1
+                    "type": "integer"
                 },
                 "pages": {
                     "description": "The number of pages of the work.",
-                    "type": "string",
-                    "minLength": 1
+                    "type": "integer"
                 },
                 "patent-states": {
                     "description": "The states for which a patent is granted.",
@@ -1680,8 +1668,7 @@
                 },
                 "volume": {
                     "description": "The volume of the periodical in which a work appeared.",
-                    "type": "string",
-                    "minLength": 1
+                    "type": "integer"
                 },
                 "volume-title": {
                     "description": "The title of the volume in which the work appeared.",

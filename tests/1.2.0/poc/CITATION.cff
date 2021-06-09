@@ -51,6 +51,7 @@ preferred-citation:
   title: my preferred citation
   authors:
   - name: my name
+  month: 1
 references: 
   - 
     type: article
