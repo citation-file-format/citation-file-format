@@ -32,6 +32,3 @@ jobs:
         python3 -m pip install -r requirements.txt
     - name: Run pytest
       run: pytest --verbose -c pytest.ini
-
-    - name: Run temporary validation against 1.2.0
-      run: python3 examples/schema_poc.py -d examples/1.2.0/poc/CITATION.cff -s schema.json
