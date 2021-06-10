@@ -1,39 +1,4 @@
-# CFF Examples
 
-All of the following examples are minimal working examples, so they can be copied
-and pasted into a `CITATION.cff` file and will validate against the
-[CFF schema](#schema).
-
-## Software examples
-
-The main focus of CFF is to comprehensively cover the provision of
-citation metadata for software. To this end, use of CFF should - wherever possible - be based on
-the Software Citation Principles ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86)). Scenarios for
-software citation are listed below. These are not intended to be comphrensive, but rather to represent both typical and edge cases for software citation.
-
-The following sections list recommendations for producing CITATION files in various circumstances.
-In particular, if a DOI is available this information should be included.  A DOI is not required, 
-however, since one may not have been registered for the version of the software in question.  In this 
-case, as much information to specify the precise version of the software and how it can be obtained
-should be given.
-
-### Software with a DOI
-
-Note that [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12 recommend
-
-> [...] the use of DOIs as the unique identifier due to their common usage and
-acceptance, particularly as they are the standard for other digital products
-such as publications.
-
-Furthermore, DOIs should point to a "unique, specific software version"
-([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12). Also it is recommended ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 13) that:
-
-> the [DOI] should resolve to a persistent landing page that contains metadata
-and a link to the software itself, rather than directly to the source code files,
-repository, or executable.
-
-Therefore, a minimal `CITATION.cff` file in such a case would look similar to
-the following.
 
 ```yaml
 cff-version: 1.0.3
