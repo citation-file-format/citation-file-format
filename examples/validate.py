@@ -1,6 +1,6 @@
 import pytest
 from cffconvert import Citation
-from tests.helpers import load_cff
+from examples.helpers import load_cff
 
 
 def test(fixture):

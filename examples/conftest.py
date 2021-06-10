@@ -8,7 +8,7 @@ def pytest_generate_tests(metafunc):
     fixtures = list()
     schema_versions = ["1.0.3", "1.1.0"]
     for schema_version in schema_versions:
-        d = os.path.join(".", "tests", schema_version)
+        d = os.path.join(".", "examples", schema_version)
         for root, dirs, files in os.walk(d):
             for name in files:
                 if name == "CITATION.cff":
