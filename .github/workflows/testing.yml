@@ -31,4 +31,4 @@ jobs:
         python3 -m pip install --upgrade pip setuptools wheel
         python3 -m pip install -r requirements.txt
     - name: Run pytest
-      run: pytest --verbose -c pytest.ini
+      run: pytest
