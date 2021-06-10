@@ -447,6 +447,9 @@
                         },
                         "value": {
                             "$ref": "#/definitions/doi"
+                        },
+                        "description": {
+                            "$ref": "#/definitions/identifier-description"
                         }
                     },
                     "required": [
@@ -466,6 +469,9 @@
                         },
                         "value": {
                             "$ref": "#/definitions/url"
+                        },
+                        "description": {
+                            "$ref": "#/definitions/identifier-description"
                         }
                     },
                     "required": [
@@ -485,6 +491,9 @@
                         },
                         "value": {
                             "$ref": "#/definitions/swh-identifier"
+                        },
+                        "description": {
+                            "$ref": "#/definitions/identifier-description"
                         }
                     },
                     "required": [
@@ -505,6 +514,9 @@
                         "value": {
                             "minLength": 1,
                             "type": "string"
+                        },
+                        "description": {
+                            "$ref": "#/definitions/identifier-description"
                         }
                     },
                     "required": [
@@ -1708,6 +1720,15 @@
             ],
             "type": "string",
             "pattern": "^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$"
+        },
+        "identifier-description": {
+            "description": "A description for a specific identifier value.",
+            "examples": [
+                "The version DOI for this version, which has a relation childOf with the concept DOI specified in the doi field in the root of this file.",
+                "The identifier provided by Archival Repository, which points to this version of the software."
+            ],
+            "type": "string",
+            "minLength": 1
         }
     }
 }
