@@ -1,38 +1,3 @@
-### Closed-source software without a DOI
-
-For software without a DOI, it is recommended that "the metadata should still
-provide information on how to access the specific software, but this may be a
-company’s product number or a link to a website that allows the software be
-purchased." [Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 13. Furthermore, "if the version number and
-release date are not available, the download date can be used. Similarly, the
-contact name/email is an alternative to the location/repository."
-([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 7).
-
-Hence, for closed-source software without a DOI for which the version number
-and release date cannot be determined, a `CITATION.cff` file could look like
-this.
-
-```yaml
-cff-version: 1.0.3
-message:
-  If you dare use this commercial, closed-source, strangely versioned
-  software in your research, please at least cite it as below.
-authors:
-  - family-names: Vader
-    name-suffix: né Skywalker
-    given-names: 'Anakin "Darth"'
-title: Opaquity
-version: opq-1234-XZVF-ACME-RLY
-date-released: 2017-02-28
-url: http://www.opaquity.com
-contact:
-  - name: Dark Side Software
-    address: DS-1 Orbital Battle Station, near Scarif
-    email: father@imperial-empire.com
-    tel: +850 (0)123-45-666
-```
-
-
 
 ### Software with a further reference
 
