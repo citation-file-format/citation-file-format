@@ -1,26 +1,3 @@
-### Source code without a DOI
-
-We recognize that there are certain situations where it may not be possible to
-follow the recommended best-practice. For example, if (1) the software authors
-did not register a DOI and/or release a specific version, or (2) the version of
-the software used does not match what is available to cite. In those cases,
-falling back on a combination of the repository URL and version number/commit
-hash would be an appropriate way to cite the software used ([Smith et al., 2016](https://doi.org/10.7717/peerj-cs.86), p. 12).
-
-```yaml
-cff-version: 1.0.3
-message: "If you use this MRT alpha snapshot version, please cite."
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool Prototype
-version: 0.0.1-alpha1-build1507284872
-date-released: 2017-12-18
-repository-code: https://github.com/doe/mrt
-commit: 160d54f9e935c914df38c1ffda752112b5c979a8
-```
-
 ### Closed-source software without a DOI
 
 For software without a DOI, it is recommended that "the metadata should still
