@@ -153,11 +153,9 @@
     },
     "required": [
         "authors",
-        "date-released",
         "cff-version",
         "message",
-        "title",
-        "version"
+        "title"
     ],
     "definitions": {
         "commit": {
