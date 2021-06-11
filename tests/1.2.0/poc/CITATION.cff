@@ -38,12 +38,16 @@ date-released: 2021-05-16
 identifiers:
 - type: doi
   value: "10.0000.1234/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._[]()\\:;"
+  description: "A pseudo-DOI testing all allowed characters."
 - type: other
   value: some random other identifier
+  description: "A really random, unquoted string with whitespaces in between, which YAML can still handle."
 - type: swh
   value: swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2
+  description: "The Software Heritage identifier pointing to the GPL v3 license text."
 - type: url
   value: https://github.com/citation-file-format/citation-file-format
+  description: "Just any old URL!"
 license-url: http://r3s34archs0ft.com/eula
 message: "If you use this software, cite it using these metadata"
 preferred-citation:
@@ -51,6 +55,7 @@ preferred-citation:
   title: my preferred citation
   authors:
   - name: my name
+  month: 1
 references: 
   - 
     type: article
@@ -74,7 +79,6 @@ repository-code: https://github.com/citation-file-format/citation-file-format
 title: my title
 type: software
 url: https://github.com/citation-file-format/citation-file-format
-version: "1.2.3"
 license: 
   - "Apache-2.0"
   - "MIT"
