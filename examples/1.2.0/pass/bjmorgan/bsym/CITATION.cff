@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: If you use this software, please cite both the software repository and the JOSS paper.
+authors: 
+  - family-names: Morgan
+    given-names: Benjamin J.
+    orcid: https://orcid.org/0000-0002-3056-8233
+title: bsym
+version: 1.1.0
+doi: 10.5281/zenodo.596912
+repository-code: https://github.com/bjmorgan/bsym
+license: MIT
+references:
+  - type: article
+    authors:
+      - family-names: Morgan
+        given-names: Benjamin J.
+    title: "bsym: A basic symmetry module"
+    year: 2017
+    journal: Journal of Open Source Software
+    volume: 2
+    issue: "16"
+    doi: 10.21105/joss.00370 
