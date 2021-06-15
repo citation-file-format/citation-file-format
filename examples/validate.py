@@ -16,4 +16,8 @@ def test(fixture):
             citation = Citation(cffstr=cffstr, suspect_keys=[], validate=True, raise_exception=True)
             assert citation.yaml is not None
     else:
-        schema_poc.validate(fixture, 'schema.json')
+        if "fail" in fixture:
+            with pytest.raises(Exception) as e_info:
+                schema_poc.validate(fixture, 'schema.json')
+        else:
+            schema_poc.validate(fixture, 'schema.json')
