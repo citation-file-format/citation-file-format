@@ -8,11 +8,12 @@ def validate(data_path, schema_path):
     with open(data_path, 'r') as fi:
         # Convert to Python object
         yaml = YAML(typ='safe')
+        yaml.constructor.yaml_constructors[u'tag:yaml.org,2002:timestamp'] = yaml.constructor.yaml_constructors[u'tag:yaml.org,2002:str']
         yml_data = yaml.load(fi)
 
         with open(schema_path, 'r') as sf:
             schema_data = json.loads(sf.read())
-            jsonschema.validate(instance=yml_data, schema=schema_data)
+            jsonschema.validate(instance=yml_data, schema=schema_data, format_checker=jsonschema.FormatChecker())
 
 
 if __name__ == "__main__":
