@@ -6,9 +6,13 @@ def pytest_generate_tests(metafunc):
     uses them to parameterize a fixture by the name of 'fixture'."""
 
     fixtures = list()
-    schema_versions = ["1.0.3", "1.1.0"]
+    schema_versions = [
+        "1.0.3",
+        "1.1.0",
+        "1.2.0"
+    ]
     for schema_version in schema_versions:
-        d = os.path.join(".", "tests", schema_version)
+        d = os.path.join(".", "examples", schema_version)
         for root, dirs, files in os.walk(d):
             for name in files:
                 if name == "CITATION.cff":
