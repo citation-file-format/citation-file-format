@@ -7,7 +7,7 @@ message: >-
 title: ls1 mardyn
 url: 'http://www.ls1-mardyn.de/'
 repository-code: 'https://projects.hlrs.de/projects/ls1/'
-date-released: 2018-09-05T00:00:00.000Z
+date-released: 2018-09-05
 commit: Revision 6473.
 version: >-
   Internal development version, situated between release 1.1.1 and prospective
@@ -58,6 +58,7 @@ references:
         family-names: Horsch
     journal: Journal of Chemical Theory and Computation
     volume: 10
-    issue: 10
-    pages: 4455-4464
+    issue: "10"
+    start: 4455
+    end: 4464
     doi: 10.1021/ct500169q

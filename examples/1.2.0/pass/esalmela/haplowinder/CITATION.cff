@@ -5,7 +5,7 @@ authors:
     given-names: Elina
     orcid: https://orcid.org/0000-0003-1326-4462
 title: HaploWinder
-version: 1.11
+version: "1.11"
 date-released: 2008-09-01
 license: MIT
 doi: 10.5281/zenodo.3901323
@@ -41,9 +41,7 @@ references:
     journal: "Annals of Human Genetics"
     year: 2009
     volume: 73
-    issue: 1
+    issue: "1"
     start: 61
     end: 73
     doi: 10.1111/j.1469-1809.2008.00487.x
-    
-    

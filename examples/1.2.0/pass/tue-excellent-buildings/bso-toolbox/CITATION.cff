@@ -7,6 +7,6 @@ authors:
   - family-names: Hofmeyer
     given-names: Hèrm
 title: "BSO Toolbox"
-version: 1.0
+version: "1.0"
 doi: 10.5281/zenodo.3823893
 date-released: 2020-05-01
