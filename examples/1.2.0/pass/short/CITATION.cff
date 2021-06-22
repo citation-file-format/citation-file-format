@@ -1,0 +1,17 @@
+# An incomplete CFF file
+
+cff-version: 1.2.0
+message: If you use this software in your work, please cite it using the following metadata
+title: Ruby CFF Library
+authors:
+- family-names: Haines
+  given-names: Robert
+  affiliation: The University of Manchester, UK
+keywords:
+- ruby
+- credit
+- citation
+version: 0.4.0
+date-released: 2018-07-22
+license: Apache-2.0
+repository-artifact: https://rubygems.org/gems/cff
