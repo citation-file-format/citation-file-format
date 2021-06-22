@@ -1346,7 +1346,7 @@
                             "type": "string"
                         },
                         {
-                            "type": "integer"
+                            "type": "number"
                         }
                     ],
                     "description": "The accession number for a work."
