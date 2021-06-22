@@ -1758,9 +1758,16 @@
             "description": "The URL to a landing page/website for the software or dataset."
         },
         "version": {
-            "description": "The version of the software or dataset.",
-            "minLength": 1,
-            "type": "string"
+            "anyOf": [
+                {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                }
+            ],
+            "description": "The version of the software or dataset."
         }
     },
     "required": [
