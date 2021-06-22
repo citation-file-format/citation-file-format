@@ -1049,9 +1049,16 @@
             "type": "object"
         },
         "post-code": {
-            "description": "A post code.",
-            "minLength": 1,
-            "type": "string"
+            "anyOf": [
+                {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                }
+            ],
+            "description": "A post code."
         },
         "reference": {
             "additionalProperties": false,
@@ -1244,9 +1251,16 @@
                     "type": "string"
                 },
                 "issue": {
-                    "description": "The issue of a periodical in which a work appeared.",
-                    "minLength": 1,
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "integer"
+                        }
+                    ],
+                    "description": "The issue of a periodical in which a work appeared."
                 },
                 "issue-date": {
                     "description": "The publication date of the issue of a periodical in which a work appeared.",
@@ -1326,9 +1340,16 @@
                     "type": "string"
                 },
                 "number": {
-                    "description": "The accession number for a work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "integer"
+                        }
+                    ],
+                    "description": "The accession number for a work."
                 },
                 "number-volumes": {
                     "description": "The number of volumes making up the collection in which the work has been published.",
@@ -1386,14 +1407,28 @@
                     "description": "The URL to the work in a source code repository."
                 },
                 "scope": {
-                    "description": "The scope of the reference, e.g., the section of the work it adheres to.",
-                    "minLength": 1,
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The scope of the reference, e.g., the section of the work it adheres to."
                 },
                 "section": {
-                    "description": "The section of a work that is referenced",
-                    "minLength": 1,
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The section of a work that is referenced"
                 },
                 "senders": {
                     "description": "The sender(s) of a personal communication.",
@@ -1516,9 +1551,16 @@
                     "description": "The URL of the work."
                 },
                 "version": {
-                    "description": "The version of the work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "anyOf": [
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        },
+                        {
+                            "type": "number"
+                        }
+                    ],
+                    "description": "The version of the work."
                 },
                 "volume": {
                     "description": "The volume of the periodical in which a work appeared.",
