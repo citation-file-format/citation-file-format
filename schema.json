@@ -1257,7 +1257,7 @@
                             "type": "string"
                         },
                         {
-                            "type": "integer"
+                            "type": "number"
                         }
                     ],
                     "description": "The issue of a periodical in which a work appeared."
