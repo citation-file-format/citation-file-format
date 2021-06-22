@@ -1,0 +1,23 @@
+name: linting
+
+on:
+  push:
+    paths:
+      - schema.json
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    # for manual trigger
+
+jobs:
+  lint:
+    name: "lint schema"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out a copy of the repository
+
+      - name: lint the schema
+        run: |
+          cat schema.json | jq -S --indent 4 '.' > schema.sorted.json
+          diff schema.json schema.sorted.json
