@@ -1407,16 +1407,9 @@
                     "description": "The URL to the work in a source code repository."
                 },
                 "scope": {
-                    "anyOf": [
-                        {
-                            "minLength": 1,
-                            "type": "string"
-                        },
-                        {
-                            "type": "number"
-                        }
-                    ],
-                    "description": "The scope of the reference, e.g., the section of the work it adheres to."
+                    "description": "The scope of the reference, e.g., the section of the work it adheres to.",
+                    "minLength": 1,
+                    "type": "string"
                 },
                 "section": {
                     "anyOf": [
