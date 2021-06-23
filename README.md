@@ -58,7 +58,7 @@ A CFF file consists of three main parts:
 
 📖 For a full user guide and specification of the CFF schema, please read the [**CFF Schema Guide**](schema-guide.md).
 
-The CFF schema is provided in a machine-readable way as a [JSON Schema](https://json-schema.org/) file ([`schema.json`](schema.json)).
+The CFF schema is provided in a machine-readable way as a [JSON Schema](https://json-schema.org/) file ([`schema.json`](schema.json)).  
 It is publicly deployed at <https://citation-file-format.github.io/1.2.0/schema>.
 
 ## Install
