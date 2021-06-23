@@ -102,9 +102,7 @@ For details on how to contribute, please refer to the contributing guidelines fo
 
 ## ⚖️ License
 
-- The [CFF Schema Guide](schema-guide.md), as well as the [JSON Schema for CFF files](schema.json), are published under a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license under the DOI [10.5281/zenodo.1003149](https://doi.org/10.5281/zenodo.1003149).
-- All Python files (`*.py`) in this repository are licensed under the [MIT license](https://spdx.org/licenses/MIT.html).
-- All other files are public domain or equivalent under the [Creative Commons CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+For license information see the [LICENSE file](LICENSE.md).
 
 ## 🙏 Acknowledgments
 
