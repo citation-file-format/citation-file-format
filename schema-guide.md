@@ -1,5 +1,5 @@
 <!--
-SPDX-FileCopyrightText: © 2021 Stephan Druskat, Jurriaan H. Spaaks, and the Citation File Format contributors
+SPDX-FileCopyrightText: © 2017ff. Stephan Druskat, Jurriaan H. Spaaks, and the Citation File Format contributors
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
