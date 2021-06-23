@@ -3,41 +3,45 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-The Citation File Format (CFF) is a human- and machine-readable file format in YAML 1.2 which provides
-citation metadata for software.  The main website for CFF can be found at https://citation-file-format.github.io.
+The **Citation File Format (CFF)** is a human- and machine-readable file format (implemented in [YAML 1.2](http://yaml.org/)) which provides
+**citation metadata for software** and datasets.
+
+The website for CFF can be found at https://citation-file-format.github.io.  
+This README contains a concise overview of the format.  
+The full specifications of CFF are contained in the [CFF Schema Guide](schema-guide.md).
 
 
 ## Table of contents
 
-* [Citation File Format (CFF)](#citation-file-format-cff)
-   * [Table of contents](#table-of-contents)
-   * [Example](#example)
-* [Specification](#specification)
-   * [Format](#format)
-   * [Formatting](#formatting)
-   * [File structure](#file-structure)
-      * [cff-version (<strong>required</strong>)](#cff-version-required)
-      * [message (<strong>required</strong>)](#message-required)
-      * [Software citation metadata (<strong>required</strong>)](#software-citation-metadata-required)
-      * [references (<strong>optional</strong>)](#references-optional)
-   * [Reference keys](#reference-keys)
-      * [Notable reference keys](#notable-reference-keys)
-      * [Exemplary uses](#exemplary-uses)
-   * [Reference types](#reference-types)
-* [Objects](#objects)
-   * [Entity objects](#entity-objects)
-      * [Exemplary uses](#exemplary-uses-1)
-   * [Person objects](#person-objects)
-      * [Exemplary uses](#exemplary-uses-2)
-   * [Identifier objects](#identifier-objects)
-      * [Exemplary uses](#exemplary-uses-3)
-* [Specified value strings](#specified-value-strings)
-   * [Status strings](#status-strings)
-   * [License strings](#license-strings)
-   * [Language strings](#language-strings)
-   * [Identifier type strings](#identifier-type-strings)
-* [Schema](#schema)
-* [Contributions](#contributions)
+- [Citation File Format (CFF)](#citation-file-format-cff)
+  - [Table of contents](#table-of-contents)
+  - [Example](#example)
+- [Specification](#specification)
+  - [Format](#format)
+  - [Formatting](#formatting)
+  - [File structure](#file-structure)
+    - [`cff-version` (**required**)](#cff-version-required)
+    - [`message` (**required**)](#message-required)
+    - [Software citation metadata (**required**)](#software-citation-metadata-required)
+    - [`references` (**optional**)](#references-optional)
+  - [Reference keys](#reference-keys)
+    - [Notable reference keys](#notable-reference-keys)
+    - [Exemplary uses](#exemplary-uses)
+  - [Reference types](#reference-types)
+- [Objects](#objects)
+  - [Entity objects](#entity-objects)
+    - [Exemplary uses](#exemplary-uses-1)
+  - [Person objects](#person-objects)
+    - [Exemplary uses](#exemplary-uses-2)
+  - [Identifier objects](#identifier-objects)
+    - [Exemplary uses](#exemplary-uses-3)
+- [Specified value strings](#specified-value-strings)
+  - [Status strings](#status-strings)
+  - [License strings](#license-strings)
+  - [Language strings](#language-strings)
+  - [Identifier type strings](#identifier-type-strings)
+- [Schema](#schema)
+- [Contributions](#contributions)
 
 
 ## Example
