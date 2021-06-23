@@ -22,7 +22,7 @@ The full specifications of CFF are contained in the [CFF Schema Guide](schema-gu
   - [Tooling](#tooling)
     - [Tooling for *creating and maintaining* `CITATION.cff` files to *provide* citation metadata](#tooling-for-creating-and-maintaining-citationcff-files-to-provide-citation-metadata)
     - [Tooling for *reading and validating* `CITATION.cff` files to *process* citation metadata](#tooling-for-reading-and-validating-citationcff-files-to-process-citation-metadata)
-  - [Platform support](#platform-support)
+    - [Platform support](#platform-support)
   - [Contributing](#contributing)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
@@ -87,13 +87,13 @@ but there is also tooling available to help you write and maintain CFF files:
 - 🐍 Validate CFF files (Generic JSON Schema Python package): **jsonschema** - <https://pypi.org/project/jsonschema/> with [`schema.json`](schema.json) as schema input and a `CITATION.cff` file as data input
 - 💎 Validate and manipulate CFF files (Ruby gem): **cff** - <https://rubygems.org/gems/cff>
 
-## Platform support
+### Platform support
 
 The following platforms support the Citation File Format:
 
-- **Research Software Directory**: a content management system for research software - uses `CITATION.cff` files as metadata input format.  
-Software project: <https://github.com/research-software-directory/research-software-directory>  
-Example instance: The Research Software Directory at the Netherlands eScience Center - <https://www.research-software.nl/>
+- **Research Software Directory**: a content management system for research software - uses `CITATION.cff` files as metadata input format.
+  - Software project: <https://github.com/research-software-directory/research-software-directory>
+  - Example instance: The Research Software Directory at the Netherlands eScience Center - <https://www.research-software.nl/>
 
 ## Contributing
 
