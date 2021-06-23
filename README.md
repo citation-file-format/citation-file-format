@@ -102,7 +102,9 @@ For details on how to contribute, please refer to the contributing guidelines fo
 
 ## ⚖️ License
 
-For license information see the [LICENSE file](LICENSE.md).
+Copyright © 2017ff. Stephan Druskat, Jurriaan H. Spaaks, and the Citation File Format contributors
+
+This work is licensed under a [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE.md) license.
 
 ## 🙏 Acknowledgments
 
