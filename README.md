@@ -63,8 +63,8 @@ It is publicly deployed at <https://citation-file-format.github.io/1.2.0/schema>
 
 ## Install
 
-Citation File Format files are plain text files.
-You don't need to install it, or install any specific software to use it.
+Citation File Format files are plain text files.  
+You don't need to install it, or install any specific software to use it.  
 For more information, see [*Tooling*](#tooling) below.
 
 ## Tooling
