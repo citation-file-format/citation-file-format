@@ -106,3 +106,7 @@ contribute, please refer to the contributing guidelines for CFF at
 ## Acknowledgments
 
 The Citation File Format project team gratefully acknowledges support from the following institutions:
+
+- [**Software Sustainability Institute**](https://software.ac.uk/)
+- [**German Aerospace Center (DLR)**](https://www.dlr.de/sc/en/)
+- [**Netherlands eScience Center**](https://www.esciencecenter.nl/)
