@@ -485,10 +485,24 @@
             "description": "An SPDX license identifier.",
             "oneOf": [
                 {
-                    "$ref": "#/definitions/license-enum"
+                    "$ref": "#/definitions/license-enum",
+                    "examples": [
+                        "Apache-2.0",
+                        "MIT"
+                    ]
                 },
                 {
                     "$comment": "When there are multiple licenses, it is assumed their relationship is OR, not AND",
+                    "examples": [
+                        [
+                            "Apache-2.0",
+                            "MIT"
+                        ],
+                        [
+                            "GPL-3.0",
+                            "GPL-3.0-or-later"
+                        ]
+                    ],
                     "items": {
                         "$ref": "#/definitions/license-enum"
                     },
