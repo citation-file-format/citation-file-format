@@ -280,8 +280,13 @@
             "type": "string"
         },
         "date": {
+            "$comment": "Note to tool implementers: it is necessary to cast YAML 'date' objects to string objects when validating against this schema.",
+            "examples": [
+                "1900-01-01",
+                "2020-12-31"
+            ],
             "format": "date",
-            "pattern": "[0-9]{4}-[0-1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}",
+            "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$",
             "type": "string"
         },
         "doi": {
