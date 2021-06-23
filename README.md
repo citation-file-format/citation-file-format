@@ -19,10 +19,13 @@ The full specifications of CFF are contained in the [CFF Schema Guide](schema-gu
   - [Structure of a `CITATION.cff` file](#structure-of-a-citationcff-file)
   - [Full specifications & schema](#full-specifications--schema)
   - [Install](#install)
-  - [Usage](#usage)
   - [Tooling](#tooling)
+    - [Tooling for *creating and maintaining* `CITATION.cff` files to *provide* citation metadata](#tooling-for-creating-and-maintaining-citationcff-files-to-provide-citation-metadata)
+    - [Tooling for *reading and validating* `CITATION.cff` files to *process* citation metadata](#tooling-for-reading-and-validating-citationcff-files-to-process-citation-metadata)
+  - [Platform support](#platform-support)
   - [Contributing](#contributing)
   - [License](#license)
+  - [Acknowledgments](#acknowledgments)
 
 
 ## Introductory example
@@ -61,10 +64,36 @@ It is publicly deployed at <https://citation-file-format.github.io/1.2.0/schema>
 ## Install
 
 Citation File Format files are plain text files.
-
-## Usage
+You don't need to install it, or install any specific software to use it.
+For more information, see [*Usage*](#usage) below.
 
 ## Tooling
+
+Tooling exists for different use cases for the Citation File Format.
+
+### Tooling for *creating and maintaining* `CITATION.cff` files to *provide* citation metadata
+
+You can read and write CFF files in any text editor,
+but there is also tooling available to help you write and maintain CFF files:
+
+- Create/edit CFF files: **CFF Initializer** - <https://citation-file-format.github.io/cff-initializer-javascript/> (web form)
+- Convert CFF files to other formats: **CFF Converter** - <https://bit.ly/cffconvert> (web service)
+- Initialize a CFF file from a DOI: **DOI2CFF** - <https://github.com/citation-file-format/doi2cff> (Python package)
+
+### Tooling for *reading and validating* `CITATION.cff` files to *process* citation metadata
+
+- 🐍 Convert CFF files to other formats: **cffconvert** - <https://pypi.org/project/cffconvert/>
+- 🐍 Validate CFF files (CFF-dedicated Python package): **cffconvert** - <https://pypi.org/project/cffconvert/> with `--validate` flag
+- 🐍 Validate CFF files (Generic JSON Schema Python package): **jsonschema** - <https://pypi.org/project/jsonschema/> with [`schema.json`](schema.json) as schema input and a `CITATION.cff` file as data input
+- 💎 Validate and manipulate CFF files (Ruby gem): **cff** - <https://rubygems.org/gems/cff>
+
+## Platform support
+
+The following platforms support the Citation File Format:
+
+- **Research Software Directory**: a content management system for research software - uses `CITATION.cff` files as metadata input format.  
+Software project: <https://github.com/research-software-directory/research-software-directory>  
+Example instance: The Research Software Directory at the Netherlands eScience Center - <https://www.research-software.nl/>
 
 ## Contributing
 
@@ -73,3 +102,7 @@ contribute, please refer to the contributing guidelines for CFF at
 <https://github.com/citation-file-format/citation-file-format/blob/master/CONTRIBUTING.md>.
 
 ## License
+
+## Acknowledgments
+
+The Citation File Format project team gratefully acknowledges support from the following institutions:
