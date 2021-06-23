@@ -65,7 +65,7 @@ It is publicly deployed at <https://citation-file-format.github.io/1.2.0/schema>
 
 Citation File Format files are plain text files.
 You don't need to install it, or install any specific software to use it.
-For more information, see [*Usage*](#usage) below.
+For more information, see [*Tooling*](#tooling) below.
 
 ## Tooling
 
