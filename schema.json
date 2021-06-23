@@ -1563,15 +1563,7 @@
                     "description": "The URL of the work."
                 },
                 "version": {
-                    "anyOf": [
-                        {
-                            "minLength": 1,
-                            "type": "string"
-                        },
-                        {
-                            "type": "number"
-                        }
-                    ],
+                    "$ref": "#/definitions/version",
                     "description": "The version of the work."
                 },
                 "volume": {
@@ -1626,6 +1618,17 @@
             "format": "uri",
             "pattern": "^(https|http|ftp|sftp)://.+",
             "type": "string"
+        },
+        "version": {
+            "anyOf": [
+                {
+                    "minLength": 1,
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                }
+            ]
         }
     },
     "description": "A file with citation metadata for software or datasets.",
@@ -1770,15 +1773,7 @@
             "description": "The URL to a landing page/website for the software or dataset."
         },
         "version": {
-            "anyOf": [
-                {
-                    "minLength": 1,
-                    "type": "string"
-                },
-                {
-                    "type": "number"
-                }
-            ],
+            "$ref": "#/definitions/version",
             "description": "The version of the software or dataset."
         }
     },
