@@ -4,5 +4,4 @@ Borrowed from [`ruby-cff`](https://github.com/citation-file-format/ruby-cff)'s f
 
 Fails because
 - `date-released` is not in YYYY-MM-DD format
-- `issue` should be a string
 - `pages` should be an integer describing the number of pages
