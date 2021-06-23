@@ -98,7 +98,7 @@ The following platforms support the Citation File Format:
 ## 🤝 Contributing
 
 Contributions to the Citation File Format are welcome!
-For details on how to contribute, please refer to the contributing guidelines for CFF ([`CONTRIBUTING.md`](CONTRIBUTING.md)).
+For details on how to contribute, please refer to the contributing guidelines for CFF: [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## ⚖️ License
 
