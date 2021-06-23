@@ -280,6 +280,7 @@
             "type": "string"
         },
         "date": {
+            "$comment": "Note to tool implementers: it is necessary to cast YAML 'date' objects to string objects when validating against this schema.",
             "examples": [
                 "1900-01-01",
                 "2020-12-31"
