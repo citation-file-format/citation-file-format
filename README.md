@@ -15,20 +15,20 @@ The full specifications of CFF are contained in the [CFF Schema Guide](schema-gu
 
 - [Citation File Format (CFF)](#citation-file-format-cff)
   - [Table of contents](#table-of-contents)
-  - [Introductory example](#introductory-example)
-  - [Structure of a `CITATION.cff` file](#structure-of-a-citationcff-file)
-  - [Full specifications & schema](#full-specifications--schema)
-  - [Install](#install)
-  - [Tooling](#tooling)
+  - [💡 Introductory example](#-introductory-example)
+  - [🧬 Structure of a `CITATION.cff` file](#-structure-of-a-citationcff-file)
+  - [📑 Full specifications & schema](#-full-specifications--schema)
+  - [💾 Install](#-install)
+  - [🔧 Tooling](#-tooling)
     - [Tooling for *creating and maintaining* `CITATION.cff` files to *provide* citation metadata](#tooling-for-creating-and-maintaining-citationcff-files-to-provide-citation-metadata)
     - [Tooling for *reading and validating* `CITATION.cff` files to *process* citation metadata](#tooling-for-reading-and-validating-citationcff-files-to-process-citation-metadata)
     - [Platform support](#platform-support)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Acknowledgments](#acknowledgments)
+  - [🤝 Contributing](#-contributing)
+  - [⚖️ License](#️-license)
+  - [🙏 Acknowledgments](#-acknowledgments)
 
 
-## Introductory example
+## 💡 Introductory example
 
 If you want to make your software (or dataset) easily citable, 
 you can put a file called `CITATION.cff` in the root of your repository. 
@@ -46,7 +46,7 @@ version: 1.0.4
 date-released: 2017-12-18
 ```
 
-## Structure of a `CITATION.cff` file
+## 🧬 Structure of a `CITATION.cff` file
 
 A CFF file consists of three main parts:
 
@@ -54,20 +54,20 @@ A CFF file consists of three main parts:
 2. *Optionally*, a **list of references** of the software (or dataset), e.g., to software dependencies, papers, etc.
 3. *Optionally*, a **preferred citation** for the software (or dataset). While users should always cite the software or dataset itself, it may sometimes be useful to point to a paper describing them for academic credit.
 
-## Full specifications & schema
+## 📑 Full specifications & schema
 
-📖 For a full user guide and specification of the CFF schema, please read the [**CFF Schema Guide**](schema-guide.md).
+For a full user guide and specification of the CFF schema, please read the [**📖 CFF Schema Guide**](schema-guide.md).
 
 The CFF schema is provided in a machine-readable way as a [JSON Schema](https://json-schema.org/) file ([`schema.json`](schema.json)).  
-It is publicly deployed at <https://citation-file-format.github.io/1.2.0/schema>.
+It is publicly deployed at <https://citation-file-format.github.io/1.2.0/schema#>.
 
-## Install
+## 💾 Install
 
 Citation File Format files are plain text files.  
 You don't need to install it, or install any specific software to use it.  
 For more information, see [*Tooling*](#tooling) below.
 
-## Tooling
+## 🔧 Tooling
 
 Tooling exists for different use cases for the Citation File Format.
 
@@ -76,9 +76,9 @@ Tooling exists for different use cases for the Citation File Format.
 You can read and write CFF files in any text editor,
 but there is also tooling available to help you write and maintain CFF files:
 
-- Create/edit CFF files: **CFF Initializer** - <https://citation-file-format.github.io/cff-initializer-javascript/> (web form)
-- Convert CFF files to other formats: **CFF Converter** - <https://bit.ly/cffconvert> (web service)
-- Initialize a CFF file from a DOI: **DOI2CFF** - <https://github.com/citation-file-format/doi2cff> (Python package)
+- 💻 Create/edit CFF files: **CFF Initializer** - <https://citation-file-format.github.io/cff-initializer-javascript/> (web form)
+- 💻 Convert CFF files to other formats: **CFF Converter** - <https://bit.ly/cffconvert> (web service)
+- 🐍 Initialize a CFF file from a DOI: **DOI2CFF** - <https://github.com/citation-file-format/doi2cff> (Python package)
 
 ### Tooling for *reading and validating* `CITATION.cff` files to *process* citation metadata
 
@@ -95,15 +95,18 @@ The following platforms support the Citation File Format:
   - Software project: <https://github.com/research-software-directory/research-software-directory>
   - Example instance: The Research Software Directory at the Netherlands eScience Center - <https://www.research-software.nl/>
 
-## Contributing
+## 🤝 Contributing
 
-Contributions to the format specifications are welcome! For details on how to
-contribute, please refer to the contributing guidelines for CFF at
-<https://github.com/citation-file-format/citation-file-format/blob/master/CONTRIBUTING.md>.
+Contributions to the Citation File Format are welcome!
+For details on how to contribute, please refer to the contributing guidelines for CFF ([`CONTRIBUTING.md`](CONTRIBUTING.md)).
 
-## License
+## ⚖️ License
 
-## Acknowledgments
+- The [CFF Schema Guide](schema-guide.md), as well as the [JSON Schema for CFF files](schema.json), are published under a [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license under the DOI [10.5281/zenodo.1003149](https://doi.org/10.5281/zenodo.1003149).
+- All Python files (`*.py`) in this repository are licensed under the [MIT license](https://spdx.org/licenses/MIT.html).
+- All other files are public domain or equivalent under the [Creative Commons CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+
+## 🙏 Acknowledgments
 
 The Citation File Format project team gratefully acknowledges support from the following institutions:
 
