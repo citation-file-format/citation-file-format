@@ -777,7 +777,7 @@ contribute, please refer to the contributing guidelines for CFF at
 # Research notice
 Please note that this repository is participating in a study into sustainability
  of open source projects. Data will be gathered about this repository for
- approximately the next 12 months, starting from [insert date here].
+ approximately the next 12 months, starting from June 2021.
 
 Data collected will include number of contributors, number of PRs, time taken to
  close/merge these PRs, and issues closed.
