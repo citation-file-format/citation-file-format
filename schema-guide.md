@@ -3,15 +3,18 @@ SPDX-FileCopyrightText: © 2017ff. Stephan Druskat, Jurriaan H. Spaaks, and the 
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
-# Citation File Format (CFF) - Schema Guide
+# Citation File Format (CFF) 1.2.0 - Schema Guide
 
 The **Citation File Format (CFF)** is a file format to provide
 **citation metadata for software** and datasets.
 
 This is the *Citation File Format Schema Guide*.
-It fully specifies the Citation File Format (*CFF*) - Version 1.2.0.
+It fully specifies the Citation File Format (*CFF*).
 
-New and changed features in comparison with the previous version are marked with 🆕.
+## Noteworthy changes
+
+For a list of changes since the last release of CFF,
+please see the [changelog](CHANGELOG.md).
 
 # §1 Format
 
@@ -21,7 +24,7 @@ and instances must be valid YAML.
 
 # §2 Schema
 
-1. The CFF schema is formally defined in a [JSON Schema](https://json-schema.org/) file: [`schema.json`](schema.json) (*the schema*). 🆕  
+1. The CFF schema is formally defined in a [JSON Schema](https://json-schema.org/) file: [`schema.json`](schema.json) (*the schema*).  
 The schema contains examples and descriptions for all fields in a CFF file.
 
 # §3 Structure
@@ -29,7 +32,7 @@ The schema contains examples and descriptions for all fields in a CFF file.
 1. CFF files have three main sections:
    1. **Citation metadata** for the software or dataset they describe
    2. A list of **references** for the software or dataset they describe (*optional*)
-   3. A **preferred citation** (*optional*) 🆕
+   3. A **preferred citation** (*optional*)
 
 # §4 Fields
 
@@ -121,7 +124,7 @@ Therefore, all of the following examples are valid string values in CFF.
 
 ### `repository-code`
 
-### `type` 🆕
+### `type`
 
 ### `url`
 
@@ -133,7 +136,7 @@ Therefore, all of the following examples are valid string values in CFF.
 
 ## §4.4 Preferred citation fields
 
-### `preferred-citation` 🆕
+### `preferred-citation`
 
 # §5 Definitions
 
