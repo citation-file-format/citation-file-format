@@ -79,7 +79,7 @@ but there is also tooling available to help you write and maintain CFF files:
 - 💻 Create/edit CFF files: **CFF Initializer** - <https://citation-file-format.github.io/cff-initializer-javascript/> (web form)
 - 💻 Convert CFF files to other formats: **CFF Converter** - <https://bit.ly/cffconvert> (web service)
 - 🐍 Initialize a CFF file from a DOI: **DOI2CFF** - <https://github.com/citation-file-format/doi2cff> (Python package)
-- ☕ Create and update a CFF file from Maven metadata: **Citation File Format Maven Plugin** - <https://github.com/hexatomic/cff-maven-plugin> (Maven plugin)
+- ☕ Create/update CFF files from Maven metadata: **Citation File Format Maven Plugin** - <https://github.com/hexatomic/cff-maven-plugin> (Maven plugin)
 
 ### Tooling for *reading and validating* `CITATION.cff` files to *process* citation metadata
 
