@@ -3,95 +3,178 @@ SPDX-FileCopyrightText: © 2017ff. Stephan Druskat, Jurriaan H. Spaaks, and the 
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
-# Citation File Format (CFF)
-[![Build Status](https://github.com/citation-file-format/citation-file-format/workflows/testing/badge.svg)](https://github.com/citation-file-format/citation-file-format/actions/workflows/testing.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1003149.svg)](https://doi.org/10.5281/zenodo.1003149)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+# Citation File Format (CFF) - Schema Guide
 
-The Citation File Format (CFF) is a human- and machine-readable file format in YAML 1.2 which provides
-citation metadata for software.  The main website for CFF can be found at https://citation-file-format.github.io.
+The **Citation File Format (CFF)** is a file format to provide
+**citation metadata for software** and datasets.
 
+This is the *Citation File Format Schema Guide*.
+It fully specifies the Citation File Format (*CFF*) - Version 1.2.0.
 
-## Table of contents
+New and changed features in comparison with the previous version are marked with 🆕.
 
-- [Citation File Format (CFF)](#citation-file-format-cff)
-  - [Table of contents](#table-of-contents)
-  - [Example](#example)
-- [Specification](#specification)
-  - [Format](#format)
-  - [Formatting](#formatting)
-  - [File structure](#file-structure)
-    - [`cff-version` (**required**)](#cff-version-required)
-    - [`message` (**required**)](#message-required)
-    - [Software citation metadata (**required**)](#software-citation-metadata-required)
-    - [`references` (**optional**)](#references-optional)
-  - [Reference keys](#reference-keys)
-    - [Notable reference keys](#notable-reference-keys)
-    - [Exemplary uses](#exemplary-uses)
-  - [Reference types](#reference-types)
-- [Objects](#objects)
-  - [Entity objects](#entity-objects)
-    - [Exemplary uses](#exemplary-uses-1)
-  - [Person objects](#person-objects)
-    - [Exemplary uses](#exemplary-uses-2)
-  - [Identifier objects](#identifier-objects)
-    - [Exemplary uses](#exemplary-uses-3)
-- [Specified value strings](#specified-value-strings)
-  - [Status strings](#status-strings)
-  - [License strings](#license-strings)
-  - [Language strings](#language-strings)
-  - [Identifier type strings](#identifier-type-strings)
-- [Schema](#schema)
-- [Contributions](#contributions)
+# §1 Format
 
+1. CFF files are named `CITATION.cff`.
+2. CFF files are implemented in [YAML 1.2](http://yaml.org/spec/1.2/spec.html).  
+You can check if your file is valid YAML on https://www.yamllint.com/.
 
-## Example
+# §2 Schema
 
-If you want to make your software easily citable, you can put a file called
-`CITATION.cff` in the root of your repository. This file should provide at least the
-minimally necessary metadata to cite your software. An example:
+1. The CFF schema is formally defined in a [JSON Schema](https://json-schema.org/) file: [`json.schema`](./json.schema) (*the schema*). 🆕  
+The schema contains examples and descriptions for all fields in a CFF file.
+
+# §3 Structure
+
+1. CFF files have three main sections:
+   1. **Citation metadata** for the software or dataset they describe
+   2. A list of **references** for the software or dataset they describe (*optional*)
+   3. A **preferred citation** (*optional*) 🆕
+
+# §4 Fields
+
+1. CFF fields are (nested) YAML maps.
 
 ```yaml
-cff-version: 1.1.0
-message: If you use this software, please cite it as below.
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-title: My Research Tool
-version: 1.0.4
-date-released: 2017-12-18
+field: value
+array-field:
+  - value
+  - value
+nested-array-field:
+  - nested-field: value
+    nested-field-2: value
 ```
 
-# Specification
+2. The order of fields in the file is arbitrary, the order suggested for best human-readability is given in the table below.
+
+## §4.1 Required citation metadata fields
+
+### `authors` (*required*)
+
+- **array of [`person`](#person) and/or [`entity`](#entity)**  
+
+> *The authors of a software or dataset.*  
+> ```yaml
+> authors:
+>   - given-names: Stephan
+>     family-names: Druskat
+>   - name: "The Research Software project"
+> ```
+
+### `cff-version` (*required*)
+
+- **string**
+
+> <details>
+>   <summary>Details</summary>
+> 
+> - The version of CFF used for providing the citation metadata.
+>   `cff-version: "1.2.0"`
+> <details>
+
+### `message` (*required*)
+
+### `title` (*required*)
+
+## §4.2 Optional citation metadata fields
+
+### `abstract`
+
+- **string**  
+
+> *A description of the software or dataset.*  
+> `abstract: "Research software to do research with."`
+
+### `commit`
+
+### `contact`
+
+### `date-released`
+
+### `doi`
+
+### `identifiers`
+
+### `keywords`
+
+### `license`
+
+### `license-url`
+
+### `repository`
+
+### `repository-artifact`
+
+### `repository-code`
+
+### `type` 🆕
+
+### `url`
+
+### `version`
+
+## §4.3 Reference fields
+
+### `references`
+
+## §4.4 Preferred citation fields
+
+### `preferred-citation` 🆕
+
+# §5 Definitions
+
+1. Definitions are simple or complex objects that can be used as values for fields.
+2. CFF defines the following objects.
+
+### `address`
+
+### `alias`
+
+### `city`
+
+### `commit`
+
+### `country`
+
+### `date`
+
+### `doi`
+
+### `email`
+
+### `entity`
+
+### `fax`
+
+### `identifier`
+
+### `identifier-description` ?
+
+### `license`
+
+### `license-enum` ?
+
+### `orcid`
+
+### `person`
+
+### `post-code`
+
+### `reference` ?
+
+### `region`
+
+### `swh-identifier` ?
+
+### `tel`
+
+### `url`
+
+### `version`
 
 
-## Format
 
-CFF `CITATION` files must be named `CITATION.cff`.
-
-CFF is implemented in YAML 1.2. For details, see the
-[YAML 1.2 Specifications](http://yaml.org/spec/1.2/spec.html).
-
-## Formatting
-
-CFF follows the formatting rules of YAML 1.2, of which one of
-the most important ones is that the colon (`:`) after a key should always be
-followed by a whitespace.
-
-Structure is determined by indentation, i.e., lines
-containing nested elements must be indented by at least one whitespace character,
-although using at least two whitespaces as a standard for indentation preserves
-readability.
-
-Value strings should be double-quoted, e.g. `"string"`,
-especially when they contain YAML special characters, or special characters in
-general. These include:
-
-> `:  {  }  [  ]  ,  &  *  #  ?  |  -  <  >  =  !  %  @  \`
-
-To check whether your YAML is correctly formatted, you can use <http://www.yamllint.com/>.
-
-## File structure
+# File structure
 
 `CITATION.cff` files represent YAML 1.2 dictionaries ("maps") with
 the keys listed in the table below. Note that the order of the keys is arbitrary,
@@ -768,13 +851,3 @@ identifiers:
     value: "swh:1:rel:99f6850374dc6597af01bd0ee1d3fc0699301b9f"
 ```
 
-# Schema
-
-CFF `CITATION.cff` files can be validated against a schema which is available at
-<https://github.com/citation-file-format/citation-file-format/blob/master/schema.yaml>.
-
-# Contributions
-
-Contributions to the format specifications are welcome! For details on how to
-contribute, please refer to the contributing guidelines for CFF at
-<https://github.com/citation-file-format/citation-file-format/blob/master/CONTRIBUTING.md>.
