@@ -94,6 +94,8 @@ The following platforms support the Citation File Format:
 - **Research Software Directory**: a content management system for research software - uses `CITATION.cff` files as metadata input format.
   - Software project: <https://github.com/research-software-directory/research-software-directory>
   - Example instance: The Research Software Directory at the Netherlands eScience Center - <https://www.research-software.nl/>
+- **Astrophysics Source Code Library**: ASCL.net generates `CITATION.cff` files from ASCL entries.
+  - Blog post describing the functionality: [http://ascl.net/](http://ascl.net/wordpress/2020/01/05/ascl-poster-at-aas235/)
 
 ## 🤝 Contributing
 
