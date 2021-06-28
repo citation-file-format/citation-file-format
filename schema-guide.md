@@ -16,8 +16,8 @@ New and changed features in comparison with the previous version are marked with
 # §1 Format
 
 1. CFF files are named `CITATION.cff`.
-2. CFF files are implemented in [YAML 1.2](http://yaml.org/spec/1.2/spec.html).  
-You can check if your file is valid YAML on https://www.yamllint.com/.
+2. CFF files are implemented in [YAML 1.2](http://yaml.org/spec/1.2/spec.html),
+and instances must be valid YAML.
 
 # §2 Schema
 
@@ -47,12 +47,12 @@ The schema contains examples and descriptions for all fields in a CFF file.
 
 2. The order of fields in the file is arbitrary, the order suggested for best human-readability is given in the table below.
 3. While string values should generally be quoted with double-quotes (`"string value"`), 
-it is permissible to *not* quote string values when the value cannot be mistaken for being of another type.
+it is permissible to *not* quote string values when the value cannot be mistaken for being of another type than **string**.
 Therefore, all of the following examples are valid string values in CFF.
 
 > ```yaml
-> field: "String"
-> field: String
+> field: "String value"
+> field: String value
 > field: "1.2.0" # E.g., a semantic version number
 > field: 1.2.0
 
