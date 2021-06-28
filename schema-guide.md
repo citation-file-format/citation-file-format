@@ -35,17 +35,26 @@ The schema contains examples and descriptions for all fields in a CFF file.
 
 1. CFF fields are (nested) YAML maps.
 
-```yaml
-field: value
-array-field:
-  - value
-  - value
-nested-array-field:
-  - nested-field: value
-    nested-field-2: value
-```
+> ```yaml
+> field: value
+> array-field:
+>   - value
+>   - value
+> nested-array-field:
+>   - nested-field: value
+>     nested-field-2: value
+> ```
 
 2. The order of fields in the file is arbitrary, the order suggested for best human-readability is given in the table below.
+3. While string values should generally be quoted with double-quotes (`"string value"`), 
+it is permissible to *not* quote string values when the value cannot be mistaken for being of another type.
+Therefore, all of the following examples are valid string values in CFF.
+
+> ```yaml
+> field: "String"
+> field: String
+> field: "1.2.0" # E.g., a semantic version number
+> field: 1.2.0
 
 ## §4.1 Required citation metadata fields
 
