@@ -21,7 +21,7 @@ You can check if your file is valid YAML on https://www.yamllint.com/.
 
 # §2 Schema
 
-1. The CFF schema is formally defined in a [JSON Schema](https://json-schema.org/) file: [`json.schema`](./json.schema) (*the schema*). 🆕  
+1. The CFF schema is formally defined in a [JSON Schema](https://json-schema.org/) file: [`schema.json`](schema.json) (*the schema*). 🆕  
 The schema contains examples and descriptions for all fields in a CFF file.
 
 # §3 Structure
