@@ -26,7 +26,7 @@ The full specifications of CFF are contained in the [CFF Schema Guide](schema-gu
   - [🤝 Contributing](#-contributing)
   - [⚖️ License](#️-license)
   - [🙏 Acknowledgments](#-acknowledgments)
-- [Research notice](#research-notice)
+    - [Research notice](#research-notice)
 
 
 ## 💡 Introductory example
@@ -118,7 +118,7 @@ The Citation File Format project team gratefully acknowledges support from the f
 - [**German Aerospace Center (DLR)**](https://www.dlr.de/sc/en/)
 - [**Netherlands eScience Center**](https://www.esciencecenter.nl/)
 
-# Research notice
+### Research notice
 Please note that this repository is participating in a study into sustainability
  of open source projects. Data will be gathered about this repository for
  approximately the next 12 months, starting from June 2021.
