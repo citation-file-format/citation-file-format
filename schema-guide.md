@@ -63,7 +63,7 @@ Therefore, all of the following examples are valid string values in CFF.
 
 ### `authors` (*required*)
 
-- **array of [`person`](#person) and/or [`entity`](#entity)**  
+- **non-empty array of unique [`person`](#person) and/or [`entity`](#entity)**  
 
 > *The authors of a software or dataset.*  
 > ```yaml
