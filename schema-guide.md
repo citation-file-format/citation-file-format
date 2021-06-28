@@ -65,26 +65,19 @@ nested-array-field:
 
 - **string**
 
-<details>
-  <summary>Details</summary>
-
-*The version of CFF used for providing the citation metadata.*
-```yaml
-cff-version: "1.2.0"
-```
-</details>
+> *The version of CFF used for providing the citation metadata.*
+> ```yaml
+> cff-version: "1.2.0"
+> ```
 
 ### `message` (*required*)
 
 - **string**
-<details>
-  <summary>Details</summary>
 
-*A message to the (human) reader of the file to let them know what to do with the citation metadata.*
-```yaml
-message: "If you use this software, please cite it using the metadata from this file."
-```
-</details>
+> *A message to the (human) reader of the file to let them know what to do with the citation metadata.*
+> ```yaml
+> message: "If you use this software, please cite it using the metadata from this file."
+> ```
 
 ### `title` (*required*)
 
