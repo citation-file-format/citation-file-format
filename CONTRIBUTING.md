@@ -38,7 +38,7 @@ through the
 and see if you can identify one that you would like to work on.
 
 If you have never contributed to an open source project, you may find this tutorial helpful:
-[How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
+[How to Contribute to an Open Source Project on GitHub](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github).
 
 # Getting started
 
