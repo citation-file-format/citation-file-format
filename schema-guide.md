@@ -1,14 +1,10 @@
----
-author: "Stephan Druskat, Jurriaan H. Spaaks, and the Citation File Format Contributors"
-title: Citation File Format (CFF) - Schema Guide
-date: Version 1.2.0 - \today
----
 <!--
 SPDX-FileCopyrightText: © 2017ff. Stephan Druskat, Jurriaan H. Spaaks, and the Citation File Format contributors
 SPDX-License-Identifier: CC-BY-4.0
 -->
+# Citation File Format (CFF) Schema Guide
 
-The **Citation File Format (CFF)** is a file format to provide
+The [**Citation File Format (CFF)**](https://citation-file-format.github.io) is a file format to provide
 **citation metadata for software** and datasets.
 
 This is the *Citation File Format Schema Guide*.
