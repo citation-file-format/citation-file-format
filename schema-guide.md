@@ -76,7 +76,9 @@ cff-version: "1.2.0"
 
 ### `message` (*required*)
 
-- **string** <details><summary>Details</summary>
+- **string**
+<details>
+  <summary>Details</summary>
 
 *A message to the (human) reader of the file to let them know what to do with the citation metadata.*
 ```yaml
