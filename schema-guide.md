@@ -2,8 +2,11 @@
 SPDX-FileCopyrightText: © 2017ff. Stephan Druskat, Jurriaan H. Spaaks, and the Citation File Format contributors
 SPDX-License-Identifier: CC-BY-4.0
 -->
-
-# Citation File Format (CFF) 1.2.0 - Schema Guide
+---
+author: "Stephan Druskat, Jurriaan H. Spaaks, and the Citation File Format Contributors"
+title: Citation File Format (CFF) - Schema Guide
+date: Version 1.2.0 - \today
+---
 
 The **Citation File Format (CFF)** is a file format to provide
 **citation metadata for software** and datasets.
@@ -49,7 +52,7 @@ The schema contains examples and descriptions for all fields in a CFF file.
 > ```
 
 2. The order of fields in the file is arbitrary, the order suggested for best human-readability is given in the table below.
-3. While string values should generally be quoted with double-quotes (`"string value"`), 
+3. ⚠️ While string values should generally be quoted with double-quotes (`"string value"`), 
 it is permissible to *not* quote string values when the value cannot be mistaken for being of another type than **string**.
 Therefore, all of the following examples are valid string values in CFF.
 
@@ -58,6 +61,7 @@ Therefore, all of the following examples are valid string values in CFF.
 > field: String value
 > field: "1.2.0" # E.g., a semantic version number
 > field: 1.2.0
+> ```
 
 ## §4.1 Required citation metadata fields
 
