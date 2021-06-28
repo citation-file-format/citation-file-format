@@ -70,7 +70,7 @@ nested-array-field:
 > 
 > - The version of CFF used for providing the citation metadata.
 >   `cff-version: "1.2.0"`
-> <details>
+> </details>
 
 ### `message` (*required*)
 
