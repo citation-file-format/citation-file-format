@@ -93,6 +93,13 @@ Therefore, all of the following examples are valid string values in CFF.
 
 ### `title` (*required*)
 
+- **string**
+
+> *The name of the software or dataset.*
+> ```yaml
+> title: "CFF Validator"
+> ```
+
 ## §4.2 Optional citation metadata fields
 
 ### `abstract`
