@@ -4,5 +4,5 @@ venv/
 venv37/
 venv3*/
 .idea
-
+**/.vscode/
 
