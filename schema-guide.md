@@ -27,9 +27,13 @@ cff-version: 1.2.0
 date-released: 2021-07-18
 identifiers: 
   - 
-    description: This is the archived snapshot of version 0.11.2 of My Research Software
+    description: This is the collection of archived snapshots of all versions of My Research Software
     type: doi
     value: "10.5281/zenodo.123456"
+  - 
+    description: This is the archived snapshot of version 0.11.2 of My Research Software
+    type: doi
+    value: "10.5281/zenodo.123457"
 keywords: 
   - "awesome software"
   - research
@@ -40,6 +44,7 @@ title: My Research Software
 version: 0.11.2
 ```
 
+In rare cases, you may opt to expand on the above by using the `preferred-citation` or `references` keys.
 
 
 ## Glossary of keys
