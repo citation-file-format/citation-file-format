@@ -62,7 +62,7 @@ TODO add explanation of when to use `references`
 
 The next sections explain each key in more detail.
 
-## Glossary of keys
+## root-level keys
 
 - [`abstract`](#abstract)
 - [`authors`](#authors)
