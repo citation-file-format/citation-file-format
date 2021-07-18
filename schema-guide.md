@@ -185,7 +185,7 @@ Usage example:
 
 ### `preferred-citation`
 
-- type: A [`definitions.reference`](#definitionsreference). 
+- type: A [`definitions.reference`](#definitionsreference) object. 
 - required: false
 
 ...
@@ -193,7 +193,6 @@ Usage example:
 Usage example:
 
 ```yaml
----
 preferred-citation:
   authors:
     - 
@@ -206,7 +205,7 @@ preferred-citation:
 
 ### `references`
 
-Array of [`definitions.reference`](#definitionsreference).
+Array of [`definitions.reference`](#definitionsreference) objects.
 
 ### `repository`
 
