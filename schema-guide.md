@@ -169,7 +169,7 @@ abstract: This software implements methods to do things.
 
 ### `authors`
 
-- type: Array of [#definitions.person](#definitions.person) and/or [#definitions.entity](#definitions.entity) objects.
+- type: Array of [#definitions.person](#definitionsperson) and/or [#definitions.entity](#definitionsentity) objects.
 - description: The authors of a software or dataset.
 
 Usage example:
