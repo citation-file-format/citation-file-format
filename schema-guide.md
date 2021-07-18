@@ -34,7 +34,7 @@ authors:
     given-names: Stephan
     orcid: "https://orcid.org/0000-0003-4925-7248"
 cff-version: 1.2.0
-date-released: 2021-07-18
+date-released: "2021-07-18"
 identifiers: 
   - 
     description: This is the collection of archived snapshots of all versions of My Research Software
