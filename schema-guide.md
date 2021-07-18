@@ -44,8 +44,6 @@ title: My Research Software
 version: 0.11.2
 ```
 
-In rare cases, you may opt to expand on the above by using the `preferred-citation` or `references` keys.
-
 
 ## Glossary of keys
 
