@@ -33,7 +33,8 @@ TODO
 
 - type: string
 - required: false
-- description: A description of the software or dataset.
+
+A description of the software or dataset.
 
 Usage example:
 
@@ -45,7 +46,8 @@ abstract: This software implements methods to do things.
 
 - type: Array of [definitions.person](#definitionsperson) and/or [definitions.entity](#definitionsentity) objects.
 - required: true
-- description: The authors of a software or dataset.
+
+The authors of a software or dataset.
 
 Usage example:
 
@@ -60,7 +62,8 @@ authors:
 
 - type: string
 - required: true
-- description: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
+
+The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
 
 Usage example:
 
@@ -72,7 +75,8 @@ cff-version: 1.2.0
 
 - type: string
 - required: false
-- description: The commit hash or revision number of the software version
+
+The commit hash or revision number of the software version
 
 Usage example:
 
@@ -87,7 +91,8 @@ commit: "Revision: 8612"
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -98,7 +103,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -109,7 +115,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -120,7 +127,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -131,7 +139,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -142,7 +151,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -153,7 +163,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -164,7 +175,8 @@ Usage example:
 
 - type: ...
 - required: true
-- description: ...
+
+...
 
 Usage example:
 
@@ -175,7 +187,8 @@ Usage example:
 
 - type: A [`definitions.reference`](#definitionsreference). 
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -199,7 +212,8 @@ Array of [`definitions.reference`](#definitionsreference).
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -210,7 +224,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -221,7 +236,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -232,7 +248,8 @@ Usage example:
 
 - type: ...
 - required: true
-- description: ...
+
+...
 
 Usage example:
 
@@ -243,7 +260,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -254,7 +272,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -265,7 +284,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -407,7 +427,8 @@ Usage example:
 
 - type: Nonempty string.
 - required: false
-- description: An address.
+
+An address.
 
 
 Usage example:
@@ -421,7 +442,8 @@ Usage example:
 
 - type: Nonempty string.
 - required: false
-- description: An alias.
+
+An alias.
 
 Usage example:
 
@@ -434,7 +456,8 @@ Usage example:
 
 - type: Nonempty string.
 - required: false
-- description: A city.
+
+A city.
 
 Usage example:
 
@@ -447,7 +470,8 @@ Usage example:
 
 - type: Nonempty string.
 - required: false
-- description: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
+
+The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 
 Usage example:
 
@@ -460,7 +484,8 @@ Usage example:
 
 - type: enum
 - required: false
-- description: The ISO 3166-1 alpha-2 country code for a country.
+
+The ISO 3166-1 alpha-2 country code for a country.
 
 Usage example:
 
@@ -477,7 +502,8 @@ country: DE
 
 - type: string
 - required: false
-- description: A date.
+
+A date.
 
 Usage example:
 
@@ -490,7 +516,8 @@ Usage example:
 
 - type: string
 - required: false
-- description: The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
+
+The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 
 Usage example:
 
@@ -504,7 +531,8 @@ doi: "10.5281/zenodo.1003150"
 
 - type: string
 - required: false
-- description: An email address
+
+An email address
 
 Usage example:
 
@@ -517,7 +545,8 @@ Usage example:
 
 - type: object
 - required: false
-- description: ...
+
+...
 
 properties:
 
@@ -607,7 +636,8 @@ The entity's fax number.
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -620,7 +650,8 @@ Usage example:
 
 - type: ...
 - required: true
-- description: ...
+
+...
 
 Usage example:
 
@@ -673,7 +704,8 @@ The entity's website.
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -686,7 +718,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -699,7 +732,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -712,7 +746,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -725,7 +760,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -738,7 +774,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -751,7 +788,8 @@ Usage example:
 
 - type: object
 - required: false
-- description: ...
+
+...
 
 properties:
 
@@ -779,7 +817,8 @@ properties:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -792,7 +831,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -805,7 +845,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -818,7 +859,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -831,7 +873,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -844,7 +887,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -857,7 +901,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -870,7 +915,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -883,7 +929,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -896,7 +943,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -909,7 +957,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -922,7 +971,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -935,7 +985,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -948,7 +999,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -961,7 +1013,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -974,7 +1027,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -987,7 +1041,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -1000,7 +1055,8 @@ Usage example:
 
 - type: object
 - required: false
-- description: ...
+
+...
 
 properties:
 
@@ -1081,7 +1137,8 @@ properties:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1126,7 +1183,8 @@ references:
 
 - type: ...
 - required: true
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1148,7 +1206,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1170,7 +1229,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1192,7 +1252,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1214,7 +1275,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1236,7 +1298,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1258,7 +1321,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1280,7 +1344,8 @@ preferred-citation:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1302,7 +1367,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1324,7 +1390,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1346,7 +1413,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1368,7 +1436,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1390,7 +1459,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage exampless:
 
@@ -1412,7 +1482,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1434,7 +1505,8 @@ preferred-citation:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1456,7 +1528,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1478,7 +1551,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1500,7 +1574,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1522,7 +1597,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1544,7 +1620,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1566,7 +1643,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1588,7 +1666,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1610,7 +1689,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -1632,7 +1712,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1654,7 +1735,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1676,7 +1758,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1698,7 +1781,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1720,7 +1804,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1742,7 +1827,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1764,7 +1850,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1786,7 +1873,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1808,7 +1896,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1830,7 +1919,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1852,7 +1942,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1874,7 +1965,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1896,7 +1988,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1918,7 +2011,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1940,7 +2034,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1962,7 +2057,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -1984,7 +2080,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2006,7 +2103,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2028,7 +2126,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2050,7 +2149,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2072,7 +2172,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2094,7 +2195,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2116,7 +2218,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2138,7 +2241,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2160,7 +2264,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -2182,7 +2287,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2204,7 +2310,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2226,7 +2333,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2248,7 +2356,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2270,7 +2379,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2292,7 +2402,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2314,7 +2425,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2336,7 +2448,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2358,7 +2471,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2380,7 +2494,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2402,7 +2517,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2424,7 +2540,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2446,7 +2563,8 @@ references:
 
 - type: ...
 - required: true
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2468,7 +2586,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2490,7 +2609,8 @@ references:
 
 - type: ...
 - required: true
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2510,7 +2630,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2532,7 +2653,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2554,7 +2676,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2576,7 +2699,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2598,7 +2722,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2620,7 +2745,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage examples:
 
@@ -2642,7 +2768,8 @@ references:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -2655,7 +2782,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -2668,7 +2796,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -2681,7 +2810,8 @@ Usage example:
 
 - type: ...
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
@@ -2694,7 +2824,8 @@ Usage example:
 
 - type: string or number
 - required: false
-- description: ...
+
+...
 
 Usage example:
 
