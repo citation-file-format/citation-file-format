@@ -5,7 +5,7 @@
 Valid Citation File Format files
 
 1. must be named `CITATION.cff` (including capitalization);
-1. are implemented in YAML 1.2, and instances must be valid YAML;
+1. are valid YAML 1.2;
 1. follow the schema outlined in [schema.json](schema.json).
 
 ### Minimal example
