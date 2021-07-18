@@ -243,8 +243,9 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: ...
-- **description**: ...
+- **type**: Nonempty string.
+- **description**: An address.
+
 
 Usage example:
 
@@ -255,8 +256,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: ...
-- **description**: ...
+- **type**: Nonempty string.
+- **description**: An alias.
 
 Usage example:
 
@@ -267,8 +268,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: ...
-- **description**: ...
+- **type**: Nonempty string.
+- **description**: A city.
 
 Usage example:
 
@@ -279,8 +280,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: ...
-- **description**: ...
+- **type**: Nonempty string.
+- **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 
 Usage example:
 
@@ -291,20 +292,24 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: ...
-- **description**: ...
+- **type**: enum
+- **description**: The ISO 3166-1 alpha-2 country code for a country.
 
 Usage example:
 
 ```yaml
+country: NL
+```
+```yaml
+country: DE
 ```
 
 ### `definitions.date`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: ...
-- **description**: ...
+- **type**: string
+- **description**: A date.
 
 Usage example:
 
@@ -315,20 +320,21 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: ...
-- **description**: ...
+- **type**: string
+- **description**: The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 
 Usage example:
 
 ```yaml
+doi: "10.5281/zenodo.1003150"
 ```
 
 ### `definitions.email`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: ...
-- **description**: ...
+- **type**: string
+- **description**: An email address
 
 Usage example:
 
@@ -349,99 +355,35 @@ Usage example:
 
 ### `definitions.entity.address`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.address`](#definitionsaddress).
 
 ### `definitions.entity.alias`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.alias`](#definitionsalias).
 
 ### `definitions.entity.city`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.city`](#definitionscity).
 
 ### `definitions.entity.country`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.country`](#definitionscountry).
 
 ### `definitions.entity.date-end`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.date`](#definitionsdate).
 
 ### `definitions.entity.date-start`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.date`](#definitionsdate).
 
 ### `definitions.entity.email`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.email`](#definitionsemail).
 
 ### `definitions.entity.fax`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.fax`](#definitionsfax).
 
 ### `definitions.entity.location`
 
@@ -469,75 +411,23 @@ Usage example:
 
 ### `definitions.entity.orcid`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.orcid`](#definitionsorcid).
 
 ### `definitions.entity.post-code`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.post-code`](#definitionspost-code).
 
 ### `definitions.entity.region`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.region`](#definitionsregion).
 
 ### `definitions.entity.tel`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
-
-### `definitions.entity.type`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.tel`](#definitionstel).
 
 ### `definitions.entity.website`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: ...
-- **description**: ...
-
-Usage example:
-
-```yaml
-```
+See [`definitions.url`](#definitionsurl).
 
 ### `definitions.fax`
 
