@@ -2,7 +2,45 @@
 
 ## General structure of a CITATION.cff file
 
-TODO
+A minimal example of a valid `CITATION.cff` file could look like this:
+
+```yaml
+authors:
+  -
+    family-names: Druskat
+    given-names: Stephan
+cff-version: 1.2.0
+message: If you use this software, please cite it using these metadata.
+title: My Research Software
+```
+
+For most software however, it is relatively easy to expand the minimal case with some more information like the version, the date when it was last published, some keywords, etc.:
+
+```yaml
+abstract: This is my awesome research software. It does many things.
+authors: 
+  -
+    family-names: Druskat
+    given-names: Stephan
+    orcid: "https://orcid.org/0000-0003-4925-7248"
+cff-version: 1.2.0
+date-released: 2021-07-18
+identifiers: 
+  - 
+    description: This is the archived snapshot of version 0.11.2 of My Research Software
+    type: doi
+    value: "10.5281/zenodo.123456"
+keywords: 
+  - "awesome software"
+  - research
+license: Apache-2.0
+message: If you use this software, please cite it using these metadata.
+repository-code: "https://github.com/citation-file-format/my-research-software"
+title: My Research Software
+version: 0.11.2
+```
+
+
 
 ## Glossary of keys
 
