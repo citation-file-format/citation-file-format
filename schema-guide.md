@@ -12,7 +12,239 @@ TODO
 - [`commit`](#commit)
 - [`contact`](#contact)
 - [`date-released`](#date-released)
-- [`definitions`](#definitions)
+- [`doi`](#doi)
+- [`identifiers`](#identifiers)
+- [`keywords`](#keywords)
+- [`license`](#license)
+- [`license-url`](#license-url)
+- [`message`](#message)
+- [`preferred-citation`](#preferred-citation)
+- [`references`](#references)
+- [`repository`](#repository)
+- [`repository-artifact`](#repository-artifact)
+- [`repository-code`](#repository-code)
+- [`title`](#title)
+- [`type`](#type)
+- [`url`](#url)
+- [`version`](#version)
+
+
+### `abstract`
+
+- type: string
+- description: A description of the software or dataset.
+
+Usage example:
+
+```yaml
+abstract: This software implements methods to do things.
+```
+
+### `authors`
+
+- type: Array of [#definitions.person](#definitionsperson) and/or [#definitions.entity](#definitionsentity) objects.
+- description: The authors of a software or dataset.
+
+Usage example:
+
+```yaml
+authors:
+  - given-names: Stephan
+    family-names: Druskat
+  - name: "The Research Software project"
+```
+
+### `cff-version`
+
+- type: string
+- description: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
+
+Usage example:
+
+```yaml
+cff-version: 1.2.0
+```
+
+### `commit`
+
+- type: string
+- description: The commit hash or revision number of the software version
+
+Usage example:
+
+```yaml
+commit: 1ff847d81f29c45a3a1a5ce73d38e45c2f319bba
+```
+```yaml
+commit: "Revision: 8612"
+```
+
+### `contact`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `date-released`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `doi`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `identifiers`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `keywords`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `license`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `license-url`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `message`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `preferred-citation`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `references`
+
+Array of [`#definitions.reference`](#definitionsreference).
+
+### `repository`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `repository-artifact`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `repository-code`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `title`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `type`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `url`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+### `version`
+
+- type: ...
+- description: ...
+
+Usage example:
+
+```yaml
+```
+
+## Definitions
+
 - [`definitions.address`](#definitionsaddress)
 - [`definitions.alias`](#definitionsalias)
 - [`definitions.city`](#definitionscity)
@@ -139,104 +371,6 @@ TODO
 - [`definitions.tel`](#definitionstel)
 - [`definitions.url`](#definitionsurl)
 - [`definitions.version`](#definitionsversion)
-- [`doi`](#doi)
-- [`identifiers`](#identifiers)
-- [`keywords`](#keywords)
-- [`license`](#license)
-- [`license-url`](#license-url)
-- [`message`](#message)
-- [`preferred-citation`](#preferred-citation)
-- [`references`](#references)
-- [`repository`](#repository)
-- [`repository-artifact`](#repository-artifact)
-- [`repository-code`](#repository-code)
-- [`title`](#title)
-- [`type`](#type)
-- [`url`](#url)
-- [`version`](#version)
-
-
-### `abstract`
-
-- type: string
-- description: A description of the software or dataset.
-
-Usage example:
-
-```yaml
-abstract: This software implements methods to do things.
-```
-
-### `authors`
-
-- type: Array of [#definitions.person](#definitionsperson) and/or [#definitions.entity](#definitionsentity) objects.
-- description: The authors of a software or dataset.
-
-Usage example:
-
-```yaml
-authors:
-  - given-names: Stephan
-    family-names: Druskat
-  - name: "The Research Software project"
-```
-
-### `cff-version`
-
-- type: string
-- description: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
-
-Usage example:
-
-```yaml
-cff-version: 1.2.0
-```
-
-### `commit`
-
-- type: string
-- description: The commit hash or revision number of the software version
-
-Usage example:
-
-```yaml
-commit: 1ff847d81f29c45a3a1a5ce73d38e45c2f319bba
-```
-```yaml
-commit: "Revision: 8612"
-```
-
-### `contact`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `date-released`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `definitions`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
 
 ### `definitions.address`
 
@@ -1701,146 +1835,3 @@ Usage example:
 ```yaml
 ```
 
-### `doi`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `identifiers`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `keywords`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `license`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `license-url`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `message`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `preferred-citation`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `references`
-
-Array of [`#definitions.reference`](#definitionsreference).
-
-### `repository`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `repository-artifact`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `repository-code`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `title`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `type`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `url`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
-
-### `version`
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
-```
