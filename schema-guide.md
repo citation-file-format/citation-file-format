@@ -1,6 +1,6 @@
 # Guide to Citation File Format schema version 1.2.0
 
-## General structure of a CITATION.cff file
+## General structure of a `CITATION.cff` file
 
 Valid Citation File Format files
 
