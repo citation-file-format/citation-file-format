@@ -1026,8 +1026,13 @@ properties:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  abbreviation: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1044,6 +1049,13 @@ The abstract of a work.
 - If the work is a journal paper or other academic work: The abstract of the work.
 - If the work is a film, broadcast or similar: The synopsis of the work.
 
+Usage examples:
+
+```yaml
+preferred-citation:
+  abstract: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1058,8 +1070,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  authors: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1074,8 +1091,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  collection-doi: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1090,8 +1112,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  collection-title: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1106,8 +1133,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  collection-type: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1122,8 +1154,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  commit: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1138,8 +1175,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  conference: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1154,13 +1196,18 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
 ```yaml
 references:
   - 
     contact: ...
     type: generic
+```
+```yaml
+preferred-citation:
+  contact: ...
+  type: generic
 ```
 
 ### `definitions.reference.copyright`
@@ -1170,8 +1217,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  copyright: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1186,8 +1238,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  data-type: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1202,8 +1259,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  database-provider: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1218,8 +1280,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  database: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1234,8 +1301,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  date-accessed: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1250,8 +1322,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage exampless:
 
+```yaml
+preferred-citation:
+  date-downloaded: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1266,13 +1343,18 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
 ```yaml
 references:
   - 
     date-published: ...
     type: generic
+```
+```yaml
+preferred-citation:
+  date-published: ...
+  type: generic
 ```
 
 ### `definitions.reference.date-released`
@@ -1282,8 +1364,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  date-released: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1298,8 +1385,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  department: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1314,8 +1406,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  doi: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1330,8 +1427,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  edition: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1346,8 +1448,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  editors: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1362,8 +1469,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  editors-series: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1378,8 +1490,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  end: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1394,8 +1511,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  entry: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1413,6 +1535,11 @@ references:
 Usage example:
 
 ```yaml
+preferred-citation:
+  filename: ...
+  type: generic
+```
+```yaml
 references:
   - 
     filename: ...
@@ -1426,8 +1553,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  format: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1442,8 +1574,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  identifiers: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1458,8 +1595,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  institution: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1474,8 +1616,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  isbn: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1490,9 +1637,18 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
 ```yaml
+preferred-citation:
+  issn: ...
+  type: generic
+```
+```yaml
+references:
+  - 
+    issn: ...
+    type: generic
 ```
 
 ### `definitions.reference.issue`
@@ -1502,8 +1658,13 @@ Usage example:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  issue: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1518,8 +1679,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  issue-date: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1534,8 +1700,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  issue-title: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1550,8 +1721,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  journal: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1566,8 +1742,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  keywords: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1582,8 +1763,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  languages: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1598,8 +1784,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  license: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1614,8 +1805,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  license-url: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1630,8 +1826,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  loc-end: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1646,8 +1847,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  loc-start: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1662,8 +1868,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  location: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1678,8 +1889,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  medium: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1694,8 +1910,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  month: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1710,8 +1931,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  nihmsid: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1726,8 +1952,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  notes: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1742,8 +1973,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  number: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1758,8 +1994,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  number-volumes: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1774,8 +2015,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  pages: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1790,8 +2036,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  patent-states: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1809,6 +2060,11 @@ references:
 Usage example:
 
 ```yaml
+preferred-citation:
+  pmcid: ...
+  type: generic
+```
+```yaml
 references:
   - 
     pmcid: ...
@@ -1822,8 +2078,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  publisher: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1838,8 +2099,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  recipients: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1854,8 +2120,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  repository: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1870,8 +2141,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  repository-artifact: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1886,8 +2162,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  repository-code: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1902,8 +2183,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  scope: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1918,8 +2204,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  section: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1934,8 +2225,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  senders: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1950,8 +2246,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  start: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1966,8 +2267,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  status: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1982,8 +2288,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  term: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -1998,8 +2309,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  thesis-type: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -2014,8 +2330,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  title: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -2030,8 +2351,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  translators: ...
+  type: generic
+```
 ```yaml
 references:
   - 
@@ -2046,8 +2372,12 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+    type: generic
+```
 ```yaml
 references:
   - 
@@ -2061,8 +2391,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  type: generic
+  url: ...
+```
 ```yaml
 references:
   - 
@@ -2077,8 +2412,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  type: generic
+  version: ...
+```
 ```yaml
 references:
   - 
@@ -2093,8 +2433,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  type: generic
+  volume: ...
+```
 ```yaml
 references:
   - 
@@ -2109,8 +2454,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  type: generic
+  volume-title: ...
+```
 ```yaml
 references:
   - 
@@ -2125,8 +2475,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  type: generic
+  year: ...
+```
 ```yaml
 references:
   - 
@@ -2141,8 +2496,13 @@ references:
 - type: ...
 - description: ...
 
-Usage example:
+Usage examples:
 
+```yaml
+preferred-citation:
+  type: generic
+  year-original: ...
+```
 ```yaml
 references:
   - 
