@@ -48,6 +48,8 @@ TODO add explanation of when to use `preferred-citation`
 
 TODO add explanation of when to use `references`
 
+The next sections explain each key in more detail.
+
 ## Glossary of keys
 
 - [`abstract`](#abstract)
