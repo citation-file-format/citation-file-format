@@ -924,6 +924,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    abbreviation: ...
 ```
 
 ### `definitions.reference.abstract`
@@ -935,6 +939,13 @@ The abstract of a work.
 - If the work is a journal paper or other academic work: The abstract of the work.
 - If the work is a film, broadcast or similar: The synopsis of the work.
 
+```yaml
+references:
+  - 
+    type: generic
+    abstract: ...
+```
+
 ### `definitions.reference.authors`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
@@ -945,6 +956,10 @@ The abstract of a work.
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    authors: ...
 ```
 
 ### `definitions.reference.collection-doi`
@@ -957,6 +972,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    collection-doi: ...
 ```
 
 ### `definitions.reference.collection-title`
@@ -969,6 +988,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    collection-title: ...
 ```
 
 ### `definitions.reference.collection-type`
@@ -981,6 +1004,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    collection-type: ...
 ```
 
 ### `definitions.reference.commit`
@@ -993,6 +1020,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    commit: ...
 ```
 
 ### `definitions.reference.conference`
@@ -1005,6 +1036,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    conference: ...
 ```
 
 ### `definitions.reference.contact`
@@ -1017,6 +1052,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    contact: ...
 ```
 
 ### `definitions.reference.copyright`
@@ -1029,6 +1068,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    copyright: ...
 ```
 
 ### `definitions.reference.data-type`
@@ -1041,6 +1084,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    data-type: ...
 ```
 
 ### `definitions.reference.database-provider`
@@ -1053,9 +1100,13 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    database-provider: ...
 ```
 
-### `definitions.reference.database.description`
+### `definitions.reference.database`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1065,6 +1116,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    database: ...
 ```
 
 ### `definitions.reference.date-accessed`
@@ -1077,6 +1132,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    date-accessed: ...
 ```
 
 ### `definitions.reference.date-downloaded`
@@ -1089,6 +1148,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    date-downloaded: ...
 ```
 
 ### `definitions.reference.date-published`
@@ -1101,6 +1164,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    date-published: ...
 ```
 
 ### `definitions.reference.date-released`
@@ -1113,6 +1180,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    date-released: ...
 ```
 
 ### `definitions.reference.department`
@@ -1125,6 +1196,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    department: ...
 ```
 
 ### `definitions.reference.doi`
@@ -1137,6 +1212,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    doi: ...
 ```
 
 ### `definitions.reference.edition`
@@ -1149,6 +1228,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    edition: ...
 ```
 
 ### `definitions.reference.editors`
@@ -1161,6 +1244,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    editors: ...
 ```
 
 ### `definitions.reference.editors-series`
@@ -1173,6 +1260,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    editors-series: ...
 ```
 
 ### `definitions.reference.end`
@@ -1185,6 +1276,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    end: ...
 ```
 
 ### `definitions.reference.entry`
@@ -1197,6 +1292,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    entry: ...
 ```
 
 ### `definitions.reference.filename`
@@ -1209,6 +1308,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    filename: ...
 ```
 
 ### `definitions.reference.format`
@@ -1221,6 +1324,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    format: ...
 ```
 
 ### `definitions.reference.identifiers`
@@ -1233,6 +1340,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    identifiers: ...
 ```
 
 ### `definitions.reference.institution`
@@ -1245,6 +1356,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    institution: ...
 ```
 
 ### `definitions.reference.isbn`
@@ -1257,6 +1372,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    isbn: ...
 ```
 
 ### `definitions.reference.issn`
@@ -1281,6 +1400,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    issue: ...
 ```
 
 ### `definitions.reference.issue-date`
@@ -1293,6 +1416,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    issue-date: ...
 ```
 
 ### `definitions.reference.issue-title`
@@ -1305,6 +1432,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    issue-title: ...
 ```
 
 ### `definitions.reference.journal`
@@ -1317,6 +1448,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    journal: ...
 ```
 
 ### `definitions.reference.keywords`
@@ -1329,6 +1464,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    keywords: ...
 ```
 
 ### `definitions.reference.languages`
@@ -1341,6 +1480,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    languages: ...
 ```
 
 ### `definitions.reference.license`
@@ -1353,6 +1496,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    license: ...
 ```
 
 ### `definitions.reference.license-url`
@@ -1365,6 +1512,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    license-url: ...
 ```
 
 ### `definitions.reference.loc-end`
@@ -1377,6 +1528,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    loc-end: ...
 ```
 
 ### `definitions.reference.loc-start`
@@ -1389,6 +1544,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    loc-start: ...
 ```
 
 ### `definitions.reference.location`
@@ -1401,6 +1560,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    location: ...
 ```
 
 ### `definitions.reference.medium`
@@ -1413,6 +1576,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    medium: ...
 ```
 
 ### `definitions.reference.month`
@@ -1425,6 +1592,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    month: ...
 ```
 
 ### `definitions.reference.nihmsid`
@@ -1437,6 +1608,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    nihmsid: ...
 ```
 
 ### `definitions.reference.notes`
@@ -1449,6 +1624,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    notes: ...
 ```
 
 ### `definitions.reference.number`
@@ -1461,6 +1640,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    number: ...
 ```
 
 ### `definitions.reference.number-volumes`
@@ -1473,6 +1656,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    number-volumes: ...
 ```
 
 ### `definitions.reference.pages`
@@ -1485,6 +1672,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    pages: ...
 ```
 
 ### `definitions.reference.patent-states`
@@ -1497,6 +1688,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    patent-states: ...
 ```
 
 ### `definitions.reference.pmcid`
@@ -1509,6 +1704,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    pmcid: ...
 ```
 
 ### `definitions.reference.publisher`
@@ -1521,6 +1720,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    publisher: ...
 ```
 
 ### `definitions.reference.recipients`
@@ -1533,6 +1736,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    recipients: ...
 ```
 
 ### `definitions.reference.repository`
@@ -1545,6 +1752,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    repository: ...
 ```
 
 ### `definitions.reference.repository-artifact`
@@ -1557,6 +1768,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    repository-artifact: ...
 ```
 
 ### `definitions.reference.repository-code`
@@ -1569,6 +1784,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    repository-code: ...
 ```
 
 ### `definitions.reference.scope`
@@ -1581,6 +1800,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    scope: ...
 ```
 
 ### `definitions.reference.section`
@@ -1593,6 +1816,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    section: ...
 ```
 
 ### `definitions.reference.senders`
@@ -1605,9 +1832,13 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    senders: ...
 ```
 
-### `definitions.reference.start`
+# `definitions.reference.start`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1617,6 +1848,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    start: ...
 ```
 
 ### `definitions.reference.status`
@@ -1629,6 +1864,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    status: ...
 ```
 
 ### `definitions.reference.term`
@@ -1641,6 +1880,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    term: ...
 ```
 
 ### `definitions.reference.thesis-type`
@@ -1653,6 +1896,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    thesis-type: ...
 ```
 
 ### `definitions.reference.title`
@@ -1665,6 +1912,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    title: ...
 ```
 
 ### `definitions.reference.translators`
@@ -1677,6 +1928,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    translators: ...
 ```
 
 ### `definitions.reference.type`
@@ -1689,18 +1944,9 @@ Usage example:
 Usage example:
 
 ```yaml
-```
-
-### `definitions.reference.type`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- type: ...
-- description: ...
-
-Usage example:
-
-```yaml
+references:
+  - 
+    type: generic
 ```
 
 ### `definitions.reference.url`
@@ -1713,6 +1959,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    url: ...
 ```
 
 ### `definitions.reference.version`
@@ -1725,6 +1975,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    version: ...
 ```
 
 ### `definitions.reference.volume`
@@ -1737,6 +1991,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    volume: ...
 ```
 
 ### `definitions.reference.volume-title`
@@ -1749,6 +2007,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    volume-title: ...
 ```
 
 ### `definitions.reference.year`
@@ -1761,6 +2023,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    volume-year: ...
 ```
 
 ### `definitions.reference.year-original`
@@ -1773,6 +2039,10 @@ Usage example:
 Usage example:
 
 ```yaml
+references:
+  - 
+    type: generic
+    year-original: ...
 ```
 
 ### `definitions.region`
