@@ -351,6 +351,8 @@ Usage example:
 
 ## Definitions
 
+TODO explain why we use definitions
+
 - [`definitions.address`](#definitionsaddress)
 - [`definitions.alias`](#definitionsalias)
 - [`definitions.city`](#definitionscity)
