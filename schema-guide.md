@@ -161,12 +161,21 @@ Usage example:
 
 ### `preferred-citation`
 
-- type: ...
+- type: A [`#definitions.reference`](#definitionsreference). 
 - description: ...
 
 Usage example:
 
 ```yaml
+preferred-citation:
+  - 
+    authors:
+      - 
+        family-names: Famnames
+        given-names: Given Nam E. 
+    title: Title of the work.
+    type: generic
+    year: 2021
 ```
 
 ### `references`
@@ -2026,7 +2035,7 @@ Usage example:
 references:
   - 
     type: generic
-    volume-year: ...
+    year: ...
 ```
 
 ### `definitions.reference.year-original`
