@@ -44,6 +44,9 @@ title: My Research Software
 version: 0.11.2
 ```
 
+TODO add explanation of when to use `preferred-citation`
+
+TODO add explanation of when to use `references`
 
 ## Glossary of keys
 
