@@ -180,15 +180,15 @@ Usage example:
 Usage example:
 
 ```yaml
+---
 preferred-citation:
-  - 
-    authors:
-      - 
-        family-names: Famnames
-        given-names: Given Nam E. 
-    title: Title of the work.
-    type: generic
-    year: 2021
+  authors:
+    - 
+      family-names: Famnames
+      given-names: Given Nam E. 
+  title: Title of the work.
+  type: generic
+  year: 2021
 ```
 
 ### `references`
