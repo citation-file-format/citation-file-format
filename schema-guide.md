@@ -926,8 +926,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     abbreviation: ...
+    type: generic
 ```
 
 ### `definitions.reference.abstract`
@@ -942,8 +942,8 @@ The abstract of a work.
 ```yaml
 references:
   - 
-    type: generic
     abstract: ...
+    type: generic
 ```
 
 ### `definitions.reference.authors`
@@ -958,8 +958,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     authors: ...
+    type: generic
 ```
 
 ### `definitions.reference.collection-doi`
@@ -974,8 +974,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     collection-doi: ...
+    type: generic
 ```
 
 ### `definitions.reference.collection-title`
@@ -990,8 +990,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     collection-title: ...
+    type: generic
 ```
 
 ### `definitions.reference.collection-type`
@@ -1006,8 +1006,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     collection-type: ...
+    type: generic
 ```
 
 ### `definitions.reference.commit`
@@ -1022,8 +1022,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     commit: ...
+    type: generic
 ```
 
 ### `definitions.reference.conference`
@@ -1038,8 +1038,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     conference: ...
+    type: generic
 ```
 
 ### `definitions.reference.contact`
@@ -1054,8 +1054,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     contact: ...
+    type: generic
 ```
 
 ### `definitions.reference.copyright`
@@ -1070,8 +1070,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     copyright: ...
+    type: generic
 ```
 
 ### `definitions.reference.data-type`
@@ -1086,8 +1086,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     data-type: ...
+    type: generic
 ```
 
 ### `definitions.reference.database-provider`
@@ -1102,8 +1102,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     database-provider: ...
+    type: generic
 ```
 
 ### `definitions.reference.database`
@@ -1118,8 +1118,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     database: ...
+    type: generic
 ```
 
 ### `definitions.reference.date-accessed`
@@ -1134,8 +1134,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     date-accessed: ...
+    type: generic
 ```
 
 ### `definitions.reference.date-downloaded`
@@ -1150,8 +1150,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     date-downloaded: ...
+    type: generic
 ```
 
 ### `definitions.reference.date-published`
@@ -1166,8 +1166,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     date-published: ...
+    type: generic
 ```
 
 ### `definitions.reference.date-released`
@@ -1182,8 +1182,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     date-released: ...
+    type: generic
 ```
 
 ### `definitions.reference.department`
@@ -1198,8 +1198,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     department: ...
+    type: generic
 ```
 
 ### `definitions.reference.doi`
@@ -1214,8 +1214,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     doi: ...
+    type: generic
 ```
 
 ### `definitions.reference.edition`
@@ -1230,8 +1230,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     edition: ...
+    type: generic
 ```
 
 ### `definitions.reference.editors`
@@ -1246,8 +1246,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     editors: ...
+    type: generic
 ```
 
 ### `definitions.reference.editors-series`
@@ -1262,8 +1262,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     editors-series: ...
+    type: generic
 ```
 
 ### `definitions.reference.end`
@@ -1278,8 +1278,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     end: ...
+    type: generic
 ```
 
 ### `definitions.reference.entry`
@@ -1294,8 +1294,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     entry: ...
+    type: generic
 ```
 
 ### `definitions.reference.filename`
@@ -1310,8 +1310,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     filename: ...
+    type: generic
 ```
 
 ### `definitions.reference.format`
@@ -1326,8 +1326,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     format: ...
+    type: generic
 ```
 
 ### `definitions.reference.identifiers`
@@ -1342,8 +1342,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     identifiers: ...
+    type: generic
 ```
 
 ### `definitions.reference.institution`
@@ -1358,8 +1358,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     institution: ...
+    type: generic
 ```
 
 ### `definitions.reference.isbn`
@@ -1374,8 +1374,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     isbn: ...
+    type: generic
 ```
 
 ### `definitions.reference.issn`
@@ -1402,8 +1402,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     issue: ...
+    type: generic
 ```
 
 ### `definitions.reference.issue-date`
@@ -1418,8 +1418,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     issue-date: ...
+    type: generic
 ```
 
 ### `definitions.reference.issue-title`
@@ -1434,8 +1434,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     issue-title: ...
+    type: generic
 ```
 
 ### `definitions.reference.journal`
@@ -1450,8 +1450,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     journal: ...
+    type: generic
 ```
 
 ### `definitions.reference.keywords`
@@ -1466,8 +1466,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     keywords: ...
+    type: generic
 ```
 
 ### `definitions.reference.languages`
@@ -1482,8 +1482,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     languages: ...
+    type: generic
 ```
 
 ### `definitions.reference.license`
@@ -1498,8 +1498,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     license: ...
+    type: generic
 ```
 
 ### `definitions.reference.license-url`
@@ -1514,8 +1514,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     license-url: ...
+    type: generic
 ```
 
 ### `definitions.reference.loc-end`
@@ -1530,8 +1530,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     loc-end: ...
+    type: generic
 ```
 
 ### `definitions.reference.loc-start`
@@ -1546,8 +1546,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     loc-start: ...
+    type: generic
 ```
 
 ### `definitions.reference.location`
@@ -1562,8 +1562,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     location: ...
+    type: generic
 ```
 
 ### `definitions.reference.medium`
@@ -1578,8 +1578,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     medium: ...
+    type: generic
 ```
 
 ### `definitions.reference.month`
@@ -1594,8 +1594,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     month: ...
+    type: generic
 ```
 
 ### `definitions.reference.nihmsid`
@@ -1610,8 +1610,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     nihmsid: ...
+    type: generic
 ```
 
 ### `definitions.reference.notes`
@@ -1626,8 +1626,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     notes: ...
+    type: generic
 ```
 
 ### `definitions.reference.number`
@@ -1642,8 +1642,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     number: ...
+    type: generic
 ```
 
 ### `definitions.reference.number-volumes`
@@ -1658,8 +1658,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     number-volumes: ...
+    type: generic
 ```
 
 ### `definitions.reference.pages`
@@ -1674,8 +1674,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     pages: ...
+    type: generic
 ```
 
 ### `definitions.reference.patent-states`
@@ -1690,8 +1690,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     patent-states: ...
+    type: generic
 ```
 
 ### `definitions.reference.pmcid`
@@ -1706,8 +1706,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     pmcid: ...
+    type: generic
 ```
 
 ### `definitions.reference.publisher`
@@ -1722,8 +1722,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     publisher: ...
+    type: generic
 ```
 
 ### `definitions.reference.recipients`
@@ -1738,8 +1738,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     recipients: ...
+    type: generic
 ```
 
 ### `definitions.reference.repository`
@@ -1754,8 +1754,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     repository: ...
+    type: generic
 ```
 
 ### `definitions.reference.repository-artifact`
@@ -1770,8 +1770,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     repository-artifact: ...
+    type: generic
 ```
 
 ### `definitions.reference.repository-code`
@@ -1786,8 +1786,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     repository-code: ...
+    type: generic
 ```
 
 ### `definitions.reference.scope`
@@ -1802,8 +1802,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     scope: ...
+    type: generic
 ```
 
 ### `definitions.reference.section`
@@ -1818,8 +1818,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     section: ...
+    type: generic
 ```
 
 ### `definitions.reference.senders`
@@ -1834,8 +1834,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     senders: ...
+    type: generic
 ```
 
 # `definitions.reference.start`
@@ -1850,8 +1850,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     start: ...
+    type: generic
 ```
 
 ### `definitions.reference.status`
@@ -1866,8 +1866,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     status: ...
+    type: generic
 ```
 
 ### `definitions.reference.term`
@@ -1882,8 +1882,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     term: ...
+    type: generic
 ```
 
 ### `definitions.reference.thesis-type`
@@ -1898,8 +1898,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     thesis-type: ...
+    type: generic
 ```
 
 ### `definitions.reference.title`
@@ -1914,8 +1914,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     title: ...
+    type: generic
 ```
 
 ### `definitions.reference.translators`
@@ -1930,8 +1930,8 @@ Usage example:
 ```yaml
 references:
   - 
-    type: generic
     translators: ...
+    type: generic
 ```
 
 ### `definitions.reference.type`
