@@ -1773,7 +1773,7 @@ Usage example:
 
 ### `references`
 
-Array of [`#definitions.reference`](#definitions.reference).
+Array of [`#definitions.reference`](#definitionsreference).
 
 ### `repository`
 
