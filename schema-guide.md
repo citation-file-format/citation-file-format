@@ -2,6 +2,14 @@
 
 ## General structure of a CITATION.cff file
 
+Valid Citation File Format files
+
+- must be named `CITATION.cff` (including capitalization);
+- are implemented in YAML 1.2, and instances must be valid YAML;
+- follow the schema outlined in [schema.json](schema.json).
+
+### Minimal example
+
 A minimal example of a valid `CITATION.cff` file could look like this:
 
 ```yaml
@@ -13,6 +21,8 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: My Research Software
 ```
+
+### Typical example
 
 For most software however, it is relatively easy to expand the minimal case with some more information like the version, the date when it was last published, some keywords, etc.:
 
@@ -43,6 +53,8 @@ repository-code: "https://github.com/citation-file-format/my-research-software"
 title: My Research Software
 version: 0.11.2
 ```
+
+### Specific use cases
 
 TODO add explanation of when to use `preferred-citation`
 
