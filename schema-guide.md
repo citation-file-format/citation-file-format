@@ -173,7 +173,7 @@ Usage example:
 
 ### `preferred-citation`
 
-- type: A [`#definitions.reference`](#definitionsreference). 
+- type: A [`definitions.reference`](#definitionsreference). 
 - required: false
 - description: ...
 
@@ -193,7 +193,7 @@ preferred-citation:
 
 ### `references`
 
-Array of [`#definitions.reference`](#definitionsreference).
+Array of [`definitions.reference`](#definitionsreference).
 
 ### `repository`
 
