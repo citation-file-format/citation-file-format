@@ -354,35 +354,67 @@ Usage example:
 
 ### `definitions.entity.address`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.address`](#definitionsaddress).
+
+The entity's address.
 
 ### `definitions.entity.alias`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.alias`](#definitionsalias).
+
+The entity's alias.
 
 ### `definitions.entity.city`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.city`](#definitionscity).
+
+The entity's city.
 
 ### `definitions.entity.country`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.country`](#definitionscountry).
+
+The entity's country.
 
 ### `definitions.entity.date-end`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.date`](#definitionsdate).
+
+The entity's ending date, e.g. when the entity is a conference.
 
 ### `definitions.entity.date-start`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.date`](#definitionsdate).
+
+The entity's starting date, e.g. when the entity is a conference.
 
 ### `definitions.entity.email`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.email`](#definitionsemail).
+
+The entity's email address.
 
 ### `definitions.entity.fax`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.fax`](#definitionsfax).
+
+The entity's fax number.
 
 ### `definitions.entity.location`
 
@@ -410,23 +442,43 @@ Usage example:
 
 ### `definitions.entity.orcid`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.orcid`](#definitionsorcid).
+
+The entity's orcid.
 
 ### `definitions.entity.post-code`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.post-code`](#definitionspost-code).
+
+The entity's post code.
 
 ### `definitions.entity.region`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.region`](#definitionsregion).
+
+The entity's region.
 
 ### `definitions.entity.tel`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.tel`](#definitionstel).
+
+The entity's telephone number.
 
 ### `definitions.entity.website`
 
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
 See [`definitions.url`](#definitionsurl).
+
+The entity's website.
 
 ### `definitions.fax`
 
