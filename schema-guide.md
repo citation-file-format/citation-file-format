@@ -101,6 +101,8 @@ The next sections explain each key in more detail.
 
 ## root-level keys
 
+This section aims to describe what keys are valid at the root level of a `CITATION.cff` file.
+
 ### Index
 
 - [`abstract`](#abstract)
