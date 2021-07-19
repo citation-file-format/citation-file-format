@@ -101,6 +101,8 @@ The next sections explain each key in more detail.
 
 ## root-level keys
 
+### Index
+
 - [`abstract`](#abstract)
 - [`authors`](#authors)
 - [`cff-version`](#cff-version)
@@ -122,7 +124,6 @@ The next sections explain each key in more detail.
 - [`type`](#type)
 - [`url`](#url)
 - [`version`](#version)
-
 
 ### `abstract`
 
@@ -389,6 +390,8 @@ Usage example:
 ## Definitions
 
 TODO explain why we use definitions
+
+### Index
 
 - [`definitions.address`](#definitionsaddress)
 - [`definitions.alias`](#definitionsalias)
