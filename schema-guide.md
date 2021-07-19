@@ -54,11 +54,48 @@ title: My Research Software
 version: 0.11.2
 ```
 
-### Specific use cases
+### Transitive credit
+
+TODO add explanation of when to use `references`
+
+```yaml
+authors:
+  -
+    family-names: Druskat
+    given-names: Stephan
+cff-version: 1.2.0
+message: If you use this software, please cite it using these metadata.
+title: My Research Software
+references:
+  authors:
+    - 
+      family-names: Spaaks
+      given-names: Jurriaan H.
+  title: Previous work I built on
+  type: software
+```
+
+
+### Credit redirection
 
 TODO add explanation of when to use `preferred-citation`
 
-TODO add explanation of when to use `references`
+```yaml
+authors:
+  -
+    family-names: Druskat
+    given-names: Stephan
+cff-version: 1.2.0
+message: If you use this software, please cite the article from the preferred-citation instead of the software.
+title: My Research Software
+preferred-citation:
+  authors:
+    - 
+      family-names: Druskat
+      given-names: Stephan
+  title: Software paper about My Research Software
+  type: article
+```
 
 The next sections explain each key in more detail.
 
