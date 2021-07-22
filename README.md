@@ -560,7 +560,7 @@ according to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), e.g.,
 
 The ORCID iD is expressed as an https URI, i.e. the 16-digit identifier is
 preceded by ``https://orcid.org/``. A hyphen is inserted every 4 digits of the
-identifier to aid readability (See https://support.orcid.org/knowledgebase/articles/116780-structure-of-the-orcid-identifier,
+identifier to aid readability (See https://support.orcid.org/hc/en-us/articles/360006897674-Structure-of-the-ORCID-Identifier,
 section "Expressing the ORCID iD").
 
 Example:
