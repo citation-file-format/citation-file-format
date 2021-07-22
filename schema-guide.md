@@ -56,7 +56,9 @@ version: 0.11.2
 
 ### Transitive credit
 
-TODO add explanation of when to use `references`
+When your software or data builds on what others have already done, it is good practice to add a `references` section to your
+`CITATION.cff` file. This way, whenever your work gets credited, a little bit of that goes into crediting the works that
+you built on.
 
 ```yaml
 authors:
@@ -71,14 +73,19 @@ references:
     - 
       family-names: Spaaks
       given-names: Jurriaan H.
-  title: Previous work I built on
+  title: The foundation of Research Software
   type: software
 ```
 
 
 ### Credit redirection
 
-TODO add explanation of when to use `preferred-citation`
+Sometimes you want to redirect any credit your work may receive towards a second work (typically one of your own). A
+typical example is when you write software and then write a paper about it, you may want be credited for the paper
+instead of for the software itself. In that case, your CITATION.cff contains some metadata about the software at the
+root of the CITATION.cff file, but additionally, there will be a `preferred-citation` key with the metadata of the
+redirection target. Usually, the `message` also reflects the authors' wishes to be credited using the metadata from
+`preferred-citation` instead of those from the root of the document.
 
 ```yaml
 authors:
