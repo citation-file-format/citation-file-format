@@ -1569,7 +1569,7 @@ references:
 
 ...
 
-Usage exampless:
+Usage examples:
 
 ```yaml
 preferred-citation:
