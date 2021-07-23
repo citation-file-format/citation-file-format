@@ -326,14 +326,15 @@ repository: "https://ascl.net/2105.013"
 
 ### `repository-artifact`
 
-- type: ...
+- type: [`definitions.url`](#definitionsurl)
 - required: false
 
-...
+The URL to the software in a build artifact/binary repository.
 
 Usage example:
 
 ```yaml
+repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
 ```
 
 ### `repository-code`
