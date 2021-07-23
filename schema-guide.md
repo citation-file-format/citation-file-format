@@ -313,14 +313,15 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 
 ### `repository`
 
-- type: ...
+- type: A [`definitions.url`](#definitionsurl).
 - required: false
 
-...
+The URL to the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
 
 Usage example:
 
 ```yaml
+repository: "https://ascl.net/2105.013"
 ```
 
 ### `repository-artifact`
