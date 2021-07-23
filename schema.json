@@ -1752,7 +1752,7 @@
         },
         "repository-code": {
             "$ref": "#/definitions/url",
-            "description": "The URL of the software in a source code repository."
+            "description": "The URL of the software or dataset in a source code repository."
         },
         "title": {
             "description": "The name of the software or dataset.",
