@@ -278,6 +278,7 @@ Usage example:
 ### `message`
 
 - type: ...
+- default: `"If you use this software, please cite it using the metadata from this file."`
 - required: true
 
 ...
@@ -365,14 +366,16 @@ title: "cffconvert"
 
 ### `type`
 
-- type: ...
+- type: enum (`"software"` or `"dataset"`)
+- default: `"software"`
 - required: false
 
-...
+The type of the work that is being described by this `CITATION.cff` file.
 
 Usage example:
 
 ```yaml
+type: "dataset"
 ```
 
 ### `url`
