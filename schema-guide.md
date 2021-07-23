@@ -316,7 +316,7 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 - type: [`definitions.url`](#definitionsurl)
 - required: false
 
-The URL to the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
+The URL of the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
 
 Usage example:
 
@@ -329,7 +329,7 @@ repository: "https://ascl.net/2105.013"
 - type: [`definitions.url`](#definitionsurl)
 - required: false
 
-The URL to the software in a build artifact/binary repository.
+The URL of the software in a build artifact/binary repository.
 
 Usage example:
 
@@ -339,14 +339,15 @@ repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-mav
 
 ### `repository-code`
 
-- type: ...
+- type: [`definitions.url`](#definitionsurl)
 - required: false
 
-...
+The URL of the software in a source code repository.
 
 Usage example:
 
 ```yaml
+repository-code: "https://github.com/citation-file-format/cff-converter-python"
 ```
 
 ### `title`
