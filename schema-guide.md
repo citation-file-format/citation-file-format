@@ -313,7 +313,7 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 
 ### `repository`
 
-- type: A [`definitions.url`](#definitionsurl).
+- type: [`definitions.url`](#definitionsurl)
 - required: false
 
 The URL to the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
