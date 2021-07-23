@@ -352,14 +352,15 @@ repository-code: "https://github.com/citation-file-format/cff-converter-python"
 
 ### `title`
 
-- type: ...
+- type: string
 - required: true
 
-...
+The name of the software or dataset.
 
 Usage example:
 
 ```yaml
+title: "cffconvert"
 ```
 
 ### `type`
