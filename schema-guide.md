@@ -400,13 +400,7 @@ The version of the software or dataset.
 
 Usage example:
 
-```yaml
-version: "v1.2.0"
-```
-
-```yaml
-version: 1.2
-```
+See [`definitions.version`](#definitionsversion).
 
 ## Definitions
 
@@ -2842,10 +2836,18 @@ Usage example:
 - type: string or number
 - required: false
 
-...
+The version of a work.
 
 Usage example:
 
 ```yaml
+version: "1.2.0"
 ```
 
+```yaml
+version: 1.2
+```
+
+```yaml
+version: "21.10 (Impish Indri)"
+```
