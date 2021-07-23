@@ -380,14 +380,15 @@ type: "dataset"
 
 ### `url`
 
-- type: ...
+- type: [`definitions.url`](#definitionsurl)
 - required: false
 
-...
+The URL of a landing page/website for the software or dataset.
 
 Usage example:
 
 ```yaml
+url: "https://citation-file-format.github.io/"
 ```
 
 ### `version`
