@@ -393,14 +393,19 @@ url: "https://citation-file-format.github.io/"
 
 ### `version`
 
-- type: ...
+- type: [`definitions.version`](#definitionsversion)
 - required: false
 
-...
+The version of the software or dataset.
 
 Usage example:
 
 ```yaml
+version: "v1.2.0"
+```
+
+```yaml
+version: 1.2
 ```
 
 ## Definitions
