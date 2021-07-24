@@ -3161,7 +3161,7 @@ references:
     type: generic
 ```
 
-# `definitions.reference.start`
+### `definitions.reference.start`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
