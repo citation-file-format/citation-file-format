@@ -148,7 +148,7 @@ abstract: This software implements methods to do things.
 
 ### `authors`
 
-- type: Array of [definitions.person](#definitionsperson) and/or [definitions.entity](#definitionsentity) objects.
+- type: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - required: true
 
 The authors of a software or dataset.
@@ -205,7 +205,7 @@ commit: "Revision: 8612"
 
 ### `contact`
 
-- type: Array of [definitions.person](#definitionsperson) and/or [definitions.entity](#definitionsentity) objects.
+- type: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - required: false
 
 The contact person, group, company, etc. for the software or dataset.
@@ -235,7 +235,7 @@ contact:
 
 ### `date-released`
 
-- type: [definitions.date](#definitionsdate)
+- type: [`definitions.date`](#definitionsdate)
 - required: false
 
 The date the software or data set has been released. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
@@ -248,7 +248,7 @@ date-released: 2020-01-31
 
 ### `doi`
 
-- type: [definitions.doi](#definitionsdoi)
+- type: [`definitions.doi`](#definitionsdoi)
 - required: false
 
 The DOI of the software or data set. This notation is most useful when there is just one DOI you want to include. In
@@ -280,12 +280,12 @@ doi: 10.5281/zenodo.4813122
 
 ### `identifiers`
 
-- type: array of [definitions.identifier](#definitionsidentifier) objects.
+- type: array of [`definitions.identifier`](#definitionsidentifier) objects.
 - required: false
 
 The identifiers of the software or dataset.
 
-Usage example: see [definitions.identifier](#definitionsidentifier).
+Usage example: see [`definitions.identifier`](#definitionsidentifier).
 
 ### `keywords`
 
@@ -305,7 +305,7 @@ keywords:
 
 ### `license`
 
-- type: (array of) [definitions.license-enum](#definitionslicense-enum).
+- type: (array of) [`definitions.license-enum`](#definitionslicense-enum).
 - required: false
 
 The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
@@ -329,7 +329,7 @@ license:
 
 ### `license-url`
 
-- type: [definitions.url](#definitionsurl)
+- type: [`definitions.url`](#definitionsurl)
 - required: false
 
 The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).
@@ -344,7 +344,7 @@ license-url: "https://obscure-licenses.com?id=1234"
 
 - type: string
 - required: true
-- default: If you use this software, please cite it using the metadata from this file.
+- default: `If you use this software, please cite it using the metadata from this file.`
 
 A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
 
