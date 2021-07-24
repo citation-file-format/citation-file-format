@@ -763,14 +763,22 @@ See [`definitions.fax`](#definitionsfax).
 
 The entity's fax number.
 
+Usage example:
+
+```yaml
+authors:
+  - name: The Research Software Project
+    fax: +012-3456-7890
+```
+
 ### `definitions.entity.location`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string`
 - required: `false`
 
-...
+The entity's location.
 
 Usage example:
 
@@ -781,10 +789,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string`
 - required: `true`
 
-...
+The entity's name.
 
 Usage example:
 
@@ -835,14 +843,23 @@ The entity's website.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string`
 - required: `false`
 
-...
+A fax number.
 
 Usage example:
 
 ```yaml
+authors:
+  - name: The Research Software Project
+    fax: +012-3456-7890
+```
+```yaml
+authors:
+  - family-names: McClane
+    fax: +012-3456-7890
+    given-names: John
 ```
 
 ### `definitions.identifier`
@@ -915,14 +932,20 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: (array of) [`definitions.license-enum`](definitions.license-enum) objects.
 - required: `false`
 
-...
+License identifier(s) under which the work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
 
-Usage example:
+Usage examples:
 
 ```yaml
+license: Apache-2.0
+```
+```yaml
+license:
+  - Apache-2.0
+  - MIT
 ```
 
 ### `definitions.license-enum`
@@ -1549,14 +1572,18 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: [`definitions.fax`](#definitionsfax)
 - required: `false`
 
-...
+The person's fax number.
 
 Usage example:
 
 ```yaml
+authors:
+  - family-names: McClane
+    fax: +012-3456-7890
+    given-names: John
 ```
 
 ### `definitions.person.given-names`
