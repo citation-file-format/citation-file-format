@@ -183,6 +183,7 @@ Usage example:
 ```yaml
 cff-version: 1.2.0
 ```
+cff-version: "1.2.0"
 
 ### `commit`
 
