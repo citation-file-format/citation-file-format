@@ -6,3 +6,7 @@ venv3*/
 .idea
 
 
+# for when users install markdown-link-checker locally
+node_modules
+package.json
+package-lock.json
