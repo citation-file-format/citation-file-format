@@ -831,6 +831,14 @@ See [`definitions.tel`](#definitionstel).
 
 The entity's telephone number.
 
+Usage example:
+
+```yaml
+authors:
+  - name: The Research Software Project
+    tel: +012-345-6789098
+```
+
 ### `definitions.entity.website`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
@@ -1674,14 +1682,18 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: [`definitions.tel`](#definitionstel)
 - required: `false`
 
-...
+The person's telephone number.
 
 Usage example:
 
 ```yaml
+authors:
+  - family-names: McClane
+    given-names: John
+    tel: +012-345-6789098
 ```
 
 ### `definitions.person.website`
@@ -3464,6 +3476,12 @@ A telephone number.
 
 Usage example:
 
+```yaml
+authors:
+  - family-names: McClane
+    given-names: John
+    tel: +012-345-6789098
+```
 ```yaml
 authors:
   - name: The Research Software Project
