@@ -1716,7 +1716,7 @@
         },
         "message": {
             "default": "If you use this software, please cite it using the metadata from this file.",
-            "description": "A message to the (human) reader of the file to let them know what to do with the citation metadata.",
+            "description": "A message to the human reader of the file to let them know what to do with the citation metadata.",
             "examples": [
                 "If you use this software, please cite it using the metadata from this file.",
                 "Please cite this software using these metadata.",

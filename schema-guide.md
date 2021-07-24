@@ -159,6 +159,15 @@ Usage example:
 authors:
   - given-names: Stephan
     family-names: Druskat
+```
+```yaml
+authors:
+  - name: "The Research Software project"
+```
+```yaml
+authors:
+  - given-names: Stephan
+    family-names: Druskat
   - name: "The Research Software project"
 ```
 
@@ -180,7 +189,7 @@ cff-version: 1.2.0
 - type: string
 - required: false
 
-The commit hash or revision number of the software version
+The commit hash or revision number of the software version.
 
 Usage example:
 
@@ -193,98 +202,162 @@ commit: "Revision: 8612"
 
 ### `contact`
 
-- type: ...
+- type: Array of [definitions.person](#definitionsperson) and/or [definitions.entity](#definitionsentity) objects.
 - required: false
 
-...
+The contact person, group, company, etc. for the software or dataset.
 
 Usage example:
 
 ```yaml
+contact:
+  - affiliation: "Humboldt-Universität zu Berlin"
+    email: "mail@sdruskat.net"
+    family-names: Druskat
+    given-names: Stephan
+```
+```yaml
+contact:
+  - email: "mail@research-project.org"
+    name: "The Research Software project"
+```
+```yaml
+contact:
+  - email: "mail@sdruskat.net"
+    given-names: Stephan
+    family-names: Druskat
+  - email: "mail@research-project.org"
+    name: "The Research Software project"
 ```
 
 ### `date-released`
 
-- type: ...
+- type: [definitions.date](#definitionsdate)
 - required: false
 
-...
+The date the software or data set has been released.
 
 Usage example:
 
 ```yaml
+date-released: 2020-01-31
 ```
 
 ### `doi`
 
-- type: ...
+- type: [definitions.doi](#definitionsdoi).
 - required: false
 
-...
+The DOI of the software or data set. This notation is most useful when there is just one DOI you want to include. In
+that case, `doi` can be used as shorthand for something like:
+
+```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003149
+    description: The concept DOI of the work.
+```
+or
+
+```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.4813122
+    description: The versioned DOI of the work.
+```
 
 Usage example:
 
 ```yaml
+doi: 10.5281/zenodo.1003149
+```
+```yaml
+doi: 10.5281/zenodo.4813122
 ```
 
 ### `identifiers`
 
-- type: ...
+- type: array of [definitions.identifier](#definitionsidentifier) objects.
 - required: false
 
-...
+The identifiers of the software or dataset.
 
-Usage example:
-
-```yaml
-```
+Usage example: see [definitions.identifier](#definitionsidentifier).
 
 ### `keywords`
 
-- type: ...
+- type: array of string
 - required: false
 
-...
+Keywords that describe the work.
 
 Usage example:
 
 ```yaml
+keywords:
+ - thefirstkeyword
+ - thesecondkeyword
+ - and a third
 ```
 
 ### `license`
 
-- type: ...
+- type: [definitions.license](#definitionslicense).
 - required: false
 
-...
+The SPDX license identifier for the license under which the work is made available.
 
 Usage example:
 
 ```yaml
+license: Apache-2.0
+```
+```yaml
+license:
+ - Apache-2.0
+ - MIT
 ```
 
 ### `license-url`
 
-- type: ...
+- type: [definitions.url](#definitionsurl).
 - required: false
 
-...
+The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).
 
 Usage example:
 
 ```yaml
+license-url: "https://obscure-licenses.com?id=1234&format=plaintext"
 ```
 
 ### `message`
 
-- type: ...
+- type: string
 - required: true
+- default: If you use this software, please cite it using the metadata from this file.
 
-...
+A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
 
 Usage example:
 
 ```yaml
+message: If you use this software, please cite it using the metadata from this file.
+```
+```yaml
+message: Please cite this software using these metadata.
+```
+```yaml
+message: Please cite this software using the metadata from 'preferred-citation'.
+```
+```yaml
+message: If you use this data set, please cite it using the metadata from this file.
+```
+```yaml
+message: Please cite this data set using these metadata.
+```
+```yaml
+message: Please cite this data set using the metadata from 'preferred-citation'.
 ```
 
 ### `preferred-citation`
@@ -727,7 +800,45 @@ Usage example:
 
 Usage example:
 
+
 ```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003149
+    description: The concept DOI of the work.
+```
+```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.4813122
+    description: The versioned DOI for version 1.1.0 of the work.
+```
+```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003149
+    description: The concept DOI of the work.
+  - type: doi
+    value: 10.5281/zenodo.4813122
+    description: The versioned DOI for version 1.1.0 of the work.
+```
+```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003149
+    description: The concept DOI of the work.
+  - type: doi
+    value: 10.5281/zenodo.4813122
+    description: The versioned DOI for version 1.1.0 of the work.
+  - type: swh
+    value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+    description: The Software Heritage identifier for version 1.1.0 of the work.
+  - type: url
+    value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+    description: The GitHub release URL to tag 1.1.0.
+  - type: url
+    value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
+    description: The GitHub release URL to the commit of tag 1.1.0.
 ```
 
 ### `definitions.identifier-description`
