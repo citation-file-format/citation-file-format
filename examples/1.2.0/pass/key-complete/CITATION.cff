@@ -17,6 +17,7 @@ authors:
     given-names: One Truly
     name-particle: van der
     name-suffix: IV
+    alias: Citey
     affiliation: Excellent University, Niceplace, Arcadia
     address: 22 Acacia Avenue
     city: Citationburgh
@@ -52,6 +53,7 @@ contact:
     given-names: One Truly
     name-particle: van der
     name-suffix: IV
+    alias: Citey
     affiliation: Excellent University, Niceplace, Arcadia
     address: 22 Acacia Avenue
     city: Citationburgh
@@ -197,6 +199,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -230,6 +233,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -280,6 +284,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -313,6 +318,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -397,6 +403,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -430,6 +437,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -463,6 +471,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
