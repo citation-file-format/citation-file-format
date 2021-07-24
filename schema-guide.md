@@ -395,77 +395,87 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 
 ### `repository`
 
-- type: `...`
-- required: `false`
+- type: [`definitions.url`](#definitionsurl)
+- required: false
 
-...
+The URL of the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
 
 Usage example:
 
 ```yaml
+repository: "https://ascl.net/2105.013"
 ```
 
 ### `repository-artifact`
 
-- type: `...`
-- required: `false`
+- type: [`definitions.url`](#definitionsurl)
+- required: false
 
-...
+The URL of the software in a build artifact/binary repository.
 
 Usage example:
 
 ```yaml
+repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
 ```
 
 ### `repository-code`
 
-- type: `...`
-- required: `false`
+- type: [`definitions.url`](#definitionsurl)
+- required: false
 
-...
+The URL of the software in a source code repository.
 
 Usage example:
 
 ```yaml
+repository-code: "https://github.com/citation-file-format/cff-converter-python"
 ```
 
 ### `title`
 
-- type: `...`
+- type: `string`
 - required: `true`
 
-...
+The name of the software or dataset.
 
 Usage example:
 
 ```yaml
+title: "cffconvert"
 ```
 
 ### `type`
 
-- type: `...`
+- type: enum (`"software"` or `"dataset"`)
+- default: `"software"`
 - required: `false`
 
-...
+The type of the work that is being described by this `CITATION.cff` file.
 
 Usage example:
 
 ```yaml
+type: "dataset"
 ```
 
 ### `url`
 
-- type: `string`
+- type: [`definitions.url`](#definitionsurl)
 - required: `false`
 
-URL to a resource. Supported URLs start with one of:
+The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
+
 - `https`
 - `http`
 - `ftp`
 - `sftp``
 
-Usage example:
+Usage examples:
 
+```yaml
+url: "https://citation-file-format.github.io/"
+```
 ```yaml
 authors:
   - name: The Research Software Project
@@ -480,15 +490,14 @@ references:
 
 ### `version`
 
-- type: `...`
+- type: [`definitions.version`](#definitionsversion)
 - required: `false`
 
-...
+The version of the software or dataset.
 
 Usage example:
 
-```yaml
-```
+See [`definitions.version`](#definitionsversion).
 
 ## Definitions
 
@@ -3521,10 +3530,18 @@ Usage example:
 - type: `string` or `number`
 - required: `false`
 
-...
+The version of a work.
 
 Usage example:
 
 ```yaml
+version: "1.2.0"
 ```
 
+```yaml
+version: 1.2
+```
+
+```yaml
+version: "21.10 (Impish Indri)"
+```

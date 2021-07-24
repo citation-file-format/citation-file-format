@@ -1415,15 +1415,15 @@
                 },
                 "repository": {
                     "$ref": "#/definitions/url",
-                    "description": "The URL to the work in a repository (when the repository is neither a source code repository nor a build artifact repository)."
+                    "description": "The URL of the work in a repository (when the repository is neither a source code repository nor a build artifact repository)."
                 },
                 "repository-artifact": {
                     "$ref": "#/definitions/url",
-                    "description": "The URL to the work in a build artifact/binary repository."
+                    "description": "The URL of the work in a build artifact/binary repository."
                 },
                 "repository-code": {
                     "$ref": "#/definitions/url",
-                    "description": "The URL to the work in a source code repository."
+                    "description": "The URL of the work in a source code repository."
                 },
                 "scope": {
                     "description": "The scope of the reference, e.g., the section of the work it adheres to.",
@@ -1740,7 +1740,7 @@
         },
         "repository": {
             "$ref": "#/definitions/url",
-            "description": "The URL to the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).",
+            "description": "The URL of the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).",
             "examples": [
                 "https://edoc.hu-berlin.de/handle/18452/23016",
                 "https://ascl.net/2105.013"
@@ -1748,11 +1748,11 @@
         },
         "repository-artifact": {
             "$ref": "#/definitions/url",
-            "description": "The URL to the software in a build artifact/binary repository."
+            "description": "The URL of the software in a build artifact/binary repository."
         },
         "repository-code": {
             "$ref": "#/definitions/url",
-            "description": "The URL to the software in a source code repository."
+            "description": "The URL of the software or dataset in a source code repository."
         },
         "title": {
             "description": "The name of the software or dataset.",
@@ -1770,7 +1770,7 @@
         },
         "url": {
             "$ref": "#/definitions/url",
-            "description": "The URL to a landing page/website for the software or dataset."
+            "description": "The URL of a landing page/website for the software or dataset."
         },
         "version": {
             "$ref": "#/definitions/version",
