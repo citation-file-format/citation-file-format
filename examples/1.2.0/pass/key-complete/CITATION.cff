@@ -85,6 +85,16 @@ date-released: 2017-12-11
 
 doi: 10.5281/zenodo.1003150
 
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003150
+  - type: swh
+    value: swh:1:rel:99f6850374dc6597af01bd0ee1d3fc0699301b9f
+  - type: url
+    value: https://example.com
+  - type: other
+    value: other-schema://abcd.1234.efgh.5678
+
 keywords:
   - One
   - Two
@@ -130,6 +140,15 @@ references:
     entry: Chapter 9
     filename: book.zip
     format: Printed book
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003150
+      - type: swh
+        value: swh:1:rel:99f6850374dc6597af01bd0ee1d3fc0699301b9f
+      - type: url
+        value: https://example.com
+      - type: other
+        value: other-schema://abcd.1234.efgh.5678
     isbn: 978-1-89183-044-0
     issn: 1234-543X
     issue: "123"
