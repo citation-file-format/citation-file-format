@@ -1490,7 +1490,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: [`definitions.address`](#definitionsaddress)
 - required: `false`
 
 The person's address.
@@ -1504,7 +1504,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string`
 - required: `false`
 
 The person's affiliation.
@@ -1518,7 +1518,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: - type: [`definitions.alias`](#definitionsalias)
 - required: `false`
 
 The person's alias.
@@ -1532,7 +1532,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: - type: [`definitions.city`](#definitionscity)
 - required: `false`
 
 The person's city.
@@ -1546,7 +1546,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: - type: [`definitions.country`](#definitioncountry)
 - required: `false`
 
 The person's country.
@@ -1560,7 +1560,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: - type: [`definitions.email`](#definitionsemail)
 - required: `false`
 
 The person's email address.
@@ -1574,7 +1574,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string
 - required: `false`
 
 The person's family names.
@@ -1606,7 +1606,7 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string`
 - required: `false`
 
 The person's given names.
@@ -1620,10 +1620,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string`
 - required: `false`
 
-The person's name particle. For example: 'de', 'van der', 'von', etc.
+The person's name particle. The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 
 Usage example:
 
@@ -1634,10 +1634,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string`
 - required: `false`
 
-The person's name suffix. For example: 'III', 'Jr.', 'Sr.'.
+The person's name suffix. The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 
 Usage example:
 
@@ -1648,7 +1648,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: [`definitions.orcid`](#definitionsorcid)
 - required: `false`
 
 The person's [ORCID](https://orcid.org) identifier.
@@ -1662,7 +1662,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: [`definitions.post-code`](#definitionspost-code)
 - required: `false`
 
 The person's post code.
@@ -1676,7 +1676,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: [`definitions.region`](#definitionsregion)
 - required: `false`
 
 The person's region.
