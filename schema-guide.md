@@ -3430,14 +3430,17 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string`
 - required: `false`
 
-...
+A telephone number.
 
 Usage example:
 
 ```yaml
+authors:
+  - name: The Research Software Project
+    tel: +012-345-6789098
 ```
 
 ### `definitions.url`
