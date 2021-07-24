@@ -1,9 +1,9 @@
-name: Check Markdown links
+name: links
 
 on: push
 
 jobs:
-  markdown-link-check:
+  check:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.4
