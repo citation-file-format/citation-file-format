@@ -948,7 +948,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: (array of) [`definitions.license-enum`](definitions.license-enum) objects.
+- type: (array of) [`definitions.license-enum`](#definitions.license-enum) objects.
 - required: `false`
 
 License identifier(s) under which the work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
