@@ -302,10 +302,11 @@ keywords:
 
 ### `license`
 
-- type: [definitions.license](#definitionslicense)
+- type: (array of) [definitions.license-enum](#definitionslicense-enum).
 - required: false
 
-The SPDX license identifier for the license under which the work is made available.
+The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
+licenses, it is assumed their relationship is OR, not AND.
 
 Usage example:
 
@@ -316,6 +317,11 @@ license: Apache-2.0
 license:
  - Apache-2.0
  - MIT
+```
+```yaml
+license:
+ - GPL-3.0
+ - GPL-3.0-or-later
 ```
 
 ### `license-url`
@@ -328,7 +334,7 @@ The URL of the license text under which the software or dataset is licensed (onl
 Usage example:
 
 ```yaml
-license-url: "https://obscure-licenses.com?id=1234&format=plaintext"
+license-url: "https://obscure-licenses.com?id=1234"
 ```
 
 ### `message`
