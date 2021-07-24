@@ -135,8 +135,8 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 
 ### `abstract`
 
-- type: string
-- required: false
+- type: `string`
+- required: `false`
 
 A description of the software or dataset.
 
@@ -149,7 +149,7 @@ abstract: This software implements methods to do things.
 ### `authors`
 
 - type: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
-- required: true
+- required: `true`
 
 The authors of a software or dataset.
 
@@ -173,8 +173,8 @@ authors:
 
 ### `cff-version`
 
-- type: string
-- required: true
+- type: `string`
+- required: `true`
 
 The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
 
@@ -189,8 +189,8 @@ cff-version: "1.2.0"
 
 ### `commit`
 
-- type: string
-- required: false
+- type: `string`
+- required: `false`
 
 The commit hash or revision number of the software version.
 
@@ -206,7 +206,7 @@ commit: "Revision: 8612"
 ### `contact`
 
 - type: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
-- required: false
+- required: `false`
 
 The contact person, group, company, etc. for the software or dataset.
 
@@ -236,7 +236,7 @@ contact:
 ### `date-released`
 
 - type: [`definitions.date`](#definitionsdate)
-- required: false
+- required: `false`
 
 The date the software or data set has been released. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
 
@@ -249,7 +249,7 @@ date-released: 2020-01-31
 ### `doi`
 
 - type: [`definitions.doi`](#definitionsdoi)
-- required: false
+- required: `false`
 
 The DOI of the software or data set. This notation is most useful when there is just one DOI you want to include. In
 that case, `doi` can be used as shorthand for something like:
@@ -281,7 +281,7 @@ doi: 10.5281/zenodo.4813122
 ### `identifiers`
 
 - type: array of [`definitions.identifier`](#definitionsidentifier) objects.
-- required: false
+- required: `false`
 
 The identifiers of the software or dataset.
 
@@ -289,8 +289,8 @@ Usage example: see [`definitions.identifier`](#definitionsidentifier).
 
 ### `keywords`
 
-- type: array of string
-- required: false
+- type: array of `string`
+- required: `false`
 
 Keywords that describe the work.
 
@@ -306,7 +306,7 @@ keywords:
 ### `license`
 
 - type: (array of) [`definitions.license-enum`](#definitionslicense-enum).
-- required: false
+- required: `false`
 
 The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
 licenses, it is assumed their relationship is OR, not AND.
@@ -330,7 +330,7 @@ license:
 ### `license-url`
 
 - type: [`definitions.url`](#definitionsurl)
-- required: false
+- required: `false`
 
 The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).
 
@@ -342,8 +342,8 @@ license-url: "https://obscure-licenses.com?id=1234"
 
 ### `message`
 
-- type: string
-- required: true
+- type: `string`
+- required: `true`
 - default: `If you use this software, please cite it using the metadata from this file.`
 
 A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
@@ -372,7 +372,7 @@ message: Please cite this data set using the metadata from 'preferred-citation'.
 ### `preferred-citation`
 
 - type: A [`definitions.reference`](#definitionsreference) object. 
-- required: false
+- required: `false`
 
 ...
 
@@ -395,8 +395,8 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 
 ### `repository`
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -407,8 +407,8 @@ Usage example:
 
 ### `repository-artifact`
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -419,8 +419,8 @@ Usage example:
 
 ### `repository-code`
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -431,8 +431,8 @@ Usage example:
 
 ### `title`
 
-- type: ...
-- required: true
+- type: `...`
+- required: `true`
 
 ...
 
@@ -443,8 +443,8 @@ Usage example:
 
 ### `type`
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -455,8 +455,8 @@ Usage example:
 
 ### `url`
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -467,8 +467,8 @@ Usage example:
 
 ### `version`
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -511,8 +511,8 @@ TODO explain why we use definitions
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: Nonempty string.
-- required: false
+- type: Nonempty `string`
+- required: `false`
 
 An address.
 
@@ -526,8 +526,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: Nonempty string.
-- required: false
+- type: Nonempty `string`
+- required: `false`
 
 An alias.
 
@@ -540,8 +540,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: Nonempty string.
-- required: false
+- type: Nonempty `string`
+- required: `false`
 
 A city.
 
@@ -554,8 +554,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: Nonempty string.
-- required: false
+- type: Nonempty `string`
+- required: `false`
 
 The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 
@@ -568,8 +568,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: enum
-- required: false
+- type: `enum`
+- required: `false`
 
 The ISO 3166-1 alpha-2 country code for a country.
 
@@ -586,8 +586,8 @@ country: DE
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: string
-- required: false
+- type: `string`
+- required: `false`
 
 A date. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
 
@@ -634,8 +634,8 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: string
-- required: false
+- type: `string`
+- required: `false`
 
 The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 
@@ -649,8 +649,8 @@ doi: "10.5281/zenodo.1003150"
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: string
-- required: false
+- type: `string`
+- required: `false`
 
 An email address
 
@@ -663,8 +663,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: object
-- required: false
+- type: `object`
+- required: `false`
 
 ...
 
@@ -754,8 +754,8 @@ The entity's fax number.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -768,8 +768,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: true
+- type: `...`
+- required: `true`
 
 ...
 
@@ -822,8 +822,8 @@ The entity's website.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -836,8 +836,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -888,8 +888,8 @@ identifiers:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -902,8 +902,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -916,8 +916,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -930,8 +930,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -944,8 +944,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: object
-- required: false
+- type: `object`
+- required: `false`
 
 ...
 
@@ -973,8 +973,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -987,8 +987,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1001,8 +1001,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1015,8 +1015,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1029,8 +1029,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1043,8 +1043,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1057,8 +1057,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1071,8 +1071,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1085,8 +1085,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1099,8 +1099,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1113,8 +1113,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1127,8 +1127,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1141,8 +1141,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1155,8 +1155,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1169,8 +1169,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1183,8 +1183,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1197,8 +1197,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1212,7 +1212,7 @@ Usage example:
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - type: object
-- required: false
+- required: `false`
 
 ...
 
@@ -1293,8 +1293,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1339,8 +1339,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: true
+- type: `...`
+- required: `true`
 
 ...
 
@@ -1362,8 +1362,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1385,8 +1385,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1408,8 +1408,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1431,8 +1431,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1454,8 +1454,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1477,8 +1477,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1500,8 +1500,8 @@ preferred-citation:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1523,8 +1523,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1546,8 +1546,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1569,8 +1569,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1592,8 +1592,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1615,8 +1615,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1638,8 +1638,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1661,8 +1661,8 @@ preferred-citation:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1684,8 +1684,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1707,8 +1707,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1730,8 +1730,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1753,8 +1753,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1776,8 +1776,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1799,8 +1799,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1822,8 +1822,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1845,8 +1845,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1868,8 +1868,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1891,8 +1891,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1914,8 +1914,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1937,8 +1937,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1960,8 +1960,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -1983,8 +1983,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2006,8 +2006,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2029,8 +2029,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2052,8 +2052,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2075,8 +2075,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2098,8 +2098,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2121,8 +2121,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2144,8 +2144,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2167,8 +2167,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2190,8 +2190,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2213,8 +2213,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2236,8 +2236,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2259,8 +2259,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2282,8 +2282,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2305,8 +2305,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2328,8 +2328,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2351,8 +2351,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2374,8 +2374,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2397,8 +2397,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2420,8 +2420,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2443,8 +2443,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2466,8 +2466,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2489,8 +2489,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2512,8 +2512,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2535,8 +2535,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2558,8 +2558,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2581,8 +2581,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2604,8 +2604,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2627,8 +2627,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2650,8 +2650,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2673,8 +2673,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2696,8 +2696,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2719,8 +2719,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: true
+- type: `...`
+- required: `true`
 
 ...
 
@@ -2742,8 +2742,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2765,8 +2765,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: true
+- type: `...`
+- required: `true`
 
 ...
 
@@ -2786,8 +2786,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2809,8 +2809,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2832,8 +2832,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2855,8 +2855,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2878,8 +2878,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2901,8 +2901,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2924,8 +2924,8 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2938,8 +2938,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2952,8 +2952,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2966,8 +2966,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: ...
-- required: false
+- type: `...`
+- required: `false`
 
 ...
 
@@ -2980,8 +2980,8 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: string or number
-- required: false
+- type: `string` or `number`
+- required: `false`
 
 ...
 
