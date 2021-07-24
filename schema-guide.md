@@ -238,7 +238,7 @@ contact:
 - type: [definitions.date](#definitionsdate)
 - required: false
 
-The date the software or data set has been released. Format is 4-digit year, 2 digit month, 2 digit day of month, separated by dashes.
+The date the software or data set has been released. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
 
 Usage example:
 
