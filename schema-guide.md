@@ -455,14 +455,27 @@ Usage example:
 
 ### `url`
 
-- type: `...`
+- type: `string`
 - required: `false`
 
-...
+URL to a resource. Supported URLs start with one of:
+- `https`
+- `http`
+- `ftp`
+- `sftp``
 
 Usage example:
 
 ```yaml
+authors:
+  - name: The Research Software Project
+    url: "https://research-software-project.org"
+```
+```yaml
+references:
+  - 
+    name: The Research Software Project
+    url: "sftp://files.research-software-project.org"
 ```
 
 ### `version`
