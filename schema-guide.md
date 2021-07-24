@@ -589,12 +589,46 @@ country: DE
 - type: string
 - required: false
 
-A date.
+A date. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
 
-Usage example:
+Usage examples:
 
 ```yaml
+date-released: "2020-01-31"
 ```
+```yaml
+references: 
+  - date-accessed: "2020-01-31"
+    type: generic
+```
+```yaml
+references: 
+  - date-downloaded: "2020-01-31"
+    type: generic
+```
+```yaml
+references: 
+  - date-published: "2020-01-31"
+    type: generic
+```
+```yaml
+references: 
+  - date-released: "2020-01-31"
+    type: generic
+```
+```yaml
+references:
+  - date-end: "2020-02-02"
+    date-start: "2020-01-31"
+    type: conference
+```
+```yaml
+references:
+  - issue-date: "2020-02-02"
+    type: article
+```
+
+Note to tool implementers: it is necessary to cast YAML date objects to string objects when validating against the schema.
 
 ### `definitions.doi`
 
