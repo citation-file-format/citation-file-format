@@ -245,7 +245,7 @@ date-released: 2020-01-31
 
 ### `doi`
 
-- type: [definitions.doi](#definitionsdoi).
+- type: [definitions.doi](#definitionsdoi)
 - required: false
 
 The DOI of the software or data set. This notation is most useful when there is just one DOI you want to include. In
@@ -302,7 +302,7 @@ keywords:
 
 ### `license`
 
-- type: [definitions.license](#definitionslicense).
+- type: [definitions.license](#definitionslicense)
 - required: false
 
 The SPDX license identifier for the license under which the work is made available.
@@ -320,7 +320,7 @@ license:
 
 ### `license-url`
 
-- type: [definitions.url](#definitionsurl).
+- type: [definitions.url](#definitionsurl)
 - required: false
 
 The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).
