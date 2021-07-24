@@ -847,6 +847,14 @@ See [`definitions.url`](#definitionsurl).
 
 The entity's website.
 
+Usage example:
+
+```yaml
+authors:
+  - name: The Research Software Project
+    website: https://research-software-project.org
+```
+
 ### `definitions.fax`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
@@ -1700,14 +1708,18 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: [`definitions.url`](#definitionsurl)
 - required: `false`
 
-...
+The person's website.
 
 Usage example:
 
 ```yaml
+authors:
+  - family-names: Druskat
+    given-names: Stephan
+    website: https://sdruskat.net
 ```
 
 ### `definitions.post-code`
