@@ -1378,7 +1378,7 @@ Usage example:
     - `ZPL-2.1`
 - required: `false`
 
-SPDX identifier for the license under which a work is made available. The list of identifiers originates from https://raw.githubusercontent.com/spdx/license-list-data/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
+SPDX identifier for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
 
 Usage example:
 
