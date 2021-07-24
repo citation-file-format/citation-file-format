@@ -1493,7 +1493,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's address.
 
 Usage example:
 
@@ -1507,7 +1507,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's affiliation.
 
 Usage example:
 
@@ -1521,7 +1521,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's alias.
 
 Usage example:
 
@@ -1535,7 +1535,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's city.
 
 Usage example:
 
@@ -1549,7 +1549,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's country.
 
 Usage example:
 
@@ -1563,7 +1563,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's email address.
 
 Usage example:
 
@@ -1577,7 +1577,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's family names.
 
 Usage example:
 
@@ -1609,7 +1609,7 @@ authors:
 - type: `...`
 - required: `false`
 
-...
+The person's given names.
 
 Usage example:
 
@@ -1623,7 +1623,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's name particle. For example: 'de', 'van der', 'von', etc.
 
 Usage example:
 
@@ -1637,7 +1637,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's name suffix. For example: 'III', 'Jr.', 'Sr.'.
 
 Usage example:
 
@@ -1651,7 +1651,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's [ORCID](https://orcid.org) identifier.
 
 Usage example:
 
@@ -1665,7 +1665,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's post code.
 
 Usage example:
 
@@ -1679,7 +1679,7 @@ Usage example:
 - type: `...`
 - required: `false`
 
-...
+The person's region.
 
 Usage example:
 
@@ -1729,7 +1729,7 @@ authors:
 - type: `...`
 - required: `false`
 
-...
+A post code.
 
 Usage example:
 
