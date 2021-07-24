@@ -302,7 +302,7 @@ keywords:
 
 ### `license`
 
-- type: (array of) [definitions.license-enum](#definitionslicense-enum.description).
+- type: (array of) [definitions.license-enum](#definitionslicense-enum).
 - required: false
 
 The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
