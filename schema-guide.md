@@ -1632,7 +1632,7 @@ Usage example:
 - type: `string`
 - required: `false`
 
-The person's name particle. The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
+The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 
 Usage example:
 
