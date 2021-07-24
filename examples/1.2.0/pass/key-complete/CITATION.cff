@@ -222,7 +222,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     contact:
         # A person
@@ -305,7 +305,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     editors-series:
       # A person
@@ -338,7 +338,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     institution:
       # An entity
@@ -422,7 +422,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     senders:
       # A person
@@ -455,7 +455,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     translators:
       # A person
@@ -488,5 +488,4 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
-
+        location: The team garage
