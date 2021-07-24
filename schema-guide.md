@@ -1646,7 +1646,7 @@ Usage example:
 - type: `string`
 - required: `false`
 
-The person's name suffix. The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
+The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 
 Usage example:
 
