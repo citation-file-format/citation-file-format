@@ -1616,7 +1616,7 @@ Usage example:
 - type: `string`
 - required: `false`
 
-The person's name particle. The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
+The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 
 Usage example:
 
@@ -1630,7 +1630,7 @@ Usage example:
 - type: `string`
 - required: `false`
 
-The person's name suffix. The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
+The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 
 Usage example:
 
@@ -3145,7 +3145,7 @@ references:
     type: generic
 ```
 
-# `definitions.reference.start`
+### `definitions.reference.start`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
