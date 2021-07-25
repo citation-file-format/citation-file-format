@@ -28,23 +28,23 @@ For most software however, it is relatively easy to expand the minimal case with
 
 ```yaml
 abstract: This is my awesome research software. It does many things.
-authors: 
+authors:
   -
     family-names: Druskat
     given-names: Stephan
     orcid: "https://orcid.org/0000-0003-4925-7248"
 cff-version: 1.2.0
 date-released: "2021-07-18"
-identifiers: 
-  - 
+identifiers:
+  -
     description: This is the collection of archived snapshots of all versions of My Research Software
     type: doi
     value: "10.5281/zenodo.123456"
-  - 
+  -
     description: This is the archived snapshot of version 0.11.2 of My Research Software
     type: doi
     value: "10.5281/zenodo.123457"
-keywords: 
+keywords:
   - "awesome software"
   - research
 license: Apache-2.0
@@ -70,7 +70,7 @@ message: If you use this software, please cite it using these metadata.
 title: My Research Software
 references:
   authors:
-    - 
+    -
       family-names: Spaaks
       given-names: Jurriaan H.
   title: The foundation of Research Software
@@ -96,7 +96,7 @@ message: If you use this software, please cite the article from preferred-citati
 title: My Research Software
 preferred-citation:
   authors:
-    - 
+    -
       family-names: Druskat
       given-names: Stephan
   title: Software paper about My Research Software
@@ -371,7 +371,7 @@ message: Please cite this data set using the metadata from 'preferred-citation'.
 
 ### `preferred-citation`
 
-- type: A [`definitions.reference`](#definitionsreference) object. 
+- type: A [`definitions.reference`](#definitionsreference) object.
 - required: `false`
 
 ...
@@ -381,9 +381,9 @@ Usage example:
 ```yaml
 preferred-citation:
   authors:
-    - 
+    -
       family-names: Famnames
-      given-names: Given Nam E. 
+      given-names: Given Nam E.
   title: Title of the work.
   type: generic
   year: 2021
@@ -462,30 +462,14 @@ type: "dataset"
 ### `url`
 
 - type: [`definitions.url`](#definitionsurl)
-- required: `false`
+- required: false
 
-The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
+The URL of a landing page/website for the software or dataset.
 
-- `https`
-- `http`
-- `ftp`
-- `sftp``
-
-Usage examples:
+Usage example:
 
 ```yaml
 url: "https://citation-file-format.github.io/"
-```
-```yaml
-authors:
-  - name: The Research Software Project
-    url: "https://research-software-project.org"
-```
-```yaml
-references:
-  - 
-    name: The Research Software Project
-    url: "sftp://files.research-software-project.org"
 ```
 
 ### `version`
@@ -619,22 +603,22 @@ Usage examples:
 date-released: "2020-01-31"
 ```
 ```yaml
-references: 
+references:
   - date-accessed: "2020-01-31"
     type: generic
 ```
 ```yaml
-references: 
+references:
   - date-downloaded: "2020-01-31"
     type: generic
 ```
 ```yaml
-references: 
+references:
   - date-published: "2020-01-31"
     type: generic
 ```
 ```yaml
-references: 
+references:
   - date-released: "2020-01-31"
     type: generic
 ```
@@ -1845,7 +1829,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     abbreviation: ...
     type: generic
 ```
@@ -1868,7 +1852,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     abstract: ...
     type: generic
 ```
@@ -1891,7 +1875,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     authors: ...
     type: generic
 ```
@@ -1914,7 +1898,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     collection-doi: ...
     type: generic
 ```
@@ -1937,7 +1921,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     collection-title: ...
     type: generic
 ```
@@ -1960,7 +1944,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     collection-type: ...
     type: generic
 ```
@@ -1983,7 +1967,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     commit: ...
     type: generic
 ```
@@ -2006,7 +1990,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     conference: ...
     type: generic
 ```
@@ -2024,7 +2008,7 @@ Usage examples:
 
 ```yaml
 references:
-  - 
+  -
     contact: ...
     type: generic
 ```
@@ -2052,7 +2036,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     copyright: ...
     type: generic
 ```
@@ -2075,7 +2059,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     data-type: ...
     type: generic
 ```
@@ -2098,7 +2082,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     database-provider: ...
     type: generic
 ```
@@ -2121,7 +2105,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     database: ...
     type: generic
 ```
@@ -2144,7 +2128,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     date-accessed: ...
     type: generic
 ```
@@ -2167,7 +2151,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     date-downloaded: ...
     type: generic
 ```
@@ -2185,7 +2169,7 @@ Usage examples:
 
 ```yaml
 references:
-  - 
+  -
     date-published: ...
     type: generic
 ```
@@ -2213,7 +2197,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     date-released: ...
     type: generic
 ```
@@ -2236,7 +2220,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     department: ...
     type: generic
 ```
@@ -2259,7 +2243,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     doi: ...
     type: generic
 ```
@@ -2282,7 +2266,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     edition: ...
     type: generic
 ```
@@ -2305,7 +2289,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     editors: ...
     type: generic
 ```
@@ -2328,7 +2312,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     editors-series: ...
     type: generic
 ```
@@ -2351,7 +2335,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     end: ...
     type: generic
 ```
@@ -2374,7 +2358,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     entry: ...
     type: generic
 ```
@@ -2397,7 +2381,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     filename: ...
     type: generic
 ```
@@ -2420,7 +2404,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     format: ...
     type: generic
 ```
@@ -2443,7 +2427,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     identifiers: ...
     type: generic
 ```
@@ -2466,7 +2450,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     institution: ...
     type: generic
 ```
@@ -2489,7 +2473,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     isbn: ...
     type: generic
 ```
@@ -2512,7 +2496,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     issn: ...
     type: generic
 ```
@@ -2535,7 +2519,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     issue: ...
     type: generic
 ```
@@ -2558,7 +2542,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     issue-date: ...
     type: generic
 ```
@@ -2581,7 +2565,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     issue-title: ...
     type: generic
 ```
@@ -2604,7 +2588,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     journal: ...
     type: generic
 ```
@@ -2627,7 +2611,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     keywords: ...
     type: generic
 ```
@@ -2650,7 +2634,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     languages: ...
     type: generic
 ```
@@ -2673,7 +2657,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     license: ...
     type: generic
 ```
@@ -2696,7 +2680,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     license-url: ...
     type: generic
 ```
@@ -2719,7 +2703,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     loc-end: ...
     type: generic
 ```
@@ -2742,7 +2726,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     loc-start: ...
     type: generic
 ```
@@ -2765,7 +2749,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     location: ...
     type: generic
 ```
@@ -2788,7 +2772,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     medium: ...
     type: generic
 ```
@@ -2811,7 +2795,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     month: ...
     type: generic
 ```
@@ -2834,7 +2818,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     nihmsid: ...
     type: generic
 ```
@@ -2857,7 +2841,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     notes: ...
     type: generic
 ```
@@ -2880,7 +2864,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     number: ...
     type: generic
 ```
@@ -2903,7 +2887,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     number-volumes: ...
     type: generic
 ```
@@ -2926,7 +2910,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     pages: ...
     type: generic
 ```
@@ -2949,7 +2933,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     patent-states: ...
     type: generic
 ```
@@ -2972,7 +2956,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     pmcid: ...
     type: generic
 ```
@@ -2995,7 +2979,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     publisher: ...
     type: generic
 ```
@@ -3018,7 +3002,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     recipients: ...
     type: generic
 ```
@@ -3041,7 +3025,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     repository: ...
     type: generic
 ```
@@ -3064,7 +3048,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     repository-artifact: ...
     type: generic
 ```
@@ -3087,7 +3071,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     repository-code: ...
     type: generic
 ```
@@ -3110,7 +3094,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     scope: ...
     type: generic
 ```
@@ -3133,7 +3117,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     section: ...
     type: generic
 ```
@@ -3156,7 +3140,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     senders: ...
     type: generic
 ```
@@ -3179,7 +3163,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     start: ...
     type: generic
 ```
@@ -3202,7 +3186,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     status: ...
     type: generic
 ```
@@ -3225,7 +3209,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     term: ...
     type: generic
 ```
@@ -3248,7 +3232,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     thesis-type: ...
     type: generic
 ```
@@ -3271,7 +3255,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     title: ...
     type: generic
 ```
@@ -3294,7 +3278,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     translators: ...
     type: generic
 ```
@@ -3316,7 +3300,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     type: generic
 ```
 
@@ -3338,7 +3322,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     type: generic
     url: ...
 ```
@@ -3361,7 +3345,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     type: generic
     version: ...
 ```
@@ -3384,7 +3368,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     type: generic
     volume: ...
 ```
@@ -3407,7 +3391,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     type: generic
     volume-title: ...
 ```
@@ -3430,7 +3414,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     type: generic
     year: ...
 ```
@@ -3453,7 +3437,7 @@ preferred-citation:
 ```
 ```yaml
 references:
-  - 
+  -
     type: generic
     year-original: ...
 ```
@@ -3513,15 +3497,33 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
+- type: `string`
 - required: `false`
 
-...
+The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
 
-Usage example:
+- `https://`
+- `http://`
+- `ftp://`
+- `sftp://`
+
+Usage examples:
 
 ```yaml
+url: "https://citation-file-format.github.io/"
 ```
+```yaml
+authors:
+  - name: The Research Software Project
+    url: "https://research-software-project.org"
+```
+```yaml
+references:
+  -
+    name: The Research Software Project
+    url: "sftp://files.research-software-project.org"
+```
+
 
 ### `definitions.version`
 
