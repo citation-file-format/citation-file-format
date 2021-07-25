@@ -153,7 +153,7 @@ abstract: This software implements methods to do things.
 
 The authors of a software or dataset.
 
-Usage example:
+Usage examples:
 
 ```yaml
 authors:
@@ -178,7 +178,7 @@ authors:
 
 The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
 
-Usage example:
+Usage examples:
 
 ```yaml
 cff-version: 1.2.0
@@ -194,7 +194,7 @@ cff-version: "1.2.0"
 
 The commit hash or revision number of the software version.
 
-Usage example:
+Usage examples:
 
 ```yaml
 commit: 1ff847d81f29c45a3a1a5ce73d38e45c2f319bba
@@ -210,7 +210,7 @@ commit: "Revision: 8612"
 
 The contact person, group, company, etc. for the software or dataset.
 
-Usage example:
+Usage examples:
 
 ```yaml
 contact:
@@ -269,7 +269,7 @@ identifiers:
     description: The versioned DOI of the work.
 ```
 
-Usage example:
+Usage examples:
 
 ```yaml
 doi: 10.5281/zenodo.1003149
@@ -311,7 +311,7 @@ keywords:
 The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
 licenses, it is assumed their relationship is OR, not AND.
 
-Usage example:
+Usage examples:
 
 ```yaml
 license: Apache-2.0
@@ -348,7 +348,7 @@ license-url: "https://obscure-licenses.com?id=1234"
 
 A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
 
-Usage example:
+Usage examples:
 
 ```yaml
 message: If you use this software, please cite it using the metadata from this file.
@@ -880,7 +880,7 @@ authors:
 
 ...
 
-Usage example:
+Usage examples:
 
 
 ```yaml
@@ -1425,7 +1425,7 @@ license:
 
 SPDX identifier for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
 
-Usage example:
+Usage examples:
 
 ```yaml
 license: Apache-2.0
@@ -2372,7 +2372,7 @@ references:
 
 ...
 
-Usage example:
+Usage examples:
 
 ```yaml
 preferred-citation:
@@ -3479,7 +3479,7 @@ Usage example:
 
 A telephone number.
 
-Usage example:
+Usage examples:
 
 ```yaml
 authors:
@@ -3534,7 +3534,7 @@ references:
 
 The version of a work.
 
-Usage example:
+Usage examples:
 
 ```yaml
 version: "1.2.0"
