@@ -3519,8 +3519,7 @@ authors:
 ```
 ```yaml
 references:
-  -
-    name: The Research Software Project
+  - name: The Research Software Project
     url: "sftp://files.research-software-project.org"
 ```
 
