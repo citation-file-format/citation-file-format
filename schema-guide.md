@@ -135,259 +135,233 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 
 ### `abstract`
 
-- type: `string`
-- required: `false`
+- **type**: `string`
+- **required**: `false`
+- **description**: A description of the software or dataset.
+- **usage**:
 
-A description of the software or dataset.
-
-Usage example:
-
-```yaml
-abstract: This software implements methods to do things.
-```
+    ```yaml
+    abstract: This software implements methods to do things.
+    ```
 
 ### `authors`
 
-- type: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
-- required: `true`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **required**: `true`
+- **description**: The authors of a software or dataset.
+- **usage**: 
 
-The authors of a software or dataset.
-
-Usage examples:
-
-```yaml
-authors:
-  - given-names: Stephan
-    family-names: Druskat
-```
-```yaml
-authors:
-  - name: "The Research Software project"
-```
-```yaml
-authors:
-  - given-names: Stephan
-    family-names: Druskat
-  - name: "The Research Software project"
-```
+    ```yaml
+    authors:
+      - given-names: Stephan
+        family-names: Druskat
+    ```
+    ```yaml
+    authors:
+      - name: "The Research Software project"
+    ```
+    ```yaml
+    authors:
+      - given-names: Stephan
+        family-names: Druskat
+      - name: "The Research Software project"
+    ```
 
 ### `cff-version`
 
-- type: `string`
-- required: `true`
+- **type**: `string`
+- **required**: `true`
+- **description**: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
+- **usage**: 
 
-The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
-
-Usage examples:
-
-```yaml
-cff-version: 1.2.0
-```
-```yaml
-cff-version: "1.2.0"
-```
+    ```yaml
+    cff-version: 1.2.0
+    ```
+    ```yaml
+    cff-version: "1.2.0"
+    ```
 
 ### `commit`
 
-- type: `string`
-- required: `false`
+- **type**: `string`
+- **required**: `false`
+- **description**: The commit hash or revision number of the software version.
+- **usage**: 
 
-The commit hash or revision number of the software version.
-
-Usage examples:
-
-```yaml
-commit: 1ff847d81f29c45a3a1a5ce73d38e45c2f319bba
-```
-```yaml
-commit: "Revision: 8612"
-```
+    ```yaml
+    commit: 1ff847d81f29c45a3a1a5ce73d38e45c2f319bba
+    ```
+    ```yaml
+    commit: "Revision: 8612"
+    ```
 
 ### `contact`
 
-- type: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
-- required: `false`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **required**: `false`
+- **description**: The contact person, group, company, etc. for the software or dataset.
+- **usage**: 
 
-The contact person, group, company, etc. for the software or dataset.
-
-Usage examples:
-
-```yaml
-contact:
-  - affiliation: "Humboldt-Universität zu Berlin"
-    email: "mail@sdruskat.net"
-    family-names: Druskat
-    given-names: Stephan
-```
-```yaml
-contact:
-  - email: "mail@research-project.org"
-    name: "The Research Software project"
-```
-```yaml
-contact:
-  - email: "mail@sdruskat.net"
-    given-names: Stephan
-    family-names: Druskat
-  - email: "mail@research-project.org"
-    name: "The Research Software project"
-```
+    ```yaml
+    contact:
+      - affiliation: "Humboldt-Universität zu Berlin"
+        email: "mail@sdruskat.net"
+        family-names: Druskat
+        given-names: Stephan
+    ```
+    ```yaml
+    contact:
+      - email: "mail@research-project.org"
+        name: "The Research Software project"
+    ```
+    ```yaml
+    contact:
+      - email: "mail@sdruskat.net"
+        given-names: Stephan
+        family-names: Druskat
+      - email: "mail@research-project.org"
+        name: "The Research Software project"
+    ```
 
 ### `date-released`
 
-- type: [`definitions.date`](#definitionsdate)
-- required: `false`
+- **type**: [`definitions.date`](#definitionsdate)
+- **required**: `false`
+- **description**: The date the software or data set has been released. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
+- **usage**:  
 
-The date the software or data set has been released. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
-
-Usage example:
-
-```yaml
-date-released: 2020-01-31
-```
+    ```yaml
+    date-released: 2020-01-31
+    ```
 
 ### `doi`
 
-- type: [`definitions.doi`](#definitionsdoi)
-- required: `false`
-
-The DOI of the software or dataset. This notation is most useful when there is just one DOI you want to include. In
+- **type**: [`definitions.doi`](#definitionsdoi)
+- **required**: `false`
+- **description**: The DOI of the software or dataset. This notation is most useful when there is just one DOI you want to include. In
 that case, `doi` can be used as shorthand for something like:
 
-```yaml
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.1003149
-    description: The concept DOI of the work.
-```
-or
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003149
+        description: The concept DOI of the work.
+    ```
+    or
 
-```yaml
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.4813122
-    description: The versioned DOI of the work.
-```
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: The versioned DOI of the work.
+    ```
+- **usage**: 
 
-Usage examples:
-
-```yaml
-doi: 10.5281/zenodo.1003149
-```
-```yaml
-doi: 10.5281/zenodo.4813122
-```
+    ```yaml
+    doi: 10.5281/zenodo.1003149
+    ```
+    ```yaml
+    doi: 10.5281/zenodo.4813122
+    ```
 
 ### `identifiers`
 
-- type: array of [`definitions.identifier`](#definitionsidentifier) objects.
-- required: `false`
-
-The identifiers of the software or dataset.
-
-Usage example: see [`definitions.identifier`](#definitionsidentifier).
+- **type**: array of [`definitions.identifier`](#definitionsidentifier) objects.
+- **required**: `false`
+- **description**: The identifiers of the software or dataset.
+- **usage**: see [`definitions.identifier`](#definitionsidentifier).
 
 ### `keywords`
 
-- type: array of `string`
-- required: `false`
+- **type**: array of `string`
+- **required**: `false`
+- **description**: Keywords that describe the work.
+- **usage**:
 
-Keywords that describe the work.
-
-Usage example:
-
-```yaml
-keywords:
- - thefirstkeyword
- - thesecondkeyword
- - a third keyword
-```
+    ```yaml
+    keywords:
+     - thefirstkeyword
+     - thesecondkeyword
+     - a third keyword
+    ```
 
 ### `license`
 
-- type: (array of) [`definitions.license-enum`](#definitionslicense-enum).
-- required: `false`
-
-The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
+- **type**: (array of) [`definitions.license-enum`](#definitionslicense-enum).
+- **required**: `false`
+- **description**: The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
 licenses, it is assumed their relationship is OR, not AND.
+- **usage**: 
 
-Usage examples:
-
-```yaml
-license: Apache-2.0
-```
-```yaml
-license:
- - Apache-2.0
- - MIT
-```
-```yaml
-license:
- - GPL-3.0
- - GPL-3.0-or-later
-```
+    ```yaml
+    license: Apache-2.0
+    ```
+    ```yaml
+    license:
+     - Apache-2.0
+     - MIT
+    ```
+    ```yaml
+    license:
+     - GPL-3.0
+     - GPL-3.0-or-later
+    ```
 
 ### `license-url`
 
-- type: [`definitions.url`](#definitionsurl)
-- required: `false`
+- **type**: [`definitions.url`](#definitionsurl)
+- **required**: `false`
+- **description**: The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).
+- **usage**:  
 
-The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).
-
-Usage example:
-
-```yaml
-license-url: "https://obscure-licenses.com?id=1234"
-```
+    ```yaml
+    license-url: "https://obscure-licenses.com?id=1234"
+    ```
 
 ### `message`
 
-- type: `string`
-- required: `true`
-- default: `If you use this software, please cite it using the metadata from this file.`
+- **type**: `string`
+- **required**: `true`
+- **default**: `If you use this software, please cite it using the metadata from this file.`
+- **description**: A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
+- **usage**: 
 
-A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
-
-Usage examples:
-
-```yaml
-message: If you use this software, please cite it using the metadata from this file.
-```
-```yaml
-message: Please cite this software using these metadata.
-```
-```yaml
-message: Please cite this software using the metadata from 'preferred-citation'.
-```
-```yaml
-message: If you use this dataset, please cite it using the metadata from this file.
-```
-```yaml
-message: Please cite this dataset using these metadata.
-```
-```yaml
-message: Please cite this dataset using the metadata from 'preferred-citation'.
-```
+    ```yaml
+    message: If you use this software, please cite it using the metadata from this file.
+    ```
+    ```yaml
+    message: Please cite this software using these metadata.
+    ```
+    ```yaml
+    message: Please cite this software using the metadata from 'preferred-citation'.
+    ```
+    ```yaml
+    message: If you use this dataset, please cite it using the metadata from this file.
+    ```
+    ```yaml
+    message: Please cite this dataset using these metadata.
+    ```
+    ```yaml
+    message: Please cite this dataset using the metadata from 'preferred-citation'.
+    ```
 
 ### `preferred-citation`
 
-- type: A [`definitions.reference`](#definitionsreference) object.
-- required: `false`
+- **type**: A [`definitions.reference`](#definitionsreference) object.
+- **required**: `false`
+- **description**: ...
+- **usage**:  
 
-...
-
-Usage example:
-
-```yaml
-preferred-citation:
-  authors:
-    -
-      family-names: Famnames
-      given-names: Given Nam E.
-  title: Title of the work.
-  type: generic
-  year: 2021
-```
+    ```yaml
+    preferred-citation:
+      authors:
+        -
+          family-names: Famnames
+          given-names: Given Nam E.
+      title: Title of the work.
+      type: generic
+      year: 2021
+    ```
 
 ### `references`
 
@@ -395,38 +369,34 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 
 ### `repository`
 
-- type: [`definitions.url`](#definitionsurl)
-- required: false
+- **type**: [`definitions.url`](#definitionsurl)
+- **required**: false
+- **description**: The URL of the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
+- **usage**:  
 
-The URL of the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
-
-Usage example:
-
-```yaml
-repository: "https://ascl.net/2105.013"
-```
+    ```yaml
+    repository: "https://ascl.net/2105.013"
+    ```
 
 ### `repository-artifact`
 
-- type: [`definitions.url`](#definitionsurl)
-- required: false
+- **type**: [`definitions.url`](#definitionsurl)
+- **required**: false
+- **description**: The URL of the software in a build artifact/binary repository.
+- **usage**:  
 
-The URL of the software in a build artifact/binary repository.
-
-Usage example:
-
-```yaml
-repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
-```
+    ```yaml
+    repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
+    ```
 
 ### `repository-code`
 
-- type: [`definitions.url`](#definitionsurl)
-- required: false
+- **type**: [`definitions.url`](#definitionsurl)
+- **required**: false
 
 The URL of the software in a source code repository.
 
-Usage example:
+- **usage**:  
 
 ```yaml
 repository-code: "https://github.com/citation-file-format/cff-converter-python"
@@ -434,12 +404,10 @@ repository-code: "https://github.com/citation-file-format/cff-converter-python"
 
 ### `title`
 
-- type: `string`
-- required: `true`
-
-The name of the software or dataset.
-
-Usage example:
+- **type**: `string`
+- **required**: `true`
+- **description**: The name of the software or dataset.
+- **usage**:  
 
 ```yaml
 title: "cffconvert"
@@ -447,13 +415,11 @@ title: "cffconvert"
 
 ### `type`
 
-- type: enum (`"software"` or `"dataset"`)
-- default: `"software"`
-- required: `false`
-
-The type of the work that is being described by this `CITATION.cff` file.
-
-Usage example:
+- **type**: enum (`"software"` or `"dataset"`)
+- **default**: `"software"`
+- **required**: `false`
+- **description**: The type of the work that is being described by this `CITATION.cff` file.
+- **usage**:  
 
 ```yaml
 type: "dataset"
@@ -461,12 +427,12 @@ type: "dataset"
 
 ### `url`
 
-- type: [`definitions.url`](#definitionsurl)
-- required: false
+- **type**: [`definitions.url`](#definitionsurl)
+- **required**: false
 
 The URL of a landing page/website for the software or dataset.
 
-Usage example:
+- **usage**:  
 
 ```yaml
 url: "https://citation-file-format.github.io/"
@@ -474,12 +440,10 @@ url: "https://citation-file-format.github.io/"
 
 ### `version`
 
-- type: [`definitions.version`](#definitionsversion)
-- required: `false`
-
-The version of the software or dataset.
-
-Usage example:
+- **type**: [`definitions.version`](#definitionsversion)
+- **required**: `false`
+- **description**: The version of the software or dataset.
+- **usage**:  
 
 See [`definitions.version`](#definitionsversion).
 
@@ -517,13 +481,11 @@ TODO explain why we use definitions
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: Nonempty `string`
-- required: `false`
+- **type**: Nonempty `string`
+- **required**: `false`
+- **description**: An address.
 
-An address.
-
-
-Usage example:
+- **usage**:  
 
 ```yaml
 ```
@@ -532,12 +494,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: Nonempty `string`
-- required: `false`
-
-An alias.
-
-Usage example:
+- **type**: Nonempty `string`
+- **required**: `false`
+- **description**: An alias.
+- **usage**:  
 
 ```yaml
 ```
@@ -546,12 +506,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: Nonempty `string`
-- required: `false`
-
-A city.
-
-Usage example:
+- **type**: Nonempty `string`
+- **required**: `false`
+- **description**: A city.
+- **usage**:  
 
 ```yaml
 ```
@@ -560,12 +518,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: Nonempty `string`
-- required: `false`
-
-The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
-
-Usage example:
+- **type**: Nonempty `string`
+- **required**: `false`
+- **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
+- **usage**:  
 
 ```yaml
 ```
@@ -574,12 +530,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `enum`
-- required: `false`
-
-The ISO 3166-1 alpha-2 country code for a country.
-
-Usage example:
+- **type**: `enum`
+- **required**: `false`
+- **description**: The ISO 3166-1 alpha-2 country code for a country.
+- **usage**:  
 
 ```yaml
 country: NL
@@ -592,12 +546,10 @@ country: DE
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-A date. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
-
-Usage examples:
+- **type**: `string`
+- **required**: `false`
+- **description**: A date. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
+- **usage**: 
 
 ```yaml
 date-released: "2020-01-31"
@@ -640,12 +592,10 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
-
-Usage example:
+- **type**: `string`
+- **required**: `false`
+- **description**: The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
+- **usage**:  
 
 ```yaml
 doi: "10.5281/zenodo.1003150"
@@ -655,12 +605,10 @@ doi: "10.5281/zenodo.1003150"
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-An email address
-
-Usage example:
+- **type**: `string`
+- **required**: `false`
+- **description**: An email address
+- **usage**:  
 
 ```yaml
 ```
@@ -669,11 +617,9 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `object`
-- required: `false`
-
-...
-
+- **type**: `object`
+- **required**: `false`
+- **description**: ...
 `definitions.entity` has the following properties:
 
 - [`address`](#definitionsentityaddress)
@@ -756,7 +702,7 @@ See [`definitions.fax`](#definitionsfax).
 
 The entity's fax number.
 
-Usage example:
+- **usage**:  
 
 ```yaml
 authors:
@@ -768,12 +714,10 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-The entity's location.
-
-Usage example:
+- **type**: `string`
+- **required**: `false`
+- **description**: The entity's location.
+- **usage**:  
 
 ```yaml
 ```
@@ -782,12 +726,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `true`
-
-The entity's name.
-
-Usage example:
+- **type**: `string`
+- **required**: `true`
+- **description**: The entity's name.
+- **usage**:  
 
 ```yaml
 ```
@@ -824,7 +766,7 @@ See [`definitions.tel`](#definitionstel).
 
 The entity's telephone number.
 
-Usage example:
+- **usage**:  
 
 ```yaml
 authors:
@@ -840,7 +782,7 @@ See [`definitions.url`](#definitionsurl).
 
 The entity's website.
 
-Usage example:
+- **usage**:  
 
 ```yaml
 authors:
@@ -852,12 +794,10 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-A fax number.
-
-Usage example:
+- **type**: `string`
+- **required**: `false`
+- **description**: A fax number.
+- **usage**:  
 
 ```yaml
 authors:
@@ -875,12 +815,10 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 
 ```yaml
@@ -927,12 +865,10 @@ identifiers:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage example:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**:  
 
 ```yaml
 ```
@@ -941,12 +877,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: (array of) [`definitions.license-enum`](#definitions.license-enum) objects.
-- required: `false`
-
-License identifier(s) under which the work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
-
-Usage examples:
+- **type**: (array of) [`definitions.license-enum`](#definitions.license-enum) objects.
+- **required**: `false`
+- **description**: License identifier(s) under which the work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
+- **usage**: 
 
 ```yaml
 license: Apache-2.0
@@ -961,7 +895,7 @@ license:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `enum` with values:
+- **type**: `enum` with values:
     - `0BSD`
     - `AAL`
     - `Abstyles`
@@ -1421,11 +1355,9 @@ license:
     - `ZPL-1.1`
     - `ZPL-2.0`
     - `ZPL-2.1`
-- required: `false`
-
-SPDX identifier for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
-
-Usage examples:
+- **required**: `false`
+- **description**: SPDX identifier for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
+- **usage**: 
 
 ```yaml
 license: Apache-2.0
@@ -1440,12 +1372,10 @@ license:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage example:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**:  
 
 ```yaml
 ```
@@ -1454,11 +1384,9 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `object`
-- required: `false`
-
-...
-
+- **type**: `object`
+- **required**: `false`
+- **description**: ...
 `definitions.person` has the following properties:
 
 - [`address`](#definitionspersonaddress)
@@ -1483,12 +1411,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: [`definitions.address`](#definitionsaddress)
-- required: `false`
-
-The person's address.
-
-Usage example:
+- **type**: [`definitions.address`](#definitionsaddress)
+- **required**: `false`
+- **description**: The person's address.
+- **usage**:  
 
 ```yaml
 ```
@@ -1497,12 +1423,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-The person's affiliation.
-
-Usage example:
+- **type**: `string`
+- **required**: `false`
+- **description**: The person's affiliation.
+- **usage**:  
 
 ```yaml
 ```
@@ -1511,12 +1435,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: [`definitions.alias`](#definitionsalias)
-- required: `false`
-
-The person's alias.
-
-Usage example:
+- **type**: [`definitions.alias`](#definitionsalias)
+- **required**: `false`
+- **description**: The person's alias.
+- **usage**:  
 
 ```yaml
 ```
@@ -1525,12 +1447,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: - type: [`definitions.city`](#definitionscity)
-- required: `false`
-
-The person's city.
-
-Usage example:
+- **type**: - type: [`definitions.city`](#definitionscity)
+- **required**: `false`
+- **description**: The person's city.
+- **usage**:  
 
 ```yaml
 ```
@@ -1539,12 +1459,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: - type: [`definitions.country`](#definitioncountry)
-- required: `false`
-
-The person's country.
-
-Usage example:
+- **type**: - type: [`definitions.country`](#definitioncountry)
+- **required**: `false`
+- **description**: The person's country.
+- **usage**:  
 
 ```yaml
 ```
@@ -1553,12 +1471,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: - type: [`definitions.email`](#definitionsemail)
-- required: `false`
-
-The person's email address.
-
-Usage example:
+- **type**: - type: [`definitions.email`](#definitionsemail)
+- **required**: `false`
+- **description**: The person's email address.
+- **usage**:  
 
 ```yaml
 ```
@@ -1567,12 +1483,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string
-- required: `false`
-
-The person's family names.
-
-Usage example:
+- **type**: `string`
+- **required**: `false`
+- **description**: The person's family names.
+- **usage**:  
 
 ```yaml
 ```
@@ -1581,12 +1495,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: [`definitions.fax`](#definitionsfax)
-- required: `false`
-
-The person's fax number.
-
-Usage example:
+- **type**: [`definitions.fax`](#definitionsfax)
+- **required**: `false`
+- **description**: The person's fax number.
+- **usage**:  
 
 ```yaml
 authors:
@@ -1599,12 +1511,10 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-The person's given names.
-
-Usage example:
+- **type**: `string`
+- **required**: `false`
+- **description**: The person's given names.
+- **usage**:  
 
 ```yaml
 ```
@@ -1613,12 +1523,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
-
-Usage example:
+- **type**: `string`
+- **required**: `false`
+- **description**: The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
+- **usage**:  
 
 ```yaml
 ```
@@ -1627,12 +1535,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
-
-Usage example:
+- **type**: `string`
+- **required**: `false`
+- **description**: The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
+- **usage**:  
 
 ```yaml
 ```
@@ -1641,12 +1547,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: [`definitions.orcid`](#definitionsorcid)
-- required: `false`
-
-The person's [ORCID](https://orcid.org) identifier.
-
-Usage example:
+- **type**: [`definitions.orcid`](#definitionsorcid)
+- **required**: `false`
+- **description**: The person's [ORCID](https://orcid.org) identifier.
+- **usage**:  
 
 ```yaml
 ```
@@ -1655,12 +1559,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: [`definitions.post-code`](#definitionspost-code)
-- required: `false`
-
-The person's post code.
-
-Usage example:
+- **type**: [`definitions.post-code`](#definitionspost-code)
+- **required**: `false`
+- **description**: The person's post code.
+- **usage**:  
 
 ```yaml
 ```
@@ -1669,12 +1571,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: [`definitions.region`](#definitionsregion)
-- required: `false`
-
-The person's region.
-
-Usage example:
+- **type**: [`definitions.region`](#definitionsregion)
+- **required**: `false`
+- **description**: The person's region.
+- **usage**:  
 
 ```yaml
 ```
@@ -1683,12 +1583,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: [`definitions.tel`](#definitionstel)
-- required: `false`
-
-The person's telephone number.
-
-Usage example:
+- **type**: [`definitions.tel`](#definitionstel)
+- **required**: `false`
+- **description**: The person's telephone number.
+- **usage**:  
 
 ```yaml
 authors:
@@ -1701,12 +1599,10 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: [`definitions.url`](#definitionsurl)
-- required: `false`
-
-The person's website.
-
-Usage example:
+- **type**: [`definitions.url`](#definitionsurl)
+- **required**: `false`
+- **description**: The person's website.
+- **usage**:  
 
 ```yaml
 authors:
@@ -1719,12 +1615,10 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-A post code.
-
-Usage example:
+- **type**: `...`
+- **required**: `false`
+- **description**: A post code.
+- **usage**:  
 
 ```yaml
 ```
@@ -1733,12 +1627,9 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: object
-- required: `false`
-
-...
-
-`definitions.reference` has the following properties:
+- **type**: object
+- **required**: `false`
+- **description**: `definitions.reference` has the following properties:
 
 - [`abbreviation`](#definitionsreferenceabbreviation)
 - [`abstract`](#definitionsreferenceabstract)
@@ -1815,12 +1706,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -1843,7 +1732,7 @@ The abstract of a work.
 - If the work is a journal paper or other academic work: The abstract of the work.
 - If the work is a film, broadcast or similar: The synopsis of the work.
 
-Usage examples:
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -1861,12 +1750,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `true`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `true`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -1884,12 +1771,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -1907,12 +1792,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -1930,12 +1813,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -1953,12 +1834,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -1976,12 +1855,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -1999,12 +1876,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 references:
@@ -2022,12 +1897,10 @@ preferred-citation:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2045,12 +1918,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2068,12 +1939,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2091,12 +1960,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2114,12 +1981,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2137,12 +2002,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2160,12 +2023,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 references:
@@ -2183,12 +2044,10 @@ preferred-citation:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2206,12 +2065,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2229,12 +2086,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2252,12 +2107,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2275,12 +2128,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2298,12 +2149,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2321,12 +2170,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2344,12 +2191,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2367,12 +2212,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2390,12 +2233,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2413,12 +2254,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2436,12 +2275,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2459,12 +2296,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2482,12 +2317,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2505,12 +2338,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2528,12 +2359,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2551,12 +2380,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2574,12 +2401,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2597,12 +2422,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2620,12 +2443,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2643,12 +2464,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2666,12 +2485,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2689,12 +2506,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2712,12 +2527,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2735,12 +2548,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2758,12 +2569,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2781,12 +2590,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2804,12 +2611,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2827,12 +2632,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2850,12 +2653,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2873,12 +2674,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2896,12 +2695,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2919,12 +2716,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2942,12 +2737,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage example:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**:  
 
 ```yaml
 preferred-citation:
@@ -2965,12 +2758,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -2988,12 +2779,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3011,12 +2800,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3034,12 +2821,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3057,12 +2842,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3080,12 +2863,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3103,12 +2884,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3126,12 +2905,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3149,12 +2926,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3172,12 +2947,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3195,12 +2968,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3218,12 +2989,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3241,12 +3010,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `true`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `true`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3264,12 +3031,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3287,12 +3052,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `true`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `true`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3308,12 +3071,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3331,12 +3092,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3354,12 +3113,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3377,12 +3134,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3400,12 +3155,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3423,12 +3176,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage examples:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**: 
 
 ```yaml
 preferred-citation:
@@ -3446,12 +3197,10 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage example:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**:  
 
 ```yaml
 ```
@@ -3460,12 +3209,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `...`
-- required: `false`
-
-...
-
-Usage example:
+- **type**: `...`
+- **required**: `false`
+- **description**: ...
+- **usage**:  
 
 ```yaml
 ```
@@ -3474,12 +3221,10 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-A telephone number.
-
-Usage examples:
+- **type**: `string`
+- **required**: `false`
+- **description**: A telephone number.
+- **usage**: 
 
 ```yaml
 authors:
@@ -3497,11 +3242,9 @@ authors:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string`
-- required: `false`
-
-The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
-
+- **type**: `string`
+- **required**: `false`
+- **description**: The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
 - `https://`
 - `http://`
 - `ftp://`
@@ -3528,11 +3271,9 @@ references:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: `string` or `number`
-- required: `false`
-
-The version of a work.
-
+- **type**: `string` or `number`
+- **required**: `false`
+- **description**: The version of a work.
 Usage examples:
 
 ```yaml
