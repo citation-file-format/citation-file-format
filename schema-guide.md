@@ -357,7 +357,30 @@ primary principle, "Importance", when others cite this work.
 - **type**: Array of [`definitions.reference`](#definitionsreference) objects.
 - **required**: `false`
 - **description**: Reference(s) to other creative works. Similar to a list of references list in a paper, references of the software or dataset may include other software (dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
-- **usage**: See [`definitions.reference`](#definitionsreference).
+- **usage**: See also [`definitions.reference`](#definitionsreference).<br><br>
+    ```yaml
+    references:
+      - type: software
+        authors:
+          - name: "The Dependency Project"
+        title: "Dependency"
+        date-released: 2021-07-26
+        doi: 10.5281/zenodo.x1234567
+        version: 0.13.4
+        repository-code: "https://github.com/dependency-project/dependency"
+      - type: article
+        scope: Cite this paper if you want to reference the general concepts of the software.
+        authors:
+          - family-names: Bielefeld
+            name-particle: von
+            given-names: Arthur
+        title: "My Research Tool: A 100% accuracy syntax parser for all languages"
+        year: 2099
+        journal: Journal of Hard Science Fiction
+        volume: 42
+        issue: 13
+        doi: 10.9999/hardscifi-lang.42132
+    ```
 
 ### `repository`
 
