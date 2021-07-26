@@ -343,7 +343,7 @@ repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-mav
 - type: [`definitions.url`](#definitionsurl)
 - required: false
 
-The URL of the software in a source code repository.
+The URL of the work in a source code repository (when the work is software).
 
 Usage example:
 
