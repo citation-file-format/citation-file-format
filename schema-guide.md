@@ -251,7 +251,7 @@ date-released: 2020-01-31
 - type: [`definitions.doi`](#definitionsdoi)
 - required: `false`
 
-The DOI of the software or data set. This notation is most useful when there is just one DOI you want to include. In
+The DOI of the software or dataset. This notation is most useful when there is just one DOI you want to include. In
 that case, `doi` can be used as shorthand for something like:
 
 ```yaml
