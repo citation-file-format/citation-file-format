@@ -867,7 +867,7 @@ authors:
 ```yaml
 authors:
   - family-names: McClane
-    fax: +012-3456-7890
+    fax: +12-3456-7890
     given-names: John
 ```
 
