@@ -920,7 +920,7 @@ identifiers:
     description: The GitHub release URL of tag 1.1.0.
   - type: url
     value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
-    description: The GitHub release URL to the commit of tag 1.1.0.
+    description: The GitHub release URL of the commit tagged with 1.1.0.
 ```
 
 ### `definitions.identifier-description`
