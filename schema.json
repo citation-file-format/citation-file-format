@@ -1727,7 +1727,7 @@
         },
         "preferred-citation": {
             "$ref": "#/definitions/reference",
-            "description": "When citing the work, cite this reference instead."
+            "description": "The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file."
         },
         "references": {
             "description": "Reference(s) to other creative works.",
