@@ -862,7 +862,7 @@ Usage example:
 ```yaml
 authors:
   - name: The Research Software Project
-    fax: +012-3456-7890
+    fax: +12-3456-7890
 ```
 ```yaml
 authors:
