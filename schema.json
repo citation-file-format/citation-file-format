@@ -1084,7 +1084,7 @@
             "description": "A reference to a work.",
             "properties": {
                 "abbreviation": {
-                    "description": "The abbreviation of the work.",
+                    "description": "The abbreviation of a work.",
                     "minLength": 1,
                     "type": "string"
                 },
