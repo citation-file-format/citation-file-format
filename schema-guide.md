@@ -1694,7 +1694,7 @@ Usage example:
 authors:
   - family-names: McClane
     given-names: John
-    tel: +012-345-6789098
+    tel: +12-345-6789098
 ```
 
 ### `definitions.person.website`
