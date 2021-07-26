@@ -395,13 +395,13 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 
 ### `type`
 
-- **type**: enum (`"software"` or `"dataset"`)
-- **default**: `"software"`
+- **type**: enum (`software` or `dataset`)
+- **default**: `software`
 - **required**: `false`
 - **description**: The type of the work that is being described by this `CITATION.cff` file.
 - **usage**:<br><br>
     ```yaml
-    type: "dataset"
+    type: dataset
     ```
 
 ### `url`
