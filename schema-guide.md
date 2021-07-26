@@ -1511,7 +1511,7 @@ Usage example:
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- type: - type: [`definitions.alias`](#definitionsalias)
+- type: [`definitions.alias`](#definitionsalias)
 - required: `false`
 
 The person's alias.
