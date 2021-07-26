@@ -1,0 +1,13 @@
+{
+    "_comment": "Markdown Link Checker configuration, see https://github.com/gaurav-nelson/github-action-markdown-link-check and https://github.com/tcort/markdown-link-check",
+    "ignorePatterns": [{
+        "pattern": "^http://localhost"
+    }, {
+        "pattern": "^https://localhost"
+    }, {
+        "_comment": "local links are not checked reliably, skipping helps avoid false sense of security",
+        "pattern": "^#"
+    }],
+    "retryOn429": true,
+    "fallbackRetryDelay": "30s"
+}
