@@ -366,7 +366,7 @@ message: If you use this dataset, please cite it using the metadata from this fi
 message: Please cite this dataset using these metadata.
 ```
 ```yaml
-message: Please cite this data set using the metadata from 'preferred-citation'.
+message: Please cite this dataset using the metadata from 'preferred-citation'.
 ```
 
 ### `preferred-citation`
