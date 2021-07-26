@@ -917,7 +917,7 @@ identifiers:
     description: The Software Heritage identifier for version 1.1.0 of the work.
   - type: url
     value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
-    description: The GitHub release URL to tag 1.1.0.
+    description: The GitHub release URL of tag 1.1.0.
   - type: url
     value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
     description: The GitHub release URL to the commit of tag 1.1.0.
