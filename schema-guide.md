@@ -300,7 +300,7 @@ Usage example:
 keywords:
  - thefirstkeyword
  - thesecondkeyword
- - and a third
+ - a third keyword
 ```
 
 ### `license`
