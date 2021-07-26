@@ -138,8 +138,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 - **type**: `string`
 - **required**: `false`
 - **description**: A description of the software or dataset.
-- **usage**:
-
+- **usage**:<br><br>
     ```yaml
     abstract: This software implements methods to do things.
     ```
@@ -149,8 +148,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 - **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `true`
 - **description**: The authors of a software or dataset.
-- **usage**: 
-
+- **usage**:<br><br>
     ```yaml
     authors:
       - given-names: Stephan
@@ -172,8 +170,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 - **type**: `string`
 - **required**: `true`
 - **description**: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
-- **usage**: 
-
+- **usage**:<br><br>
     ```yaml
     cff-version: 1.2.0
     ```
@@ -186,8 +183,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 - **type**: `string`
 - **required**: `false`
 - **description**: The commit hash or revision number of the software version.
-- **usage**: 
-
+- **usage**:<br><br>
     ```yaml
     commit: 1ff847d81f29c45a3a1a5ce73d38e45c2f319bba
     ```
@@ -200,8 +196,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 - **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
 - **description**: The contact person, group, company, etc. for the software or dataset.
-- **usage**: 
-
+- **usage**:<br><br>
     ```yaml
     contact:
       - affiliation: "Humboldt-Universität zu Berlin"
@@ -228,8 +223,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 - **type**: [`definitions.date`](#definitionsdate)
 - **required**: `false`
 - **description**: The date the software or data set has been released. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
-- **usage**:  
-
+- **usage**:<br><br>
     ```yaml
     date-released: 2020-01-31
     ```
@@ -239,8 +233,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 - **type**: [`definitions.doi`](#definitionsdoi)
 - **required**: `false`
 - **description**: The DOI of the software or dataset. This notation is most useful when there is just one DOI you want to include. In
-that case, `doi` can be used as shorthand for something like:
-
+that case, `doi` can be used as shorthand for something like:<br><br>
     ```yaml
     identifiers:
       - type: doi
@@ -248,15 +241,13 @@ that case, `doi` can be used as shorthand for something like:
         description: The concept DOI of the work.
     ```
     or
-
     ```yaml
     identifiers:
       - type: doi
         value: 10.5281/zenodo.4813122
         description: The versioned DOI of the work.
     ```
-- **usage**: 
-
+- **usage**:<br><br>
     ```yaml
     doi: 10.5281/zenodo.1003149
     ```
@@ -276,8 +267,7 @@ that case, `doi` can be used as shorthand for something like:
 - **type**: array of `string`
 - **required**: `false`
 - **description**: Keywords that describe the work.
-- **usage**:
-
+- **usage**:<br><br>
     ```yaml
     keywords:
      - thefirstkeyword
@@ -291,8 +281,7 @@ that case, `doi` can be used as shorthand for something like:
 - **required**: `false`
 - **description**: The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
 licenses, it is assumed their relationship is OR, not AND.
-- **usage**: 
-
+- **usage**:<br><br>
     ```yaml
     license: Apache-2.0
     ```
@@ -312,8 +301,7 @@ licenses, it is assumed their relationship is OR, not AND.
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
 - **description**: The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).
-- **usage**:  
-
+- **usage**:<br><br>
     ```yaml
     license-url: "https://obscure-licenses.com?id=1234"
     ```
@@ -324,8 +312,7 @@ licenses, it is assumed their relationship is OR, not AND.
 - **required**: `true`
 - **default**: `If you use this software, please cite it using the metadata from this file.`
 - **description**: A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
-- **usage**: 
-
+- **usage**:<br><br>
     ```yaml
     message: If you use this software, please cite it using the metadata from this file.
     ```
@@ -350,8 +337,7 @@ licenses, it is assumed their relationship is OR, not AND.
 - **type**: A [`definitions.reference`](#definitionsreference) object.
 - **required**: `false`
 - **description**: ...
-- **usage**:  
-
+- **usage**:<br><br>
     ```yaml
     preferred-citation:
       authors:
@@ -372,8 +358,7 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: false
 - **description**: The URL of the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
-- **usage**:  
-
+- **usage**:<br><br>
     ```yaml
     repository: "https://ascl.net/2105.013"
     ```
@@ -383,8 +368,7 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: false
 - **description**: The URL of the software in a build artifact/binary repository.
-- **usage**:  
-
+- **usage**:<br><br>
     ```yaml
     repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
     ```
@@ -393,25 +377,21 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: false
-
-The URL of the software in a source code repository.
-
-- **usage**:  
-
-```yaml
-repository-code: "https://github.com/citation-file-format/cff-converter-python"
-```
+- **description**: The URL of the software in a source code repository.
+- **usage**:<br><br>
+    ```yaml
+    repository-code: "https://github.com/citation-file-format/cff-converter-python"
+    ```
 
 ### `title`
 
 - **type**: `string`
 - **required**: `true`
 - **description**: The name of the software or dataset.
-- **usage**:  
-
-```yaml
-title: "cffconvert"
-```
+- **usage**:<br><br>
+    ```yaml
+    title: "cffconvert"
+    ```
 
 ### `type`
 
@@ -419,33 +399,27 @@ title: "cffconvert"
 - **default**: `"software"`
 - **required**: `false`
 - **description**: The type of the work that is being described by this `CITATION.cff` file.
-- **usage**:  
-
-```yaml
-type: "dataset"
-```
+- **usage**:<br><br>
+    ```yaml
+    type: "dataset"
+    ```
 
 ### `url`
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: false
-
-The URL of a landing page/website for the software or dataset.
-
-- **usage**:  
-
-```yaml
-url: "https://citation-file-format.github.io/"
-```
+- **description**: The URL of a landing page/website for the software or dataset.
+- **usage**:<br><br>
+    ```yaml
+    url: "https://citation-file-format.github.io/"
+    ```
 
 ### `version`
 
 - **type**: [`definitions.version`](#definitionsversion)
 - **required**: `false`
 - **description**: The version of the software or dataset.
-- **usage**:  
-
-See [`definitions.version`](#definitionsversion).
+- **usage**: See [`definitions.version`](#definitionsversion).
 
 ## Definitions
 
@@ -484,11 +458,9 @@ TODO explain why we use definitions
 - **type**: Nonempty `string`
 - **required**: `false`
 - **description**: An address.
-
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.alias`
 
@@ -497,10 +469,9 @@ TODO explain why we use definitions
 - **type**: Nonempty `string`
 - **required**: `false`
 - **description**: An alias.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.city`
 
@@ -509,10 +480,9 @@ TODO explain why we use definitions
 - **type**: Nonempty `string`
 - **required**: `false`
 - **description**: A city.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.commit`
 
@@ -521,10 +491,9 @@ TODO explain why we use definitions
 - **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.country`
 
@@ -533,14 +502,13 @@ TODO explain why we use definitions
 - **type**: `enum`
 - **required**: `false`
 - **description**: The ISO 3166-1 alpha-2 country code for a country.
-- **usage**:  
-
-```yaml
-country: NL
-```
-```yaml
-country: DE
-```
+- **usage**:<br><br>
+    ```yaml
+    country: NL
+    ```
+    ```yaml
+    country: DE
+    ```
 
 ### `definitions.date`
 
@@ -549,42 +517,41 @@ country: DE
 - **type**: `string`
 - **required**: `false`
 - **description**: A date. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
-- **usage**: 
-
-```yaml
-date-released: "2020-01-31"
-```
-```yaml
-references:
-  - date-accessed: "2020-01-31"
-    type: generic
-```
-```yaml
-references:
-  - date-downloaded: "2020-01-31"
-    type: generic
-```
-```yaml
-references:
-  - date-published: "2020-01-31"
-    type: generic
-```
-```yaml
-references:
-  - date-released: "2020-01-31"
-    type: generic
-```
-```yaml
-references:
-  - date-end: "2020-02-02"
-    date-start: "2020-01-31"
-    type: conference
-```
-```yaml
-references:
-  - issue-date: "2020-02-02"
-    type: article
-```
+- **usage**:<br><br>
+    ```yaml
+    date-released: "2020-01-31"
+    ```
+    ```yaml
+    references:
+      - date-accessed: "2020-01-31"
+        type: generic
+    ```
+    ```yaml
+    references:
+      - date-downloaded: "2020-01-31"
+        type: generic
+    ```
+    ```yaml
+    references:
+      - date-published: "2020-01-31"
+        type: generic
+    ```
+    ```yaml
+    references:
+      - date-released: "2020-01-31"
+        type: generic
+    ```
+    ```yaml
+    references:
+      - date-end: "2020-02-02"
+        date-start: "2020-01-31"
+        type: conference
+    ```
+    ```yaml
+    references:
+      - issue-date: "2020-02-02"
+        type: article
+    ```
 
 Note to tool implementers: it is necessary to cast YAML date objects to string objects when validating against the schema.
 
@@ -595,11 +562,10 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 - **type**: `string`
 - **required**: `false`
 - **description**: The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
-- **usage**:  
-
-```yaml
-doi: "10.5281/zenodo.1003150"
-```
+- **usage**:<br><br>
+    ```yaml
+    doi: "10.5281/zenodo.1003150"
+    ```
 
 ### `definitions.email`
 
@@ -608,10 +574,9 @@ doi: "10.5281/zenodo.1003150"
 - **type**: `string`
 - **required**: `false`
 - **description**: An email address
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity`
 
@@ -619,24 +584,22 @@ doi: "10.5281/zenodo.1003150"
 
 - **type**: `object`
 - **required**: `false`
-- **description**: ...
-`definitions.entity` has the following properties:
-
-- [`address`](#definitionsentityaddress)
-- [`alias`](#definitionsentityalias)
-- [`city`](#definitionsentitycity)
-- [`country`](#definitionsentitycountry)
-- [`date-end`](#definitionsentitydate-end)
-- [`date-start`](#definitionsentitydate-start)
-- [`email`](#definitionsentityemail)
-- [`fax`](#definitionsentityfax)
-- [`location`](#definitionsentitylocation)
-- [`name`](#definitionsentityname)
-- [`orcid`](#definitionsentityorcid)
-- [`post-code`](#definitionsentitypost-code)
-- [`region`](#definitionsentityregion)
-- [`tel`](#definitionsentitytel)
-- [`website`](#definitionsentitywebsite)
+- **description**: `definitions.entity` has the following properties:
+    - [`address`](#definitionsentityaddress)
+    - [`alias`](#definitionsentityalias)
+    - [`city`](#definitionsentitycity)
+    - [`country`](#definitionsentitycountry)
+    - [`date-end`](#definitionsentitydate-end)
+    - [`date-start`](#definitionsentitydate-start)
+    - [`email`](#definitionsentityemail)
+    - [`fax`](#definitionsentityfax)
+    - [`location`](#definitionsentitylocation)
+    - [`name`](#definitionsentityname)
+    - [`orcid`](#definitionsentityorcid)
+    - [`post-code`](#definitionsentitypost-code)
+    - [`region`](#definitionsentityregion)
+    - [`tel`](#definitionsentitytel)
+    - [`website`](#definitionsentitywebsite)
 
 ### `definitions.entity.address`
 
@@ -702,13 +665,12 @@ See [`definitions.fax`](#definitionsfax).
 
 The entity's fax number.
 
-- **usage**:  
-
-```yaml
-authors:
-  - name: The Research Software Project
-    fax: +12-3456-7890
-```
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        fax: +12-3456-7890
+    ```
 
 ### `definitions.entity.location`
 
@@ -717,10 +679,9 @@ authors:
 - **type**: `string`
 - **required**: `false`
 - **description**: The entity's location.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.name`
 
@@ -729,10 +690,9 @@ authors:
 - **type**: `string`
 - **required**: `true`
 - **description**: The entity's name.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.orcid`
 
@@ -766,13 +726,12 @@ See [`definitions.tel`](#definitionstel).
 
 The entity's telephone number.
 
-- **usage**:  
-
-```yaml
-authors:
-  - name: The Research Software Project
-    tel: +12-345-6789098
-```
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        tel: +12-345-6789098
+    ```
 
 ### `definitions.entity.website`
 
@@ -782,13 +741,12 @@ See [`definitions.url`](#definitionsurl).
 
 The entity's website.
 
-- **usage**:  
-
-```yaml
-authors:
-  - name: The Research Software Project
-    website: https://research-software-project.org
-```
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        website: https://research-software-project.org
+    ```
 
 ### `definitions.fax`
 
@@ -797,19 +755,18 @@ authors:
 - **type**: `string`
 - **required**: `false`
 - **description**: A fax number.
-- **usage**:  
-
-```yaml
-authors:
-  - name: The Research Software Project
-    fax: +12-3456-7890
-```
-```yaml
-authors:
-  - family-names: McClane
-    fax: +12-3456-7890
-    given-names: John
-```
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        fax: +12-3456-7890
+    ```
+    ```yaml
+    authors:
+      - family-names: McClane
+        fax: +12-3456-7890
+        given-names: John
+    ```
 
 ### `definitions.identifier`
 
@@ -818,48 +775,46 @@ authors:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-
-```yaml
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.1003149
-    description: The concept DOI of the work.
-```
-```yaml
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.4813122
-    description: The versioned DOI for version 1.1.0 of the work.
-```
-```yaml
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.1003149
-    description: The concept DOI of the work.
-  - type: doi
-    value: 10.5281/zenodo.4813122
-    description: The versioned DOI for version 1.1.0 of the work.
-```
-```yaml
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.1003149
-    description: The concept DOI of the work.
-  - type: doi
-    value: 10.5281/zenodo.4813122
-    description: The versioned DOI for version 1.1.0 of the work.
-  - type: swh
-    value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
-    description: The Software Heritage identifier for version 1.1.0 of the work.
-  - type: url
-    value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
-    description: The GitHub release URL of tag 1.1.0.
-  - type: url
-    value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
-    description: The GitHub release URL of the commit tagged with 1.1.0.
-```
+- **usage**:<br><br>
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003149
+        description: The concept DOI of the work.
+    ```
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: The versioned DOI for version 1.1.0 of the work.
+    ```
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003149
+        description: The concept DOI of the work.
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: The versioned DOI for version 1.1.0 of the work.
+    ```
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003149
+        description: The concept DOI of the work.
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: The versioned DOI for version 1.1.0 of the work.
+      - type: swh
+        value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+        description: The Software Heritage identifier for version 1.1.0 of the work.
+      - type: url
+        value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+        description: The GitHub release URL of tag 1.1.0.
+      - type: url
+        value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
+        description: The GitHub release URL of the commit tagged with 1.1.0.
+    ```
 
 ### `definitions.identifier-description`
 
@@ -868,10 +823,9 @@ identifiers:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.license`
 
@@ -880,16 +834,15 @@ identifiers:
 - **type**: (array of) [`definitions.license-enum`](#definitions.license-enum) objects.
 - **required**: `false`
 - **description**: License identifier(s) under which the work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
-- **usage**: 
-
-```yaml
-license: Apache-2.0
-```
-```yaml
-license:
-  - Apache-2.0
-  - MIT
-```
+- **usage**:<br><br>
+    ```yaml
+    license: Apache-2.0
+    ```
+    ```yaml
+    license:
+      - Apache-2.0
+      - MIT
+    ```
 
 ### `definitions.license-enum`
 
@@ -1357,16 +1310,15 @@ license:
     - `ZPL-2.1`
 - **required**: `false`
 - **description**: SPDX identifier for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
-- **usage**: 
-
-```yaml
-license: Apache-2.0
-```
-```yaml
-license:
-  - Apache-2.0
-  - MIT
-```
+- **usage**:<br><br>
+    ```yaml
+    license: Apache-2.0
+    ```
+    ```yaml
+    license:
+      - Apache-2.0
+      - MIT
+    ```
 
 ### `definitions.orcid`
 
@@ -1375,10 +1327,9 @@ license:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person`
 
@@ -1386,26 +1337,23 @@ license:
 
 - **type**: `object`
 - **required**: `false`
-- **description**: ...
-`definitions.person` has the following properties:
-
-- [`address`](#definitionspersonaddress)
-- [`affiliation`](#definitionspersonaffiliation)
-- [`alias`](#definitionspersonalias)
-- [`city`](#definitionspersoncity)
-- [`country`](#definitionspersoncountry)
-- [`email`](#definitionspersonemail)
-- [`family-names`](#definitionspersonfamily-names)
-- [`fax`](#definitionspersonfax)
-- [`given-names`](#definitionspersongiven-names)
-- [`name-particle`](#definitionspersonname-particle)
-- [`name-suffix`](#definitionspersonname-suffix)
-- [`orcid`](#definitionspersonorcid)
-- [`post-code`](#definitionspersonpost-code)
-- [`region`](#definitionspersonregion)
-- [`tel`](#definitionspersontel)
-- [`website`](#definitionspersonwebsite)
-
+- **description**: `definitions.person` has the following properties:
+    - [`address`](#definitionspersonaddress)
+    - [`affiliation`](#definitionspersonaffiliation)
+    - [`alias`](#definitionspersonalias)
+    - [`city`](#definitionspersoncity)
+    - [`country`](#definitionspersoncountry)
+    - [`email`](#definitionspersonemail)
+    - [`family-names`](#definitionspersonfamily-names)
+    - [`fax`](#definitionspersonfax)
+    - [`given-names`](#definitionspersongiven-names)
+    - [`name-particle`](#definitionspersonname-particle)
+    - [`name-suffix`](#definitionspersonname-suffix)
+    - [`orcid`](#definitionspersonorcid)
+    - [`post-code`](#definitionspersonpost-code)
+    - [`region`](#definitionspersonregion)
+    - [`tel`](#definitionspersontel)
+    - [`website`](#definitionspersonwebsite)
 
 ### `definitions.person.address`
 
@@ -1414,10 +1362,9 @@ license:
 - **type**: [`definitions.address`](#definitionsaddress)
 - **required**: `false`
 - **description**: The person's address.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.affiliation`
 
@@ -1426,10 +1373,9 @@ license:
 - **type**: `string`
 - **required**: `false`
 - **description**: The person's affiliation.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.alias`
 
@@ -1438,10 +1384,9 @@ license:
 - **type**: [`definitions.alias`](#definitionsalias)
 - **required**: `false`
 - **description**: The person's alias.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.city`
 
@@ -1450,10 +1395,9 @@ license:
 - **type**: - type: [`definitions.city`](#definitionscity)
 - **required**: `false`
 - **description**: The person's city.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.country`
 
@@ -1462,10 +1406,9 @@ license:
 - **type**: - type: [`definitions.country`](#definitioncountry)
 - **required**: `false`
 - **description**: The person's country.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.email`
 
@@ -1474,10 +1417,9 @@ license:
 - **type**: - type: [`definitions.email`](#definitionsemail)
 - **required**: `false`
 - **description**: The person's email address.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.family-names`
 
@@ -1486,10 +1428,9 @@ license:
 - **type**: `string`
 - **required**: `false`
 - **description**: The person's family names.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.fax`
 
@@ -1498,14 +1439,13 @@ license:
 - **type**: [`definitions.fax`](#definitionsfax)
 - **required**: `false`
 - **description**: The person's fax number.
-- **usage**:  
-
-```yaml
-authors:
-  - family-names: McClane
-    fax: +12-3456-7890
-    given-names: John
-```
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - family-names: McClane
+        fax: +12-3456-7890
+        given-names: John
+    ```
 
 ### `definitions.person.given-names`
 
@@ -1514,10 +1454,9 @@ authors:
 - **type**: `string`
 - **required**: `false`
 - **description**: The person's given names.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.name-particle`
 
@@ -1526,10 +1465,9 @@ authors:
 - **type**: `string`
 - **required**: `false`
 - **description**: The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.name-suffix`
 
@@ -1538,10 +1476,9 @@ authors:
 - **type**: `string`
 - **required**: `false`
 - **description**: The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.orcid`
 
@@ -1550,10 +1487,9 @@ authors:
 - **type**: [`definitions.orcid`](#definitionsorcid)
 - **required**: `false`
 - **description**: The person's [ORCID](https://orcid.org) identifier.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.post-code`
 
@@ -1562,10 +1498,9 @@ authors:
 - **type**: [`definitions.post-code`](#definitionspost-code)
 - **required**: `false`
 - **description**: The person's post code.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.region`
 
@@ -1574,10 +1509,9 @@ authors:
 - **type**: [`definitions.region`](#definitionsregion)
 - **required**: `false`
 - **description**: The person's region.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.tel`
 
@@ -1586,14 +1520,13 @@ authors:
 - **type**: [`definitions.tel`](#definitionstel)
 - **required**: `false`
 - **description**: The person's telephone number.
-- **usage**:  
-
-```yaml
-authors:
-  - family-names: McClane
-    given-names: John
-    tel: +12-345-6789098
-```
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - family-names: McClane
+        given-names: John
+        tel: +12-345-6789098
+    ```
 
 ### `definitions.person.website`
 
@@ -1602,14 +1535,13 @@ authors:
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
 - **description**: The person's website.
-- **usage**:  
-
-```yaml
-authors:
-  - family-names: Druskat
-    given-names: Stephan
-    website: https://sdruskat.net
-```
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        website: https://sdruskat.net
+    ```
 
 ### `definitions.post-code`
 
@@ -1618,10 +1550,9 @@ authors:
 - **type**: `...`
 - **required**: `false`
 - **description**: A post code.
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.reference`
 
@@ -1630,77 +1561,76 @@ authors:
 - **type**: object
 - **required**: `false`
 - **description**: `definitions.reference` has the following properties:
-
-- [`abbreviation`](#definitionsreferenceabbreviation)
-- [`abstract`](#definitionsreferenceabstract)
-- [`authors`](#definitionsreferenceauthors)
-- [`collection-doi`](#definitionsreferencecollection-doi)
-- [`collection-title`](#definitionsreferencecollection-title)
-- [`collection-type`](#definitionsreferencecollection-type)
-- [`commit`](#definitionsreferencecommit)
-- [`conference`](#definitionsreferenceconference)
-- [`contact`](#definitionsreferencecontact)
-- [`copyright`](#definitionsreferencecopyright)
-- [`data-type`](#definitionsreferencedata-type)
-- [`database-provider`](#definitionsreferencedatabase-provider)
-- [`database`](#definitionsreferencedatabase)
-- [`date-accessed`](#definitionsreferencedate-accessed)
-- [`date-downloaded`](#definitionsreferencedate-downloaded)
-- [`date-published`](#definitionsreferencedate-published)
-- [`date-released`](#definitionsreferencedate-released)
-- [`department`](#definitionsreferencedepartment)
-- [`doi`](#definitionsreferencedoi)
-- [`edition`](#definitionsreferenceedition)
-- [`editors`](#definitionsreferenceeditors)
-- [`editors-series`](#definitionsreferenceeditors-series)
-- [`end`](#definitionsreferenceend)
-- [`entry`](#definitionsreferenceentry)
-- [`filename`](#definitionsreferencefilename)
-- [`format`](#definitionsreferenceformat)
-- [`identifiers`](#definitionsreferenceidentifiers)
-- [`institution`](#definitionsreferenceinstitution)
-- [`isbn`](#definitionsreferenceisbn)
-- [`issn`](#definitionsreferenceissn)
-- [`issue`](#definitionsreferenceissue)
-- [`issue-date`](#definitionsreferenceissue-date)
-- [`issue-title`](#definitionsreferenceissue-title)
-- [`journal`](#definitionsreferencejournal)
-- [`keywords`](#definitionsreferencekeywords)
-- [`languages`](#definitionsreferencelanguages)
-- [`license`](#definitionsreferencelicense)
-- [`license-url`](#definitionsreferencelicense-url)
-- [`loc-end`](#definitionsreferenceloc-end)
-- [`loc-start`](#definitionsreferenceloc-start)
-- [`location`](#definitionsreferencelocation)
-- [`medium`](#definitionsreferencemedium)
-- [`month`](#definitionsreferencemonth)
-- [`nihmsid`](#definitionsreferencenihmsid)
-- [`notes`](#definitionsreferencenotes)
-- [`number`](#definitionsreferencenumber)
-- [`number-volumes`](#definitionsreferencenumber-volumes)
-- [`pages`](#definitionsreferencepages)
-- [`patent-states`](#definitionsreferencepatent-states)
-- [`pmcid`](#definitionsreferencepmcid)
-- [`publisher`](#definitionsreferencepublisher)
-- [`recipients`](#definitionsreferencerecipients)
-- [`repository`](#definitionsreferencerepository)
-- [`repository-artifact`](#definitionsreferencerepository-artifact)
-- [`repository-code`](#definitionsreferencerepository-code)
-- [`scope`](#definitionsreferencescope)
-- [`section`](#definitionsreferencesection)
-- [`senders`](#definitionsreferencesenders)
-- [`status`](#definitionsreferencestatus)
-- [`term`](#definitionsreferenceterm)
-- [`thesis-type`](#definitionsreferencethesis-type)
-- [`title`](#definitionsreferencetitle)
-- [`translators`](#definitionsreferencetranslators)
-- [`type`](#definitionsreferencetype)
-- [`url`](#definitionsreferenceurl)
-- [`version`](#definitionsreferenceversion)
-- [`volume`](#definitionsreferencevolume)
-- [`volume-title`](#definitionsreferencevolume-title)
-- [`year`](#definitionsreferenceyear)
-- [`year-original`](#definitionsreferenceyear-original)
+    - [`abbreviation`](#definitionsreferenceabbreviation)
+    - [`abstract`](#definitionsreferenceabstract)
+    - [`authors`](#definitionsreferenceauthors)
+    - [`collection-doi`](#definitionsreferencecollection-doi)
+    - [`collection-title`](#definitionsreferencecollection-title)
+    - [`collection-type`](#definitionsreferencecollection-type)
+    - [`commit`](#definitionsreferencecommit)
+    - [`conference`](#definitionsreferenceconference)
+    - [`contact`](#definitionsreferencecontact)
+    - [`copyright`](#definitionsreferencecopyright)
+    - [`data-type`](#definitionsreferencedata-type)
+    - [`database-provider`](#definitionsreferencedatabase-provider)
+    - [`database`](#definitionsreferencedatabase)
+    - [`date-accessed`](#definitionsreferencedate-accessed)
+    - [`date-downloaded`](#definitionsreferencedate-downloaded)
+    - [`date-published`](#definitionsreferencedate-published)
+    - [`date-released`](#definitionsreferencedate-released)
+    - [`department`](#definitionsreferencedepartment)
+    - [`doi`](#definitionsreferencedoi)
+    - [`edition`](#definitionsreferenceedition)
+    - [`editors`](#definitionsreferenceeditors)
+    - [`editors-series`](#definitionsreferenceeditors-series)
+    - [`end`](#definitionsreferenceend)
+    - [`entry`](#definitionsreferenceentry)
+    - [`filename`](#definitionsreferencefilename)
+    - [`format`](#definitionsreferenceformat)
+    - [`identifiers`](#definitionsreferenceidentifiers)
+    - [`institution`](#definitionsreferenceinstitution)
+    - [`isbn`](#definitionsreferenceisbn)
+    - [`issn`](#definitionsreferenceissn)
+    - [`issue`](#definitionsreferenceissue)
+    - [`issue-date`](#definitionsreferenceissue-date)
+    - [`issue-title`](#definitionsreferenceissue-title)
+    - [`journal`](#definitionsreferencejournal)
+    - [`keywords`](#definitionsreferencekeywords)
+    - [`languages`](#definitionsreferencelanguages)
+    - [`license`](#definitionsreferencelicense)
+    - [`license-url`](#definitionsreferencelicense-url)
+    - [`loc-end`](#definitionsreferenceloc-end)
+    - [`loc-start`](#definitionsreferenceloc-start)
+    - [`location`](#definitionsreferencelocation)
+    - [`medium`](#definitionsreferencemedium)
+    - [`month`](#definitionsreferencemonth)
+    - [`nihmsid`](#definitionsreferencenihmsid)
+    - [`notes`](#definitionsreferencenotes)
+    - [`number`](#definitionsreferencenumber)
+    - [`number-volumes`](#definitionsreferencenumber-volumes)
+    - [`pages`](#definitionsreferencepages)
+    - [`patent-states`](#definitionsreferencepatent-states)
+    - [`pmcid`](#definitionsreferencepmcid)
+    - [`publisher`](#definitionsreferencepublisher)
+    - [`recipients`](#definitionsreferencerecipients)
+    - [`repository`](#definitionsreferencerepository)
+    - [`repository-artifact`](#definitionsreferencerepository-artifact)
+    - [`repository-code`](#definitionsreferencerepository-code)
+    - [`scope`](#definitionsreferencescope)
+    - [`section`](#definitionsreferencesection)
+    - [`senders`](#definitionsreferencesenders)
+    - [`status`](#definitionsreferencestatus)
+    - [`term`](#definitionsreferenceterm)
+    - [`thesis-type`](#definitionsreferencethesis-type)
+    - [`title`](#definitionsreferencetitle)
+    - [`translators`](#definitionsreferencetranslators)
+    - [`type`](#definitionsreferencetype)
+    - [`url`](#definitionsreferenceurl)
+    - [`version`](#definitionsreferenceversion)
+    - [`volume`](#definitionsreferencevolume)
+    - [`volume-title`](#definitionsreferencevolume-title)
+    - [`year`](#definitionsreferenceyear)
+    - [`year-original`](#definitionsreferenceyear-original)
 
 ### `definitions.reference.abbreviation`
 
@@ -1709,42 +1639,38 @@ authors:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  abbreviation: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    abbreviation: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      abbreviation: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        abbreviation: ...
+        type: generic
+    ```
 
 ### `definitions.reference.abstract`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-The abstract of a work.
-
-- If the work is a journal paper or other academic work: The abstract of the work.
-- If the work is a film, broadcast or similar: The synopsis of the work.
-
-- **usage**: 
-
-```yaml
-preferred-citation:
-  abstract: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    abstract: ...
-    type: generic
-```
+- **description**: The abstract of a work.
+    - If the work is a journal paper or other academic work: The abstract of the work.
+    - If the work is a film, broadcast or similar: The synopsis of the work.
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      abstract: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        abstract: ...
+        type: generic
+    ```
 
 ### `definitions.reference.authors`
 
@@ -1753,19 +1679,18 @@ references:
 - **type**: `...`
 - **required**: `true`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  authors: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    authors: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      authors: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        authors: ...
+        type: generic
+    ```
 
 ### `definitions.reference.collection-doi`
 
@@ -1774,19 +1699,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  collection-doi: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    collection-doi: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      collection-doi: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        collection-doi: ...
+        type: generic
+    ```
 
 ### `definitions.reference.collection-title`
 
@@ -1795,19 +1719,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  collection-title: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    collection-title: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      collection-title: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        collection-title: ...
+        type: generic
+    ```
 
 ### `definitions.reference.collection-type`
 
@@ -1816,19 +1739,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  collection-type: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    collection-type: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      collection-type: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        collection-type: ...
+        type: generic
+    ```
 
 ### `definitions.reference.commit`
 
@@ -1837,19 +1759,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  commit: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    commit: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      commit: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        commit: ...
+        type: generic
+    ```
 
 ### `definitions.reference.conference`
 
@@ -1858,19 +1779,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  conference: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    conference: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      conference: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        conference: ...
+        type: generic
+    ```
 
 ### `definitions.reference.contact`
 
@@ -1879,19 +1799,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-references:
-  -
-    contact: ...
-    type: generic
-```
-```yaml
-preferred-citation:
-  contact: ...
-  type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    references:
+      -
+        contact: ...
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      contact: ...
+      type: generic
+    ```
 
 ### `definitions.reference.copyright`
 
@@ -1900,19 +1819,18 @@ preferred-citation:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  copyright: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    copyright: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      copyright: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        copyright: ...
+        type: generic
+    ```
 
 ### `definitions.reference.data-type`
 
@@ -1921,19 +1839,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  data-type: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    data-type: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      data-type: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        data-type: ...
+        type: generic
+    ```
 
 ### `definitions.reference.database-provider`
 
@@ -1942,19 +1859,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  database-provider: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    database-provider: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      database-provider: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        database-provider: ...
+        type: generic
+    ```
 
 ### `definitions.reference.database`
 
@@ -1963,19 +1879,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  database: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    database: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      database: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        database: ...
+        type: generic
+    ```
 
 ### `definitions.reference.date-accessed`
 
@@ -1984,19 +1899,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  date-accessed: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    date-accessed: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      date-accessed: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        date-accessed: ...
+        type: generic
+    ```
 
 ### `definitions.reference.date-downloaded`
 
@@ -2005,19 +1919,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  date-downloaded: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    date-downloaded: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      date-downloaded: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        date-downloaded: ...
+        type: generic
+    ```
 
 ### `definitions.reference.date-published`
 
@@ -2026,19 +1939,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-references:
-  -
-    date-published: ...
-    type: generic
-```
-```yaml
-preferred-citation:
-  date-published: ...
-  type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    references:
+      -
+        date-published: ...
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      date-published: ...
+      type: generic
+    ```
 
 ### `definitions.reference.date-released`
 
@@ -2047,19 +1959,18 @@ preferred-citation:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  date-released: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    date-released: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      date-released: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        date-released: ...
+        type: generic
+    ```
 
 ### `definitions.reference.department`
 
@@ -2068,19 +1979,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  department: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    department: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      department: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        department: ...
+        type: generic
+    ```
 
 ### `definitions.reference.doi`
 
@@ -2089,19 +1999,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  doi: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    doi: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      doi: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        doi: ...
+        type: generic
+    ```
 
 ### `definitions.reference.edition`
 
@@ -2110,19 +2019,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  edition: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    edition: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      edition: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        edition: ...
+        type: generic
+    ```
 
 ### `definitions.reference.editors`
 
@@ -2131,19 +2039,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  editors: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    editors: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      editors: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        editors: ...
+        type: generic
+    ```
 
 ### `definitions.reference.editors-series`
 
@@ -2152,19 +2059,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  editors-series: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    editors-series: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      editors-series: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        editors-series: ...
+        type: generic
+    ```
 
 ### `definitions.reference.end`
 
@@ -2173,19 +2079,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  end: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    end: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      end: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        end: ...
+        type: generic
+    ```
 
 ### `definitions.reference.entry`
 
@@ -2194,19 +2099,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  entry: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    entry: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      entry: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        entry: ...
+        type: generic
+    ```
 
 ### `definitions.reference.filename`
 
@@ -2215,19 +2119,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  filename: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    filename: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      filename: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        filename: ...
+        type: generic
+    ```
 
 ### `definitions.reference.format`
 
@@ -2236,19 +2139,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  format: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    format: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      format: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        format: ...
+        type: generic
+    ```
 
 ### `definitions.reference.identifiers`
 
@@ -2257,19 +2159,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  identifiers: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    identifiers: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      identifiers: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        identifiers: ...
+        type: generic
+    ```
 
 ### `definitions.reference.institution`
 
@@ -2278,19 +2179,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  institution: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    institution: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      institution: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        institution: ...
+        type: generic
+    ```
 
 ### `definitions.reference.isbn`
 
@@ -2299,19 +2199,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  isbn: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    isbn: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      isbn: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        isbn: ...
+        type: generic
+    ```
 
 ### `definitions.reference.issn`
 
@@ -2320,19 +2219,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  issn: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    issn: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      issn: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        issn: ...
+        type: generic
+    ```
 
 ### `definitions.reference.issue`
 
@@ -2341,19 +2239,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  issue: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    issue: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      issue: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        issue: ...
+        type: generic
+    ```
 
 ### `definitions.reference.issue-date`
 
@@ -2362,19 +2259,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  issue-date: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    issue-date: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      issue-date: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        issue-date: ...
+        type: generic
+    ```
 
 ### `definitions.reference.issue-title`
 
@@ -2383,19 +2279,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  issue-title: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    issue-title: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      issue-title: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        issue-title: ...
+        type: generic
+    ```
 
 ### `definitions.reference.journal`
 
@@ -2404,19 +2299,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  journal: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    journal: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      journal: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        journal: ...
+        type: generic
+    ```
 
 ### `definitions.reference.keywords`
 
@@ -2425,19 +2319,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  keywords: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    keywords: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      keywords: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        keywords: ...
+        type: generic
+    ```
 
 ### `definitions.reference.languages`
 
@@ -2446,19 +2339,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  languages: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    languages: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      languages: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        languages: ...
+        type: generic
+    ```
 
 ### `definitions.reference.license`
 
@@ -2467,19 +2359,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  license: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    license: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      license: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        license: ...
+        type: generic
+    ```
 
 ### `definitions.reference.license-url`
 
@@ -2488,19 +2379,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  license-url: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    license-url: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      license-url: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        license-url: ...
+        type: generic
+    ```
 
 ### `definitions.reference.loc-end`
 
@@ -2509,19 +2399,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  loc-end: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    loc-end: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      loc-end: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        loc-end: ...
+        type: generic
+    ```
 
 ### `definitions.reference.loc-start`
 
@@ -2530,19 +2419,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  loc-start: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    loc-start: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      loc-start: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        loc-start: ...
+        type: generic
+    ```
 
 ### `definitions.reference.location`
 
@@ -2551,19 +2439,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  location: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    location: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      location: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        location: ...
+        type: generic
+    ```
 
 ### `definitions.reference.medium`
 
@@ -2572,19 +2459,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  medium: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    medium: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      medium: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        medium: ...
+        type: generic
+    ```
 
 ### `definitions.reference.month`
 
@@ -2593,19 +2479,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  month: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    month: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      month: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        month: ...
+        type: generic
+    ```
 
 ### `definitions.reference.nihmsid`
 
@@ -2614,19 +2499,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  nihmsid: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    nihmsid: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      nihmsid: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        nihmsid: ...
+        type: generic
+    ```
 
 ### `definitions.reference.notes`
 
@@ -2635,19 +2519,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  notes: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    notes: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      notes: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        notes: ...
+        type: generic
+    ```
 
 ### `definitions.reference.number`
 
@@ -2656,19 +2539,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  number: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    number: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      number: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        number: ...
+        type: generic
+    ```
 
 ### `definitions.reference.number-volumes`
 
@@ -2677,19 +2559,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  number-volumes: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    number-volumes: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      number-volumes: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        number-volumes: ...
+        type: generic
+    ```
 
 ### `definitions.reference.pages`
 
@@ -2698,19 +2579,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  pages: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    pages: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      pages: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        pages: ...
+        type: generic
+    ```
 
 ### `definitions.reference.patent-states`
 
@@ -2719,19 +2599,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  patent-states: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    patent-states: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      patent-states: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        patent-states: ...
+        type: generic
+    ```
 
 ### `definitions.reference.pmcid`
 
@@ -2740,19 +2619,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**:  
-
-```yaml
-preferred-citation:
-  pmcid: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    pmcid: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      pmcid: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        pmcid: ...
+        type: generic
+    ```
 
 ### `definitions.reference.publisher`
 
@@ -2761,19 +2639,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  publisher: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    publisher: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      publisher: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        publisher: ...
+        type: generic
+    ```
 
 ### `definitions.reference.recipients`
 
@@ -2782,19 +2659,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  recipients: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    recipients: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      recipients: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        recipients: ...
+        type: generic
+    ```
 
 ### `definitions.reference.repository`
 
@@ -2803,19 +2679,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  repository: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    repository: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      repository: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        repository: ...
+        type: generic
+    ```
 
 ### `definitions.reference.repository-artifact`
 
@@ -2824,19 +2699,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  repository-artifact: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    repository-artifact: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      repository-artifact: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        repository-artifact: ...
+        type: generic
+    ```
 
 ### `definitions.reference.repository-code`
 
@@ -2845,19 +2719,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  repository-code: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    repository-code: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      repository-code: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        repository-code: ...
+        type: generic
+    ```
 
 ### `definitions.reference.scope`
 
@@ -2866,19 +2739,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  scope: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    scope: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      scope: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        scope: ...
+        type: generic
+    ```
 
 ### `definitions.reference.section`
 
@@ -2887,19 +2759,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  section: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    section: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      section: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        section: ...
+        type: generic
+    ```
 
 ### `definitions.reference.senders`
 
@@ -2908,19 +2779,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  senders: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    senders: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      senders: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        senders: ...
+        type: generic
+    ```
 
 ### `definitions.reference.start`
 
@@ -2929,19 +2799,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  start: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    start: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      start: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        start: ...
+        type: generic
+    ```
 
 ### `definitions.reference.status`
 
@@ -2950,19 +2819,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  status: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    status: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      status: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        status: ...
+        type: generic
+    ```
 
 ### `definitions.reference.term`
 
@@ -2971,19 +2839,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  term: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    term: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      term: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        term: ...
+        type: generic
+    ```
 
 ### `definitions.reference.thesis-type`
 
@@ -2992,19 +2859,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  thesis-type: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    thesis-type: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      thesis-type: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        thesis-type: ...
+        type: generic
+    ```
 
 ### `definitions.reference.title`
 
@@ -3013,19 +2879,18 @@ references:
 - **type**: `...`
 - **required**: `true`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  title: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    title: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      title: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        title: ...
+        type: generic
+    ```
 
 ### `definitions.reference.translators`
 
@@ -3034,19 +2899,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  translators: ...
-  type: generic
-```
-```yaml
-references:
-  -
-    translators: ...
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      translators: ...
+      type: generic
+    ```
+    ```yaml
+    references:
+      -
+        translators: ...
+        type: generic
+    ```
 
 ### `definitions.reference.type`
 
@@ -3055,17 +2919,16 @@ references:
 - **type**: `...`
 - **required**: `true`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-    type: generic
-```
-```yaml
-references:
-  -
-    type: generic
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+        type: generic
+    ```
+    ```yaml
+    references:
+      -
+        type: generic
+    ```
 
 ### `definitions.reference.url`
 
@@ -3074,19 +2937,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  type: generic
-  url: ...
-```
-```yaml
-references:
-  -
-    type: generic
-    url: ...
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      type: generic
+      url: ...
+    ```
+    ```yaml
+    references:
+      -
+        type: generic
+        url: ...
+    ```
 
 ### `definitions.reference.version`
 
@@ -3095,19 +2957,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  type: generic
-  version: ...
-```
-```yaml
-references:
-  -
-    type: generic
-    version: ...
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      type: generic
+      version: ...
+    ```
+    ```yaml
+    references:
+      -
+        type: generic
+        version: ...
+    ```
 
 ### `definitions.reference.volume`
 
@@ -3116,19 +2977,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  type: generic
-  volume: ...
-```
-```yaml
-references:
-  -
-    type: generic
-    volume: ...
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      type: generic
+      volume: ...
+    ```
+    ```yaml
+    references:
+      -
+        type: generic
+        volume: ...
+    ```
 
 ### `definitions.reference.volume-title`
 
@@ -3137,19 +2997,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  type: generic
-  volume-title: ...
-```
-```yaml
-references:
-  -
-    type: generic
-    volume-title: ...
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      type: generic
+      volume-title: ...
+    ```
+    ```yaml
+    references:
+      -
+        type: generic
+        volume-title: ...
+    ```
 
 ### `definitions.reference.year`
 
@@ -3158,19 +3017,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  type: generic
-  year: ...
-```
-```yaml
-references:
-  -
-    type: generic
-    year: ...
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      type: generic
+      year: ...
+    ```
+    ```yaml
+    references:
+      -
+        type: generic
+        year: ...
+    ```
 
 ### `definitions.reference.year-original`
 
@@ -3179,19 +3037,18 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**: 
-
-```yaml
-preferred-citation:
-  type: generic
-  year-original: ...
-```
-```yaml
-references:
-  -
-    type: generic
-    year-original: ...
-```
+- **usage**:<br><br>
+    ```yaml
+    preferred-citation:
+      type: generic
+      year-original: ...
+    ```
+    ```yaml
+    references:
+      -
+        type: generic
+        year-original: ...
+    ```
 
 ### `definitions.region`
 
@@ -3200,10 +3057,9 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.swh-identifier`
 
@@ -3212,10 +3068,9 @@ references:
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
-- **usage**:  
-
-```yaml
-```
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.tel`
 
@@ -3224,19 +3079,18 @@ references:
 - **type**: `string`
 - **required**: `false`
 - **description**: A telephone number.
-- **usage**: 
-
-```yaml
-authors:
-  - family-names: McClane
-    given-names: John
-    tel: +12-345-6789098
-```
-```yaml
-authors:
-  - name: The Research Software Project
-    tel: +12-345-6789098
-```
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - family-names: McClane
+        given-names: John
+        tel: +12-345-6789098
+    ```
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        tel: +12-345-6789098
+    ```
 
 ### `definitions.url`
 
@@ -3245,26 +3099,24 @@ authors:
 - **type**: `string`
 - **required**: `false`
 - **description**: The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
-- `https://`
-- `http://`
-- `ftp://`
-- `sftp://`
-
-Usage examples:
-
-```yaml
-url: "https://citation-file-format.github.io/"
-```
-```yaml
-authors:
-  - name: The Research Software Project
-    url: "https://research-software-project.org"
-```
-```yaml
-references:
-  - name: The Research Software Project
-    url: "sftp://files.research-software-project.org"
-```
+    - `https://`
+    - `http://`
+    - `ftp://`
+    - `sftp://`
+- **usage**
+    ```yaml
+    url: "https://citation-file-format.github.io/"
+    ```
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        url: "https://research-software-project.org"
+    ```
+    ```yaml
+    references:
+      - name: The Research Software Project
+        url: "sftp://files.research-software-project.org"
+    ```
 
 
 ### `definitions.version`
@@ -3274,16 +3126,13 @@ references:
 - **type**: `string` or `number`
 - **required**: `false`
 - **description**: The version of a work.
-Usage examples:
-
-```yaml
-version: "1.2.0"
-```
-
-```yaml
-version: 1.2
-```
-
-```yaml
-version: "21.10 (Impish Indri)"
-```
+- **usage**: 
+    ```yaml
+    version: "1.2.0"
+    ```
+    ```yaml
+    version: 1.2
+    ```
+    ```yaml
+    version: "21.10 (Impish Indri)"
+    ```
