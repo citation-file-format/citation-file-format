@@ -336,13 +336,12 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: A [`definitions.reference`](#definitionsreference) object.
 - **required**: `false`
-- **description**: ...
+- **description**: The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       authors:
-        -
-          family-names: Famnames
+        - family-names: Famnames
           given-names: Given Nam E.
       title: Title of the work.
       type: generic
@@ -351,7 +350,10 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `references`
 
-Array of [`definitions.reference`](#definitionsreference) objects.
+- **type**: Array of [`definitions.reference`](#definitionsreference) objects.
+- **required**: `false`
+- **description**: The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file.
+- **usage**: See [`definitions.reference`](#definitionsreference).
 
 ### `repository`
 
