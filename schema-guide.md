@@ -367,7 +367,7 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: false
-- **description**: The URL of the software in a build artifact/binary repository.
+- **description**: The URL of the work in a build artifact/binary repository (when the work is software).
 - **usage**:<br><br>
     ```yaml
     repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
@@ -377,7 +377,7 @@ Array of [`definitions.reference`](#definitionsreference) objects.
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: false
-- **description**: The URL of the software in a source code repository.
+- **description**: The URL of the work in a source code repository.
 - **usage**:<br><br>
     ```yaml
     repository-code: "https://github.com/citation-file-format/cff-converter-python"
