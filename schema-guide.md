@@ -352,7 +352,13 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: Array of [`definitions.reference`](#definitionsreference) objects.
 - **required**: `false`
-- **description**: The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file.
+- **description**: The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file.  
+
+Note that the principles of [software citation](https://doi.org/10.7717/peerj-cs.86) and [data citation](https://doi.org/10.25490/a97f-egyk) require that 
+software should be cited on the same basis as any other research product such as a paper or a book. 
+Adding a different preferred citation may result in a violation of the respective
+primary principle, "Importance", when others cite this work.
+
 - **usage**: See [`definitions.reference`](#definitionsreference).
 
 ### `repository`
