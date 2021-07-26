@@ -1667,7 +1667,7 @@ The entity's website.
 
 - **type**: `string`
 - **required**: `false`
-- **description**: The abbreviation of the work.
+- **description**: The abbreviation of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -1676,7 +1676,8 @@ The entity's website.
     ```
     ```yaml
     references:
-      - abbreviation: DEF
+      - 
+        abbreviation: DEF
         type: generic
     ```
 
@@ -1695,7 +1696,8 @@ The entity's website.
     ```
     ```yaml
     references:
-      - abstract: "This work implements an algorithm that we use in our software. etc."
+      - 
+        abstract: "This work implements an algorithm that we use in our software. etc."
         type: generic
     ```
 
