@@ -1665,19 +1665,18 @@ The entity's website.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: `...`
+- **type**: `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The abbreviation of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      abbreviation: ...
+      abbreviation: ABC
       type: generic
     ```
     ```yaml
     references:
-      -
-        abbreviation: ...
+      - abbreviation: DEF
         type: generic
     ```
 
@@ -1685,19 +1684,18 @@ The entity's website.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **description**: The abstract of a work.
+- **description**: The abstract of the work.
     - If the work is a journal paper or other academic work: The abstract of the work.
     - If the work is a film, broadcast or similar: The synopsis of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      abstract: ...
+      abstract: "This work describes the software or dataset that should be actually cited. etc."
       type: generic
     ```
     ```yaml
     references:
-      -
-        abstract: ...
+      - abstract: "This work implements an algorithm that we use in our software. etc."
         type: generic
     ```
 
