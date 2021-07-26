@@ -360,7 +360,7 @@ message: Please cite this software using these metadata.
 message: Please cite this software using the metadata from 'preferred-citation'.
 ```
 ```yaml
-message: If you use this data set, please cite it using the metadata from this file.
+message: If you use this dataset, please cite it using the metadata from this file.
 ```
 ```yaml
 message: Please cite this data set using these metadata.
