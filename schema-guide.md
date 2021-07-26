@@ -336,7 +336,12 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: A [`definitions.reference`](#definitionsreference) object.
 - **required**: `false`
-- **description**: The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file.
+- **description**: The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file.  
+
+Note that the principles of [software citation](https://doi.org/10.7717/peerj-cs.86) and [data citation](https://doi.org/10.25490/a97f-egyk) require that 
+software should be cited on the same basis as any other research product such as a paper or a book. 
+Adding a different preferred citation may result in a violation of the respective
+primary principle, "Importance", when others cite this work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -352,13 +357,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: Array of [`definitions.reference`](#definitionsreference) objects.
 - **required**: `false`
-- **description**: The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file.  
-
-Note that the principles of [software citation](https://doi.org/10.7717/peerj-cs.86) and [data citation](https://doi.org/10.25490/a97f-egyk) require that 
-software should be cited on the same basis as any other research product such as a paper or a book. 
-Adding a different preferred citation may result in a violation of the respective
-primary principle, "Importance", when others cite this work.
-
+- **description**: Reference(s) to other creative works. Similar to a list of references list in a paper, references of the software or dataset may include other software (dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
 - **usage**: See [`definitions.reference`](#definitionsreference).
 
 ### `repository`
