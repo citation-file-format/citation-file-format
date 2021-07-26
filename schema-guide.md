@@ -374,7 +374,7 @@ primary principle, "Importance", when others cite this work.
           - family-names: Bielefeld
             name-particle: von
             given-names: Arthur
-        title: "My Research Tool: A 100% accuracy syntax parser for all languages"
+        title: "Towards a 100% accuracy syntax parser for all languages"
         year: 2099
         journal: Journal of Hard Science Fiction
         volume: 42
