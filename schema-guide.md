@@ -356,7 +356,7 @@ primary principle, "Importance", when others cite this work.
 
 - **type**: Array of [`definitions.reference`](#definitionsreference) objects.
 - **required**: `false`
-- **description**: Reference(s) to other creative works. Similar to a list of references list in a paper, references of the software or dataset may include other software (dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
+- **description**: Reference(s) to other creative works. Similar to a list of references in a paper, references of the software or dataset may include other software (dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
 - **usage**: See also [`definitions.reference`](#definitionsreference).<br><br>
     ```yaml
     references:
