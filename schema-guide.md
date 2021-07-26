@@ -366,8 +366,8 @@ title: "cffconvert"
 
 ### `type`
 
-- type: enum (`"software"` or `"dataset"`)
-- default: `"software"`
+- type: enum (`software` or `dataset`)
+- default: `software`
 - required: false
 
 The type of the work that is being described by this `CITATION.cff` file.
