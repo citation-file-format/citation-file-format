@@ -578,29 +578,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `object`
-- **required**: `false`
-- **description**: `definitions.entity` has the following properties:
-    - [`address`](#definitionsentityaddress)
-    - [`alias`](#definitionsentityalias)
-    - [`city`](#definitionsentitycity)
-    - [`country`](#definitionsentitycountry)
-    - [`date-end`](#definitionsentitydate-end)
-    - [`date-start`](#definitionsentitydate-start)
-    - [`email`](#definitionsentityemail)
-    - [`fax`](#definitionsentityfax)
-    - [`location`](#definitionsentitylocation)
-    - [`name`](#definitionsentityname)
-    - [`orcid`](#definitionsentityorcid)
-    - [`post-code`](#definitionsentitypost-code)
-    - [`region`](#definitionsentityregion)
-    - [`tel`](#definitionsentitytel)
-    - [`website`](#definitionsentitywebsite)
-
 ### `definitions.entity.address`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
@@ -747,6 +724,29 @@ The entity's website.
       - name: The Research Software Project
         website: https://research-software-project.org
     ```
+
+### `definitions.entity`
+
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
+- **type**: `object`
+- **required**: `false`
+- **description**: `definitions.entity` has the following properties:
+    - [`address`](#definitionsentityaddress)
+    - [`alias`](#definitionsentityalias)
+    - [`city`](#definitionsentitycity)
+    - [`country`](#definitionsentitycountry)
+    - [`date-end`](#definitionsentitydate-end)
+    - [`date-start`](#definitionsentitydate-start)
+    - [`email`](#definitionsentityemail)
+    - [`fax`](#definitionsentityfax)
+    - [`location`](#definitionsentitylocation)
+    - [`name`](#definitionsentityname)
+    - [`orcid`](#definitionsentityorcid)
+    - [`post-code`](#definitionsentitypost-code)
+    - [`region`](#definitionsentityregion)
+    - [`tel`](#definitionsentitytel)
+    - [`website`](#definitionsentitywebsite)
 
 ### `definitions.fax`
 
@@ -1331,30 +1331,6 @@ The entity's website.
     ```yaml
     ```
 
-### `definitions.person`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `object`
-- **required**: `false`
-- **description**: `definitions.person` has the following properties:
-    - [`address`](#definitionspersonaddress)
-    - [`affiliation`](#definitionspersonaffiliation)
-    - [`alias`](#definitionspersonalias)
-    - [`city`](#definitionspersoncity)
-    - [`country`](#definitionspersoncountry)
-    - [`email`](#definitionspersonemail)
-    - [`family-names`](#definitionspersonfamily-names)
-    - [`fax`](#definitionspersonfax)
-    - [`given-names`](#definitionspersongiven-names)
-    - [`name-particle`](#definitionspersonname-particle)
-    - [`name-suffix`](#definitionspersonname-suffix)
-    - [`orcid`](#definitionspersonorcid)
-    - [`post-code`](#definitionspersonpost-code)
-    - [`region`](#definitionspersonregion)
-    - [`tel`](#definitionspersontel)
-    - [`website`](#definitionspersonwebsite)
-
 ### `definitions.person.address`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
@@ -1542,6 +1518,30 @@ The entity's website.
         given-names: Stephan
         website: https://sdruskat.net
     ```
+
+### `definitions.person`
+
+`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
+
+- **type**: `object`
+- **required**: `false`
+- **description**: `definitions.person` has the following properties:
+    - [`address`](#definitionspersonaddress)
+    - [`affiliation`](#definitionspersonaffiliation)
+    - [`alias`](#definitionspersonalias)
+    - [`city`](#definitionspersoncity)
+    - [`country`](#definitionspersoncountry)
+    - [`email`](#definitionspersonemail)
+    - [`family-names`](#definitionspersonfamily-names)
+    - [`fax`](#definitionspersonfax)
+    - [`given-names`](#definitionspersongiven-names)
+    - [`name-particle`](#definitionspersonname-particle)
+    - [`name-suffix`](#definitionspersonname-suffix)
+    - [`orcid`](#definitionspersonorcid)
+    - [`post-code`](#definitionspersonpost-code)
+    - [`region`](#definitionspersonregion)
+    - [`tel`](#definitionspersontel)
+    - [`website`](#definitionspersonwebsite)
 
 ### `definitions.post-code`
 
