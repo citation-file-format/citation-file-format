@@ -621,71 +621,94 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     - [`region`](#definitionsentityregion)
     - [`tel`](#definitionsentitytel)
     - [`website`](#definitionsentitywebsite)
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.address`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.address`](#definitionsaddress).
-
-The entity's address.
+- **type**: See [`definitions.address`](#definitionsaddress).
+- **required**: `false`
+- **description**: The entity's address.
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.alias`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.alias`](#definitionsalias).
-
-The entity's alias.
+- **type**: See [`definitions.alias`](#definitionsalias).
+- **required**: `false`
+- **description**: The entity's alias.
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.city`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.city`](#definitionscity).
-
-The entity's city.
+- **type**: See [`definitions.city`](#definitionscity).
+- **required**: `false`
+- **description**: The entity's city..
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.country`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.country`](#definitionscountry).
-
-The entity's country.
+- **type**: See [`definitions.country`](#definitionscountry).
+- **required**: `false`
+- **description**: The entity's country.
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.date-end`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.date`](#definitionsdate).
-
-The entity's ending date, e.g. when the entity is a conference.
+- **type**: See [`definitions.date`](#definitionsdate).
+- **required**: `false`
+- **description**: The entity's ending date, e.g. when the entity is a conference.
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.date-start`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.date`](#definitionsdate).
-
-The entity's starting date, e.g. when the entity is a conference.
+- **type**: See [`definitions.date`](#definitionsdate).
+- **required**: `false`
+- **description**: The entity's starting date, e.g. when the entity is a conference.
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.email`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.email`](#definitionsemail).
-
-The entity's email address.
+- **type**: See [`definitions.email`](#definitionsemail).
+- **required**: `false`
+- **description**: The entity's email address.
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.fax`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.fax`](#definitionsfax).
-
-The entity's fax number.
-
+- **type**: See [`definitions.fax`](#definitionsfax).
+- **required**: `false`
+- **description**: The entity's fax number.
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -719,34 +742,42 @@ The entity's fax number.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.orcid`](#definitionsorcid).
-
-The entity's orcid.
+- **type**: See [`definitions.orcid`](#definitionsorcid).
+- **required**: `false`
+- **description**: The entity's orcid.
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.post-code`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.post-code`](#definitionspost-code).
-
-The entity's post code.
+- **type**: See [`definitions.post-code`](#definitionspost-code).
+- **required**: `false`
+- **description**: The entity's post code.
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.region`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.region`](#definitionsregion).
-
-The entity's region.
+- **type**: See [`definitions.region`](#definitionsregion).
+- **required**: `false`
+- **description**: The entity's region.
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.entity.tel`
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.tel`](#definitionstel).
-
-The entity's telephone number.
-
+- **type**: See [`definitions.tel`](#definitionstel).
+- **required**: `false`
+- **description**: The entity's telephone number.
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -758,10 +789,9 @@ The entity's telephone number.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-See [`definitions.url`](#definitionsurl).
-
-The entity's website.
-
+- **type**: See [`definitions.url`](#definitionsurl).
+- **required**: `false`
+- **description**: The entity's website.
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -1375,6 +1405,9 @@ The entity's website.
     - [`region`](#definitionspersonregion)
     - [`tel`](#definitionspersontel)
     - [`website`](#definitionspersonwebsite)
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.person.address`
 
@@ -1652,6 +1685,9 @@ The entity's website.
     - [`volume-title`](#definitionsreferencevolume-title)
     - [`year`](#definitionsreferenceyear)
     - [`year-original`](#definitionsreferenceyear-original)
+- **usage**:<br><br>
+    ```yaml
+    ```
 
 ### `definitions.reference.abbreviation`
 
@@ -1677,6 +1713,8 @@ The entity's website.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
+- **type**: `...`
+- **required**: `false`
 - **description**: The abstract of the work.
     - If the work is a journal paper or other academic work: The abstract of the work.
     - If the work is a film, broadcast or similar: The synopsis of the work.
