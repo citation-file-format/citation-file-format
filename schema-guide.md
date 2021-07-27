@@ -14,8 +14,7 @@ A minimal example of a valid `CITATION.cff` file could look like this:
 
 ```yaml
 authors:
-  -
-    family-names: Druskat
+  - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
@@ -29,19 +28,16 @@ For most software however, it is relatively easy to expand the minimal case with
 ```yaml
 abstract: This is my awesome research software. It does many things.
 authors:
-  -
-    family-names: Druskat
+  - family-names: Druskat
     given-names: Stephan
     orcid: "https://orcid.org/0000-0003-4925-7248"
 cff-version: 1.2.0
 date-released: "2021-07-18"
 identifiers:
-  -
-    description: This is the collection of archived snapshots of all versions of My Research Software
+  - description: This is the collection of archived snapshots of all versions of My Research Software
     type: doi
     value: "10.5281/zenodo.123456"
-  -
-    description: This is the archived snapshot of version 0.11.2 of My Research Software
+  - description: This is the archived snapshot of version 0.11.2 of My Research Software
     type: doi
     value: "10.5281/zenodo.123457"
 keywords:
@@ -62,16 +58,14 @@ you built on.
 
 ```yaml
 authors:
-  -
-    family-names: Druskat
+  - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: My Research Software
 references:
   authors:
-    -
-      family-names: Spaaks
+    - family-names: Spaaks
       given-names: Jurriaan H.
   title: The foundation of Research Software
   type: software
@@ -88,16 +82,14 @@ the redirection target. Usually, the `message` also reflects the authors' wishes
 
 ```yaml
 authors:
-  -
-    family-names: Druskat
+  - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
 message: If you use this software, please cite the article from preferred-citation instead of the software.
 title: My Research Software
 preferred-citation:
   authors:
-    -
-      family-names: Druskat
+    - family-names: Druskat
       given-names: Stephan
   title: Software paper about My Research Software
   type: article
@@ -336,13 +328,16 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: A [`definitions.reference`](#definitionsreference) object.
 - **required**: `false`
-- **description**: ...
+- **description**: The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file.  
+Note that the principles of [software citation](https://doi.org/10.7717/peerj-cs.86) and [data citation](https://doi.org/10.25490/a97f-egyk) require that 
+software should be cited on the same basis as any other research product such as a paper or a book. 
+Adding a different preferred citation may result in a violation of the respective
+primary principle, "Importance", when others cite this work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       authors:
-        -
-          family-names: Famnames
+        - family-names: Famnames
           given-names: Given Nam E.
       title: Title of the work.
       type: generic
@@ -351,7 +346,33 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `references`
 
-Array of [`definitions.reference`](#definitionsreference) objects.
+- **type**: Array of [`definitions.reference`](#definitionsreference) objects.
+- **required**: `false`
+- **description**: Reference(s) to other creative works. Similar to a list of references in a paper, references of the software or dataset may include other software (dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
+- **usage**: See also [`definitions.reference`](#definitionsreference).<br><br>
+    ```yaml
+    references:
+      - type: software
+        authors:
+          - name: "The Dependency Project"
+        title: "Dependency"
+        date-released: 2021-07-26
+        doi: 10.5281/zenodo.x1234567
+        version: 0.13.4
+        repository-code: "https://github.com/dependency-project/dependency"
+      - type: article
+        scope: Cite this paper if you want to reference the general concepts of the software.
+        authors:
+          - family-names: Bielefeld
+            name-particle: von
+            given-names: Arthur
+        title: "Towards a 100% accuracy syntax parser for all languages"
+        year: 2099
+        journal: Journal of Hard Science Fiction
+        volume: 42
+        issue: 13
+        doi: 10.9999/hardscifi-lang.42132
+    ```
 
 ### `repository`
 
@@ -1636,19 +1657,19 @@ The entity's website.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **type**: `...`
+- **type**: `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The abbreviation of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      abbreviation: ...
+      abbreviation: ABC
       type: generic
     ```
     ```yaml
     references:
-      -
-        abbreviation: ...
+      - 
+        abbreviation: DEF
         type: generic
     ```
 
@@ -1656,19 +1677,19 @@ The entity's website.
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
-- **description**: The abstract of a work.
+- **description**: The abstract of the work.
     - If the work is a journal paper or other academic work: The abstract of the work.
     - If the work is a film, broadcast or similar: The synopsis of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      abstract: ...
+      abstract: "This work describes the software or dataset that should be actually cited. etc."
       type: generic
     ```
     ```yaml
     references:
-      -
-        abstract: ...
+      - 
+        abstract: "This work implements an algorithm that we use in our software. etc."
         type: generic
     ```
 
@@ -1687,8 +1708,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        authors: ...
+      - authors: ...
         type: generic
     ```
 
@@ -1707,8 +1727,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        collection-doi: ...
+      - collection-doi: ...
         type: generic
     ```
 
@@ -1727,8 +1746,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        collection-title: ...
+      - collection-title: ...
         type: generic
     ```
 
@@ -1747,8 +1765,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        collection-type: ...
+      - collection-type: ...
         type: generic
     ```
 
@@ -1767,8 +1784,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        commit: ...
+      - commit: ...
         type: generic
     ```
 
@@ -1787,8 +1803,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        conference: ...
+      - conference: ...
         type: generic
     ```
 
@@ -1802,8 +1817,7 @@ The entity's website.
 - **usage**:<br><br>
     ```yaml
     references:
-      -
-        contact: ...
+      - contact: ...
         type: generic
     ```
     ```yaml
@@ -1827,8 +1841,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        copyright: ...
+      - copyright: ...
         type: generic
     ```
 
@@ -1847,8 +1860,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        data-type: ...
+      - data-type: ...
         type: generic
     ```
 
@@ -1867,8 +1879,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        database-provider: ...
+      - database-provider: ...
         type: generic
     ```
 
@@ -1887,8 +1898,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        database: ...
+      - database: ...
         type: generic
     ```
 
@@ -1907,8 +1917,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        date-accessed: ...
+      - date-accessed: ...
         type: generic
     ```
 
@@ -1927,8 +1936,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        date-downloaded: ...
+      - date-downloaded: ...
         type: generic
     ```
 
@@ -1942,8 +1950,7 @@ The entity's website.
 - **usage**:<br><br>
     ```yaml
     references:
-      -
-        date-published: ...
+      - date-published: ...
         type: generic
     ```
     ```yaml
@@ -1967,8 +1974,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        date-released: ...
+      - date-released: ...
         type: generic
     ```
 
@@ -1987,8 +1993,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        department: ...
+      - department: ...
         type: generic
     ```
 
@@ -2007,8 +2012,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        doi: ...
+      - doi: ...
         type: generic
     ```
 
@@ -2027,8 +2031,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        edition: ...
+      - edition: ...
         type: generic
     ```
 
@@ -2047,8 +2050,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        editors: ...
+      - editors: ...
         type: generic
     ```
 
@@ -2067,8 +2069,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        editors-series: ...
+      - editors-series: ...
         type: generic
     ```
 
@@ -2087,8 +2088,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        end: ...
+      - end: ...
         type: generic
     ```
 
@@ -2107,8 +2107,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        entry: ...
+      - entry: ...
         type: generic
     ```
 
@@ -2127,8 +2126,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        filename: ...
+      - filename: ...
         type: generic
     ```
 
@@ -2147,8 +2145,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        format: ...
+      - format: ...
         type: generic
     ```
 
@@ -2167,8 +2164,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        identifiers: ...
+      - identifiers: ...
         type: generic
     ```
 
@@ -2187,8 +2183,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        institution: ...
+      - institution: ...
         type: generic
     ```
 
@@ -2207,8 +2202,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        isbn: ...
+      - isbn: ...
         type: generic
     ```
 
@@ -2227,8 +2221,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        issn: ...
+      - issn: ...
         type: generic
     ```
 
@@ -2247,8 +2240,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        issue: ...
+      - issue: ...
         type: generic
     ```
 
@@ -2267,8 +2259,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        issue-date: ...
+      - issue-date: ...
         type: generic
     ```
 
@@ -2287,8 +2278,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        issue-title: ...
+      - issue-title: ...
         type: generic
     ```
 
@@ -2307,8 +2297,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        journal: ...
+      - journal: ...
         type: generic
     ```
 
@@ -2327,8 +2316,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        keywords: ...
+      - keywords: ...
         type: generic
     ```
 
@@ -2347,8 +2335,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        languages: ...
+      - languages: ...
         type: generic
     ```
 
@@ -2367,8 +2354,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        license: ...
+      - license: ...
         type: generic
     ```
 
@@ -2387,8 +2373,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        license-url: ...
+      - license-url: ...
         type: generic
     ```
 
@@ -2407,8 +2392,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        loc-end: ...
+      - loc-end: ...
         type: generic
     ```
 
@@ -2427,8 +2411,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        loc-start: ...
+      - loc-start: ...
         type: generic
     ```
 
@@ -2447,8 +2430,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        location: ...
+      - location: ...
         type: generic
     ```
 
@@ -2467,8 +2449,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        medium: ...
+      - medium: ...
         type: generic
     ```
 
@@ -2487,8 +2468,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        month: ...
+      - month: ...
         type: generic
     ```
 
@@ -2507,8 +2487,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        nihmsid: ...
+      - nihmsid: ...
         type: generic
     ```
 
@@ -2527,8 +2506,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        notes: ...
+      - notes: ...
         type: generic
     ```
 
@@ -2547,8 +2525,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        number: ...
+      - number: ...
         type: generic
     ```
 
@@ -2567,8 +2544,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        number-volumes: ...
+      - number-volumes: ...
         type: generic
     ```
 
@@ -2587,8 +2563,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        pages: ...
+      - pages: ...
         type: generic
     ```
 
@@ -2607,8 +2582,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        patent-states: ...
+      - patent-states: ...
         type: generic
     ```
 
@@ -2627,8 +2601,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        pmcid: ...
+      - pmcid: ...
         type: generic
     ```
 
@@ -2647,8 +2620,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        publisher: ...
+      - publisher: ...
         type: generic
     ```
 
@@ -2667,8 +2639,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        recipients: ...
+      - recipients: ...
         type: generic
     ```
 
@@ -2687,8 +2658,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        repository: ...
+      - repository: ...
         type: generic
     ```
 
@@ -2707,8 +2677,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        repository-artifact: ...
+      - repository-artifact: ...
         type: generic
     ```
 
@@ -2727,8 +2696,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        repository-code: ...
+      - repository-code: ...
         type: generic
     ```
 
@@ -2747,8 +2715,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        scope: ...
+      - scope: ...
         type: generic
     ```
 
@@ -2767,8 +2734,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        section: ...
+      - section: ...
         type: generic
     ```
 
@@ -2787,8 +2753,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        senders: ...
+      - senders: ...
         type: generic
     ```
 
@@ -2807,8 +2772,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        start: ...
+      - start: ...
         type: generic
     ```
 
@@ -2827,8 +2791,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        status: ...
+      - status: ...
         type: generic
     ```
 
@@ -2847,8 +2810,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        term: ...
+      - term: ...
         type: generic
     ```
 
@@ -2867,8 +2829,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        thesis-type: ...
+      - thesis-type: ...
         type: generic
     ```
 
@@ -2887,8 +2848,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        title: ...
+      - title: ...
         type: generic
     ```
 
@@ -2907,8 +2867,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        translators: ...
+      - translators: ...
         type: generic
     ```
 
@@ -2926,8 +2885,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        type: generic
+      - type: generic
     ```
 
 ### `definitions.reference.url`
@@ -2945,8 +2903,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        type: generic
+      - type: generic
         url: ...
     ```
 
@@ -2965,8 +2922,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        type: generic
+      - type: generic
         version: ...
     ```
 
@@ -2985,8 +2941,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        type: generic
+      - type: generic
         volume: ...
     ```
 
@@ -3005,8 +2960,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        type: generic
+      - type: generic
         volume-title: ...
     ```
 
@@ -3025,8 +2979,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        type: generic
+      - type: generic
         year: ...
     ```
 
@@ -3045,8 +2998,7 @@ The entity's website.
     ```
     ```yaml
     references:
-      -
-        type: generic
+      - type: generic
         year-original: ...
     ```
 
