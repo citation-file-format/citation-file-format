@@ -252,7 +252,49 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 - **type**: array of [`definitions.identifier`](#definitionsidentifier) objects.
 - **required**: `false`
 - **description**: The identifiers of the software or dataset.
-- **usage**: see [`definitions.identifier`](#definitionsidentifier).
+- **usage**:<br><br>
+```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003149
+    description: The concept DOI of the work.
+```
+
+```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.4813122
+    description: The versioned DOI for version 1.1.0 of the work.
+```
+
+```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003149
+    description: The concept DOI of the work.
+  - type: doi
+    value: 10.5281/zenodo.4813122
+    description: The versioned DOI for version 1.1.0 of the work.
+```
+
+```yaml
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003149
+    description: The concept DOI of the work.
+  - type: doi
+    value: 10.5281/zenodo.4813122
+    description: The versioned DOI for version 1.1.0 of the work.
+  - type: swh
+    value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+    description: The Software Heritage identifier for version 1.1.0 of the work.
+  - type: url
+    value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+    description: The GitHub release URL of tag 1.1.0.
+  - type: url
+    value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
+    description: The GitHub release URL of the commit tagged with 1.1.0.
+```
 
 ### `keywords`
 
