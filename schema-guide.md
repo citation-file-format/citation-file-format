@@ -581,10 +581,13 @@ such as *`definitions.alias`*.
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: A date. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
+- **description**: A date. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes, and double-quoted or unquoted.
 - **usage**:<br><br>
     ```yaml
     date-released: "2020-01-31"
+    ```
+    ```yaml
+    date-released: 2020-01-31
     ```
     ```yaml
     references:
