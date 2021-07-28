@@ -4,6 +4,7 @@ venv/
 venv37/
 venv3*/
 .idea
+.vscode/
 
 
 # for when users install markdown-link-checker locally
