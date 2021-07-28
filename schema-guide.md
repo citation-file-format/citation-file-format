@@ -662,7 +662,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.address`*
 
-- **type**: See [`definitions.address`](#definitionsaddress).
+- **type**: [`definitions.address`](#definitionsaddress).
 - **required**: `false`
 - **description**: The entity's address.
 - **usage**:<br><br>
@@ -671,7 +671,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.alias`*
 
-- **type**: See [`definitions.alias`](#definitionsalias).
+- **type**: [`definitions.alias`](#definitionsalias).
 - **required**: `false`
 - **description**: The entity's alias.
 - **usage**:<br><br>
@@ -680,7 +680,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.city`*
 
-- **type**: See [`definitions.city`](#definitionscity).
+- **type**: [`definitions.city`](#definitionscity).
 - **required**: `false`
 - **description**: The entity's city..
 - **usage**:<br><br>
@@ -689,7 +689,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.country`*
 
-- **type**: See [`definitions.country`](#definitionscountry).
+- **type**: [`definitions.country`](#definitionscountry).
 - **required**: `false`
 - **description**: The entity's country.
 - **usage**:<br><br>
@@ -698,7 +698,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.date-end`*
 
-- **type**: See [`definitions.date`](#definitionsdate).
+- **type**: [`definitions.date`](#definitionsdate).
 - **required**: `false`
 - **description**: The entity's ending date, e.g. when the entity is a conference.
 - **usage**:<br><br>
@@ -707,7 +707,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.date-start`*
 
-- **type**: See [`definitions.date`](#definitionsdate).
+- **type**: [`definitions.date`](#definitionsdate).
 - **required**: `false`
 - **description**: The entity's starting date, e.g. when the entity is a conference.
 - **usage**:<br><br>
@@ -716,7 +716,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.email`*
 
-- **type**: See [`definitions.email`](#definitionsemail).
+- **type**: [`definitions.email`](#definitionsemail).
 - **required**: `false`
 - **description**: The entity's email address.
 - **usage**:<br><br>
@@ -725,7 +725,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.fax`*
 
-- **type**: See [`definitions.fax`](#definitionsfax).
+- **type**: [`definitions.fax`](#definitionsfax).
 - **required**: `false`
 - **description**: The entity's fax number.
 - **usage**:<br><br>
@@ -755,7 +755,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.orcid`*
 
-- **type**: See [`definitions.orcid`](#definitionsorcid).
+- **type**: [`definitions.orcid`](#definitionsorcid).
 - **required**: `false`
 - **description**: The entity's orcid.
 - **usage**:<br><br>
@@ -764,7 +764,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.post-code`*
 
-- **type**: See [`definitions.post-code`](#definitionspost-code).
+- **type**: [`definitions.post-code`](#definitionspost-code).
 - **required**: `false`
 - **description**: The entity's post code.
 - **usage**:<br><br>
@@ -773,7 +773,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.region`*
 
-- **type**: See [`definitions.region`](#definitionsregion).
+- **type**: [`definitions.region`](#definitionsregion).
 - **required**: `false`
 - **description**: The entity's region.
 - **usage**:<br><br>
@@ -782,7 +782,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.tel`*
 
-- **type**: See [`definitions.tel`](#definitionstel).
+- **type**: [`definitions.tel`](#definitionstel).
 - **required**: `false`
 - **description**: The entity's telephone number.
 - **usage**:<br><br>
@@ -794,7 +794,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.website`*
 
-- **type**: See [`definitions.url`](#definitionsurl).
+- **type**: [`definitions.url`](#definitionsurl).
 - **required**: `false`
 - **description**: The entity's website.
 - **usage**:<br><br>
