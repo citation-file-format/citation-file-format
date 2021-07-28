@@ -662,7 +662,21 @@ An entity can represent different types of entities, such as a team, an institut
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: "The Research Software Project team"
+      - name: "The Research Software Project"
+        address: "742 Evergreen Terrace"
+        alias: "RSP"
+        city: "Berlin"
+        country: "DE"
+        date-end: 2018-07-27
+        date-start: 2021-07-27
+        email: "team@research-software.org"
+        fax: +12-3456-7890
+        location: "Lovelace Building, room 0.42"
+        orcid: "https://orcid.org/0000-0003-4925-7248"
+        post-code: 90210
+        region: "Renfrewshire"
+        tel: +12-345-6789098
+        website: https://research-software-project.org
     ```
 
     ```yaml
@@ -1498,6 +1512,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
     ```
 
 ### *`definitions.person.affiliation`*
