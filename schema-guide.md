@@ -570,11 +570,6 @@ such as *`definitions.alias`*.
         date-start: "2020-01-31"
         type: conference
     ```
-    ```yaml
-    references:
-      - issue-date: "2020-02-02"
-        type: article
-    ```
 
 Note to tool implementers: it is necessary to cast YAML date objects to string objects when validating against the schema.
 
