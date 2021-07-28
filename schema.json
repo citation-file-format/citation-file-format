@@ -1084,7 +1084,7 @@
             "description": "A reference to a work.",
             "properties": {
                 "abbreviation": {
-                    "description": "The abbreviation of the work.",
+                    "description": "The abbreviation of a work.",
                     "minLength": 1,
                     "type": "string"
                 },
@@ -1727,7 +1727,7 @@
         },
         "preferred-citation": {
             "$ref": "#/definitions/reference",
-            "description": "When citing the work, cite this reference instead."
+            "description": "The reference that should be cited when citing the work, instead of using the software or dataset metadata in this CITATION.cff file."
         },
         "references": {
             "description": "Reference(s) to other creative works.",
