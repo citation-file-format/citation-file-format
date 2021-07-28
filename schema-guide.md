@@ -127,7 +127,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 
 ### `abstract`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: A description of the software or dataset.
 - **usage**:<br><br>
@@ -159,7 +159,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 
 ### `cff-version`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `true`
 - **description**: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
 - **usage**:<br><br>
@@ -172,7 +172,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 
 ### `commit`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The commit hash or revision number of the software version.
 - **usage**:<br><br>
@@ -300,7 +300,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `message`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `true`
 - **default**: `If you use this software, please cite it using the metadata from this file.`
 - **description**: A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
@@ -406,7 +406,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `title`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `true`
 - **description**: The name of the software or dataset.
 - **usage**:<br><br>
@@ -537,7 +537,7 @@ such as *`definitions.alias`*.
 
 ### *`definitions.date`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: A date. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
 - **usage**:<br><br>
@@ -580,7 +580,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### *`definitions.doi`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 - **usage**:<br><br>
@@ -590,7 +590,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### *`definitions.email`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: An email address
 - **usage**:<br><br>
@@ -857,7 +857,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.fax`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: A fax number.
 - **usage**:<br><br>
@@ -1462,7 +1462,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.person.affiliation`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's affiliation.
 - **usage**:<br><br>
@@ -1507,7 +1507,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.person.family-names`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's family names.
 - **usage**:<br><br>
@@ -1529,7 +1529,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.person.given-names`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's given names.
 - **usage**:<br><br>
@@ -1538,7 +1538,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.person.name-particle`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 - **usage**:<br><br>
@@ -1547,7 +1547,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.person.name-suffix`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 - **usage**:<br><br>
@@ -1697,7 +1697,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.reference.abbreviation`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The abbreviation of a work.
 - **usage**:<br><br>
@@ -2924,7 +2924,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.tel`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: A telephone number.
 - **usage**:<br><br>
@@ -2942,7 +2942,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.url`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
     - `https://`
@@ -2967,7 +2967,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.version`*
 
-- **type**: `string` or `number`
+- **type**: Nonempty `string` or `number`
 - **required**: `false`
 - **description**: The version of a work.
 - **usage**: 
