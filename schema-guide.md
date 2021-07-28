@@ -616,9 +616,48 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     - [`tel`](#definitionsentitytel)
     - [`website`](#definitionsentitywebsite)
 - **required**: `false`
-- **description**: An entity.
+- **description**: An entity.  
+Entities are used in fields that can also take [`definitions.person`](#definitionsperson) objects.
+An entity can represent different types of entities, such as a team, an institution, a company, a conference, etc.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project team"
+    ```
+
+    ```yaml
+    contact:
+      - name: "The Research Software Project team"
+    ```
+
+    ```yaml
+    references:
+      - type: generic
+        title: "A reference showing different fields that take entity objects"
+        authors:
+          - name: "The Research Software Project team"
+        conference:
+          - name: "RC21 - Research Conference 2021"
+        contact:
+          - name: "Customer Support"
+        database-provider:
+          - name: "Database Provider"
+        editors:
+          - name: "The Publication Editing Team"
+        editors-series:
+          - name: "The Publication Series Editing Team"
+        institution:
+          - name: "Department of Research, Random University"
+        location:
+          - name: "Museum of Postmodern Art"
+        publisher:
+          - name: "Open Access Publishing House"
+        recipients:
+          - name: "The recipient institution of a personal communication"
+        senders:
+          - name: "The team sending a personal communication"
+        translators:
+          - name: "Research Translators, Ltd."
     ```
 
 ### *`definitions.entity.address`*
