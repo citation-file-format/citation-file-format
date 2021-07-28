@@ -1,22 +1,52 @@
 {
+    "access_right": "open",
+    "contributors": [
+        {
+            "affiliation": "Software Heritage",
+            "name": "Gruenpeter, Morane",
+            "orcid": "0000-0002-9777-5560",
+            "type": "Other"
+        },
+        {
+            "affiliation": "Software Sustainability Institute, University of Manchester, UK",
+            "name": "Silva, Raniere",
+            "type": "Other"
+        },
+        {
+            "affiliation": "University of Tromsø, Norway",
+            "name": "Bast, Radovan",
+            "type": "Other"
+        },
+        {
+            "affiliation": "Octiog, Inc., USA",
+            "name": "Crusoe, Michael R.",
+            "orcid": "0000-0002-2961-9670",
+            "type": "Other"
+        }
+    ],
     "creators": [
         {
+            "affiliation": "German Aerospace Center (DLR), Berlin, Germany",
             "name": "Druskat, Stephan",
             "orcid": "0000-0003-4925-7248"
         },
         {
+            "affiliation": "Netherlands eScience Center",
             "name": "Spaaks, Jurriaan H.",
             "orcid": "0000-0002-7064-4069"
         },
         {
+            "affiliation": "Software Sustainability Institute, University of Edinburgh, UK",
             "name": "Chue Hong, Neil",
             "orcid": "0000-0002-8876-7606"
         },
         {
+            "affiliation": "ITS Research IT, University of Manchester",
             "name": "Haines, Robert",
             "orcid": "0000-0002-9538-7919"
         },
         {
+            "affiliation": "University of Sussex, Sussex Humanities Lab",
             "name": "Baker, James",
             "orcid": "0000-0002-2682-6922"
         },
@@ -49,8 +79,29 @@
         "research software",
         "credit"
     ],
+    "language": "eng",
     "license": {
         "id": "CC-BY-4.0"
     },
-    "title": "Citation File Format"
+    "references": [
+        "A. M. Smith, D. S. Katz, K. E. Niemeyer, and FORCE11 Software Citation Working Group, \"Software citation principles,\" PeerJ Computer Science, vol. 2, p. e86, Sep. 2016 [Online]. Available: https://doi.org/10.7717/peerj-cs.86",
+        "S. Druskat, \"Track 2 Lightning Talk: Should CITATION files be standardized?\" in Proceedings of the Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1), 2017 [Online]. Available: https://doi.org/10.6084/m9.figshare.3827058",
+        "R. Wilson, \"Encouraging citation of software - introducing CITATION files.\" 2013 [Online]. Available: https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files",
+        "O. Ben-Kiki, C. Evans, and I. döt Net, \"YAML Ain't Markup Language (YAML) Version 1.2. 3rd Edition, Patched at 2009-10-01.\" 2009 [Online]. Available: http://yaml.org/spec/1.2/spec.html",
+        "J.-M. Hufflen, \"Names in bibtex and mlBibTeX,\" TUGboat, vol. 27, no. 2, pp. 243–253, Nov. 2006 [Online]. Available: https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf"
+    ],
+    "related_identifiers": [
+        {
+            "scheme": "url",
+            "identifier": "https://github.com/citation-file-format/citation-file-format/releases/tag/1.2.0",
+            "relation": "isSupplementTo"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.1003149",
+            "relation": "isVersionOf"
+        }
+    ],
+    "title": "Citation File Format",
+    "version": "1.2.0"
 }
