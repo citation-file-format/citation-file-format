@@ -497,7 +497,7 @@ such as *`definitions.alias`*.
     ```yaml
     ```
 
-### `definitions.alias`
+### *`definitions.alias`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -508,7 +508,7 @@ such as *`definitions.alias`*.
     ```yaml
     ```
 
-### `definitions.city`
+### *`definitions.city`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -519,7 +519,7 @@ such as *`definitions.alias`*.
     ```yaml
     ```
 
-### `definitions.commit`
+### *`definitions.commit`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -530,7 +530,7 @@ such as *`definitions.alias`*.
     ```yaml
     ```
 
-### `definitions.country`
+### *`definitions.country`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -545,7 +545,7 @@ such as *`definitions.alias`*.
     country: DE
     ```
 
-### `definitions.date`
+### *`definitions.date`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -590,7 +590,7 @@ such as *`definitions.alias`*.
 
 Note to tool implementers: it is necessary to cast YAML date objects to string objects when validating against the schema.
 
-### `definitions.doi`
+### *`definitions.doi`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -602,7 +602,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     doi: "10.5281/zenodo.1003150"
     ```
 
-### `definitions.email`
+### *`definitions.email`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -613,7 +613,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity`
+### *`definitions.entity`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -639,7 +639,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.address`
+### *`definitions.entity.address`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -650,7 +650,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.alias`
+### *`definitions.entity.alias`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -661,7 +661,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.city`
+### *`definitions.entity.city`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -672,7 +672,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.country`
+### *`definitions.entity.country`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -683,7 +683,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.date-end`
+### *`definitions.entity.date-end`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -694,7 +694,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.date-start`
+### *`definitions.entity.date-start`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -705,7 +705,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.email`
+### *`definitions.entity.email`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -716,7 +716,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.fax`
+### *`definitions.entity.fax`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -730,7 +730,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         fax: +12-3456-7890
     ```
 
-### `definitions.entity.location`
+### *`definitions.entity.location`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -741,7 +741,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.name`
+### *`definitions.entity.name`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -752,7 +752,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.orcid`
+### *`definitions.entity.orcid`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -763,7 +763,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.post-code`
+### *`definitions.entity.post-code`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -774,7 +774,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.region`
+### *`definitions.entity.region`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -785,7 +785,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.entity.tel`
+### *`definitions.entity.tel`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -799,7 +799,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         tel: +12-345-6789098
     ```
 
-### `definitions.entity.website`
+### *`definitions.entity.website`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -813,7 +813,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         website: https://research-software-project.org
     ```
 
-### `definitions.fax`
+### *`definitions.fax`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -833,7 +833,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         given-names: John
     ```
 
-### `definitions.identifier`
+### *`definitions.identifier`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -881,7 +881,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         description: The GitHub release URL of the commit tagged with 1.1.0.
     ```
 
-### `definitions.identifier-description`
+### *`definitions.identifier-description`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -892,7 +892,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.license`
+### *`definitions.license`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -909,7 +909,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
       - MIT
     ```
 
-### `definitions.license-enum`
+### *`definitions.license-enum`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1385,7 +1385,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
       - MIT
     ```
 
-### `definitions.orcid`
+### *`definitions.orcid`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1396,7 +1396,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person`
+### *`definitions.person`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1423,7 +1423,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.address`
+### *`definitions.person.address`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1434,7 +1434,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.affiliation`
+### *`definitions.person.affiliation`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1445,7 +1445,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.alias`
+### *`definitions.person.alias`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1456,7 +1456,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.city`
+### *`definitions.person.city`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1467,7 +1467,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.country`
+### *`definitions.person.country`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1478,7 +1478,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.email`
+### *`definitions.person.email`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1489,7 +1489,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.family-names`
+### *`definitions.person.family-names`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1500,7 +1500,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.fax`
+### *`definitions.person.fax`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1515,7 +1515,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         given-names: John
     ```
 
-### `definitions.person.given-names`
+### *`definitions.person.given-names`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1526,7 +1526,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.name-particle`
+### *`definitions.person.name-particle`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1537,7 +1537,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.name-suffix`
+### *`definitions.person.name-suffix`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1548,7 +1548,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.orcid`
+### *`definitions.person.orcid`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1559,7 +1559,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.post-code`
+### *`definitions.person.post-code`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1570,7 +1570,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.region`
+### *`definitions.person.region`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1581,7 +1581,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.person.tel`
+### *`definitions.person.tel`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1596,7 +1596,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         tel: +12-345-6789098
     ```
 
-### `definitions.person.website`
+### *`definitions.person.website`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1611,7 +1611,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         website: https://sdruskat.net
     ```
 
-### `definitions.post-code`
+### *`definitions.post-code`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1622,7 +1622,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.reference`
+### *`definitions.reference`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1703,7 +1703,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.reference.abbreviation`
+### *`definitions.reference.abbreviation`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1723,7 +1723,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.abstract`
+### *`definitions.reference.abstract`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1745,7 +1745,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.authors`
+### *`definitions.reference.authors`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1764,7 +1764,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.collection-doi`
+### *`definitions.reference.collection-doi`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1783,7 +1783,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.collection-title`
+### *`definitions.reference.collection-title`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1802,7 +1802,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.collection-type`
+### *`definitions.reference.collection-type`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1821,7 +1821,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.commit`
+### *`definitions.reference.commit`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1840,7 +1840,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.conference`
+### *`definitions.reference.conference`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1859,7 +1859,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.contact`
+### *`definitions.reference.contact`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1878,7 +1878,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
       type: generic
     ```
 
-### `definitions.reference.copyright`
+### *`definitions.reference.copyright`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1897,7 +1897,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.data-type`
+### *`definitions.reference.data-type`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1916,7 +1916,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.database-provider`
+### *`definitions.reference.database-provider`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1935,7 +1935,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.database`
+### *`definitions.reference.database`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1954,7 +1954,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.date-accessed`
+### *`definitions.reference.date-accessed`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1973,7 +1973,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.date-downloaded`
+### *`definitions.reference.date-downloaded`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -1992,7 +1992,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.date-published`
+### *`definitions.reference.date-published`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2011,7 +2011,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
       type: generic
     ```
 
-### `definitions.reference.date-released`
+### *`definitions.reference.date-released`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2030,7 +2030,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.department`
+### *`definitions.reference.department`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2049,7 +2049,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.doi`
+### *`definitions.reference.doi`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2068,7 +2068,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.edition`
+### *`definitions.reference.edition`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2087,7 +2087,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.editors`
+### *`definitions.reference.editors`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2106,7 +2106,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.editors-series`
+### *`definitions.reference.editors-series`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2125,7 +2125,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.end`
+### *`definitions.reference.end`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2144,7 +2144,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.entry`
+### *`definitions.reference.entry`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2163,7 +2163,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.filename`
+### *`definitions.reference.filename`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2182,7 +2182,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.format`
+### *`definitions.reference.format`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2201,7 +2201,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.identifiers`
+### *`definitions.reference.identifiers`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2220,7 +2220,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.institution`
+### *`definitions.reference.institution`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2239,7 +2239,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.isbn`
+### *`definitions.reference.isbn`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2258,7 +2258,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.issn`
+### *`definitions.reference.issn`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2277,7 +2277,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.issue`
+### *`definitions.reference.issue`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2296,7 +2296,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.issue-date`
+### *`definitions.reference.issue-date`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2315,7 +2315,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.issue-title`
+### *`definitions.reference.issue-title`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2334,7 +2334,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.journal`
+### *`definitions.reference.journal`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2353,7 +2353,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.keywords`
+### *`definitions.reference.keywords`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2372,7 +2372,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.languages`
+### *`definitions.reference.languages`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2391,7 +2391,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.license`
+### *`definitions.reference.license`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2410,7 +2410,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.license-url`
+### *`definitions.reference.license-url`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2429,7 +2429,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.loc-end`
+### *`definitions.reference.loc-end`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2448,7 +2448,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.loc-start`
+### *`definitions.reference.loc-start`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2467,7 +2467,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.location`
+### *`definitions.reference.location`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2486,7 +2486,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.medium`
+### *`definitions.reference.medium`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2505,7 +2505,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.month`
+### *`definitions.reference.month`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2524,7 +2524,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.nihmsid`
+### *`definitions.reference.nihmsid`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2543,7 +2543,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.notes`
+### *`definitions.reference.notes`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2562,7 +2562,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.number`
+### *`definitions.reference.number`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2581,7 +2581,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.number-volumes`
+### *`definitions.reference.number-volumes`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2600,7 +2600,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.pages`
+### *`definitions.reference.pages`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2619,7 +2619,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.patent-states`
+### *`definitions.reference.patent-states`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2638,7 +2638,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.pmcid`
+### *`definitions.reference.pmcid`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2657,7 +2657,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.publisher`
+### *`definitions.reference.publisher`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2676,7 +2676,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.recipients`
+### *`definitions.reference.recipients`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2695,7 +2695,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.repository`
+### *`definitions.reference.repository`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2714,7 +2714,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.repository-artifact`
+### *`definitions.reference.repository-artifact`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2733,7 +2733,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.repository-code`
+### *`definitions.reference.repository-code`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2752,7 +2752,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.scope`
+### *`definitions.reference.scope`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2771,7 +2771,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.section`
+### *`definitions.reference.section`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2790,7 +2790,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.senders`
+### *`definitions.reference.senders`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2809,7 +2809,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.start`
+### *`definitions.reference.start`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2828,7 +2828,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.status`
+### *`definitions.reference.status`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2847,7 +2847,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.term`
+### *`definitions.reference.term`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2866,7 +2866,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.thesis-type`
+### *`definitions.reference.thesis-type`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2885,7 +2885,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.title`
+### *`definitions.reference.title`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2904,7 +2904,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.translators`
+### *`definitions.reference.translators`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2923,7 +2923,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         type: generic
     ```
 
-### `definitions.reference.type`
+### *`definitions.reference.type`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2940,7 +2940,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
       - type: generic
     ```
 
-### `definitions.reference.url`
+### *`definitions.reference.url`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2959,7 +2959,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         url: ...
     ```
 
-### `definitions.reference.version`
+### *`definitions.reference.version`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2978,7 +2978,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         version: ...
     ```
 
-### `definitions.reference.volume`
+### *`definitions.reference.volume`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -2997,7 +2997,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         volume: ...
     ```
 
-### `definitions.reference.volume-title`
+### *`definitions.reference.volume-title`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -3016,7 +3016,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         volume-title: ...
     ```
 
-### `definitions.reference.year`
+### *`definitions.reference.year`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -3035,7 +3035,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         year: ...
     ```
 
-### `definitions.reference.year-original`
+### *`definitions.reference.year-original`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -3054,7 +3054,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         year-original: ...
     ```
 
-### `definitions.region`
+### *`definitions.region`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -3065,7 +3065,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.swh-identifier`
+### *`definitions.swh-identifier`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -3076,7 +3076,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### `definitions.tel`
+### *`definitions.tel`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -3096,7 +3096,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
         tel: +12-345-6789098
     ```
 
-### `definitions.url`
+### *`definitions.url`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
@@ -3123,7 +3123,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 
-### `definitions.version`
+### *`definitions.version`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
