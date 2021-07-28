@@ -444,11 +444,25 @@ primary principle, "Importance", when others cite this work.
 
 ## Definitions
 
-TODO explain why we use definitions
+Some values in CFF files are valid in different fields.
+For example, `repository-code`, `url` and `license-url` all take URLs as values.
+
+The schema therefore has [*definitions*](https://json-schema.org/understanding-json-schema/structuring.html#definitions)
+of smaller subschemas, that can be reused in the schema from the respective field, 
+instead of having to duplicate them.
+For example, there is one definition for a valid URL value ([`definitions.url`](#definitionsurl)),
+that is being referenced from `repository-code`, `url` and `license-url`.
+
+**Note:** Definitions are NOT field names, although they may be called similarly.
+Do NOT use definitions or subkeys (like `definitions.alias` or `definitions.entity.alias`)
+when writing a CFF file.  
+To make the definition sections more distinct, their headers are printed in italics, 
+such as *`definitions.alias`*.
+
 
 ### Index
 
-- [`definitions.address`](#definitionsaddress)
+- [*`definitions.address`*](#definitionsaddress)
 - [`definitions.alias`](#definitionsalias)
 - [`definitions.city`](#definitionscity)
 - [`definitions.commit`](#definitionscommit)
@@ -472,7 +486,7 @@ TODO explain why we use definitions
 - [`definitions.url`](#definitionsurl)
 - [`definitions.version`](#definitionsversion)
 
-### `definitions.address`
+### *`definitions.address`*
 
 `definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
