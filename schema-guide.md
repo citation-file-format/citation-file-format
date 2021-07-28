@@ -667,6 +667,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        address: "742 Evergreen Terrace"
     ```
 
 ### *`definitions.entity.alias`*
@@ -676,6 +679,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's alias.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: National Aeronautics and Space Administration
+        alias: "NASA"
     ```
 
 ### *`definitions.entity.city`*
@@ -685,6 +691,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's city..
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        city: "Berlin"
     ```
 
 ### *`definitions.entity.country`*
@@ -694,6 +703,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's country.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        country: "DE"
     ```
 
 ### *`definitions.entity.date-end`*
@@ -703,6 +715,14 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's ending date, e.g. when the entity is a conference.
 - **usage**:<br><br>
     ```yaml
+    references:
+      - type: conference-paper
+        title: "Conference Paper"
+        authors:
+          - name: The Research Software Project
+        conference:
+          - name: "Research Conference 2021"
+            date-end: 2021-07-27
     ```
 
 ### *`definitions.entity.date-start`*
@@ -712,6 +732,14 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's starting date, e.g. when the entity is a conference.
 - **usage**:<br><br>
     ```yaml
+    references:
+      - type: conference-paper
+        title: "Conference Paper"
+        authors:
+          - name: The Research Software Project
+        conference:
+          - name: "Research Conference 2021"
+            date-start: 2021-07-27
     ```
 
 ### *`definitions.entity.email`*
@@ -721,6 +749,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's email address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        email: "team@research-software.org"
     ```
 
 ### *`definitions.entity.fax`*
@@ -737,20 +768,25 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### *`definitions.entity.location`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The entity's location.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        location: "Lovelace Building, room 0.42"
     ```
 
 ### *`definitions.entity.name`*
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `true`
 - **description**: The entity's name.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
     ```
 
 ### *`definitions.entity.orcid`*
@@ -760,6 +796,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's orcid.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        orcid: "https://orcid.org/0000-0003-4925-7248"
     ```
 
 ### *`definitions.entity.post-code`*
@@ -769,6 +808,15 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's post code.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        post-code: 90210
+    ```
+
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        post-code: "90210"
     ```
 
 ### *`definitions.entity.region`*
@@ -778,6 +826,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The entity's region.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        region: "Renfrewshire"
     ```
 
 ### *`definitions.entity.tel`*
