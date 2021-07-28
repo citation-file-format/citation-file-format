@@ -2,8 +2,7 @@
 # DO NOT USE FOR CITATION! #
 ############################
 # This is a key-complete   #
-# test file for validating #
-# CFF Core schema 1.0.3    #
+# test file for validation #
 ############################
 
 cff-version: 1.1.0
@@ -18,6 +17,7 @@ authors:
     given-names: One Truly
     name-particle: van der
     name-suffix: IV
+    alias: Citey
     affiliation: Excellent University, Niceplace, Arcadia
     address: 22 Acacia Avenue
     city: Citationburgh
@@ -53,6 +53,7 @@ contact:
     given-names: One Truly
     name-particle: van der
     name-suffix: IV
+    alias: Citey
     affiliation: Excellent University, Niceplace, Arcadia
     address: 22 Acacia Avenue
     city: Citationburgh
@@ -83,6 +84,16 @@ contact:
 date-released: 2017-12-11
 
 doi: 10.5281/zenodo.1003150
+
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.1003150
+  - type: swh
+    value: swh:1:rel:99f6850374dc6597af01bd0ee1d3fc0699301b9f
+  - type: url
+    value: https://example.com
+  - type: other
+    value: other-schema://abcd.1234.efgh.5678
 
 keywords:
   - One
@@ -129,6 +140,15 @@ references:
     entry: Chapter 9
     filename: book.zip
     format: Printed book
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003150
+      - type: swh
+        value: swh:1:rel:99f6850374dc6597af01bd0ee1d3fc0699301b9f
+      - type: url
+        value: https://example.com
+      - type: other
+        value: other-schema://abcd.1234.efgh.5678
     isbn: 978-1-89183-044-0
     issn: 1234-543X
     issue: "123"
@@ -198,6 +218,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -223,7 +244,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     contact:
         # A person
@@ -231,6 +252,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -281,6 +303,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -306,7 +329,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     editors-series:
       # A person
@@ -314,6 +337,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -339,7 +363,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     institution:
       # An entity
@@ -398,6 +422,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -423,7 +448,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     senders:
       # A person
@@ -431,6 +456,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -456,7 +482,7 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
+        location: The team garage
 
     translators:
       # A person
@@ -464,6 +490,7 @@ references:
         given-names: One Truly
         name-particle: van der
         name-suffix: IV
+        alias: Citey
         affiliation: Excellent University, Niceplace, Arcadia
         address: 22 Acacia Avenue
         city: Citationburgh
@@ -489,5 +516,4 @@ references:
         website: https://www.entity-project-team.io
         date-start: 2017-01-01
         date-end: 2017-01-31
-        location: The team garage    
-
+        location: The team garage
