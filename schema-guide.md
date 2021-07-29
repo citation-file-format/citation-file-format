@@ -841,7 +841,7 @@ authors:
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, separated by dashes, and double-quoted or unquoted.
+- **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes.
 - **usage**:<br><br>
     ```yaml
     date-released: "2020-01-31"
