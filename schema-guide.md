@@ -1749,11 +1749,15 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.orcid`
 
-- **type**: `...`
+- **type**: `uri` with pattern [`https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}`](https://regex101.com/library/wvvVYE)
 - **required**: `false`
-- **description**: ...
+- **description**: Identifier for an author, see https://orcid.org.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        orcid: "https://orcid.org/0000-0003-4925-7248"
     ```
 
 ### `definitions.person`
