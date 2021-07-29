@@ -515,31 +515,31 @@ authors:
 
 ### Index
 
-- [*`definitions.address`*](#definitionsaddress)
-- [*`definitions.alias`*](#definitionsalias)
-- [*`definitions.city`*](#definitionscity)
-- [*`definitions.commit`*](#definitionscommit)
-- [*`definitions.country`*](#definitionscountry)
-- [*`definitions.date`*](#definitionsdate)
-- [*`definitions.doi`*](#definitionsdoi)
-- [*`definitions.email`*](#definitionsemail)
-- [*`definitions.entity`*](#definitionsentity) (object)
-- [*`definitions.fax`*](#definitionsfax)
-- [*`definitions.identifier`*](#definitionsidentifier) (object)
-- [*`definitions.identifier-description`*](#definitionsidentifier-description)
-- [*`definitions.license`*](#definitionslicense)
-- [*`definitions.license-enum`*](#definitionslicense-enum)
-- [*`definitions.orcid`*](#definitionsorcid)
-- [*`definitions.person`*](#definitionsperson) (object)
-- [*`definitions.post-code`*](#definitionspost-code)
-- [*`definitions.reference`*](#definitionsreference) (object)
-- [*`definitions.region`*](#definitionsregion)
-- [*`definitions.swh-identifier`*](#definitionsswh-identifier)
-- [*`definitions.tel`*](#definitionstel)
-- [*`definitions.url`*](#definitionsurl)
-- [*`definitions.version`*](#definitionsversion)
+- `definitions.address`](#definitionsaddress)
+- `definitions.alias`](#definitionsalias)
+- `definitions.city`](#definitionscity)
+- `definitions.commit`](#definitionscommit)
+- `definitions.country`](#definitionscountry)
+- `definitions.date`](#definitionsdate)
+- `definitions.doi`](#definitionsdoi)
+- `definitions.email`](#definitionsemail)
+- `definitions.entity`](#definitionsentity) (object)
+- `definitions.fax`](#definitionsfax)
+- `definitions.identifier`](#definitionsidentifier) (object)
+- `definitions.identifier-description`](#definitionsidentifier-description)
+- `definitions.license`](#definitionslicense)
+- `definitions.license-enum`](#definitionslicense-enum)
+- `definitions.orcid`](#definitionsorcid)
+- `definitions.person`](#definitionsperson) (object)
+- `definitions.post-code`](#definitionspost-code)
+- `definitions.reference`](#definitionsreference) (object)
+- `definitions.region`](#definitionsregion)
+- `definitions.swh-identifier`](#definitionsswh-identifier)
+- `definitions.tel`](#definitionstel)
+- `definitions.url`](#definitionsurl)
+- `definitions.version`](#definitionsversion)
 
-### *`definitions.address`*
+### `definitions.address`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -548,7 +548,7 @@ authors:
     ```yaml
     ```
 
-### *`definitions.alias`*
+### `definitions.alias`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -557,7 +557,7 @@ authors:
     ```yaml
     ```
 
-### *`definitions.city`*
+### `definitions.city`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -566,7 +566,7 @@ authors:
     ```yaml
     ```
 
-### *`definitions.commit`*
+### `definitions.commit`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -575,7 +575,7 @@ authors:
     ```yaml
     ```
 
-### *`definitions.country`*
+### `definitions.country`
 
 - **type**: `enum`
 - **required**: `false`
@@ -588,7 +588,7 @@ authors:
     country: DE
     ```
 
-### *`definitions.date`*
+### `definitions.date`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -629,7 +629,7 @@ authors:
 
 Note to tool implementers: it is necessary to cast YAML date objects to string objects when validating against the schema.
 
-### *`definitions.doi`*
+### `definitions.doi`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -639,7 +639,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     doi: "10.5281/zenodo.1003150"
     ```
 
-### *`definitions.email`*
+### `definitions.email`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -648,7 +648,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```yaml
     ```
 
-### *`definitions.entity`*
+### `definitions.entity`
 
 - **type**: `object` with the following properties:
     - [`address`](#definitionsentityaddress)
@@ -711,7 +711,7 @@ An entity can represent different types of entities, such as a team, an institut
           - name: "Research Translators, Ltd."
     ```
 
-### *`definitions.entity.address`*
+### `definitions.entity.address`
 
 - **type**: [`definitions.address`](#definitionsaddress).
 - **required**: `false`
@@ -723,7 +723,7 @@ An entity can represent different types of entities, such as a team, an institut
         address: "742 Evergreen Terrace"
     ```
 
-### *`definitions.entity.alias`*
+### `definitions.entity.alias`
 
 - **type**: [`definitions.alias`](#definitionsalias).
 - **required**: `false`
@@ -735,7 +735,7 @@ An entity can represent different types of entities, such as a team, an institut
         alias: "NASA"
     ```
 
-### *`definitions.entity.city`*
+### `definitions.entity.city`
 
 - **type**: [`definitions.city`](#definitionscity).
 - **required**: `false`
@@ -747,7 +747,7 @@ An entity can represent different types of entities, such as a team, an institut
         city: "Berlin"
     ```
 
-### *`definitions.entity.country`*
+### `definitions.entity.country`
 
 - **type**: [`definitions.country`](#definitionscountry).
 - **required**: `false`
@@ -759,7 +759,7 @@ An entity can represent different types of entities, such as a team, an institut
         country: "DE"
     ```
 
-### *`definitions.entity.date-end`*
+### `definitions.entity.date-end`
 
 - **type**: [`definitions.date`](#definitionsdate).
 - **required**: `false`
@@ -776,7 +776,7 @@ An entity can represent different types of entities, such as a team, an institut
             date-end: 2021-07-27
     ```
 
-### *`definitions.entity.date-start`*
+### `definitions.entity.date-start`
 
 - **type**: [`definitions.date`](#definitionsdate).
 - **required**: `false`
@@ -793,7 +793,7 @@ An entity can represent different types of entities, such as a team, an institut
             date-start: 2021-07-27
     ```
 
-### *`definitions.entity.email`*
+### `definitions.entity.email`
 
 - **type**: [`definitions.email`](#definitionsemail).
 - **required**: `false`
@@ -805,7 +805,7 @@ An entity can represent different types of entities, such as a team, an institut
         email: "team@research-software.org"
     ```
 
-### *`definitions.entity.fax`*
+### `definitions.entity.fax`
 
 - **type**: [`definitions.fax`](#definitionsfax).
 - **required**: `false`
@@ -817,7 +817,7 @@ An entity can represent different types of entities, such as a team, an institut
         fax: +12-3456-7890
     ```
 
-### *`definitions.entity.location`*
+### `definitions.entity.location`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -829,7 +829,7 @@ An entity can represent different types of entities, such as a team, an institut
         location: "Lovelace Building, room 0.42"
     ```
 
-### *`definitions.entity.name`*
+### `definitions.entity.name`
 
 - **type**: Nonempty `string`
 - **required**: `true`
@@ -840,7 +840,7 @@ An entity can represent different types of entities, such as a team, an institut
       - name: The Research Software Project
     ```
 
-### *`definitions.entity.orcid`*
+### `definitions.entity.orcid`
 
 - **type**: [`definitions.orcid`](#definitionsorcid).
 - **required**: `false`
@@ -852,7 +852,7 @@ An entity can represent different types of entities, such as a team, an institut
         orcid: "https://orcid.org/0000-0003-4925-7248"
     ```
 
-### *`definitions.entity.post-code`*
+### `definitions.entity.post-code`
 
 - **type**: [`definitions.post-code`](#definitionspost-code).
 - **required**: `false`
@@ -870,7 +870,7 @@ An entity can represent different types of entities, such as a team, an institut
         post-code: "90210"
     ```
 
-### *`definitions.entity.region`*
+### `definitions.entity.region`
 
 - **type**: [`definitions.region`](#definitionsregion).
 - **required**: `false`
@@ -882,7 +882,7 @@ An entity can represent different types of entities, such as a team, an institut
         region: "Renfrewshire"
     ```
 
-### *`definitions.entity.tel`*
+### `definitions.entity.tel`
 
 - **type**: [`definitions.tel`](#definitionstel).
 - **required**: `false`
@@ -894,7 +894,7 @@ An entity can represent different types of entities, such as a team, an institut
         tel: +12-345-6789098
     ```
 
-### *`definitions.entity.website`*
+### `definitions.entity.website`
 
 - **type**: [`definitions.url`](#definitionsurl).
 - **required**: `false`
@@ -906,7 +906,7 @@ An entity can represent different types of entities, such as a team, an institut
         website: https://research-software-project.org
     ```
 
-### *`definitions.fax`*
+### `definitions.fax`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -924,7 +924,7 @@ An entity can represent different types of entities, such as a team, an institut
         given-names: John
     ```
 
-### *`definitions.identifier`*
+### `definitions.identifier`
 
 - **type**: `...`
 - **required**: `false`
@@ -970,7 +970,7 @@ An entity can represent different types of entities, such as a team, an institut
         description: The GitHub release URL of the commit tagged with 1.1.0.
     ```
 
-### *`definitions.identifier-description`*
+### `definitions.identifier-description`
 
 - **type**: `...`
 - **required**: `false`
@@ -979,7 +979,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.license`*
+### `definitions.license`
 
 - **type**: (array of) [`definitions.license-enum`](#definitions.license-enum) objects.
 - **required**: `false`
@@ -994,7 +994,7 @@ An entity can represent different types of entities, such as a team, an institut
       - MIT
     ```
 
-### *`definitions.license-enum`*
+### `definitions.license-enum`
 
 - **type**: `enum` with values:
     - `0BSD`
@@ -1468,7 +1468,7 @@ An entity can represent different types of entities, such as a team, an institut
       - MIT
     ```
 
-### *`definitions.orcid`*
+### `definitions.orcid`
 
 - **type**: `...`
 - **required**: `false`
@@ -1477,7 +1477,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person`*
+### `definitions.person`
 
 - **type**: `object` with the following properties:
     - [`address`](#definitionspersonaddress)
@@ -1502,7 +1502,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.address`*
+### `definitions.person.address`
 
 - **type**: [`definitions.address`](#definitionsaddress)
 - **required**: `false`
@@ -1511,7 +1511,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.affiliation`*
+### `definitions.person.affiliation`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -1520,7 +1520,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.alias`*
+### `definitions.person.alias`
 
 - **type**: [`definitions.alias`](#definitionsalias)
 - **required**: `false`
@@ -1529,7 +1529,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.city`*
+### `definitions.person.city`
 
 - **type**: [`definitions.city`](#definitionscity)
 - **required**: `false`
@@ -1538,7 +1538,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.country`*
+### `definitions.person.country`
 
 - **type**: [`definitions.country`](#definitioncountry)
 - **required**: `false`
@@ -1547,7 +1547,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.email`*
+### `definitions.person.email`
 
 - **type**: [`definitions.email`](#definitionsemail)
 - **required**: `false`
@@ -1556,7 +1556,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.family-names`*
+### `definitions.person.family-names`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -1565,7 +1565,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.fax`*
+### `definitions.person.fax`
 
 - **type**: [`definitions.fax`](#definitionsfax)
 - **required**: `false`
@@ -1578,7 +1578,7 @@ An entity can represent different types of entities, such as a team, an institut
         given-names: John
     ```
 
-### *`definitions.person.given-names`*
+### `definitions.person.given-names`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -1587,7 +1587,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.name-particle`*
+### `definitions.person.name-particle`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -1596,7 +1596,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.name-suffix`*
+### `definitions.person.name-suffix`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -1605,7 +1605,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.orcid`*
+### `definitions.person.orcid`
 
 - **type**: [`definitions.orcid`](#definitionsorcid)
 - **required**: `false`
@@ -1614,7 +1614,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.post-code`*
+### `definitions.person.post-code`
 
 - **type**: [`definitions.post-code`](#definitionspost-code)
 - **required**: `false`
@@ -1623,7 +1623,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.region`*
+### `definitions.person.region`
 
 - **type**: [`definitions.region`](#definitionsregion)
 - **required**: `false`
@@ -1632,7 +1632,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.person.tel`*
+### `definitions.person.tel`
 
 - **type**: [`definitions.tel`](#definitionstel)
 - **required**: `false`
@@ -1645,7 +1645,7 @@ An entity can represent different types of entities, such as a team, an institut
         tel: +12-345-6789098
     ```
 
-### *`definitions.person.website`*
+### `definitions.person.website`
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
@@ -1658,7 +1658,7 @@ An entity can represent different types of entities, such as a team, an institut
         website: https://sdruskat.net
     ```
 
-### *`definitions.post-code`*
+### `definitions.post-code`
 
 - **type**: `...`
 - **required**: `false`
@@ -1667,7 +1667,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.reference`*
+### `definitions.reference`
 
 - **type**: `object` with the following properties:
     - [`abbreviation`](#definitionsreferenceabbreviation)
@@ -1746,7 +1746,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.reference.abbreviation`*
+### `definitions.reference.abbreviation`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -1764,7 +1764,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.abstract`*
+### `definitions.reference.abstract`
 
 - **type**: `...`
 - **required**: `false`
@@ -1784,7 +1784,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.authors`*
+### `definitions.reference.authors`
 
 - **type**: `...`
 - **required**: `true`
@@ -1801,7 +1801,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.collection-doi`*
+### `definitions.reference.collection-doi`
 
 - **type**: `...`
 - **required**: `false`
@@ -1818,7 +1818,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.collection-title`*
+### `definitions.reference.collection-title`
 
 - **type**: `...`
 - **required**: `false`
@@ -1835,7 +1835,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.collection-type`*
+### `definitions.reference.collection-type`
 
 - **type**: `...`
 - **required**: `false`
@@ -1852,7 +1852,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.commit`*
+### `definitions.reference.commit`
 
 - **type**: `...`
 - **required**: `false`
@@ -1869,7 +1869,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.conference`*
+### `definitions.reference.conference`
 
 - **type**: `...`
 - **required**: `false`
@@ -1886,7 +1886,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.contact`*
+### `definitions.reference.contact`
 
 - **type**: `...`
 - **required**: `false`
@@ -1903,7 +1903,7 @@ An entity can represent different types of entities, such as a team, an institut
       type: generic
     ```
 
-### *`definitions.reference.copyright`*
+### `definitions.reference.copyright`
 
 - **type**: `...`
 - **required**: `false`
@@ -1920,7 +1920,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.data-type`*
+### `definitions.reference.data-type`
 
 - **type**: `...`
 - **required**: `false`
@@ -1937,7 +1937,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.database-provider`*
+### `definitions.reference.database-provider`
 
 - **type**: `...`
 - **required**: `false`
@@ -1954,7 +1954,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.database`*
+### `definitions.reference.database`
 
 - **type**: `...`
 - **required**: `false`
@@ -1971,7 +1971,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.date-accessed`*
+### `definitions.reference.date-accessed`
 
 - **type**: `...`
 - **required**: `false`
@@ -1988,7 +1988,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.date-downloaded`*
+### `definitions.reference.date-downloaded`
 
 - **type**: `...`
 - **required**: `false`
@@ -2005,7 +2005,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.date-published`*
+### `definitions.reference.date-published`
 
 - **type**: `...`
 - **required**: `false`
@@ -2022,7 +2022,7 @@ An entity can represent different types of entities, such as a team, an institut
       type: generic
     ```
 
-### *`definitions.reference.date-released`*
+### `definitions.reference.date-released`
 
 - **type**: `...`
 - **required**: `false`
@@ -2039,7 +2039,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.department`*
+### `definitions.reference.department`
 
 - **type**: `...`
 - **required**: `false`
@@ -2056,7 +2056,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.doi`*
+### `definitions.reference.doi`
 
 - **type**: `...`
 - **required**: `false`
@@ -2073,7 +2073,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.edition`*
+### `definitions.reference.edition`
 
 - **type**: `...`
 - **required**: `false`
@@ -2090,7 +2090,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.editors`*
+### `definitions.reference.editors`
 
 - **type**: `...`
 - **required**: `false`
@@ -2107,7 +2107,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.editors-series`*
+### `definitions.reference.editors-series`
 
 - **type**: `...`
 - **required**: `false`
@@ -2124,7 +2124,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.end`*
+### `definitions.reference.end`
 
 - **type**: `...`
 - **required**: `false`
@@ -2141,7 +2141,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.entry`*
+### `definitions.reference.entry`
 
 - **type**: `...`
 - **required**: `false`
@@ -2158,7 +2158,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.filename`*
+### `definitions.reference.filename`
 
 - **type**: `...`
 - **required**: `false`
@@ -2175,7 +2175,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.format`*
+### `definitions.reference.format`
 
 - **type**: `...`
 - **required**: `false`
@@ -2192,7 +2192,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.identifiers`*
+### `definitions.reference.identifiers`
 
 - **type**: `...`
 - **required**: `false`
@@ -2209,7 +2209,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.institution`*
+### `definitions.reference.institution`
 
 - **type**: `...`
 - **required**: `false`
@@ -2226,7 +2226,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.isbn`*
+### `definitions.reference.isbn`
 
 - **type**: `...`
 - **required**: `false`
@@ -2243,7 +2243,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.issn`*
+### `definitions.reference.issn`
 
 - **type**: `...`
 - **required**: `false`
@@ -2260,7 +2260,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.issue`*
+### `definitions.reference.issue`
 
 - **type**: `...`
 - **required**: `false`
@@ -2277,7 +2277,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.issue-date`*
+### `definitions.reference.issue-date`
 
 - **type**: `...`
 - **required**: `false`
@@ -2294,7 +2294,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.issue-title`*
+### `definitions.reference.issue-title`
 
 - **type**: `...`
 - **required**: `false`
@@ -2311,7 +2311,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.journal`*
+### `definitions.reference.journal`
 
 - **type**: `...`
 - **required**: `false`
@@ -2328,7 +2328,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.keywords`*
+### `definitions.reference.keywords`
 
 - **type**: `...`
 - **required**: `false`
@@ -2345,7 +2345,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.languages`*
+### `definitions.reference.languages`
 
 - **type**: `...`
 - **required**: `false`
@@ -2362,7 +2362,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.license`*
+### `definitions.reference.license`
 
 - **type**: `...`
 - **required**: `false`
@@ -2379,7 +2379,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.license-url`*
+### `definitions.reference.license-url`
 
 - **type**: `...`
 - **required**: `false`
@@ -2396,7 +2396,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.loc-end`*
+### `definitions.reference.loc-end`
 
 - **type**: `...`
 - **required**: `false`
@@ -2413,7 +2413,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.loc-start`*
+### `definitions.reference.loc-start`
 
 - **type**: `...`
 - **required**: `false`
@@ -2430,7 +2430,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.location`*
+### `definitions.reference.location`
 
 - **type**: `...`
 - **required**: `false`
@@ -2447,7 +2447,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.medium`*
+### `definitions.reference.medium`
 
 - **type**: `...`
 - **required**: `false`
@@ -2464,7 +2464,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.month`*
+### `definitions.reference.month`
 
 - **type**: `...`
 - **required**: `false`
@@ -2481,7 +2481,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.nihmsid`*
+### `definitions.reference.nihmsid`
 
 - **type**: `...`
 - **required**: `false`
@@ -2498,7 +2498,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.notes`*
+### `definitions.reference.notes`
 
 - **type**: `...`
 - **required**: `false`
@@ -2515,7 +2515,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.number`*
+### `definitions.reference.number`
 
 - **type**: `...`
 - **required**: `false`
@@ -2532,7 +2532,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.number-volumes`*
+### `definitions.reference.number-volumes`
 
 - **type**: `...`
 - **required**: `false`
@@ -2549,7 +2549,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.pages`*
+### `definitions.reference.pages`
 
 - **type**: `...`
 - **required**: `false`
@@ -2566,7 +2566,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.patent-states`*
+### `definitions.reference.patent-states`
 
 - **type**: `...`
 - **required**: `false`
@@ -2583,7 +2583,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.pmcid`*
+### `definitions.reference.pmcid`
 
 - **type**: `...`
 - **required**: `false`
@@ -2600,7 +2600,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.publisher`*
+### `definitions.reference.publisher`
 
 - **type**: `...`
 - **required**: `false`
@@ -2617,7 +2617,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.recipients`*
+### `definitions.reference.recipients`
 
 - **type**: `...`
 - **required**: `false`
@@ -2634,7 +2634,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.repository`*
+### `definitions.reference.repository`
 
 - **type**: `...`
 - **required**: `false`
@@ -2651,7 +2651,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.repository-artifact`*
+### `definitions.reference.repository-artifact`
 
 - **type**: `...`
 - **required**: `false`
@@ -2668,7 +2668,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.repository-code`*
+### `definitions.reference.repository-code`
 
 - **type**: `...`
 - **required**: `false`
@@ -2685,7 +2685,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.scope`*
+### `definitions.reference.scope`
 
 - **type**: `...`
 - **required**: `false`
@@ -2702,7 +2702,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.section`*
+### `definitions.reference.section`
 
 - **type**: `...`
 - **required**: `false`
@@ -2719,7 +2719,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.senders`*
+### `definitions.reference.senders`
 
 - **type**: `...`
 - **required**: `false`
@@ -2736,7 +2736,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.start`*
+### `definitions.reference.start`
 
 - **type**: `...`
 - **required**: `false`
@@ -2753,7 +2753,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.status`*
+### `definitions.reference.status`
 
 - **type**: `...`
 - **required**: `false`
@@ -2770,7 +2770,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.term`*
+### `definitions.reference.term`
 
 - **type**: `...`
 - **required**: `false`
@@ -2787,7 +2787,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.thesis-type`*
+### `definitions.reference.thesis-type`
 
 - **type**: `...`
 - **required**: `false`
@@ -2804,7 +2804,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.title`*
+### `definitions.reference.title`
 
 - **type**: `...`
 - **required**: `true`
@@ -2821,7 +2821,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.translators`*
+### `definitions.reference.translators`
 
 - **type**: `...`
 - **required**: `false`
@@ -2838,7 +2838,7 @@ An entity can represent different types of entities, such as a team, an institut
         type: generic
     ```
 
-### *`definitions.reference.type`*
+### `definitions.reference.type`
 
 - **type**: `...`
 - **required**: `true`
@@ -2853,7 +2853,7 @@ An entity can represent different types of entities, such as a team, an institut
       - type: generic
     ```
 
-### *`definitions.reference.url`*
+### `definitions.reference.url`
 
 - **type**: `...`
 - **required**: `false`
@@ -2870,7 +2870,7 @@ An entity can represent different types of entities, such as a team, an institut
         url: ...
     ```
 
-### *`definitions.reference.version`*
+### `definitions.reference.version`
 
 - **type**: `...`
 - **required**: `false`
@@ -2887,7 +2887,7 @@ An entity can represent different types of entities, such as a team, an institut
         version: ...
     ```
 
-### *`definitions.reference.volume`*
+### `definitions.reference.volume`
 
 - **type**: `...`
 - **required**: `false`
@@ -2904,7 +2904,7 @@ An entity can represent different types of entities, such as a team, an institut
         volume: ...
     ```
 
-### *`definitions.reference.volume-title`*
+### `definitions.reference.volume-title`
 
 - **type**: `...`
 - **required**: `false`
@@ -2921,7 +2921,7 @@ An entity can represent different types of entities, such as a team, an institut
         volume-title: ...
     ```
 
-### *`definitions.reference.year`*
+### `definitions.reference.year`
 
 - **type**: `...`
 - **required**: `false`
@@ -2938,7 +2938,7 @@ An entity can represent different types of entities, such as a team, an institut
         year: ...
     ```
 
-### *`definitions.reference.year-original`*
+### `definitions.reference.year-original`
 
 - **type**: `...`
 - **required**: `false`
@@ -2955,7 +2955,7 @@ An entity can represent different types of entities, such as a team, an institut
         year-original: ...
     ```
 
-### *`definitions.region`*
+### `definitions.region`
 
 - **type**: `...`
 - **required**: `false`
@@ -2964,7 +2964,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.swh-identifier`*
+### `definitions.swh-identifier`
 
 - **type**: `...`
 - **required**: `false`
@@ -2973,7 +2973,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     ```
 
-### *`definitions.tel`*
+### `definitions.tel`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -2991,7 +2991,7 @@ An entity can represent different types of entities, such as a team, an institut
         tel: +12-345-6789098
     ```
 
-### *`definitions.url`*
+### `definitions.url`
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -3016,7 +3016,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```
 
 
-### *`definitions.version`*
+### `definitions.version`
 
 - **type**: Nonempty `string` or `number`
 - **required**: `false`
