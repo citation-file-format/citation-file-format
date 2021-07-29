@@ -3669,12 +3669,17 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `definitions.swh-identifier`
 
-- **type**: `...`
+- **type**: `string` with pattern [`^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$`](https://regex101.com/library/o399MX)
 - **required**: `false`
-- **description**: ...
+- **description**: The Software Heritage identifier (without further qualifiers such as origin, visit, anchor, path).
 - **usage**:<br><br>
     ```yaml
+    identifiers:
+      - type: swh
+        value: "swh:1:rev:309cf2674ee7a0749978cf8265ab91a60aea0f7d"
     ```
+
+Note: Software Heritage identifiers are documented here: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html.
 
 ### `definitions.tel`
 
