@@ -2024,11 +2024,19 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.post-code`
 
-- **type**: `...`
+- **type**: `string` or `number`
 - **required**: `false`
 - **description**: A post code.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project"
+        post-code: "G42 2PN"
+    ```
+    ```yaml
+    authors:
+      - name: "The Research Software Project"
+        post-code: 12053
     ```
 
 ### `definitions.reference`
