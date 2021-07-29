@@ -546,6 +546,9 @@ authors:
 - **description**: An address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project"
+        address: "742 Evergreen Terrace"
     ```
 
 ### `definitions.alias`
@@ -555,6 +558,9 @@ authors:
 - **description**: An alias.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project"
+        alias: "RSP"
     ```
 
 ### `definitions.city`
@@ -564,6 +570,9 @@ authors:
 - **description**: A city.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project"
+        city: "Berlin"
     ```
 
 ### `definitions.commit`
@@ -573,6 +582,10 @@ authors:
 - **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 - **usage**:<br><br>
     ```yaml
+    commit: "1ff847d81f29c45a3a1a5ce73d38e45c2f319bba"
+    ```
+    ```yaml
+    commit: "Revision: 8612"
     ```
 
 ### `definitions.country`
@@ -892,6 +905,9 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 - **description**: An email address
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - email: "mail@research-project.org"
+        name: "The Research Software project"
     ```
 
 ### `definitions.entity`
