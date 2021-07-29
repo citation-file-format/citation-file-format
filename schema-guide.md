@@ -298,7 +298,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `keywords`
 
-- **type**: array of `string`
+- **type**: Array of nonempty `string`
 - **required**: `false`
 - **description**: Keywords that describe the work.
 - **usage**:<br><br>
@@ -577,7 +577,256 @@ authors:
 
 ### `definitions.country`
 
-- **type**: `enum`
+- **type**: `enum` with values
+    - `AD`
+    - `AE`
+    - `AF`
+    - `AG`
+    - `AI`
+    - `AL`
+    - `AM`
+    - `AO`
+    - `AQ`
+    - `AR`
+    - `AS`
+    - `AT`
+    - `AU`
+    - `AW`
+    - `AX`
+    - `AZ`
+    - `BA`
+    - `BB`
+    - `BD`
+    - `BE`
+    - `BF`
+    - `BG`
+    - `BH`
+    - `BI`
+    - `BJ`
+    - `BL`
+    - `BM`
+    - `BN`
+    - `BO`
+    - `BQ`
+    - `BR`
+    - `BS`
+    - `BT`
+    - `BV`
+    - `BW`
+    - `BY`
+    - `BZ`
+    - `CA`
+    - `CC`
+    - `CD`
+    - `CF`
+    - `CG`
+    - `CH`
+    - `CI`
+    - `CK`
+    - `CL`
+    - `CM`
+    - `CN`
+    - `CO`
+    - `CR`
+    - `CU`
+    - `CV`
+    - `CW`
+    - `CX`
+    - `CY`
+    - `CZ`
+    - `DE`
+    - `DJ`
+    - `DK`
+    - `DM`
+    - `DO`
+    - `DZ`
+    - `EC`
+    - `EE`
+    - `EG`
+    - `EH`
+    - `ER`
+    - `ES`
+    - `ET`
+    - `FI`
+    - `FJ`
+    - `FK`
+    - `FM`
+    - `FO`
+    - `FR`
+    - `GA`
+    - `GB`
+    - `GD`
+    - `GE`
+    - `GF`
+    - `GG`
+    - `GH`
+    - `GI`
+    - `GL`
+    - `GM`
+    - `GN`
+    - `GP`
+    - `GQ`
+    - `GR`
+    - `GS`
+    - `GT`
+    - `GU`
+    - `GW`
+    - `GY`
+    - `HK`
+    - `HM`
+    - `HN`
+    - `HR`
+    - `HT`
+    - `HU`
+    - `ID`
+    - `IE`
+    - `IL`
+    - `IM`
+    - `IN`
+    - `IO`
+    - `IQ`
+    - `IR`
+    - `IS`
+    - `IT`
+    - `JE`
+    - `JM`
+    - `JO`
+    - `JP`
+    - `KE`
+    - `KG`
+    - `KH`
+    - `KI`
+    - `KM`
+    - `KN`
+    - `KP`
+    - `KR`
+    - `KW`
+    - `KY`
+    - `KZ`
+    - `LA`
+    - `LB`
+    - `LC`
+    - `LI`
+    - `LK`
+    - `LR`
+    - `LS`
+    - `LT`
+    - `LU`
+    - `LV`
+    - `LY`
+    - `MA`
+    - `MC`
+    - `MD`
+    - `ME`
+    - `MF`
+    - `MG`
+    - `MH`
+    - `MK`
+    - `ML`
+    - `MM`
+    - `MN`
+    - `MO`
+    - `MP`
+    - `MQ`
+    - `MR`
+    - `MS`
+    - `MT`
+    - `MU`
+    - `MV`
+    - `MW`
+    - `MX`
+    - `MY`
+    - `MZ`
+    - `NA`
+    - `NC`
+    - `NE`
+    - `NF`
+    - `NG`
+    - `NI`
+    - `NL`
+    - `NO`
+    - `NP`
+    - `NR`
+    - `NU`
+    - `NZ`
+    - `OM`
+    - `PA`
+    - `PE`
+    - `PF`
+    - `PG`
+    - `PH`
+    - `PK`
+    - `PL`
+    - `PM`
+    - `PN`
+    - `PR`
+    - `PS`
+    - `PT`
+    - `PW`
+    - `PY`
+    - `QA`
+    - `RE`
+    - `RO`
+    - `RS`
+    - `RU`
+    - `RW`
+    - `SA`
+    - `SB`
+    - `SC`
+    - `SD`
+    - `SE`
+    - `SG`
+    - `SH`
+    - `SI`
+    - `SJ`
+    - `SK`
+    - `SL`
+    - `SM`
+    - `SN`
+    - `SO`
+    - `SR`
+    - `SS`
+    - `ST`
+    - `SV`
+    - `SX`
+    - `SY`
+    - `SZ`
+    - `TC`
+    - `TD`
+    - `TF`
+    - `TG`
+    - `TH`
+    - `TJ`
+    - `TK`
+    - `TL`
+    - `TM`
+    - `TN`
+    - `TO`
+    - `TR`
+    - `TT`
+    - `TV`
+    - `TW`
+    - `TZ`
+    - `UA`
+    - `UG`
+    - `UM`
+    - `US`
+    - `UY`
+    - `UZ`
+    - `VA`
+    - `VC`
+    - `VE`
+    - `VG`
+    - `VI`
+    - `VN`
+    - `VU`
+    - `WF`
+    - `WS`
+    - `YE`
+    - `YT`
+    - `ZA`
+    - `ZM`
+    - `ZW`
 - **required**: `false`
 - **description**: The ISO 3166-1 alpha-2 country code for a country.
 - **usage**:<br><br>
@@ -1914,7 +2163,8 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         number: 12053
         number-volumes: 7
         pages: 78
-        patent-states: "Canada"
+        patent-states: 
+          - "Canada"
         pmcid: "PMC3134971"
         publisher: 
           name: "Open Access Publishing House"
@@ -2628,7 +2878,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.languages`
 
-- **type**: Array of [ISO 639](https://en.wikipedia.org/wiki/ISO_639) `string`s with 2 or 3 characters and pattern [`^[a-z]{2,3}$`](https://regex101.com/library/aMqWLH)
+- **type**: Array of [ISO 639](https://en.wikipedia.org/wiki/ISO_639) `string` with 2 or 3 characters and pattern [`^[a-z]{2,3}$`](https://regex101.com/library/aMqWLH)
 - **required**: `false`
 - **description**: The language identifier(s) of the work according to ISO 639 language strings.
 - **usage**:<br><br>
@@ -2681,239 +2931,267 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `definitions.reference.license-url`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
 - **description**: The URL of the license text under which the work is licensed (only for non-standard licenses not included in the SPDX License List).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      license-url: ...
+      license-url: "https://obscure-licenses.com?id=1234"
       type: generic
     ```
     ```yaml
     references:
-      - license-url: ...
+      - license-url: "https://obscure-licenses.com?id=1234"
         type: generic
     ```
 
 ### `definitions.reference.loc-end`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work ends.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      loc-end: ...
+      loc-end: 42
       type: generic
     ```
     ```yaml
     references:
-      - loc-end: ...
+      - loc-end: 42
         type: generic
     ```
 
 ### `definitions.reference.loc-start`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work starts.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      loc-start: ...
+      loc-start: 21
       type: generic
     ```
     ```yaml
     references:
-      - loc-start: ...
+      - loc-start: 21
         type: generic
     ```
 
 ### `definitions.reference.location`
 
-- **type**: `...`
+- **type**: [`definitions.entity`](#definitionsentity)
 - **required**: `false`
 - **description**: The location of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      location: ...
+      location:
+        name: "Library of the Unseen University"
       type: generic
     ```
     ```yaml
     references:
-      - location: ...
+      - location:
+          name: "Library of the Unseen University"
         type: generic
     ```
 
 ### `definitions.reference.medium`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The medium of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      medium: ...
+      medium: "datasette"
       type: generic
     ```
     ```yaml
     references:
-      - medium: ...
+      - medium: "datasette"
         type: generic
     ```
 
 ### `definitions.reference.month`
 
-- **type**: `...`
+- **type**: `integer` in range `1-12`
 - **required**: `false`
 - **description**: The month in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      month: ...
+      month: 7
       type: generic
     ```
     ```yaml
     references:
-      - month: ...
+      - month: 7
         type: generic
     ```
 
 ### `definitions.reference.nihmsid`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The NIHMSID of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      nihmsid: ...
+      nihmsid: "NIHMS236863"
       type: generic
     ```
     ```yaml
     references:
-      - nihmsid: ...
+      - nihmsid: "NIHMS236863"
         type: generic
     ```
 
 ### `definitions.reference.notes`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: Notes pertaining to the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      notes: ...
+      notes: "Excellent reference! TODO Read for thesis."
       type: generic
     ```
     ```yaml
     references:
-      - notes: ...
+      - notes: "Excellent reference! TODO Read for thesis."
         type: generic
     ```
 
 ### `definitions.reference.number`
 
-- **type**: `...`
+- **type**: `string` or `number`
 - **required**: `false`
 - **description**: The accession number for a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      number: ...
+      number: "005.1-ABC"
       type: generic
     ```
     ```yaml
     references:
-      - number: ...
+      - number: "005.1-ABC"
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      number: 1234567
+      type: generic
+    ```
+    ```yaml
+    references:
+      - number: 1234567
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      number: 1.4
+      type: generic
+    ```
+    ```yaml
+    references:
+      - number: 1.4
         type: generic
     ```
 
 ### `definitions.reference.number-volumes`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
 - **description**: The number of volumes making up the collection in which the work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      number-volumes: ...
+      number-volumes: 4
       type: generic
     ```
     ```yaml
     references:
-      - number-volumes: ...
+      - number-volumes: 4
         type: generic
     ```
 
 ### `definitions.reference.pages`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
 - **description**: The number of pages of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      pages: ...
+      pages: 123
       type: generic
     ```
     ```yaml
     references:
-      - pages: ...
+      - pages: 123
         type: generic
     ```
 
 ### `definitions.reference.patent-states`
 
-- **type**: `...`
+- **type**: Array of nonemtpy `string`
 - **required**: `false`
 - **description**: The states for which a patent is granted.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      patent-states: ...
+      patent-states:
+        - "Canada"
+        - "IL"
       type: generic
     ```
     ```yaml
     references:
-      - patent-states: ...
+      - patent-states:
+          - "Canada"
+          - "IL"
         type: generic
     ```
 
 ### `definitions.reference.pmcid`
 
-- **type**: `...`
+- **type**: `string` with pattern [`^PMC[0-9]{7}$`](https://regex101.com/library/EsU1QH)
 - **required**: `false`
 - **description**: The PMCID of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      pmcid: ...
+      pmcid: "PMC3134971"
       type: generic
     ```
     ```yaml
     references:
-      - pmcid: ...
+      - pmcid: "PMC3134971"
         type: generic
     ```
 
 ### `definitions.reference.publisher`
 
-- **type**: `...`
+- **type**: [`definitions.entity`](#definitionsentity)
 - **required**: `false`
 - **description**: The publisher who has published the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      publisher: ...
+      publisher:
+        name: "Open Access Publishing House"
       type: generic
     ```
     ```yaml
     references:
-      - publisher: ...
+      - publisher:
+          name: "Open Access Publishing House"
         type: generic
     ```
 
@@ -2925,97 +3203,123 @@ licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      recipients: ...
+      recipients:
+        - name: "Recipient entity of personal communication"
+        - family-names: Recipient
+          given-names: Communication
       type: generic
     ```
     ```yaml
     references:
-      - recipients: ...
+      - recipients:
+          - name: "Recipient entity of personal communication"
+          - family-names: Recipient
+            given-names: Communication
         type: generic
     ```
 
 ### `definitions.reference.repository`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
 - **description**: The URL of the work in a repository (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      repository: ...
+      repository: "https://ascl.net/2105.013"
       type: generic
     ```
     ```yaml
     references:
-      - repository: ...
+      - repository: "https://ascl.net/2105.013"
         type: generic
     ```
 
 ### `definitions.reference.repository-artifact`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
 - **description**: The URL of the work in a build artifact/binary repository.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      repository-artifact: ...
+      repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
       type: generic
     ```
     ```yaml
     references:
-      - repository-artifact: ...
+      - repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
         type: generic
     ```
 
 ### `definitions.reference.repository-code`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
 - **description**: The URL of the work in a source code repository.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      repository-code: ...
+      repository-code: "https://github.com/citation-file-format/my-research-software"
       type: generic
     ```
     ```yaml
     references:
-      - repository-code: ...
+      - repository-code: "https://github.com/citation-file-format/my-research-software"
         type: generic
     ```
 
 ### `definitions.reference.scope`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The scope of the reference, e.g., the section of the work it adheres to.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      scope: ...
+      scope: "Supplement 2: Additional material"
       type: generic
     ```
     ```yaml
     references:
-      - scope: ...
+      - scope: "Supplement 2: Additional material"
         type: generic
     ```
 
 ### `definitions.reference.section`
 
-- **type**: `...`
+- **type**: `string` or `number`
 - **required**: `false`
 - **description**: The section of a work that is referenced.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      section: ...
+      section: "Section 7: Software citation"
       type: generic
     ```
     ```yaml
     references:
-      - section: ...
+      - section: "Section 7: Software citation"
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      section: 7
+      type: generic
+    ```
+    ```yaml
+    references:
+      - section: 7
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      section: 7.1
+      type: generic
+    ```
+    ```yaml
+    references:
+      - section: 7.1
         type: generic
     ```
 
@@ -3027,97 +3331,109 @@ licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      senders: ...
+      senders:
+        - name: "Sender entity of personal communication"
+        - family-names: Sender
+          given-names: Communication
       type: generic
     ```
     ```yaml
     references:
-      - senders: ...
+      - senders:
+          - name: "Sender entity of personal communication"
+          - family-names: Sender
+            given-names: Communication
         type: generic
     ```
 
 ### `definitions.reference.start`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
 - **description**: The start page of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      start: ...
+      start: 42
       type: generic
     ```
     ```yaml
     references:
-      - start: ...
+      - start: 42
         type: generic
     ```
 
 ### `definitions.reference.status`
 
-- **type**: `...`
+- **type**: `enum` with values:
+    - `abstract`
+    - `advance-online`
+    - `in-preparation`
+    - `in-press`
+    - `preprint`
+    - `submitted`
 - **required**: `false`
 - **description**: The publication status of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      status: ...
+      status: "submitted"
       type: generic
     ```
     ```yaml
     references:
-      - status: ...
+      - status: "submitted"
         type: generic
     ```
 
 ### `definitions.reference.term`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The term being referenced if the work is a dictionary or encyclopedia.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      term: ...
+      term: "Citation"
       type: generic
     ```
     ```yaml
     references:
-      - term: ...
+      - term: "Citation"
         type: generic
     ```
 
 ### `definitions.reference.thesis-type`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The type of the thesis that is the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      thesis-type: ...
+      thesis-type: "PhD thesis"
       type: generic
     ```
     ```yaml
     references:
-      - thesis-type: ...
+      - thesis-type: "PhD thesis"
         type: generic
     ```
 
 ### `definitions.reference.title`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `true`
 - **description**: The title of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      title: ...
+      title: "Towards better software citation"
       type: generic
     ```
     ```yaml
     references:
-      - title: ...
+      - title: "Towards better software citation"
         type: generic
     ```
 
@@ -3129,18 +3445,71 @@ licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      translators: ...
+      translators:
+        - name: "Research Translators Ltd."
+        - family-names: Lator
+          given-names: Trans
       type: generic
     ```
     ```yaml
     references:
-      - translators: ...
+      - translators:
+          - name: "Research Translators Ltd."
+          - family-names: Lator
+            given-names: Trans
         type: generic
     ```
 
 ### `definitions.reference.type`
 
-- **type**: `...`
+- **type**: `enum` with values:
+    - `art`
+    - `article`
+    - `audiovisual`
+    - `bill`
+    - `blog`
+    - `book`
+    - `catalogue`
+    - `conference-paper`
+    - `conference`
+    - `data`
+    - `database`
+    - `dictionary`
+    - `edited-work`
+    - `encyclopedia`
+    - `film-broadcast`
+    - `generic`
+    - `government-document`
+    - `grant`
+    - `hearing`
+    - `historical-work`
+    - `legal-case`
+    - `legal-rule`
+    - `magazine-article`
+    - `manual`
+    - `map`
+    - `multimedia`
+    - `music`
+    - `newspaper-article`
+    - `pamphlet`
+    - `patent`
+    - `personal-communication`
+    - `proceedings`
+    - `report`
+    - `serial`
+    - `slides`
+    - `software-code`
+    - `software-container`
+    - `software-executable`
+    - `software-virtual-machine`
+    - `software`
+    - `sound-recording`
+    - `standard`
+    - `statute`
+    - `thesis`
+    - `unpublished`
+    - `video`
+    - `website`
 - **required**: `true`
 - **description**: The type of the work.
 - **usage**:<br><br>
@@ -3155,104 +3524,104 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `definitions.reference.url`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
 - **description**: The URL of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      url: ...
+      url: "https://citation-file-format.github.io/"
     ```
     ```yaml
     references:
       - type: generic
-        url: ...
+        url: "https://citation-file-format.github.io/"
     ```
 
 ### `definitions.reference.version`
 
-- **type**: `...`
+- **type**: [`definitions.version`](#definitionsversion)
 - **required**: `false`
 - **description**: The version of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      version: ...
+      version: "0.3.12"
     ```
     ```yaml
     references:
       - type: generic
-        version: ...
+        version: "0.3.12"
     ```
 
 ### `definitions.reference.volume`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
 - **description**: The volume of the periodical in which a work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      volume: ...
+      volume: 5
     ```
     ```yaml
     references:
       - type: generic
-        volume: ...
+        volume: 5
     ```
 
 ### `definitions.reference.volume-title`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The title of the volume in which the work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      volume-title: ...
+      volume-title: "Volume II: How it went on"
     ```
     ```yaml
     references:
       - type: generic
-        volume-title: ...
+        volume-title: "Volume II: How it went on"
     ```
 
 ### `definitions.reference.year`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
 - **description**: The year in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      year: ...
+      year: 2021
     ```
     ```yaml
     references:
       - type: generic
-        year: ...
+        year: 2021
     ```
 
 ### `definitions.reference.year-original`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
 - **description**: The year of the original publication.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      year-original: ...
+      year-original: 1978
     ```
     ```yaml
     references:
       - type: generic
-        year-original: ...
+        year-original: 1978
     ```
 
 ### `definitions.region`
