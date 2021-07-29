@@ -380,6 +380,7 @@
             "type": "string"
         },
         "identifier": {
+            "description": "An identifier for a work.",
             "anyOf": [
                 {
                     "additionalProperties": false,
