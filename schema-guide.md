@@ -10,7 +10,7 @@ Valid Citation File Format files
 
 ### Minimal example
 
-A minimal example of a valid `CITATION.cff` file could look like this:
+A minimal example of a valid `CITATION.cff` file, that contains only the required fields, could look like this:
 
 ```yaml
 authors:
