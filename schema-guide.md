@@ -249,7 +249,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `identifiers`
 
-- **type**: array of [`definitions.identifier`](#definitionsidentifier) objects.
+- **type**: Array of [`definitions.identifier`](#definitionsidentifier) objects.
 - **required**: `false`
 - **description**: The identifiers of the software or dataset.
 - **usage**:<br><br>
