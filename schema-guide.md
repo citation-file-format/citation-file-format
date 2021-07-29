@@ -191,8 +191,8 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 - **usage**:<br><br>
     ```yaml
     contact:
-      - affiliation: "Humboldt-Universität zu Berlin"
-        email: "mail@sdruskat.net"
+      - affiliation: "German Aerospace Center (DLR)"
+        email: "mail@research-project.org"
         family-names: Druskat
         given-names: Stephan
     ```
@@ -203,7 +203,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
     ```
     ```yaml
     contact:
-      - email: "mail@sdruskat.net"
+      - email: "mail@research-project.org"
         given-names: Stephan
         family-names: Druskat
       - email: "mail@research-project.org"
@@ -677,7 +677,7 @@ An entity can represent different types of entities, such as a team, an institut
         country: "DE"
         date-end: 2018-07-27
         date-start: 2021-07-27
-        email: "team@research-software.org"
+        email: "team@research-project.org"
         fax: +12-3456-7890
         location: "Lovelace Building, room 0.42"
         orcid: "https://orcid.org/0000-0003-4925-7248"
@@ -699,21 +699,21 @@ An entity can represent different types of entities, such as a team, an institut
         authors:
           - name: "The Research Software Project team"
         conference:
-          - name: "RC21 - Research Conference 2021"
+          name: "RC21 - Research Conference 2021"
         contact:
           - name: "Customer Support"
         database-provider:
-          - name: "Database Provider"
+          name: "Database Provider"
         editors:
           - name: "The Publication Editing Team"
         editors-series:
           - name: "The Publication Series Editing Team"
         institution:
-          - name: "Department of Research, Random University"
+          name: "Department of Research, Random University"
         location:
-          - name: "Museum of Postmodern Art"
+          name: "Museum of Postmodern Art"
         publisher:
-          - name: "Open Access Publishing House"
+          name: "Open Access Publishing House"
         recipients:
           - name: "The recipient institution of a personal communication"
         senders:
@@ -783,8 +783,8 @@ An entity can represent different types of entities, such as a team, an institut
         authors:
           - name: The Research Software Project
         conference:
-          - name: "Research Conference 2021"
-            date-end: 2021-07-27
+          name: "Research Conference 2021"
+          date-end: 2021-07-27
     ```
 
 ### `definitions.entity.date-start`
@@ -800,8 +800,8 @@ An entity can represent different types of entities, such as a team, an institut
         authors:
           - name: The Research Software Project
         conference:
-          - name: "Research Conference 2021"
-            date-start: 2021-07-27
+          name: "Research Conference 2021"
+          date-start: 2021-07-27
     ```
 
 ### `definitions.entity.email`
@@ -813,7 +813,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     authors:
       - name: The Research Software Project
-        email: "team@research-software.org"
+        email: "team@research-project.org"
     ```
 
 ### `definitions.entity.fax`
@@ -1529,13 +1529,13 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         alias: "sdruskat"
         city: "Berlin"
         country: "DE"
-        email: "sdruskat@research-software.org"
+        email: "sdruskat@research-project.org"
         fax: +12-3456-7890
         orcid: "https://orcid.org/0000-0003-4925-7248"
         post-code: 90210
         region: "Renfrewshire"
         tel: +12-345-6789098
-        website: https://sdruskat.net
+        website: https://research-project.org
       ```
 
 ### `definitions.person.address`
@@ -1613,7 +1613,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     authors:
       - family-names: Druskat
         given-names: Stephan
-        email: "mail@research-software.org"
+        email: "mail@research-project.org"
     ```
 
 ### `definitions.person.family-names`
@@ -1747,7 +1747,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     authors:
       - family-names: Druskat
         given-names: Stephan
-        website: https://sdruskat.net
+        website: https://research-project.org
     ```
 
 ### `definitions.post-code`
@@ -1837,57 +1837,87 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 - **usage**:<br><br>
     ```yaml
     references: 
-      - abbreviation: 
-        abstract: 
+      - abbreviation: "NP"
+        abstract: "This is a non-sensical exmaple reference to show how the many different fields in a reference object can be used."
         authors: 
-        collection-doi: 
-        collection-title: 
-        collection-type: 
-        commit: 
+          - name: The Research Software Project
+        collection-doi: 10.5281/zenodo.1003149
+        collection-title: "Proceedings of the Research Conference 2021"
+        collection-type: "proceedings"
+        commit: "16192bf05e99bcb35d5c3e085047807b5720fafc"
         conference: 
+          name: "Research Conference 2021"
         contact: 
-        copyright: 
-        data-type: 
+          - name: "The RC21 Organizing Committee"
+        copyright: "© 2021 The Research Software Project team"
+        data-type: "YAML"
         database-provider: 
-        database: 
-        date-accessed: 
-        date-downloaded: 
-        date-published: 
-        date-released: 
-        department: 
-        doi: 
-        edition: 
+          name: "Research Databases Ltd."
+        database: "Research Database"
+        date-accessed: "2021-07-27"
+        date-downloaded: "2021-07-27"
+        date-published: "2021-07-26"
+        date-released: "2021-07-26"
+        department: "Department of Hard Science Fiction"
+        doi: "10.5281/zenodo.4813122"
+        edition: "2nd abdridged edition"
         editors: 
+          - family-names: Inchief
+            given-names: Editor
+          - name: The RCProc Editorial Team
         editors-series: 
-        end: 
-        entry: 
-        filename: 
-        format: 
+          - family-names: Editor
+            given-names: Series
+          - name: The Series Editors
+        end: 42
+        entry: "Citation <n. 1>"
+        filename: "CITATION.cff"
+        format: "Citation File Format (CFF)"
         identifiers: 
+          - type: doi
+            value: 10.5281/zenodo.1003149
+            description: The concept DOI of the work.
+          - type: doi
+            value: 10.5281/zenodo.4813122
+            description: The versioned DOI for version 1.1.0 of the work.
+          - type: swh
+            value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+            description: The Software Heritage identifier for version 1.1.0 of the work.
+          - type: url
+            value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+            description: The GitHub release URL of tag 1.1.0.
         institution: 
-        isbn: 
-        issn: 
-        issue: 
-        issue-date: 
-        issue-title: 
-        journal: 
-        keywords: 
-        languages: 
-        license: 
-        license-url: 
-        loc-end: 
-        loc-start: 
+          name: "University of Arcadia"
+        isbn: "9781603095075"
+        issn: "2475-9066"
+        issue: 42
+        issue-date: "November/December 2021"
+        issue-title: "Special Issue: Software Citation"
+        journal: "Journal of Open Source Software"
+        keywords:
+          - software citation
+          - "citation file format"
+          - research
+        languages:
+          - "en"
+          - "haw"
+        license: Apache-2.0
+        license-url: "https://obscure-licenses.com?id=1234"
+        loc-end: 42
+        loc-start: 21
         location: 
-        medium: 
-        month: 
-        nihmsid: 
-        notes: 
-        number: 
-        number-volumes: 
-        pages: 
-        patent-states: 
-        pmcid: 
+          name: "Library of the Unseen University"
+        medium: "datasette"
+        month: 7
+        nihmsid: "NIHMS236863"
+        notes: "Excellent reference! TODO Read for thesis."
+        number: 12053
+        number-volumes: 7
+        pages: 78
+        patent-states: "Canada"
+        pmcid: "PMC3134971"
         publisher: 
+          name: "Open Access Publishing House"
         recipients: 
         repository: 
         repository-artifact: 
