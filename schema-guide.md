@@ -97,9 +97,9 @@ preferred-citation:
 
 The next sections explain each key in more detail.
 
-## root-level keys
+## Fields
 
-This section aims to describe what keys are valid at the root level of a `CITATION.cff` file.
+This section describes the valid fields in a `CITATION.cff` file.
 
 ### Index
 
@@ -999,7 +999,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 - **type**: [`definitions.city`](#definitionscity).
 - **required**: `false`
-- **description**: The entity's city..
+- **description**: The entity's city.
 - **usage**:<br><br>
     ```yaml
     authors:
