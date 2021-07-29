@@ -598,9 +598,6 @@ authors:
     date-released: "2020-01-31"
     ```
     ```yaml
-    date-released: 2020-01-31
-    ```
-    ```yaml
     references:
       - date-accessed: "2020-01-31"
         type: generic
