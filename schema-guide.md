@@ -127,7 +127,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 
 ### `abstract`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: A description of the software or dataset.
 - **usage**:<br><br>
@@ -159,7 +159,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 
 ### `cff-version`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `true`
 - **description**: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
 - **usage**:<br><br>
@@ -172,7 +172,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 
 ### `commit`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The commit hash or revision number of the software version.
 - **usage**:<br><br>
@@ -252,7 +252,49 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 - **type**: array of [`definitions.identifier`](#definitionsidentifier) objects.
 - **required**: `false`
 - **description**: The identifiers of the software or dataset.
-- **usage**: see [`definitions.identifier`](#definitionsidentifier).
+- **usage**:<br><br>
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003149
+        description: The concept DOI of the work.
+    ```
+
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: The versioned DOI for version 1.1.0 of the work.
+    ```
+
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003149
+        description: The concept DOI of the work.
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: The versioned DOI for version 1.1.0 of the work.
+    ```
+
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003149
+        description: The concept DOI of the work.
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: The versioned DOI for version 1.1.0 of the work.
+      - type: swh
+        value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+        description: The Software Heritage identifier for version 1.1.0 of the work.
+      - type: url
+        value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+        description: The GitHub release URL of tag 1.1.0.
+      - type: url
+        value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
+        description: The GitHub release URL of the commit tagged with 1.1.0.
+    ```
 
 ### `keywords`
 
@@ -300,7 +342,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `message`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `true`
 - **default**: `If you use this software, please cite it using the metadata from this file.`
 - **description**: A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
@@ -406,7 +448,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `title`
 
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `true`
 - **description**: The name of the software or dataset.
 - **usage**:<br><br>
@@ -444,7 +486,32 @@ primary principle, "Importance", when others cite this work.
 
 ## Definitions
 
-TODO explain why we use definitions
+Some values in CFF files are valid in different fields.
+For example, `repository-code`, `url` and `license-url` all take URLs as values.
+
+The schema therefore has [*definitions*](https://json-schema.org/understanding-json-schema/structuring.html#definitions)
+of smaller subschemas, that can be reused in the schema from the respective field, 
+instead of having to duplicate them.
+For example, there is one definition for a valid URL value ([`definitions.url`](#definitionsurl)),
+that is being referenced from `repository-code`, `url` and `license-url`.
+
+**Note:** `definitions` and its subkeys like `definitions.alias` or `definitions.entity.alias` should not be used as fields in `CITATION.cff` files:
+```yaml
+# incorrect
+authors: 
+  - definitions.alias: sdruskat
+```
+```yaml
+# incorrect
+authors: 
+  - definitions: 
+      alias: sdruskat
+```
+```yaml
+# correct
+authors: 
+  - alias: sdruskat
+```
 
 ### Index
 
@@ -474,8 +541,6 @@ TODO explain why we use definitions
 
 ### `definitions.address`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: Nonempty `string`
 - **required**: `false`
 - **description**: An address.
@@ -484,8 +549,6 @@ TODO explain why we use definitions
     ```
 
 ### `definitions.alias`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: Nonempty `string`
 - **required**: `false`
@@ -496,8 +559,6 @@ TODO explain why we use definitions
 
 ### `definitions.city`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: Nonempty `string`
 - **required**: `false`
 - **description**: A city.
@@ -507,8 +568,6 @@ TODO explain why we use definitions
 
 ### `definitions.commit`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
@@ -517,8 +576,6 @@ TODO explain why we use definitions
     ```
 
 ### `definitions.country`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `enum`
 - **required**: `false`
@@ -533,11 +590,9 @@ TODO explain why we use definitions
 
 ### `definitions.date`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: A date. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
+- **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes.
 - **usage**:<br><br>
     ```yaml
     date-released: "2020-01-31"
@@ -568,19 +623,12 @@ TODO explain why we use definitions
         date-start: "2020-01-31"
         type: conference
     ```
-    ```yaml
-    references:
-      - issue-date: "2020-02-02"
-        type: article
-    ```
 
 Note to tool implementers: it is necessary to cast YAML date objects to string objects when validating against the schema.
 
 ### `definitions.doi`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 - **usage**:<br><br>
@@ -590,9 +638,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.email`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: An email address
 - **usage**:<br><br>
@@ -600,8 +646,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.entity`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `object` with the following properties:
     - [`address`](#definitionsentityaddress)
@@ -620,93 +664,147 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     - [`tel`](#definitionsentitytel)
     - [`website`](#definitionsentitywebsite)
 - **required**: `false`
-- **description**: An entity.
+- **description**: An entity.  
+Entities are used in fields that can also take [`definitions.person`](#definitionsperson) objects.
+An entity can represent different types of entities, such as a team, an institution, a company, a conference, etc.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project team"
+    ```
+
+    ```yaml
+    contact:
+      - name: "The Research Software Project team"
+    ```
+
+    ```yaml
+    references:
+      - type: generic
+        title: "A reference showing different fields that take entity objects"
+        authors:
+          - name: "The Research Software Project team"
+        conference:
+          - name: "RC21 - Research Conference 2021"
+        contact:
+          - name: "Customer Support"
+        database-provider:
+          - name: "Database Provider"
+        editors:
+          - name: "The Publication Editing Team"
+        editors-series:
+          - name: "The Publication Series Editing Team"
+        institution:
+          - name: "Department of Research, Random University"
+        location:
+          - name: "Museum of Postmodern Art"
+        publisher:
+          - name: "Open Access Publishing House"
+        recipients:
+          - name: "The recipient institution of a personal communication"
+        senders:
+          - name: "The team sending a personal communication"
+        translators:
+          - name: "Research Translators, Ltd."
     ```
 
 ### `definitions.entity.address`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.address`](#definitionsaddress).
+- **type**: [`definitions.address`](#definitionsaddress).
 - **required**: `false`
 - **description**: The entity's address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        address: "742 Evergreen Terrace"
     ```
 
 ### `definitions.entity.alias`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.alias`](#definitionsalias).
+- **type**: [`definitions.alias`](#definitionsalias).
 - **required**: `false`
 - **description**: The entity's alias.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: National Aeronautics and Space Administration
+        alias: "NASA"
     ```
 
 ### `definitions.entity.city`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.city`](#definitionscity).
+- **type**: [`definitions.city`](#definitionscity).
 - **required**: `false`
 - **description**: The entity's city..
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        city: "Berlin"
     ```
 
 ### `definitions.entity.country`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.country`](#definitionscountry).
+- **type**: [`definitions.country`](#definitionscountry).
 - **required**: `false`
 - **description**: The entity's country.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        country: "DE"
     ```
 
 ### `definitions.entity.date-end`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.date`](#definitionsdate).
+- **type**: [`definitions.date`](#definitionsdate).
 - **required**: `false`
 - **description**: The entity's ending date, e.g. when the entity is a conference.
 - **usage**:<br><br>
     ```yaml
+    references:
+      - type: conference-paper
+        title: "Conference Paper"
+        authors:
+          - name: The Research Software Project
+        conference:
+          - name: "Research Conference 2021"
+            date-end: 2021-07-27
     ```
 
 ### `definitions.entity.date-start`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.date`](#definitionsdate).
+- **type**: [`definitions.date`](#definitionsdate).
 - **required**: `false`
 - **description**: The entity's starting date, e.g. when the entity is a conference.
 - **usage**:<br><br>
     ```yaml
+    references:
+      - type: conference-paper
+        title: "Conference Paper"
+        authors:
+          - name: The Research Software Project
+        conference:
+          - name: "Research Conference 2021"
+            date-start: 2021-07-27
     ```
 
 ### `definitions.entity.email`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.email`](#definitionsemail).
+- **type**: [`definitions.email`](#definitionsemail).
 - **required**: `false`
 - **description**: The entity's email address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        email: "team@research-software.org"
     ```
 
 ### `definitions.entity.fax`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.fax`](#definitionsfax).
+- **type**: [`definitions.fax`](#definitionsfax).
 - **required**: `false`
 - **description**: The entity's fax number.
 - **usage**:<br><br>
@@ -718,64 +816,72 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.entity.location`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The entity's location.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        location: "Lovelace Building, room 0.42"
     ```
 
 ### `definitions.entity.name`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `true`
 - **description**: The entity's name.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
     ```
 
 ### `definitions.entity.orcid`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.orcid`](#definitionsorcid).
+- **type**: [`definitions.orcid`](#definitionsorcid).
 - **required**: `false`
 - **description**: The entity's orcid.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        orcid: "https://orcid.org/0000-0003-4925-7248"
     ```
 
 ### `definitions.entity.post-code`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.post-code`](#definitionspost-code).
+- **type**: [`definitions.post-code`](#definitionspost-code).
 - **required**: `false`
 - **description**: The entity's post code.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        post-code: 90210
+    ```
+
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        post-code: "90210"
     ```
 
 ### `definitions.entity.region`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.region`](#definitionsregion).
+- **type**: [`definitions.region`](#definitionsregion).
 - **required**: `false`
 - **description**: The entity's region.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        region: "Renfrewshire"
     ```
 
 ### `definitions.entity.tel`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.tel`](#definitionstel).
+- **type**: [`definitions.tel`](#definitionstel).
 - **required**: `false`
 - **description**: The entity's telephone number.
 - **usage**:<br><br>
@@ -787,9 +893,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.entity.website`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: See [`definitions.url`](#definitionsurl).
+- **type**: [`definitions.url`](#definitionsurl).
 - **required**: `false`
 - **description**: The entity's website.
 - **usage**:<br><br>
@@ -801,9 +905,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.fax`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: A fax number.
 - **usage**:<br><br>
@@ -820,8 +922,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.identifier`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -869,8 +969,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.identifier-description`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -879,8 +977,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.license`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: (array of) [`definitions.license-enum`](#definitions.license-enum) objects.
 - **required**: `false`
@@ -896,8 +992,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.license-enum`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `enum` with values:
     - `0BSD`
@@ -1373,8 +1467,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.orcid`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -1383,8 +1475,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.person`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `object` with the following properties:
     - [`address`](#definitionspersonaddress)
@@ -1411,8 +1501,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.address`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: [`definitions.address`](#definitionsaddress)
 - **required**: `false`
 - **description**: The person's address.
@@ -1422,9 +1510,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.affiliation`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's affiliation.
 - **usage**:<br><br>
@@ -1432,8 +1518,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.person.alias`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: [`definitions.alias`](#definitionsalias)
 - **required**: `false`
@@ -1444,8 +1528,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.city`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: [`definitions.city`](#definitionscity)
 - **required**: `false`
 - **description**: The person's city.
@@ -1454,8 +1536,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.person.country`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: [`definitions.country`](#definitioncountry)
 - **required**: `false`
@@ -1466,8 +1546,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.email`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: [`definitions.email`](#definitionsemail)
 - **required**: `false`
 - **description**: The person's email address.
@@ -1477,9 +1555,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.family-names`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's family names.
 - **usage**:<br><br>
@@ -1487,8 +1563,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.person.fax`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: [`definitions.fax`](#definitionsfax)
 - **required**: `false`
@@ -1503,9 +1577,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.given-names`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's given names.
 - **usage**:<br><br>
@@ -1514,9 +1586,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.name-particle`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 - **usage**:<br><br>
@@ -1525,9 +1595,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.name-suffix`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 - **usage**:<br><br>
@@ -1535,8 +1603,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.person.orcid`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: [`definitions.orcid`](#definitionsorcid)
 - **required**: `false`
@@ -1547,8 +1613,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.post-code`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: [`definitions.post-code`](#definitionspost-code)
 - **required**: `false`
 - **description**: The person's post code.
@@ -1558,8 +1622,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.region`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: [`definitions.region`](#definitionsregion)
 - **required**: `false`
 - **description**: The person's region.
@@ -1568,8 +1630,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.person.tel`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: [`definitions.tel`](#definitionstel)
 - **required**: `false`
@@ -1584,8 +1644,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.person.website`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
 - **description**: The person's website.
@@ -1599,8 +1657,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.post-code`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: A post code.
@@ -1609,8 +1665,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `object` with the following properties:
     - [`abbreviation`](#definitionsreferenceabbreviation)
@@ -1691,9 +1745,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.abbreviation`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The abbreviation of a work.
 - **usage**:<br><br>
@@ -1710,8 +1762,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.abstract`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -1733,8 +1783,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.authors`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `true`
 - **description**: ...
@@ -1751,8 +1799,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.collection-doi`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -1771,8 +1817,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.collection-title`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -1789,8 +1833,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.collection-type`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -1809,8 +1851,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.commit`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -1827,8 +1867,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.conference`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -1847,8 +1885,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.contact`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -1865,8 +1901,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.copyright`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -1885,8 +1919,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.data-type`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -1903,8 +1935,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.database-provider`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -1923,8 +1953,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.database`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -1941,8 +1969,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.date-accessed`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -1961,8 +1987,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.date-downloaded`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -1979,8 +2003,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.date-published`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -1999,8 +2021,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.date-released`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2017,8 +2037,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.department`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2037,8 +2055,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.doi`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2055,8 +2071,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.edition`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2075,8 +2089,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.editors`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2093,8 +2105,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.editors-series`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2113,8 +2123,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.end`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2131,8 +2139,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.entry`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2151,8 +2157,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.filename`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2169,8 +2173,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.format`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2189,8 +2191,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.identifiers`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2207,8 +2207,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.institution`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2227,8 +2225,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.isbn`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2245,8 +2241,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.issn`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2265,8 +2259,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.issue`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2283,8 +2275,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.issue-date`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2303,8 +2293,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.issue-title`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2321,8 +2309,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.journal`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2341,8 +2327,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.keywords`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2359,8 +2343,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.languages`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2379,8 +2361,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.license`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2397,8 +2377,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.license-url`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2417,8 +2395,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.loc-end`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2435,8 +2411,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.loc-start`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2455,8 +2429,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.location`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2473,8 +2445,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.medium`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2493,8 +2463,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.month`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2511,8 +2479,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.nihmsid`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2531,8 +2497,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.notes`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2549,8 +2513,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.number`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2569,8 +2531,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.number-volumes`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2587,8 +2547,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.pages`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2607,8 +2565,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.patent-states`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2625,8 +2581,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.pmcid`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2645,8 +2599,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.publisher`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2663,8 +2615,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.recipients`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2683,8 +2633,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.repository`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2701,8 +2649,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.repository-artifact`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2721,8 +2667,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.repository-code`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2739,8 +2683,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.scope`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2759,8 +2701,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.section`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2777,8 +2717,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.senders`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2797,8 +2735,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.start`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2815,8 +2751,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.status`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2835,8 +2769,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.term`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2853,8 +2785,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.thesis-type`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2873,8 +2803,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.title`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `true`
 - **description**: ...
@@ -2891,8 +2819,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.translators`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2911,8 +2837,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.type`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `true`
 - **description**: ...
@@ -2927,8 +2851,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.url`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2947,8 +2869,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.version`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -2965,8 +2885,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.volume`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -2985,8 +2903,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.volume-title`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -3003,8 +2919,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.reference.year`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -3023,8 +2937,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.reference.year-original`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -3042,8 +2954,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.region`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
 - **type**: `...`
 - **required**: `false`
 - **description**: ...
@@ -3052,8 +2962,6 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     ```
 
 ### `definitions.swh-identifier`
-
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
 
 - **type**: `...`
 - **required**: `false`
@@ -3064,9 +2972,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.tel`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: A telephone number.
 - **usage**:<br><br>
@@ -3084,9 +2990,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.url`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
     - `https://`
@@ -3111,9 +3015,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.version`
 
-`definitions` and its subkeys should not be used directly in `CITATION.cff` files.
-
-- **type**: `string` or `number`
+- **type**: Nonempty `string` or `number`
 - **required**: `false`
 - **description**: The version of a work.
 - **usage**: 
