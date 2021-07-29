@@ -2384,7 +2384,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 - **usage**:<br><br>
     ```yaml
     references:
-      - contact: ...
+      - contact:
         - name: "The RC21 Organizing Committee"
         - family-names: Druskat
           given-names: Stephan
@@ -3657,11 +3657,14 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `definitions.region`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: A region.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        region: "Renfrewshire"
     ```
 
 ### `definitions.swh-identifier`
