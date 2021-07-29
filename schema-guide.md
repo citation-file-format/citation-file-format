@@ -902,7 +902,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: An email address
+- **description**: An email address.
 - **usage**:<br><br>
     ```yaml
     authors:
