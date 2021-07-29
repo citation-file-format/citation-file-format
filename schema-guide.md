@@ -1120,7 +1120,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 - **type**: [`definitions.orcid`](#definitionsorcid).
 - **required**: `false`
-- **description**: The entity's orcid.
+- **description**: The entity's [ORCID](https://orcid.org) identifier.
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -1767,7 +1767,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 - **type**: `uri` with pattern [`https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}`](https://regex101.com/library/wvvVYE)
 - **required**: `false`
-- **description**: Identifier for an author, see https://orcid.org.
+- **description**: An [ORCID](https://orcid.org) identifier.
 - **usage**:<br><br>
     ```yaml
     authors:
