@@ -1918,25 +1918,35 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         pmcid: "PMC3134971"
         publisher: 
           name: "Open Access Publishing House"
-        recipients: 
-        repository: 
-        repository-artifact: 
-        repository-code: 
-        scope: 
-        section: 
-        senders: 
-        status: 
-        term: 
-        thesis-type: 
-        title: 
-        translators: 
-        type: 
-        url: 
-        version: 
-        volume: 
-        volume-title: 
-        year: 
-        year-original:
+        recipients:
+          - name: "Recipient entity of personal communication"
+          - family-names: Recipient
+            given-names: Communication
+        repository: "https://ascl.net/2105.013"
+        repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
+        repository-code: "https://github.com/citation-file-format/my-research-software"
+        scope: "Supplement 2: Additional material"
+        section: 7
+        senders:
+          - name: "Sender entity of personal communication"
+          - family-names: Sender
+            given-names: Communication
+        start: 17
+        status: "submitted"
+        term: "Citation"
+        thesis-type: "PhD thesis"
+        title: "Towards better software citation"
+        translators:
+          - name: "Research Translators Ltd."
+          - family-names: Lator
+            given-names: Trans
+        type: "conference-paper"
+        url: "https://citation-file-format.github.io/"
+        version: "0.3.12"
+        volume: 2
+        volume-title: "Volume II: How it went on"
+        year: 2021
+        year-original: 1978
     ```
 
 ### `definitions.reference.abbreviation`
@@ -1972,8 +1982,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```
     ```yaml
     references:
-      - 
-        abstract: "This work implements an algorithm that we use in our software. etc."
+      - abstract: "This work implements an algorithm that we use in our software. etc."
         type: generic
     ```
 
@@ -1985,13 +1994,19 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      authors: ...
+      authors:
+        - name: The Research Software Project team
+        - family-names: Druskat
+          given-names: Stephan
       type: generic
     ```
     ```yaml
     references:
-      - authors: ...
-        type: generic
+      - authors:
+        - name: The Research Software Project team
+        - family-names: Druskat
+          given-names: Stephan
+      type: generic
     ```
 
 ### `definitions.reference.collection-doi`
