@@ -1962,14 +1962,13 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```
     ```yaml
     references:
-      - 
-        abbreviation: DEF
+      - abbreviation: DEF
         type: generic
     ```
 
 ### `definitions.reference.abstract`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The abstract of the work.
     - If the work is a journal paper or other academic work: The abstract of the work.
@@ -1988,9 +1987,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.authors`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `true`
-- **description**: ...
+- **description**: The authors of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2013,7 +2012,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The DOI of a collection containing the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2030,7 +2029,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The title of a collection or proceedings.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2047,7 +2046,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The type of a collection.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2064,7 +2063,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2081,7 +2080,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The conference where the work was presented.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2096,9 +2095,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.contact`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The contact person, group, company, etc. for a work.
 - **usage**:<br><br>
     ```yaml
     references:
@@ -2115,7 +2114,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The copyright information pertaining to the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2132,7 +2131,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The data type of a data set.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2149,7 +2148,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The provider of the database where a work was accessed/is stored.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2166,7 +2165,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The name of the database where a work was accessed/is stored.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2183,7 +2182,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The date the work was accessed.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2200,7 +2199,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The date the work has been downloaded.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2217,7 +2216,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The date the work has been published.
 - **usage**:<br><br>
     ```yaml
     references:
@@ -2234,7 +2233,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The date the work has been released.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2251,7 +2250,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The department where a work has been produced.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2268,7 +2267,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The DOI of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2285,7 +2284,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The edition of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2300,9 +2299,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.editors`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The editor(s) of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2317,9 +2316,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.editors-series`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The editor(s) of a series in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2336,7 +2335,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The end page of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2353,7 +2352,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: An entry in the collection that constitutes the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2370,7 +2369,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The name of the electronic file containing the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2387,7 +2386,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The format in which a work is represented.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2404,7 +2403,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The identifier(s) of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2421,7 +2420,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The institution where a work has been produced or published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2438,7 +2437,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The ISBN of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2455,7 +2454,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The ISSN of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2472,7 +2471,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The issue of a periodical in which a work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2489,7 +2488,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The publication date of the issue of a periodical in which a work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2506,7 +2505,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The name of the issue of a periodical in which the work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2523,7 +2522,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The name of the journal/magazine/newspaper/periodical where the work was published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2540,7 +2539,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: Keywords pertaining to the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2557,7 +2556,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The language identifier(s) of the work according to ISO 639 language strings.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2574,7 +2573,8 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
+licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2591,7 +2591,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the license text under which the work is licensed (only for non-standard licenses not included in the SPDX License List).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2608,7 +2608,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The line of code in the file where the work ends.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2625,7 +2625,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The line of code in the file where the work starts.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2642,7 +2642,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The location of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2659,7 +2659,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The medium of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2676,7 +2676,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The month in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2693,7 +2693,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The NIHMSID of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2710,7 +2710,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: Notes pertaining to the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2727,7 +2727,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The accession number for a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2744,7 +2744,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The number of volumes making up the collection in which the work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2761,7 +2761,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The number of pages of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2778,7 +2778,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The states for which a patent is granted.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2795,7 +2795,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The PMCID of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2812,7 +2812,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The publisher who has published the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2827,9 +2827,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.recipients`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The recipient(s) of a personal communication.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2846,7 +2846,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the work in a repository (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2863,7 +2863,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the work in a build artifact/binary repository.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2880,7 +2880,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the work in a source code repository.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2897,7 +2897,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The scope of the reference, e.g., the section of the work it adheres to.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2914,7 +2914,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The section of a work that is referenced.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2929,9 +2929,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.senders`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The sender(s) of a personal communication.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2948,7 +2948,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The start page of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2965,7 +2965,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The publication status of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2982,7 +2982,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The term being referenced if the work is a dictionary or encyclopedia.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2999,7 +2999,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The type of the thesis that is the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3016,7 +3016,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `true`
-- **description**: ...
+- **description**: The title of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3031,9 +3031,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.translators`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The translator(s) of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3050,7 +3050,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `true`
-- **description**: ...
+- **description**: The type of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3065,7 +3065,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3082,7 +3082,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The version of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3099,7 +3099,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The volume of the periodical in which a work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3116,7 +3116,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The title of the volume in which the work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3133,7 +3133,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The year in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3150,7 +3150,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: `...`
 - **required**: `false`
-- **description**: ...
+- **description**: The year of the original publication.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
