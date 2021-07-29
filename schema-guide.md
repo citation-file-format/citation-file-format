@@ -1186,9 +1186,20 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.identifier`
 
-- **type**: `...`
+- **type**: Complex object with fields `type`, `value`, `description`.
+    - `type`: **type** `enum` with values:
+      - `doi`
+      - `url`
+      - `swh`
+      - `other`
+    - `value`: **type** depends on `type`:
+      - with `doi`: **type** [`definitions.doi`](#definitionsdoi)
+      - with `url`: **type** [`definitions.url`](#definitionsurl)
+      - with `swh`: **type** [`definitions.swh-identifier`](#definitionsswh-identifier)
+      - with `other`: **type** Nonempty `string`
+    - `description`: **type** [`definitions.identifier-description`](#definitionsidentifier-description)
 - **required**: `false`
-- **description**: ...
+- **description**: An identifier for a work.
 - **usage**:<br><br>
     ```yaml
     identifiers:
@@ -1232,11 +1243,19 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.identifier-description`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: A description for a specific identifier value.
 - **usage**:<br><br>
     ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: "The version DOI for this version, which has a relation childOf with the concept DOI specified in the doi field in the root of this file."
+      - type: other
+        value: "ar:1234/5678.ABCD"
+        description: "The identifier provided by Archival Repository, which points to this version of the software."
+
     ```
 
 ### `definitions.license`
