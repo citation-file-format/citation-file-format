@@ -495,12 +495,23 @@ instead of having to duplicate them.
 For example, there is one definition for a valid URL value ([`definitions.url`](#definitionsurl)),
 that is being referenced from `repository-code`, `url` and `license-url`.
 
-**Note:** Definitions are NOT field names, although they may be called similarly.
-Do NOT use definitions or subkeys (like `definitions.alias` or `definitions.entity.alias`)
-when writing a CFF file.  
-To make the definition sections more distinct, their headers are printed in italics, 
-such as *`definitions.alias`*.
-
+**Note:** `definitions` and its subkeys like `definitions.alias` or `definitions.entity.alias` should not be used as fields in `CITATION.cff` files:
+```yaml
+# incorrect
+authors: 
+  - definitions.alias: sdruskat
+```
+```yaml
+# incorrect
+authors: 
+  - definitions: 
+      alias: sdruskat
+```
+```yaml
+# correct
+authors: 
+  - alias: sdruskat
+```
 
 ### Index
 
