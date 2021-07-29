@@ -2902,7 +2902,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.keywords`
 
-- **type**: Array of nonempty `string`s
+- **type**: Array of nonempty `string`
 - **required**: `false`
 - **description**: Keywords pertaining to the work.
 - **usage**:<br><br>
