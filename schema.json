@@ -380,7 +380,6 @@
             "type": "string"
         },
         "identifier": {
-            "description": "An identifier for a work.",
             "anyOf": [
                 {
                     "additionalProperties": false,
@@ -471,7 +470,8 @@
                     ],
                     "type": "object"
                 }
-            ]
+            ],
+            "description": "An identifier for a work."
         },
         "identifier-description": {
             "description": "A description for a specific identifier value.",
