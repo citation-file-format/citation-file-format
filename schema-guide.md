@@ -85,17 +85,17 @@ references:
 ### Credit redirection
 
 Sometimes you want to redirect any credit your work may receive towards a second work (typically one of your own). A
-common example is when you write software and then write a paper about it, you may want be credited for the paper
-instead of for the software itself. In that case, your `CITATION.cff` should contain some metadata about the software at
-the root of the `CITATION.cff` file, but additionally, there should be a `preferred-citation` key with the metadata of
-the redirection target. Usually, the `message` also reflects the authors' wishes on how they want to be credited.
+common example is, that when you write software and then write a paper about it, you may want to be credited for the paper
+instead of for the software itself. For this case, your `CITATION.cff` should contain metadata about the software at
+the root of the `CITATION.cff` file, but additionally, you can add a `preferred-citation` key with the metadata of
+the paper (or other work) you want people to cite. Usually, the `message` also reflects the authors' wishes on how they want to be credited.
 
 ```yaml
 authors:
   - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
-message: If you use this software, please cite the article from preferred-citation instead of the software.
+message: If you use this software, please cite both the article from preferred-citation and the software itself.
 title: My Research Software
 preferred-citation:
   authors:
