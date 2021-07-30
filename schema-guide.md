@@ -1704,7 +1704,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         given-names: Stephan
         post-code: 90210
     ```
-        ```yaml
+    ```yaml
     authors:
       - family-names: Druskat
         given-names: Stephan
