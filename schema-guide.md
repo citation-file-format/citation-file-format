@@ -50,11 +50,15 @@ title: My Research Software
 version: 0.11.2
 ```
 
-### Transitive credit
+### Referencing other work
 
 When your software or data builds on what others have already done, it is good practice to add a `references` section to your
-`CITATION.cff` file. This way, whenever your work gets credited, a little bit of that goes into crediting the works that
-you built on.
+`CITATION.cff` file. This way, you give credit to those on whose work you build your own.
+
+The `references` section works like a reference list in a paper, 
+but can also contain references to other software 
+(such as the dependencies of your software), other datasets,
+and other (research) outputs.
 
 ```yaml
 authors:
@@ -64,11 +68,17 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: My Research Software
 references:
-  authors:
-    - family-names: Spaaks
-      given-names: Jurriaan H.
-  title: The foundation of Research Software
-  type: software
+  - authors:
+      - family-names: Spaaks
+        given-names: Jurriaan H.
+    title: The foundation of Research Software
+    type: software
+  - authors:
+      - family-names: Haines
+        given-names: Robert
+    title: Ruby CFF Library
+    type: software
+    version: 1.0
 ```
 
 
