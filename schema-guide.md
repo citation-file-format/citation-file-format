@@ -670,7 +670,21 @@ An entity can represent different types of entities, such as a team, an institut
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: "The Research Software Project team"
+      - name: "The Research Software Project"
+        address: "742 Evergreen Terrace"
+        alias: "RSP"
+        city: "Berlin"
+        country: "DE"
+        date-end: 2018-07-27
+        date-start: 2021-07-27
+        email: "team@research-software.org"
+        fax: +12-3456-7890
+        location: "Lovelace Building, room 0.42"
+        orcid: "https://orcid.org/0000-0003-4925-7248"
+        post-code: 90210
+        region: "Renfrewshire"
+        tel: +12-345-6789098
+        website: https://research-software-project.org
     ```
 
     ```yaml
@@ -1494,10 +1508,35 @@ An entity can represent different types of entities, such as a team, an institut
     - [`tel`](#definitionspersontel)
     - [`website`](#definitionspersonwebsite)
 - **required**: `false`
-- **description**: A person.
+- **description**: A person.  
+CFF aims to implement a culturally neutral model for personal names, according to the [suggestions on splitting personal names by the W3C](https://www.w3.org/International/questions/qa-personal-names) and the implementation of personal name splitting in BibTeX ([Hufflen, 2006](https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf)). To this end, CFF provides four generic keys to specify personal names:
+
+    1. Values for `family-names` specify family names, including combinations of given and patronymic forms, such as *Guðmundsdóttir* or *bin Osman*; double names with or without hyphen, such as *Leutheusser-Schnarrenberger* or *Sánchez Vicario*. It can potentially also specify names that include prepositions or (nobiliary) particles, especially if they occur in between family names such as in Spanish- or Portuguese-origin names, such as *Fernández de Córdoba*.
+    2. Values for `given-names` specify given and any other names.
+    3. Values for `name-particle` specify nobiliary particles and prepositions, such as in Ludwig *van* Beethoven or Rafael *van der* Vaart.
+    4. Values for `name-suffix` specify suffixes such as *Jr.* or *III* (as in Frank Edwin Wright *III*).
+
+Note that these keys may still not be optimal for, e.g., Icelandic names which do not have the concept of family names, or Chinese generation names, but represent a best effort.
 - **usage**:<br><br>
     ```yaml
-    ```
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        name-particle: von
+        name-suffix: III
+        address: "742 Evergreen Terrace"
+        affiliation: "German Aerospace Center (DLR)"
+        alias: "sdruskat"
+        city: "Berlin"
+        country: "DE"
+        email: "sdruskat@research-software.org"
+        fax: +12-3456-7890
+        orcid: "https://orcid.org/0000-0003-4925-7248"
+        post-code: 90210
+        region: "Renfrewshire"
+        tel: +12-345-6789098
+        website: https://sdruskat.net
+      ```
 
 ### `definitions.person.address`
 
@@ -1506,6 +1545,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        address: "742 Evergreen Terrace"
     ```
 
 ### `definitions.person.affiliation`
@@ -1515,6 +1558,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's affiliation.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        affiliation: "German Aerospace Center (DLR)"
     ```
 
 ### `definitions.person.alias`
@@ -1524,6 +1571,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's alias.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        alias: sdruskat
     ```
 
 ### `definitions.person.city`
@@ -1533,6 +1584,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's city.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        city: "Berlin"
     ```
 
 ### `definitions.person.country`
@@ -1542,6 +1597,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's country.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        country: "DE"
     ```
 
 ### `definitions.person.email`
@@ -1551,6 +1610,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's email address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        email: "mail@research-software.org"
     ```
 
 ### `definitions.person.family-names`
@@ -1560,6 +1623,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's family names.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
     ```
 
 ### `definitions.person.fax`
@@ -1570,9 +1636,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **usage**:<br><br>
     ```yaml
     authors:
-      - family-names: McClane
+      - family-names: Druskat
+        given-names: Stephan
         fax: +12-3456-7890
-        given-names: John
     ```
 
 ### `definitions.person.given-names`
@@ -1582,6 +1648,9 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's given names.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
     ```
 
 ### `definitions.person.name-particle`
@@ -1591,6 +1660,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Humboldt
+        given-names: Alexander
+        name-particle: von
     ```
 
 ### `definitions.person.name-suffix`
@@ -1600,6 +1673,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Davis
+        given-names: Sammy
+        name-suffix: Jr.
     ```
 
 ### `definitions.person.orcid`
@@ -1609,6 +1686,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's [ORCID](https://orcid.org) identifier.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        orcid: "https://orcid.org/0000-0003-4925-7248"
     ```
 
 ### `definitions.person.post-code`
@@ -1618,6 +1699,16 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's post code.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        post-code: 90210
+    ```
+    ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        post-code: "90210"
     ```
 
 ### `definitions.person.region`
@@ -1627,6 +1718,10 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: The person's region.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        region: Renfrewshire
     ```
 
 ### `definitions.person.tel`
@@ -1637,8 +1732,8 @@ An entity can represent different types of entities, such as a team, an institut
 - **usage**:<br><br>
     ```yaml
     authors:
-      - family-names: McClane
-        given-names: John
+      - family-names: Druskat
+        given-names: Stephan
         tel: +12-345-6789098
     ```
 
