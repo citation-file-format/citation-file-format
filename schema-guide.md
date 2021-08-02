@@ -2845,7 +2845,7 @@ authors:
 
 - **type**: `string` with pattern [`^\d{4}-\d{3}[\dxX]$`](https://regex101.com/library/jqobq9)
 - **required**: `false`
-- **description**: The ISSN of the work.
+- **description**: The [ISSN](https://en.wikipedia.org/wiki/International_Standard_Serial_Number) of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
