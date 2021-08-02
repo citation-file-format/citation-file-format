@@ -81,9 +81,6 @@ references:
     version: 1.0
 ```
 
-See also [How to deal with unknown individual authors?](#how-to-deal-with-unknown-individual-authors).
-
-
 ### Credit redirection
 
 Sometimes you want to redirect any credit your work may receive towards a second work (typically one of your own). A
@@ -151,7 +148,8 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 - **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `true`
-- **description**: The authors of a software or dataset.
+- **description**: The authors of a software or dataset.  
+(See also [How to deal with unknown individual authors?](#how-to-deal-with-unknown-individual-authors))
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -168,8 +166,6 @@ This section describes the valid keys in a `CITATION.cff` file.
         family-names: Druskat
       - name: "The Research Software project"
     ```
-
-See also [How to deal with unknown individual authors?](#how-to-deal-with-unknown-individual-authors).
 
 ### `cff-version`
 
