@@ -1212,21 +1212,64 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.identifier`
 
-- **type**: Complex object with keys `type`, `value`, `description`.
-    - `type`: **type** `enum` with values:
-      - `doi`
-      - `url`
-      - `swh`
-      - `other`
-    - `value`: **type** depends on `type`:
-      - with `doi`: **type** [`definitions.doi`](#definitionsdoi)
-      - with `url`: **type** [`definitions.url`](#definitionsurl)
-      - with `swh`: **type** [`definitions.swh-identifier`](#definitionsswh-identifier)
-      - with `other`: **type** Nonempty `string`
-    - `description`: **type** [`definitions.identifier-description`](#definitionsidentifier-description)
-- **required**: N/A
-- **description**: An identifier for a work.
-- **usage**:<br><br>
+Object with three keys:
+
+1. `type`: The type of the identifier.
+2. `value`: The identifier.
+3. `description`: A description for the specific identifier value.
+
+Supported identifiers: DOI, URL, Software Heritage identifier, other.
+
+#### DOI
+
+  - `type`:
+    - **type**: `enum` (`doi`)
+    - **required**: `true`
+  - `value`:
+    - **type**: [`definitions.doi`](#definitionsdoi)
+    - **required**: `true`
+  - `description`:
+    - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+    - **required**: `false`
+
+#### URL
+
+  - `type`:
+    - **type**: `enum` (`url`)
+    - **required**: `true`
+  - `value`:
+    - **type**: [`definitions.url`](#definitionsurl)
+    - **required**: `true`
+  - `description`:
+    - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+    - **required**: `false`
+
+#### Software Heritage identifier
+
+  - `type`:
+    - **type**: `enum` (`swh`)
+    - **required**: `true`
+  - `value`:
+    - **type**: [`definitions.swh-identifier`](#definitionsswh-identifier)
+    - **required**: `true`
+  - `description`:
+    - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+    - **required**: `false`
+
+#### Other
+
+  - `type`:
+    - **type**: `enum` (`other`)
+    - **required**: `true`
+  - `value`:
+    - **type**: Nonempty `string`
+    - **required**: `true`
+  - `description`:
+    - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+    - **required**: `false`
+
+#### Usage
+
     ```yaml
     identifiers:
       - type: doi
@@ -1265,6 +1308,13 @@ An entity can represent different types of entities, such as a team, an institut
       - type: url
         value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
         description: The GitHub release URL of the commit tagged with 1.1.0.
+    ```
+    ```yaml
+    preferred-citation:
+      identifiers:
+        - type: other
+          value: "arXiv:2103.06681"
+          description: The ArXiv preprint of the paper
     ```
 
 ### `definitions.identifier-description`
