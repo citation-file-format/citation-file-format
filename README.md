@@ -21,9 +21,9 @@ This is what a common `CITATION.cff` file for research software may look like:
 
 ```yaml
 cff-version: 1.2.0
-abstract: This is my awesome research software. It does many things.
 message: If you use this software, please cite it using these metadata.
 title: My Research Software
+abstract: This is my awesome research software. It does many things.
 authors:
   - family-names: Druskat
     given-names: Stephan
