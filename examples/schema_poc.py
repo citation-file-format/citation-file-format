@@ -27,6 +27,6 @@ if __name__ == "__main__":
         help='A YAML data file', required=True)
     parser.add_argument(
         '-s', '--schema', type=str,
-        help='A YAML schema file', required=True) 
+        help='A JSON Schema file', required=True) 
     args = parser.parse_args()  
     validate(args.data, args.schema)
