@@ -1968,7 +1968,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
+- **description**: The person's [name suffix](https://en.wikipedia.org/wiki/Suffix_(name)), e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 - **usage**:<br><br>
     ```yaml
     authors:
