@@ -3067,6 +3067,8 @@ licenses, it is assumed their relationship is OR, not AND.
         type: generic
     ```
 
+Note that this field should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not other (e.g., software index).
+
 ### `definitions.reference.number`
 
 - **type**: `string` or `number`
