@@ -1218,7 +1218,7 @@ Object with three keys:
 2. `value`: The identifier.
 3. `description`: A description for the specific identifier value.
 
-Supported identifiers: DOI, URL, Software Heritage identifier, other.
+Supported identifiers: [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier), URL, [Software Heritage](https://www.softwareheritage.org/) identifier, other.
 
 #### DOI
 
