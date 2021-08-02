@@ -234,7 +234,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 - **type**: [`definitions.doi`](#definitionsdoi)
 - **required**: `false`
-- **description**: The DOI of the software or dataset. This notation is most useful when there is just one DOI you want to include. In
+- **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the software or dataset. This notation is most useful when there is just one DOI you want to include. In
 that case, `doi` can be used as shorthand for something like:<br><br>
     ```yaml
     identifiers:
@@ -902,7 +902,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 - **type**: Nonempty `string`
 - **required**: N/A
-- **description**: The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
+- **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 - **usage**:<br><br>
     ```yaml
     doi: "10.5281/zenodo.1003150"
@@ -2355,7 +2355,7 @@ authors:
 
 - **type**: [`definitions.doi`](#definitionsdoi)
 - **required**: `false`
-- **description**: The DOI of a collection containing the work.
+- **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of a collection containing the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2620,7 +2620,7 @@ authors:
 
 - **type**: [`definitions.doi`](#definitionsdoi)
 - **required**: `false`
-- **description**: The DOI of the work.
+- **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
