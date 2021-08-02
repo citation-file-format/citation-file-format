@@ -2336,7 +2336,7 @@ authors:
     given-names: Jurriaan H.
   - family-names: Druskat
     given-names: Stephan
-  - name: "The Research Software project"
+  - name: "The Research Software team"
 ```
 
 This still represents the maximum knowledge you have about the authors.
