@@ -4,13 +4,13 @@
 
 Valid Citation File Format files
 
-1. must be named `CITATION.cff` (note the capitalization)
-1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/))
-1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json)
+1. must be named `CITATION.cff` (note the capitalization);
+1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/));
+1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json).
 
 ### Minimal example
 
-A minimal example of a valid `CITATION.cff` file could look like this:
+A minimal example of a valid `CITATION.cff` file, that contains only the required fields, could look like this:
 
 ```yaml
 authors:
@@ -23,7 +23,7 @@ title: My Research Software
 
 ### Typical example
 
-For most software however, it is relatively easy to expand the minimal case with some more information like the version, the date when it was last published, some keywords, etc.:
+For most software however, it is relatively easy to expand the minimal case with important information like the version, the date when it was last published, some keywords, etc.:
 
 ```yaml
 abstract: This is my awesome research software. It does many things.
@@ -50,11 +50,15 @@ title: My Research Software
 version: 0.11.2
 ```
 
-### Transitive credit
+### Referencing other work
 
 When your software or data builds on what others have already done, it is good practice to add a `references` section to your
-`CITATION.cff` file. This way, whenever your work gets credited, a little bit of that goes into crediting the works that
-you built on.
+`CITATION.cff` file. This way, you give credit to the authors of works that your own work builds on.
+
+The `references` section works like a reference list in a paper, 
+but can also contain references to other software 
+(such as the dependencies of your software), other datasets,
+and other (research) outputs.
 
 ```yaml
 authors:
@@ -64,11 +68,17 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: My Research Software
 references:
-  authors:
-    - family-names: Spaaks
-      given-names: Jurriaan H.
-  title: The foundation of Research Software
-  type: software
+  - authors:
+      - family-names: Spaaks
+        given-names: Jurriaan H.
+    title: The foundation of Research Software
+    type: software
+  - authors:
+      - family-names: Haines
+        given-names: Robert
+    title: Ruby CFF Library
+    type: software
+    version: 1.0
 ```
 
 See also [How to deal with unknown individual authors?](#how-to-deal-with-unknown-individual-authors).
@@ -77,17 +87,17 @@ See also [How to deal with unknown individual authors?](#how-to-deal-with-unknow
 ### Credit redirection
 
 Sometimes you want to redirect any credit your work may receive towards a second work (typically one of your own). A
-common example is when you write software and then write a paper about it, you may want be credited for the paper
-instead of for the software itself. In that case, your `CITATION.cff` should contain some metadata about the software at
-the root of the `CITATION.cff` file, but additionally, there should be a `preferred-citation` key with the metadata of
-the redirection target. Usually, the `message` also reflects the authors' wishes on how they want to be credited.
+common example is, that when you write software and then write a paper about it, you may want to be credited for the paper
+instead of for the software itself. For this case, your `CITATION.cff` should contain metadata about the software at
+the root of the `CITATION.cff` file, but additionally, you can add a `preferred-citation` key with the metadata of
+the paper (or other work) you want people to cite. Usually, the `message` also reflects the authors' wishes on how they want to be credited.
 
 ```yaml
 authors:
   - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
-message: If you use this software, please cite the article from preferred-citation instead of the software.
+message: If you use this software, please cite both the article from preferred-citation and the software itself.
 title: My Research Software
 preferred-citation:
   authors:
@@ -99,9 +109,9 @@ preferred-citation:
 
 The next sections explain each key in more detail.
 
-## root-level keys
+## Fields
 
-This section aims to describe what keys are valid at the root level of a `CITATION.cff` file.
+This section describes the valid fields in a `CITATION.cff` file.
 
 ### Index
 
@@ -253,7 +263,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `identifiers`
 
-- **type**: array of [`definitions.identifier`](#definitionsidentifier) objects.
+- **type**: Array of [`definitions.identifier`](#definitionsidentifier) objects.
 - **required**: `false`
 - **description**: The identifiers of the software or dataset.
 - **usage**:<br><br>
@@ -550,6 +560,9 @@ authors:
 - **description**: An address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project"
+        address: "742 Evergreen Terrace"
     ```
 
 ### `definitions.alias`
@@ -559,6 +572,9 @@ authors:
 - **description**: An alias.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project"
+        alias: "RSP"
     ```
 
 ### `definitions.city`
@@ -568,6 +584,9 @@ authors:
 - **description**: A city.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project"
+        city: "Berlin"
     ```
 
 ### `definitions.commit`
@@ -577,6 +596,10 @@ authors:
 - **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 - **usage**:<br><br>
     ```yaml
+    commit: "1ff847d81f29c45a3a1a5ce73d38e45c2f319bba"
+    ```
+    ```yaml
+    commit: "Revision: 8612"
     ```
 
 ### `definitions.country`
@@ -893,9 +916,12 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: An email address
+- **description**: An email address.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - email: "mail@research-project.org"
+        name: "The Research Software project"
     ```
 
 ### `definitions.entity`
@@ -1003,7 +1029,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 - **type**: [`definitions.city`](#definitionscity).
 - **required**: `false`
-- **description**: The entity's city..
+- **description**: The entity's city.
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -1108,7 +1134,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 - **type**: [`definitions.orcid`](#definitionsorcid).
 - **required**: `false`
-- **description**: The entity's orcid.
+- **description**: The entity's [ORCID](https://orcid.org) identifier.
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -1190,9 +1216,20 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.identifier`
 
-- **type**: `...`
+- **type**: Complex object with fields `type`, `value`, `description`.
+    - `type`: **type** `enum` with values:
+      - `doi`
+      - `url`
+      - `swh`
+      - `other`
+    - `value`: **type** depends on `type`:
+      - with `doi`: **type** [`definitions.doi`](#definitionsdoi)
+      - with `url`: **type** [`definitions.url`](#definitionsurl)
+      - with `swh`: **type** [`definitions.swh-identifier`](#definitionsswh-identifier)
+      - with `other`: **type** Nonempty `string`
+    - `description`: **type** [`definitions.identifier-description`](#definitionsidentifier-description)
 - **required**: `false`
-- **description**: ...
+- **description**: An identifier for a work.
 - **usage**:<br><br>
     ```yaml
     identifiers:
@@ -1236,11 +1273,19 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.identifier-description`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: A description for a specific identifier value.
 - **usage**:<br><br>
     ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: "The version DOI for this version, which has a relation childOf with the concept DOI specified in the doi field in the root of this file."
+      - type: other
+        value: "ar:1234/5678.ABCD"
+        description: "The identifier provided by Archival Repository, which points to this version of the software."
+
     ```
 
 ### `definitions.license`
@@ -1734,11 +1779,15 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.orcid`
 
-- **type**: `...`
+- **type**: `uri` with pattern [`https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}`](https://regex101.com/library/wvvVYE)
 - **required**: `false`
-- **description**: ...
+- **description**: An [ORCID](https://orcid.org) identifier.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - family-names: Druskat
+        given-names: Stephan
+        orcid: "https://orcid.org/0000-0003-4925-7248"
     ```
 
 ### `definitions.person`
@@ -2005,11 +2054,19 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.post-code`
 
-- **type**: `...`
+- **type**: `string` or `number`
 - **required**: `false`
 - **description**: A post code.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: "The Research Software Project"
+        post-code: "G42 2PN"
+    ```
+    ```yaml
+    authors:
+      - name: "The Research Software Project"
+        post-code: 12053
     ```
 
 ### `definitions.reference`
@@ -2393,7 +2450,7 @@ authors:
 - **usage**:<br><br>
     ```yaml
     references:
-      - contact: ...
+      - contact:
         - name: "The RC21 Organizing Committee"
         - family-names: Druskat
           given-names: Stephan
@@ -2895,7 +2952,7 @@ authors:
 
 ### `definitions.reference.keywords`
 
-- **type**: Array of nonempty `string`s
+- **type**: Array of nonempty `string`
 - **required**: `false`
 - **description**: Keywords pertaining to the work.
 - **usage**:<br><br>
@@ -3668,21 +3725,29 @@ Note that this field should contain notes that may be picked up by some downstre
 
 ### `definitions.region`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: A region.
 - **usage**:<br><br>
     ```yaml
+    authors:
+      - name: The Research Software Project
+        region: "Renfrewshire"
     ```
 
 ### `definitions.swh-identifier`
 
-- **type**: `...`
+- **type**: `string` with pattern [`^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$`](https://regex101.com/library/o399MX)
 - **required**: `false`
-- **description**: ...
+- **description**: The Software Heritage identifier (without further qualifiers such as origin, visit, anchor, path).
 - **usage**:<br><br>
     ```yaml
+    identifiers:
+      - type: swh
+        value: "swh:1:rev:309cf2674ee7a0749978cf8265ab91a60aea0f7d"
     ```
+
+Note: Software Heritage identifiers are documented here: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html.
 
 ### `definitions.tel`
 
