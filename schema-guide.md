@@ -4,9 +4,9 @@
 
 Valid Citation File Format files
 
-1. must be named `CITATION.cff` (note the capitalization)
-1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/))
-1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json)
+1. must be named `CITATION.cff` (note the capitalization);
+1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/));
+1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json).
 
 ### Minimal example
 
@@ -23,7 +23,7 @@ title: My Research Software
 
 ### Typical example
 
-For most software however, it is relatively easy to expand the minimal case with some more information like the version, the date when it was last published, some keywords, etc.:
+For most software however, it is relatively easy to expand the minimal case with important information like the version, the date when it was last published, some keywords, etc.:
 
 ```yaml
 abstract: This is my awesome research software. It does many things.
@@ -50,11 +50,15 @@ title: My Research Software
 version: 0.11.2
 ```
 
-### Transitive credit
+### Referencing other work
 
 When your software or data builds on what others have already done, it is good practice to add a `references` section to your
-`CITATION.cff` file. This way, whenever your work gets credited, a little bit of that goes into crediting the works that
-you built on.
+`CITATION.cff` file. This way, you give credit to the authors of works that your own work builds on.
+
+The `references` section works like a reference list in a paper, 
+but can also contain references to other software 
+(such as the dependencies of your software), other datasets,
+and other (research) outputs.
 
 ```yaml
 authors:
@@ -64,28 +68,34 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: My Research Software
 references:
-  authors:
-    - family-names: Spaaks
-      given-names: Jurriaan H.
-  title: The foundation of Research Software
-  type: software
+  - authors:
+      - family-names: Spaaks
+        given-names: Jurriaan H.
+    title: The foundation of Research Software
+    type: software
+  - authors:
+      - family-names: Haines
+        given-names: Robert
+    title: Ruby CFF Library
+    type: software
+    version: 1.0
 ```
 
 
 ### Credit redirection
 
 Sometimes you want to redirect any credit your work may receive towards a second work (typically one of your own). A
-common example is when you write software and then write a paper about it, you may want be credited for the paper
-instead of for the software itself. In that case, your `CITATION.cff` should contain some metadata about the software at
-the root of the `CITATION.cff` file, but additionally, there should be a `preferred-citation` key with the metadata of
-the redirection target. Usually, the `message` also reflects the authors' wishes on how they want to be credited.
+common example is, that when you write software and then write a paper about it, you may want to be credited for the paper
+instead of for the software itself. For this case, your `CITATION.cff` should contain metadata about the software at
+the root of the `CITATION.cff` file, but additionally, you can add a `preferred-citation` key with the metadata of
+the paper (or other work) you want people to cite. Usually, the `message` also reflects the authors' wishes on how they want to be credited.
 
 ```yaml
 authors:
   - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
-message: If you use this software, please cite the article from preferred-citation instead of the software.
+message: If you use this software, please cite both the article from preferred-citation and the software itself.
 title: My Research Software
 preferred-citation:
   authors:
