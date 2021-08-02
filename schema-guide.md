@@ -81,7 +81,6 @@ references:
     version: 1.0
 ```
 
-
 ### Credit redirection
 
 Sometimes you want to redirect any credit your work may receive towards a second work (typically one of your own). A
@@ -149,7 +148,8 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 - **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `true`
-- **description**: The authors of a software or dataset.
+- **description**: The authors of a software or dataset.  
+(See also [How to deal with unknown individual authors?](#how-to-deal-with-unknown-individual-authors))
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -2314,6 +2314,42 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
           given-names: Stephan
       type: generic
     ```
+
+#### How to deal with unknown individual authors?
+
+To enable credit for the individuals that have created a work, 
+it is good practice to cite the respective individuals as authors.
+Sometimes you may not be able to determine the person names of the relevant individuals to create
+[`definitions.person`](#definitionsperson) objects for them,
+for example when a software you cite does not provide a `CITATION.cff` file.
+Then, the next best thing is to refer to those that you could not determine person names for 
+collectively as a "team" or "project" using the title of the work
+in a [`definitions.entity`](#definitionsentity) object:
+
+```yaml
+authors:
+  - name: "The Research Software project"
+```
+```yaml
+authors:
+  - family-names: Spaaks
+    given-names: Jurriaan H.
+  - family-names: Druskat
+    given-names: Stephan
+  - name: "The Research Software team"
+```
+
+This still represents the maximum knowledge you have about the authors.
+It's also a good starting point to enable users of the citation metadata to determine the correct names themselves in the future, 
+especially if you also provide a source of information such as a `repository-code` or a `url`.
+
+If the authors of a work are truly anonymous,
+you can represent this in the same way:
+
+```yaml
+authors:
+  - name: anonymous
+```
 
 ### `definitions.reference.collection-doi`
 
