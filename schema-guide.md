@@ -10,7 +10,7 @@ Valid Citation File Format files
 
 ### Minimal example
 
-A minimal example of a valid `CITATION.cff` file, that contains only the required fields, could look like this:
+A minimal example of a valid `CITATION.cff` file, that contains only the required keys, could look like this:
 
 ```yaml
 authors:
@@ -107,9 +107,9 @@ preferred-citation:
 
 The next sections explain each key in more detail.
 
-## Fields
+## Valid keys
 
-This section describes the valid fields in a `CITATION.cff` file.
+This section describes the valid keys in a `CITATION.cff` file.
 
 ### Index
 
@@ -496,16 +496,16 @@ primary principle, "Importance", when others cite this work.
 
 ## Definitions
 
-Some values in CFF files are valid in different fields.
+Some values in CFF files are valid in different keys.
 For example, `repository-code`, `url` and `license-url` all take URLs as values.
 
 The schema therefore has [*definitions*](https://json-schema.org/understanding-json-schema/structuring.html#definitions)
-of smaller subschemas, that can be reused in the schema from the respective field, 
+of smaller subschemas, that can be reused in the schema from the respective key,
 instead of having to duplicate them.
 For example, there is one definition for a valid URL value ([`definitions.url`](#definitionsurl)),
 that is being referenced from `repository-code`, `url` and `license-url`.
 
-**Note:** `definitions` and its subkeys like `definitions.alias` or `definitions.entity.alias` should not be used as fields in `CITATION.cff` files:
+**Note:** `definitions` and its subkeys like `definitions.alias` or `definitions.entity.alias` should not be used as keys in `CITATION.cff` files:
 ```yaml
 # incorrect
 authors: 
@@ -922,7 +922,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.entity`
 
-- **type**: `object` with the following properties:
+- **type**: `object` with the following keys:
     - [`address`](#definitionsentityaddress)
     - [`alias`](#definitionsentityalias)
     - [`city`](#definitionsentitycity)
@@ -940,7 +940,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     - [`website`](#definitionsentitywebsite)
 - **required**: `false`
 - **description**: An entity.  
-Entities are used in fields that can also take [`definitions.person`](#definitionsperson) objects.
+Entities are used in keys that can also take [`definitions.person`](#definitionsperson) objects.
 An entity can represent different types of entities, such as a team, an institution, a company, a conference, etc.
 - **usage**:<br><br>
     ```yaml
@@ -970,7 +970,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     references:
       - type: generic
-        title: "A reference showing different fields that take entity objects"
+        title: "A reference showing different keys that take entity objects"
         authors:
           - name: "The Research Software Project team"
         conference:
@@ -1212,7 +1212,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.identifier`
 
-- **type**: Complex object with fields `type`, `value`, `description`.
+- **type**: Complex object with keys `type`, `value`, `description`.
     - `type`: **type** `enum` with values:
       - `doi`
       - `url`
@@ -1277,7 +1277,7 @@ An entity can represent different types of entities, such as a team, an institut
     identifiers:
       - type: doi
         value: 10.5281/zenodo.4813122
-        description: "The version DOI for this version, which has a relation childOf with the concept DOI specified in the doi field in the root of this file."
+        description: "The version DOI for this version, which has a relation childOf with the concept DOI specified in the doi key in the root of this file."
       - type: other
         value: "ar:1234/5678.ABCD"
         description: "The identifier provided by Archival Repository, which points to this version of the software."
@@ -1788,7 +1788,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.person`
 
-- **type**: `object` with the following properties:
+- **type**: `object` with the following keys:
     - [`address`](#definitionspersonaddress)
     - [`affiliation`](#definitionspersonaffiliation)
     - [`alias`](#definitionspersonalias)
@@ -2067,7 +2067,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference`
 
-- **type**: `object` with the following properties:
+- **type**: `object` with the following keys:
     - [`abbreviation`](#definitionsreferenceabbreviation)
     - [`abstract`](#definitionsreferenceabstract)
     - [`authors`](#definitionsreferenceauthors)
@@ -2144,7 +2144,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```yaml
     references: 
       - abbreviation: "NP"
-        abstract: "This is a non-sensical exmaple reference to show how the many different fields in a reference object can be used."
+        abstract: "This is a non-sensical exmaple reference to show how the many different keys in a reference object can be used."
         authors: 
           - name: The Research Software Project
         collection-doi: 10.5281/zenodo.1003149
@@ -3124,7 +3124,7 @@ licenses, it is assumed their relationship is OR, not AND.
         type: generic
     ```
 
-Note that this field should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not other (e.g., software index).
+Note that this key should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not other (e.g., software index).
 
 ### `definitions.reference.number`
 
