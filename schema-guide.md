@@ -2156,7 +2156,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         loc-start: 21
         location: 
           name: "Library of the Unseen University"
-        medium: "datasette"
+        medium: "5¼-inch floppy disk"
         month: 7
         nihmsid: "NIHMS236863"
         notes: "Excellent reference! TODO Read for thesis."
