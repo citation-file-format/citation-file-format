@@ -41,11 +41,11 @@ license: Apache-2.0
 repository-code: "https://github.com/citation-file-format/my-research-software"
 ```
 
-## Format specifications
+## Format specifications :books:
 
 You can find the complete format specifications in the [Guide to the Citation File Format schema](schema-guide.md).
 
-## Why should I add a `CITATION.cff` file to my repository?
+## Why should I add a `CITATION.cff` file to my repository? :bulb:
 
 When you do this, great things may happen:
 
@@ -53,18 +53,18 @@ When you do this, great things may happen:
 2. If your repository is hosted on GitHub, [they will link to it](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-citation-files) in a special "Cite this repository" widget on the repository landing page. Also, the citation information in `CITATION.cff` will be used when you publish your software on Zenodo via the [GitHub-Zenodo bridge](https://guides.github.com/activities/citable-code/).
 3. The citation information in `CITATION.cff` can be used by the open source reference manager [Zotero](https://github.com/zotero/zotero), when people import the repository.
 
-## Validation
+## Validation :heavy_check_mark:
 
-## Tools to work with `CITATION.cff` files
+## Tools to work with `CITATION.cff` files :wrench:
 
-## Maintainers
+## Maintainers :nerd_face:
 
 The Citation File Format schema is maintained by
 
 - [Stephan Druskat](https://sdruskat.net) ([@sdruskat](https://github.com/sdruskat/))
 - Jurriaan Spaaks ([@jspaaks](https://github.com/jspaaks/))
 
-## Contributing
+## Contributing :handshake:
 
 **The _Citation File Format_ is a collaborative project** and we welcome suggestions and contributions. We hope one of the invitations below works for you, but if not, please let us know!
 
@@ -83,7 +83,7 @@ The Citation File Format schema is maintained by
 
 Please read the more detailed [contributing guidelines](CONTRIBUTING.md) and [open a GitHub issue](https://github.com/citation-file-format/citation-file-format/issues) to suggest a new idea or let us know about bugs.
 
-## License
+## License :balance_scale:
 
 Copyright © 2016ff. The Citation File Format Contributors
 
@@ -92,7 +92,7 @@ This work is licensed under multiple licenses:
 - The schema guide ([`schema-guide.md`](schema-guide.md)) is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
 - Insignificant files are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
 
-## Acknowledgments
+## Acknowledgments :pray:
 
 We'd like to thank everyone who has contributed to the Citation File Format!
 
