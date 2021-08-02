@@ -3166,7 +3166,7 @@ Note that the notes provided under this key may be picked up by some downstream 
 
 - **type**: `string` or `number`
 - **required**: `false`
-- **description**: The accession number for a work.
+- **description**: The (library) [accession number](https://en.wikipedia.org/wiki/Accession_number) for a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
