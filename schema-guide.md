@@ -430,7 +430,7 @@ primary principle, "Importance", when others cite this work.
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: The URL of the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
+- **description**: The URL of the software or dataset in a repository/archive (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
     ```yaml
     repository: "https://ascl.net/2105.013"
@@ -3317,7 +3317,7 @@ Note that the notes provided under this key may be picked up by some downstream 
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: The URL of the work in a repository (when the repository is neither a source code repository nor a build artifact repository).
+- **description**: The URL of the work in a repository/archive (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
