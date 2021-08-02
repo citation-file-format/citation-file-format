@@ -3130,7 +3130,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: The NIHMSID of a work.
+- **description**: The [NIHMSID](https://web.archive.org/web/20210802210057/https://www.ncbi.nlm.nih.gov/pmc/about/public-access-info/) of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3258,7 +3258,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 - **type**: `string` with pattern [`^PMC[0-9]{7}$`](https://regex101.com/library/EsU1QH)
 - **required**: `false`
-- **description**: The PMCID of a work.
+- **description**: The [PMCID](https://web.archive.org/web/20210802210057/https://www.ncbi.nlm.nih.gov/pmc/about/public-access-info/) of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
