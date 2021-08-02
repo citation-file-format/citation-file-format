@@ -53,7 +53,7 @@ version: 0.11.2
 ### Referencing other work
 
 When your software or data builds on what others have already done, it is good practice to add a `references` section to your
-`CITATION.cff` file. This way, you give credit to those on whose work you build your own.
+`CITATION.cff` file. This way, you give credit to the authors of works that your own work builds on.
 
 The `references` section works like a reference list in a paper, 
 but can also contain references to other software 
