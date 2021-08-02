@@ -2166,7 +2166,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         date-released: "2021-07-26"
         department: "Department of Hard Science Fiction"
         doi: "10.5281/zenodo.4813122"
-        edition: "2nd abdridged edition"
+        edition: "2nd abridged edition"
         editors: 
           - family-names: Inchief
             given-names: Editor
@@ -2641,12 +2641,12 @@ authors:
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      edition: "2nd abdridged edition"
+      edition: "2nd abridged edition"
       type: generic
     ```
     ```yaml
     references:
-      - edition: "2nd abdridged edition"
+      - edition: "2nd abridged edition"
         type: generic
     ```
 
