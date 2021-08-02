@@ -851,7 +851,7 @@ authors:
     - `ZM`
     - `ZW`
 - **required**: N/A
-- **description**: The ISO 3166-1 alpha-2 country code for a country.
+- **description**: The [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for a country.
 - **usage**:<br><br>
     ```yaml
     country: NL
