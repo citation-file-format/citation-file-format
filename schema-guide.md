@@ -2828,7 +2828,7 @@ authors:
 
 - **type**: `string` with pattern [`^[0-9\- ]{10,17}X?$`](https://regex101.com/library/6oS1PA)
 - **required**: `false`
-- **description**: The ISBN of the work.
+- **description**: The [ISBN](https://en.wikipedia.org/wiki/International_Standard_Book_Number) of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
