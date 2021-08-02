@@ -51,7 +51,7 @@ When you do this, great things may happen:
 
 ## Format specifications
 
-You can find the complete format specifications in the [Guide to Citation File Format schema](schema-guide.md).
+You can find the complete format specifications in the [Guide to the Citation File Format schema](schema-guide.md).
 
 ## Validation
 
