@@ -2144,7 +2144,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```yaml
     references: 
       - abbreviation: "NP"
-        abstract: "This is a non-sensical exmaple reference to show how the many different keys in a reference object can be used."
+        abstract: "This is a non-sensical example reference to show how the many different keys in a reference object can be used."
         authors: 
           - name: The Research Software Project
         collection-doi: 10.5281/zenodo.1003149
