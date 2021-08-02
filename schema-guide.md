@@ -3735,7 +3735,7 @@ Note that the notes provided under this key may be picked up by some downstream 
 
 - **type**: `string` with pattern [`^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$`](https://regex101.com/library/o399MX)
 - **required**: N/A
-- **description**: The Software Heritage identifier (without further qualifiers such as origin, visit, anchor, path).
+- **description**: The [Software Heritage](https://www.softwareheritage.org/) identifier (without further qualifiers such as origin, visit, anchor, path).
 - **usage**:<br><br>
     ```yaml
     identifiers:
