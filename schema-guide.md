@@ -323,7 +323,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 - **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
 - **required**: `false`
-- **description**: The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
+- **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which the work is made available. When there are multiple
 licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
@@ -344,7 +344,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).
+- **description**: The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the [SPDX License List](#definitionslicense-enum)).
 - **usage**:<br><br>
     ```yaml
     license-url: "https://obscure-licenses.com?id=1234"
@@ -1762,7 +1762,7 @@ An entity can represent different types of entities, such as a team, an institut
     - `ZPL-2.0`
     - `ZPL-2.1`
 - **required**: N/A
-- **description**: SPDX identifier for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
+- **description**: [SPDX identifier](https://spdx.dev/ids/) for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
 - **usage**:<br><br>
     ```yaml
     license: Apache-2.0
@@ -2994,8 +2994,8 @@ authors:
 
 - **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
 - **required**: `false`
-- **description**: The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
-licenses, it is assumed their relationship is OR, not AND.
+- **description**: The [SPDX license identifier(s)](](https://spdx.dev/ids/)) for the license(s) under which the work is made available.
+When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3026,7 +3026,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: The URL of the license text under which the work is licensed (only for non-standard licenses not included in the SPDX License List).
+- **description**: The URL of the license text under which the work is licensed (only for non-standard licenses not included in the [SPDX License List](#definitionslicense-enum)).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
