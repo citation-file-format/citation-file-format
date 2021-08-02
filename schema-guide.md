@@ -2288,7 +2288,7 @@ This still represents the maximum knowledge you have about the authors.
 It's also a good starting point to enable users of the citation metadata to determine the correct names themselves in the future, 
 especially if you also provide a source of information such as a `repository-code` or a `url`.
 
-If the authors of a software or dataset are truly anonymous, 
+If the authors of a work are truly anonymous,
 you can represent this in the same way:
 
 ```yaml
