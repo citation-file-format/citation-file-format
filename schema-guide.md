@@ -23,7 +23,7 @@ title: My Research Software
 
 ### Typical example
 
-For most software however, it is relatively easy to expand the minimal case with some more important information like the version, the date when it was last published, some keywords, etc.:
+For most software however, it is relatively easy to expand the minimal case with important information like the version, the date when it was last published, some keywords, etc.:
 
 ```yaml
 abstract: This is my awesome research software. It does many things.
