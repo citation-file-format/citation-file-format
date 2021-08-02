@@ -2213,7 +2213,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         loc-start: 21
         location: 
           name: "Library of the Unseen University"
-        medium: "datasette"
+        medium: "5¼-inch floppy disk"
         month: 7
         nihmsid: "NIHMS236863"
         notes: "Excellent reference! TODO Read for thesis."
@@ -3064,12 +3064,12 @@ licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      medium: "datasette"
+      medium: "5¼-inch floppy disk"
       type: generic
     ```
     ```yaml
     references:
-      - medium: "datasette"
+      - medium: "5¼-inch floppy disk"
         type: generic
     ```
 
@@ -3123,6 +3123,8 @@ licenses, it is assumed their relationship is OR, not AND.
       - notes: "Excellent reference! TODO Read for thesis."
         type: generic
     ```
+
+Note that this field should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not other (e.g., software index).
 
 ### `definitions.reference.number`
 
