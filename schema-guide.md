@@ -1205,9 +1205,9 @@ An entity can represent different types of entities, such as a team, an institut
     ```
     ```yaml
     authors:
-      - family-names: McClane
+      - family-names: Druskat
         fax: +12-3456-7890
-        given-names: John
+        given-names: Stephan
     ```
 
 ### `definitions.identifier`
@@ -3753,8 +3753,8 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
 - **usage**:<br><br>
     ```yaml
     authors:
-      - family-names: McClane
-        given-names: John
+      - family-names: Druskat
+        given-names: Stephan
         tel: +12-345-6789098
     ```
     ```yaml
