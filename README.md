@@ -94,7 +94,8 @@ This work is licensed under multiple licenses:
 
 ## Acknowledgments :pray:
 
-We'd like to thank everyone who has contributed to the Citation File Format!
+**We'd like to thank everyone who has contributed to the Citation File Format!**  
+They are listed in the [`CITATION.cff`](CITATION.cff) file for this repository. Please open an issue if you find that you are missing from the file.
 
 We gratefully acknowledge support from:
 
