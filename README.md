@@ -17,6 +17,8 @@ citation metadata for software and datasets.
 
 ### Example
 
+This is what a common `CITATION.cff` file for research software may look like:
+
 ```yaml
 cff-version: 1.2.0
 abstract: This is my awesome research software. It does many things.
@@ -32,6 +34,9 @@ identifiers:
   - description: This is the collection of archived snapshots of all versions of My Research Software
     type: doi
     value: "10.5281/zenodo.123456"
+  - description: This is the archived snapshot of version 0.11.2 of My Research Software
+    type: doi
+    value: "10.5281/zenodo.123457"
 license: Apache-2.0
 repository-code: "https://github.com/citation-file-format/my-research-software"
 ```
