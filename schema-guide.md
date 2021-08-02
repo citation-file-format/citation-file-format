@@ -1811,7 +1811,7 @@ CFF aims to implement a culturally neutral model for personal names, according t
 
     1. Values for `family-names` specify family names, including combinations of given and patronymic forms, such as *Guðmundsdóttir* or *bin Osman*; double names with or without hyphen, such as *Leutheusser-Schnarrenberger* or *Sánchez Vicario*. It can potentially also specify names that include prepositions or (nobiliary) particles, especially if they occur in between family names such as in Spanish- or Portuguese-origin names, such as *Fernández de Córdoba*.
     2. Values for `given-names` specify given and any other names.
-    3. Values for `name-particle` specify nobiliary particles and prepositions, such as in Ludwig *van* Beethoven or Rafael *van der* Vaart.
+    3. Values for `name-particle` specify [nobiliary particles](https://en.wikipedia.org/wiki/Nobiliary_particle) and prepositions, such as in Ludwig *van* Beethoven or Rafael *van der* Vaart.
     4. Values for `name-suffix` specify suffixes such as *Jr.* or *III* (as in Frank Edwin Wright *III*).
 
 Note that these keys may still not be optimal for, e.g., Icelandic names which do not have the concept of family names, or Chinese generation names, but represent a best effort.
@@ -1955,7 +1955,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
+- **description**: The person's name particle, e.g., a [nobiliary particle](https://en.wikipedia.org/wiki/Nobiliary_particle) or a [preposition] meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 - **usage**:<br><br>
     ```yaml
     authors:
