@@ -159,6 +159,8 @@ This section aims to describe what keys are valid at the root level of a `CITATI
       - name: "The Research Software project"
     ```
 
+See also [How to deal with unknown individual authors?](#how-to-deal-with-unknown-individual-authors).
+
 ### `cff-version`
 
 - **type**: Nonempty `string`
