@@ -2321,10 +2321,10 @@ To enable credit for the individuals that have created a work,
 it is good practice to cite the respective individuals as authors.
 Sometimes you may not be able to determine the person names of the relevant individuals to create
 [`definitions.person`](#definitionsperson) objects for them,
-for example when a software you cite does not provide a `CTATION.cff` file.
+for example when a software you cite does not provide a `CITATION.cff` file.
 Then, the next best thing is to refer to those that you could not determine person names for 
-collectively as a "team" or "project" using the title of the software
-or dataset in a [`definitions.entity`](#definitionsentity) object:
+collectively as a "team" or "project" using the title of the work
+in a [`definitions.entity`](#definitionsentity) object:
 
 ```yaml
 authors:
