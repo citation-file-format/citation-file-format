@@ -3160,7 +3160,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-Note that this key should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not other (e.g., software index).
+Note that the notes provided under this key may be picked up by some downstream tooling (e.g., reference managers), but not others (e.g., a software index).
 
 ### `definitions.reference.number`
 
