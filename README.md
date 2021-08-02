@@ -81,7 +81,7 @@ The Citation File Format schema is maintained by
 :tada: **I really want to help increase the community**
 - Organise a hack event or workshop to help others use or improve the *Citation File Format*.
 
-Please [open a GitHub issue](https://github.com/citation-file-format/citation-file-format/issues) to suggest a new idea or let us know about bugs.
+Please read the more detailed [contributing guidelines](CONTRIBUTING.md) and [open a GitHub issue](https://github.com/citation-file-format/citation-file-format/issues) to suggest a new idea or let us know about bugs.
 
 ## License
 
