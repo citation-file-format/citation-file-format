@@ -191,8 +191,8 @@ This section aims to describe what keys are valid at the root level of a `CITATI
 - **usage**:<br><br>
     ```yaml
     contact:
-      - affiliation: "Humboldt-Universität zu Berlin"
-        email: "mail@sdruskat.net"
+      - affiliation: "German Aerospace Center (DLR)"
+        email: "mail@research-project.org"
         family-names: Druskat
         given-names: Stephan
     ```
@@ -203,7 +203,7 @@ This section aims to describe what keys are valid at the root level of a `CITATI
     ```
     ```yaml
     contact:
-      - email: "mail@sdruskat.net"
+      - email: "mail@research-project.org"
         given-names: Stephan
         family-names: Druskat
       - email: "mail@research-project.org"
@@ -298,7 +298,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `keywords`
 
-- **type**: array of `string`
+- **type**: Array of nonempty `string`
 - **required**: `false`
 - **description**: Keywords that describe the work.
 - **usage**:<br><br>
@@ -311,7 +311,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `license`
 
-- **type**: (array of) [`definitions.license-enum`](#definitionslicense-enum).
+- **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
 - **required**: `false`
 - **description**: The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
 licenses, it is assumed their relationship is OR, not AND.
@@ -577,7 +577,256 @@ authors:
 
 ### `definitions.country`
 
-- **type**: `enum`
+- **type**: `enum` with values
+    - `AD`
+    - `AE`
+    - `AF`
+    - `AG`
+    - `AI`
+    - `AL`
+    - `AM`
+    - `AO`
+    - `AQ`
+    - `AR`
+    - `AS`
+    - `AT`
+    - `AU`
+    - `AW`
+    - `AX`
+    - `AZ`
+    - `BA`
+    - `BB`
+    - `BD`
+    - `BE`
+    - `BF`
+    - `BG`
+    - `BH`
+    - `BI`
+    - `BJ`
+    - `BL`
+    - `BM`
+    - `BN`
+    - `BO`
+    - `BQ`
+    - `BR`
+    - `BS`
+    - `BT`
+    - `BV`
+    - `BW`
+    - `BY`
+    - `BZ`
+    - `CA`
+    - `CC`
+    - `CD`
+    - `CF`
+    - `CG`
+    - `CH`
+    - `CI`
+    - `CK`
+    - `CL`
+    - `CM`
+    - `CN`
+    - `CO`
+    - `CR`
+    - `CU`
+    - `CV`
+    - `CW`
+    - `CX`
+    - `CY`
+    - `CZ`
+    - `DE`
+    - `DJ`
+    - `DK`
+    - `DM`
+    - `DO`
+    - `DZ`
+    - `EC`
+    - `EE`
+    - `EG`
+    - `EH`
+    - `ER`
+    - `ES`
+    - `ET`
+    - `FI`
+    - `FJ`
+    - `FK`
+    - `FM`
+    - `FO`
+    - `FR`
+    - `GA`
+    - `GB`
+    - `GD`
+    - `GE`
+    - `GF`
+    - `GG`
+    - `GH`
+    - `GI`
+    - `GL`
+    - `GM`
+    - `GN`
+    - `GP`
+    - `GQ`
+    - `GR`
+    - `GS`
+    - `GT`
+    - `GU`
+    - `GW`
+    - `GY`
+    - `HK`
+    - `HM`
+    - `HN`
+    - `HR`
+    - `HT`
+    - `HU`
+    - `ID`
+    - `IE`
+    - `IL`
+    - `IM`
+    - `IN`
+    - `IO`
+    - `IQ`
+    - `IR`
+    - `IS`
+    - `IT`
+    - `JE`
+    - `JM`
+    - `JO`
+    - `JP`
+    - `KE`
+    - `KG`
+    - `KH`
+    - `KI`
+    - `KM`
+    - `KN`
+    - `KP`
+    - `KR`
+    - `KW`
+    - `KY`
+    - `KZ`
+    - `LA`
+    - `LB`
+    - `LC`
+    - `LI`
+    - `LK`
+    - `LR`
+    - `LS`
+    - `LT`
+    - `LU`
+    - `LV`
+    - `LY`
+    - `MA`
+    - `MC`
+    - `MD`
+    - `ME`
+    - `MF`
+    - `MG`
+    - `MH`
+    - `MK`
+    - `ML`
+    - `MM`
+    - `MN`
+    - `MO`
+    - `MP`
+    - `MQ`
+    - `MR`
+    - `MS`
+    - `MT`
+    - `MU`
+    - `MV`
+    - `MW`
+    - `MX`
+    - `MY`
+    - `MZ`
+    - `NA`
+    - `NC`
+    - `NE`
+    - `NF`
+    - `NG`
+    - `NI`
+    - `NL`
+    - `NO`
+    - `NP`
+    - `NR`
+    - `NU`
+    - `NZ`
+    - `OM`
+    - `PA`
+    - `PE`
+    - `PF`
+    - `PG`
+    - `PH`
+    - `PK`
+    - `PL`
+    - `PM`
+    - `PN`
+    - `PR`
+    - `PS`
+    - `PT`
+    - `PW`
+    - `PY`
+    - `QA`
+    - `RE`
+    - `RO`
+    - `RS`
+    - `RU`
+    - `RW`
+    - `SA`
+    - `SB`
+    - `SC`
+    - `SD`
+    - `SE`
+    - `SG`
+    - `SH`
+    - `SI`
+    - `SJ`
+    - `SK`
+    - `SL`
+    - `SM`
+    - `SN`
+    - `SO`
+    - `SR`
+    - `SS`
+    - `ST`
+    - `SV`
+    - `SX`
+    - `SY`
+    - `SZ`
+    - `TC`
+    - `TD`
+    - `TF`
+    - `TG`
+    - `TH`
+    - `TJ`
+    - `TK`
+    - `TL`
+    - `TM`
+    - `TN`
+    - `TO`
+    - `TR`
+    - `TT`
+    - `TV`
+    - `TW`
+    - `TZ`
+    - `UA`
+    - `UG`
+    - `UM`
+    - `US`
+    - `UY`
+    - `UZ`
+    - `VA`
+    - `VC`
+    - `VE`
+    - `VG`
+    - `VI`
+    - `VN`
+    - `VU`
+    - `WF`
+    - `WS`
+    - `YE`
+    - `YT`
+    - `ZA`
+    - `ZM`
+    - `ZW`
 - **required**: `false`
 - **description**: The ISO 3166-1 alpha-2 country code for a country.
 - **usage**:<br><br>
@@ -677,7 +926,7 @@ An entity can represent different types of entities, such as a team, an institut
         country: "DE"
         date-end: 2018-07-27
         date-start: 2021-07-27
-        email: "team@research-software.org"
+        email: "team@research-project.org"
         fax: +12-3456-7890
         location: "Lovelace Building, room 0.42"
         orcid: "https://orcid.org/0000-0003-4925-7248"
@@ -699,21 +948,21 @@ An entity can represent different types of entities, such as a team, an institut
         authors:
           - name: "The Research Software Project team"
         conference:
-          - name: "RC21 - Research Conference 2021"
+          name: "RC21 - Research Conference 2021"
         contact:
           - name: "Customer Support"
         database-provider:
-          - name: "Database Provider"
+          name: "Database Provider"
         editors:
           - name: "The Publication Editing Team"
         editors-series:
           - name: "The Publication Series Editing Team"
         institution:
-          - name: "Department of Research, Random University"
+          name: "Department of Research, Random University"
         location:
-          - name: "Museum of Postmodern Art"
+          name: "Museum of Postmodern Art"
         publisher:
-          - name: "Open Access Publishing House"
+          name: "Open Access Publishing House"
         recipients:
           - name: "The recipient institution of a personal communication"
         senders:
@@ -783,8 +1032,8 @@ An entity can represent different types of entities, such as a team, an institut
         authors:
           - name: The Research Software Project
         conference:
-          - name: "Research Conference 2021"
-            date-end: 2021-07-27
+          name: "Research Conference 2021"
+          date-end: 2021-07-27
     ```
 
 ### `definitions.entity.date-start`
@@ -800,8 +1049,8 @@ An entity can represent different types of entities, such as a team, an institut
         authors:
           - name: The Research Software Project
         conference:
-          - name: "Research Conference 2021"
-            date-start: 2021-07-27
+          name: "Research Conference 2021"
+          date-start: 2021-07-27
     ```
 
 ### `definitions.entity.email`
@@ -813,7 +1062,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     authors:
       - name: The Research Software Project
-        email: "team@research-software.org"
+        email: "team@research-project.org"
     ```
 
 ### `definitions.entity.fax`
@@ -992,7 +1241,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.license`
 
-- **type**: (array of) [`definitions.license-enum`](#definitions.license-enum) objects.
+- **type**: (Array of) [`definitions.license-enum`](#definitions.license-enum) objects.
 - **required**: `false`
 - **description**: License identifier(s) under which the work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
@@ -1529,13 +1778,13 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         alias: "sdruskat"
         city: "Berlin"
         country: "DE"
-        email: "sdruskat@research-software.org"
+        email: "sdruskat@research-project.org"
         fax: +12-3456-7890
         orcid: "https://orcid.org/0000-0003-4925-7248"
         post-code: 90210
         region: "Renfrewshire"
         tel: +12-345-6789098
-        website: https://sdruskat.net
+        website: https://research-project.org
       ```
 
 ### `definitions.person.address`
@@ -1613,7 +1862,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     authors:
       - family-names: Druskat
         given-names: Stephan
-        email: "mail@research-software.org"
+        email: "mail@research-project.org"
     ```
 
 ### `definitions.person.family-names`
@@ -1747,7 +1996,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     authors:
       - family-names: Druskat
         given-names: Stephan
-        website: https://sdruskat.net
+        website: https://research-project.org
     ```
 
 ### `definitions.post-code`
@@ -1836,6 +2085,118 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 - **description**: A reference.
 - **usage**:<br><br>
     ```yaml
+    references: 
+      - abbreviation: "NP"
+        abstract: "This is a non-sensical exmaple reference to show how the many different fields in a reference object can be used."
+        authors: 
+          - name: The Research Software Project
+        collection-doi: 10.5281/zenodo.1003149
+        collection-title: "Proceedings of the Research Conference 2021"
+        collection-type: "proceedings"
+        commit: "16192bf05e99bcb35d5c3e085047807b5720fafc"
+        conference: 
+          name: "Research Conference 2021"
+        contact: 
+          - name: "The RC21 Organizing Committee"
+        copyright: "© 2021 The Research Software Project team"
+        data-type: "YAML"
+        database-provider: 
+          name: "Research Databases Ltd."
+        database: "Research Database"
+        date-accessed: "2021-07-27"
+        date-downloaded: "2021-07-27"
+        date-published: "2021-07-26"
+        date-released: "2021-07-26"
+        department: "Department of Hard Science Fiction"
+        doi: "10.5281/zenodo.4813122"
+        edition: "2nd abdridged edition"
+        editors: 
+          - family-names: Inchief
+            given-names: Editor
+          - name: The RCProc Editorial Team
+        editors-series: 
+          - family-names: Editor
+            given-names: Series
+          - name: The Series Editors
+        end: 42
+        entry: "Citation <n. 1>"
+        filename: "CITATION.cff"
+        format: "Citation File Format (CFF)"
+        identifiers: 
+          - type: doi
+            value: 10.5281/zenodo.1003149
+            description: The concept DOI of the work.
+          - type: doi
+            value: 10.5281/zenodo.4813122
+            description: The versioned DOI for version 1.1.0 of the work.
+          - type: swh
+            value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+            description: The Software Heritage identifier for version 1.1.0 of the work.
+          - type: url
+            value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+            description: The GitHub release URL of tag 1.1.0.
+        institution: 
+          name: "University of Arcadia"
+        isbn: "9781603095075"
+        issn: "2475-9066"
+        issue: 42
+        issue-date: "November/December 2021"
+        issue-title: "Special Issue: Software Citation"
+        journal: "Journal of Open Source Software"
+        keywords:
+          - software citation
+          - "citation file format"
+          - research
+        languages:
+          - "en"
+          - "haw"
+        license: Apache-2.0
+        license-url: "https://obscure-licenses.com?id=1234"
+        loc-end: 42
+        loc-start: 21
+        location: 
+          name: "Library of the Unseen University"
+        medium: "5¼-inch floppy disk"
+        month: 7
+        nihmsid: "NIHMS236863"
+        notes: "Excellent reference! TODO Read for thesis."
+        number: 12053
+        number-volumes: 7
+        pages: 78
+        patent-states: 
+          - "Canada"
+        pmcid: "PMC3134971"
+        publisher: 
+          name: "Open Access Publishing House"
+        recipients:
+          - name: "Recipient entity of personal communication"
+          - family-names: Recipient
+            given-names: Communication
+        repository: "https://ascl.net/2105.013"
+        repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
+        repository-code: "https://github.com/citation-file-format/my-research-software"
+        scope: "Supplement 2: Additional material"
+        section: 7
+        senders:
+          - name: "Sender entity of personal communication"
+          - family-names: Sender
+            given-names: Communication
+        start: 17
+        status: "submitted"
+        term: "Citation"
+        thesis-type: "PhD thesis"
+        title: "Towards better software citation"
+        translators:
+          - name: "Research Translators Ltd."
+          - family-names: Lator
+            given-names: Trans
+        type: "conference-paper"
+        url: "https://citation-file-format.github.io/"
+        version: "0.3.12"
+        volume: 2
+        volume-title: "Volume II: How it went on"
+        year: 2021
+        year-original: 1978
     ```
 
 ### `definitions.reference.abbreviation`
@@ -1851,14 +2212,13 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```
     ```yaml
     references:
-      - 
-        abbreviation: DEF
+      - abbreviation: DEF
         type: generic
     ```
 
 ### `definitions.reference.abstract`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
 - **description**: The abstract of the work.
     - If the work is a journal paper or other academic work: The abstract of the work.
@@ -1871,1070 +2231,1289 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```
     ```yaml
     references:
-      - 
-        abstract: "This work implements an algorithm that we use in our software. etc."
+      - abstract: "This work implements an algorithm that we use in our software. etc."
         type: generic
     ```
 
 ### `definitions.reference.authors`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `true`
-- **description**: ...
+- **description**: The authors of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      authors: ...
+      authors:
+        - name: The Research Software Project team
+        - family-names: Druskat
+          given-names: Stephan
       type: generic
     ```
     ```yaml
     references:
-      - authors: ...
-        type: generic
+      - authors:
+        - name: The Research Software Project team
+        - family-names: Druskat
+          given-names: Stephan
+      type: generic
     ```
 
 ### `definitions.reference.collection-doi`
 
-- **type**: `...`
+- **type**: [`definitions.doi`](#definitionsdoi)
 - **required**: `false`
-- **description**: ...
+- **description**: The DOI of a collection containing the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      collection-doi: ...
+      collection-doi: 10.5281/zenodo.1003149
       type: generic
     ```
     ```yaml
     references:
-      - collection-doi: ...
+      - collection-doi: 10.5281/zenodo.1003149
         type: generic
     ```
 
 ### `definitions.reference.collection-title`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The title of a collection or proceedings.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      collection-title: ...
+      collection-title: "Proceedings of the Research Conference 2021"
       type: generic
     ```
     ```yaml
     references:
-      - collection-title: ...
+      - collection-title: "Proceedings of the Research Conference 2021"
         type: generic
     ```
 
 ### `definitions.reference.collection-type`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The type of a collection.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      collection-type: ...
+      collection-type: "proceedings"
       type: generic
     ```
     ```yaml
     references:
-      - collection-type: ...
+      - collection-type: "proceedings"
         type: generic
     ```
 
 ### `definitions.reference.commit`
 
-- **type**: `...`
+- **type**: [`definitions.commit`](#definitionscommit)
 - **required**: `false`
-- **description**: ...
+- **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      commit: ...
+      commit: "16192bf05e99bcb35d5c3e085047807b5720fafc"
       type: generic
     ```
     ```yaml
     references:
-      - commit: ...
+      - commit: "16192bf05e99bcb35d5c3e085047807b5720fafc"
         type: generic
     ```
 
 ### `definitions.reference.conference`
 
-- **type**: `...`
+- **type**: [`definitions.entity`](#definitionsentity)
 - **required**: `false`
-- **description**: ...
+- **description**: The conference where the work was presented.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      conference: ...
+      conference: 
+        name: "Research Conference 2021"
       type: generic
     ```
     ```yaml
     references:
-      - conference: ...
+      - conference:
+          name: "Research Conference 2021"
         type: generic
     ```
 
 ### `definitions.reference.contact`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The contact person, group, company, etc. for a work.
 - **usage**:<br><br>
     ```yaml
     references:
       - contact: ...
+        - name: "The RC21 Organizing Committee"
+        - family-names: Druskat
+          given-names: Stephan
         type: generic
     ```
     ```yaml
     preferred-citation:
-      contact: ...
+      contact:
+        - name: "The RC21 Organizing Committee"
+        - family-names: Druskat
+          given-names: Stephan
       type: generic
     ```
 
 ### `definitions.reference.copyright`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The copyright information pertaining to the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      copyright: ...
+      copyright: "© 2021 The Research Software Project team"
       type: generic
     ```
     ```yaml
     references:
-      - copyright: ...
+      - copyright: "© 2021 The Research Software Project team"
         type: generic
     ```
 
 ### `definitions.reference.data-type`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The data type of a data set.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      data-type: ...
+      data-type: "YAML"
       type: generic
     ```
     ```yaml
     references:
-      - data-type: ...
+      - data-type: "YAML"
         type: generic
     ```
 
 ### `definitions.reference.database-provider`
 
-- **type**: `...`
+- **type**: [`definitions.entity`](#definitionsentity)
 - **required**: `false`
-- **description**: ...
+- **description**: The provider of the database where a work was accessed/is stored.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      database-provider: ...
+      database-provider:
+        name: "Research Databases Ltd."
       type: generic
     ```
     ```yaml
     references:
-      - database-provider: ...
+      - database-provider:
+          name: "Research Databases Ltd."
         type: generic
     ```
 
 ### `definitions.reference.database`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The name of the database where a work was accessed/is stored.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      database: ...
+      database: "Research Database"
       type: generic
     ```
     ```yaml
     references:
-      - database: ...
+      - database: "Research Database"
         type: generic
     ```
 
 ### `definitions.reference.date-accessed`
 
-- **type**: `...`
+- **type**: [`definitions.date`](#definitionsdate)
 - **required**: `false`
-- **description**: ...
+- **description**: The date the work was accessed.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      date-accessed: ...
+      date-accessed: "2021-07-27"
       type: generic
     ```
     ```yaml
     references:
-      - date-accessed: ...
+      - date-accessed: "2021-07-27"
         type: generic
     ```
 
 ### `definitions.reference.date-downloaded`
 
-- **type**: `...`
+- **type**: [`definitions.date`](#definitionsdate)
 - **required**: `false`
-- **description**: ...
+- **description**: The date the work has been downloaded.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      date-downloaded: ...
+      date-downloaded: "2021-07-27"
       type: generic
     ```
     ```yaml
     references:
-      - date-downloaded: ...
+      - date-downloaded: "2021-07-27"
         type: generic
     ```
 
 ### `definitions.reference.date-published`
 
-- **type**: `...`
+- **type**: [`definitions.date`](#definitionsdate)
 - **required**: `false`
-- **description**: ...
+- **description**: The date the work has been published.
 - **usage**:<br><br>
     ```yaml
     references:
-      - date-published: ...
+      - date-published: "2021-07-27"
         type: generic
     ```
     ```yaml
     preferred-citation:
-      date-published: ...
+      date-published: "2021-07-27"
       type: generic
     ```
 
 ### `definitions.reference.date-released`
 
-- **type**: `...`
+- **type**: [`definitions.date`](#definitionsdate)
 - **required**: `false`
-- **description**: ...
+- **description**: The date the work has been released.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      date-released: ...
+      date-released: "2021-07-27"
       type: generic
     ```
     ```yaml
     references:
-      - date-released: ...
+      - date-released: "2021-07-27"
         type: generic
     ```
 
 ### `definitions.reference.department`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The department where a work has been produced.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      department: ...
+      department: "Department of Hard Science Fiction"
       type: generic
     ```
     ```yaml
     references:
-      - department: ...
+      - department: "Department of Hard Science Fiction"
         type: generic
     ```
 
 ### `definitions.reference.doi`
 
-- **type**: `...`
+- **type**: [`definitions.doi`](#definitionsdoi)
 - **required**: `false`
-- **description**: ...
+- **description**: The DOI of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      doi: ...
+      doi: "10.5281/zenodo.4813122"
       type: generic
     ```
     ```yaml
     references:
-      - doi: ...
+      - doi: "10.5281/zenodo.4813122"
         type: generic
     ```
 
 ### `definitions.reference.edition`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The edition of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      edition: ...
+      edition: "2nd abdridged edition"
       type: generic
     ```
     ```yaml
     references:
-      - edition: ...
+      - edition: "2nd abdridged edition"
         type: generic
     ```
 
 ### `definitions.reference.editors`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The editor(s) of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      editors: ...
+      editors:
+        - family-names: Inchief
+          given-names: Editor
+        - name: The RCProc Editorial Team
       type: generic
     ```
     ```yaml
     references:
-      - editors: ...
+      - editors:
+        - family-names: Inchief
+          given-names: Editor
+        - name: The RCProc Editorial Team
         type: generic
     ```
 
 ### `definitions.reference.editors-series`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The editor(s) of a series in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      editors-series: ...
+      editors-series:
+        - family-names: Editor
+          given-names: Series
+        - name: The Series Editors
       type: generic
     ```
     ```yaml
     references:
-      - editors-series: ...
+      - editors-series:
+        - family-names: Editor
+          given-names: Series
+        - name: The Series Editors
         type: generic
     ```
 
 ### `definitions.reference.end`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
-- **description**: ...
+- **description**: The end page of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      end: ...
+      end: 42
       type: generic
     ```
     ```yaml
     references:
-      - end: ...
+      - end: 42
         type: generic
     ```
 
 ### `definitions.reference.entry`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: An entry in the collection that constitutes the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      entry: ...
+      entry: "Citation <n. 1>"
       type: generic
     ```
     ```yaml
     references:
-      - entry: ...
+      - entry: "Citation <n. 1>"
         type: generic
     ```
 
 ### `definitions.reference.filename`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The name of the electronic file containing the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      filename: ...
+      filename: "CITATION.cff"
       type: generic
     ```
     ```yaml
     references:
-      - filename: ...
+      - filename: "CITATION.cff"
         type: generic
     ```
 
 ### `definitions.reference.format`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The format in which a work is represented.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      format: ...
+      format: "Citation File Format (CFF)"
       type: generic
     ```
     ```yaml
     references:
-      - format: ...
+      - format: "Citation File Format (CFF)"
         type: generic
     ```
 
 ### `definitions.reference.identifiers`
 
-- **type**: `...`
+- **type**: Array of [`definitions.identifier`](#definitionsidentifier) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The identifier(s) of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      identifiers: ...
+      identifiers:
+        - type: doi
+          value: 10.5281/zenodo.1003149
+          description: The concept DOI of the work.
+        - type: doi
+          value: 10.5281/zenodo.4813122
+          description: The versioned DOI for version 1.1.0 of the work.
+        - type: swh
+          value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+          description: The Software Heritage identifier for version 1.1.0 of the work.
+        - type: url
+          value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+          description: The GitHub release URL of tag 1.1.0.
       type: generic
     ```
     ```yaml
     references:
-      - identifiers: ...
+      - identifiers:
+        - type: doi
+          value: 10.5281/zenodo.1003149
+          description: The concept DOI of the work.
+        - type: doi
+          value: 10.5281/zenodo.4813122
+          description: The versioned DOI for version 1.1.0 of the work.
+        - type: swh
+          value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+          description: The Software Heritage identifier for version 1.1.0 of the work.
+        - type: url
+          value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+          description: The GitHub release URL of tag 1.1.0.
         type: generic
     ```
 
 ### `definitions.reference.institution`
 
-- **type**: `...`
+- **type**: [`definitions.entity`](#definitionsentity)
 - **required**: `false`
-- **description**: ...
+- **description**: The institution where a work has been produced or published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      institution: ...
+      institution:
+        name: "University of Arcadia"
       type: generic
     ```
     ```yaml
     references:
-      - institution: ...
+      - institution:
+          name: "University of Arcadia"
         type: generic
     ```
 
 ### `definitions.reference.isbn`
 
-- **type**: `...`
+- **type**: `string` with pattern [`^[0-9\- ]{10,17}X?$`](https://regex101.com/library/6oS1PA)
 - **required**: `false`
-- **description**: ...
+- **description**: The ISBN of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      isbn: ...
+      isbn: "9781603095075"
       type: generic
     ```
     ```yaml
     references:
-      - isbn: ...
+      - isbn: "9781603095075"
         type: generic
     ```
 
 ### `definitions.reference.issn`
 
-- **type**: `...`
+- **type**: `string` with pattern [`^\d{4}-\d{3}[\dxX]$`](https://regex101.com/library/jqobq9)
 - **required**: `false`
-- **description**: ...
+- **description**: The ISSN of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      issn: ...
+      issn: "2475-9066"
       type: generic
     ```
     ```yaml
     references:
-      - issn: ...
+      - issn: "2475-9066"
         type: generic
     ```
 
 ### `definitions.reference.issue`
 
-- **type**: `...`
+- **type**: Nonempty `string` or `number`
 - **required**: `false`
-- **description**: ...
+- **description**: The issue of a periodical in which a work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      issue: ...
+      issue: "42"
       type: generic
     ```
     ```yaml
     references:
-      - issue: ...
+      - issue: "42"
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      issue: 42
+      type: generic
+    ```
+    ```yaml
+    references:
+      - issue: 42
         type: generic
     ```
 
 ### `definitions.reference.issue-date`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The publication date of the issue of a periodical in which a work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      issue-date: ...
+      issue-date: "November/December 2021"
       type: generic
     ```
     ```yaml
     references:
-      - issue-date: ...
+      - issue-date: "November/December 2021"
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      issue-date: "2021-12-31"
+      type: generic
+    ```
+    ```yaml
+    references:
+      - issue-date: "2021-12-31"
         type: generic
     ```
 
 ### `definitions.reference.issue-title`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The name of the issue of a periodical in which the work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      issue-title: ...
+      issue-title: "Special Issue: Software Citation"
       type: generic
     ```
     ```yaml
     references:
-      - issue-title: ...
+      - issue-title: "Special Issue: Software Citation"
         type: generic
     ```
 
 ### `definitions.reference.journal`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The name of the journal/magazine/newspaper/periodical where the work was published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      journal: ...
+      journal: "Journal of Open Source Software"
       type: generic
     ```
     ```yaml
     references:
-      - journal: ...
+      - journal: "Journal of Open Source Software"
         type: generic
     ```
 
 ### `definitions.reference.keywords`
 
-- **type**: `...`
+- **type**: Array of nonempty `string`s
 - **required**: `false`
-- **description**: ...
+- **description**: Keywords pertaining to the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      keywords: ...
+      keywords:
+        - software citation
+        - "citation file format"
+        - research
       type: generic
     ```
     ```yaml
     references:
-      - keywords: ...
+      - keywords:
+          - software citation
+          - "citation file format"
+          - research
         type: generic
     ```
 
 ### `definitions.reference.languages`
 
-- **type**: `...`
+- **type**: Array of [ISO 639](https://en.wikipedia.org/wiki/ISO_639) `string` with 2 or 3 characters and pattern [`^[a-z]{2,3}$`](https://regex101.com/library/aMqWLH)
 - **required**: `false`
-- **description**: ...
+- **description**: The language identifier(s) of the work according to ISO 639 language strings.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      languages: ...
+      languages:
+        - "en"
+        - "haw"
       type: generic
     ```
     ```yaml
     references:
-      - languages: ...
+      - languages:
+          - "en"
+          - "haw"
         type: generic
     ```
 
 ### `definitions.reference.license`
 
-- **type**: `...`
+- **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
 - **required**: `false`
-- **description**: ...
+- **description**: The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
+licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      license: ...
+      license: Apache-2.0
       type: generic
     ```
     ```yaml
     references:
-      - license: ...
+      - license: Apache-2.0
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      license: 
+        - Apache-2.0
+        - MIT
+      type: generic
+    ```
+    ```yaml
+    references:
+      - license: 
+          - Apache-2.0
+          - MIT
         type: generic
     ```
 
 ### `definitions.reference.license-url`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the license text under which the work is licensed (only for non-standard licenses not included in the SPDX License List).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      license-url: ...
+      license-url: "https://obscure-licenses.com?id=1234"
       type: generic
     ```
     ```yaml
     references:
-      - license-url: ...
+      - license-url: "https://obscure-licenses.com?id=1234"
         type: generic
     ```
 
 ### `definitions.reference.loc-end`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
-- **description**: ...
+- **description**: The line of code in the file where the work ends.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      loc-end: ...
+      loc-end: 42
       type: generic
     ```
     ```yaml
     references:
-      - loc-end: ...
+      - loc-end: 42
         type: generic
     ```
 
 ### `definitions.reference.loc-start`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
-- **description**: ...
+- **description**: The line of code in the file where the work starts.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      loc-start: ...
+      loc-start: 21
       type: generic
     ```
     ```yaml
     references:
-      - loc-start: ...
+      - loc-start: 21
         type: generic
     ```
 
 ### `definitions.reference.location`
 
-- **type**: `...`
+- **type**: [`definitions.entity`](#definitionsentity)
 - **required**: `false`
-- **description**: ...
+- **description**: The location of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      location: ...
+      location:
+        name: "Library of the Unseen University"
       type: generic
     ```
     ```yaml
     references:
-      - location: ...
+      - location:
+          name: "Library of the Unseen University"
         type: generic
     ```
 
 ### `definitions.reference.medium`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The medium of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      medium: ...
+      medium: "5¼-inch floppy disk"
       type: generic
     ```
     ```yaml
     references:
-      - medium: ...
+      - medium: "5¼-inch floppy disk"
         type: generic
     ```
 
 ### `definitions.reference.month`
 
-- **type**: `...`
+- **type**: `integer` in range `1-12`
 - **required**: `false`
-- **description**: ...
+- **description**: The month in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      month: ...
+      month: 7
       type: generic
     ```
     ```yaml
     references:
-      - month: ...
+      - month: 7
         type: generic
     ```
 
 ### `definitions.reference.nihmsid`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The NIHMSID of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      nihmsid: ...
+      nihmsid: "NIHMS236863"
       type: generic
     ```
     ```yaml
     references:
-      - nihmsid: ...
+      - nihmsid: "NIHMS236863"
         type: generic
     ```
 
 ### `definitions.reference.notes`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: Notes pertaining to the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      notes: ...
+      notes: "Excellent reference! TODO Read for thesis."
       type: generic
     ```
     ```yaml
     references:
-      - notes: ...
+      - notes: "Excellent reference! TODO Read for thesis."
         type: generic
     ```
 
+Note that this field should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not other (e.g., software index).
+
 ### `definitions.reference.number`
 
-- **type**: `...`
+- **type**: `string` or `number`
 - **required**: `false`
-- **description**: ...
+- **description**: The accession number for a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      number: ...
+      number: "005.1-ABC"
       type: generic
     ```
     ```yaml
     references:
-      - number: ...
+      - number: "005.1-ABC"
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      number: 1234567
+      type: generic
+    ```
+    ```yaml
+    references:
+      - number: 1234567
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      number: 1.4
+      type: generic
+    ```
+    ```yaml
+    references:
+      - number: 1.4
         type: generic
     ```
 
 ### `definitions.reference.number-volumes`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
-- **description**: ...
+- **description**: The number of volumes making up the collection in which the work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      number-volumes: ...
+      number-volumes: 4
       type: generic
     ```
     ```yaml
     references:
-      - number-volumes: ...
+      - number-volumes: 4
         type: generic
     ```
 
 ### `definitions.reference.pages`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
-- **description**: ...
+- **description**: The number of pages of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      pages: ...
+      pages: 123
       type: generic
     ```
     ```yaml
     references:
-      - pages: ...
+      - pages: 123
         type: generic
     ```
 
 ### `definitions.reference.patent-states`
 
-- **type**: `...`
+- **type**: Array of nonemtpy `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The states for which a patent is granted.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      patent-states: ...
+      patent-states:
+        - "Canada"
+        - "IL"
       type: generic
     ```
     ```yaml
     references:
-      - patent-states: ...
+      - patent-states:
+          - "Canada"
+          - "IL"
         type: generic
     ```
 
 ### `definitions.reference.pmcid`
 
-- **type**: `...`
+- **type**: `string` with pattern [`^PMC[0-9]{7}$`](https://regex101.com/library/EsU1QH)
 - **required**: `false`
-- **description**: ...
+- **description**: The PMCID of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      pmcid: ...
+      pmcid: "PMC3134971"
       type: generic
     ```
     ```yaml
     references:
-      - pmcid: ...
+      - pmcid: "PMC3134971"
         type: generic
     ```
 
 ### `definitions.reference.publisher`
 
-- **type**: `...`
+- **type**: [`definitions.entity`](#definitionsentity)
 - **required**: `false`
-- **description**: ...
+- **description**: The publisher who has published the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      publisher: ...
+      publisher:
+        name: "Open Access Publishing House"
       type: generic
     ```
     ```yaml
     references:
-      - publisher: ...
+      - publisher:
+          name: "Open Access Publishing House"
         type: generic
     ```
 
 ### `definitions.reference.recipients`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The recipient(s) of a personal communication.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      recipients: ...
+      recipients:
+        - name: "Recipient entity of personal communication"
+        - family-names: Recipient
+          given-names: Communication
       type: generic
     ```
     ```yaml
     references:
-      - recipients: ...
+      - recipients:
+          - name: "Recipient entity of personal communication"
+          - family-names: Recipient
+            given-names: Communication
         type: generic
     ```
 
 ### `definitions.reference.repository`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the work in a repository (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      repository: ...
+      repository: "https://ascl.net/2105.013"
       type: generic
     ```
     ```yaml
     references:
-      - repository: ...
+      - repository: "https://ascl.net/2105.013"
         type: generic
     ```
 
 ### `definitions.reference.repository-artifact`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the work in a build artifact/binary repository.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      repository-artifact: ...
+      repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
       type: generic
     ```
     ```yaml
     references:
-      - repository-artifact: ...
+      - repository-artifact: "https://search.maven.org/artifact/org.corpus-tools/cff-maven-plugin/0.4.0/maven-plugin"
         type: generic
     ```
 
 ### `definitions.reference.repository-code`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the work in a source code repository.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      repository-code: ...
+      repository-code: "https://github.com/citation-file-format/my-research-software"
       type: generic
     ```
     ```yaml
     references:
-      - repository-code: ...
+      - repository-code: "https://github.com/citation-file-format/my-research-software"
         type: generic
     ```
 
 ### `definitions.reference.scope`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The scope of the reference, e.g., the section of the work it adheres to.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      scope: ...
+      scope: "Supplement 2: Additional material"
       type: generic
     ```
     ```yaml
     references:
-      - scope: ...
+      - scope: "Supplement 2: Additional material"
         type: generic
     ```
 
 ### `definitions.reference.section`
 
-- **type**: `...`
+- **type**: `string` or `number`
 - **required**: `false`
-- **description**: ...
+- **description**: The section of a work that is referenced.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      section: ...
+      section: "Section 7: Software citation"
       type: generic
     ```
     ```yaml
     references:
-      - section: ...
+      - section: "Section 7: Software citation"
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      section: 7
+      type: generic
+    ```
+    ```yaml
+    references:
+      - section: 7
+        type: generic
+    ```
+    ```yaml
+    preferred-citation:
+      section: 7.1
+      type: generic
+    ```
+    ```yaml
+    references:
+      - section: 7.1
         type: generic
     ```
 
 ### `definitions.reference.senders`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The sender(s) of a personal communication.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      senders: ...
+      senders:
+        - name: "Sender entity of personal communication"
+        - family-names: Sender
+          given-names: Communication
       type: generic
     ```
     ```yaml
     references:
-      - senders: ...
+      - senders:
+          - name: "Sender entity of personal communication"
+          - family-names: Sender
+            given-names: Communication
         type: generic
     ```
 
 ### `definitions.reference.start`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
-- **description**: ...
+- **description**: The start page of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      start: ...
+      start: 42
       type: generic
     ```
     ```yaml
     references:
-      - start: ...
+      - start: 42
         type: generic
     ```
 
 ### `definitions.reference.status`
 
-- **type**: `...`
+- **type**: `enum` with values:
+    - `abstract`
+    - `advance-online`
+    - `in-preparation`
+    - `in-press`
+    - `preprint`
+    - `submitted`
 - **required**: `false`
-- **description**: ...
+- **description**: The publication status of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      status: ...
+      status: "submitted"
       type: generic
     ```
     ```yaml
     references:
-      - status: ...
+      - status: "submitted"
         type: generic
     ```
 
 ### `definitions.reference.term`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The term being referenced if the work is a dictionary or encyclopedia.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      term: ...
+      term: "Citation"
       type: generic
     ```
     ```yaml
     references:
-      - term: ...
+      - term: "Citation"
         type: generic
     ```
 
 ### `definitions.reference.thesis-type`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The type of the thesis that is the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      thesis-type: ...
+      thesis-type: "PhD thesis"
       type: generic
     ```
     ```yaml
     references:
-      - thesis-type: ...
+      - thesis-type: "PhD thesis"
         type: generic
     ```
 
 ### `definitions.reference.title`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `true`
-- **description**: ...
+- **description**: The title of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      title: ...
+      title: "Towards better software citation"
       type: generic
     ```
     ```yaml
     references:
-      - title: ...
+      - title: "Towards better software citation"
         type: generic
     ```
 
 ### `definitions.reference.translators`
 
-- **type**: `...`
+- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `false`
-- **description**: ...
+- **description**: The translator(s) of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      translators: ...
+      translators:
+        - name: "Research Translators Ltd."
+        - family-names: Lator
+          given-names: Trans
       type: generic
     ```
     ```yaml
     references:
-      - translators: ...
+      - translators:
+          - name: "Research Translators Ltd."
+          - family-names: Lator
+            given-names: Trans
         type: generic
     ```
 
 ### `definitions.reference.type`
 
-- **type**: `...`
+- **type**: `enum` with values:
+    - `art`
+    - `article`
+    - `audiovisual`
+    - `bill`
+    - `blog`
+    - `book`
+    - `catalogue`
+    - `conference-paper`
+    - `conference`
+    - `data`
+    - `database`
+    - `dictionary`
+    - `edited-work`
+    - `encyclopedia`
+    - `film-broadcast`
+    - `generic`
+    - `government-document`
+    - `grant`
+    - `hearing`
+    - `historical-work`
+    - `legal-case`
+    - `legal-rule`
+    - `magazine-article`
+    - `manual`
+    - `map`
+    - `multimedia`
+    - `music`
+    - `newspaper-article`
+    - `pamphlet`
+    - `patent`
+    - `personal-communication`
+    - `proceedings`
+    - `report`
+    - `serial`
+    - `slides`
+    - `software-code`
+    - `software-container`
+    - `software-executable`
+    - `software-virtual-machine`
+    - `software`
+    - `sound-recording`
+    - `standard`
+    - `statute`
+    - `thesis`
+    - `unpublished`
+    - `video`
+    - `website`
 - **required**: `true`
-- **description**: ...
+- **description**: The type of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2947,104 +3526,104 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.url`
 
-- **type**: `...`
+- **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: ...
+- **description**: The URL of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      url: ...
+      url: "https://citation-file-format.github.io/"
     ```
     ```yaml
     references:
       - type: generic
-        url: ...
+        url: "https://citation-file-format.github.io/"
     ```
 
 ### `definitions.reference.version`
 
-- **type**: `...`
+- **type**: [`definitions.version`](#definitionsversion)
 - **required**: `false`
-- **description**: ...
+- **description**: The version of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      version: ...
+      version: "0.3.12"
     ```
     ```yaml
     references:
       - type: generic
-        version: ...
+        version: "0.3.12"
     ```
 
 ### `definitions.reference.volume`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
-- **description**: ...
+- **description**: The volume of the periodical in which a work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      volume: ...
+      volume: 5
     ```
     ```yaml
     references:
       - type: generic
-        volume: ...
+        volume: 5
     ```
 
 ### `definitions.reference.volume-title`
 
-- **type**: `...`
+- **type**: Nonempty `string`
 - **required**: `false`
-- **description**: ...
+- **description**: The title of the volume in which the work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      volume-title: ...
+      volume-title: "Volume II: How it went on"
     ```
     ```yaml
     references:
       - type: generic
-        volume-title: ...
+        volume-title: "Volume II: How it went on"
     ```
 
 ### `definitions.reference.year`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
-- **description**: ...
+- **description**: The year in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      year: ...
+      year: 2021
     ```
     ```yaml
     references:
       - type: generic
-        year: ...
+        year: 2021
     ```
 
 ### `definitions.reference.year-original`
 
-- **type**: `...`
+- **type**: `integer`
 - **required**: `false`
-- **description**: ...
+- **description**: The year of the original publication.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
-      year-original: ...
+      year-original: 1978
     ```
     ```yaml
     references:
       - type: generic
-        year-original: ...
+        year-original: 1978
     ```
 
 ### `definitions.region`

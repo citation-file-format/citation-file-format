@@ -1163,7 +1163,7 @@
                 },
                 "database-provider": {
                     "$ref": "#/definitions/entity",
-                    "description": "The provider of the database where a work was accessed/is stored"
+                    "description": "The provider of the database where a work was accessed/is stored."
                 },
                 "date-accessed": {
                     "$ref": "#/definitions/date",
@@ -1196,7 +1196,7 @@
                     "type": "string"
                 },
                 "editors": {
-                    "description": "The editor(s) of a work",
+                    "description": "The editor(s) of a work.",
                     "items": {
                         "anyOf": [
                             {
@@ -1212,7 +1212,7 @@
                     "uniqueItems": true
                 },
                 "editors-series": {
-                    "description": "The editor(s) of a series in which a work has been published",
+                    "description": "The editor(s) of a series in which a work has been published.",
                     "items": {
                         "anyOf": [
                             {
@@ -1265,7 +1265,7 @@
                     "type": "string"
                 },
                 "issn": {
-                    "description": "The ISSN of the work",
+                    "description": "The ISSN of the work.",
                     "pattern": "^\\d{4}-\\d{3}[\\dxX]$",
                     "type": "string"
                 },
@@ -1307,7 +1307,7 @@
                     "uniqueItems": true
                 },
                 "languages": {
-                    "description": "The language identifier of the work according to ISO 639 language strings.",
+                    "description": "The language identifier(s) of the work according to ISO 639 language strings.",
                     "items": {
                         "maxLength": 3,
                         "minLength": 2,
@@ -1326,7 +1326,7 @@
                     "description": "The URL of the license text under which the work is licensed (only for non-standard licenses not included in the SPDX License List)."
                 },
                 "loc-end": {
-                    "description": "The line of code in the file where the work ends",
+                    "description": "The line of code in the file where the work ends.",
                     "type": "integer"
                 },
                 "loc-start": {
@@ -1398,7 +1398,7 @@
                     "description": "The publisher who has published the work."
                 },
                 "recipients": {
-                    "description": "The recipient of a personal communication.",
+                    "description": "The recipient(s) of a personal communication.",
                     "items": {
                         "anyOf": [
                             {
@@ -1440,7 +1440,7 @@
                             "type": "number"
                         }
                     ],
-                    "description": "The section of a work that is referenced"
+                    "description": "The section of a work that is referenced."
                 },
                 "senders": {
                     "description": "The sender(s) of a personal communication.",
@@ -1490,7 +1490,7 @@
                     "type": "string"
                 },
                 "translators": {
-                    "description": "The translator of a work.",
+                    "description": "The translator(s) of a work.",
                     "items": {
                         "anyOf": [
                             {
