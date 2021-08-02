@@ -3007,12 +3007,12 @@ licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      medium: "datasette"
+      medium: "5¼-inch floppy disk"
       type: generic
     ```
     ```yaml
     references:
-      - medium: "datasette"
+      - medium: "5¼-inch floppy disk"
         type: generic
     ```
 
