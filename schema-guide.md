@@ -3731,7 +3731,7 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
 
 - **type**: Nonempty `string`
 - **required**: N/A
-- **description**: The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
+- **description**: A URL. Supported URLs start with one of:
     - `https://`
     - `http://`
     - `ftp://`
@@ -3740,17 +3740,6 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
     ```yaml
     url: "https://citation-file-format.github.io/"
     ```
-    ```yaml
-    authors:
-      - name: The Research Software Project
-        url: "https://research-software-project.org"
-    ```
-    ```yaml
-    references:
-      - name: The Research Software Project
-        url: "sftp://files.research-software-project.org"
-    ```
-
 
 ### `definitions.version`
 
