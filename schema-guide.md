@@ -1212,20 +1212,27 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.identifier`
 
-- **type**: Complex object with keys `type`, `value`, `description`.
-    - `type`: **type** `enum` with values:
-      - `doi`
-      - `url`
-      - `swh`
-      - `other`
-    - `value`: **type** depends on `type`:
-      - with `doi`: **type** [`definitions.doi`](#definitionsdoi)
-      - with `url`: **type** [`definitions.url`](#definitionsurl)
-      - with `swh`: **type** [`definitions.swh-identifier`](#definitionsswh-identifier)
-      - with `other`: **type** Nonempty `string`
-    - `description`: **type** [`definitions.identifier-description`](#definitionsidentifier-description)
-- **required**: N/A
-- **description**: An identifier for a work.
+- **type**: Object with keys:
+    - `type`
+      - **type**: `enum` with values:
+        - `doi`
+        - `url`
+        - `swh`
+        - `other`
+      - **required**: `true`
+      - **description**: The type of the identifier.
+    - `value`
+      - **type**: Depends on the value for `type`:
+        - `doi`: [`definitions.doi`](#definitionsdoi)
+        - `url`: [`definitions.url`](#definitionsurl)
+        - `swh`: [`definitions.swh-identifier`](#definitionsswh-identifier)
+        - `other`: Nonempty `string`
+      - **required**: `true`
+      - **description**: The identifier value.
+    - `description`
+      - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+      - **required**: `false`
+      - **description**: A description for the specific identifier value.
 - **usage**:<br><br>
     ```yaml
     identifiers:
@@ -1265,6 +1272,13 @@ An entity can represent different types of entities, such as a team, an institut
       - type: url
         value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
         description: The GitHub release URL of the commit tagged with 1.1.0.
+    ```
+    ```yaml
+    preferred-citation:
+      identifiers:
+        - type: other
+          value: "arXiv:2103.06681"
+          description: The ArXiv preprint of the paper
     ```
 
 ### `definitions.identifier-description`
