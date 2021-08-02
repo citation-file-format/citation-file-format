@@ -1288,7 +1288,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 - **type**: (Array of) [`definitions.license-enum`](#definitions.license-enum) objects.
 - **required**: N/A
-- **description**: License identifier(s) under which the work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
+- **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which a work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     license: Apache-2.0
