@@ -4,13 +4,13 @@
 
 Valid Citation File Format files
 
-1. must be named `CITATION.cff` (note the capitalization)
-1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/))
-1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json)
+1. must be named `CITATION.cff` (note the capitalization);
+1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/));
+1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json).
 
 ### Minimal example
 
-A minimal example of a valid `CITATION.cff` file, that contains only the required fields, could look like this:
+A minimal example of a valid `CITATION.cff` file, that contains only the required keys, could look like this:
 
 ```yaml
 authors:
@@ -23,7 +23,7 @@ title: My Research Software
 
 ### Typical example
 
-For most software however, it is relatively easy to expand the minimal case with some more information like the version, the date when it was last published, some keywords, etc.:
+For most software however, it is relatively easy to expand the minimal case with important information like the version, the date when it was last published, some keywords, etc.:
 
 ```yaml
 abstract: This is my awesome research software. It does many things.
@@ -50,11 +50,15 @@ title: My Research Software
 version: 0.11.2
 ```
 
-### Transitive credit
+### Referencing other work
 
 When your software or data builds on what others have already done, it is good practice to add a `references` section to your
-`CITATION.cff` file. This way, whenever your work gets credited, a little bit of that goes into crediting the works that
-you built on.
+`CITATION.cff` file. This way, you give credit to the authors of works that your own work builds on.
+
+The `references` section works like a reference list in a paper, 
+but can also contain references to other software 
+(such as the dependencies of your software), other datasets,
+and other (research) outputs.
 
 ```yaml
 authors:
@@ -69,23 +73,28 @@ references:
         given-names: Jurriaan H.
     title: The foundation of Research Software
     type: software
+  - authors:
+      - family-names: Haines
+        given-names: Robert
+    title: Ruby CFF Library
+    type: software
+    version: 1.0
 ```
-
 
 ### Credit redirection
 
 Sometimes you want to redirect any credit your work may receive towards a second work (typically one of your own). A
-common example is when you write software and then write a paper about it, you may want be credited for the paper
-instead of for the software itself. In that case, your `CITATION.cff` should contain some metadata about the software at
-the root of the `CITATION.cff` file, but additionally, there should be a `preferred-citation` key with the metadata of
-the redirection target. Usually, the `message` also reflects the authors' wishes on how they want to be credited.
+common example is, that when you write software and then write a paper about it, you may want to be credited for the paper
+instead of for the software itself. For this case, your `CITATION.cff` should contain metadata about the software at
+the root of the `CITATION.cff` file, but additionally, you can add a `preferred-citation` key with the metadata of
+the paper (or other work) you want people to cite. Usually, the `message` also reflects the authors' wishes on how they want to be credited.
 
 ```yaml
 authors:
   - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
-message: If you use this software, please cite the article from preferred-citation instead of the software.
+message: If you use this software, please cite both the article from preferred-citation and the software itself.
 title: My Research Software
 preferred-citation:
   authors:
@@ -97,9 +106,9 @@ preferred-citation:
 
 The next sections explain each key in more detail.
 
-## Fields
+## Valid keys
 
-This section describes the valid fields in a `CITATION.cff` file.
+This section describes the valid keys in a `CITATION.cff` file.
 
 ### Index
 
@@ -139,7 +148,8 @@ This section describes the valid fields in a `CITATION.cff` file.
 
 - **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `true`
-- **description**: The authors of a software or dataset.
+- **description**: The authors of a software or dataset.  
+(See also [How to deal with unknown individual authors?](#how-to-deal-with-unknown-individual-authors))
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -419,7 +429,7 @@ primary principle, "Importance", when others cite this work.
 ### `repository`
 
 - **type**: [`definitions.url`](#definitionsurl)
-- **required**: false
+- **required**: `false`
 - **description**: The URL of the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
     ```yaml
@@ -429,7 +439,7 @@ primary principle, "Importance", when others cite this work.
 ### `repository-artifact`
 
 - **type**: [`definitions.url`](#definitionsurl)
-- **required**: false
+- **required**: `false`
 - **description**: The URL of the work in a build artifact/binary repository (when the work is software).
 - **usage**:<br><br>
     ```yaml
@@ -439,7 +449,7 @@ primary principle, "Importance", when others cite this work.
 ### `repository-code`
 
 - **type**: [`definitions.url`](#definitionsurl)
-- **required**: false
+- **required**: `false`
 - **description**: The URL of the work in a source code repository.
 - **usage**:<br><br>
     ```yaml
@@ -470,7 +480,7 @@ primary principle, "Importance", when others cite this work.
 ### `url`
 
 - **type**: [`definitions.url`](#definitionsurl)
-- **required**: false
+- **required**: `false`
 - **description**: The URL of a landing page/website for the software or dataset.
 - **usage**:<br><br>
     ```yaml
@@ -486,16 +496,16 @@ primary principle, "Importance", when others cite this work.
 
 ## Definitions
 
-Some values in CFF files are valid in different fields.
+Some values in CFF files are valid in different keys.
 For example, `repository-code`, `url` and `license-url` all take URLs as values.
 
 The schema therefore has [*definitions*](https://json-schema.org/understanding-json-schema/structuring.html#definitions)
-of smaller subschemas, that can be reused in the schema from the respective field, 
+of smaller subschemas, that can be reused in the schema from the respective key,
 instead of having to duplicate them.
 For example, there is one definition for a valid URL value ([`definitions.url`](#definitionsurl)),
 that is being referenced from `repository-code`, `url` and `license-url`.
 
-**Note:** `definitions` and its subkeys like `definitions.alias` or `definitions.entity.alias` should not be used as fields in `CITATION.cff` files:
+**Note:** `definitions` and its subkeys like `definitions.alias` or `definitions.entity.alias` should not be used as keys in `CITATION.cff` files:
 ```yaml
 # incorrect
 authors: 
@@ -542,7 +552,7 @@ authors:
 ### `definitions.address`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: An address.
 - **usage**:<br><br>
     ```yaml
@@ -554,7 +564,7 @@ authors:
 ### `definitions.alias`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: An alias.
 - **usage**:<br><br>
     ```yaml
@@ -566,7 +576,7 @@ authors:
 ### `definitions.city`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: A city.
 - **usage**:<br><br>
     ```yaml
@@ -578,7 +588,7 @@ authors:
 ### `definitions.commit`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 - **usage**:<br><br>
     ```yaml
@@ -840,7 +850,7 @@ authors:
     - `ZA`
     - `ZM`
     - `ZW`
-- **required**: `false`
+- **required**: N/A
 - **description**: The ISO 3166-1 alpha-2 country code for a country.
 - **usage**:<br><br>
     ```yaml
@@ -858,7 +868,7 @@ authors:
 ### `definitions.date`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes.
 - **usage**:<br><br>
     ```yaml
@@ -897,7 +907,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 ### `definitions.doi`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 - **usage**:<br><br>
     ```yaml
@@ -907,7 +917,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 ### `definitions.email`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: An email address.
 - **usage**:<br><br>
     ```yaml
@@ -918,7 +928,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 ### `definitions.entity`
 
-- **type**: `object` with the following properties:
+- **type**: `object` with the following keys:
     - [`address`](#definitionsentityaddress)
     - [`alias`](#definitionsentityalias)
     - [`city`](#definitionsentitycity)
@@ -934,9 +944,9 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     - [`region`](#definitionsentityregion)
     - [`tel`](#definitionsentitytel)
     - [`website`](#definitionsentitywebsite)
-- **required**: `false`
+- **required**: N/A
 - **description**: An entity.  
-Entities are used in fields that can also take [`definitions.person`](#definitionsperson) objects.
+Entities are used in keys that can also take [`definitions.person`](#definitionsperson) objects.
 An entity can represent different types of entities, such as a team, an institution, a company, a conference, etc.
 - **usage**:<br><br>
     ```yaml
@@ -966,7 +976,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     references:
       - type: generic
-        title: "A reference showing different fields that take entity objects"
+        title: "A reference showing different keys that take entity objects"
         authors:
           - name: "The Research Software Project team"
         conference:
@@ -1191,7 +1201,7 @@ An entity can represent different types of entities, such as a team, an institut
 ### `definitions.fax`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: A fax number.
 - **usage**:<br><br>
     ```yaml
@@ -1208,7 +1218,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.identifier`
 
-- **type**: Complex object with fields `type`, `value`, `description`.
+- **type**: Complex object with keys `type`, `value`, `description`.
     - `type`: **type** `enum` with values:
       - `doi`
       - `url`
@@ -1220,7 +1230,7 @@ An entity can represent different types of entities, such as a team, an institut
       - with `swh`: **type** [`definitions.swh-identifier`](#definitionsswh-identifier)
       - with `other`: **type** Nonempty `string`
     - `description`: **type** [`definitions.identifier-description`](#definitionsidentifier-description)
-- **required**: `false`
+- **required**: N/A
 - **description**: An identifier for a work.
 - **usage**:<br><br>
     ```yaml
@@ -1266,14 +1276,14 @@ An entity can represent different types of entities, such as a team, an institut
 ### `definitions.identifier-description`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: A description for a specific identifier value.
 - **usage**:<br><br>
     ```yaml
     identifiers:
       - type: doi
         value: 10.5281/zenodo.4813122
-        description: "The version DOI for this version, which has a relation childOf with the concept DOI specified in the doi field in the root of this file."
+        description: "The version DOI for this version, which has a relation childOf with the concept DOI specified in the doi key in the root of this file."
       - type: other
         value: "ar:1234/5678.ABCD"
         description: "The identifier provided by Archival Repository, which points to this version of the software."
@@ -1283,7 +1293,7 @@ An entity can represent different types of entities, such as a team, an institut
 ### `definitions.license`
 
 - **type**: (Array of) [`definitions.license-enum`](#definitions.license-enum) objects.
-- **required**: `false`
+- **required**: N/A
 - **description**: License identifier(s) under which the work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
@@ -1757,7 +1767,7 @@ An entity can represent different types of entities, such as a team, an institut
     - `ZPL-1.1`
     - `ZPL-2.0`
     - `ZPL-2.1`
-- **required**: `false`
+- **required**: N/A
 - **description**: SPDX identifier for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
 - **usage**:<br><br>
     ```yaml
@@ -1772,7 +1782,7 @@ An entity can represent different types of entities, such as a team, an institut
 ### `definitions.orcid`
 
 - **type**: `uri` with pattern [`https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}`](https://regex101.com/library/wvvVYE)
-- **required**: `false`
+- **required**: N/A
 - **description**: An [ORCID](https://orcid.org) identifier.
 - **usage**:<br><br>
     ```yaml
@@ -1784,7 +1794,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.person`
 
-- **type**: `object` with the following properties:
+- **type**: `object` with the following keys:
     - [`address`](#definitionspersonaddress)
     - [`affiliation`](#definitionspersonaffiliation)
     - [`alias`](#definitionspersonalias)
@@ -1801,7 +1811,7 @@ An entity can represent different types of entities, such as a team, an institut
     - [`region`](#definitionspersonregion)
     - [`tel`](#definitionspersontel)
     - [`website`](#definitionspersonwebsite)
-- **required**: `false`
+- **required**: N/A
 - **description**: A person.  
 CFF aims to implement a culturally neutral model for personal names, according to the [suggestions on splitting personal names by the W3C](https://www.w3.org/International/questions/qa-personal-names) and the implementation of personal name splitting in BibTeX ([Hufflen, 2006](https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf)). To this end, CFF provides four generic keys to specify personal names:
 
@@ -2047,7 +2057,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 ### `definitions.post-code`
 
 - **type**: `string` or `number`
-- **required**: `false`
+- **required**: N/A
 - **description**: A post code.
 - **usage**:<br><br>
     ```yaml
@@ -2063,7 +2073,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference`
 
-- **type**: `object` with the following properties:
+- **type**: `object` with the following keys:
     - [`abbreviation`](#definitionsreferenceabbreviation)
     - [`abstract`](#definitionsreferenceabstract)
     - [`authors`](#definitionsreferenceauthors)
@@ -2134,13 +2144,13 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     - [`volume-title`](#definitionsreferencevolume-title)
     - [`year`](#definitionsreferenceyear)
     - [`year-original`](#definitionsreferenceyear-original)
-- **required**: `false`
+- **required**: N/A
 - **description**: A reference.
 - **usage**:<br><br>
     ```yaml
     references: 
       - abbreviation: "NP"
-        abstract: "This is a non-sensical exmaple reference to show how the many different fields in a reference object can be used."
+        abstract: "This is a non-sensical exmaple reference to show how the many different keys in a reference object can be used."
         authors: 
           - name: The Research Software Project
         collection-doi: 10.5281/zenodo.1003149
@@ -2310,6 +2320,42 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
           given-names: Stephan
         type: generic
     ```
+
+#### How to deal with unknown individual authors?
+
+To enable credit for the individuals that have created a work, 
+it is good practice to cite the respective individuals as authors.
+Sometimes you may not be able to determine the person names of the relevant individuals to create
+[`definitions.person`](#definitionsperson) objects for them,
+for example when a software you cite does not provide a `CITATION.cff` file.
+Then, the next best thing is to refer to those that you could not determine person names for 
+collectively as a "team" or "project" using the title of the work
+in a [`definitions.entity`](#definitionsentity) object:
+
+```yaml
+authors:
+  - name: "The Research Software project"
+```
+```yaml
+authors:
+  - family-names: Spaaks
+    given-names: Jurriaan H.
+  - family-names: Druskat
+    given-names: Stephan
+  - name: "The Research Software team"
+```
+
+This still represents the maximum knowledge you have about the authors.
+It's also a good starting point to enable users of the citation metadata to determine the correct names themselves in the future, 
+especially if you also provide a source of information such as a `repository-code` or a `url`.
+
+If the authors of a work are truly anonymous,
+you can represent this in the same way:
+
+```yaml
+authors:
+  - name: anonymous
+```
 
 ### `definitions.reference.collection-doi`
 
@@ -3120,7 +3166,7 @@ licenses, it is assumed their relationship is OR, not AND.
         type: generic
     ```
 
-Note that this field should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not other (e.g., software index).
+Note that this key should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not other (e.g., software index).
 
 ### `definitions.reference.number`
 
@@ -3682,7 +3728,7 @@ Note that this field should contain notes that may be picked up by some downstre
 ### `definitions.region`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: A region.
 - **usage**:<br><br>
     ```yaml
@@ -3694,7 +3740,7 @@ Note that this field should contain notes that may be picked up by some downstre
 ### `definitions.swh-identifier`
 
 - **type**: `string` with pattern [`^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$`](https://regex101.com/library/o399MX)
-- **required**: `false`
+- **required**: N/A
 - **description**: The Software Heritage identifier (without further qualifiers such as origin, visit, anchor, path).
 - **usage**:<br><br>
     ```yaml
@@ -3708,7 +3754,7 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
 ### `definitions.tel`
 
 - **type**: Nonempty `string`
-- **required**: `false`
+- **required**: N/A
 - **description**: A telephone number.
 - **usage**:<br><br>
     ```yaml
@@ -3726,8 +3772,8 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
 ### `definitions.url`
 
 - **type**: Nonempty `string`
-- **required**: `false`
-- **description**: The URL of a landing page/website for the software or dataset. Supported URLs start with one of:
+- **required**: N/A
+- **description**: A URL. Supported URLs start with one of:
     - `https://`
     - `http://`
     - `ftp://`
@@ -3747,11 +3793,10 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
         url: "sftp://files.research-software-project.org"
     ```
 
-
 ### `definitions.version`
 
 - **type**: Nonempty `string` or `number`
-- **required**: `false`
+- **required**: N/A
 - **description**: The version of a work.
 - **usage**: 
     ```yaml
