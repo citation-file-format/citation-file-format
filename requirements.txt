@@ -2,4 +2,3 @@ cffconvert==1.*
 pytest
 jsonschema
 ruamel.yaml
-flatten_json
