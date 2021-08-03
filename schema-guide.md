@@ -64,11 +64,11 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
 title: My Research Software
 references:
-  authors:
-    - family-names: Spaaks
-      given-names: Jurriaan H.
-  title: The foundation of Research Software
-  type: software
+  - authors:
+      - family-names: Spaaks
+        given-names: Jurriaan H.
+    title: The foundation of Research Software
+    type: software
 ```
 
 
