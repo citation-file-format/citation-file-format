@@ -81,6 +81,10 @@ If the output is very long, it may help if you search it for lines starting with
 
 ## Tools to work with `CITATION.cff` files :wrench:
 
+There is tooling available to work with `CITATION.cff` files to do different things:
+create new files, edit existing files, validate existing files, convert files from the Citation File Format into another format.
+The following table gives an overview of the tools that we know about. If there is a tool missing from this table, please [open a new issue](https://github.com/citation-file-format/citation-file-format/issues/new/choose) and let us know.
+
 <!-- Table with functions as cols, ecosystems as rows 
 
 E.g., Validation, conversion, editing, creation
