@@ -3084,7 +3084,7 @@ authors:
 
 - **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
 - **required**: `false`
-- **description**: The [SPDX license identifier(s)](](https://spdx.dev/ids/)) for the license(s) under which the work is made available.
+- **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which the work is made available.
 When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
