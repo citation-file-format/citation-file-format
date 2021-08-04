@@ -67,20 +67,21 @@ The Citation File Format schema is maintained by
 
 ## Contributing :handshake:
 
-**The _Citation File Format_ is a collaborative project** and we welcome suggestions and contributions. We hope one of the invitations below works for you, but if not, please let us know!
+The Citation File Format is a collaborative project and we welcome suggestions and contributions. We hope one of the invitations below works for you, but if not, please let us know!
 
 :running: **I'm busy, I only have 1 minute**
-- Tell a friend about the *Citation File Format*!
+- Tell a friend about the Citation File Format, or tweet about it!
 
-:hourglass_flowing_sand: **I've got 5 minutes - tell me what I should do**
+:hourglass_flowing_sand: **I've got 10 minutes - tell me what I should do**
 - Create a `CITATION.cff` file for your repository.
-- Suggest ideas for how you would like to use the *Citation File Format*, or for an improvement to the format or its tooling.
+- Suggest ideas for how you would like to use the Citation File Format, or for an improvement to the format or its tooling.
 
 :computer: **I've got a few hours to work on this**
 - Take a look at the issues and see if there are any you can contribute to.
 
-:tada: **I really want to help increase the community**
-- Organise a hack event or workshop to help others use or improve the *Citation File Format*.
+:tada: **I want to help increase the community**
+- Write a blog post or news item for your own community.
+- Organise a hack event or workshop to help others use or improve the Citation File Format.
 
 Please read the more detailed [contributing guidelines](CONTRIBUTING.md) and [open a GitHub issue](https://github.com/citation-file-format/citation-file-format/issues) to suggest a new idea or let us know about bugs.
 
