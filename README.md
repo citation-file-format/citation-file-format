@@ -62,8 +62,8 @@ When you do this, great things may happen:
 
 The Citation File Format schema is maintained by
 
-- [Stephan Druskat](https://sdruskat.net) ([@sdruskat](https://github.com/sdruskat/))
-- Jurriaan Spaaks ([@jspaaks](https://github.com/jspaaks/))
+- Stephan Druskat ([@sdruskat](https://github.com/sdruskat/))
+- Jurriaan H. Spaaks ([@jspaaks](https://github.com/jspaaks/))
 
 ## Contributing :handshake:
 
