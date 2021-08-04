@@ -114,3 +114,14 @@ We gratefully acknowledge support from:
 - The [Institute for Software Technology](https://www.dlr.de/sc/en/desktopdefault.aspx/) of the [German Aerospace Center (DLR)](https://www.dlr.de/en/)
 - The [Netherlands eScience Center](https://www.esciencecenter.nl/)
 - The [Software Sustainability Institute](https://software.ac.uk/)
+
+### Research notice
+Please note that this repository is participating in a study into sustainability
+of open source projects. Data will be gathered about this repository for
+approximately the next 12 months, starting from June 2021.
+
+Data collected will include number of contributors, number of PRs, time taken to
+close/merge these PRs, and issues closed.
+
+For more information, please visit
+[our informational page](https://sustainable-open-science-and-software.github.io/) or download the [participant information sheet](https://sustainable-open-science-and-software.github.io/assets/PIS_sustainable_software.pdf).
