@@ -5,19 +5,14 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Project homepage](https://img.shields.io/badge/Project%20homepage-citation--file--format.github.io-ff0080)](https://citation-file-format.github.io)
 
-The Citation File Format specifies how users can provide citation metadata for software or datasets that is easy to read by humans as well as by machines.
+The Citation File Format lets you provide citation metadata for software or datasets 
+in plaintext files that are easy to read by both humans and machines.
 
 ## Structure
 
-`CITATION.cff` files in the Citation File Format consist of three parts:
+You can specify citation metadata for your software (or dataset) in a file named `CITATION.cff`.
 
-1. The **software** (or dataset) **citation metadata** - as the most important part, this is **required**.
-2. A **references** section - works like a references section in a paper, so that you can give credit to the authors of works that your software or dataset builds on.
-3. One **preferred citation** - so that even when you ask people to cite your software or dataset, they can also additionally cite a traditional paper.
-
-### Example
-
-This is what a common `CITATION.cff` file for research software may look like:
+This is what a typical `CITATION.cff` file for research software may look like:
 
 ```yaml
 cff-version: 1.2.0
@@ -40,6 +35,11 @@ identifiers:
 license: Apache-2.0
 repository-code: "https://github.com/citation-file-format/my-research-software"
 ```
+
+In addition, the Citation File Format allows you to
+
+- provide references to works that your software or dataset builds on ([see here for more info](schema-guide.md#referencing-other-work));
+- ask people to cite a different, related work instead of the software or dataset itself ([see here for more info](schema-guide.md#credit-redirection)).
 
 ## Format specifications :books:
 
