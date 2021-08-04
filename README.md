@@ -89,10 +89,7 @@ Please read the more detailed [contributing guidelines](CONTRIBUTING.md) and [op
 
 Copyright © 2016ff. The Citation File Format Contributors
 
-This work is licensed under multiple licenses:
-- The schema ([`schema.json`](schema.json)) is licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
-- The schema guide ([`schema-guide.md`](schema-guide.md)) is licensed under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
-- Insignificant files are licensed under [CC0-1.0](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+This work is licensed under a [Creative Commons Attribution 4.0 International (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/legalcode) license.
 
 ## Acknowledgments :pray:
 
