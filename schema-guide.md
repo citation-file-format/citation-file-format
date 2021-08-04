@@ -854,10 +854,15 @@ authors:
 - **description**: The [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for a country.
 - **usage**:<br><br>
     ```yaml
-    country: NL
+    authors:
+      - name: The Authors Team
+        country: NL
     ```
     ```yaml
-    country: DE
+    references:
+      - type: conference
+        conference:
+            country: DE
     ```
 
 ### `definitions.date`
@@ -891,8 +896,9 @@ authors:
     ```
     ```yaml
     references:
-      - date-end: "2020-02-02"
-        date-start: "2020-01-31"
+      - conference:
+            date-end: "2020-02-02"
+            date-start: "2020-01-31"
         type: conference
     ```
 
@@ -2360,7 +2366,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         - name: The Research Software Project team
         - family-names: Druskat
           given-names: Stephan
-      type: generic
+        type: generic
     ```
 
 #### How to deal with unknown individual authors?
@@ -3823,6 +3829,16 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
 - **usage**
     ```yaml
     url: "https://citation-file-format.github.io/"
+    ```
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        website: "https://research-software-project.org"
+    ```
+    ```yaml
+    references:
+      - type: generic
+        url: "sftp://files.research-software-project.org"
     ```
 
 ### `definitions.version`
