@@ -56,7 +56,20 @@ When you do this, great things may happen:
 
 ## Validation :heavy_check_mark:
 
+<!-- Show how to validate with schema_poc.py -->
+<!-- Later, this should link to tutorials -->
+
 ## Tools to work with `CITATION.cff` files :wrench:
+
+<!-- Table with functions as cols, ecosystems as rows 
+
+E.g., Validation, conversion, editing, creation
+
+and
+
+E.g., Python, JS, TypeScript, Rust, docker, GH Actions, Ruby, R, Java, GitHub Bot, CLI
+
+-->
 
 ## Maintainers :nerd_face:
 
