@@ -89,7 +89,7 @@ The following table gives an overview of the tools that we know about. If there 
 |---------------|----------|---------|------------|------------|
 | Command line  |          |         | [cffconvert](https://github.com/citation-file-format/cff-converter-python) | [cffconvert](https://github.com/citation-file-format/cff-converter-python) |
 | Docker        |          |         |            |            |
-| GitHubActions |          |         |            | cffconvert<br>[codemeta2cff](https://github.com/caltechlibrary/codemeta2cff)            |
+| GitHubActions |          |         |            | • cffconvert<br>• [codemeta2cff](https://github.com/caltechlibrary/codemeta2cff)            |
 | GitHubbots    |          |         |            |            |
 | Go            |          |         |            |            |
 | Java          |          |         |            |            |
