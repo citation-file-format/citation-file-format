@@ -1212,20 +1212,61 @@ An entity can represent different types of entities, such as a team, an institut
 
 ### `definitions.identifier`
 
-- **type**: Complex object with keys `type`, `value`, `description`.
-    - `type`: **type** `enum` with values:
-      - `doi`
-      - `url`
-      - `swh`
-      - `other`
-    - `value`: **type** depends on `type`:
-      - with `doi`: **type** [`definitions.doi`](#definitionsdoi)
-      - with `url`: **type** [`definitions.url`](#definitionsurl)
-      - with `swh`: **type** [`definitions.swh-identifier`](#definitionsswh-identifier)
-      - with `other`: **type** Nonempty `string`
-    - `description`: **type** [`definitions.identifier-description`](#definitionsidentifier-description)
+- **type**: One of the following `object`s:
+    1. DOI
+        - `type`:
+            - **type**: `enum` with singular value `doi`
+            - **required**: `true`
+            - **description**: The type of identifier.
+        - `value`:
+            - **type**: [`definitions.doi`](#definitionsdoi)
+            - **required**: `true`
+            - **description**: The value of the DOI, e.g. `10.5281/zenodo.1003149`
+        - `description`:
+            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+            - **required**: `false`
+            - **description**: The description of the DOI, e.g. `This is the DOI for version 0.11.4.`
+    1. URL
+        - `type`:
+            - **type**: `enum` with singular value `url`
+            - **required**: `true`
+            - **description**: The type of identifier.
+        - `value`:
+            - **type**: [`definitions.url`](#definitionsurl)
+            - **required**: `true`
+            - **description**: The value of the URL, e.g. `https://github.com/citation-file-format/citation-file-format`.
+        - `description`:
+            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+            - **required**: `false`
+            - **description**: The description of the URL, e.g. `The homepage for the project`.
+    1. Software Heritage identifier
+        - `type`:
+            - **type**: `enum` with singular value `swh`
+            - **required**: `true`
+            - **description**: The type of identifier.
+        - `value`:
+            - **type**: [`definitions.swh-identifier`](#definitionsswh-identifier)
+            - **required**: `true`
+            - **description**: The value of the Software Heritage identifier, e.g. `swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d`.
+        - `description`:
+            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+            - **required**: `false`
+            - **description**: The description of the Software Heritage identifier, e.g. `The directory object of the repository as stored on Software Heritage.`
+    1. Other
+        - `type`:
+            - **type**: `enum` with singular value `other`
+            - **required**: `true`
+            - **description**: The type of identifier.
+        - `value`:
+            - **type**: Nonempty `string`
+            - **required**: `true`
+            - **description**: The value of the identifier, e.g. `arXiv:2103.06681`
+        - `description`:
+            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+            - **required**: `false`
+            - **description**: The description of the identifier, e.g. `The ArXiv preprint of the paper`.
 - **required**: N/A
-- **description**: An identifier for a work.
+- **description**: An identifier.
 - **usage**:<br><br>
     ```yaml
     identifiers:
@@ -1265,6 +1306,13 @@ An entity can represent different types of entities, such as a team, an institut
       - type: url
         value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
         description: The GitHub release URL of the commit tagged with 1.1.0.
+    ```
+    ```yaml
+    preferred-citation:
+      identifiers:
+        - type: other
+          value: "arXiv:2103.06681"
+          description: The ArXiv preprint of the paper
     ```
 
 ### `definitions.identifier-description`
