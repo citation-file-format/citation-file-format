@@ -88,11 +88,13 @@ The Citation File Format is a collaborative project and we welcome suggestions a
 :hourglass_flowing_sand: **I've got 10 minutes - tell me what I should do**
 - Create a `CITATION.cff` file for your repository.
 - Suggest ideas for how you would like to use the Citation File Format, or for an improvement to the format or its tooling.
+<!-- Add link to help-wanted + validation labels with only validation label image -->
 
 :computer: **I've got a few hours to work on this**
 - Take a look at the issues and see if there are any you can contribute to.
+<!-- Add link to open help-wanted + tooling issues with only tooling label image -->
 
-:tada: **I want to help increase the community**
+:tada: **I want to help grow the community**
 - Write a blog post or news item for your own community.
 - Organise a hack event or workshop to help others use or improve the Citation File Format.
 
