@@ -876,7 +876,7 @@ authors:
 
 - **type**: Nonempty `string`
 - **required**: N/A
-- **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes. Note to tool implementers: it is necessary to cast YAML date objects to string objects when validating against the schema.
+- **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes. Note to tool implementers: it is necessary to cast YAML `date` objects to `string` objects when validating against the schema.
 - **usage**:<br><br>
     ```yaml
     date-released: "2020-01-31"
