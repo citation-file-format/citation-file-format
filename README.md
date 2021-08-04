@@ -56,7 +56,27 @@ When you do this, great things may happen:
 
 ## Validation :heavy_check_mark:
 
-<!-- Show how to validate with schema_poc.py -->
+You can validate your `CITATION.cff` file with the [Python script](examples/validate_cff.py)
+that we also use for testing the Citation File Format schema itself.
+
+To do this, you need to have [Python 3](https://www.python.org) installed.
+The script depends on the packages [`jsonschema`](https://pypi.org/project/jsonschema/) and [`ruamel.yaml`](https://pypi.org/project/ruamel.yaml/).
+
+**Steps:**
+
+1. Clone this repository with `git`: e.g. `git clone https://github.com/citation-file-format/citation-file-format.git`.
+2. Change into the cloned repository directory: e.g. `cd citation-file-format`
+3. Install the dependencies and run the script:<br><br>
+```python
+python3 -m pip install --user ruamel.yaml jsonschema
+python3 examples/validate_cff.py -s schema.json -d path/to/your/CITATION.cff
+```
+
+If you get no output, then congratulations, your `CITATION.cff` file is valid.
+
+If you get a Traceback with error messages, look for the relevant validation error and fix it.
+If the output is very long, it may help if you search it for `jsonschema.exceptions.ValidationError`.
+
 <!-- Later, this should link to tutorials -->
 
 ## Tools to work with `CITATION.cff` files :wrench:
