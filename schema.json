@@ -1229,8 +1229,16 @@
                     "uniqueItems": true
                 },
                 "end": {
-                    "description": "The end page of the work.",
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The end page of the work."
                 },
                 "entry": {
                     "description": "An entry in the collection that constitutes the work.",
@@ -1327,12 +1335,28 @@
                     "description": "The URL of the license text under which the work is licensed (only for non-standard licenses not included in the SPDX License List)."
                 },
                 "loc-end": {
-                    "description": "The line of code in the file where the work ends.",
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The line of code in the file where the work ends."
                 },
                 "loc-start": {
-                    "description": "The line of code in the file where the work starts.",
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The line of code in the file where the work starts."
                 },
                 "location": {
                     "$ref": "#/definitions/entity",
@@ -1344,10 +1368,31 @@
                     "type": "string"
                 },
                 "month": {
-                    "description": "The month in which a work has been published.",
-                    "maximum": 12,
-                    "minimum": 1,
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "maximum": 12,
+                            "minimum": 1,
+                            "type": "integer"
+                        },
+                        {
+                            "enum": [
+                                "1",
+                                "2",
+                                "3",
+                                "4",
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9",
+                                "10",
+                                "11",
+                                "12"
+                            ],
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The month in which a work has been published."
                 },
                 "nihmsid": {
                     "description": "The NIHMSID of a work.",
@@ -1372,12 +1417,28 @@
                     "description": "The accession number for a work."
                 },
                 "number-volumes": {
-                    "description": "The number of volumes making up the collection in which the work has been published.",
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The number of volumes making up the collection in which the work has been published."
                 },
                 "pages": {
-                    "description": "The number of pages of the work.",
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The number of pages of the work."
                 },
                 "patent-states": {
                     "description": "The states for which a patent is granted.",
@@ -1460,8 +1521,16 @@
                     "uniqueItems": true
                 },
                 "start": {
-                    "description": "The start page of the work.",
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The start page of the work."
                 },
                 "status": {
                     "description": "The publication status of the work.",
@@ -1568,8 +1637,16 @@
                     "description": "The version of the work."
                 },
                 "volume": {
-                    "description": "The volume of the periodical in which a work appeared.",
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The volume of the periodical in which a work appeared."
                 },
                 "volume-title": {
                     "description": "The title of the volume in which the work appeared.",
@@ -1577,12 +1654,28 @@
                     "type": "string"
                 },
                 "year": {
-                    "description": "The year in which a work has been published.",
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The year in which a work has been published."
                 },
                 "year-original": {
-                    "description": "The year of the original publication.",
-                    "type": "integer"
+                    "anyOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "minLength": 1,
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The year of the original publication."
                 }
             },
             "required": [
