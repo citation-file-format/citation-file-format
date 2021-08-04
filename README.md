@@ -56,7 +56,7 @@ When you do this, great things may happen:
 
 ## Validation :heavy_check_mark:
 
-You can validate your `CITATION.cff` file with the [Python script](examples/validate_cff.py)
+You can validate your `CITATION.cff` file with the [Python script](examples/validator.py)
 that we also use for testing the Citation File Format schema itself.
 
 To do this, you need to have [Python 3](https://www.python.org) installed.
@@ -69,7 +69,7 @@ The script depends on the packages [`jsonschema`](https://pypi.org/project/jsons
 3. Install the dependencies and run the script:
 ```python
 python3 -m pip install --user ruamel.yaml jsonschema
-python3 examples/validate_cff.py -s schema.json -d path/to/your/CITATION.cff
+python3 examples/validator.py -s schema.json -d path/to/your/CITATION.cff
 ```
 
 If you get no output, then congratulations, your `CITATION.cff` file is valid.

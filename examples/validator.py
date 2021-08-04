@@ -18,7 +18,7 @@ def validate(data_path, schema_path):
 
 if __name__ == "__main__":
     """Run like this from the command line:
-    `python3 -m schema_poc.py -d data.yml -s schema.json`
+    `python3 -m validator.py -d data.yml -s schema.json`
     """
     parser = argparse.ArgumentParser(  
         description='Validates a YAML file against a JSON Schema')  
