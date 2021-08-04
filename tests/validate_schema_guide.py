@@ -59,12 +59,12 @@ def test():
                             elif e.message.startswith("'title' is a required property"):
                                 instance["title"] = "testtitle"
                             else:
-                                raise Exception("undefined behavior")
+                                raise Exception("undefined behavior: " + e.message)
                         elif path.startswith("authors"):
                             if e.message.startswith("[] is too short"):
                                 instance["authors"].append({"name": "testname"})
                             else:
-                                raise Exception("undefined behavior")
+                                raise Exception("undefined behavior: " + e.message)
                         elif path.startswith("references"):
                             index = int(path.split("/")[1])
                             if e.message.startswith("'authors' is a required property"):
@@ -79,7 +79,7 @@ def test():
                                 if e.message.startswith("'name' is a required property"):
                                     instance["references"][index]["conference"]["name"] = "testname"
                             else:
-                                raise Exception("undefined behavior")
+                                raise Exception("undefined behavior: " + e.message)
                         elif path.startswith("preferred-citation"):
                             if e.message.startswith("'authors' is a required property"):
                                 instance["preferred-citation"]["authors"] = []
@@ -90,7 +90,7 @@ def test():
                             elif e.message.startswith("[] is too short"):
                                 instance["preferred-citation"]["authors"].append({"name": "testname"})
                             else:
-                                raise Exception("undefined behavior")
+                                raise Exception("undefined behavior: " + e.message)
                         else:
                             print("Found a problem with snippet at char position {0}-{1}:\n {2}\n{3}".format(snippet["start"], snippet["end"], snippet["text"], e.message))
                             raise e

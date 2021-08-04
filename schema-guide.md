@@ -36,10 +36,10 @@ date-released: "2021-07-18"
 identifiers:
   - description: This is the collection of archived snapshots of all versions of My Research Software
     type: doi
-    value: "10.5281/zenodo.123456"
+    value: 10.5281/zenodo.123456
   - description: This is the archived snapshot of version 0.11.2 of My Research Software
     type: doi
-    value: "10.5281/zenodo.123457"
+    value: 10.5281/zenodo.123457
 keywords:
   - "awesome software"
   - research
@@ -296,13 +296,13 @@ that case, `doi` can be used as shorthand for something like:<br><br>
         value: 10.5281/zenodo.4813122
         description: The versioned DOI for version 1.1.0 of the work.
       - type: swh
-        value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+        value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
         description: The Software Heritage identifier for version 1.1.0 of the work.
       - type: url
-        value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+        value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
         description: The GitHub release URL of tag 1.1.0.
       - type: url
-        value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
+        value: "https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc"
         description: The GitHub release URL of the commit tagged with 1.1.0.
     ```
 
@@ -316,7 +316,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
     keywords:
      - thefirstkeyword
      - thesecondkeyword
-     - a third keyword
+     - "a third keyword"
     ```
 
 ### `license`
@@ -355,7 +355,7 @@ licenses, it is assumed their relationship is OR, not AND.
 - **type**: Nonempty `string`
 - **required**: `true`
 - **default**: `If you use this software, please cite it using the metadata from this file.`
-- **description**: A message to the human reader of the CITATION.cff file to let them know what to do with the citation metadata.
+- **description**: A message to the human reader of the `CITATION.cff` file to let them know what to do with the citation metadata.
 - **usage**:<br><br>
     ```yaml
     message: If you use this software, please cite it using the metadata from this file.
@@ -401,7 +401,7 @@ primary principle, "Importance", when others cite this work.
 - **type**: Array of [`definitions.reference`](#definitionsreference) objects.
 - **required**: `false`
 - **description**: Reference(s) to other creative works. Similar to a list of references in a paper, references of the software or dataset may include other software (dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
-- **usage**: See also [`definitions.reference`](#definitionsreference).<br><br>
+- **usage**:<br><br>
     ```yaml
     references:
       - type: software
@@ -474,6 +474,9 @@ primary principle, "Importance", when others cite this work.
 - **description**: The type of the work that is being described by this `CITATION.cff` file.
 - **usage**:<br><br>
     ```yaml
+    type: software
+    ```
+    ```yaml
     type: dataset
     ```
 
@@ -492,7 +495,16 @@ primary principle, "Importance", when others cite this work.
 - **type**: [`definitions.version`](#definitionsversion)
 - **required**: `false`
 - **description**: The version of the software or dataset.
-- **usage**: See [`definitions.version`](#definitionsversion).
+- **usage**:<br><br>
+    ```yaml
+    version: "1.2.0"
+    ```
+    ```yaml
+    version: 1.2
+    ```
+    ```yaml
+    version: "21.10 (Impish Indri)"
+    ```
 
 ## Definitions
 
@@ -869,7 +881,7 @@ authors:
 
 - **type**: Nonempty `string`
 - **required**: N/A
-- **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes.
+- **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes. Note to tool implementers: it is necessary to cast YAML `date` objects to `string` objects when validating against the schema.
 - **usage**:<br><br>
     ```yaml
     date-released: "2020-01-31"
@@ -902,8 +914,6 @@ authors:
         type: conference
     ```
 
-Note to tool implementers: it is necessary to cast YAML date objects to string objects when validating against the schema.
-
 ### `definitions.doi`
 
 - **type**: Nonempty `string`
@@ -911,7 +921,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 - **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 - **usage**:<br><br>
     ```yaml
-    doi: "10.5281/zenodo.1003150"
+    doi: 10.5281/zenodo.1003150
     ```
 
 ### `definitions.email`
@@ -945,9 +955,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
     - [`tel`](#definitionsentitytel)
     - [`website`](#definitionsentitywebsite)
 - **required**: N/A
-- **description**: An entity.  
-Entities are used in keys that can also take [`definitions.person`](#definitionsperson) objects.
-An entity can represent different types of entities, such as a team, an institution, a company, a conference, etc.
+- **description**: An entity. Entities are used in keys that can also take [`definitions.person`](#definitionsperson) objects. An entity can represent different types of entities, such as a team, an institution, a company, a conference, etc.
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -963,16 +971,14 @@ An entity can represent different types of entities, such as a team, an institut
         location: "Lovelace Building, room 0.42"
         orcid: "https://orcid.org/0000-0003-4925-7248"
         post-code: 90210
-        region: "Renfrewshire"
+        region: Renfrewshire
         tel: +12-345-6789098
-        website: https://research-software-project.org
+        website: "https://research-software-project.org"
     ```
-
     ```yaml
     contact:
       - name: "The Research Software Project team"
     ```
-
     ```yaml
     references:
       - type: generic
@@ -1171,7 +1177,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     authors:
       - name: The Research Software Project
-        region: "Renfrewshire"
+        region: Renfrewshire
     ```
 
 ### `definitions.entity.tel`
@@ -1195,7 +1201,7 @@ An entity can represent different types of entities, such as a team, an institut
     ```yaml
     authors:
       - name: The Research Software Project
-        website: https://research-software-project.org
+        website: "https://research-software-project.org"
     ```
 
 ### `definitions.fax`
@@ -1304,13 +1310,13 @@ An entity can represent different types of entities, such as a team, an institut
         value: 10.5281/zenodo.4813122
         description: The versioned DOI for version 1.1.0 of the work.
       - type: swh
-        value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+        value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
         description: The Software Heritage identifier for version 1.1.0 of the work.
       - type: url
-        value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+        value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
         description: The GitHub release URL of tag 1.1.0.
       - type: url
-        value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
+        value: "https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc"
         description: The GitHub release URL of the commit tagged with 1.1.0.
     ```
     ```yaml
@@ -1328,6 +1334,7 @@ An entity can represent different types of entities, such as a team, an institut
 - **description**: A description for a specific identifier value.
 - **usage**:<br><br>
     ```yaml
+    doi: 10.5281/zenodo.4813121
     identifiers:
       - type: doi
         value: 10.5281/zenodo.4813122
@@ -1860,8 +1867,8 @@ An entity can represent different types of entities, such as a team, an institut
     - [`tel`](#definitionspersontel)
     - [`website`](#definitionspersonwebsite)
 - **required**: N/A
-- **description**: A person.  
-CFF aims to implement a culturally neutral model for personal names, according to the [suggestions on splitting personal names by the W3C](https://www.w3.org/International/questions/qa-personal-names) and the implementation of personal name splitting in BibTeX ([Hufflen, 2006](https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf)). To this end, CFF provides four generic keys to specify personal names:
+- **description**: A person.
+The Citation File Format aims to implement a culturally neutral model for personal names, according to the [suggestions on splitting personal names by the W3C](https://www.w3.org/International/questions/qa-personal-names) and the implementation of personal name splitting in BibTeX ([Hufflen, 2006](https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf)). To this end, the Citation File Format provides four generic keys to specify personal names:
 
     1. Values for `family-names` specify family names, including combinations of given and patronymic forms, such as *Guðmundsdóttir* or *bin Osman*; double names with or without hyphen, such as *Leutheusser-Schnarrenberger* or *Sánchez Vicario*. It can potentially also specify names that include prepositions or (nobiliary) particles, especially if they occur in between family names such as in Spanish- or Portuguese-origin names, such as *Fernández de Córdoba*.
     2. Values for `given-names` specify given and any other names.
@@ -1885,9 +1892,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         fax: +12-3456-7890
         orcid: "https://orcid.org/0000-0003-4925-7248"
         post-code: 90210
-        region: "Renfrewshire"
+        region: Renfrewshire
         tel: +12-345-6789098
-        website: https://research-project.org
+        website: "https://research-project.org"
       ```
 
 ### `definitions.person.address`
@@ -2099,7 +2106,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     authors:
       - family-names: Druskat
         given-names: Stephan
-        website: https://research-project.org
+        website: "https://research-project.org"
     ```
 
 ### `definitions.post-code`
@@ -2196,6 +2203,25 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 - **description**: A reference.
 - **usage**:<br><br>
     ```yaml
+    references:
+      - authors:
+          - family-names: Smith
+            given-names: A. M.
+          - family-names: Katz
+            given-names: D. S.
+          - family-names: Niemeyer
+            given-names: K. E. 
+          - name: "FORCE11 Software Citation Working Group"
+        doi: "10.7717/peerj-cs.86"
+        journal: "PeerJ Computer Science"
+        month: 9
+        start: e86
+        title: "Software citation principles"
+        type: article
+        volume: 2
+        year: 2016
+    ```
+    ```yaml
     references: 
       - abbreviation: "NP"
         abstract: "This is a non-sensical example reference to show how the many different keys in a reference object can be used."
@@ -2219,7 +2245,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         date-published: "2021-07-26"
         date-released: "2021-07-26"
         department: "Department of Hard Science Fiction"
-        doi: "10.5281/zenodo.4813122"
+        doi: 10.5281/zenodo.4813122
         edition: "2nd abridged edition"
         editors: 
           - family-names: Inchief
@@ -2232,7 +2258,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         end: 42
         entry: "Citation <n. 1>"
         filename: "CITATION.cff"
-        format: "Citation File Format (CFF)"
+        format: "Citation File Format"
         identifiers: 
           - type: doi
             value: 10.5281/zenodo.1003149
@@ -2241,10 +2267,10 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
             value: 10.5281/zenodo.4813122
             description: The versioned DOI for version 1.1.0 of the work.
           - type: swh
-            value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+            value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
             description: The Software Heritage identifier for version 1.1.0 of the work.
           - type: url
-            value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+            value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
             description: The GitHub release URL of tag 1.1.0.
         institution: 
           name: "University of Arcadia"
@@ -2678,12 +2704,12 @@ authors:
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      doi: "10.5281/zenodo.4813122"
+      doi: 10.5281/zenodo.4813122
       type: generic
     ```
     ```yaml
     references:
-      - doi: "10.5281/zenodo.4813122"
+      - doi: 10.5281/zenodo.4813122
         type: generic
     ```
 
@@ -2819,12 +2845,12 @@ authors:
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      format: "Citation File Format (CFF)"
+      format: "Citation File Format"
       type: generic
     ```
     ```yaml
     references:
-      - format: "Citation File Format (CFF)"
+      - format: "Citation File Format"
         type: generic
     ```
 
@@ -2844,10 +2870,10 @@ authors:
           value: 10.5281/zenodo.4813122
           description: The versioned DOI for version 1.1.0 of the work.
         - type: swh
-          value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+          value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
           description: The Software Heritage identifier for version 1.1.0 of the work.
         - type: url
-          value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+          value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
           description: The GitHub release URL of tag 1.1.0.
       type: generic
     ```
@@ -2861,10 +2887,10 @@ authors:
           value: 10.5281/zenodo.4813122
           description: The versioned DOI for version 1.1.0 of the work.
         - type: swh
-          value: swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d
+          value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
           description: The Software Heritage identifier for version 1.1.0 of the work.
         - type: url
-          value: https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0
+          value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
           description: The GitHub release URL of tag 1.1.0.
         type: generic
     ```
@@ -3058,7 +3084,7 @@ authors:
 
 - **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
 - **required**: `false`
-- **description**: The [SPDX license identifier(s)](](https://spdx.dev/ids/)) for the license(s) under which the work is made available.
+- **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which the work is made available.
 When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
@@ -3253,7 +3279,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: Notes pertaining to the work.
+- **description**: Notes pertaining to the work. Note that this key should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not others (e.g., a software index).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3265,8 +3291,6 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
       - notes: "Excellent reference! TODO Read for thesis."
         type: generic
     ```
-
-Note that the notes provided under this key may be picked up by some downstream tooling (e.g., reference managers), but not others (e.g., a software index).
 
 ### `definitions.reference.number`
 
@@ -3894,22 +3918,20 @@ Note that the notes provided under this key may be picked up by some downstream 
     ```yaml
     authors:
       - name: The Research Software Project
-        region: "Renfrewshire"
+        region: Renfrewshire
     ```
 
 ### `definitions.swh-identifier`
 
 - **type**: `string` with pattern [`^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$`](https://regex101.com/library/o399MX)
 - **required**: N/A
-- **description**: The [Software Heritage](https://www.softwareheritage.org/) identifier (without further qualifiers such as origin, visit, anchor, path).
+- **description**: The [Software Heritage](https://www.softwareheritage.org/) identifier (without further qualifiers such as origin, visit, anchor, path). Note: Software Heritage identifiers are documented here: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html.
 - **usage**:<br><br>
     ```yaml
     identifiers:
       - type: swh
         value: "swh:1:rev:309cf2674ee7a0749978cf8265ab91a60aea0f7d"
     ```
-
-Note: Software Heritage identifiers are documented here: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html.
 
 ### `definitions.tel`
 
@@ -3958,7 +3980,7 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
 - **type**: Nonempty `string` or `number`
 - **required**: N/A
 - **description**: The version of a work.
-- **usage**: 
+- **usage**:<br><br>
     ```yaml
     version: "1.2.0"
     ```
