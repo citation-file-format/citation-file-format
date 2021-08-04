@@ -2698,7 +2698,7 @@ authors:
 
 ### `definitions.reference.end`
 
-- **type**: Nonempty string or `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The end page of the work.
 - **usage**:<br><br>
@@ -3051,7 +3051,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `definitions.reference.loc-end`
 
-- **type**: Nonempty string or `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work ends.
 - **usage**:<br><br>
@@ -3078,7 +3078,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `definitions.reference.loc-start`
 
-- **type**: Nonempty string or `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work starts.
 - **usage**:<br><br>
@@ -3253,7 +3253,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.number-volumes`
 
-- **type**: Nonempty string or `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The number of volumes making up the collection in which the work has been published.
 - **usage**:<br><br>
@@ -3280,7 +3280,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.pages`
 
-- **type**: Nonempty string or `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The number of pages of the work.
 - **usage**:<br><br>
@@ -3515,7 +3515,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.start`
 
-- **type**: Nonempty string or `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The start page of the work.
 - **usage**:<br><br>
@@ -3735,7 +3735,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.volume`
 
-- **type**: Nonempty string or `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The volume of the periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3779,7 +3779,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.year`
 
-- **type**: Nonempty string or `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The year in which a work has been published.
 - **usage**:<br><br>
@@ -3806,7 +3806,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.year-original`
 
-- **type**: Nonempty string or `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The year of the original publication.
 - **usage**:<br><br>
