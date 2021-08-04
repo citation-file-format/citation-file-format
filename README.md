@@ -50,8 +50,9 @@ You can find the complete format specifications in the [Guide to the Citation Fi
 When you do this, great things may happen:
 
 1. People that find your software can easily cite it using the correct metadata from `CITATION.cff`!
-2. If your repository is hosted on GitHub, [they will link to it](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-citation-files) in a special "Cite this repository" widget on the repository landing page. Also, the citation information in `CITATION.cff` will be used when you publish your software on Zenodo via the [GitHub-Zenodo bridge](https://guides.github.com/activities/citable-code/).
-3. The citation information in `CITATION.cff` can be used by the open source reference manager [Zotero](https://github.com/zotero/zotero), when people import the repository.
+2. If your repository is hosted on GitHub, they will [show the citation information in the sidebar](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-citation-files), which makes it easy for visitors to cite your software or dataset correctly.
+3. When you publish your software on Zenodo via the [GitHub-Zenodo bridge](https://guides.github.com/activities/citable-code/), the metadata for your `CITATION.cff` file will be picked up by Zenodo.
+4. People can import the correct reference to your software into the [Zotero](https://github.com/zotero/zotero) reference manager via a [browser plugin](https://www.zotero.org/download/).
 
 ## Validation :heavy_check_mark:
 
