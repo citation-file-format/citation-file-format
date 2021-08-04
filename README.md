@@ -87,15 +87,16 @@ The following table gives an overview of the tools that we know about. If there 
 
 |               | Creation | Editing | Validation | Conversion |
 |---------------|----------|---------|------------|------------|
-| Command line  |          |         |            |            |
+| Command line  |          |         | [cffconvert](https://github.com/citation-file-format/cff-converter-python) | [cffconvert](https://github.com/citation-file-format/cff-converter-python) |
 | Docker        |          |         |            |            |
-| GitHubActions |          |         |            |            |
+| GitHubActions |          |         |            | cffconvert<br>[codemeta2cff](https://github.com/caltechlibrary/codemeta2cff)            |
 | GitHubbots    |          |         |            |            |
 | Go            |          |         |            |            |
 | Java          |          |         |            |            |
 | JavaScript    |          |         |            |            |
 | Ruby          |          |         |            |            |
 | TypeScript    |          |         |            |            |
+| Website       | [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/)  |         |            |            |
 
 <!-- Table with functions as cols, ecosystems as rows 
 
