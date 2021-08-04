@@ -66,7 +66,7 @@ The script depends on the packages [`jsonschema`](https://pypi.org/project/jsons
 
 1. Clone this repository with `git`: e.g. `git clone https://github.com/citation-file-format/citation-file-format.git`.
 2. Change into the cloned repository directory: e.g. `cd citation-file-format`
-3. Install the dependencies and run the script:<br><br>
+3. Install the dependencies and run the script:
 ```python
 python3 -m pip install --user ruamel.yaml jsonschema
 python3 examples/validate_cff.py -s schema.json -d path/to/your/CITATION.cff
