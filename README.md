@@ -75,7 +75,7 @@ python3 examples/validate_cff.py -s schema.json -d path/to/your/CITATION.cff
 If you get no output, then congratulations, your `CITATION.cff` file is valid.
 
 If you get a Traceback with error messages, look for the relevant validation error and fix it.
-If the output is very long, it may help if you search it for `jsonschema.exceptions.ValidationError`.
+If the output is very long, it may help if you search it for lines starting with `jsonschema.exceptions.ValidationError`.
 
 <!-- Later, this should link to tutorials -->
 
