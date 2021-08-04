@@ -2778,14 +2778,24 @@ authors:
 
 ### `definitions.reference.end`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The end page of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      end: "42"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       end: 42
       type: generic
+    ```
+    ```yaml
+    references:
+      - end: "42"
+        type: generic
     ```
     ```yaml
     references:
@@ -3121,14 +3131,24 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.loc-end`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work ends.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      loc-end: "42"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       loc-end: 42
       type: generic
+    ```
+    ```yaml
+    references:
+      - loc-end: "42"
+        type: generic
     ```
     ```yaml
     references:
@@ -3138,14 +3158,24 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.loc-start`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work starts.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      loc-start: "21"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       loc-start: 21
       type: generic
+    ```
+    ```yaml
+    references:
+      - loc-start: "21"
+        type: generic
     ```
     ```yaml
     references:
@@ -3191,7 +3221,19 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.month`
 
-- **type**: `integer` in range `1-12`
+- **type**: `integer` in range `1-12` or `enum` with values:
+    - `1`
+    - `2`
+    - `3`
+    - `4`
+    - `5`
+    - `6`
+    - `7`
+    - `8`
+    - `9`
+    - `10`
+    - `11`
+    - `12`
 - **required**: `false`
 - **description**: The month in which a work has been published.
 - **usage**:<br><br>
@@ -3201,8 +3243,18 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
       type: generic
     ```
     ```yaml
+    preferred-citation:
+      month: "7"
+      type: generic
+    ```
+    ```yaml
     references:
       - month: 7
+        type: generic
+    ```
+    ```yaml
+    references:
+      - month: "7"
         type: generic
     ```
 
@@ -3279,14 +3331,24 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.number-volumes`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The number of volumes making up the collection in which the work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      number-volumes: "4"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       number-volumes: 4
       type: generic
+    ```
+    ```yaml
+    references:
+      - number-volumes: "4"
+        type: generic
     ```
     ```yaml
     references:
@@ -3296,14 +3358,24 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.pages`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The number of pages of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      pages: "123"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       pages: 123
       type: generic
+    ```
+    ```yaml
+    references:
+      - pages: "123"
+        type: generic
     ```
     ```yaml
     references:
@@ -3521,14 +3593,24 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.start`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The start page of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      start: "42"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       start: 42
       type: generic
+    ```
+    ```yaml
+    references:
+      - start: "42"
+        type: generic
     ```
     ```yaml
     references:
@@ -3731,14 +3813,24 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.volume`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The volume of the periodical in which a work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
+      volume: "5"
+    ```
+    ```yaml
+    preferred-citation:
+      type: generic
       volume: 5
+    ```
+    ```yaml
+    references:
+      - type: generic
+        volume: "5"
     ```
     ```yaml
     references:
@@ -3765,14 +3857,24 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.year`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The year in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
+      year: "2021"
+    ```
+    ```yaml
+    preferred-citation:
+      type: generic
       year: 2021
+    ```
+    ```yaml
+    references:
+      - type: generic
+        year: "2021"
     ```
     ```yaml
     references:
@@ -3782,14 +3884,24 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.year-original`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The year of the original publication.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
+      year-original: "1978"
+    ```
+    ```yaml
+    preferred-citation:
+      type: generic
       year-original: 1978
+    ```
+    ```yaml
+    references:
+      - type: generic
+        year-original: "1978"
     ```
     ```yaml
     references:
