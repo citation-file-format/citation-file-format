@@ -234,7 +234,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 - **type**: [`definitions.doi`](#definitionsdoi)
 - **required**: `false`
-- **description**: The DOI of the software or dataset. This notation is most useful when there is just one DOI you want to include. In
+- **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the software or dataset. This notation is most useful when there is just one DOI you want to include. In
 that case, `doi` can be used as shorthand for something like:<br><br>
     ```yaml
     identifiers:
@@ -323,7 +323,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 - **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
 - **required**: `false`
-- **description**: The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
+- **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which the work is made available. When there are multiple
 licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
@@ -344,7 +344,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List).
+- **description**: The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the [SPDX License List](#definitionslicense-enum)).
 - **usage**:<br><br>
     ```yaml
     license-url: "https://obscure-licenses.com?id=1234"
@@ -430,7 +430,7 @@ primary principle, "Importance", when others cite this work.
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: The URL of the software or dataset in a repository (when the repository is neither a source code repository nor a build artifact repository).
+- **description**: The URL of the software or dataset in a repository/archive (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
     ```yaml
     repository: "https://ascl.net/2105.013"
@@ -851,13 +851,18 @@ authors:
     - `ZM`
     - `ZW`
 - **required**: N/A
-- **description**: The ISO 3166-1 alpha-2 country code for a country.
+- **description**: The [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for a country.
 - **usage**:<br><br>
     ```yaml
-    country: NL
+    authors:
+      - name: The Authors Team
+        country: NL
     ```
     ```yaml
-    country: DE
+    references:
+      - type: conference
+        conference:
+            country: DE
     ```
 
 ### `definitions.date`
@@ -891,8 +896,9 @@ authors:
     ```
     ```yaml
     references:
-      - date-end: "2020-02-02"
-        date-start: "2020-01-31"
+      - conference:
+            date-end: "2020-02-02"
+            date-start: "2020-01-31"
         type: conference
     ```
 
@@ -902,7 +908,7 @@ Note to tool implementers: it is necessary to cast YAML date objects to string o
 
 - **type**: Nonempty `string`
 - **required**: N/A
-- **description**: The DOI of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
+- **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 - **usage**:<br><br>
     ```yaml
     doi: "10.5281/zenodo.1003150"
@@ -1205,27 +1211,68 @@ An entity can represent different types of entities, such as a team, an institut
     ```
     ```yaml
     authors:
-      - family-names: McClane
+      - family-names: Druskat
         fax: +12-3456-7890
-        given-names: John
+        given-names: Stephan
     ```
 
 ### `definitions.identifier`
 
-- **type**: Complex object with keys `type`, `value`, `description`.
-    - `type`: **type** `enum` with values:
-      - `doi`
-      - `url`
-      - `swh`
-      - `other`
-    - `value`: **type** depends on `type`:
-      - with `doi`: **type** [`definitions.doi`](#definitionsdoi)
-      - with `url`: **type** [`definitions.url`](#definitionsurl)
-      - with `swh`: **type** [`definitions.swh-identifier`](#definitionsswh-identifier)
-      - with `other`: **type** Nonempty `string`
-    - `description`: **type** [`definitions.identifier-description`](#definitionsidentifier-description)
+- **type**: One of the following `object`s:
+    1. DOI
+        - `type`:
+            - **type**: `enum` with singular value `doi`
+            - **required**: `true`
+            - **description**: The type of identifier.
+        - `value`:
+            - **type**: [`definitions.doi`](#definitionsdoi)
+            - **required**: `true`
+            - **description**: The value of the DOI, e.g. `10.5281/zenodo.1003149`
+        - `description`:
+            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+            - **required**: `false`
+            - **description**: The description of the DOI, e.g. `This is the DOI for version 0.11.4.`
+    1. URL
+        - `type`:
+            - **type**: `enum` with singular value `url`
+            - **required**: `true`
+            - **description**: The type of identifier.
+        - `value`:
+            - **type**: [`definitions.url`](#definitionsurl)
+            - **required**: `true`
+            - **description**: The value of the URL, e.g. `https://github.com/citation-file-format/citation-file-format`.
+        - `description`:
+            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+            - **required**: `false`
+            - **description**: The description of the URL, e.g. `The homepage for the project`.
+    1. Software Heritage identifier
+        - `type`:
+            - **type**: `enum` with singular value `swh`
+            - **required**: `true`
+            - **description**: The type of identifier.
+        - `value`:
+            - **type**: [`definitions.swh-identifier`](#definitionsswh-identifier)
+            - **required**: `true`
+            - **description**: The value of the Software Heritage identifier, e.g. `swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d`.
+        - `description`:
+            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+            - **required**: `false`
+            - **description**: The description of the Software Heritage identifier, e.g. `The directory object of the repository as stored on Software Heritage.`
+    1. Other
+        - `type`:
+            - **type**: `enum` with singular value `other`
+            - **required**: `true`
+            - **description**: The type of identifier.
+        - `value`:
+            - **type**: Nonempty `string`
+            - **required**: `true`
+            - **description**: The value of the identifier, e.g. `arXiv:2103.06681`
+        - `description`:
+            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
+            - **required**: `false`
+            - **description**: The description of the identifier, e.g. `The ArXiv preprint of the paper`.
 - **required**: N/A
-- **description**: An identifier for a work.
+- **description**: An identifier.
 - **usage**:<br><br>
     ```yaml
     identifiers:
@@ -1266,6 +1313,13 @@ An entity can represent different types of entities, such as a team, an institut
         value: https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc
         description: The GitHub release URL of the commit tagged with 1.1.0.
     ```
+    ```yaml
+    preferred-citation:
+      identifiers:
+        - type: other
+          value: "arXiv:2103.06681"
+          description: The ArXiv preprint of the paper
+    ```
 
 ### `definitions.identifier-description`
 
@@ -1288,7 +1342,7 @@ An entity can represent different types of entities, such as a team, an institut
 
 - **type**: (Array of) [`definitions.license-enum`](#definitions.license-enum) objects.
 - **required**: N/A
-- **description**: License identifier(s) under which the work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
+- **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which a work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     license: Apache-2.0
@@ -1762,7 +1816,7 @@ An entity can represent different types of entities, such as a team, an institut
     - `ZPL-2.0`
     - `ZPL-2.1`
 - **required**: N/A
-- **description**: SPDX identifier for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
+- **description**: [SPDX identifier](https://spdx.dev/ids/) for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
 - **usage**:<br><br>
     ```yaml
     license: Apache-2.0
@@ -1811,7 +1865,7 @@ CFF aims to implement a culturally neutral model for personal names, according t
 
     1. Values for `family-names` specify family names, including combinations of given and patronymic forms, such as *Guðmundsdóttir* or *bin Osman*; double names with or without hyphen, such as *Leutheusser-Schnarrenberger* or *Sánchez Vicario*. It can potentially also specify names that include prepositions or (nobiliary) particles, especially if they occur in between family names such as in Spanish- or Portuguese-origin names, such as *Fernández de Córdoba*.
     2. Values for `given-names` specify given and any other names.
-    3. Values for `name-particle` specify nobiliary particles and prepositions, such as in Ludwig *van* Beethoven or Rafael *van der* Vaart.
+    3. Values for `name-particle` specify [nobiliary particles](https://en.wikipedia.org/wiki/Nobiliary_particle) and prepositions, such as in Ludwig *van* Beethoven or Rafael *van der* Vaart.
     4. Values for `name-suffix` specify suffixes such as *Jr.* or *III* (as in Frank Edwin Wright *III*).
 
 Note that these keys may still not be optimal for, e.g., Icelandic names which do not have the concept of family names, or Chinese generation names, but represent a best effort.
@@ -1955,7 +2009,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
+- **description**: The person's name particle, e.g., a [nobiliary particle](https://en.wikipedia.org/wiki/Nobiliary_particle) or a [preposition] meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -1968,7 +2022,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
+- **description**: The person's [name suffix](https://en.wikipedia.org/wiki/Suffix_(name)), e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -2144,7 +2198,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```yaml
     references: 
       - abbreviation: "NP"
-        abstract: "This is a non-sensical exmaple reference to show how the many different keys in a reference object can be used."
+        abstract: "This is a non-sensical example reference to show how the many different keys in a reference object can be used."
         authors: 
           - name: The Research Software Project
         collection-doi: 10.5281/zenodo.1003149
@@ -2166,7 +2220,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         date-released: "2021-07-26"
         department: "Department of Hard Science Fiction"
         doi: "10.5281/zenodo.4813122"
-        edition: "2nd abdridged edition"
+        edition: "2nd abridged edition"
         editors: 
           - family-names: Inchief
             given-names: Editor
@@ -2312,7 +2366,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         - name: The Research Software Project team
         - family-names: Druskat
           given-names: Stephan
-      type: generic
+        type: generic
     ```
 
 #### How to deal with unknown individual authors?
@@ -2355,7 +2409,7 @@ authors:
 
 - **type**: [`definitions.doi`](#definitionsdoi)
 - **required**: `false`
-- **description**: The DOI of a collection containing the work.
+- **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of a collection containing the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2620,7 +2674,7 @@ authors:
 
 - **type**: [`definitions.doi`](#definitionsdoi)
 - **required**: `false`
-- **description**: The DOI of the work.
+- **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2641,12 +2695,12 @@ authors:
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      edition: "2nd abdridged edition"
+      edition: "2nd abridged edition"
       type: generic
     ```
     ```yaml
     references:
-      - edition: "2nd abdridged edition"
+      - edition: "2nd abridged edition"
         type: generic
     ```
 
@@ -2698,14 +2752,24 @@ authors:
 
 ### `definitions.reference.end`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The end page of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      end: "42"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       end: 42
       type: generic
+    ```
+    ```yaml
+    references:
+      - end: "42"
+        type: generic
     ```
     ```yaml
     references:
@@ -2828,7 +2892,7 @@ authors:
 
 - **type**: `string` with pattern [`^[0-9\- ]{10,17}X?$`](https://regex101.com/library/6oS1PA)
 - **required**: `false`
-- **description**: The ISBN of the work.
+- **description**: The [ISBN](https://en.wikipedia.org/wiki/International_Standard_Book_Number) of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2845,7 +2909,7 @@ authors:
 
 - **type**: `string` with pattern [`^\d{4}-\d{3}[\dxX]$`](https://regex101.com/library/jqobq9)
 - **required**: `false`
-- **description**: The ISSN of the work.
+- **description**: The [ISSN](https://en.wikipedia.org/wiki/International_Standard_Serial_Number) of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -2994,8 +3058,8 @@ authors:
 
 - **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
 - **required**: `false`
-- **description**: The SPDX license identifier(s) for the license(s) under which the work is made available. When there are multiple
-licenses, it is assumed their relationship is OR, not AND.
+- **description**: The [SPDX license identifier(s)](](https://spdx.dev/ids/)) for the license(s) under which the work is made available.
+When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3026,7 +3090,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: The URL of the license text under which the work is licensed (only for non-standard licenses not included in the SPDX License List).
+- **description**: The URL of the license text under which the work is licensed (only for non-standard licenses not included in the [SPDX License List](#definitionslicense-enum)).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3041,14 +3105,24 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `definitions.reference.loc-end`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work ends.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      loc-end: "42"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       loc-end: 42
       type: generic
+    ```
+    ```yaml
+    references:
+      - loc-end: "42"
+        type: generic
     ```
     ```yaml
     references:
@@ -3058,14 +3132,24 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `definitions.reference.loc-start`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work starts.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      loc-start: "21"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       loc-start: 21
       type: generic
+    ```
+    ```yaml
+    references:
+      - loc-start: "21"
+        type: generic
     ```
     ```yaml
     references:
@@ -3111,7 +3195,19 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `definitions.reference.month`
 
-- **type**: `integer` in range `1-12`
+- **type**: `integer` in range `1-12` or `enum` with values:
+    - `1`
+    - `2`
+    - `3`
+    - `4`
+    - `5`
+    - `6`
+    - `7`
+    - `8`
+    - `9`
+    - `10`
+    - `11`
+    - `12`
 - **required**: `false`
 - **description**: The month in which a work has been published.
 - **usage**:<br><br>
@@ -3121,8 +3217,18 @@ licenses, it is assumed their relationship is OR, not AND.
       type: generic
     ```
     ```yaml
+    preferred-citation:
+      month: "7"
+      type: generic
+    ```
+    ```yaml
     references:
       - month: 7
+        type: generic
+    ```
+    ```yaml
+    references:
+      - month: "7"
         type: generic
     ```
 
@@ -3130,7 +3236,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: Nonempty `string`
 - **required**: `false`
-- **description**: The NIHMSID of a work.
+- **description**: The [NIHMSID](https://web.archive.org/web/20210802210057/https://www.ncbi.nlm.nih.gov/pmc/about/public-access-info/) of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3160,13 +3266,13 @@ licenses, it is assumed their relationship is OR, not AND.
         type: generic
     ```
 
-Note that this key should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not other (e.g., software index).
+Note that the notes provided under this key may be picked up by some downstream tooling (e.g., reference managers), but not others (e.g., a software index).
 
 ### `definitions.reference.number`
 
 - **type**: `string` or `number`
 - **required**: `false`
-- **description**: The accession number for a work.
+- **description**: The (library) [accession number](https://en.wikipedia.org/wiki/Accession_number) for a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3201,14 +3307,24 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.number-volumes`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The number of volumes making up the collection in which the work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      number-volumes: "4"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       number-volumes: 4
       type: generic
+    ```
+    ```yaml
+    references:
+      - number-volumes: "4"
+        type: generic
     ```
     ```yaml
     references:
@@ -3218,14 +3334,24 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.pages`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The number of pages of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      pages: "123"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       pages: 123
       type: generic
+    ```
+    ```yaml
+    references:
+      - pages: "123"
+        type: generic
     ```
     ```yaml
     references:
@@ -3258,7 +3384,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 - **type**: `string` with pattern [`^PMC[0-9]{7}$`](https://regex101.com/library/EsU1QH)
 - **required**: `false`
-- **description**: The PMCID of a work.
+- **description**: The [PMCID](https://web.archive.org/web/20210802210057/https://www.ncbi.nlm.nih.gov/pmc/about/public-access-info/) of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3317,7 +3443,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 - **type**: [`definitions.url`](#definitionsurl)
 - **required**: `false`
-- **description**: The URL of the work in a repository (when the repository is neither a source code repository nor a build artifact repository).
+- **description**: The URL of the work in a repository/archive (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3443,14 +3569,24 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.start`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The start page of the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
+      start: "42"
+      type: generic
+    ```
+    ```yaml
+    preferred-citation:
       start: 42
       type: generic
+    ```
+    ```yaml
+    references:
+      - start: "42"
+        type: generic
     ```
     ```yaml
     references:
@@ -3653,14 +3789,24 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.volume`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The volume of the periodical in which a work appeared.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
+      volume: "5"
+    ```
+    ```yaml
+    preferred-citation:
+      type: generic
       volume: 5
+    ```
+    ```yaml
+    references:
+      - type: generic
+        volume: "5"
     ```
     ```yaml
     references:
@@ -3687,14 +3833,24 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.year`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The year in which a work has been published.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
+      year: "2021"
+    ```
+    ```yaml
+    preferred-citation:
+      type: generic
       year: 2021
+    ```
+    ```yaml
+    references:
+      - type: generic
+        year: "2021"
     ```
     ```yaml
     references:
@@ -3704,14 +3860,24 @@ Note that this key should contain notes that may be picked up by some downstream
 
 ### `definitions.reference.year-original`
 
-- **type**: `integer`
+- **type**: Nonempty `string` or `integer`
 - **required**: `false`
 - **description**: The year of the original publication.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       type: generic
+      year-original: "1978"
+    ```
+    ```yaml
+    preferred-citation:
+      type: generic
       year-original: 1978
+    ```
+    ```yaml
+    references:
+      - type: generic
+        year-original: "1978"
     ```
     ```yaml
     references:
@@ -3735,7 +3901,7 @@ Note that this key should contain notes that may be picked up by some downstream
 
 - **type**: `string` with pattern [`^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$`](https://regex101.com/library/o399MX)
 - **required**: N/A
-- **description**: The Software Heritage identifier (without further qualifiers such as origin, visit, anchor, path).
+- **description**: The [Software Heritage](https://www.softwareheritage.org/) identifier (without further qualifiers such as origin, visit, anchor, path).
 - **usage**:<br><br>
     ```yaml
     identifiers:
@@ -3753,8 +3919,8 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
 - **usage**:<br><br>
     ```yaml
     authors:
-      - family-names: McClane
-        given-names: John
+      - family-names: Druskat
+        given-names: Stephan
         tel: +12-345-6789098
     ```
     ```yaml
@@ -3775,6 +3941,16 @@ Note: Software Heritage identifiers are documented here: https://docs.softwarehe
 - **usage**
     ```yaml
     url: "https://citation-file-format.github.io/"
+    ```
+    ```yaml
+    authors:
+      - name: The Research Software Project
+        website: "https://research-software-project.org"
+    ```
+    ```yaml
+    references:
+      - type: generic
+        url: "sftp://files.research-software-project.org"
     ```
 
 ### `definitions.version`
