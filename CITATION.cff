@@ -1,4 +1,4 @@
-cff-version: 1.1.0
+cff-version: 1.2.0
 message: "If you use CFF in your research, please cite it using these metadata."
 abstract: CITATION.cff files are plain text files with human- and machine-readable citation information for software. Code developers can include them in their repositories to let others know how to correctly cite their software. This is the specification for the Citation File Format.
 authors:
@@ -32,7 +32,7 @@ authors:
     given-names: Alexander
     orcid: https://orcid.org/0000-0001-5299-3292
 title: Citation File Format
-version: 1.1.0
+version: 1.2.0
 doi: 10.5281/zenodo.4751536
 date-released: 2021-05-12
 keywords:
