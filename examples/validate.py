@@ -1,7 +1,7 @@
 import pytest
 from cffconvert import Citation
 from examples.helpers import load_cff
-from examples import schema_poc
+from examples import validator
 
 
 def test(fixture):
@@ -18,6 +18,6 @@ def test(fixture):
     else:
         if "fail" in fixture:
             with pytest.raises(Exception) as e_info:
-                schema_poc.validate(fixture, 'schema.json')
+                validator.validate(fixture, 'schema.json')
         else:
-            schema_poc.validate(fixture, 'schema.json')
+            validator.validate(fixture, 'schema.json')
