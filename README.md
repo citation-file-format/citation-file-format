@@ -110,6 +110,7 @@ The Citation File Format is a collaborative project and we welcome suggestions a
 
 :running: **I'm busy, I only have 1 minute**
 - Tell a friend about the Citation File Format, or tweet about it!
+- Give the project a star :star:!
 
 :hourglass_flowing_sand: **I've got 10 minutes - tell me what I should do**
 - Create a `CITATION.cff` file for your repository.
