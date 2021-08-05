@@ -1224,7 +1224,7 @@ authors:
 
 ### `definitions.identifier`
 
-- **type**: One of the following `object`s (click to expand/collapse):<br><br>
+- **type**: One of the following `object` types (click to expand/collapse):<br><br>
     1. <details>
           <summary>DOI</summary>
           <br>
