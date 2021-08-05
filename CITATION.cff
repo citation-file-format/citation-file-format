@@ -46,3 +46,59 @@ keywords:
   - research software
   - credit
 license: "CC-BY-4.0"
+references:
+  - authors:
+      - family-names: Smith
+        given-names: Arfon M.
+      - family-names: Katz
+        given-names: Daniel S.
+      - family-names: Niemeyer
+        given-names: Kyle E.
+      - name: "FORCE11 Software Citation Working Group"
+    doi: 10.7717/peerj-cs.86
+    journal: "PeerJ Computer Science"
+    month: 9
+    start: e86
+    title: "Software citation principles"
+    type: article
+    volume: 2
+    year: 2016
+  - authors:
+      - family-names: Druskat
+        given-names: Stephan
+    conference: "Workshop on Sustainable Software for Science: Practice and Experiences (WSSSPE5.1)"
+    doi: 10.6084/m9.figshare.3827058
+    title: "Track 2 Lightning Talk: Should CITATION files be standardized?"
+    type: proceedings
+    year: 2017
+  - authors:
+      - family-names: Wilson
+        given-names: Robin
+    title: "Encouraging citation of software - introducing CITATION files."
+    type: blog
+    url: "https://www.software.ac.uk/blog/2013-09-02-encouraging-citation-software-introducing-citation-files"
+    year: 2013
+  - authors:
+      - family-names: Ben-Kiki
+        given-names: Oren
+      - family-names: Evans
+        given-names: Clark
+      - family-names: "döt Net"
+        given-names: Ingy
+    title: "YAML Ain't Markup Language (YAML) Version 1.2. 3rd Edition, Patched at 2009-10-01."
+    url: "https://yaml.org/spec/1.2/spec.html"
+    type: standard
+    year: 2009
+  - authors:
+        family-names: Hufflen
+        given-names: Jean-Michel
+    collection-title: "Proceedings of the 2006 Annual Meeting"
+    end: 253
+    month: 11
+    number: 2
+    start: 243
+    title: "Names in bibtex and mlBibTeX"
+    url: "https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf"
+    type: proceedings
+    volume: 27
+    year: 2006
