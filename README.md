@@ -118,7 +118,7 @@ The Citation File Format is a collaborative project and we welcome suggestions a
 
 :computer: **I've got a few hours to work on this**
 - Take a look at the and see if there are any you can contribute to.
-- Specifically, help us create the tooling that people need and look at the issues labeled [<kbd style="background-color: #b6ff00;">tooling</kbd>](https://github.com/citation-file-format/citation-file-format/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22+label%3Atooling)
+- Specifically, help us create the tooling that people need and look at the issues labeled [<pre>![GitHub labels](https://img.shields.io/github/labels/citation-file-format/citation-file-format/tooling)</pre>](https://github.com/citation-file-format/citation-file-format/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22+label%3Atooling)
 
 :tada: **I want to help grow the community**
 - Write a blog post or news item for your own community.
