@@ -1224,59 +1224,199 @@ authors:
 
 ### `definitions.identifier`
 
-- **type**: One of the following `object`s:
-    1. DOI
-        - `type`:
-            - **type**: `enum` with singular value `doi`
-            - **required**: `true`
-            - **description**: The type of identifier.
-        - `value`:
-            - **type**: [`definitions.doi`](#definitionsdoi)
-            - **required**: `true`
-            - **description**: The value of the DOI, e.g. `10.5281/zenodo.1003149`
-        - `description`:
-            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
-            - **required**: `false`
-            - **description**: The description of the DOI, e.g. `This is the DOI for version 0.11.4.`
-    1. URL
-        - `type`:
-            - **type**: `enum` with singular value `url`
-            - **required**: `true`
-            - **description**: The type of identifier.
-        - `value`:
-            - **type**: [`definitions.url`](#definitionsurl)
-            - **required**: `true`
-            - **description**: The value of the URL, e.g. `https://github.com/citation-file-format/citation-file-format`.
-        - `description`:
-            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
-            - **required**: `false`
-            - **description**: The description of the URL, e.g. `The homepage for the project`.
-    1. Software Heritage identifier
-        - `type`:
-            - **type**: `enum` with singular value `swh`
-            - **required**: `true`
-            - **description**: The type of identifier.
-        - `value`:
-            - **type**: [`definitions.swh-identifier`](#definitionsswh-identifier)
-            - **required**: `true`
-            - **description**: The value of the Software Heritage identifier, e.g. `swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d`.
-        - `description`:
-            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
-            - **required**: `false`
-            - **description**: The description of the Software Heritage identifier, e.g. `The directory object of the repository as stored on Software Heritage.`
-    1. Other
-        - `type`:
-            - **type**: `enum` with singular value `other`
-            - **required**: `true`
-            - **description**: The type of identifier.
-        - `value`:
-            - **type**: Nonempty `string`
-            - **required**: `true`
-            - **description**: The value of the identifier, e.g. `arXiv:2103.06681`
-        - `description`:
-            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
-            - **required**: `false`
-            - **description**: The description of the identifier, e.g. `The ArXiv preprint of the paper`.
+- **type**: One of the following `object`s (click to expand/collapse):<br><br>
+    1. <details>
+          <summary>DOI</summary>
+          <br>
+          <ul>
+            <li>
+              <code>type</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <code>enum</code> with singular value <code>doi</code>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>true</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The type of identifier.
+                </li>
+              </ul>  
+            </li>  
+            <li>
+              <code>value</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <a href="#definitionsdoi"><code>definitions.doi</code></a>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>true</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The value of the DOI, e.g. <code>10.5281/zenodo.1003149</code>
+                </li>
+              </ul>  
+            </li>
+            <li>
+              <code>description</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>false</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The description of the DOI, e.g. <code>This is the DOI for version 0.11.4.</code>
+                </li>
+              </ul>  
+            </li>  
+          </ul>  
+        </details>
+    1. <details>
+          <summary>URL</summary>
+          <br>
+          <ul>
+            <li>
+              <code>type</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <code>enum</code> with singular value <code>url</code>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>true</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The type of identifier.
+                </li>
+              </ul>  
+            </li>  
+            <li>
+              <code>value</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <a href="#definitionsurl"><code>definitions.url</code></a>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>true</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The value of the URL, e.g. <code>https://github.com/citation-file-format/citation-file-format</code>.
+                </li>
+              </ul>  
+            </li>
+            <li>
+              <code>description</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>false</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The description of the URL, e.g. <code>The homepage for the project</code>.
+                </li>
+              </ul>  
+            </li>  
+          </ul>  
+        </details>
+    1. <details>
+          <summary>Software Heritage identifier</summary>
+          <br>
+          <ul>
+            <li>
+              <code>type</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <code>enum</code> with singular value <code>swh</code>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>true</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The type of identifier.
+                </li>
+              </ul>  
+            </li>  
+            <li>
+              <code>value</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <a href="#definitionsswh-identifier"><code>definitions.swh-identifier</code></a>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>true</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The value of the Software Heritage identifier, e.g. <code>swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d</code>.
+                </li>
+              </ul>  
+            </li>
+            <li>
+              <code>description</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>false</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The description of the Software Heritage identifier, e.g. <code>The directory object of the repository as stored on Software Heritage.</code>.
+                </li>
+              </ul>  
+            </li>  
+          </ul>  
+        </details>
+    1. <details>
+          <summary>Other</summary>
+          <br>
+          <ul>
+            <li>
+              <code>type</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <code>enum</code> with singular value <code>other</code>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>true</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The type of identifier.
+                </li>
+              </ul>  
+            </li>  
+            <li>
+              <code>value</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: Nonempty <code>string</code>.
+                </li>
+                <li>
+                  <strong>required</strong>: <code>true</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The value of the identifier, e.g. <code>arXiv:2103.06681</code>.
+                </li>
+              </ul>  
+            </li>
+            <li>
+              <code>description</code>:
+              <ul>
+                <li>
+                  <strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a>
+                </li>
+                <li>
+                  <strong>required</strong>: <code>false</code>
+                </li>
+                <li>
+                  <strong>description</strong>: The description of the identifier, e.g. <code>The ArXiv preprint of the paper.</code>.
+                </li>
+              </ul>  
+            </li>  
+          </ul>  
+        </details>
 - **required**: N/A
 - **description**: An identifier.
 - **usage**:<br><br>
