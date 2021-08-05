@@ -85,14 +85,6 @@ There is tooling available to work with `CITATION.cff` files to do different thi
 create new files, edit existing files, validate existing files, convert files from the Citation File Format into another format.
 The following table gives an overview of the tools that we know about. If there is a tool missing from this table, please [open a new issue](https://github.com/citation-file-format/citation-file-format/issues/new/choose) and let us know.
 
-<style>
-    table {
-        table-layout: fixed; width: 100%;
-    }
-    th, td {
-        width: 20% !important;
-    }
-</style>
 <table >
     <thead>
         <tr>
