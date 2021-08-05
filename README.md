@@ -85,7 +85,8 @@ There is tooling available to work with `CITATION.cff` files to do different thi
 create new files, edit existing files, validate existing files, convert files from the Citation File Format into another format.
 The following table gives an overview of the tools that we know about. If there is a tool missing from this table, please [open a new issue](https://github.com/citation-file-format/citation-file-format/issues/new/choose) and let us know.
 
-<table style="table-layout: fixed; width: 100%;">
+<html>
+<table style="table-layout: fixed; width: 100%; ">
     <thead>
         <tr>
             <th style="width:20%;"></th>
@@ -97,110 +98,113 @@ The following table gives an overview of the tools that we know about. If there 
     </thead>
     <tbody>
         <tr>
-            <th>Command line</th>
-            <td></td>
-            <td></td>
-            <td>
+            <th style="width:20%; border:1px solid black;">Command line</th>
+            <td style="width:20%; border:1px solid black;"></td>
+            <td style="width:20%; border:1px solid black;"></td>
+            <td style="width:20%; border:1px solid black;">
                 • <a href="https://github.com/citation-file-format/cff-converter-python">cffconvert</a><br>
                 • <a href="#validation-heavy_check_mark">validator.py</a>
             </td>
-            <td>
+            <td style="width:20%;border:1px solid black;">
                 • <a href="https://github.com/citation-file-format/cff-converter-python">cffconvert</a>
             </td>
         </tr>
         <tr>
-            <th>GitHub Actions</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
+            <th style="width:20%;">GitHub Actions</th>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;">
                 • <a href="https://github.com/citation-file-format/cffconvert-github-action">cffconvert</a><br>
                 • <a href="https://github.com/caltechlibrary/codemeta2cff">codemeta2cff</a>
             </td>
         </tr>
         <tr>
-            <th>Go</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
+            <th style="width:20%;">Go</th>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;">
                 • <a href="https://github.com/caltechlibrary/datatools/">datatools/codemeta2cff</a>
             </td>
         </tr>
         <tr>
-            <th>Java</th>
-            <td>
+            <th style="width:20%;">Java</th>
+            <td style="width:20%;">
                 • <a href="https://github.com/hexatomic/cff-maven-plugin">CFF Maven plugin</a>
             </td>
-            <td>
+            <td style="width:20%;">
                 • <a href="https://github.com/hexatomic/cff-maven-plugin">CFF Maven plugin</a>
             </td>
-            <td></td>
-            <td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;">
                 • <a href="https://github.com/hexatomic/cff-maven-plugin">CFF Maven plugin</a>
             </td>
         </tr>
         <tr>
-            <th>Python</th>
-            <td></td>
-            <td>
+            <th style="width:20%;">Python</th>
+            <td style="width:20%;"></td>
+            <td style="width:20%;">
                 • <a href="https://github.com/citation-file-format/doi2cff">doi2cff</a>
             </td>
-            <td>
+            <td style="width:20%;">
                 • <a href="https://github.com/citation-file-format/cff-converter-python">cffconvert</a><br>
                 • <a href="http://examples/validator.py">validator.py</a>
             </td>
-            <td>
+            <td style="width:20%;">
                 • <a href="https://github.com/citation-file-format/cff-converter-python">cffconvert</a><br>
                 • <a href="https://github.com/citation-file-format/doi2cff">doi2cff</a>
             </td>
         </tr>
         <tr>
-            <th>R</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
+            <th style="width:20%;">R</th>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;">
                 • <a href="https://cran.r-project.org/web/packages/citation/">citation</a><br>
                 • <a href="https://github.com/ocbe-uio/RCFF">r2cff</a><br>
                 • <a href="https://github.com/ropensci/handlr">handlr</a>
             </td>
         </tr>
         <tr>
-            <th>Ruby</th>
-            <td>
+            <th style="width:20%;">Ruby</th>
+            <td style="width:20%;">
                 • <a href="https://github.com/citation-file-format/ruby-cff">ruby-cff</a>
             </td>
-            <td>
+            <td style="width:20%;">
                 • <a href="https://github.com/citation-file-format/ruby-cff">ruby-cff</a>
             </td>
-            <td>
+            <td style="width:20%;">
                 • <a href="https://github.com/citation-file-format/ruby-cff">ruby-cff</a>
             </td>
-            <td>
+            <td style="width:20%;">
                 • <a href="https://github.com/citation-file-format/ruby-cff">ruby-cff</a>
             </td>
         </tr>
         <tr>
-            <th>TypeScript</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>• <a href="https://github.com/citation-file-format/citation-file-format/issues/28#issuecomment-892105342">
+            <th style="width:20%;">TypeScript</th>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;">• <a
+                    href="https://github.com/citation-file-format/citation-file-format/issues/28#issuecomment-892105342">
                     #28</a>
             </td>
         </tr>
         <tr>
-            <th>Website</th>
-            <td>
+            <th style="width:20%;">Website</th>
+            <td style="width:20%;">
                 • <a href="https://citation-file-format.github.io/cff-initializer-javascript/">cffinit</a>
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
+            <td style="width:20%;"></td>
         </tr>
     </tbody>
 </table>
+
+</html>
 
 ## Maintainers :nerd_face:
 
