@@ -55,8 +55,8 @@ version: 0.11.2
 When your software or data builds on what others have already done, it is good practice to add a `references` section to your
 `CITATION.cff` file. This way, you give credit to the authors of works that your own work builds on.
 
-The `references` section works like a reference list in a paper, 
-but can also contain references to other software 
+The `references` section works like a reference list in a paper,
+but can also contain references to other software
 (such as the dependencies of your software), other datasets,
 and other (research) outputs.
 
@@ -148,7 +148,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 - **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
 - **required**: `true`
-- **description**: The authors of a software or dataset.  
+- **description**: The authors of a software or dataset.
 (See also [How to deal with unknown individual authors?](#how-to-deal-with-unknown-individual-authors))
 - **usage**:<br><br>
     ```yaml
@@ -380,9 +380,9 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: A [`definitions.reference`](#definitionsreference) object.
 - **required**: `false`
-- **description**: A reference to another work that should be cited instead of the software or dataset itself.  
-Note that the principles of [software citation](https://doi.org/10.7717/peerj-cs.86) and [data citation](https://doi.org/10.25490/a97f-egyk) require that 
-software should be cited on the same basis as any other research product such as a paper or a book. 
+- **description**: A reference to another work that should be cited instead of the software or dataset itself.
+Note that the principles of [software citation](https://doi.org/10.7717/peerj-cs.86) and [data citation](https://doi.org/10.25490/a97f-egyk) require that
+software should be cited on the same basis as any other research product such as a paper or a book.
 Adding a different preferred citation may result in a violation of the respective
 primary principle, "Importance", when others cite this work.
 - **usage**:<br><br>
@@ -520,18 +520,18 @@ that is being referenced from `repository-code`, `url` and `license-url`.
 **Note:** `definitions` and its subkeys like `definitions.alias` or `definitions.entity.alias` should not be used as keys in `CITATION.cff` files:
 ```yaml
 # incorrect
-authors: 
+authors:
   - definitions.alias: sdruskat
 ```
 ```yaml
 # incorrect
-authors: 
-  - definitions: 
+authors:
+  - definitions:
       alias: sdruskat
 ```
 ```yaml
 # correct
-authors: 
+authors:
   - alias: sdruskat
 ```
 
@@ -1224,59 +1224,127 @@ authors:
 
 ### `definitions.identifier`
 
-- **type**: One of the following `object`s:
-    1. DOI
-        - `type`:
-            - **type**: `enum` with singular value `doi`
-            - **required**: `true`
-            - **description**: The type of identifier.
-        - `value`:
-            - **type**: [`definitions.doi`](#definitionsdoi)
-            - **required**: `true`
-            - **description**: The value of the DOI, e.g. `10.5281/zenodo.1003149`
-        - `description`:
-            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
-            - **required**: `false`
-            - **description**: The description of the DOI, e.g. `This is the DOI for version 0.11.4.`
-    1. URL
-        - `type`:
-            - **type**: `enum` with singular value `url`
-            - **required**: `true`
-            - **description**: The type of identifier.
-        - `value`:
-            - **type**: [`definitions.url`](#definitionsurl)
-            - **required**: `true`
-            - **description**: The value of the URL, e.g. `https://github.com/citation-file-format/citation-file-format`.
-        - `description`:
-            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
-            - **required**: `false`
-            - **description**: The description of the URL, e.g. `The homepage for the project`.
-    1. Software Heritage identifier
-        - `type`:
-            - **type**: `enum` with singular value `swh`
-            - **required**: `true`
-            - **description**: The type of identifier.
-        - `value`:
-            - **type**: [`definitions.swh-identifier`](#definitionsswh-identifier)
-            - **required**: `true`
-            - **description**: The value of the Software Heritage identifier, e.g. `swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d`.
-        - `description`:
-            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
-            - **required**: `false`
-            - **description**: The description of the Software Heritage identifier, e.g. `The directory object of the repository as stored on Software Heritage.`
-    1. Other
-        - `type`:
-            - **type**: `enum` with singular value `other`
-            - **required**: `true`
-            - **description**: The type of identifier.
-        - `value`:
-            - **type**: Nonempty `string`
-            - **required**: `true`
-            - **description**: The value of the identifier, e.g. `arXiv:2103.06681`
-        - `description`:
-            - **type**: [`definitions.identifier-description`](#definitionsidentifier-description)
-            - **required**: `false`
-            - **description**: The description of the identifier, e.g. `The ArXiv preprint of the paper`.
+- **type**: One of the following `object` types (click to expand/collapse):<br><br>
+    1. <details>
+          <summary>DOI</summary>
+          <br>
+          <ul>
+            <li>
+              <code>type</code>:
+              <ul>
+                <li><strong>type</strong>: <code>enum</code> with singular value <code>doi</code></li>
+                <li><strong>required</strong>: <code>true</code></li>
+                <li><strong>description</strong>: The type of identifier.</li>
+              </ul>
+            </li>
+            <li>
+              <code>value</code>:
+              <ul>
+                <li><strong>type</strong>: <a href="#definitionsdoi"><code>definitions.doi</code></a></li>
+                <li><strong>required</strong>: <code>true</code></li>
+                <li><strong>description</strong>: The value of the DOI, e.g. <code>10.5281/zenodo.1003149</code></li>
+              </ul>
+            </li>
+            <li>
+              <code>description</code>:
+              <ul>
+                <li><strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a></li>
+                <li><strong>required</strong>: <code>false</code></li>
+                <li><strong>description</strong>: The description of the DOI, e.g. <code>This is the DOI for version 0.11.4.</code></li>
+              </ul>
+            </li>
+          </ul>
+        </details>
+    1. <details>
+          <summary>URL</summary>
+          <br>
+          <ul>
+            <li>
+              <code>type</code>:
+              <ul>
+                <li><strong>type</strong>: <code>enum</code> with singular value <code>url</code></li>
+                <li><strong>required</strong>: <code>true</code></li>
+                <li><strong>description</strong>: The type of identifier.</li>
+              </ul>
+            </li>
+            <li>
+              <code>value</code>:
+              <ul>
+                <li><strong>type</strong>: <a href="#definitionsurl"><code>definitions.url</code></a></li>
+                <li><strong>required</strong>: <code>true</code></li>
+                <li><strong>description</strong>: The value of the URL, e.g. <code>https://github.com/citation-file-format/citation-file-format</code>.</li>
+              </ul>
+            </li>
+            <li>
+              <code>description</code>:
+              <ul>
+                <li><strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a></li>
+                <li><strong>required</strong>: <code>false</code></li>
+                <li><strong>description</strong>: The description of the URL, e.g. <code>The homepage for the project</code>.</li>
+              </ul>
+            </li>
+          </ul>
+        </details>
+    1. <details>
+          <summary>Software Heritage identifier</summary>
+          <br>
+          <ul>
+            <li>
+              <code>type</code>:
+              <ul>
+                <li><strong>type</strong>: <code>enum</code> with singular value <code>swh</code></li>
+                <li><strong>required</strong>: <code>true</code></li>
+                <li><strong>description</strong>: The type of identifier.</li>
+              </ul>
+            </li>
+            <li>
+              <code>value</code>:
+              <ul>
+                <li><strong>type</strong>: <a href="#definitionsswh-identifier"><code>definitions.swh-identifier</code></a></li>
+                <li><strong>required</strong>: <code>true</code></li>
+                <li><strong>description</strong>: The value of the Software Heritage identifier, e.g. <code>swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d</code>.</li>
+              </ul>
+            </li>
+            <li>
+              <code>description</code>:
+              <ul>
+                <li><strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a></li>
+                <li><strong>required</strong>: <code>false</code></li>
+                <li><strong>description</strong>: The description of the Software Heritage identifier, e.g. <code>The directory object of the repository as stored on Software Heritage.</code>.</li>
+              </ul>
+            </li>
+          </ul>
+        </details>
+    1. <details>
+          <summary>Other</summary>
+          <br>
+          <ul>
+            <li>
+              <code>type</code>:
+              <ul>
+                <li><strong>type</strong>: <code>enum</code> with singular value <code>other</code></li>
+                <li><strong>required</strong>: <code>true</code></li>
+                <li><strong>description</strong>: The type of identifier.</li>
+              </ul>
+            </li>
+            <li>
+              <code>value</code>:
+              <ul>
+                <li><strong>type</strong>: Nonempty <code>string</code>.</li>
+                <li><strong>required</strong>: <code>true</code></li>
+                <li><strong>description</strong>: The value of the identifier, e.g. <code>arXiv:2103.06681</code>.</li>
+              </ul>
+            </li>
+            <li>
+              <code>description</code>:
+              <ul>
+                <li><strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a></li>
+                <li><strong>required</strong>: <code>false</code></li>
+                <li><strong>description</strong>: The description of the identifier, e.g. <code>The ArXiv preprint of the paper.</code>.</li>
+              </ul>
+            </li>
+          </ul>
+        </details>
 - **required**: N/A
 - **description**: An identifier.
 - **usage**:<br><br>
@@ -2210,7 +2278,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
           - family-names: Katz
             given-names: D. S.
           - family-names: Niemeyer
-            given-names: K. E. 
+            given-names: K. E.
           - name: "FORCE11 Software Citation Working Group"
         doi: "10.7717/peerj-cs.86"
         journal: "PeerJ Computer Science"
@@ -2222,22 +2290,22 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         year: 2016
     ```
     ```yaml
-    references: 
+    references:
       - abbreviation: "NP"
         abstract: "This is a non-sensical example reference to show how the many different keys in a reference object can be used."
-        authors: 
+        authors:
           - name: The Research Software Project
         collection-doi: 10.5281/zenodo.1003149
         collection-title: "Proceedings of the Research Conference 2021"
         collection-type: "proceedings"
         commit: "16192bf05e99bcb35d5c3e085047807b5720fafc"
-        conference: 
+        conference:
           name: "Research Conference 2021"
-        contact: 
+        contact:
           - name: "The RC21 Organizing Committee"
         copyright: "© 2021 The Research Software Project team"
         data-type: "YAML"
-        database-provider: 
+        database-provider:
           name: "Research Databases Ltd."
         database: "Research Database"
         date-accessed: "2021-07-27"
@@ -2247,11 +2315,11 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         department: "Department of Hard Science Fiction"
         doi: 10.5281/zenodo.4813122
         edition: "2nd abridged edition"
-        editors: 
+        editors:
           - family-names: Inchief
             given-names: Editor
           - name: The RCProc Editorial Team
-        editors-series: 
+        editors-series:
           - family-names: Editor
             given-names: Series
           - name: The Series Editors
@@ -2259,7 +2327,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         entry: "Citation <n. 1>"
         filename: "CITATION.cff"
         format: "Citation File Format"
-        identifiers: 
+        identifiers:
           - type: doi
             value: 10.5281/zenodo.1003149
             description: The concept DOI of the work.
@@ -2272,7 +2340,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
           - type: url
             value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
             description: The GitHub release URL of tag 1.1.0.
-        institution: 
+        institution:
           name: "University of Arcadia"
         isbn: "9781603095075"
         issn: "2475-9066"
@@ -2291,7 +2359,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         license-url: "https://obscure-licenses.com?id=1234"
         loc-end: 42
         loc-start: 21
-        location: 
+        location:
           name: "Library of the Unseen University"
         medium: "5¼-inch floppy disk"
         month: 7
@@ -2300,10 +2368,10 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         number: 12053
         number-volumes: 7
         pages: 78
-        patent-states: 
+        patent-states:
           - "Canada"
         pmcid: "PMC3134971"
-        publisher: 
+        publisher:
           name: "Open Access Publishing House"
         recipients:
           - name: "Recipient entity of personal communication"
@@ -2397,12 +2465,12 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 #### How to deal with unknown individual authors?
 
-To enable credit for the individuals that have created a work, 
+To enable credit for the individuals that have created a work,
 it is good practice to cite the respective individuals as authors.
 Sometimes you may not be able to determine the person names of the relevant individuals to create
 [`definitions.person`](#definitionsperson) objects for them,
 for example when a software you cite does not provide a `CITATION.cff` file.
-Then, the next best thing is to refer to those that you could not determine person names for 
+Then, the next best thing is to refer to those that you could not determine person names for
 collectively as a "team" or "project" using the title of the work
 in a [`definitions.entity`](#definitionsentity) object:
 
@@ -2420,7 +2488,7 @@ authors:
 ```
 
 This still represents the maximum knowledge you have about the authors.
-It's also a good starting point to enable users of the citation metadata to determine the correct names themselves in the future, 
+It's also a good starting point to enable users of the citation metadata to determine the correct names themselves in the future,
 especially if you also provide a source of information such as a `repository-code` or a `url`.
 
 If the authors of a work are truly anonymous,
@@ -2507,7 +2575,7 @@ authors:
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      conference: 
+      conference:
         name: "Research Conference 2021"
       type: generic
     ```
@@ -3099,14 +3167,14 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
     ```
     ```yaml
     preferred-citation:
-      license: 
+      license:
         - Apache-2.0
         - MIT
       type: generic
     ```
     ```yaml
     references:
-      - license: 
+      - license:
           - Apache-2.0
           - MIT
         type: generic
