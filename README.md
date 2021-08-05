@@ -114,11 +114,11 @@ The Citation File Format is a collaborative project and we welcome suggestions a
 :hourglass_flowing_sand: **I've got 10 minutes - tell me what I should do**
 - Create a `CITATION.cff` file for your repository.
 - Suggest ideas for how you would like to use the Citation File Format, or for an improvement to the format or its tooling.
-- If you know how to validate `CITATION.cff` files, help someone with a validation problem and look at the issues labeled [![GitHub labels](https://img.shields.io/github/labels/citation-file-format/citation-file-format/validation)](https://github.com/citation-file-format/citation-file-format/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22+label%3Avalidation)
+- If you know how to validate `CITATION.cff` files, help someone with a validation problem and look at the [issues labeled ![GitHub labels](https://img.shields.io/github/labels/citation-file-format/citation-file-format/validation)](https://github.com/citation-file-format/citation-file-format/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22+label%3Avalidation)
 
 :computer: **I've got a few hours to work on this**
 - Take a look at the and see if there are any you can contribute to.
-- Specifically, help us create the tooling that people need and look at the issues labeled [![GitHub labels](https://img.shields.io/github/labels/citation-file-format/citation-file-format/tooling)](https://github.com/citation-file-format/citation-file-format/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22+label%3Atooling)
+- Specifically, help us create the tooling that people need and look at the [issues labeled ![GitHub labels](https://img.shields.io/github/labels/citation-file-format/citation-file-format/tooling)](https://github.com/citation-file-format/citation-file-format/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22+label%3Atooling)
 
 :tada: **I want to help grow the community**
 - Write a blog post or news item for your own community.
