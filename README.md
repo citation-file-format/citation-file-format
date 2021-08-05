@@ -103,7 +103,6 @@ The following table gives an overview of the tools that we know about. If there 
             <td>
                 • <a href="https://github.com/citation-file-format/cff-converter-python">cffconvert</a><br>
                 • <a href="#validation-heavy_check_mark">validator.py</a>
-
             </td>
             <td>
                 • <a href="https://github.com/citation-file-format/cff-converter-python">cffconvert</a>
@@ -117,7 +116,6 @@ The following table gives an overview of the tools that we know about. If there 
             <td>
                 • <a href="https://github.com/citation-file-format/cffconvert-github-action">cffconvert</a><br>
                 • <a href="https://github.com/caltechlibrary/codemeta2cff">codemeta2cff</a>
-
             </td>
         </tr>
         <tr>
