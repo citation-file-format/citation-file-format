@@ -10,9 +10,8 @@ in plaintext files that are easy to read by both humans and machines.
 
 ## Structure
 
-You can specify citation metadata for your software (or dataset) in a file named `CITATION.cff`.
-
-This is what a typical `CITATION.cff` file for research software may look like:
+You can specify citation metadata for your software (or dataset) in a file named `CITATION.cff`. 
+This is what a typical `CITATION.cff` file may look like for research software:
 
 ```yaml
 cff-version: 1.2.0
@@ -49,7 +48,7 @@ You can find the complete format specifications in the [Guide to the Citation Fi
 
 When you do this, great things may happen:
 
-1. People that find your software can easily cite it using the correct metadata from `CITATION.cff`!
+1. Users of your software can easily cite it using the metadata from `CITATION.cff`!
 2. If your repository is hosted on GitHub, they will [show the citation information in the sidebar](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-citation-files), which makes it easy for visitors to cite your software or dataset correctly.
 3. When you publish your software on Zenodo via the [GitHub-Zenodo integration](https://guides.github.com/activities/citable-code/), they will use the metadata from your `CITATION.cff` file.
 4. People can import the correct reference to your software into the [Zotero](https://www.zotero.org) reference manager via a [browser plugin](https://www.zotero.org/download/).
@@ -57,18 +56,19 @@ When you do this, great things may happen:
 ## Validation :heavy_check_mark:
 
 You can validate your `CITATION.cff` file with the [Python script](examples/validator.py)
-that we also use for testing the Citation File Format schema itself.
+that we also use for testing the Citation File Format schema itself, like so:
 
-To do this, you need to have [Python 3](https://www.python.org) installed.
-The script depends on the packages [`jsonschema`](https://pypi.org/project/jsonschema/) and [`ruamel.yaml`](https://pypi.org/project/ruamel.yaml/).
+```shell
+# clone this repository
+git clone https://github.com/citation-file-format/citation-file-format.git
 
-**Steps:**
+# change into the cloned repository directory
+cd citation-file-format
 
-1. Clone this repository with `git`: e.g. `git clone https://github.com/citation-file-format/citation-file-format.git`.
-2. Change into the cloned repository directory: e.g. `cd citation-file-format`
-3. Install the dependencies and run the script:
-```python
+# install the validation dependencies in user space
 python3 -m pip install --user ruamel.yaml jsonschema
+
+# run the validator on your CITATION.cff
 python3 examples/validator.py -s schema.json -d path/to/your/CITATION.cff
 ```
 
