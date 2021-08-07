@@ -43,7 +43,7 @@ Users will be able to use the metadata from CITATION.cff files to cite software 
 Do you have a specific technology or programming language in mind for the implementation of the new tool? 
 If so, please describe why.
 Examples:
-- This could be a website hosted by the software regsitries that want to use this functionality.
+- This could be a website hosted by the software registries that want to use this functionality.
 - This could be a Python package with a command-line interface.
 -->
 
