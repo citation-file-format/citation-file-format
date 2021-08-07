@@ -1,6 +1,6 @@
 ---
 name: Tool idea
-about: I have an idea for, or need, specific tooling for CFF
+about: I have an idea for, or need, specific tooling for `CITATION.cff` files
 title: ''
 labels: 'help wanted', 'tooling'
 assignees: ''
