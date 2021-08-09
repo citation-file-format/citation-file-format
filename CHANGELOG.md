@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2021-05-31
+
 ### Added
 
 - introduced `preferred-citation`
@@ -91,7 +93,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial pre-release of the specifications for the Citation File Format
 
-[unreleased]: https://github.com/citation-file-format/citation-file-format/compare/1.1.0...HEAD
+[unreleased]: https://github.com/citation-file-format/citation-file-format/compare/1.2.0...HEAD
+[1.2.0]: https://doi.org/10.5281/zenodo.5171937
 [1.1.0]: https://doi.org/10.5281/zenodo.4813122
 [1.0.3-4]: https://doi.org/10.5281/zenodo.3515946
 [1.0.2]: https://doi.org/10.5281/zenodo.1120256
