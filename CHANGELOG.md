@@ -15,7 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - added regex validation for identifiers of type `swh`
 - `description`s and `examples` added to schema
 - schema has more checks for empty strings or empty arrays (e.g. `authors`, `abstract`, `keywords`)
-- `references.term` was added
 
 ### Changed
 
@@ -30,6 +29,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - url regex now also allows for `sftp`
 - regex for `isbn` simplified and changed for easier maintenance
 - dates are now (only) strings of `format` `date` & `pattern` YYYY-MM-DD
+
+### Fixed
+
+- `references.term` was added
 
 ## [1.1.0] - 2021-05-31
 
