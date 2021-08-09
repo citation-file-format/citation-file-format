@@ -1,4 +1,13 @@
 **/__pycache__
 .cache
 venv/
+venv37/
+venv3*/
+.idea
+.vscode/
 
+
+# for when users install markdown-link-checker locally
+node_modules
+package.json
+package-lock.json

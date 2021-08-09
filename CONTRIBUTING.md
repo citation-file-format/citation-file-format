@@ -10,7 +10,7 @@ There are many **ways to contribute**, e.g.:
 - Review any and all parts of the format and its infrastructure: specifications, libraries, documentation, etc., and submit bug reports, feature requests, suggestions and similar, respectively
 - Language polish any prose output, including the specifications
 - Create a new, better version of the specifications
-- Create new infrastructure, e.g., a library to read CFF files in a new programming language
+- Create new infrastructure, e.g., improve automated tests or develop a library to read CFF files in a new programming language
 
 Please do not use the issue tracker of any 
 [CFF repository](https://github.com/citation-file-format/citation-file-format/blob/master/README.md#repositories) 
@@ -38,7 +38,7 @@ through the
 and see if you can identify one that you would like to work on.
 
 If you have never contributed to an open source project, you may find this tutorial helpful:
-[How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github).
+[How to Contribute to an Open Source Project on GitHub](https://app.egghead.io/playlists/how-to-contribute-to-an-open-source-project-on-github).
 
 # Getting started
 
@@ -49,6 +49,16 @@ Please **fork the repository** you want to contribute to, and then
 **make the changes in your fork**. Once you are happy and think that
 your changes should be included in the code base of the project, 
 please **note the code of conduct** and **send a pull request**. 
+
+There is a collection of test `.cff` files in the `test` directory.
+It may be a good idea to add a test if you modify the specification,
+or if you discover a part of the specification which is not covered
+by tests. If you modify anything in the `test` directory, it is
+advised to run these tests locally on your computer prior to submitting
+a pull request. However, if that's not possible, you still can submit
+the pull request and later check the status of the tests for your
+pull requests on GitHub. Please see `test/README.md` file for further
+details about tests and instructions how to run them locally.
 
 # How to submit an issue
 
