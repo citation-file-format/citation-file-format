@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Switched from YAML schema to JSON schema ([json.schema](json.schema))
+- switched from YAML schema to JSON schema
 - `issue`, `number`, `version`, `post-code`, `section` are more lenient now with type union `str|number`
 - `loc-start`, `loc-end`, `start`, `end`, `number-volumes`, `volume`, `pages`, `year`, `year-original` are more lenient now with type union `int|str`
 - `month` is more lenient now with type union `int[1-12]|enum["1"-"12"]`
