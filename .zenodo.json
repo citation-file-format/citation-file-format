@@ -95,6 +95,16 @@
             "scheme": "url",
             "identifier": "https://github.com/citation-file-format/citation-file-format/releases/tag/1.2.0",
             "relation": "isSupplementTo"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.1003149",
+            "relation": "isPartOf"
+        },
+        {
+            "scheme": "doi",
+            "identifier": "10.5281/zenodo.4813122",
+            "relation": "isNewVersionOf"
         }
     ],
     "title": "Citation File Format",
