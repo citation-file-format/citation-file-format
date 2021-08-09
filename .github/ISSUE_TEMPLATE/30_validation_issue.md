@@ -2,7 +2,9 @@
 name: Validation issue
 about: My `CITATION.cff` file is not valid and I need help
 title: ''
-labels: 'help wanted', 'validation'
+labels:
+  - 'help wanted'
+  - 'validation'
 assignees: ''
 
 ---
