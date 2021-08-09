@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- introduced `preferred-citation`
+- root document now has `type:` `software` or `dataset`
+- `identifiers` have gained an optional key `description`
+- added regex validation for identifiers of type `swh`
+- `description`s and `examples` added to schema
+- schema has more checks for empty strings or empty arrays (e.g. `authors`, `abstract`, `keywords`)
+- `references.term` was added
+
+### Changed
+
 - Switched from YAML schema to JSON schema ([json.schema](json.schema))
 - `issue`, `number`, `version`, `post-code`, `section` are more lenient now with type union `str|number`
 - `loc-start`, `loc-end`, `start`, `end`, `number-volumes`, `volume`, `pages`, `year`, `year-original` are more lenient now with type union `int|str`
@@ -14,17 +26,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `version`, `date-released` no longer required elements of a minimal CFF
 - list of valid license SPDX codes updated to version 2021-05-14
 - `language` more lenient (for performance)
-- `identifiers` have gained an optional key `description`
-- added regex validation for identifiers of type `swh`
-- `description`s and `examples` added to schema
-- schema has more checks for empty strings or empty arrays (e.g. `authors`, `abstract`, `keywords`)
-- root document now has `type:` `software` or `dataset`
 - regex for `url` simplified for easier maintenance
 - url regex now also allows for `sftp`
 - regex for `isbn` simplified and changed for easier maintenance
-- introduced `preferred-citation`
 - dates are now (only) strings of `format` `date` & `pattern` YYYY-MM-DD
-- `references.term` was added
 
 ## [1.1.0] - 2021-05-31
 
