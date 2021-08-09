@@ -1,10 +1,10 @@
 ---
 name: Validation issue
-about: My <code>CITATION.cff</code> file is not valid and I need help
+about: My CITATION.cff file is not valid and I need help
 title: ''
 labels:
   - 'help wanted'
-  - 'validation'
+  - validation
 assignees: ''
 
 ---
