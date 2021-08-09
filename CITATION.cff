@@ -38,7 +38,7 @@ identifiers:
     value: 10.5281/zenodo.1003149
     description: The concept DOI for the collection containing all versions of the Citation File Format.
   - type: doi
-    value: 10.5281/zenodo.FIXME
+    value: 10.5281/zenodo.5171937
     description: The versioned DOI for the version 1.2.0 of the Citation File Format.
 date-released: "2021-08-09"
 keywords:
