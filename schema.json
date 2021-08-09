@@ -1,5 +1,5 @@
 {
-    "$id": "https://citation-file-format.github.io/1.2.0/schema.json#",
+    "$id": "https://citation-file-format.github.io/1.2.0/schema.json",
     "$schema": "http://json-schema.org/draft-07/schema",
     "additionalProperties": false,
     "definitions": {
