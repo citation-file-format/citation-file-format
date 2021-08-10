@@ -112,7 +112,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### Index
 
-- [`abstract`](#abstract)
+- [`abstract`](#abstract.BROKEN)
 - [`authors`](#authors) (array of objects)
 - [`cff-version`](#cff-version)
 - [`commit`](#commit)
