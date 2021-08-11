@@ -11,7 +11,7 @@ There are many **ways to contribute**, e.g.:
 
 - Tell a friend or colleague about the Citation File Format, or tweet about it
 - Write blog posts, tutorials, etc. about the Citation File Format
-- Review the format and its schema dn documentation
+- Review the format and its schema and documentation
 - Improve wording in any prose output, including the specifications
 - Create a new, better version of the schema and specifications
 - Improve automated tests, continuous integration, documentation, etc.
