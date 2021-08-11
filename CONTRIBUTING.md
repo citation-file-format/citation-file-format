@@ -55,11 +55,11 @@ to discuss the changes you want to make with the maintainers and community
 
 This workflow is loosely based on GitHub flow, and you can find more information in the [GitHub flow documentation](https://docs.github.com/en/get-started/quickstart/github-flow).
 
-## Details
+## Working with examples and tests
 
 There is a collection of test `CITATION.cff` files in the `examples` directory.
 It may be a good idea to add a test if you modify the specification,
-or if you discover a part of the specification which is not covered
+or if you discover a part of the specification that is not covered
 by tests. If you modify anything in the `tests` or `examples` directory, it is
 advised to run these tests locally on your computer prior to submitting
 a pull request. However, if that's not possible, you still can submit
