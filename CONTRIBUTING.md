@@ -1,7 +1,7 @@
 # Introduction
 
 **Thank you** for considering to contribute to the **Citation File Format (CFF) and its schema**!  
-If you mean to contribute to another part of the Citation File Format project, 
+If you intend to contribute to another part of the Citation File Format project, 
 for example a specific software package for working with CFF files,
 please contribute to the respective repository ([list of repositories in the `citation-file-format` GitHub organization](https://github.com/orgs/citation-file-format/repositories)).
 
