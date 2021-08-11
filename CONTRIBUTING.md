@@ -54,7 +54,6 @@ to discuss the changes you want to make with the maintainers and community
 8. If and when your pull request has been merged, you can delete your branch (or the whole fork repository)
 
 This workflow is loosely based on GitHub flow, and you can find more information in the [GitHub flow documentation](https://docs.github.com/en/get-started/quickstart/github-flow).
-workflow to collaborate on this repository. 
 
 ## Details
 
