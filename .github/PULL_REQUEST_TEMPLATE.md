@@ -32,4 +32,4 @@ CONTRIBUTORS: Please replace `<do other things>` in the checklist item below
 with something that reviewers should do additionally
 to test and review your contribution!
 -->
-- [ ] `<Do other things>`
+- [ ] `<do other things>`
