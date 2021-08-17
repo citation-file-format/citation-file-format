@@ -51,7 +51,7 @@ to discuss the changes you want to make with the maintainers and community
 5. Take note of the [code of conduct](https://github.com/citation-file-format/citation-file-format/blob/main/CODE_OF_CONDUCT.md)
 6. Create a pull request
 7. Address any comments that have come up during review
-8. If and when your pull request has been merged, you can delete your branch (or the whole fork repository)
+8. If and when your pull request has been merged, you can delete your branch (or the whole forked repository)
 
 This workflow is loosely based on GitHub flow, and you can find more information in the [GitHub flow documentation](https://docs.github.com/en/get-started/quickstart/github-flow).
 
