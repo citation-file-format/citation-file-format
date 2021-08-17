@@ -8,8 +8,14 @@ Refs: #ISSUE_NUMBER
 
 **Instructions to review the pull request**
 
-- [ ] **Reviewers** to check if all changes are recorded in `CHANGELOG.md` and adapt if neccesary
-- [ ] **Contributors:** Please replace `<do other things>` in the snippet below with something that reviewers should do to test and review your contribution!
+**Review checklist**
+
+- [ ] Please check if all changes are recorded in `CHANGELOG.md` and adapt if neccesary.
+- [ ] Please run tests locally.
+<!-- 
+CONTRIBUTORS: Please replace <do other things> in the snippet below 
+with something that reviewers should do to test and review your contribution!
+-->
 ```bash
 cd $(mktemp -d --tmpdir cff.XXXXXX)
 git clone https://github.com/citation-file-format/citation-file-format .
@@ -21,4 +27,9 @@ pip install -r requirements.txt
 pytest
 <do other things>
 ```
-- [ ] **Contributors:** Please add anything else that shold be done here ...
+<!-- 
+CONTRIBUTORS: Please replace `<do other things>` in the checklist item below 
+with something that reviewers should do additionally
+to test and review your contribution!
+-->
+- [ ] `<do other things>`
