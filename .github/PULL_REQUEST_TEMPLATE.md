@@ -10,7 +10,7 @@ Refs: #ISSUE_NUMBER
 
 **Review checklist**
 
-- [ ] Please check if all changes are recorded in `CHANGELOG.md` and adapt if neccesary.
+- [ ] Please check if all changes are recorded in `CHANGELOG.md` and adapt if necessary.
 - [ ] Please run tests locally.
 <!-- 
 CONTRIBUTORS: Please replace <do other things> in the snippet below 
