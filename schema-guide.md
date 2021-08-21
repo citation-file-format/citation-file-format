@@ -1963,7 +1963,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         region: Renfrewshire
         tel: +12-345-6789098
         website: "https://research-project.org"
-      ```
+    ```
 
 ### `definitions.person.address`
 
