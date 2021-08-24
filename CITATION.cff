@@ -31,6 +31,9 @@ authors:
   - family-names: Konovalov
     given-names: Olexandr
     orcid: https://orcid.org/0000-0001-5299-3292
+  - family-names: Li
+    given-names: Ambrose
+    orcid: "https://orcid.org/0000-0002-9996-7486"
 title: Citation File Format
 version: 1.2.0
 identifiers:
