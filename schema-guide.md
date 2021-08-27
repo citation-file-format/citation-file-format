@@ -13,7 +13,7 @@ But you should use `"` quotes when a string value
 contains whitespace,
 contains special characters (e.g., any of `:{}[],&*#?|-<>=!%@\`),
 consists only of numbers (e.g., is the string `"42"`, not the number `42`),
-or is `"true"`, `"false"`, `"yes"` or `"no"`.
+or is `"true"`, `"false"`, `"yes"` or `"no"`.  
 In short: When a string value doesn't behave as expected, try putting it in `"` quotes.
 
 ### Minimal example
