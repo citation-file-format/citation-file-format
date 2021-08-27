@@ -316,7 +316,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `keywords`
 
-- **type**: Array of [Nonempty `string`](#yaml-strings)
+- **type**: Array of [nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: Keywords that describe the work.
 - **usage**:<br><br>
@@ -3113,7 +3113,7 @@ authors:
 
 ### `definitions.reference.keywords`
 
-- **type**: Array of [Nonempty `string`](#yaml-strings)
+- **type**: Array of [nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: Keywords pertaining to the work.
 - **usage**:<br><br>
