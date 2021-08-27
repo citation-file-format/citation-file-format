@@ -24,7 +24,7 @@ A minimal example of a valid `CITATION.cff` file, that contains only the require
 authors:
   - family-names: Druskat
     given-names: Stephan
-cff-version: "1.2.0"
+cff-version: 1.2.0
 message: "If you use this software, please cite it using these metadata."
 title: "My Research Software"
 ```
@@ -39,7 +39,7 @@ authors:
   - family-names: Druskat
     given-names: Stephan
     orcid: "https://orcid.org/0000-0003-4925-7248"
-cff-version: "1.2.0"
+cff-version: 1.2.0
 date-released: "2021-07-18"
 identifiers:
   - description: "This is the collection of archived snapshots of all versions of My Research Software"
@@ -55,7 +55,7 @@ license: Apache-2.0
 message: "If you use this software, please cite it using these metadata."
 repository-code: "https://github.com/citation-file-format/my-research-software"
 title: "My Research Software"
-version: "0.11.2"
+version: 0.11.2
 ```
 
 ### Referencing other work
@@ -72,7 +72,7 @@ and other (research) outputs.
 authors:
   - family-names: Druskat
     given-names: Stephan
-cff-version: "1.2.0"
+cff-version: 1.2.0
 message: "If you use this software, please cite it using these metadata."
 references:
   - authors:
@@ -101,7 +101,7 @@ the paper (or other work) you want people to cite. Usually, the `message` also r
 authors:
   - family-names: Druskat
     given-names: Stephan
-cff-version: "1.2.0"
+cff-version: 1.2.0
 message: "If you use this software, please cite both the article from preferred-citation and the software itself."
 preferred-citation:
   authors:
