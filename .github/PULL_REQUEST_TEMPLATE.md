@@ -6,8 +6,6 @@ Refs: #ISSUE_NUMBER
 
 **Describe the changes made in this pull request**
 
-**Instructions to review the pull request**
-
 **Review checklist**
 
 - [ ] Please check if the pull request is against the correct branch  
