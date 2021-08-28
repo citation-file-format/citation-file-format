@@ -5,8 +5,7 @@ authors:
   - name: "The Authors Team"
 references:
   - authors:
-      -
-        family-names: Lass
+      - family-names: Lass
         given-names: Roger
     title: "Old English: A historical linguistic companion"
     type: book
