@@ -46,7 +46,10 @@ This is the workflow for contributions to this repository:
 1. [Create a new issue](https://github.com/citation-file-format/citation-file-format/issues/new/choose) 
 to discuss the changes you want to make with the maintainers and community
 2. Fork the repository
-3. Create a branch in your fork of the repository, based on the `main` branch
+3. Create a branch in your fork of the repository:
+  - If you want to make changes to the format and its schema: checkout `develop` and create your branch from it.
+  - If you want to make changes that don't affect the format and its schema, like fixing typos or formatting: checkout `main` and create your branch from it.
+  - When in doubt which branch to fork from, ask in the issue you have created.
 4. Make changes in the new branch in your fork
 5. Take note of the [code of conduct](https://github.com/citation-file-format/citation-file-format/blob/main/CODE_OF_CONDUCT.md)
 6. Create a pull request
