@@ -11,7 +11,7 @@ Valid Citation File Format files
 <a name="yaml-strings"></a>**String quoting:** Note that in YAML you generally don't need to quote strings.
 But you should use `"` quotes when a string value
 contains whitespace,
-contains special characters (e.g., any of `:{}[],&*#?|-<>=!%`, or any of `\`@` at the beginning),
+contains special characters (e.g., any of `:{}[],&*#?|-<>=!%`, or any of `` ` `` and `@` at the beginning),
 consists only of numbers (e.g., is the string `"42"`, not the number `42`),
 or is `"true"`, `"false"`, `"yes"` or `"no"`.
   
