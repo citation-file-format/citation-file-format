@@ -419,7 +419,7 @@ primary principle, "Importance", when others cite this work.
         repository-code: "https://github.com/dependency-project/dependency"
         title: Dependency
         type: software
-        version: "0.13.4"
+        version: 0.13.4
       - authors:
           - family-names: Bielefeld
             given-names: Arthur
@@ -2404,7 +2404,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
             given-names: Trans
         type: conference-paper
         url: "https://citation-file-format.github.io/"
-        version: "0.3.12"
+        version: 0.3.12
         volume: 2
         volume-title: "Volume II: How it went on"
         year: 2021
@@ -3878,12 +3878,12 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
     ```yaml
     preferred-citation:
       type: generic
-      version: "0.3.12"
+      version: 0.3.12
     ```
     ```yaml
     references:
       - type: generic
-        version: "0.3.12"
+        version: 0.3.12
     ```
 
 ### `definitions.reference.volume`
