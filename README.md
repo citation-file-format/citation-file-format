@@ -22,6 +22,7 @@ authors:
   - family-names: Druskat
     given-names: Stephan
     orcid: "https://orcid.org/0000-0003-4925-7248"
+  - name: "The Research Software project"
 version: 0.11.2
 date-released: "2021-07-18"
 identifiers:
