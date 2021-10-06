@@ -73,7 +73,7 @@ If you prefer to use Docker, you can use the [`cffconvert` Docker image](https:/
 
 ```bash
 cd <directory-containing-your-CITATION.cff>
-docker run --rm -ti -v ${PWD}:/app citationcff/cffconvert --validate
+docker run --rm -v ${PWD}:/app citationcff/cffconvert --validate
 ```
 
 <!-- Later, this should link to tutorials -->
