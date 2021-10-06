@@ -14,7 +14,7 @@ contains whitespace,
 contains special characters (e.g., any of `:{}[],&*#?|-<>=!%`, or any of `` ` `` and `@` at the beginning),
 consists only of numbers (e.g., is the string `"42"`, not the number `42`),
 or is `"true"`, `"false"`, `"yes"` or `"no"`.
-  
+
 In short: When a string value doesn't behave as expected, try putting it in `"` quotes.
 
 ### Minimal example
@@ -2263,6 +2263,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     - [`scope`](#definitionsreferencescope)
     - [`section`](#definitionsreferencesection)
     - [`senders`](#definitionsreferencesenders)
+    - [`start`](#definitionsreferencestart)
     - [`status`](#definitionsreferencestatus)
     - [`term`](#definitionsreferenceterm)
     - [`thesis-type`](#definitionsreferencethesis-type)
