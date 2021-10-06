@@ -59,7 +59,7 @@ When you do this, great things may happen:
 You can validate your `CITATION.cff` file on the command line with the [`cffconvert` Python package](https://pypi.org/project/cffconvert/):
 
 ```shell
-# Install cffconvert with pip in userspace
+# Install cffconvert with pip in user space
 python3 -m pip install --user cffconvert
 
 # Validate your CFF file
