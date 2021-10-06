@@ -1,4 +1,4 @@
-cffconvert==1.*
+cffconvert==2.*
 pytest
 jsonschema
 ruamel.yaml
