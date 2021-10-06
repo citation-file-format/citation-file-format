@@ -63,7 +63,7 @@ You can validate your `CITATION.cff` file on the command line with the [`cffconv
 python3 -m pip install --user cffconvert
 
 # Validate your CFF file
-cffconvert --validate -i <path-to-your-CITATION.cff>
+cffconvert --validate
 ```
 
 If you get a Traceback with error messages, look for the relevant validation error and fix it.
