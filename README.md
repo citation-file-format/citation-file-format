@@ -56,27 +56,25 @@ When you do this, great things may happen:
 
 ## Validation :heavy_check_mark:
 
-You can validate your `CITATION.cff` file with the [Python script](examples/validator.py)
-that we also use for testing the Citation File Format schema itself, like so:
+You can validate your `CITATION.cff` file on the command line with the [`cffconvert` Python package](https://pypi.org/project/cffconvert/):
 
 ```shell
-# clone this repository
-git clone https://github.com/citation-file-format/citation-file-format.git
+# Install cffconvert with pip in userspace
+python3 -m pip install --user cffconvert
 
-# change into the cloned repository directory
-cd citation-file-format
-
-# install the validation dependencies in user space
-python3 -m pip install --user ruamel.yaml jsonschema
-
-# run the validator on your CITATION.cff
-python3 examples/validator.py -s schema.json -d path/to/your/CITATION.cff
+# Validate your CFF file
+cffconvert --validate -i <path-to-your-CITATION.cff>
 ```
-
-If you get no output, then congratulations, your `CITATION.cff` file is valid.
 
 If you get a Traceback with error messages, look for the relevant validation error and fix it.
 If the output is very long, it may help if you search it for lines starting with `jsonschema.exceptions.ValidationError`.
+
+If you prefer to use Docker, you can use the [`cffconvert` Docker image](https://hub.docker.com/r/citationcff/cffconvert):
+
+```bash
+cd <directory-containing-your-CITATION.cff>
+docker run --rm -ti -v ${PWD}:/app citationcff/cffconvert --validate
+```
 
 <!-- Later, this should link to tutorials -->
 
