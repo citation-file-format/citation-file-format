@@ -54,6 +54,14 @@ When you do this, great things may happen:
 3. When you publish your software on Zenodo via the [GitHub-Zenodo integration](https://guides.github.com/activities/citable-code/), they will use the metadata from your `CITATION.cff` file.
 4. People can import the correct reference to your software into the [Zotero](https://www.zotero.org) reference manager via a [browser plugin](https://www.zotero.org/download/).
 
+## Creation :heavy_plus_sign:
+
+To create a `CITATION.cff` file, you can 
+
+- use the [**cffinit** website](https://citation-file-format.github.io/cff-initializer-javascript/#/),
+- copy and paste the [example snippet](#structure), and adapt it to your needs, or
+- create a new file called `CITATION.cff` using the *Add file* button on GitHub, and use the template they provide.
+
 ## Validation :heavy_check_mark:
 
 You can validate your `CITATION.cff` file on the command line with the [`cffconvert` Python package](https://pypi.org/project/cffconvert/):
