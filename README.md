@@ -43,7 +43,7 @@ In addition, the Citation File Format allows you to
 
 ## Format specifications :books:
 
-You can find the complete format specifications in the [Guide to the Citation File Format schema](schema-guide.md).
+**You can find the complete format specifications in the [Guide to the Citation File Format schema](schema-guide.md).**
 
 ## Why should I add a `CITATION.cff` file to my repository? :bulb:
 
