@@ -43,7 +43,7 @@ In addition, the Citation File Format allows you to
 
 ## Format specifications :books:
 
-You can find the complete format specifications in the [Guide to the Citation File Format schema](schema-guide.md).
+**You can find the complete format specifications in the [Guide to the Citation File Format schema](schema-guide.md).**
 
 ## Why should I add a `CITATION.cff` file to my repository? :bulb:
 
@@ -53,6 +53,14 @@ When you do this, great things may happen:
 2. If your repository is hosted on GitHub, they will [show the citation information in the sidebar](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-citation-files), which makes it easy for visitors to cite your software or dataset correctly.
 3. When you publish your software on Zenodo via the [GitHub-Zenodo integration](https://guides.github.com/activities/citable-code/), they will use the metadata from your `CITATION.cff` file.
 4. People can import the correct reference to your software into the [Zotero](https://www.zotero.org) reference manager via a [browser plugin](https://www.zotero.org/download/).
+
+## Creation :heavy_plus_sign:
+
+To create a `CITATION.cff` file, you can 
+
+- use the [**cffinit** website](https://citation-file-format.github.io/cff-initializer-javascript/#/),
+- copy and paste the [example snippet](#structure), and adapt it to your needs, or
+- create a new file called `CITATION.cff` using the *Add file* button on GitHub, and use the template they provide.
 
 ## Validation :heavy_check_mark:
 
