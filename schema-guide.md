@@ -1397,6 +1397,12 @@ authors:
         description: "The GitHub release URL of the commit tagged with 1.1.0."
     ```
     ```yaml
+    identifiers:
+      - description: "The last stable released version preceding the current version of the work"
+      - type: url
+      - value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.2.0"
+    ```
+    ```yaml
     preferred-citation:
       identifiers:
         - type: other
