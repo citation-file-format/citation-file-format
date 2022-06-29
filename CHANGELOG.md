@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add example of `identifier.url` pointing to a last stable release before current version to docs (#382)
+
 ## [1.2.0] - 2021-05-31
 
 ### Added
