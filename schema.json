@@ -1270,7 +1270,7 @@
                 },
                 "isbn": {
                     "description": "The ISBN of the work.",
-                    "pattern": "^[0-9\\- ]{10,17}X?$",
+                    "pattern": "^[-0-9 ]{9,17}X?$",
                     "type": "string"
                 },
                 "issn": {
