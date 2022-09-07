@@ -1,0 +1,58 @@
+name: Tool idea
+description: I have an idea for or need specific tooling for CITATION.cff files
+labels: ['help wanted', 'tooling']
+body:
+  - type: markdown
+    attributes:
+      value: Please have a look at the [section on tooling for CITATION.cff files](https://github.com/citation-file-format/citation-file-format#tools-to-work-with-citationcff-files-wrench) before submitting this issue.
+  - type: textarea
+    attributes:
+      label: Who needs the new tool?
+      description: Describe the type of user that would need the new tool.
+      placeholder: |
+        Examples:
+
+        * Researchers
+        * A software registry
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What should the new tool enable users to do?
+      description: Describe a goal that users could achieve with the new tool.  You can start with "I want to ..." or similar.
+      placeholder: |
+        Example:
+
+        I want to convert the metadata in CITATION.cff files to BibTeX.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What benefit would the new tool add?
+      description: Describe the benefit the tool will give users.
+      placeholder: |
+        Example:
+
+        Users will be able to use the metadata from CITATION.cff files to cite software in papers they write in LaTeX.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Implementation suggestions
+      description: Do you have a specific technology or programming language in mind for the implementation of the new tool?  If so, please describe why.
+      placeholder: |
+        Examples:
+
+        * This could be a website hosted by the software registries that want to use this functionality.
+        * This could be a Python package with a command-line interface.
+    validations:
+      required: false
+  - type: dropdown
+    attributes:
+      label: Can you help?
+      description: Indicate whether you will be able to work on the implementation yourself.
+      options:
+        - 'Yes'
+        - 'No'
+    validations:
+      required: true
