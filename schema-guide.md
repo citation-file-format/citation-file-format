@@ -1398,7 +1398,7 @@ authors:
     ```
     ```yaml
     identifiers:
-      - description: "The last stable released version preceding the current version of the work"
+      - description: "The last stable released version preceding the current development version of the work"
         type: url
         value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.2.0"
     ```
