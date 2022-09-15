@@ -6,10 +6,10 @@ Refs: #ISSUE_NUMBER
 
 **Describe the changes made in this pull request**
 
-**Instructions to review the pull request**
-
 **Review checklist**
 
+- [ ] Please check if the pull request is against the correct branch  
+(format/schema/semantic documentation changes: `develop`; typos, meta files, etc.: `main`)
 - [ ] Please check if all changes are recorded in `CHANGELOG.md` and adapt if necessary.
 - [ ] Please run tests locally.
 <!-- 

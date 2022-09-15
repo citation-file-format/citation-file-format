@@ -5,8 +5,17 @@
 Valid Citation File Format files
 
 1. must be named `CITATION.cff` (note the capitalization);
-1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/));
-1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json).
+1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json);
+1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/)).
+
+<a name="yaml-strings"></a>**String quoting:** Note that in YAML you generally don't need to quote strings.
+But you should use `"` quotes when a string value
+contains whitespace,
+contains special characters (e.g., any of `:{}[],&*#?|-<>=!%`, or any of `` ` `` and `@` at the beginning),
+consists only of numbers (e.g., is the string `"42"`, not the number `42`),
+or is `"true"`, `"false"`, `"yes"` or `"no"`.
+
+In short: When a string value doesn't behave as expected, try putting it in `"` quotes.
 
 ### Minimal example
 
@@ -17,8 +26,8 @@ authors:
   - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
-message: If you use this software, please cite it using these metadata.
-title: My Research Software
+message: "If you use this software, please cite it using these metadata."
+title: "My Research Software"
 ```
 
 ### Typical example
@@ -26,7 +35,7 @@ title: My Research Software
 For most software however, it is relatively easy to expand the minimal case with important information like the version, the date when it was last published, some keywords, etc.:
 
 ```yaml
-abstract: This is my awesome research software. It does many things.
+abstract: "This is my awesome research software. It does many things."
 authors:
   - family-names: Druskat
     given-names: Stephan
@@ -34,19 +43,19 @@ authors:
 cff-version: 1.2.0
 date-released: "2021-07-18"
 identifiers:
-  - description: This is the collection of archived snapshots of all versions of My Research Software
+  - description: "This is the collection of archived snapshots of all versions of My Research Software"
     type: doi
     value: 10.5281/zenodo.123456
-  - description: This is the archived snapshot of version 0.11.2 of My Research Software
+  - description: "This is the archived snapshot of version 0.11.2 of My Research Software"
     type: doi
     value: 10.5281/zenodo.123457
 keywords:
   - "awesome software"
   - research
 license: Apache-2.0
-message: If you use this software, please cite it using these metadata.
+message: "If you use this software, please cite it using these metadata."
 repository-code: "https://github.com/citation-file-format/my-research-software"
-title: My Research Software
+title: "My Research Software"
 version: 0.11.2
 ```
 
@@ -65,20 +74,20 @@ authors:
   - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
-message: If you use this software, please cite it using these metadata.
-title: My Research Software
+message: "If you use this software, please cite it using these metadata."
 references:
   - authors:
       - family-names: Spaaks
-        given-names: Jurriaan H.
-    title: The foundation of Research Software
+        given-names: "Jurriaan H."
+    title: "The foundation of Research Software"
     type: software
   - authors:
       - family-names: Haines
         given-names: Robert
-    title: Ruby CFF Library
+    title: "Ruby CFF Library"
     type: software
     version: 1.0
+title: "My Research Software"
 ```
 
 ### Credit redirection
@@ -94,14 +103,14 @@ authors:
   - family-names: Druskat
     given-names: Stephan
 cff-version: 1.2.0
-message: If you use this software, please cite both the article from preferred-citation and the software itself.
-title: My Research Software
+message: "If you use this software, please cite both the article from preferred-citation and the software itself."
 preferred-citation:
   authors:
     - family-names: Druskat
       given-names: Stephan
-  title: Software paper about My Research Software
+  title: "Software paper about My Research Software"
   type: article
+title: "My Research Software"
 ```
 
 The next sections explain each key in more detail.
@@ -136,7 +145,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `abstract`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: A description of the software or dataset.
 - **usage**:<br><br>
@@ -169,7 +178,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `cff-version`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `true`
 - **description**: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
 - **usage**:<br><br>
@@ -182,7 +191,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `commit`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The commit hash or revision number of the software version.
 - **usage**:<br><br>
@@ -202,21 +211,21 @@ This section describes the valid keys in a `CITATION.cff` file.
     ```yaml
     contact:
       - affiliation: "German Aerospace Center (DLR)"
-        email: "mail@research-project.org"
+        email: mail@research-project.org
         family-names: Druskat
         given-names: Stephan
     ```
     ```yaml
     contact:
-      - email: "mail@research-project.org"
+      - email: mail@research-project.org
         name: "The Research Software project"
     ```
     ```yaml
     contact:
-      - email: "mail@research-project.org"
-        given-names: Stephan
+      - email: mail@research-project.org
         family-names: Druskat
-      - email: "mail@research-project.org"
+        given-names: Stephan
+      - email: mail@research-project.org
         name: "The Research Software project"
     ```
 
@@ -227,7 +236,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 - **description**: The date the software or data set has been released. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
 - **usage**:<br><br>
     ```yaml
-    date-released: 2020-01-31
+    date-released: "2020-01-31"
     ```
 
 ### `doi`
@@ -238,23 +247,23 @@ This section describes the valid keys in a `CITATION.cff` file.
 that case, `doi` can be used as shorthand for something like:<br><br>
     ```yaml
     identifiers:
-      - type: doi
+      - description: "The concept DOI of the work."
+        type: doi
         value: 10.5281/zenodo.1003149
-        description: The concept DOI of the work.
-    ```
+   ```
     or
     ```yaml
     identifiers:
-      - type: doi
+      - description: "The versioned DOI of the work."
+        type: doi
         value: 10.5281/zenodo.4813122
-        description: The versioned DOI of the work.
-    ```
+   ```
 - **usage**:<br><br>
     ```yaml
     doi: 10.5281/zenodo.1003149
     ```
     ```yaml
-    doi: 10.5281/zenodo.4813122
+    doi: "10.5281/zenodo.4813122"
     ```
 
 ### `identifiers`
@@ -265,50 +274,50 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 - **usage**:<br><br>
     ```yaml
     identifiers:
-      - type: doi
+      - description: "The concept DOI of the work."
+        type: doi
         value: 10.5281/zenodo.1003149
-        description: The concept DOI of the work.
     ```
 
     ```yaml
     identifiers:
-      - type: doi
+      - description: "The versioned DOI for version 1.1.0 of the work."
+        type: doi
         value: 10.5281/zenodo.4813122
-        description: The versioned DOI for version 1.1.0 of the work.
     ```
 
     ```yaml
     identifiers:
-      - type: doi
+      - description: "The concept DOI of the work."
+        type: doi
         value: 10.5281/zenodo.1003149
-        description: The concept DOI of the work.
-      - type: doi
+      - description: "The versioned DOI for version 1.1.0 of the work."
+        type: doi
         value: 10.5281/zenodo.4813122
-        description: The versioned DOI for version 1.1.0 of the work.
     ```
 
     ```yaml
     identifiers:
-      - type: doi
+      - description: "The concept DOI of the work."
+        type: doi
         value: 10.5281/zenodo.1003149
-        description: The concept DOI of the work.
-      - type: doi
+      - description: "The versioned DOI for version 1.1.0 of the work."
+        type: doi
         value: 10.5281/zenodo.4813122
-        description: The versioned DOI for version 1.1.0 of the work.
-      - type: swh
+      - description: "The Software Heritage identifier for version 1.1.0 of the work."
+        type: swh
         value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
-        description: The Software Heritage identifier for version 1.1.0 of the work.
-      - type: url
+      - description: "The GitHub release URL of tag 1.1.0."
+        type: url
         value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
-        description: The GitHub release URL of tag 1.1.0.
-      - type: url
+      - description: "The GitHub release URL of the commit tagged with 1.1.0."
+        type: url
         value: "https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc"
-        description: The GitHub release URL of the commit tagged with 1.1.0.
     ```
 
 ### `keywords`
 
-- **type**: Array of nonempty `string`
+- **type**: Array of [nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: Keywords that describe the work.
 - **usage**:<br><br>
@@ -352,28 +361,28 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `message`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `true`
 - **default**: `If you use this software, please cite it using the metadata from this file.`
 - **description**: A message to the human reader of the `CITATION.cff` file to let them know what to do with the citation metadata.
 - **usage**:<br><br>
     ```yaml
-    message: If you use this software, please cite it using the metadata from this file.
+    message: "If you use this software, please cite it using the metadata from this file."
     ```
     ```yaml
-    message: Please cite this software using these metadata.
+    message: "Please cite this software using these metadata."
     ```
     ```yaml
-    message: Please cite this software using the metadata from 'preferred-citation'.
+    message: "Please cite this software using the metadata from 'preferred-citation'."
     ```
     ```yaml
-    message: If you use this dataset, please cite it using the metadata from this file.
+    message: "If you use this dataset, please cite it using the metadata from this file."
     ```
     ```yaml
-    message: Please cite this dataset using these metadata.
+    message: "Please cite this dataset using these metadata."
     ```
     ```yaml
-    message: Please cite this dataset using the metadata from 'preferred-citation'.
+    message: "Please cite this dataset using the metadata from 'preferred-citation'."
     ```
 
 ### `preferred-citation`
@@ -390,8 +399,8 @@ primary principle, "Importance", when others cite this work.
     preferred-citation:
       authors:
         - family-names: Famnames
-          given-names: Given Nam E.
-      title: Title of the work.
+          given-names: "Given Nam E."
+      title: "Title of the work."
       type: generic
       year: 2021
     ```
@@ -404,26 +413,26 @@ primary principle, "Importance", when others cite this work.
 - **usage**:<br><br>
     ```yaml
     references:
-      - type: software
-        authors:
+      - authors:
           - name: "The Dependency Project"
-        title: "Dependency"
-        date-released: 2021-07-26
+        date-released: "2021-07-26"
         doi: 10.5281/zenodo.x1234567
-        version: 0.13.4
         repository-code: "https://github.com/dependency-project/dependency"
-      - type: article
-        scope: Cite this paper if you want to reference the general concepts of the software.
-        authors:
+        title: Dependency
+        type: software
+        version: 0.13.4
+      - authors:
           - family-names: Bielefeld
-            name-particle: von
             given-names: Arthur
-        title: "Towards a 100% accuracy syntax parser for all languages"
-        year: 2099
-        journal: Journal of Hard Science Fiction
-        volume: 42
-        issue: 13
+            name-particle: von
         doi: 10.9999/hardscifi-lang.42132
+        issue: 13
+        journal: "Journal of Hard Science Fiction"
+        scope: "Cite this paper if you want to reference the general concepts of the software."
+        title: "Towards a 100% accuracy syntax parser for all languages"
+        type: article
+        volume: 42
+        year: 2099
     ```
 
 ### `repository`
@@ -458,7 +467,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `title`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `true`
 - **description**: The name of the software or dataset.
 - **usage**:<br><br>
@@ -563,7 +572,7 @@ authors:
 
 ### `definitions.address`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: An address.
 - **usage**:<br><br>
@@ -575,7 +584,7 @@ authors:
 
 ### `definitions.alias`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: An alias.
 - **usage**:<br><br>
@@ -587,7 +596,7 @@ authors:
 
 ### `definitions.city`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: A city.
 - **usage**:<br><br>
@@ -599,7 +608,7 @@ authors:
 
 ### `definitions.commit`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 - **usage**:<br><br>
@@ -867,19 +876,19 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Authors Team
-        country: NL
+      - country: NL
+        name: "The Authors Team"
     ```
     ```yaml
     references:
-      - type: conference
-        conference:
-            country: DE
+      - conference:
+          country: DE
+        type: conference
     ```
 
 ### `definitions.date`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes. Note to tool implementers: it is necessary to cast YAML `date` objects to `string` objects when validating against the schema.
 - **usage**:<br><br>
@@ -916,7 +925,7 @@ authors:
 
 ### `definitions.doi`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 - **usage**:<br><br>
@@ -926,7 +935,7 @@ authors:
 
 ### `definitions.email`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: An email address.
 - **usage**:<br><br>
@@ -959,16 +968,16 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: "The Research Software Project"
-        address: "742 Evergreen Terrace"
-        alias: "RSP"
-        city: "Berlin"
-        country: "DE"
-        date-end: 2018-07-27
-        date-start: 2021-07-27
-        email: "team@research-project.org"
+      - address: "742 Evergreen Terrace"
+        alias: RSP
+        city: Berlin
+        country: DE
+        date-end: "2018-07-27"
+        date-start: "2021-07-27"
+        email: team@research-project.org
         fax: +12-3456-7890
         location: "Lovelace Building, room 0.42"
+        name: "The Research Software Project"
         orcid: "https://orcid.org/0000-0003-4925-7248"
         post-code: 90210
         region: Renfrewshire
@@ -1017,8 +1026,8 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
-        address: "742 Evergreen Terrace"
+      - address: "742 Evergreen Terrace"
+        name: "The Research Software Project"
     ```
 
 ### `definitions.entity.alias`
@@ -1029,8 +1038,8 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: National Aeronautics and Space Administration
-        alias: "NASA"
+      - alias: NASA
+        name: "National Aeronautics and Space Administration"
     ```
 
 ### `definitions.entity.city`
@@ -1041,8 +1050,8 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
-        city: "Berlin"
+      - city: Berlin
+        name: "The Research Software Project"
     ```
 
 ### `definitions.entity.country`
@@ -1053,8 +1062,8 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
-        country: "DE"
+      - name: "The Research Software Project"
+        country: DE
     ```
 
 ### `definitions.entity.date-end`
@@ -1065,13 +1074,13 @@ authors:
 - **usage**:<br><br>
     ```yaml
     references:
-      - type: conference-paper
-        title: "Conference Paper"
-        authors:
-          - name: The Research Software Project
+      - authors:
+          - name: "The Research Software Project"
         conference:
+          date-end: "2021-07-27"
           name: "Research Conference 2021"
-          date-end: 2021-07-27
+        title: "Conference Paper"
+        type: conference-paper
     ```
 
 ### `definitions.entity.date-start`
@@ -1085,10 +1094,10 @@ authors:
       - type: conference-paper
         title: "Conference Paper"
         authors:
-          - name: The Research Software Project
+          - name: "The Research Software Project"
         conference:
           name: "Research Conference 2021"
-          date-start: 2021-07-27
+          date-start: "2021-07-27"
     ```
 
 ### `definitions.entity.email`
@@ -1098,9 +1107,9 @@ authors:
 - **description**: The entity's email address.
 - **usage**:<br><br>
     ```yaml
-    authors:
-      - name: The Research Software Project
-        email: "team@research-project.org"
+  authors:
+    - email: team@research-project.org
+      name: "The Research Software Project"
     ```
 
 ### `definitions.entity.fax`
@@ -1111,31 +1120,31 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
-        fax: +12-3456-7890
+      - fax: +12-3456-7890
+        name: "The Research Software Project"
     ```
 
 ### `definitions.entity.location`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The entity's location.
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
-        location: "Lovelace Building, room 0.42"
+      - location: "Lovelace Building, room 0.42"
+        name: "The Research Software Project"
     ```
 
 ### `definitions.entity.name`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `true`
 - **description**: The entity's name.
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
     ```
 
 ### `definitions.entity.orcid`
@@ -1146,7 +1155,7 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         orcid: "https://orcid.org/0000-0003-4925-7248"
     ```
 
@@ -1158,13 +1167,13 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         post-code: 90210
     ```
 
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         post-code: "90210"
     ```
 
@@ -1176,7 +1185,7 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         region: Renfrewshire
     ```
 
@@ -1188,7 +1197,7 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         tel: +12-345-6789098
     ```
 
@@ -1200,19 +1209,19 @@ authors:
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         website: "https://research-software-project.org"
     ```
 
 ### `definitions.fax`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: A fax number.
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         fax: +12-3456-7890
     ```
     ```yaml
@@ -1330,7 +1339,7 @@ authors:
             <li>
               <code>value</code>:
               <ul>
-                <li><strong>type</strong>: Nonempty <code>string</code>.</li>
+                <li><strong>type</strong>: <a href="#yaml-strings">Nonempty <code>string</code></a>.</li>
                 <li><strong>required</strong>: <code>true</code></li>
                 <li><strong>description</strong>: The value of the identifier, e.g. <code>arXiv:2103.06681</code>.</li>
               </ul>
@@ -1352,40 +1361,40 @@ authors:
     identifiers:
       - type: doi
         value: 10.5281/zenodo.1003149
-        description: The concept DOI of the work.
+        description: "The concept DOI of the work."
     ```
     ```yaml
     identifiers:
       - type: doi
         value: 10.5281/zenodo.4813122
-        description: The versioned DOI for version 1.1.0 of the work.
-    ```
-    ```yaml
-    identifiers:
-      - type: doi
-        value: 10.5281/zenodo.1003149
-        description: The concept DOI of the work.
-      - type: doi
-        value: 10.5281/zenodo.4813122
-        description: The versioned DOI for version 1.1.0 of the work.
+        description: "The versioned DOI for version 1.1.0 of the work."
     ```
     ```yaml
     identifiers:
       - type: doi
         value: 10.5281/zenodo.1003149
-        description: The concept DOI of the work.
+        description: "The concept DOI of the work."
       - type: doi
         value: 10.5281/zenodo.4813122
-        description: The versioned DOI for version 1.1.0 of the work.
+        description: "The versioned DOI for version 1.1.0 of the work."
+    ```
+    ```yaml
+    identifiers:
+      - type: doi
+        value: 10.5281/zenodo.1003149
+        description: "The concept DOI of the work."
+      - type: doi
+        value: 10.5281/zenodo.4813122
+        description: "The versioned DOI for version 1.1.0 of the work."
       - type: swh
         value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
-        description: The Software Heritage identifier for version 1.1.0 of the work.
+        description: "The Software Heritage identifier for version 1.1.0 of the work."
       - type: url
         value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
-        description: The GitHub release URL of tag 1.1.0.
+        description: "The GitHub release URL of tag 1.1.0."
       - type: url
         value: "https://github.com/citation-file-format/citation-file-format/tree/16192bf05e99bcb35d5c3e085047807b5720fafc"
-        description: The GitHub release URL of the commit tagged with 1.1.0.
+        description: "The GitHub release URL of the commit tagged with 1.1.0."
     ```
     ```yaml
     preferred-citation:
@@ -1397,7 +1406,7 @@ authors:
 
 ### `definitions.identifier-description`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: A description for a specific identifier value.
 - **usage**:<br><br>
@@ -1410,7 +1419,6 @@ authors:
       - type: other
         value: "ar:1234/5678.ABCD"
         description: "The identifier provided by Archival Repository, which points to this version of the software."
-
     ```
 
 ### `definitions.license`
@@ -1947,17 +1955,17 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 - **usage**:<br><br>
     ```yaml
     authors:
-      - family-names: Druskat
+      - address: "742 Evergreen Terrace"
+        affiliation: "German Aerospace Center (DLR)"
+        alias: sdruskat
+        city: Berlin
+        country: DE
+        email: sdruskat@research-project.org
+        family-names: Druskat
+        fax: +12-3456-7890
         given-names: Stephan
         name-particle: von
         name-suffix: III
-        address: "742 Evergreen Terrace"
-        affiliation: "German Aerospace Center (DLR)"
-        alias: "sdruskat"
-        city: "Berlin"
-        country: "DE"
-        email: "sdruskat@research-project.org"
-        fax: +12-3456-7890
         orcid: "https://orcid.org/0000-0003-4925-7248"
         post-code: 90210
         region: Renfrewshire
@@ -1980,7 +1988,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.affiliation`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The person's affiliation.
 - **usage**:<br><br>
@@ -2014,7 +2022,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     authors:
       - family-names: Druskat
         given-names: Stephan
-        city: "Berlin"
+        city: Berlin
     ```
 
 ### `definitions.person.country`
@@ -2027,7 +2035,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     authors:
       - family-names: Druskat
         given-names: Stephan
-        country: "DE"
+        country: DE
     ```
 
 ### `definitions.person.email`
@@ -2040,12 +2048,12 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     authors:
       - family-names: Druskat
         given-names: Stephan
-        email: "mail@research-project.org"
+        email: mail@research-project.org
     ```
 
 ### `definitions.person.family-names`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The person's family names.
 - **usage**:<br><br>
@@ -2070,7 +2078,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.given-names`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The person's given names.
 - **usage**:<br><br>
@@ -2082,7 +2090,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.name-particle`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The person's name particle, e.g., a [nobiliary particle](https://en.wikipedia.org/wiki/Nobiliary_particle) or a [preposition] meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 - **usage**:<br><br>
@@ -2095,7 +2103,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.name-suffix`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The person's [name suffix](https://en.wikipedia.org/wiki/Suffix_(name)), e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 - **usage**:<br><br>
@@ -2255,6 +2263,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     - [`scope`](#definitionsreferencescope)
     - [`section`](#definitionsreferencesection)
     - [`senders`](#definitionsreferencesenders)
+    - [`start`](#definitionsreferencestart)
     - [`status`](#definitionsreferencestatus)
     - [`term`](#definitionsreferenceterm)
     - [`thesis-type`](#definitionsreferencethesis-type)
@@ -2274,13 +2283,13 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     references:
       - authors:
           - family-names: Smith
-            given-names: A. M.
+            given-names: "A. M."
           - family-names: Katz
-            given-names: D. S.
+            given-names: "D. S."
           - family-names: Niemeyer
-            given-names: K. E.
+            given-names: "K. E."
           - name: "FORCE11 Software Citation Working Group"
-        doi: "10.7717/peerj-cs.86"
+        doi: 10.7717/peerj-cs.86
         journal: "PeerJ Computer Science"
         month: 9
         start: e86
@@ -2291,23 +2300,23 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```
     ```yaml
     references:
-      - abbreviation: "NP"
+      - abbreviation: NP
         abstract: "This is a non-sensical example reference to show how the many different keys in a reference object can be used."
         authors:
-          - name: The Research Software Project
+          - name: "The Research Software Project"
         collection-doi: 10.5281/zenodo.1003149
         collection-title: "Proceedings of the Research Conference 2021"
-        collection-type: "proceedings"
-        commit: "16192bf05e99bcb35d5c3e085047807b5720fafc"
+        collection-type: proceedings
+        commit: 16192bf05e99bcb35d5c3e085047807b5720fafc
         conference:
           name: "Research Conference 2021"
         contact:
           - name: "The RC21 Organizing Committee"
         copyright: "© 2021 The Research Software Project team"
-        data-type: "YAML"
+        data-type: YAML
+        database: "Research Database"
         database-provider:
           name: "Research Databases Ltd."
-        database: "Research Database"
         date-accessed: "2021-07-27"
         date-downloaded: "2021-07-27"
         date-published: "2021-07-26"
@@ -2318,43 +2327,43 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         editors:
           - family-names: Inchief
             given-names: Editor
-          - name: The RCProc Editorial Team
+          - name: "The RCProc Editorial Team"
         editors-series:
           - family-names: Editor
             given-names: Series
-          - name: The Series Editors
+          - name: "The Series Editors"
         end: 42
         entry: "Citation <n. 1>"
-        filename: "CITATION.cff"
+        filename: CITATION.cff
         format: "Citation File Format"
         identifiers:
-          - type: doi
+          - description: "The concept DOI of the work."
+            type: doi
             value: 10.5281/zenodo.1003149
-            description: The concept DOI of the work.
-          - type: doi
+          - description: "The versioned DOI for version 1.1.0 of the work."
+            type: doi
             value: 10.5281/zenodo.4813122
-            description: The versioned DOI for version 1.1.0 of the work.
-          - type: swh
+          - description: "The Software Heritage identifier for version 1.1.0 of the work."
+            type: swh
             value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
-            description: The Software Heritage identifier for version 1.1.0 of the work.
-          - type: url
+          - description: "The GitHub release URL of tag 1.1.0."
+            type: url
             value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
-            description: The GitHub release URL of tag 1.1.0.
         institution:
           name: "University of Arcadia"
         isbn: "9781603095075"
-        issn: "2475-9066"
+        issn: 2475-9066
         issue: 42
         issue-date: "November/December 2021"
         issue-title: "Special Issue: Software Citation"
         journal: "Journal of Open Source Software"
         keywords:
-          - software citation
+          - "software citation"
           - "citation file format"
           - research
         languages:
-          - "en"
-          - "haw"
+          - en
+          - haw
         license: Apache-2.0
         license-url: "https://obscure-licenses.com?id=1234"
         loc-end: 42
@@ -2363,14 +2372,14 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
           name: "Library of the Unseen University"
         medium: "5¼-inch floppy disk"
         month: 7
-        nihmsid: "NIHMS236863"
+        nihmsid: NIHMS236863
         notes: "Excellent reference! TODO Read for thesis."
         number: 12053
         number-volumes: 7
         pages: 78
         patent-states:
-          - "Canada"
-        pmcid: "PMC3134971"
+          - Canada
+        pmcid: PMC3134971
         publisher:
           name: "Open Access Publishing House"
         recipients:
@@ -2387,17 +2396,17 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
           - family-names: Sender
             given-names: Communication
         start: 17
-        status: "submitted"
-        term: "Citation"
+        status: submitted
+        term: Citation
         thesis-type: "PhD thesis"
         title: "Towards better software citation"
         translators:
           - name: "Research Translators Ltd."
           - family-names: Lator
             given-names: Trans
-        type: "conference-paper"
+        type: conference-paper
         url: "https://citation-file-format.github.io/"
-        version: "0.3.12"
+        version: 0.3.12
         volume: 2
         volume-title: "Volume II: How it went on"
         year: 2021
@@ -2406,7 +2415,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.abbreviation`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The abbreviation of a work.
 - **usage**:<br><br>
@@ -2423,7 +2432,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.abstract`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The abstract of the work.
     - If the work is a journal paper or other academic work: The abstract of the work.
@@ -2449,7 +2458,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```yaml
     preferred-citation:
       authors:
-        - name: The Research Software Project team
+        - name: "The Research Software Project team"
         - family-names: Druskat
           given-names: Stephan
       type: generic
@@ -2457,9 +2466,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     ```yaml
     references:
       - authors:
-        - name: The Research Software Project team
-        - family-names: Druskat
-          given-names: Stephan
+          - name: "The Research Software Project team"
+          - family-names: Druskat
+            given-names: Stephan
         type: generic
     ```
 
@@ -2481,7 +2490,7 @@ authors:
 ```yaml
 authors:
   - family-names: Spaaks
-    given-names: Jurriaan H.
+    given-names: "Jurriaan H."
   - family-names: Druskat
     given-names: Stephan
   - name: "The Research Software team"
@@ -2518,7 +2527,7 @@ authors:
 
 ### `definitions.reference.collection-title`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The title of a collection or proceedings.
 - **usage**:<br><br>
@@ -2535,18 +2544,18 @@ authors:
 
 ### `definitions.reference.collection-type`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The type of a collection.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      collection-type: "proceedings"
+      collection-type: proceedings
       type: generic
     ```
     ```yaml
     references:
-      - collection-type: "proceedings"
+      - collection-type: proceedings
         type: generic
     ```
 
@@ -2611,7 +2620,7 @@ authors:
 
 ### `definitions.reference.copyright`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The copyright information pertaining to the work.
 - **usage**:<br><br>
@@ -2628,18 +2637,18 @@ authors:
 
 ### `definitions.reference.data-type`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The data type of a data set.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      data-type: "YAML"
+      data-type: YAML
       type: generic
     ```
     ```yaml
     references:
-      - data-type: "YAML"
+      - data-type: YAML
         type: generic
     ```
 
@@ -2664,7 +2673,7 @@ authors:
 
 ### `definitions.reference.database`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The name of the database where a work was accessed/is stored.
 - **usage**:<br><br>
@@ -2749,7 +2758,7 @@ authors:
 
 ### `definitions.reference.department`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The department where a work has been produced.
 - **usage**:<br><br>
@@ -2783,7 +2792,7 @@ authors:
 
 ### `definitions.reference.edition`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The edition of the work.
 - **usage**:<br><br>
@@ -2809,7 +2818,7 @@ authors:
       editors:
         - family-names: Inchief
           given-names: Editor
-        - name: The RCProc Editorial Team
+        - name: "The RCProc Editorial Team"
       type: generic
     ```
     ```yaml
@@ -2817,7 +2826,7 @@ authors:
       - editors:
         - family-names: Inchief
           given-names: Editor
-        - name: The RCProc Editorial Team
+        - name: "The RCProc Editorial Team"
         type: generic
     ```
 
@@ -2832,7 +2841,7 @@ authors:
       editors-series:
         - family-names: Editor
           given-names: Series
-        - name: The Series Editors
+        - name: "The Series Editors"
       type: generic
     ```
     ```yaml
@@ -2840,13 +2849,13 @@ authors:
       - editors-series:
         - family-names: Editor
           given-names: Series
-        - name: The Series Editors
+        - name: "The Series Editors"
         type: generic
     ```
 
 ### `definitions.reference.end`
 
-- **type**: Nonempty `string` or `integer`
+- **type**: [Nonempty `string`](#yaml-strings) or `integer`
 - **required**: `false`
 - **description**: The end page of the work.
 - **usage**:<br><br>
@@ -2873,7 +2882,7 @@ authors:
 
 ### `definitions.reference.entry`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: An entry in the collection that constitutes the work.
 - **usage**:<br><br>
@@ -2890,24 +2899,24 @@ authors:
 
 ### `definitions.reference.filename`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The name of the electronic file containing the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      filename: "CITATION.cff"
+      filename: CITATION.cff
       type: generic
     ```
     ```yaml
     references:
-      - filename: "CITATION.cff"
+      - filename: CITATION.cff
         type: generic
     ```
 
 ### `definitions.reference.format`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The format in which a work is represented.
 - **usage**:<br><br>
@@ -2931,35 +2940,35 @@ authors:
     ```yaml
     preferred-citation:
       identifiers:
-        - type: doi
+        - description: "The concept DOI of the work."
+          type: doi
           value: 10.5281/zenodo.1003149
-          description: The concept DOI of the work.
-        - type: doi
+        - description: "The versioned DOI for version 1.1.0 of the work."
+          type: doi
           value: 10.5281/zenodo.4813122
-          description: The versioned DOI for version 1.1.0 of the work.
-        - type: swh
+        - description: "The Software Heritage identifier for version 1.1.0 of the work."
+          type: swh
           value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
-          description: The Software Heritage identifier for version 1.1.0 of the work.
-        - type: url
+        - description: "The GitHub release URL of tag 1.1.0."
+          type: url
           value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
-          description: The GitHub release URL of tag 1.1.0.
       type: generic
     ```
     ```yaml
     references:
       - identifiers:
-        - type: doi
-          value: 10.5281/zenodo.1003149
-          description: The concept DOI of the work.
-        - type: doi
-          value: 10.5281/zenodo.4813122
-          description: The versioned DOI for version 1.1.0 of the work.
-        - type: swh
-          value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
-          description: The Software Heritage identifier for version 1.1.0 of the work.
-        - type: url
-          value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
-          description: The GitHub release URL of tag 1.1.0.
+          - description: "The concept DOI of the work."
+            type: doi
+            value: 10.5281/zenodo.1003149
+          - description: "The versioned DOI for version 1.1.0 of the work."
+            type: doi
+            value: 10.5281/zenodo.4813122
+          - description: "The Software Heritage identifier for version 1.1.0 of the work."
+            type: swh
+            value: "swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d"
+          - description: "The GitHub release URL of tag 1.1.0."
+            type: url
+            value: "https://github.com/citation-file-format/citation-file-format/releases/tag/1.1.0"
         type: generic
     ```
 
@@ -3018,7 +3027,7 @@ authors:
 
 ### `definitions.reference.issue`
 
-- **type**: Nonempty `string` or `number`
+- **type**: [Nonempty `string`](#yaml-strings) or `number`
 - **required**: `false`
 - **description**: The issue of a periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3045,7 +3054,7 @@ authors:
 
 ### `definitions.reference.issue-date`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The publication date of the issue of a periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3072,7 +3081,7 @@ authors:
 
 ### `definitions.reference.issue-title`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The name of the issue of a periodical in which the work appeared.
 - **usage**:<br><br>
@@ -3089,7 +3098,7 @@ authors:
 
 ### `definitions.reference.journal`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The name of the journal/magazine/newspaper/periodical where the work was published.
 - **usage**:<br><br>
@@ -3106,14 +3115,14 @@ authors:
 
 ### `definitions.reference.keywords`
 
-- **type**: Array of nonempty `string`
+- **type**: Array of [nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: Keywords pertaining to the work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
       keywords:
-        - software citation
+        - "software citation"
         - "citation file format"
         - research
       type: generic
@@ -3121,7 +3130,7 @@ authors:
     ```yaml
     references:
       - keywords:
-          - software citation
+          - "software citation"
           - "citation file format"
           - research
         type: generic
@@ -3136,15 +3145,15 @@ authors:
     ```yaml
     preferred-citation:
       languages:
-        - "en"
-        - "haw"
+        - en
+        - haw
       type: generic
     ```
     ```yaml
     references:
       - languages:
-          - "en"
-          - "haw"
+          - en
+          - haw
         type: generic
     ```
 
@@ -3199,7 +3208,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.loc-end`
 
-- **type**: Nonempty `string` or `integer`
+- **type**: [Nonempty `string`](#yaml-strings) or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work ends.
 - **usage**:<br><br>
@@ -3226,7 +3235,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.loc-start`
 
-- **type**: Nonempty `string` or `integer`
+- **type**: [Nonempty `string`](#yaml-strings) or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work starts.
 - **usage**:<br><br>
@@ -3272,7 +3281,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.medium`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The medium of the work.
 - **usage**:<br><br>
@@ -3328,24 +3337,24 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.nihmsid`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The [NIHMSID](https://web.archive.org/web/20210802210057/https://www.ncbi.nlm.nih.gov/pmc/about/public-access-info/) of a work.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      nihmsid: "NIHMS236863"
+      nihmsid: NIHMS236863
       type: generic
     ```
     ```yaml
     references:
-      - nihmsid: "NIHMS236863"
+      - nihmsid: NIHMS236863
         type: generic
     ```
 
 ### `definitions.reference.notes`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: Notes pertaining to the work. Note that this key should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not others (e.g., a software index).
 - **usage**:<br><br>
@@ -3399,7 +3408,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.number-volumes`
 
-- **type**: Nonempty `string` or `integer`
+- **type**: [Nonempty `string`](#yaml-strings) or `integer`
 - **required**: `false`
 - **description**: The number of volumes making up the collection in which the work has been published.
 - **usage**:<br><br>
@@ -3426,7 +3435,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.pages`
 
-- **type**: Nonempty `string` or `integer`
+- **type**: [Nonempty `string`](#yaml-strings) or `integer`
 - **required**: `false`
 - **description**: The number of pages of the work.
 - **usage**:<br><br>
@@ -3460,15 +3469,15 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
     ```yaml
     preferred-citation:
       patent-states:
-        - "Canada"
-        - "IL"
+        - Canada
+        - IL
       type: generic
     ```
     ```yaml
     references:
       - patent-states:
-          - "Canada"
-          - "IL"
+          - Canada
+          - IL
         type: generic
     ```
 
@@ -3480,12 +3489,12 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      pmcid: "PMC3134971"
+      pmcid: PMC3134971
       type: generic
     ```
     ```yaml
     references:
-      - pmcid: "PMC3134971"
+      - pmcid: PMC3134971
         type: generic
     ```
 
@@ -3584,7 +3593,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.scope`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The scope of the reference, e.g., the section of the work it adheres to.
 - **usage**:<br><br>
@@ -3661,7 +3670,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.start`
 
-- **type**: Nonempty `string` or `integer`
+- **type**: [Nonempty `string`](#yaml-strings) or `integer`
 - **required**: `false`
 - **description**: The start page of the work.
 - **usage**:<br><br>
@@ -3700,35 +3709,35 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      status: "submitted"
+      status: submitted
       type: generic
     ```
     ```yaml
     references:
-      - status: "submitted"
+      - status: submitted
         type: generic
     ```
 
 ### `definitions.reference.term`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The term being referenced if the work is a dictionary or encyclopedia.
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
-      term: "Citation"
+      term: Citation
       type: generic
     ```
     ```yaml
     references:
-      - term: "Citation"
+      - term: Citation
         type: generic
     ```
 
 ### `definitions.reference.thesis-type`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The type of the thesis that is the work.
 - **usage**:<br><br>
@@ -3745,7 +3754,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.title`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `true`
 - **description**: The title of the work.
 - **usage**:<br><br>
@@ -3871,17 +3880,17 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
     ```yaml
     preferred-citation:
       type: generic
-      version: "0.3.12"
+      version: 0.3.12
     ```
     ```yaml
     references:
       - type: generic
-        version: "0.3.12"
+        version: 0.3.12
     ```
 
 ### `definitions.reference.volume`
 
-- **type**: Nonempty `string` or `integer`
+- **type**: [Nonempty `string`](#yaml-strings) or `integer`
 - **required**: `false`
 - **description**: The volume of the periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3908,7 +3917,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.volume-title`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: `false`
 - **description**: The title of the volume in which the work appeared.
 - **usage**:<br><br>
@@ -3925,7 +3934,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.year`
 
-- **type**: Nonempty `string` or `integer`
+- **type**: [Nonempty `string`](#yaml-strings) or `integer`
 - **required**: `false`
 - **description**: The year in which a work has been published.
 - **usage**:<br><br>
@@ -3952,7 +3961,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.year-original`
 
-- **type**: Nonempty `string` or `integer`
+- **type**: [Nonempty `string`](#yaml-strings) or `integer`
 - **required**: `false`
 - **description**: The year of the original publication.
 - **usage**:<br><br>
@@ -3979,13 +3988,13 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.region`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: A region.
 - **usage**:<br><br>
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         region: Renfrewshire
     ```
 
@@ -4003,7 +4012,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.tel`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: A telephone number.
 - **usage**:<br><br>
@@ -4015,13 +4024,13 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
     ```
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         tel: +12-345-6789098
     ```
 
 ### `definitions.url`
 
-- **type**: Nonempty `string`
+- **type**: [Nonempty `string`](#yaml-strings)
 - **required**: N/A
 - **description**: A URL. Supported URLs start with one of:
     - `https://`
@@ -4034,7 +4043,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
     ```
     ```yaml
     authors:
-      - name: The Research Software Project
+      - name: "The Research Software Project"
         website: "https://research-software-project.org"
     ```
     ```yaml
@@ -4045,7 +4054,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.version`
 
-- **type**: Nonempty `string` or `number`
+- **type**: [Nonempty `string`](#yaml-strings) or `number`
 - **required**: N/A
 - **description**: The version of a work.
 - **usage**:<br><br>

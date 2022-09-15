@@ -22,6 +22,7 @@ authors:
   - family-names: Druskat
     given-names: Stephan
     orcid: "https://orcid.org/0000-0003-4925-7248"
+  - name: "The Research Software project"
 version: 0.11.2
 date-released: "2021-07-18"
 identifiers:
@@ -42,40 +43,46 @@ In addition, the Citation File Format allows you to
 
 ## Format specifications :books:
 
-You can find the complete format specifications in the [Guide to the Citation File Format schema](schema-guide.md).
+**You can find the complete format specifications in the [Guide to the Citation File Format schema](schema-guide.md).**
 
 ## Why should I add a `CITATION.cff` file to my repository? :bulb:
 
 When you do this, great things may happen:
 
 1. Users of your software can easily cite it using the metadata from `CITATION.cff`!
-2. If your repository is hosted on GitHub, they will [show the citation information in the sidebar](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-citation-files), which makes it easy for visitors to cite your software or dataset correctly.
-3. When you publish your software on Zenodo via the [GitHub-Zenodo integration](https://guides.github.com/activities/citable-code/), they will use the metadata from your `CITATION.cff` file.
+2. If your repository is hosted on GitHub, they will [show the citation information in the sidebar](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files), which makes it easy for visitors to cite your software or dataset correctly.
+3. When you publish your software on Zenodo via the [GitHub-Zenodo integration](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content), they will use the metadata from your `CITATION.cff` file.
 4. People can import the correct reference to your software into the [Zotero](https://www.zotero.org) reference manager via a [browser plugin](https://www.zotero.org/download/).
+
+## Creation :heavy_plus_sign:
+
+To create a `CITATION.cff` file, you can 
+
+- use the [**cffinit** website](https://citation-file-format.github.io/cff-initializer-javascript/#/),
+- copy and paste the [example snippet](#structure), and adapt it to your needs, or
+- create a new file called `CITATION.cff` using the *Add file* button on GitHub, and use the template they provide.
 
 ## Validation :heavy_check_mark:
 
-You can validate your `CITATION.cff` file with the [Python script](examples/validator.py)
-that we also use for testing the Citation File Format schema itself, like so:
+You can validate your `CITATION.cff` file on the command line with the [`cffconvert` Python package](https://pypi.org/project/cffconvert/):
 
 ```shell
-# clone this repository
-git clone https://github.com/citation-file-format/citation-file-format.git
+# Install cffconvert with pip in user space
+python3 -m pip install --user cffconvert
 
-# change into the cloned repository directory
-cd citation-file-format
-
-# install the validation dependencies in user space
-python3 -m pip install --user ruamel.yaml jsonschema
-
-# run the validator on your CITATION.cff
-python3 examples/validator.py -s schema.json -d path/to/your/CITATION.cff
+# Validate your CFF file
+cffconvert --validate
 ```
-
-If you get no output, then congratulations, your `CITATION.cff` file is valid.
 
 If you get a Traceback with error messages, look for the relevant validation error and fix it.
 If the output is very long, it may help if you search it for lines starting with `jsonschema.exceptions.ValidationError`.
+
+If you prefer to use Docker, you can use the [`cffconvert` Docker image](https://hub.docker.com/r/citationcff/cffconvert):
+
+```bash
+cd <directory-containing-your-CITATION.cff>
+docker run --rm -v ${PWD}:/app citationcff/cffconvert --validate
+```
 
 <!-- Later, this should link to tutorials -->
 
@@ -85,19 +92,23 @@ There is tooling available to work with `CITATION.cff` files to do different thi
 create new files, edit existing files, validate existing files, convert files from the Citation File Format into another format.
 The following table gives an overview of the tools that we know about. If there is a tool missing from this table, please [open a new issue](https://github.com/citation-file-format/citation-file-format/issues/new/choose) and let us know.
 
-|                | Creation                                                                        | Editing/Updating                                                    | Validation                                                                                                                     | Conversion                                                                                                                                                       |
-| -------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Command line   |                                                                                 |                                                                     | • [cffconvert](https://pypi.org/project/cffconvert/)<br>• [validator.py](#validation-heavy_check_mark)                         | • [cffconvert](https://pypi.org/project/cffconvert/)                                                                                                             |
-| GitHub Actions |                                                                                 |                                                                     |                                                                                                                                | • [cffconvert](https://github.com/marketplace/actions/cffconvert)<br>• [codemeta2cff](https://github.com/caltechlibrary/codemeta2cff)                            |
-| GitHub Bot     |                                                                                 |                                                                     | [#238](https://github.com/citation-file-format/citation-file-format/issues/238)                                                |                                                                                                                                                                  |
-| Go             |                                                                                 |                                                                     |                                                                                                                                | • [datatools/codemeta2cff](https://github.com/caltechlibrary/datatools/)                                                                                         |
-| Java           | • [CFF Maven plugin](https://github.com/hexatomic/cff-maven-plugin)             | • [CFF Maven plugin](https://github.com/hexatomic/cff-maven-plugin) |                                                                                                                                | • [CFF Maven plugin](https://github.com/hexatomic/cff-maven-plugin)                                                                                              |
-| JavaScript     |                                                                                 |                                                                     |                                                                                                                                | • [Citation.js](https://citation.js.org/) [plugin](https://www.npmjs.com/package/@citation-js/plugin-software-formats)                                           |
-| Python         |                                                                                 | • [doi2cff](https://github.com/citation-file-format/doi2cff)        | • [cffconvert](https://github.com/citation-file-format/cff-converter-python)<br>• [validator.py](examples/validator.py)        | • [cffconvert](https://github.com/citation-file-format/cff-converter-python)<br>• [doi2cff](https://github.com/citation-file-format/doi2cff)                     |
-| R              |                                                                                 |                                                                     |                                                                                                                                | • [citation](https://cran.r-project.org/web/packages/citation/)<br>• [r2cff](https://github.com/ocbe-uio/RCFF)<br>• [handlr](https://github.com/ropensci/handlr) |
-| Ruby           | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)                  | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)      | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)                                                                 | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)                                                                                                   |
-| TypeScript     |                                                                                 |                                                                     |                                                                                                                                | [#28](https://github.com/citation-file-format/citation-file-format/issues/28#issuecomment-892105342)                                                             |
-| Website        | • [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/) |                                                                     |                                                                                                                                |                                                                                                                                                                  |
+|                | Creation                                                                        | Editing/Updating                                                    | Validation                                                                      | Conversion                                                                                                                                                       |
+| -------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Command line   |                                                                                 |                                                                     | • [cffconvert](#validation-heavy_check_mark)                                    | • [cffconvert](https://pypi.org/project/cffconvert/)<br> • [bibtex-to-cff](https://github.com/monperrus/bibtexbrowser/)                                          |
+| GitHub Actions |                                                                                 |                                                                     | [cff-validator](https://github.com/marketplace/actions/cff-validator)           | • [cffconvert](https://github.com/marketplace/actions/cffconvert)<br>• [codemeta2cff](https://github.com/caltechlibrary/codemeta2cff)                            |
+| GitHub Bot     |                                                                                 |                                                                     | [#238](https://github.com/citation-file-format/citation-file-format/issues/238) |                                                                                                                                                                  |
+| Docker         |                                                                                 |                                                                     | [cffconvert Docker image](#validation-heavy_check_mark)                         | [cffconvert Docker image](https://hub.docker.com/r/citationcff/cffconvert)                                                                                       |
+| Go             |                                                                                 |                                                                     |                                                                                 | • [datatools/codemeta2cff](https://github.com/caltechlibrary/datatools/)                                                                                         |
+| Haskell        |                                                                                 | • [cffreference](https://github.com/kevinmatthes/cffreference)      |                                                                                 |                                                                                                                                                                  |
+| Java           | • [CFF Maven plugin](https://github.com/hexatomic/cff-maven-plugin)             | • [CFF Maven plugin](https://github.com/hexatomic/cff-maven-plugin) |                                                                                 | • [CFF Maven plugin](https://github.com/hexatomic/cff-maven-plugin)                                                                                              |
+| JavaScript     |                                                                                 |                                                                     |                                                                                 | • [Citation.js](https://citation.js.org/) [plugin](https://www.npmjs.com/package/@citation-js/plugin-software-formats)                                           |
+| Julia          |                                                                                 |                                                                     | • [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl)                    | • [Bibliography.jl](https://github.com/Humans-of-Julia/Bibliography.jl)                                                                             |
+| PHP            |                                                                                 |                                                                     |                                                                                 | • [bibtex-to-cff](https://github.com/monperrus/bibtexbrowser/)                                                                                                   |
+| Python         |                                                                                 | • [doi2cff](https://github.com/citation-file-format/doi2cff)        | • [cffconvert](#validation-heavy_check_mark)                                    | • [cffconvert](https://github.com/citation-file-format/cff-converter-python)<br>• [doi2cff](https://github.com/citation-file-format/doi2cff)                     |
+| R              |                                                                                 |                                                                     |                                                                                 | • [citation](https://cran.r-project.org/web/packages/citation/)<br>• [r2cff](https://github.com/ocbe-uio/RCFF)<br>• [handlr](https://github.com/ropensci/handlr)<br>• [cffr](https://CRAN.R-project.org/package=cffr) |
+| Ruby           | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)                  | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)      | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)                  | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)                                                                                                   |
+| TypeScript     |                                                                                 |                                                                     |                                                                                 | [#28](https://github.com/citation-file-format/citation-file-format/issues/28#issuecomment-892105342)                                                             |
+| Website        | • [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/) |                                                                     |                                                                                 |                                                                                                                                                                  |
 
 ## Maintainers :nerd_face:
 
@@ -126,7 +137,7 @@ The Citation File Format is a collaborative project and we welcome suggestions a
 - Write a blog post or news item for your own community.
 - Organise a hack event or workshop to help others use or improve the Citation File Format.
 
-Please read the more detailed [contributing guidelines](CONTRIBUTING.md) and [open a GitHub issue](https://github.com/citation-file-format/citation-file-format/issues) to suggest a new idea or let us know about bugs.
+Please read the more detailed [contributing guidelines](CONTRIBUTING.md) and [open a GitHub issue](https://github.com/citation-file-format/citation-file-format/issues) to suggest a new idea or let us know about bugs. Please put up pull requests for changes to the format and schema against the `develop` branch!
 
 ## License :balance_scale:
 
