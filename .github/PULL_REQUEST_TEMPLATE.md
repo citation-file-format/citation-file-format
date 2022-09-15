@@ -10,6 +10,8 @@ Refs: #ISSUE_NUMBER
 
 **Review checklist**
 
+- [ ] Please check if the pull request is against the correct branch
+(format/schema/documentation changes: `develop`; typos, meta files, etc.: `main`)
 - [ ] Please check if all changes are recorded in `CHANGELOG.md` and adapt if necessary.
 - [ ] Please run tests locally.
 <!-- 
