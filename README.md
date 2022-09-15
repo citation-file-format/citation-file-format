@@ -127,6 +127,7 @@ The Citation File Format is a collaborative project and we welcome suggestions a
 - Organise a hack event or workshop to help others use or improve the Citation File Format.
 
 Please read the more detailed [contributing guidelines](CONTRIBUTING.md) and [open a GitHub issue](https://github.com/citation-file-format/citation-file-format/issues) to suggest a new idea or let us know about bugs.
+Please put up a pull request for changes to the format and schema against the `develop` branch!
 
 ## License :balance_scale:
 
