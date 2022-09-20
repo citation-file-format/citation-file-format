@@ -9,6 +9,9 @@ on:
   workflow_dispatch:
     # for manual trigger
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     name: "lint schema"
@@ -16,6 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Check out a copy of the repository
+        with:
+          persist-credentials: false
 
       - name: lint the schema
         run: |
