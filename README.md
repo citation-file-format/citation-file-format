@@ -21,7 +21,7 @@ abstract: This is my awesome research software. It does many things.
 authors:
   - family-names: Druskat
     given-names: Stephan
-    orcid: "https://orcid.org/0000-0003-4925-7248"
+    orcid: "https://orcid.org/1234-5678-9101-1121"
   - name: "The Research Software project"
 version: 0.11.2
 date-released: "2021-07-18"
