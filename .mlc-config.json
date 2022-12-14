@@ -9,5 +9,13 @@
         "pattern": "^#"
     }],
     "retryOn429": true,
-    "fallbackRetryDelay": "30s"
+    "fallbackRetryDelay": "30s",
+    "httpHeaders": [
+        {
+          "urls": ["https://docs.github.com/"],
+          "headers": {
+            "Accept-Encoding": "zstd, br, gzip, deflate"
+          }
+        }
+      ]
 }
