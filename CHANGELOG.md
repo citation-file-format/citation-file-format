@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Replace real ORCID with example ORCID from https://orcid.org/1234-5678-9101-1121
+
 ## [1.2.0] - 2021-05-31
 
 ### Added
