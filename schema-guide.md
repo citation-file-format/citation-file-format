@@ -39,7 +39,7 @@ abstract: "This is my awesome research software. It does many things."
 authors:
   - family-names: Druskat
     given-names: Stephan
-    orcid: "https://orcid.org/0000-0003-4925-7248"
+    orcid: "https://orcid.org/1234-5678-9101-1121"
 cff-version: 1.2.0
 date-released: "2021-07-18"
 identifiers:
@@ -978,7 +978,7 @@ authors:
         fax: +12-3456-7890
         location: "Lovelace Building, room 0.42"
         name: "The Research Software Project"
-        orcid: "https://orcid.org/0000-0003-4925-7248"
+        orcid: "https://orcid.org/1234-5678-9101-1121"
         post-code: 90210
         region: Renfrewshire
         tel: +12-345-6789098
@@ -1156,7 +1156,7 @@ authors:
     ```yaml
     authors:
       - name: "The Research Software Project"
-        orcid: "https://orcid.org/0000-0003-4925-7248"
+        orcid: "https://orcid.org/1234-5678-9101-1121"
     ```
 
 ### `definitions.entity.post-code`
@@ -1920,7 +1920,7 @@ authors:
     authors:
       - family-names: Druskat
         given-names: Stephan
-        orcid: "https://orcid.org/0000-0003-4925-7248"
+        orcid: "https://orcid.org/1234-5678-9101-1121"
     ```
 
 ### `definitions.person`
@@ -1966,7 +1966,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         given-names: Stephan
         name-particle: von
         name-suffix: III
-        orcid: "https://orcid.org/0000-0003-4925-7248"
+        orcid: "https://orcid.org/1234-5678-9101-1121"
         post-code: 90210
         region: Renfrewshire
         tel: +12-345-6789098
@@ -2124,7 +2124,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
     authors:
       - family-names: Druskat
         given-names: Stephan
-        orcid: "https://orcid.org/0000-0003-4925-7248"
+        orcid: "https://orcid.org/1234-5678-9101-1121"
     ```
 
 ### `definitions.person.post-code`
