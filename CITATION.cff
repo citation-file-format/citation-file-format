@@ -110,11 +110,11 @@ references:
     type: proceedings
     volume: 27
     year: 2006
-  - abstract: Good security practices for using GitHub Actions features.
-    date: 2022-09-14
-    date-accessed: 2022-09-20
-    editors:
+  - authors:
       - name: GitHub, Inc.
+    abstract: Good security practices for using GitHub Actions features.
+    date-published: 2022-09-14
+    date-accessed: 2022-09-20
     title: Security hardening for GitHub Actions
     url: https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
     type: blog
