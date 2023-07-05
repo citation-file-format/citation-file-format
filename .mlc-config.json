@@ -7,6 +7,12 @@
     }, {
         "_comment": "local links are not checked reliably, skipping helps avoid false sense of security",
         "pattern": "^#"
+    }, {
+        "_comment": "Resolves fine, target may be behind a proxy server that doesn't allow this kind of automated access",
+        "pattern": "^https://doi\\.org/10\\.25490/a97f-egyk"
+    }, {
+        "_comment": "Resolves fine, target may be behind a proxy server that doesn't allow this kind of automated access",
+        "pattern": "^https://www\\.esciencecenter\\.nl"
     }],
     "retryOn429": true,
     "fallbackRetryDelay": "30s"
