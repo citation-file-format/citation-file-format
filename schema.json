@@ -1775,6 +1775,22 @@
             "type": "array",
             "uniqueItems": true
         },
+        "contributors": {
+            "description": "The contributor(s) to a work.",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/person"
+                    },
+                    {
+                        "$ref": "#/definitions/entity"
+                    }
+                ]
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+        },
         "date-released": {
             "$ref": "#/definitions/date",
             "description": "The date the work has been released."
