@@ -1776,7 +1776,7 @@
             "uniqueItems": true
         },
         "contributors": {
-            "description": "Persons or entities who played a secundary role to the generation of the software or dataset.",
+            "description": "The contributor(s) to a work.",
             "items": {
                 "anyOf": [
                     {
