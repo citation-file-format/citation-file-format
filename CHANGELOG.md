@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Fixed the regular expression for `isbn` (should only affect ISBN10 strings that didn't have any dashes or spaces, whose check digit is `X`). Issue [#323](https://github.com/citation-file-format/citation-file-format/issues/323); PR [#335](https://github.com/citation-file-format/citation-file-format/pull/335); PR [#337](https://github.com/citation-file-format/citation-file-format/pull/337)
+### Changed
 
+- Update example testing to use cffconvert 2.0.0 (or newer) validation
+- Update Python versions run in CI to remove end-of-life versions and add newer releases
+- Replace real ORCID with example ORCID from https://orcid.org/1234-5678-9101-1121
+- Fixed the regular expression for `isbn` (should only affect ISBN10 strings that didn't have any dashes or spaces, whose check digit is `X`). Issue [#323](https://github.com/citation-file-format/citation-file-format/issues/323); PR [#335](https://github.com/citation-file-format/citation-file-format/pull/335); PR [#337](https://github.com/citation-file-format/citation-file-format/pull/337)
 
 ## [1.2.0] - 2021-05-31
 

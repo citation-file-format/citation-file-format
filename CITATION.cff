@@ -29,7 +29,7 @@ authors:
     orcid: https://orcid.org/0000-0003-0784-6909
     website: https://dpshelio.github.io
   - family-names: Konovalov
-    given-names: Alexander
+    given-names: Olexandr
     orcid: https://orcid.org/0000-0001-5299-3292
   - family-names: Li
     given-names: Ambrose
@@ -113,3 +113,11 @@ references:
     type: proceedings
     volume: 27
     year: 2006
+  - authors:
+      - name: GitHub, Inc.
+    abstract: Good security practices for using GitHub Actions features.
+    date-published: 2022-09-14
+    date-accessed: 2022-09-20
+    title: Security hardening for GitHub Actions
+    url: https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
+    type: blog

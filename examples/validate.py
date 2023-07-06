@@ -11,10 +11,12 @@ def test(fixture):
     if can_test_with_cffconvert:
         if "fail" in fixture:
             with pytest.raises(Exception) as e_info:
-                Citation(cffstr=cffstr, suspect_keys=[], validate=True, raise_exception=True)
+                citation = Citation(cffstr=cffstr)
+                citation.validate()
         else:
-            citation = Citation(cffstr=cffstr, suspect_keys=[], validate=True, raise_exception=True)
-            assert citation.yaml is not None
+            citation = Citation(cffstr=cffstr)
+            citation.validate()
+            assert citation.as_cff() is not None
     else:
         if "fail" in fixture:
             with pytest.raises(Exception) as e_info:
