@@ -1,4 +1,6 @@
 [codespell]
 skip = .git,*.pdf,*.svg
+# countries listing in ./schema.json
+ignore-regex = "[A-Z][A-Z]"
 #
 # ignore-words-list =
