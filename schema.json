@@ -533,8 +533,8 @@
                 "Reviews"
             ],
             "examples": [
-                "documents",
-                "isPartOf"
+                "Documents",
+                "IsPartOf"
             ],
             "type": "string"
         },
