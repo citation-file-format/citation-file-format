@@ -515,7 +515,7 @@
         },
         "license-enum": {
             "$comment": "Use https://github.com/citation-file-format/get-spdx-licenses to update this enum in the future",
-            "description": "SPDX license list; releaseDate=2023-09-25; licenseListVersion=90bbbbd; source=https://raw.githubusercontent.com/spdx/license-list-data/master/json/licenses.json",
+            "description": "SPDX license list; releaseDate=2023-09-25; licenseListVersion=90bbbbd; source=https://raw.githubusercontent.com/spdx/license-list-data/e38c53a9c448a999f3ef772c0e019eb4dd2b0e2a/json/licenses.json",
             "enum": [
                 "0BSD",
                 "AAL",
