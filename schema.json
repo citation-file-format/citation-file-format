@@ -388,9 +388,7 @@
                             "$ref": "#/definitions/identifier-description"
                         },
                         "type": {
-                            "enum": [
-                                "doi"
-                            ],
+                            "const": "doi",
                             "type": "string"
                         },
                         "value": {
@@ -410,9 +408,7 @@
                             "$ref": "#/definitions/identifier-description"
                         },
                         "type": {
-                            "enum": [
-                                "url"
-                            ],
+                            "const": "url",
                             "type": "string"
                         },
                         "value": {
@@ -432,9 +428,7 @@
                             "$ref": "#/definitions/identifier-description"
                         },
                         "type": {
-                            "enum": [
-                                "swh"
-                            ],
+                            "const": "swh",
                             "type": "string"
                         },
                         "value": {
@@ -454,9 +448,7 @@
                             "$ref": "#/definitions/identifier-description"
                         },
                         "type": {
-                            "enum": [
-                                "other"
-                            ],
+                            "const": "other",
                             "type": "string"
                         },
                         "value": {
