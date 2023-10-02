@@ -1066,6 +1066,33 @@
                     "description": "The person's website."
                 }
             },
+            "anyOf": [
+                {
+                    "required": [
+                        "alias"
+                    ]
+                },
+                {
+                    "required": [
+                        "email"
+                    ]
+                },
+                {
+                    "required": [
+                        "family-names"
+                    ]
+                },
+                {
+                    "required": [
+                        "given-names"
+                    ]
+                },
+                {
+                    "required": [
+                        "orcid"
+                    ]
+                }
+            ],
             "type": "object"
         },
         "post-code": {
