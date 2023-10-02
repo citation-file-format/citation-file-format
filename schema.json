@@ -1,6 +1,6 @@
 {
     "$id": "https://citation-file-format.github.io/1.2.0/schema.json",
-    "$schema": "http://json-schema.org/draft-07/schema",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": false,
     "definitions": {
         "address": {
@@ -986,7 +986,7 @@
             "type": "string"
         },
         "person": {
-            "additionalProperties": false,
+            "additionalProperties": true,
             "anyOf": [
                 {
                     "required": [
@@ -1717,6 +1717,533 @@
             "minLength": 1,
             "type": "string"
         },
+        "role": {
+            "oneOf": [
+                {
+                    "enum": [
+                        "audio",
+                        "a11y",
+                        "bug",
+                        "blog",
+                        "business",
+                        "code",
+                        "content",
+                        "data",
+                        "doc",
+                        "design",
+                        "example",
+                        "eventOrganizing",
+                        "financial",
+                        "fundingFinding",
+                        "ideas",
+                        "infra",
+                        "maintenance",
+                        "mentoring",
+                        "platform",
+                        "plugin",
+                        "projectManagement",
+                        "promotion",
+                        "question",
+                        "research",
+                        "review",
+                        "security",
+                        "tool",
+                        "translation",
+                        "test",
+                        "tutorial",
+                        "talk",
+                        "userTesting",
+                        "video"
+                    ],
+                    "type": "string"
+                },
+                {
+                    "const": "other",
+                    "type": "string"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "audio": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "audio"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "a11y": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "a11y"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "bug": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "bug"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "blog": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "blog"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "business": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "business"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "code": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "code"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "content": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "content"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "data": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "data"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "doc": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "doc"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "design": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "design"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "example": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "example"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "eventOrganizing": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "eventOrganizing"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "financial": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "financial"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "fundingFinding": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "fundingFinding"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "ideas": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "ideas"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "infra": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "infra"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "maintenance": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "maintenance"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "mentoring": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "mentoring"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "platform": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "platform"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "plugin": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "plugin"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "projectManagement": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "projectManagement"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "promotion": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "promotion"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "question": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "question"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "research": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "research"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "review": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "review"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "security": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "security"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "tool": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "tool"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "translation": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "translation"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "test": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "test"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "tutorial": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "tutorial"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "talk": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "talk"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "userTesting": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "userTesting"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "video": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "video"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "additionalProperties": false,
+                    "maxProperties": 1,
+                    "minProperties": 1,
+                    "properties": {
+                        "other": {
+                            "$ref": "#/definitions/role-description"
+                        }
+                    },
+                    "required": [
+                        "other"
+                    ],
+                    "type": "object"
+                }
+            ]
+        },
+        "role-description": {
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string"
+        },
         "swh-identifier": {
             "$comment": "Software Heritage identifiers are documented here: https://docs.softwareheritage.org/devel/swh-model/persistent-identifiers.html.",
             "description": "The Software Heritage identifier (without further qualifiers such as origin, visit, anchor, path).",
@@ -1805,9 +2332,29 @@
         "contributors": {
             "description": "The contributor(s) to a work.",
             "items": {
-                "anyOf": [
+                "oneOf": [
                     {
-                        "$ref": "#/definitions/person"
+                        "allOf": [
+                            {
+                                "$ref": "#/definitions/person"
+                            },
+                            {
+                                "additionalProperties": true,
+                                "properties": {
+                                    "roles": {
+                                        "items": {
+                                            "$ref": "#/definitions/role"
+                                        },
+                                        "minItems": 1,
+                                        "type": "array",
+                                        "uniqueItems": true
+                                    }
+                                },
+                                "required": [],
+                                "type": "object"
+                            }
+                        ],
+                        "unevaluatedProperties": false
                     },
                     {
                         "$ref": "#/definitions/entity"
