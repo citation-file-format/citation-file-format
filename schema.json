@@ -380,7 +380,7 @@
             "type": "string"
         },
         "identifier": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "additionalProperties": false,
                     "properties": {
@@ -1061,7 +1061,7 @@
             "type": "object"
         },
         "post-code": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "minLength": 1,
                     "type": "string"
@@ -1089,7 +1089,7 @@
                 "authors": {
                     "description": "The author(s) of a work.",
                     "items": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "$ref": "#/definitions/person"
                             },
@@ -1126,7 +1126,7 @@
                 "contact": {
                     "description": "The contact person, group, company, etc. for a work.",
                     "items": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "$ref": "#/definitions/person"
                             },
@@ -1191,7 +1191,7 @@
                 "editors": {
                     "description": "The editor(s) of a work.",
                     "items": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "$ref": "#/definitions/person"
                             },
@@ -1207,7 +1207,7 @@
                 "editors-series": {
                     "description": "The editor(s) of a series in which a work has been published.",
                     "items": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "$ref": "#/definitions/person"
                             },
@@ -1221,7 +1221,7 @@
                     "uniqueItems": true
                 },
                 "end": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "type": "integer"
                         },
@@ -1271,7 +1271,7 @@
                     "type": "string"
                 },
                 "issue": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "minLength": 1,
                             "type": "string"
@@ -1327,7 +1327,7 @@
                     "description": "The URL of the license text under which the work is licensed (only for non-standard licenses not included in the SPDX License List)."
                 },
                 "loc-end": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "type": "integer"
                         },
@@ -1339,7 +1339,7 @@
                     "description": "The line of code in the file where the work ends."
                 },
                 "loc-start": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "type": "integer"
                         },
@@ -1360,7 +1360,7 @@
                     "type": "string"
                 },
                 "month": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "maximum": 12,
                             "minimum": 1,
@@ -1397,7 +1397,7 @@
                     "type": "string"
                 },
                 "number": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "minLength": 1,
                             "type": "string"
@@ -1409,7 +1409,7 @@
                     "description": "The accession number for a work."
                 },
                 "number-volumes": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "type": "integer"
                         },
@@ -1421,7 +1421,7 @@
                     "description": "The number of volumes making up the collection in which the work has been published."
                 },
                 "pages": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "type": "integer"
                         },
@@ -1454,7 +1454,7 @@
                 "recipients": {
                     "description": "The recipient(s) of a personal communication.",
                     "items": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "$ref": "#/definitions/entity"
                             },
@@ -1485,7 +1485,7 @@
                     "type": "string"
                 },
                 "section": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "minLength": 1,
                             "type": "string"
@@ -1499,7 +1499,7 @@
                 "senders": {
                     "description": "The sender(s) of a personal communication.",
                     "items": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "$ref": "#/definitions/entity"
                             },
@@ -1513,7 +1513,7 @@
                     "uniqueItems": true
                 },
                 "start": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "type": "integer"
                         },
@@ -1554,7 +1554,7 @@
                 "translators": {
                     "description": "The translator(s) of a work.",
                     "items": {
-                        "anyOf": [
+                        "oneOf": [
                             {
                                 "$ref": "#/definitions/entity"
                             },
@@ -1629,7 +1629,7 @@
                     "description": "The version of the work."
                 },
                 "volume": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "type": "integer"
                         },
@@ -1646,7 +1646,7 @@
                     "type": "string"
                 },
                 "year": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "type": "integer"
                         },
@@ -1658,7 +1658,7 @@
                     "description": "The year in which a work has been published."
                 },
                 "year-original": {
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "type": "integer"
                         },
@@ -1706,7 +1706,7 @@
             "type": "string"
         },
         "version": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "minLength": 1,
                     "type": "string"
@@ -1727,7 +1727,7 @@
         "authors": {
             "description": "The author(s) of the software or dataset.",
             "items": {
-                "anyOf": [
+                "oneOf": [
                     {
                         "$ref": "#/definitions/person"
                     },
@@ -1754,7 +1754,7 @@
         "contact": {
             "description": "The contact person, group, company, etc. for the software or dataset.",
             "items": {
-                "anyOf": [
+                "oneOf": [
                     {
                         "$ref": "#/definitions/person"
                     },
@@ -1770,7 +1770,7 @@
         "contributors": {
             "description": "The contributor(s) to a work.",
             "items": {
-                "anyOf": [
+                "oneOf": [
                     {
                         "$ref": "#/definitions/person"
                     },
