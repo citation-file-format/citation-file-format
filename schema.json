@@ -1638,8 +1638,8 @@
             "description": "A region."
         },
         "simplestring": {
-            "pattern": "^(\\S+)+( \\S+)*$",
             "minLength": 1,
+            "pattern": "^(\\S+)+( \\S+)*$",
             "type": "string"
         },
         "swh-identifier": {
