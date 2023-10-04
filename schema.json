@@ -982,7 +982,7 @@
         "orcid": {
             "description": "Identifier for an author, see https://orcid.org.",
             "format": "uri",
-            "pattern": "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}",
+            "pattern": "^https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}$",
             "type": "string"
         },
         "person": {
