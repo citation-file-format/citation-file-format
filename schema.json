@@ -1452,7 +1452,7 @@
                 },
                 "pmcid": {
                     "description": "The PMCID of a work.",
-                    "pattern": "^PMC[0-9]{7}$",
+                    "pattern": "^PMC[0-9]{7,8}$",
                     "type": "string"
                 },
                 "publisher": {
