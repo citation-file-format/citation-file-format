@@ -4,24 +4,20 @@
     "additionalProperties": false,
     "definitions": {
         "address": {
-            "description": "An address.",
-            "minLength": 1,
-            "type": "string"
+            "$ref": "#/definitions/simplestring",
+            "description": "An address."
         },
         "alias": {
-            "description": "An alias.",
-            "minLength": 1,
-            "type": "string"
+            "$ref": "#/definitions/simplestring",
+            "description": "An alias."
         },
         "city": {
-            "description": "A city",
-            "minLength": 1,
-            "type": "string"
+            "$ref": "#/definitions/simplestring",
+            "description": "A city"
         },
         "commit": {
-            "description": "The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.",
-            "minLength": 1,
-            "type": "string"
+            "$ref": "#/definitions/simplestring",
+            "description": "The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work."
         },
         "country": {
             "$comment": "ISO 3166-1 alpha-2 codes can be found at https://en.wikipedia.org/wiki/ISO_3166-1",
@@ -339,14 +335,12 @@
                     "description": "The entity's fax number."
                 },
                 "location": {
-                    "description": "The entity's location, e.g., when the entity is a conference.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The entity's location, e.g., when the entity is a conference."
                 },
                 "name": {
-                    "description": "The entity's name.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The entity's name."
                 },
                 "orcid": {
                     "$ref": "#/definitions/orcid",
@@ -375,9 +369,8 @@
             "type": "object"
         },
         "fax": {
-            "description": "A fax number.",
-            "minLength": 1,
-            "type": "string"
+            "$ref": "#/definitions/simplestring",
+            "description": "A fax number."
         },
         "identifier": {
             "anyOf": [
@@ -460,8 +453,7 @@
                             "type": "string"
                         },
                         "value": {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     },
                     "required": [
@@ -474,13 +466,12 @@
             "description": "An identifier for a work."
         },
         "identifier-description": {
+            "$ref": "#/definitions/simplestring",
             "description": "A description for a specific identifier value.",
             "examples": [
                 "The version DOI for this version, which has a relation childOf with the concept DOI specified in the doi field in the root of this file.",
                 "The identifier provided by Archival Repository, which points to this version of the software."
-            ],
-            "minLength": 1,
-            "type": "string"
+            ]
         },
         "license": {
             "description": "An SPDX license identifier.",
@@ -994,9 +985,8 @@
                     "description": "The person's address."
                 },
                 "affiliation": {
-                    "description": "The person's affilitation.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The person's affilitation."
                 },
                 "alias": {
                     "$ref": "#/definitions/alias",
@@ -1015,35 +1005,31 @@
                     "description": "The person's email address."
                 },
                 "family-names": {
-                    "description": "The person's family names.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The person's family names."
                 },
                 "fax": {
                     "$ref": "#/definitions/fax",
                     "description": "The person's fax number."
                 },
                 "given-names": {
-                    "description": "The person's given names.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The person's given names."
                 },
                 "name-particle": {
+                    "$ref": "#/definitions/simplestring",
                     "description": "The person's name particle, e.g., a nobiliary particle or a preposition meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').",
                     "examples": [
                         "von"
-                    ],
-                    "minLength": 1,
-                    "type": "string"
+                    ]
                 },
                 "name-suffix": {
+                    "$ref": "#/definitions/simplestring",
                     "description": "The person's name-suffix, e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.",
                     "examples": [
                         "Jr.",
                         "III"
-                    ],
-                    "minLength": 1,
-                    "type": "string"
+                    ]
                 },
                 "orcid": {
                     "$ref": "#/definitions/orcid",
@@ -1071,8 +1057,7 @@
         "post-code": {
             "anyOf": [
                 {
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring"
                 },
                 {
                     "type": "number"
@@ -1085,14 +1070,12 @@
             "description": "A reference to a work.",
             "properties": {
                 "abbreviation": {
-                    "description": "The abbreviation of a work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The abbreviation of a work."
                 },
                 "abstract": {
-                    "description": "The abstract of a work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The abstract of a work."
                 },
                 "authors": {
                     "description": "The author(s) of a work.",
@@ -1115,14 +1098,12 @@
                     "description": "The DOI of a collection containing the work."
                 },
                 "collection-title": {
-                    "description": "The title of a collection or proceedings.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The title of a collection or proceedings."
                 },
                 "collection-type": {
-                    "description": "The type of a collection.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The type of a collection."
                 },
                 "commit": {
                     "$ref": "#/definitions/commit"
@@ -1148,19 +1129,16 @@
                     "uniqueItems": true
                 },
                 "copyright": {
-                    "description": "The copyright information pertaining to the work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The copyright information pertaining to the work."
                 },
                 "data-type": {
-                    "description": "The data type of a data set.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The data type of a data set."
                 },
                 "database": {
-                    "description": "The name of the database where a work was accessed/is stored.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The name of the database where a work was accessed/is stored."
                 },
                 "database-provider": {
                     "$ref": "#/definitions/entity",
@@ -1183,18 +1161,16 @@
                     "description": "The date the work has been released."
                 },
                 "department": {
-                    "description": "The department where a work has been produced.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The department where a work has been produced."
                 },
                 "doi": {
                     "$ref": "#/definitions/doi",
                     "description": "The DOI of the work."
                 },
                 "edition": {
-                    "description": "The edition of the work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The edition of the work."
                 },
                 "editors": {
                     "description": "The editor(s) of a work.",
@@ -1234,26 +1210,22 @@
                             "type": "integer"
                         },
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     ],
                     "description": "The end page of the work."
                 },
                 "entry": {
-                    "description": "An entry in the collection that constitutes the work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "An entry in the collection that constitutes the work."
                 },
                 "filename": {
-                    "description": "The name of the electronic file containing the work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The name of the electronic file containing the work."
                 },
                 "format": {
-                    "description": "The format in which a work is represented.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The format in which a work is represented."
                 },
                 "identifiers": {
                     "description": "The identifier(s) of the work.",
@@ -1281,8 +1253,7 @@
                 "issue": {
                     "anyOf": [
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         },
                         {
                             "type": "number"
@@ -1291,25 +1262,21 @@
                     "description": "The issue of a periodical in which a work appeared."
                 },
                 "issue-date": {
-                    "description": "The publication date of the issue of a periodical in which a work appeared.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The publication date of the issue of a periodical in which a work appeared."
                 },
                 "issue-title": {
-                    "description": "The name of the issue of a periodical in which the work appeared.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The name of the issue of a periodical in which the work appeared."
                 },
                 "journal": {
-                    "description": "The name of the journal/magazine/newspaper/periodical where the work was published.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The name of the journal/magazine/newspaper/periodical where the work was published."
                 },
                 "keywords": {
                     "description": "Keywords pertaining to the work.",
                     "items": {
-                        "minLength": 1,
-                        "type": "string"
+                        "$ref": "#/definitions/simplestring"
                     },
                     "minItems": 1,
                     "type": "array",
@@ -1340,8 +1307,7 @@
                             "type": "integer"
                         },
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     ],
                     "description": "The line of code in the file where the work ends."
@@ -1352,8 +1318,7 @@
                             "type": "integer"
                         },
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     ],
                     "description": "The line of code in the file where the work starts."
@@ -1363,9 +1328,8 @@
                     "description": "The location of the work."
                 },
                 "medium": {
-                    "description": "The medium of the work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The medium of the work."
                 },
                 "month": {
                     "anyOf": [
@@ -1395,20 +1359,17 @@
                     "description": "The month in which a work has been published."
                 },
                 "nihmsid": {
-                    "description": "The NIHMSID of a work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The NIHMSID of a work."
                 },
                 "notes": {
-                    "description": "Notes pertaining to the work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "Notes pertaining to the work."
                 },
                 "number": {
                     "anyOf": [
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         },
                         {
                             "type": "number"
@@ -1422,8 +1383,7 @@
                             "type": "integer"
                         },
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     ],
                     "description": "The number of volumes making up the collection in which the work has been published."
@@ -1434,8 +1394,7 @@
                             "type": "integer"
                         },
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     ],
                     "description": "The number of pages of the work."
@@ -1443,8 +1402,7 @@
                 "patent-states": {
                     "description": "The states for which a patent is granted.",
                     "items": {
-                        "minLength": 1,
-                        "type": "string"
+                        "$ref": "#/definitions/simplestring"
                     },
                     "minItems": 1,
                     "type": "array",
@@ -1488,15 +1446,13 @@
                     "description": "The URL of the work in a source code repository."
                 },
                 "scope": {
-                    "description": "The scope of the reference, e.g., the section of the work it adheres to.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The scope of the reference, e.g., the section of the work it adheres to."
                 },
                 "section": {
                     "anyOf": [
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         },
                         {
                             "type": "number"
@@ -1526,8 +1482,7 @@
                             "type": "integer"
                         },
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     ],
                     "description": "The start page of the work."
@@ -1545,19 +1500,16 @@
                     "type": "string"
                 },
                 "term": {
-                    "description": "The term being referenced if the work is a dictionary or encyclopedia.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The term being referenced if the work is a dictionary or encyclopedia."
                 },
                 "thesis-type": {
-                    "description": "The type of the thesis that is the work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The type of the thesis that is the work."
                 },
                 "title": {
-                    "description": "The title of the work.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The title of the work."
                 },
                 "translators": {
                     "description": "The translator(s) of a work.",
@@ -1642,16 +1594,14 @@
                             "type": "integer"
                         },
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     ],
                     "description": "The volume of the periodical in which a work appeared."
                 },
                 "volume-title": {
-                    "description": "The title of the volume in which the work appeared.",
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring",
+                    "description": "The title of the volume in which the work appeared."
                 },
                 "year": {
                     "anyOf": [
@@ -1659,8 +1609,7 @@
                             "type": "integer"
                         },
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     ],
                     "description": "The year in which a work has been published."
@@ -1671,8 +1620,7 @@
                             "type": "integer"
                         },
                         {
-                            "minLength": 1,
-                            "type": "string"
+                            "$ref": "#/definitions/simplestring"
                         }
                     ],
                     "description": "The year of the original publication."
@@ -1686,7 +1634,11 @@
             "type": "object"
         },
         "region": {
-            "description": "A region.",
+            "$ref": "#/definitions/simplestring",
+            "description": "A region."
+        },
+        "simplestring": {
+            "pattern": "^(\\S+)+( \\S+)*$",
             "minLength": 1,
             "type": "string"
         },
@@ -1704,9 +1656,8 @@
             "type": "string"
         },
         "tel": {
-            "description": "A phone number.",
-            "minLength": 1,
-            "type": "string"
+            "$ref": "#/definitions/simplestring",
+            "description": "A phone number."
         },
         "url": {
             "format": "uri",
@@ -1716,8 +1667,7 @@
         "version": {
             "anyOf": [
                 {
-                    "minLength": 1,
-                    "type": "string"
+                    "$ref": "#/definitions/simplestring"
                 },
                 {
                     "type": "number"
@@ -1728,9 +1678,8 @@
     "description": "A file with citation metadata for software or datasets.",
     "properties": {
         "abstract": {
-            "description": "A description of the software or dataset.",
-            "minLength": 1,
-            "type": "string"
+            "$ref": "#/definitions/simplestring",
+            "description": "A description of the software or dataset."
         },
         "authors": {
             "description": "The author(s) of the software or dataset.",
@@ -1810,8 +1759,7 @@
         "keywords": {
             "description": "Keywords that describe the work.",
             "items": {
-                "minLength": 1,
-                "type": "string"
+                "$ref": "#/definitions/simplestring"
             },
             "minItems": 1,
             "type": "array",
@@ -1825,15 +1773,14 @@
             "description": "The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the SPDX License List)."
         },
         "message": {
+            "$ref": "#/definitions/simplestring",
             "default": "If you use this software, please cite it using the metadata from this file.",
             "description": "A message to the human reader of the file to let them know what to do with the citation metadata.",
             "examples": [
                 "If you use this software, please cite it using the metadata from this file.",
                 "Please cite this software using these metadata.",
                 "Please cite this software using the metadata from 'preferred-citation'."
-            ],
-            "minLength": 1,
-            "type": "string"
+            ]
         },
         "preferred-citation": {
             "$ref": "#/definitions/reference",
@@ -1865,9 +1812,8 @@
             "description": "The URL of the software or dataset in a source code repository."
         },
         "title": {
-            "description": "The name of the software or dataset.",
-            "minLength": 1,
-            "type": "string"
+            "$ref": "#/definitions/simplestring",
+            "description": "The name of the software or dataset."
         },
         "type": {
             "default": "software",
