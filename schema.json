@@ -1639,7 +1639,7 @@
         },
         "simplestring": {
             "minLength": 1,
-            "pattern": "^(\\S+)+( \\S+)*$",
+            "pattern": "^(\\S+)( \\S+)*$",
             "type": "string"
         },
         "swh-identifier": {
