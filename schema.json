@@ -1710,7 +1710,7 @@
         },
         "url": {
             "format": "uri",
-            "pattern": "^(https|http|ftp|sftp)://.+",
+            "pattern": "^(https|http|ftp|sftp)://\\S+$",
             "type": "string"
         },
         "version": {
