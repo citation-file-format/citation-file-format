@@ -9,7 +9,8 @@ def pytest_generate_tests(metafunc):
     schema_versions = [
         "1.0.3",
         "1.1.0",
-        "1.2.0"
+        "1.2.0",
+        "1.3.0"
     ]
     for schema_version in schema_versions:
         d = os.path.join(".", "examples", schema_version)
