@@ -1,0 +1,84 @@
+authors: 
+  -
+    name: "entity name"
+    address: My address 44
+    alias: my alias
+    city: my city
+    country: NL
+    email: me@email.org
+    fax: "02323-3543-46256"
+    orcid: https://orcid.org/0123-4567-8901-234X
+    post-code: 12334 DVG
+    region: My region
+    tel: "1-34245-7346356-8467"
+    website: https://my.domain/website/
+    date-start: 2021-05-16
+    date-end: 2021-05-16
+    location: "somehwere"
+  -
+    address: My address 44
+    affiliation: my affiliation
+    alias: my alias
+    city: my city
+    country: NL
+    email: me@email.org
+    family-names: My Family Names
+    fax: "02323-3543-46256"
+    given-names: My Given Names
+    name-particle: von der
+    name-suffix: III
+    orcid: https://orcid.org/0123-4567-8901-234X
+    post-code: 12334 DVG
+    region: My region
+    tel: "1-34245-7346356-8467"
+    website: https://my.domain/website/
+cff-version: 1.2.0
+commit: af34567890123458901234567890123456789012
+date-released: 2021-05-16
+identifiers:
+- type: doi
+  value: "10.0000.1234/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._[]()\\:;"
+  description: "A pseudo-DOI testing all allowed characters."
+- type: other
+  value: some random other identifier
+  description: "A really random, unquoted string with whitespaces in between, which YAML can still handle."
+- type: swh
+  value: swh:1:cnt:94a9ed024d3859793618152ea559a168bbcbb5e2
+  description: "The Software Heritage identifier pointing to the GPL v3 license text."
+- type: url
+  value: https://github.com/citation-file-format/citation-file-format
+  description: "Just any old URL!"
+license-url: http://r3s34archs0ft.com/eula
+message: "If you use this software, cite it using these metadata"
+preferred-citation:
+  type: article
+  title: my preferred citation
+  authors:
+  - name: my name
+  month: 1
+references: 
+  - 
+    type: article
+    authors: 
+      - 
+        given-names: John
+    title: this is the title
+    license: "GPL-2.0"
+    issue-date: "2021-02-04"
+  - 
+    type: article
+    authors: 
+      - 
+        given-names: Johanna
+    title: "This is another title"
+    license: "Apache-2.0"
+    issue-date: "November-December 2002"
+repository: https://github.com/citation-file-format/citation-file-format
+repository-artifact: https://files.pythonhosted.org/packages/0a/84/10507b69a07768bc16981184b4d147a0fc84b71fbf35c03bafc8dcced8e1/cffconvert-1.3.3.tar.gz
+repository-code: https://github.com/citation-file-format/citation-file-format
+title: my title
+type: software
+url: https://github.com/citation-file-format/citation-file-format
+license: 
+  - "Apache-2.0"
+  - "MIT"
