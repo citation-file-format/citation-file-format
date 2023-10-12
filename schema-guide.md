@@ -4030,7 +4030,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.url`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [Nonempty `string`](#yaml-strings) without any leading or trailing whitespace.
 - **required**: N/A
 - **description**: A URL. Supported URLs start with one of:
     - `https://`
