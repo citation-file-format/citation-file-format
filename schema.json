@@ -1638,6 +1638,7 @@
             "description": "A region."
         },
         "simplestring": {
+            "description": "String of length greater than 1 character, with a regular expression to avoid leading spaces, trailing spaces, or middle double spaces",
             "minLength": 1,
             "pattern": "^(\\S+)( \\S+)*$",
             "type": "string"
