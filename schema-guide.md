@@ -4005,7 +4005,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 - **description**: Nonempty string without any leading spaces, trailing spaces or double spaces.
 - **usage**:<br><br>
     ```yaml
-    abstract: This is the abstract. It can't have leading spaces, trailing spaces, or doubles spaces -- otherwise schema validation will complain.
+    abstract: This is the abstract. It can't have leading spaces, trailing spaces, or doubles spaces.
     ```
 
 ### `definitions.swh-identifier`
