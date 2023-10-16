@@ -1931,7 +1931,7 @@
             ]
         }
     },
-    "$id": "https://citation-file-format.github.io/1.2.0/schema.json",
+    "$id": "https://citation-file-format.github.io/1.3.0/schema.json",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": false,
     "description": "A file with citation metadata for software or datasets.",
@@ -1960,9 +1960,9 @@
         "cff-version": {
             "description": "The version of CFF used for providing the citation metadata.",
             "examples": [
-                "1.2.0"
+                "1.3.0"
             ],
-            "pattern": "^1\\.2\\.0$",
+            "pattern": "^1\\.3\\.0$",
             "type": "string"
         },
         "commit": {

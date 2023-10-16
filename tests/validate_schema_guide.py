@@ -53,7 +53,7 @@ def test():
                             if e.message.startswith("'authors' is a required property"):
                                 instance["authors"] = []
                             elif e.message.startswith("'cff-version' is a required property"):
-                                instance["cff-version"] = "1.2.0"
+                                instance["cff-version"] = "1.3.0"
                             elif e.message.startswith("'message' is a required property"):
                                 instance["message"] = "testmessage"
                             elif e.message.startswith("'title' is a required property"):
