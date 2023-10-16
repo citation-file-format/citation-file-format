@@ -93,7 +93,7 @@
     "related_identifiers": [
         {
             "scheme": "url",
-            "identifier": "https://github.com/citation-file-format/citation-file-format/releases/tag/1.2.0",
+            "identifier": "https://github.com/citation-file-format/citation-file-format/releases/tag/1.3.0",
             "relation": "isSupplementTo"
         },
         {
@@ -108,5 +108,5 @@
         }
     ],
     "title": "Citation File Format",
-    "version": "1.2.0"
+    "version": "1.3.0"
 }
