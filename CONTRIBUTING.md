@@ -67,7 +67,7 @@ by tests. If you modify anything in the `tests` or `examples` directory, it is
 advised to run these tests locally on your computer prior to submitting
 a pull request. However, if that's not possible, you still can submit
 the pull request and later check the status of the tests for your
-pull requests on GitHub. Please see [`examples/README.md`](examples/README.md) file for further
+pull requests on GitHub. Please see [`README.dev.md`](README.dev.md) file for further
 details about tests and instructions how to run them locally.
 
 <!--
