@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `contributors` field. Issue [#66](https://github.com/citation-file-format/citation-file-format/issues/66), [#84](https://github.com/citation-file-format/citation-file-format/issues/84); PR [#439](https://github.com/citation-file-format/citation-file-format/pull/439)
 - Added more license identifiers from SPDX. Issue [#454](https://github.com/citation-file-format/citation-file-format/issues/454); PR [#461](https://github.com/citation-file-format/citation-file-format/pull/461)
 - Added machine readable relation qualifiers to `identifiers` using terminology from DataCite v4.4; PR [#459](https://github.com/citation-file-format/citation-file-format/pull/459)
+- Fixed: instances of `person` now explicitly require one of `alias`, `email`, `given-names`, `family-names` or `orcid` to avoid accidentally having empty person objects (notably, `authors`). PR [#462](https://github.com/citation-file-format/citation-file-format/pull/462)
 
 ## [1.2.0] - 2021-05-31
 

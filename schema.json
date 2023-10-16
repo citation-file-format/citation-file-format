@@ -1177,6 +1177,33 @@
         },
         "person": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "required": [
+                        "alias"
+                    ]
+                },
+                {
+                    "required": [
+                        "email"
+                    ]
+                },
+                {
+                    "required": [
+                        "family-names"
+                    ]
+                },
+                {
+                    "required": [
+                        "given-names"
+                    ]
+                },
+                {
+                    "required": [
+                        "orcid"
+                    ]
+                }
+            ],
             "description": "A person.",
             "properties": {
                 "address": {
