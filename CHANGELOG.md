@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed the regular expression for ISBN (should only affect ISBN10 strings that didn't have any dashes or spaces, whose check digit is `X`). Issue [#323](https://github.com/citation-file-format/citation-file-format/issues/323); PR [#335](https://github.com/citation-file-format/citation-file-format/pull/335); PR [#337](https://github.com/citation-file-format/citation-file-format/pull/337)
 - Added `contributors` field. Issue [#66](https://github.com/citation-file-format/citation-file-format/issues/66), [#84](https://github.com/citation-file-format/citation-file-format/issues/84); PR [#439](https://github.com/citation-file-format/citation-file-format/pull/439)
 - Added regex to the schema to help avoid leading spaces, trailing spaces, and double spaces in many string fields. Issue [#380](https://github.com/citation-file-format/citation-file-format/issues/380); PR [#466](https://github.com/citation-file-format/citation-file-format/pull/466)
+- Added more license identifiers from SPDX. Issue [#454](https://github.com/citation-file-format/citation-file-format/issues/454); PR [#461](https://github.com/citation-file-format/citation-file-format/pull/461)
+- Added machine readable relation qualifiers to `identifiers` using terminology from DataCite v4.4; PR [#459](https://github.com/citation-file-format/citation-file-format/pull/459)
+- Fixed: instances of `person` now explicitly require one of `alias`, `email`, `given-names`, `family-names` or `orcid` to avoid accidentally having empty person objects (notably, `authors`). PR [#462](https://github.com/citation-file-format/citation-file-format/pull/462)
 
 ## [1.2.0] - 2021-05-31
 

@@ -1,11 +1,11 @@
-# Guide to Citation File Format schema version 1.2.0
+# Guide to Citation File Format schema version 1.3.0
 
 ## General structure of a `CITATION.cff` file
 
 Valid Citation File Format files
 
 1. must be named `CITATION.cff` (note the capitalization);
-1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json);
+1. are valid according to the Citation File Format schema version 1.3.0 outlined in [schema.json](schema.json);
 1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/)).
 
 <a name="yaml-strings"></a>**String quoting:** Note that in YAML you generally don't need to quote strings.
@@ -25,7 +25,7 @@ A minimal example of a valid `CITATION.cff` file, that contains only the require
 authors:
   - family-names: Druskat
     given-names: Stephan
-cff-version: 1.2.0
+cff-version: 1.3.0
 message: "If you use this software, please cite it using these metadata."
 title: "My Research Software"
 ```
@@ -40,7 +40,7 @@ authors:
   - family-names: Druskat
     given-names: Stephan
     orcid: "https://orcid.org/1234-5678-9101-1121"
-cff-version: 1.2.0
+cff-version: 1.3.0
 date-released: "2021-07-18"
 identifiers:
   - description: "This is the collection of archived snapshots of all versions of My Research Software"
@@ -73,7 +73,7 @@ and other (research) outputs.
 authors:
   - family-names: Druskat
     given-names: Stephan
-cff-version: 1.2.0
+cff-version: 1.3.0
 message: "If you use this software, please cite it using these metadata."
 references:
   - authors:
@@ -102,7 +102,7 @@ the paper (or other work) you want people to cite. Usually, the `message` also r
 authors:
   - family-names: Druskat
     given-names: Stephan
-cff-version: 1.2.0
+cff-version: 1.3.0
 message: "If you use this software, please cite both the article from preferred-citation and the software itself."
 preferred-citation:
   authors:
@@ -183,10 +183,10 @@ This section describes the valid keys in a `CITATION.cff` file.
 - **description**: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
 - **usage**:<br><br>
     ```yaml
-    cff-version: 1.2.0
+    cff-version: 1.3.0
     ```
     ```yaml
-    cff-version: "1.2.0"
+    cff-version: "1.3.0"
     ```
 
 ### `commit`
@@ -506,10 +506,10 @@ primary principle, "Importance", when others cite this work.
 - **description**: The version of the software or dataset.
 - **usage**:<br><br>
     ```yaml
-    version: "1.2.0"
+    version: "7.2.0"
     ```
     ```yaml
-    version: 1.2
+    version: 7.2
     ```
     ```yaml
     version: "21.10 (Impish Indri)"
@@ -1899,7 +1899,7 @@ authors:
     - `ZPL-2.0`
     - `ZPL-2.1`
 - **required**: N/A
-- **description**: [SPDX identifier](https://spdx.dev/ids/) for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
+- **description**: [SPDX identifier](https://spdx.dev/ids/) for the license under which a work is made available. The list of identifiers originates from https://raw.githubusercontent.com/spdx/license-list-data/e38c53a9c448a999f3ef772c0e019eb4dd2b0e2a/json/licenses.json.
 - **usage**:<br><br>
     ```yaml
     license: Apache-2.0
@@ -4069,10 +4069,10 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 - **description**: The version of a work.
 - **usage**:<br><br>
     ```yaml
-    version: "1.2.0"
+    version: "7.2.0"
     ```
     ```yaml
-    version: 1.2
+    version: 7.2
     ```
     ```yaml
     version: "21.10 (Impish Indri)"
