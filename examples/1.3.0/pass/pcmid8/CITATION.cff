@@ -1,0 +1,22 @@
+authors: 
+- name: The team
+cff-version: 1.3.0
+message: The message
+title: The title
+preferred-citation:
+  authors:
+  - name: The PMCID8's team
+  pmcid: PMC12345678
+  title: The PMCID8's work
+  type: generic
+references:
+- authors:
+  - name: The PMCID7's team
+  pmcid: PMC1234567
+  title: The PMCID7's work
+  type: generic
+- authors:
+  - name: The PMCID8's team
+  pmcid: PMC12345678
+  title: The PMCID8's work
+  type: generic
