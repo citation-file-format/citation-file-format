@@ -1,11 +1,11 @@
-# Guide to Citation File Format schema version 1.2.0
+# Guide to Citation File Format schema version 1.3.0
 
 ## General structure of a `CITATION.cff` file
 
 Valid Citation File Format files
 
 1. must be named `CITATION.cff` (note the capitalization);
-1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json);
+1. are valid according to the Citation File Format schema version 1.3.0 outlined in [schema.json](schema.json);
 1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/)).
 
 <a name="yaml-strings"></a>**String quoting:** Note that in YAML you generally don't need to quote strings.
@@ -25,7 +25,7 @@ A minimal example of a valid `CITATION.cff` file, that contains only the require
 authors:
   - family-names: Druskat
     given-names: Stephan
-cff-version: 1.2.0
+cff-version: 1.3.0
 message: "If you use this software, please cite it using these metadata."
 title: "My Research Software"
 ```
@@ -40,7 +40,7 @@ authors:
   - family-names: Druskat
     given-names: Stephan
     orcid: "https://orcid.org/1234-5678-9101-1121"
-cff-version: 1.2.0
+cff-version: 1.3.0
 date-released: "2021-07-18"
 identifiers:
   - description: "This is the collection of archived snapshots of all versions of My Research Software"
@@ -73,7 +73,7 @@ and other (research) outputs.
 authors:
   - family-names: Druskat
     given-names: Stephan
-cff-version: 1.2.0
+cff-version: 1.3.0
 message: "If you use this software, please cite it using these metadata."
 references:
   - authors:
@@ -102,7 +102,7 @@ the paper (or other work) you want people to cite. Usually, the `message` also r
 authors:
   - family-names: Druskat
     given-names: Stephan
-cff-version: 1.2.0
+cff-version: 1.3.0
 message: "If you use this software, please cite both the article from preferred-citation and the software itself."
 preferred-citation:
   authors:
@@ -145,7 +145,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `abstract`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: A description of the software or dataset.
 - **usage**:<br><br>
@@ -178,20 +178,20 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `cff-version`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `true`
 - **description**: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
 - **usage**:<br><br>
     ```yaml
-    cff-version: 1.2.0
+    cff-version: 1.3.0
     ```
     ```yaml
-    cff-version: "1.2.0"
+    cff-version: "1.3.0"
     ```
 
 ### `commit`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The commit hash or revision number of the software version.
 - **usage**:<br><br>
@@ -317,7 +317,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `keywords`
 
-- **type**: Array of [nonempty `string`](#yaml-strings)
+- **type**: Array of [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: Keywords that describe the work.
 - **usage**:<br><br>
@@ -361,7 +361,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `message`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `true`
 - **default**: `If you use this software, please cite it using the metadata from this file.`
 - **description**: A message to the human reader of the `CITATION.cff` file to let them know what to do with the citation metadata.
@@ -467,7 +467,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `title`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `true`
 - **description**: The name of the software or dataset.
 - **usage**:<br><br>
@@ -506,10 +506,10 @@ primary principle, "Importance", when others cite this work.
 - **description**: The version of the software or dataset.
 - **usage**:<br><br>
     ```yaml
-    version: "1.2.0"
+    version: "7.2.0"
     ```
     ```yaml
-    version: 1.2
+    version: 7.2
     ```
     ```yaml
     version: "21.10 (Impish Indri)"
@@ -572,7 +572,7 @@ authors:
 
 ### `definitions.address`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: An address.
 - **usage**:<br><br>
@@ -584,7 +584,7 @@ authors:
 
 ### `definitions.alias`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: An alias.
 - **usage**:<br><br>
@@ -596,7 +596,7 @@ authors:
 
 ### `definitions.city`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: A city.
 - **usage**:<br><br>
@@ -608,7 +608,7 @@ authors:
 
 ### `definitions.commit`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 - **usage**:<br><br>
@@ -888,7 +888,7 @@ authors:
 
 ### `definitions.date`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes. Note to tool implementers: it is necessary to cast YAML `date` objects to `string` objects when validating against the schema.
 - **usage**:<br><br>
@@ -925,7 +925,7 @@ authors:
 
 ### `definitions.doi`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 - **usage**:<br><br>
@@ -935,7 +935,7 @@ authors:
 
 ### `definitions.email`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: An email address.
 - **usage**:<br><br>
@@ -1126,7 +1126,7 @@ authors:
 
 ### `definitions.entity.location`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The entity's location.
 - **usage**:<br><br>
@@ -1138,7 +1138,7 @@ authors:
 
 ### `definitions.entity.name`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `true`
 - **description**: The entity's name.
 - **usage**:<br><br>
@@ -1215,7 +1215,7 @@ authors:
 
 ### `definitions.fax`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: A fax number.
 - **usage**:<br><br>
@@ -1339,7 +1339,7 @@ authors:
             <li>
               <code>value</code>:
               <ul>
-                <li><strong>type</strong>: <a href="#yaml-strings">Nonempty <code>string</code></a>.</li>
+                <li><strong>type</strong>: <a href="#definitionsstrictish-string"><code>strictish string</code></a>.</li>
                 <li><strong>required</strong>: <code>true</code></li>
                 <li><strong>description</strong>: The value of the identifier, e.g. <code>arXiv:2103.06681</code>.</li>
               </ul>
@@ -1406,7 +1406,7 @@ authors:
 
 ### `definitions.identifier-description`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: A description for a specific identifier value.
 - **usage**:<br><br>
@@ -1899,7 +1899,7 @@ authors:
     - `ZPL-2.0`
     - `ZPL-2.1`
 - **required**: N/A
-- **description**: [SPDX identifier](https://spdx.dev/ids/) for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
+- **description**: [SPDX identifier](https://spdx.dev/ids/) for the license under which a work is made available. The list of identifiers originates from https://raw.githubusercontent.com/spdx/license-list-data/e38c53a9c448a999f3ef772c0e019eb4dd2b0e2a/json/licenses.json.
 - **usage**:<br><br>
     ```yaml
     license: Apache-2.0
@@ -1988,7 +1988,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.affiliation`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The person's affiliation.
 - **usage**:<br><br>
@@ -2053,7 +2053,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.family-names`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The person's family names.
 - **usage**:<br><br>
@@ -2078,7 +2078,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.given-names`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The person's given names.
 - **usage**:<br><br>
@@ -2090,7 +2090,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.name-particle`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The person's name particle, e.g., a [nobiliary particle](https://en.wikipedia.org/wiki/Nobiliary_particle) or a [preposition] meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 - **usage**:<br><br>
@@ -2103,7 +2103,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.name-suffix`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The person's [name suffix](https://en.wikipedia.org/wiki/Suffix_(name)), e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 - **usage**:<br><br>
@@ -2415,7 +2415,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.abbreviation`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The abbreviation of a work.
 - **usage**:<br><br>
@@ -2432,7 +2432,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.reference.abstract`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The abstract of the work.
     - If the work is a journal paper or other academic work: The abstract of the work.
@@ -2527,7 +2527,7 @@ authors:
 
 ### `definitions.reference.collection-title`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The title of a collection or proceedings.
 - **usage**:<br><br>
@@ -2544,7 +2544,7 @@ authors:
 
 ### `definitions.reference.collection-type`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The type of a collection.
 - **usage**:<br><br>
@@ -2620,7 +2620,7 @@ authors:
 
 ### `definitions.reference.copyright`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The copyright information pertaining to the work.
 - **usage**:<br><br>
@@ -2637,7 +2637,7 @@ authors:
 
 ### `definitions.reference.data-type`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The data type of a data set.
 - **usage**:<br><br>
@@ -2673,7 +2673,7 @@ authors:
 
 ### `definitions.reference.database`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The name of the database where a work was accessed/is stored.
 - **usage**:<br><br>
@@ -2758,7 +2758,7 @@ authors:
 
 ### `definitions.reference.department`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The department where a work has been produced.
 - **usage**:<br><br>
@@ -2792,7 +2792,7 @@ authors:
 
 ### `definitions.reference.edition`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The edition of the work.
 - **usage**:<br><br>
@@ -2855,7 +2855,7 @@ authors:
 
 ### `definitions.reference.end`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `integer`
+- **type**: [strictish string](#definitionsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The end page of the work.
 - **usage**:<br><br>
@@ -2882,7 +2882,7 @@ authors:
 
 ### `definitions.reference.entry`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: An entry in the collection that constitutes the work.
 - **usage**:<br><br>
@@ -2899,7 +2899,7 @@ authors:
 
 ### `definitions.reference.filename`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The name of the electronic file containing the work.
 - **usage**:<br><br>
@@ -2916,7 +2916,7 @@ authors:
 
 ### `definitions.reference.format`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The format in which a work is represented.
 - **usage**:<br><br>
@@ -3027,7 +3027,7 @@ authors:
 
 ### `definitions.reference.issue`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `number`
+- **type**: [strictish string](#definitionsstrictish-string) or `number`
 - **required**: `false`
 - **description**: The issue of a periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3054,7 +3054,7 @@ authors:
 
 ### `definitions.reference.issue-date`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The publication date of the issue of a periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3081,7 +3081,7 @@ authors:
 
 ### `definitions.reference.issue-title`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The name of the issue of a periodical in which the work appeared.
 - **usage**:<br><br>
@@ -3098,7 +3098,7 @@ authors:
 
 ### `definitions.reference.journal`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The name of the journal/magazine/newspaper/periodical where the work was published.
 - **usage**:<br><br>
@@ -3115,7 +3115,7 @@ authors:
 
 ### `definitions.reference.keywords`
 
-- **type**: Array of [nonempty `string`](#yaml-strings)
+- **type**: Array of [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: Keywords pertaining to the work.
 - **usage**:<br><br>
@@ -3208,7 +3208,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.loc-end`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `integer`
+- **type**: [strictish string](#definitionsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work ends.
 - **usage**:<br><br>
@@ -3235,7 +3235,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.loc-start`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `integer`
+- **type**: [strictish string](#definitionsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work starts.
 - **usage**:<br><br>
@@ -3281,7 +3281,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.medium`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The medium of the work.
 - **usage**:<br><br>
@@ -3337,7 +3337,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.nihmsid`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The [NIHMSID](https://web.archive.org/web/20210802210057/https://www.ncbi.nlm.nih.gov/pmc/about/public-access-info/) of a work.
 - **usage**:<br><br>
@@ -3354,7 +3354,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.notes`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: Notes pertaining to the work. Note that this key should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not others (e.g., a software index).
 - **usage**:<br><br>
@@ -3408,7 +3408,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.number-volumes`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `integer`
+- **type**: [strictish string](#definitionsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The number of volumes making up the collection in which the work has been published.
 - **usage**:<br><br>
@@ -3435,7 +3435,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.pages`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `integer`
+- **type**: [strictish string](#definitionsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The number of pages of the work.
 - **usage**:<br><br>
@@ -3593,7 +3593,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.scope`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The scope of the reference, e.g., the section of the work it adheres to.
 - **usage**:<br><br>
@@ -3670,7 +3670,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.start`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `integer`
+- **type**: [strictish string](#definitionsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The start page of the work.
 - **usage**:<br><br>
@@ -3720,7 +3720,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.term`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The term being referenced if the work is a dictionary or encyclopedia.
 - **usage**:<br><br>
@@ -3737,7 +3737,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.thesis-type`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The type of the thesis that is the work.
 - **usage**:<br><br>
@@ -3754,7 +3754,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.title`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `true`
 - **description**: The title of the work.
 - **usage**:<br><br>
@@ -3890,7 +3890,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.volume`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `integer`
+- **type**: [strictish string](#definitionsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The volume of the periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3917,7 +3917,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.volume-title`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: `false`
 - **description**: The title of the volume in which the work appeared.
 - **usage**:<br><br>
@@ -3934,7 +3934,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.year`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `integer`
+- **type**: [strictish string](#definitionsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The year in which a work has been published.
 - **usage**:<br><br>
@@ -3961,7 +3961,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.year-original`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `integer`
+- **type**: [strictish string](#definitionsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The year of the original publication.
 - **usage**:<br><br>
@@ -3988,7 +3988,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.region`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: A region.
 - **usage**:<br><br>
@@ -3996,6 +3996,16 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
     authors:
       - name: "The Research Software Project"
         region: Renfrewshire
+    ```
+
+### `definitions.strictish-string`
+
+- **type**: `string` with pattern `"^(\\S+)( \\S+)*$"`
+- **required**: N/A
+- **description**: Nonempty string without any leading spaces, trailing spaces or double spaces.
+- **usage**:<br><br>
+    ```yaml
+    abstract: This is the abstract. It can't have leading spaces, trailing spaces, or doubles spaces.
     ```
 
 ### `definitions.swh-identifier`
@@ -4012,7 +4022,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.tel`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: A telephone number.
 - **usage**:<br><br>
@@ -4030,7 +4040,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.url`
 
-- **type**: [Nonempty `string`](#yaml-strings)
+- **type**: [strictish string](#definitionsstrictish-string)
 - **required**: N/A
 - **description**: A URL. Supported URLs start with one of:
     - `https://`
@@ -4054,15 +4064,15 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.version`
 
-- **type**: [Nonempty `string`](#yaml-strings) or `number`
+- **type**: [strictish string](#definitionsstrictish-string) or `number`
 - **required**: N/A
 - **description**: The version of a work.
 - **usage**:<br><br>
     ```yaml
-    version: "1.2.0"
+    version: "7.2.0"
     ```
     ```yaml
-    version: 1.2
+    version: 7.2
     ```
     ```yaml
     version: "21.10 (Impish Indri)"
