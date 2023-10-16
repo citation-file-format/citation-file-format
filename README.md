@@ -142,7 +142,7 @@ Please read the more detailed [contributing guidelines](CONTRIBUTING.md) and [op
 
 ## License :balance_scale:
 
-Copyright © 2016ff. The Citation File Format Contributors
+Copyright © 2016 - 2023. The Citation File Format Contributors
 
 This work is licensed under a [Creative Commons Attribution 4.0 International (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/legalcode) license.
 
