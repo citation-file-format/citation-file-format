@@ -387,6 +387,9 @@
                         "description": {
                             "$ref": "#/definitions/identifier-description"
                         },
+                        "relation": {
+                            "$ref": "#/definitions/identifier-relation"
+                        },
                         "type": {
                             "enum": [
                                 "doi"
@@ -408,6 +411,9 @@
                     "properties": {
                         "description": {
                             "$ref": "#/definitions/identifier-description"
+                        },
+                        "relation": {
+                            "$ref": "#/definitions/identifier-relation"
                         },
                         "type": {
                             "enum": [
@@ -431,6 +437,9 @@
                         "description": {
                             "$ref": "#/definitions/identifier-description"
                         },
+                        "relation": {
+                            "$ref": "#/definitions/identifier-relation"
+                        },
                         "type": {
                             "enum": [
                                 "swh"
@@ -452,6 +461,9 @@
                     "properties": {
                         "description": {
                             "$ref": "#/definitions/identifier-description"
+                        },
+                        "relation": {
+                            "$ref": "#/definitions/identifier-relation"
                         },
                         "type": {
                             "enum": [
@@ -480,6 +492,50 @@
                 "The identifier provided by Archival Repository, which points to this version of the software."
             ],
             "minLength": 1,
+            "type": "string"
+        },
+        "identifier-relation": {
+            "description": "How an item from the identifiers is related to the root document using DataCite 4.4 terminology",
+            "enum": [
+                "Cites",
+                "Compiles",
+                "Continues",
+                "Describes",
+                "Documents",
+                "HasMetadata",
+                "HasPart",
+                "HasVersion",
+                "IsCitedBy",
+                "IsCompiledBy",
+                "IsContinuedBy",
+                "IsDerivedFrom",
+                "IsDescribedBy",
+                "IsDocumentedBy",
+                "IsIdenticalTo",
+                "IsMetadataFor",
+                "IsNewVersionOf",
+                "IsObsoletedBy",
+                "IsOriginalFormOf",
+                "IsPartOf",
+                "IsPreviousVersionOf",
+                "IsPublishedIn",
+                "IsReferencedBy",
+                "IsRequiredBy",
+                "IsReviewedBy",
+                "IsSourceOf",
+                "IsSupplementedBy",
+                "IsSupplementTo",
+                "IsVariantFormOf",
+                "IsVersionOf",
+                "Obsoletes",
+                "References",
+                "Requires",
+                "Reviews"
+            ],
+            "examples": [
+                "Documents",
+                "IsPartOf"
+            ],
             "type": "string"
         },
         "license": {
