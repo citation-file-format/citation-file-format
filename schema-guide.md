@@ -1899,7 +1899,7 @@ authors:
     - `ZPL-2.0`
     - `ZPL-2.1`
 - **required**: N/A
-- **description**: [SPDX identifier](https://spdx.dev/ids/) for the license under which a work is made available. The list of identifiers originates from https://github.com/spdx/license-list-data/blob/bd8e963a41b13524b2ccb67f9335d2dd397c378e/json/licenses.json.
+- **description**: [SPDX identifier](https://spdx.dev/ids/) for the license under which a work is made available. The list of identifiers originates from https://raw.githubusercontent.com/spdx/license-list-data/e38c53a9c448a999f3ef772c0e019eb4dd2b0e2a/json/licenses.json.
 - **usage**:<br><br>
     ```yaml
     license: Apache-2.0
