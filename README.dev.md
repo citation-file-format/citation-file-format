@@ -61,3 +61,12 @@ tests/validate.py::test[./tests/1.0.3/software-executable/CITATION.cff] PASSED  
 ```
 
 surrounded with some additional information messages.
+
+## Publishing
+
+The following is a non-exhaustive todo list when preparing a new release of the Citation File Format.
+
+1. Verify that all contributors who want to be acknowledged have been included as `contributors` in `CITATION.cff`
+2. Verify that the version strings are updated throughout the code base. Be careful with batch-changing the version string
+   (e.g. with `sed`), because maybe not all version strings should be bumped, it may depend on context.
+3. Verify that the tests pass on a fresh download & venv & install & pytest
