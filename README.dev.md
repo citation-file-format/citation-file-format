@@ -10,11 +10,9 @@ rejected as expected.
 
 ## Dependencies
 
-- Python 3.6 or higher
-- [cffconvert](https://pypi.org/project/cffconvert/) version 1.0.0 or higher
-- [pytest](https://pypi.org/project/pytest/)
+- Python 3.7 or higher
 
-You can install `cffconvert` and `pytest` using the `requirements.txt` file from
+You can install the development dependencies using the `requirements.txt` file from
 this directory by entering the following command:
 
     python3 -m pip install -r requirements.txt
