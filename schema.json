@@ -1843,6 +1843,18 @@
             "$ref": "#/$defs/strictish-string",
             "description": "A region."
         },
+        "ror": {
+            "$comment": "Regex from 'https://github.com/ror-community/ror-schema/blob/a985c6e97293c0ebcc50aae89a2092c557c1dbec/ror_schema_v2_0.json#L116'",
+            "description": "An identifier for a research organization. See https://ror.org/ for more information.",
+            "examples": [
+                "04bwf3e34",
+                "00rbjv475"
+            ],
+            "minLength": 9,
+            "maxLength": 9,
+            "pattern": "^0[0-9|a-z]{8}$",
+            "type": "string"
+        },
         "strictish-string": {
             "description": "String of length greater than 1 character, with a regular expression to avoid leading spaces, trailing spaces, or middle double spaces",
             "minLength": 1,
