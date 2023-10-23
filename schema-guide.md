@@ -565,6 +565,7 @@ authors:
 - [`definitions.post-code`](#definitionspost-code)
 - [`definitions.reference`](#definitionsreference) (object)
 - [`definitions.region`](#definitionsregion)
+- [`definitions.ror`](#definitionsror)
 - [`definitions.swh-identifier`](#definitionsswh-identifier)
 - [`definitions.tel`](#definitionstel)
 - [`definitions.url`](#definitionsurl)
@@ -961,6 +962,7 @@ authors:
     - [`orcid`](#definitionsentityorcid)
     - [`post-code`](#definitionsentitypost-code)
     - [`region`](#definitionsentityregion)
+    - [`ror`](#definitionsentityror)
     - [`tel`](#definitionsentitytel)
     - [`website`](#definitionsentitywebsite)
 - **required**: N/A
@@ -1175,6 +1177,20 @@ authors:
     authors:
       - name: "The Research Software Project"
         post-code: "90210"
+    ```
+
+### `definitions.entity.ror`
+
+- **type**: [`definitions.ror`](#definitionsror).
+- **required**: `false`
+- **description**: The entity's Research Organization Registry identifier, see https://ror.org.
+- **usage**:<br><br>
+    ```yaml
+    authors:
+    - name: German Aerospace Center
+      ror: 04bwf3e34
+    - name: Netherlands eScience Center
+      ror: 00rbjv475
     ```
 
 ### `definitions.entity.region`
@@ -3996,6 +4012,20 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
     authors:
       - name: "The Research Software Project"
         region: Renfrewshire
+    ```
+
+### `definitions.ror`
+
+- **type**: string of length 9 with pattern `^0[0-9|a-z]{8}$`
+- **required**: `false`
+- **description**: The entity's Research Organization Registry identifier, see https://ror.org.
+- **usage**:<br><br>
+    ```yaml
+    authors:
+    - name: German Aerospace Center
+      ror: 04bwf3e34
+    - name: Netherlands eScience Center
+      ror: 00rbjv475
     ```
 
 ### `definitions.strictish-string`
