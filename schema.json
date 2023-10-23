@@ -351,6 +351,10 @@
                     "$ref": "#/$defs/region",
                     "description": "The entity's region."
                 },
+                "ror": {
+                    "$ref": "#/$defs/ror",
+                    "description": "The entity's Research Organization Registry (ror) identifier."
+                },
                 "tel": {
                     "$ref": "#/$defs/tel",
                     "description": "The entity's telephone number."
