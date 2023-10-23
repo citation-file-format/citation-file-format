@@ -1854,8 +1854,8 @@
                 "04bwf3e34",
                 "00rbjv475"
             ],
-            "minLength": 9,
             "maxLength": 9,
+            "minLength": 9,
             "pattern": "^0[0-9|a-z]{8}$",
             "type": "string"
         },
