@@ -21,14 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Narrowed definition of ORCID strings to raise error when trailing characters, notably whitespace, are used. Issue [#392](https://github.com/citation-file-format/citation-file-format/issues/392); PR [#467](https://github.com/citation-file-format/citation-file-format/pull/467).
 - Added regex to the schema to help avoid leading spaces, trailing spaces, and double spaces in many string fields. Issue [#380](https://github.com/citation-file-format/citation-file-format/issues/380); PR [#466](https://github.com/citation-file-format/citation-file-format/pull/466).
 
-### Deprecated
-
-N/A
-
-### Removed
-
-N/A
-
 ### Fixed
 
 - Removed uniqueness requirement on instances of `person`. Issue [#472](https://github.com/citation-file-format/citation-file-format/issues/472); PR [#482](https://github.com/citation-file-format/citation-file-format/pull/482). Affected keys are:
@@ -45,14 +37,6 @@ N/A
 - Changed the regular expression for PMC ID to allow 8 digits in addition to the preexisting 7. Issue [#443](https://github.com/citation-file-format/citation-file-format/issues/443); PR [#469](https://github.com/citation-file-format/citation-file-format/pull/469)
 - Instances of `person` now explicitly require one of `alias`, `email`, `given-names`, `family-names` or `orcid` to avoid accidentally having empty person objects (notably, `authors`). PR [#462](https://github.com/citation-file-format/citation-file-format/pull/462)
 - Fixed the regular expression for ISBN (should only affect ISBN10 strings that didn't have any dashes or spaces, whose check digit is `X`). Issue [#323](https://github.com/citation-file-format/citation-file-format/issues/323); PR [#335](https://github.com/citation-file-format/citation-file-format/pull/335); PR [#337](https://github.com/citation-file-format/citation-file-format/pull/337)
-
-### Security
-
-N/A
-
-<!--- Updated example testing to use cffconvert 2.0.0 (or newer) validation.-->
-<!--- Updated Python versions that run in CI to remove end-of-life versions and added newer releases.-->
-<!--- Replaced real ORCID with example ORCID from https://orcid.org/1234-5678-9101-1121.-->
 
 ## [1.2.0] - 2021-05-31
 
