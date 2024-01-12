@@ -3483,7 +3483,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.pmcid`
 
-- **type**: `string` with pattern [`^PMC[0-9]{7}$`](https://regex101.com/library/EsU1QH)
+- **type**: `string` with pattern [`^PMC[0-9]{7,8}$`](https://regex101.com/library/lMDdvW)
 - **required**: `false`
 - **description**: The [PMCID](https://web.archive.org/web/20210802210057/https://www.ncbi.nlm.nih.gov/pmc/about/public-access-info/) of a work.
 - **usage**:<br><br>
