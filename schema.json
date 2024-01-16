@@ -1852,7 +1852,7 @@
             "description": "An identifier for a research organization. See https://ror.org/ for more information.",
             "examples": [
                 "https://ror.org/04bwf3e34",
-                "00rbjv475"
+                "https://ror.org/00rbjv475"
             ],
             "maxLength": 9,
             "minLength": 9,
