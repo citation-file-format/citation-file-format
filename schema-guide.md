@@ -565,6 +565,7 @@ authors:
 - [`definitions.post-code`](#definitionspost-code)
 - [`definitions.reference`](#definitionsreference) (object)
 - [`definitions.region`](#definitionsregion)
+- [`definitions.strictish-string`](#definitionsstrictish-string)
 - [`definitions.swh-identifier`](#definitionsswh-identifier)
 - [`definitions.tel`](#definitionstel)
 - [`definitions.url`](#definitionsurl)
