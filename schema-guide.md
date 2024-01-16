@@ -2041,7 +2041,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.country`
 
-- **type**: [`definitions.country`](#definitioncountry)
+- **type**: [`definitions.country`](#definitionscountry)
 - **required**: `false`
 - **description**: The person's country.
 - **usage**:<br><br>
