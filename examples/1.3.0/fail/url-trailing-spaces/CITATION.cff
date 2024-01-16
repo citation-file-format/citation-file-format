@@ -1,0 +1,6 @@
+authors:
+- alias: firstauthor
+cff-version: 1.3.0
+message: The message
+title: The title
+url: 'https://somewhere.org '

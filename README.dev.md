@@ -10,11 +10,9 @@ rejected as expected.
 
 ## Dependencies
 
-- Python 3.6 or higher
-- [cffconvert](https://pypi.org/project/cffconvert/) version 1.0.0 or higher
-- [pytest](https://pypi.org/project/pytest/)
+- Python 3.7 or higher
 
-You can install `cffconvert` and `pytest` using the `requirements.txt` file from
+You can install the development dependencies using the `requirements.txt` file from
 this directory by entering the following command:
 
     python3 -m pip install -r requirements.txt
@@ -61,3 +59,12 @@ tests/validate.py::test[./tests/1.0.3/software-executable/CITATION.cff] PASSED  
 ```
 
 surrounded with some additional information messages.
+
+## Publishing
+
+The following is a non-exhaustive todo list when preparing a new release of the Citation File Format.
+
+1. Verify that all contributors who want to be acknowledged have been included as `contributors` in `CITATION.cff`
+2. Verify that the version strings are updated throughout the code base. Be careful with batch-changing the version string
+   (e.g. with `sed`), because maybe not all version strings should be bumped, it may depend on context.
+3. Verify that the tests pass on a fresh download & venv & install & pytest
