@@ -355,6 +355,10 @@
                     "$ref": "#/$defs/region",
                     "description": "The entity's region."
                 },
+                "ror": {
+                    "$ref": "#/$defs/ror",
+                    "description": "The entity's Research Organization Registry (ROR) identifier."
+                },
                 "tel": {
                     "$ref": "#/$defs/tel",
                     "description": "The entity's telephone number."
@@ -1846,6 +1850,18 @@
         "region": {
             "$ref": "#/$defs/strictish-string",
             "description": "A region."
+        },
+        "ror": {
+            "$comment": "Regex from 'https://github.com/ror-community/ror-schema/blob/a985c6e97293c0ebcc50aae89a2092c557c1dbec/ror_schema_v2_0.json#L116'",
+            "description": "An identifier for a research organization. See https://ror.org/ for more information.",
+            "examples": [
+                "https://ror.org/04bwf3e34",
+                "https://ror.org/00rbjv475"
+            ],
+            "maxLength": 25,
+            "minLength": 25,
+            "pattern": "^https://ror.org/0[0-9|a-z]{8}$",
+            "type": "string"
         },
         "strictish-string": {
             "description": "String of length greater than 1 character, with a regular expression to avoid leading spaces, trailing spaces, or middle double spaces",
