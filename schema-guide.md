@@ -4016,7 +4016,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.ror`
 
-- **type**: string of length 9 with pattern `^0[0-9|a-z]{8}$`
+- **type**: string of length 25 with pattern `^https://ror.org/0[0-9|a-z]{8}$`
 - **required**: `false`
 - **description**: The entity's Research Organization Registry identifier, see https://ror.org.
 - **usage**:<br><br>
