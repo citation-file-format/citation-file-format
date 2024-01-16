@@ -565,6 +565,7 @@ authors:
 - [`definitions.post-code`](#definitionspost-code)
 - [`definitions.reference`](#definitionsreference) (object)
 - [`definitions.region`](#definitionsregion)
+- [`definitions.strictish-string`](#definitionsstrictish-string)
 - [`definitions.swh-identifier`](#definitionsswh-identifier)
 - [`definitions.tel`](#definitionstel)
 - [`definitions.url`](#definitionsurl)
@@ -949,6 +950,7 @@ authors:
 
 - **type**: `object` with the following keys:
     - [`address`](#definitionsentityaddress)
+    - [`affiliation`](#definitionsentityaffiliation)
     - [`alias`](#definitionsentityalias)
     - [`city`](#definitionsentitycity)
     - [`country`](#definitionsentitycountry)
@@ -1028,6 +1030,18 @@ authors:
     authors:
       - address: "742 Evergreen Terrace"
         name: "The Research Software Project"
+    ```
+
+### `definitions.entity.affiliation`
+
+- **type**: [strictish string](#definitionsstrictish-string)
+- **required**: `false`
+- **description**: The entity's affiliation.
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - name: "The Tool's Dev Team"
+        affiliation: "German Aerospace Center (DLR)"
     ```
 
 ### `definitions.entity.alias`
@@ -2027,7 +2041,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.country`
 
-- **type**: [`definitions.country`](#definitioncountry)
+- **type**: [`definitions.country`](#definitionscountry)
 - **required**: `false`
 - **description**: The person's country.
 - **usage**:<br><br>
@@ -3483,7 +3497,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.reference.pmcid`
 
-- **type**: `string` with pattern [`^PMC[0-9]{7}$`](https://regex101.com/library/EsU1QH)
+- **type**: `string` with pattern [`^PMC[0-9]{7,8}$`](https://regex101.com/library/lMDdvW)
 - **required**: `false`
 - **description**: The [PMCID](https://web.archive.org/web/20210802210057/https://www.ncbi.nlm.nih.gov/pmc/about/public-access-info/) of a work.
 - **usage**:<br><br>
