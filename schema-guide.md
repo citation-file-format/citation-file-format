@@ -949,6 +949,7 @@ authors:
 
 - **type**: `object` with the following keys:
     - [`address`](#definitionsentityaddress)
+    - [`affiliation`](#definitionsentityaffiliation)
     - [`alias`](#definitionsentityalias)
     - [`city`](#definitionsentitycity)
     - [`country`](#definitionsentitycountry)
@@ -1028,6 +1029,18 @@ authors:
     authors:
       - address: "742 Evergreen Terrace"
         name: "The Research Software Project"
+    ```
+
+### `definitions.entity.affiliation`
+
+- **type**: [strictish string](#definitionsstrictish-string)
+- **required**: `false`
+- **description**: The entity's affiliation.
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - name: "The Tool's Dev Team"
+        affiliation: "German Aerospace Center (DLR)"
     ```
 
 ### `definitions.entity.alias`

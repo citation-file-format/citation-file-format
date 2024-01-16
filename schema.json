@@ -303,6 +303,10 @@
                     "$ref": "#/$defs/address",
                     "description": "The entity's address."
                 },
+                "affiliation": {
+                    "$ref": "#/$defs/strictish-string",
+                    "description": "The entity's affiliation."
+                },
                 "alias": {
                     "$ref": "#/$defs/alias",
                     "description": "The entity's alias."
@@ -1192,7 +1196,7 @@
                 },
                 "affiliation": {
                     "$ref": "#/$defs/strictish-string",
-                    "description": "The person's affilitation."
+                    "description": "The person's affiliation."
                 },
                 "alias": {
                     "$ref": "#/$defs/alias",
