@@ -4044,7 +4044,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 ### `definitions.strictish-string`
 
-- **type**: `string` with pattern `"^(\\S+)( \\S+)*$"`
+- **type**: `string` with pattern [`"^(\\S+)( \\S+)*$"`](https://regex101.com/r/SyW84W/1)
 - **required**: N/A
 - **description**: Nonempty string without any leading spaces, trailing spaces or double spaces.
 - **usage**:<br><br>
