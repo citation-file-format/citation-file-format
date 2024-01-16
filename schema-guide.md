@@ -1190,7 +1190,7 @@ authors:
     - name: German Aerospace Center
       ror: https://ror.org/04bwf3e34
     - name: Netherlands eScience Center
-      ror: 00rbjv475
+      ror: https://ror.org/00rbjv475
     ```
 
 ### `definitions.entity.region`
