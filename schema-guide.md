@@ -1926,7 +1926,7 @@ authors:
 
 ### `definitions.orcid`
 
-- **type**: `uri` with pattern [`https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}`](https://regex101.com/library/wvvVYE)
+- **type**: `uri` with pattern [`^https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}$`](https://regex101.com/r/GLGGDO/1).
 - **required**: N/A
 - **description**: An [ORCID](https://orcid.org) identifier.
 - **usage**:<br><br>
