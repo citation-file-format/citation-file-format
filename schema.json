@@ -357,7 +357,7 @@
                 },
                 "ror": {
                     "$ref": "#/$defs/ror",
-                    "description": "The entity's Research Organization Registry (ror) identifier."
+                    "description": "The entity's Research Organization Registry (ROR) identifier."
                 },
                 "tel": {
                     "$ref": "#/$defs/tel",
