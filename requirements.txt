@@ -2,4 +2,3 @@ cffconvert
 pytest
 jsonschema
 ruamel.yaml
-bump2version

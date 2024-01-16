@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed: instances of `person` now explicitly require one of `alias`, `email`, `given-names`, `family-names` or `orcid` to avoid accidentally having empty person objects (notably, `authors`). PR [#462](https://github.com/citation-file-format/citation-file-format/pull/462)
+- Updated regex for ORCIDs to avoid invalid additional characters. Issue [#392](https://github.com/citation-file-format/citation-file-format/issues/392), PR [#467](https://github.com/citation-file-format/citation-file-format/pull/467)
+- Changed the regular expression for URLs to disallow trailing whitespaces. PR [#468](https://github.com/citation-file-format/citation-file-format/pull/468)
 - Fixed the regular expression for ISBN (should only affect ISBN10 strings that didn't have any dashes or spaces, whose check digit is `X`). Issue [#323](https://github.com/citation-file-format/citation-file-format/issues/323); PR [#335](https://github.com/citation-file-format/citation-file-format/pull/335); PR [#337](https://github.com/citation-file-format/citation-file-format/pull/337)
 - Fixed the regular expression for PMC ID (which can now have 7 or 8 digits). Issue [#443](https://github.com/citation-file-format/citation-file-format/issues/443); PR [#469](https://github.com/citation-file-format/citation-file-format/pull/469)
 

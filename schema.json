@@ -303,6 +303,10 @@
                     "$ref": "#/$defs/address",
                     "description": "The entity's address."
                 },
+                "affiliation": {
+                    "$ref": "#/$defs/strictish-string",
+                    "description": "The entity's affiliation."
+                },
                 "alias": {
                     "$ref": "#/$defs/alias",
                     "description": "The entity's alias."
@@ -1156,7 +1160,7 @@
         "orcid": {
             "description": "Identifier for an author, see https://orcid.org.",
             "format": "uri",
-            "pattern": "https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}",
+            "pattern": "^https://orcid\\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}$",
             "type": "string"
         },
         "person": {
@@ -1196,7 +1200,7 @@
                 },
                 "affiliation": {
                     "$ref": "#/$defs/strictish-string",
-                    "description": "The person's affilitation."
+                    "description": "The person's affiliation."
                 },
                 "alias": {
                     "$ref": "#/$defs/alias",
@@ -1301,7 +1305,7 @@
                     },
                     "minItems": 1,
                     "type": "array",
-                    "uniqueItems": true
+                    "uniqueItems": false
                 },
                 "collection-doi": {
                     "$ref": "#/$defs/doi",
@@ -1336,7 +1340,7 @@
                     },
                     "minItems": 1,
                     "type": "array",
-                    "uniqueItems": true
+                    "uniqueItems": false
                 },
                 "copyright": {
                     "$ref": "#/$defs/strictish-string",
@@ -1396,7 +1400,7 @@
                     },
                     "minItems": 1,
                     "type": "array",
-                    "uniqueItems": true
+                    "uniqueItems": false
                 },
                 "editors-series": {
                     "description": "The editor(s) of a series in which a work has been published.",
@@ -1412,7 +1416,7 @@
                     },
                     "minItems": 1,
                     "type": "array",
-                    "uniqueItems": true
+                    "uniqueItems": false
                 },
                 "end": {
                     "description": "The end page of the work.",
@@ -1641,7 +1645,7 @@
                     },
                     "minItems": 1,
                     "type": "array",
-                    "uniqueItems": true
+                    "uniqueItems": false
                 },
                 "repository": {
                     "$ref": "#/$defs/url",
@@ -1684,7 +1688,7 @@
                     },
                     "minItems": 1,
                     "type": "array",
-                    "uniqueItems": true
+                    "uniqueItems": false
                 },
                 "start": {
                     "description": "The start page of the work.",
@@ -1735,7 +1739,7 @@
                     },
                     "minItems": 1,
                     "type": "array",
-                    "uniqueItems": true
+                    "uniqueItems": false
                 },
                 "type": {
                     "description": "The type of the work.",
@@ -1884,7 +1888,7 @@
         },
         "url": {
             "format": "uri",
-            "pattern": "^(https|http|ftp|sftp)://.+",
+            "pattern": "^(https|http|ftp|sftp)://\\S+$",
             "type": "string"
         },
         "version": {
@@ -1921,7 +1925,7 @@
             },
             "minItems": 1,
             "type": "array",
-            "uniqueItems": true
+            "uniqueItems": false
         },
         "cff-version": {
             "description": "The version of CFF used for providing the citation metadata.",
@@ -1948,7 +1952,7 @@
             },
             "minItems": 1,
             "type": "array",
-            "uniqueItems": true
+            "uniqueItems": false
         },
         "contributors": {
             "description": "The contributor(s) to a work.",
@@ -1964,7 +1968,7 @@
             },
             "minItems": 1,
             "type": "array",
-            "uniqueItems": true
+            "uniqueItems": false
         },
         "date-released": {
             "$ref": "#/$defs/date",

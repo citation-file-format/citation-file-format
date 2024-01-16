@@ -566,6 +566,7 @@ authors:
 - [`definitions.reference`](#definitionsreference) (object)
 - [`definitions.region`](#definitionsregion)
 - [`definitions.ror`](#definitionsror)
+- [`definitions.strictish-string`](#definitionsstrictish-string)
 - [`definitions.swh-identifier`](#definitionsswh-identifier)
 - [`definitions.tel`](#definitionstel)
 - [`definitions.url`](#definitionsurl)
@@ -950,6 +951,7 @@ authors:
 
 - **type**: `object` with the following keys:
     - [`address`](#definitionsentityaddress)
+    - [`affiliation`](#definitionsentityaffiliation)
     - [`alias`](#definitionsentityalias)
     - [`city`](#definitionsentitycity)
     - [`country`](#definitionsentitycountry)
@@ -1030,6 +1032,18 @@ authors:
     authors:
       - address: "742 Evergreen Terrace"
         name: "The Research Software Project"
+    ```
+
+### `definitions.entity.affiliation`
+
+- **type**: [strictish string](#definitionsstrictish-string)
+- **required**: `false`
+- **description**: The entity's affiliation.
+- **usage**:<br><br>
+    ```yaml
+    authors:
+      - name: "The Tool's Dev Team"
+        affiliation: "German Aerospace Center (DLR)"
     ```
 
 ### `definitions.entity.alias`
@@ -1928,7 +1942,7 @@ authors:
 
 ### `definitions.orcid`
 
-- **type**: `uri` with pattern [`https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}`](https://regex101.com/library/wvvVYE)
+- **type**: `uri` with pattern [`^https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}$`](https://regex101.com/r/GLGGDO/1).
 - **required**: N/A
 - **description**: An [ORCID](https://orcid.org) identifier.
 - **usage**:<br><br>
@@ -2043,7 +2057,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.country`
 
-- **type**: [`definitions.country`](#definitioncountry)
+- **type**: [`definitions.country`](#definitionscountry)
 - **required**: `false`
 - **description**: The person's country.
 - **usage**:<br><br>
