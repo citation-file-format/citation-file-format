@@ -1854,8 +1854,8 @@
                 "https://ror.org/04bwf3e34",
                 "https://ror.org/00rbjv475"
             ],
-            "maxLength": 9,
-            "minLength": 9,
+            "maxLength": 25,
+            "minLength": 25,
             "pattern": "^https://ror.org/0[0-9|a-z]{8}$",
             "type": "string"
         },
