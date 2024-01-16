@@ -1,4 +1,3 @@
-import pytest
 import os
 import json
 import jsonschema
