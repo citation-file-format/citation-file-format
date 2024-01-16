@@ -1,6 +1,10 @@
 name: links
 
-on: push
+on: 
+  workflow_dispatch:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '17 3 * * *'  
 
 permissions:
   contents: read
