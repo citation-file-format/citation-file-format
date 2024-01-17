@@ -41,7 +41,7 @@ def unindent_snippets(lines, starts, ends, indents):
     snippets = []
     for start, end, indent in zip(starts, ends, indents):
         snippet = [line[indent:] for line in lines[start - 1:end]]
-        snippets.append(snippet)
+        snippets.append("".join(snippet))
     return snippets
 
 
@@ -50,7 +50,7 @@ def get_snippets():
     starts, indents = find_snippet_starts(lines)
     ends = find_snippet_ends(lines, nlines, starts, indents)
     snippets = unindent_snippets(lines, starts, ends, indents)
-    return [pytest.param("".join(snippet), id=f"L{start}-L{end}") for start, end, snippet in zip(starts, ends, snippets)]
+    return [pytest.param(snippet, id=f"L{start}-L{end}") for start, end, snippet in zip(starts, ends, snippets)]
 
 
 @pytest.fixture
