@@ -885,6 +885,7 @@ authors:
     references:
       - conference:
           country: DE
+          name: The conference name
         type: conference
     ```
 
@@ -922,6 +923,7 @@ authors:
       - conference:
             date-end: "2020-02-02"
             date-start: "2020-01-31"
+            name: The conference name
         type: conference
     ```
 
