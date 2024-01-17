@@ -12,7 +12,7 @@ def get_filenames():
         else:
             raise Exception("Unexpected clause")
 
-    failing = (get_project_root() / "tests" / "examples-failing").glob("**/*.cff")
-    passing = (get_project_root() / "tests" / "examples-passing").glob("**/*.cff")
+    failing = (get_project_root() / "tests" / "examples-failing").glob("**/CITATION.cff")
+    passing = (get_project_root() / "tests" / "examples-passing").glob("**/CITATION.cff")
     filenames = chain(passing, failing)
     return [pytest.param(f, id=get_id(f)) for f in filenames]
