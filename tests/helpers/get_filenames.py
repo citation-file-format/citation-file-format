@@ -1,5 +1,6 @@
-from pathlib import Path
+from itertools import chain
 import pytest
+from tests.helpers.get_project_root import get_project_root
 
 
 def get_filenames():
@@ -10,5 +11,8 @@ def get_filenames():
             return f"fail:{f.parts[-2]}"
         else:
             raise Exception("Unexpected clause")
-    filenames = Path(__file__).parent.parent.glob("**/*.cff")
+
+    failing = (get_project_root() / "tests" / "examples-failing").glob("**/*.cff")
+    passing = (get_project_root() / "tests" / "examples-passing").glob("**/*.cff")
+    filenames = chain(passing, failing)
     return [pytest.param(f, id=get_id(f)) for f in filenames]

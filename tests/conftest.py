@@ -1,6 +1,6 @@
 import json
 import pytest
-from tests.helpers import get_project_root
+from tests.helpers.get_project_root import get_project_root
 
 
 @pytest.fixture

@@ -3,7 +3,7 @@ import jsonschema
 import pytest
 from copy import deepcopy
 from ruamel.yaml import YAML
-from tests.helpers import get_project_root
+from tests.helpers.get_project_root import get_project_root
 
 
 def read_lines():

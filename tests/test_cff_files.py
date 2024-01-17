@@ -1,7 +1,7 @@
 import jsonschema
 import pytest
-from tests.helpers import get_filenames
-from tests.helpers import loadcff
+from tests.helpers.get_filenames import get_filenames
+from tests.helpers.loadcff import loadcff
 
 
 @pytest.mark.parametrize("filename", get_filenames())
