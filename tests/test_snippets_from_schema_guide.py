@@ -1,6 +1,7 @@
 import re
 import jsonschema
 import pytest
+from copy import deepcopy
 from ruamel.yaml import YAML
 from tests.helpers import get_project_root
 
@@ -53,26 +54,54 @@ def get_snippets():
 
 
 @pytest.fixture
-def cff_minimal():
+def cff_required():
     return {
-        "authors": [
-            {
-                "name": "The name"
-            }
-        ],
-        "cff-version": "1.3.0",
-        "message": "The message",
-        "title": "The title"
+        "root": {
+            "authors": [
+                {
+                    "name": "The author name"
+                }
+            ],
+            "cff-version": "1.3.0",
+            "message": "The message",
+            "title": "The title"
+        },
+        "reference": {
+            "authors": [
+                {
+                    "name": "The reference author name"
+                }
+            ],
+            "title": "The reference title",
+            "type": "generic"
+        }
     }
 
 
 @pytest.mark.parametrize("snippet", get_snippets())
-def test(snippet: str, cff_minimal, schema):
-    yaml = YAML(typ="safe")
-    yaml.constructor.yaml_constructors[u"tag:yaml.org,2002:timestamp"] = yaml.constructor.yaml_constructors[u"tag:yaml.org,2002:str"]
+def test(snippet: str, cff_required, schema):
     if snippet.startswith("# incorrect"):
         pytest.xfail(reason="deliberately incorrect snippet")
+
+    yaml = YAML(typ="safe")
+    yaml.constructor.yaml_constructors[u"tag:yaml.org,2002:timestamp"] = yaml.constructor.yaml_constructors[u"tag:yaml.org,2002:str"]
     cff_loaded = yaml.load(snippet)
-    instance = cff_minimal
-    instance.update(cff_loaded)
+    cff_updated = deepcopy(cff_loaded)
+
+    if "preferred-citation" in cff_updated.keys():
+        preferred_citation = cff_updated.get("preferred-citation")
+        r = deepcopy(cff_required["reference"])
+        r.update(preferred_citation)
+        cff_updated["preferred-citation"] = r
+
+    if "references" in cff_updated.keys():
+        references = cff_updated.get("references", [])
+        for i, reference in enumerate(references):
+            r = deepcopy(cff_required["reference"])
+            r.update(reference)
+            cff_updated["references"][i] = r
+
+    instance = deepcopy(cff_required["root"])
+    instance.update(cff_updated)
+
     jsonschema.validate(instance=instance, schema=schema, format_checker=jsonschema.FormatChecker())
