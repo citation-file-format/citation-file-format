@@ -61,3 +61,5 @@ The following is a non-exhaustive todo list when preparing a new release of the 
 2. Verify that the version strings are updated throughout the code base. Be careful with batch-changing the version string
    (e.g. with `sed`), because maybe not all version strings should be bumped, it may depend on context.
 3. Verify that the tests pass on a fresh download & venv & install & pytest
+4. Manually trigger the link checker
+5. Manually trigger other workflows if relevant
