@@ -1,4 +1,3 @@
-cffconvert
 pytest
 jsonschema
 ruamel.yaml

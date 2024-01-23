@@ -250,14 +250,14 @@ that case, `doi` can be used as shorthand for something like:<br><br>
       - description: "The concept DOI of the work."
         type: doi
         value: 10.5281/zenodo.1003149
-   ```
+    ```
     or
     ```yaml
     identifiers:
       - description: "The versioned DOI of the work."
         type: doi
         value: 10.5281/zenodo.4813122
-   ```
+    ```
 - **usage**:<br><br>
     ```yaml
     doi: 10.5281/zenodo.1003149
@@ -885,6 +885,7 @@ authors:
     references:
       - conference:
           country: DE
+          name: The conference name
         type: conference
     ```
 
@@ -922,6 +923,7 @@ authors:
       - conference:
             date-end: "2020-02-02"
             date-start: "2020-01-31"
+            name: The conference name
         type: conference
     ```
 
@@ -1123,9 +1125,9 @@ authors:
 - **description**: The entity's email address.
 - **usage**:<br><br>
     ```yaml
-  authors:
-    - email: team@research-project.org
-      name: "The Research Software Project"
+    authors:
+      - email: team@research-project.org
+        name: "The Research Software Project"
     ```
 
 ### `definitions.entity.fax`
