@@ -8,7 +8,7 @@ Valid Citation File Format files
 1. are valid according to the Citation File Format schema version 1.3.0 outlined in [schema.json](schema.json);
 1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/)).
 
-<a name="yaml-strings"></a>**String quoting:** Note that in YAML you generally don't need to quote strings.
+**String quoting:** Note that in YAML you generally don't need to quote strings.
 But you should use `"` quotes when a string value
 contains whitespace,
 contains special characters (e.g., any of `:{}[],&*#?|-<>=!%`, or any of `` ` `` and `@` at the beginning),
@@ -1455,7 +1455,7 @@ authors:
 
 ### `definitions.license`
 
-- **type**: (Array of) [`definitions.license-enum`](#definitions.license-enum) objects.
+- **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum) objects.
 - **required**: N/A
 - **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which a work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
