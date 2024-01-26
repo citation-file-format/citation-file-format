@@ -3,7 +3,7 @@ message: Message
 title: Title
 url: https://url.com
 repository-code: https://repourl.com
-date-released: '2018-09-05'
+date-released: 2018-09-05
 commit: Revision 6473.
 version: Internal development version, situated between release 1.1.1 and prospective
   future release 1.2

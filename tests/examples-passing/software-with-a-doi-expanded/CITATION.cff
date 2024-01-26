@@ -10,7 +10,7 @@ authors:
 title: Title
 version: 1.0.4
 doi: 10.1234/abcdef123456
-date-released: '2017-12-18'
+date-released: 2017-12-18
 repository-code: https://repourl.com
 repository-artifact: https://hu.berlin/nexus/mrt
 keywords:

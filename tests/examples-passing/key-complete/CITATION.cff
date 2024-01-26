@@ -64,7 +64,7 @@ contact:
   date-start: '2017-01-01'
   date-end: '2017-01-31'
   location: The team garage
-date-released: '2017-12-11'
+date-released: 2017-12-11
 doi: 10.1234/abcdef123456
 identifiers:
 - type: doi
@@ -103,7 +103,7 @@ preferred-citation:
   database: Database
   date-accessed: '2017-10-31'
   date-downloaded: '2017-10-31'
-  date-released: '2017-10-31'
+  date-released: 2017-10-31
   date-published: '2017-10-31'
   department: Department
   doi: 10.5281/zenodo.1003150
@@ -475,7 +475,7 @@ references:
   database: Database
   date-accessed: '2017-10-31'
   date-downloaded: '2017-10-31'
-  date-released: '2017-10-31'
+  date-released: 2017-10-31
   date-published: '2017-10-31'
   department: Department
   doi: 10.1234/abcdef123456
