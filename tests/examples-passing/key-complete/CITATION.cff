@@ -29,8 +29,8 @@ authors:
   tel: +44(0)141-323 4567
   fax: +44(0)141-323 45678
   website: https://www.entity-project-team.io
-  date-start: '2017-01-01'
-  date-end: '2017-01-31'
+  date-start: 2017-01-01
+  date-end: 2017-01-31
   location: The team garage
 commit: 156a04c74a8a79d40c5d705cddf9d36735feab4d
 contact:
@@ -61,8 +61,8 @@ contact:
   tel: +44(0)141-323 4567
   fax: +44(0)141-323 45678
   website: https://www.entity-project-team.io
-  date-start: '2017-01-01'
-  date-end: '2017-01-31'
+  date-start: 2017-01-01
+  date-end: 2017-01-31
   location: The team garage
 date-released: 2017-12-11
 doi: 10.1234/abcdef123456
@@ -101,10 +101,10 @@ preferred-citation:
   copyright: 2017 Stephan Druskat
   data-type: Data Type
   database: Database
-  date-accessed: '2017-10-31'
+  date-accessed: 2017-10-31
   date-downloaded: '2017-10-31'
   date-released: 2017-10-31
-  date-published: '2017-10-31'
+  date-published: 2017-10-31
   department: Department
   doi: 10.5281/zenodo.1003150
   edition: 2nd edition
@@ -181,8 +181,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   authors:
   - family-names: Real Person
@@ -212,8 +212,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   contact:
   - family-names: Real Person
@@ -243,8 +243,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   database-provider:
     name: Entity Project Team Conference entity
@@ -258,8 +258,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   editors:
   - family-names: Real Person
@@ -289,8 +289,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   editors-series:
   - family-names: Real Person
@@ -320,8 +320,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   institution:
     name: Entity Project Team Conference entity
@@ -335,8 +335,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   location:
     name: Entity Project Team Conference entity
@@ -350,8 +350,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   publisher:
     name: Entity Project Team Conference entity
@@ -365,8 +365,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   recipients:
   - family-names: Real Person
@@ -396,8 +396,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   senders:
   - family-names: Real Person
@@ -427,8 +427,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   translators:
   - family-names: Real Person
@@ -458,8 +458,8 @@ preferred-citation:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
 references:
 - type: book
@@ -473,10 +473,10 @@ references:
   copyright: 2017 Stephan Druskat
   data-type: Data Type
   database: Database
-  date-accessed: '2017-10-31'
+  date-accessed: 2017-10-31
   date-downloaded: '2017-10-31'
   date-released: 2017-10-31
-  date-published: '2017-10-31'
+  date-published: 2017-10-31
   department: Department
   doi: 10.1234/abcdef123456
   edition: 2nd edition
@@ -553,8 +553,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   authors:
   - family-names: Familyname1
@@ -584,8 +584,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   contact:
   - family-names: Familyname1
@@ -615,8 +615,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   database-provider:
     name: Entity Project Team Conference entity
@@ -630,8 +630,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   editors:
   - family-names: Real Person
@@ -661,8 +661,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   editors-series:
   - family-names: Real Person
@@ -692,8 +692,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   institution:
     name: Entity Project Team Conference entity
@@ -707,8 +707,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   location:
     name: Entity Project Team Conference entity
@@ -722,8 +722,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   publisher:
     name: Entity Project Team Conference entity
@@ -737,8 +737,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   recipients:
   - family-names: Real Person
@@ -768,8 +768,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   senders:
   - family-names: Real Person
@@ -799,8 +799,8 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage
   translators:
   - family-names: Real Person
@@ -830,6 +830,6 @@ references:
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
     website: https://www.entity-project-team.io
-    date-start: '2017-01-01'
-    date-end: '2017-01-31'
+    date-start: 2017-01-01
+    date-end: 2017-01-31
     location: The team garage

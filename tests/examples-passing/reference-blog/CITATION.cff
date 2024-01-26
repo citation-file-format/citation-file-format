@@ -14,7 +14,7 @@ references:
   - family-names: Familyname1
     given-names: Givenname1
   title: Title
-  date-published: '2017-09-23'
+  date-published: 2017-09-23
   url: https://url.com
   institution:
     name: Humboldt-Universität zu Berlin

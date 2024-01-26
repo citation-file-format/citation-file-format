@@ -28,8 +28,8 @@ references:
     region: Jarvis Island
     post-code: '12345'
     country: UM
-    date-start: '2017-04-01'
-    date-end: '2017-04-01'
+    date-start: 2017-04-01
+    date-end: 2017-04-01
   start: 42
   end: 45
   doi: 10.1234/abcdef123456

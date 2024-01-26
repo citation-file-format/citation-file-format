@@ -11,8 +11,8 @@ authors:
   region: My region
   tel: 1-34245-7346356-8467
   website: https://my.domain/website/
-  date-start: '2021-05-16'
-  date-end: '2021-05-16'
+  date-start: 2021-05-16
+  date-end: 2021-05-16
   location: somewhere
 - address: My address 44
   affiliation: my affiliation
