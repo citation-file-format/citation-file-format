@@ -4,7 +4,9 @@ authors:
 - family-names: Familyname1
   given-names: Givenname1
   orcid: https://orcid.org/1234-5678-9012-3456
+- family-names: Familyname2
+  given-names: Givenname2
 title: Title
-version: 2.0.4
-date-released: '2017-12-18'
-repository-artifact: https://hu.berlin/nexus/mrt-kickstarter/2.0.4/mrt2-kickstarter.exe
+version: '1.0'
+doi: 10.1234/abcdef123456
+date-released: '2020-05-01'

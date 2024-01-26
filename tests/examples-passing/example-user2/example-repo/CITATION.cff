@@ -3,7 +3,7 @@ message: Message
 title: Title
 url: https://url.com
 repository-code: https://repourl.com
-date-released: '2018-09-05T00:00:00.000Z'
+date-released: '2018-09-05'
 commit: Revision 6473.
 version: Internal development version, situated between release 1.1.1 and prospective
   future release 1.2
@@ -46,6 +46,7 @@ references:
     family-names: Familyname12
   journal: Journal of Chemical Theory and Computation
   volume: 10
-  issue: 10
-  pages: 4455-4464
+  issue: '10'
+  start: 4455
+  end: 4464
   doi: 10.1234/abcdef123456

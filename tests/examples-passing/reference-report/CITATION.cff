@@ -1,18 +1,18 @@
 cff-version: 1.3.0
-message: If you use this software, please cite it as below.
+message: Message
 authors:
-  - family-names: Druskat
-    given-names: Stephan
-    orcid: https://orcid.org/0000-0003-4925-7248
-title: My Research Tool
+- family-names: Familyname1
+  given-names: Givenname1
+  orcid: https://orcid.org/1234-5678-9012-3456
+title: Title
 version: 1.0.4
-doi: 10.5281/zenodo.1234
-date-released: 2017-12-18
+doi: 10.1234/abcdef123456
+date-released: '2017-12-18'
 references:
-  - type: report
-    authors:
-      - name: Fictional Parsing Interest Group, ACME Inc.
-    title: "100% accuracy syntax parsing at ACME"
-    url: http://www.acme.com/sigs/fp/reports/hpsp.pdf
-    year: 2017
-    date-accessed: 2017-09-23
+- type: report
+  authors:
+  - name: Name1
+  title: Title
+  url: https://url.com
+  year: 2017
+  date-accessed: '2017-09-23'

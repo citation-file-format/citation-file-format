@@ -1,0 +1,60 @@
+cff-version: 1.3.0
+message: Message
+title: Title
+authors:
+- given-names: Givenname1
+  family-names: Familyname1
+  affiliation: Nederlands eScience Center
+  orcid: https://orcid.org/1234-5678-9012-3456
+- given-names: Givenname2
+  family-names: Familyname2
+  affiliation: Netherlands eScience Center
+- given-names: Givenname3
+  family-names: Familyname3
+  affiliation: Netherlands eScience Center
+version: 3.0.2
+doi: 10.1234/abcdef123456
+date-released: '2019-08-07'
+repository-code: https://repourl.com
+license: Apache-2.0
+references:
+- type: software
+  doi: 10.1234/abcdef123456
+  title: Title
+  authors:
+  - given-names: Givenname1
+    family-names: Familyname1
+    affiliation: Netherlands eScience Center
+  - given-names: Givenname2
+    family-names: Familyname2
+    affiliation: Nederlands eScience Center
+  - given-names: Givenname3
+    family-names: Familyname3
+    affiliation: '@thehyve'
+  - given-names: Givenname4
+    family-names: Familyname4
+    affiliation: Netherlands eScience Center
+  - given-names: Givenname5
+    family-names: Familyname5
+    name-particle: H.
+    affiliation: Netherlands eScience Center
+  - given-names: Givenname6
+    family-names: Familyname6
+    affiliation: Netherlands eScience Center
+  - given-names: Givenname7
+    family-names: Familyname7
+    name-particle: V.
+    affiliation: Netherlands eScience center
+  - given-names: Givenname8
+    family-names: Familyname8
+    affiliation: Netherlands eScience center
+  - given-names: Givenname9
+    family-names: Familyname9
+    name-particle: T.
+    affiliation: Netherlands eScience center
+  - given-names: Givenname10
+    family-names: Familyname10
+    affiliation: Netherlands eScience Center
+  - given-names: Givenname11
+    family-names: Familyname11
+    affiliation: Netherlands eScience Center
