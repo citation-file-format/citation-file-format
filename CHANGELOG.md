@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Narrowed definition of URL strings to raise error when trailing characters, notably whitespace, are used. PR [#468](https://github.com/citation-file-format/citation-file-format/pull/468).
 - Narrowed definition of ORCID strings to raise error when trailing characters, notably whitespace, are used. Issue [#392](https://github.com/citation-file-format/citation-file-format/issues/392); PR [#467](https://github.com/citation-file-format/citation-file-format/pull/467).
 - Added regex to the schema to help avoid leading spaces, trailing spaces, and double spaces in many string fields. Issue [#380](https://github.com/citation-file-format/citation-file-format/issues/380); PR [#466](https://github.com/citation-file-format/citation-file-format/pull/466).
+- CLarified documentation for `reference.number` to include article numbers. Issue [#347](https://github.com/citation-file-format/citation-file-format/issues/347); PR [#519](https://github.com/citation-file-format/citation-file-format/pull/519).
 
 ### Fixed
 
