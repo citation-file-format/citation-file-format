@@ -1581,7 +1581,7 @@
                     "description": "Notes pertaining to the work."
                 },
                 "number": {
-                    "description": "The accession number for a work.",
+                    "description": "The number of a work, e.g., an article identifier or an accession number.",
                     "oneOf": [
                         {
                             "$ref": "#/$defs/strictish-string"
