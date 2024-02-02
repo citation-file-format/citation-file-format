@@ -3405,7 +3405,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
 
 - **type**: `string` or `number`
 - **required**: `false`
-- **description**: The (library) [accession number](https://en.wikipedia.org/wiki/Accession_number) for a work.
+- **description**: The number of a work, e.g., an article identifier (such as *86* or *e86* for [this paper](https://doi.org/10.7717/peerj-cs.86)) or a (library) [accession number](https://en.wikipedia.org/wiki/Accession_number).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
