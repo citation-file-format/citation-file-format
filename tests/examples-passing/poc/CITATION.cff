@@ -7,9 +7,9 @@ authors:
     country: NL
     email: me@email.org
     fax: "02323-3543-46256"
-    orcid: https://orcid.org/0123-4567-8901-234X
     post-code: 12334 DVG
     region: My region
+    ror: "https://ror.org/012345678"
     tel: "1-34245-7346356-8467"
     website: https://my.domain/website/
     date-start: 2021-05-16

@@ -1,4 +1,5 @@
 ############################
+############################
 # DO NOT USE FOR CITATION! #
 ############################
 # This is a key-complete   #
@@ -36,7 +37,6 @@ authors:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -44,6 +44,7 @@ authors:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
 
 commit: 156a04c74a8a79d40c5d705cddf9d36735feab4d
 
@@ -72,7 +73,6 @@ contact:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -80,6 +80,7 @@ contact:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
 
 date-released: 2017-12-11
 
@@ -204,7 +205,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -212,6 +212,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
 
   authors:
     # A person
@@ -238,7 +239,6 @@ preferred-citation:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -246,6 +246,7 @@ preferred-citation:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
   contact:
       # A person
@@ -272,7 +273,6 @@ preferred-citation:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -280,6 +280,7 @@ preferred-citation:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
   database-provider:
     # An entity
@@ -289,7 +290,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -297,6 +297,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
 
   editors:
     # A person
@@ -323,7 +324,6 @@ preferred-citation:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -331,6 +331,7 @@ preferred-citation:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
   editors-series:
     # A person
@@ -357,7 +358,6 @@ preferred-citation:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -365,6 +365,7 @@ preferred-citation:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
   institution:
     # An entity
@@ -374,7 +375,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -382,6 +382,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
 
   location:
     # An entity
@@ -391,7 +392,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -399,6 +399,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
 
   publisher:
     # An entity
@@ -408,7 +409,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -416,6 +416,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
 
   recipients:
     # A person
@@ -442,7 +443,6 @@ preferred-citation:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -450,6 +450,7 @@ preferred-citation:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
   senders:
     # A person
@@ -476,7 +477,6 @@ preferred-citation:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -484,6 +484,7 @@ preferred-citation:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
   translators:
     # A person
@@ -510,7 +511,6 @@ preferred-citation:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -518,6 +518,7 @@ preferred-citation:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
 references:
   - type: book
@@ -605,7 +606,6 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -613,6 +613,7 @@ references:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
     authors:
       # A person
@@ -639,7 +640,6 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -647,6 +647,7 @@ references:
         date-start: 2017-01-01
         date-end: 2017-01-31
         location: The team garage
+        ror: https://ror.org/012345678
 
     contact:
         # A person
@@ -673,7 +674,6 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -681,6 +681,7 @@ references:
         date-start: 2017-01-01
         date-end: 2017-01-31
         location: The team garage
+        ror: https://ror.org/012345678
 
     database-provider:
       # An entity
@@ -690,7 +691,6 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -698,6 +698,7 @@ references:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
     editors:
       # A person
@@ -724,7 +725,6 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -732,6 +732,7 @@ references:
         date-start: 2017-01-01
         date-end: 2017-01-31
         location: The team garage
+        ror: https://ror.org/012345678
 
     editors-series:
       # A person
@@ -758,7 +759,6 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -766,6 +766,7 @@ references:
         date-start: 2017-01-01
         date-end: 2017-01-31
         location: The team garage
+        ror: https://ror.org/012345678
 
     institution:
       # An entity
@@ -775,7 +776,6 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -783,6 +783,7 @@ references:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
     location:
       # An entity
@@ -792,7 +793,6 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -800,6 +800,7 @@ references:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
     publisher:
       # An entity
@@ -809,7 +810,6 @@ references:
       region: Renfrewshire
       post-code: C13 7X7
       country: GB
-      orcid: https://orcid.org/0000-0001-2345-6789
       email: project@entity.com
       tel: +44(0)141-323 4567
       fax: +44(0)141-323 45678
@@ -817,6 +817,7 @@ references:
       date-start: 2017-01-01
       date-end: 2017-01-31
       location: The team garage
+      ror: https://ror.org/012345678
 
     recipients:
       # A person
@@ -843,7 +844,6 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -851,6 +851,7 @@ references:
         date-start: 2017-01-01
         date-end: 2017-01-31
         location: The team garage
+        ror: https://ror.org/012345678
 
     senders:
       # A person
@@ -877,7 +878,6 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -885,6 +885,7 @@ references:
         date-start: 2017-01-01
         date-end: 2017-01-31
         location: The team garage
+        ror: https://ror.org/012345678
 
     translators:
       # A person
@@ -911,7 +912,6 @@ references:
         region: Renfrewshire
         post-code: C13 7X7
         country: GB
-        orcid: https://orcid.org/0000-0001-2345-6789
         email: project@entity.com
         tel: +44(0)141-323 4567
         fax: +44(0)141-323 45678
@@ -919,3 +919,4 @@ references:
         date-start: 2017-01-01
         date-end: 2017-01-31
         location: The team garage
+        ror: https://ror.org/012345678
