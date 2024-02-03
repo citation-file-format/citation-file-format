@@ -963,7 +963,6 @@ authors:
     - [`fax`](#definitionsentityfax)
     - [`location`](#definitionsentitylocation)
     - [`name`](#definitionsentityname)
-    - [`orcid`](#definitionsentityorcid)
     - [`post-code`](#definitionsentitypost-code)
     - [`region`](#definitionsentityregion)
     - [`ror`](#definitionsentityror)
@@ -984,9 +983,9 @@ authors:
         fax: +12-3456-7890
         location: "Lovelace Building, room 0.42"
         name: "The Research Software Project"
-        orcid: "https://orcid.org/1234-5678-9101-1121"
         post-code: 90210
         region: Renfrewshire
+        ror: "https://ror.org/012345678"
         tel: +12-345-6789098
         website: "https://research-software-project.org"
     ```
@@ -1163,18 +1162,6 @@ authors:
     ```yaml
     authors:
       - name: "The Research Software Project"
-    ```
-
-### `definitions.entity.orcid`
-
-- **type**: [`definitions.orcid`](#definitionsorcid).
-- **required**: `false`
-- **description**: The entity's [ORCID](https://orcid.org) identifier.
-- **usage**:<br><br>
-    ```yaml
-    authors:
-      - name: "The Research Software Project"
-        orcid: "https://orcid.org/1234-5678-9101-1121"
     ```
 
 ### `definitions.entity.post-code`
