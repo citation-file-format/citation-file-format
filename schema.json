@@ -4,6 +4,31 @@
             "$ref": "#/$defs/strictish-string",
             "description": "An address."
         },
+        "affiliation": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/strictish-string"
+                },
+                {
+                    "$ref": "#/$defs/entity"
+                },
+                {
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/$defs/strictish-string"
+                            },
+                            {
+                                "$ref": "#/$defs/entity"
+                            }
+                        ]
+                    },
+                    "minItems": 1,
+                    "type": "array",
+                    "uniqueItems": true
+                }
+            ]
+        },
         "alias": {
             "$ref": "#/$defs/strictish-string",
             "description": "An alias."
@@ -304,7 +329,7 @@
                     "description": "The entity's address."
                 },
                 "affiliation": {
-                    "$ref": "#/$defs/strictish-string",
+                    "$ref": "#/$defs/affiliation",
                     "description": "The entity's affiliation."
                 },
                 "alias": {
@@ -1199,7 +1224,7 @@
                     "description": "The person's address."
                 },
                 "affiliation": {
-                    "$ref": "#/$defs/strictish-string",
+                    "$ref": "#/$defs/affiliation",
                     "description": "The person's affiliation."
                 },
                 "alias": {
