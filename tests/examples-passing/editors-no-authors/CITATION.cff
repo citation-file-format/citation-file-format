@@ -10,3 +10,17 @@ references:
         given-names: Ed
     title: The reference title
     type: edited-work
+  - authors:
+      - name: The authors
+      - family-names: Uthor
+        given-names: A
+    title: The reference title
+    type: article
+  - authors:
+      - name: Authors of an edited work
+    editors:
+      - name: The editors
+      - family-names: Itor
+        given-names: Ed
+    title: The reference title
+    type: edited-work
