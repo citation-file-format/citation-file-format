@@ -1841,9 +1841,20 @@
                 }
             },
             "required": [
-                "authors",
                 "title",
                 "type"
+            ],
+            "anyOf": [
+                {
+                    "required": [
+                        "authors"
+                    ]
+                },
+                {
+                    "required": [
+                        "editors"
+                    ]
+                }
             ],
             "type": "object"
         },
