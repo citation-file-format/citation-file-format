@@ -2014,10 +2014,10 @@
         },
         "preferred-citation": {
             "$ref": "#/$defs/reference",
-            "description": "A reference to another work that should be cited instead of the software or dataset itself."
+            "description": "A reference to another work that should be cited in addition to the software or dataset itself."
         },
         "references": {
-            "description": "Reference(s) to other creative works.",
+            "description": "References to other work that this work builds on.",
             "items": {
                 "$ref": "#/$defs/reference"
             },

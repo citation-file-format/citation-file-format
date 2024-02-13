@@ -389,7 +389,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 - **type**: A [`$defs.reference`](#defsreference) object.
 - **required**: `false`
-- **description**: A reference to another work that should be cited instead of the software or dataset itself.
+- **description**: A reference to another work that should be cited in addition to the software or dataset itself.
 Note that the principles of [software citation](https://doi.org/10.7717/peerj-cs.86) and [data citation](https://doi.org/10.25490/a97f-egyk) require that
 software should be cited on the same basis as any other research product such as a paper or a book.
 Adding a different preferred citation may result in a violation of the respective
@@ -409,7 +409,7 @@ primary principle, "Importance", when others cite this work.
 
 - **type**: Array of [`$defs.reference`](#defsreference) objects.
 - **required**: `false`
-- **description**: Reference(s) to other creative works. Similar to a list of references in a paper, references of the software or dataset may include other software (dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
+- **description**: References to work that this work builds on, similar to a list of references in a paper. Importantly, references of the software or dataset may include other software (e.g., dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
 - **usage**:<br><br>
     ```yaml
     references:
