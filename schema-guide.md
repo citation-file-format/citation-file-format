@@ -399,7 +399,7 @@ primary principle, "Importance", when others cite this work.
     preferred-citation:
       authors:
         - family-names: Famnames
-          given-names: "Given Nam E."
+          given-names: "Given Name I."
       title: "Title of the work."
       type: generic
       year: 2021
