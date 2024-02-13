@@ -5,18 +5,18 @@ authors:
   given-names: Givenname1
   orcid: https://orcid.org/1234-5678-9012-3456
 title: Title
-version: 1.0.4
+version: 1.1.0
 doi: 10.1234/abcdef123456
-date-released: 2017-12-18
+repository-code: https://repourl.com
+license: MIT
 references:
-- type: blog
+- type: article
   authors:
   - family-names: Familyname1
     given-names: Givenname1
   title: Title
-  date-published: 2017-09-23
-  url: https://url.com
-  institution:
-    name: Humboldt-Universität zu Berlin
-    city: Berlin
-    country: DE
+  year: 2017
+  journal: Journal of Open Source Software
+  volume: 2
+  issue: '16'
+  doi: 10.1234/abcdef123456

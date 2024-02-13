@@ -12,8 +12,8 @@ abstract: Abstract
 contact:
 - given-names: Givenname1
   family-names: Familyname1
-author:
-- name: Boltzmann-Zuse Society for Computational Molecular Engineering
+authors:
+- name: Name1
   country: DE
 references:
 - type: article
@@ -46,6 +46,7 @@ references:
     family-names: Familyname12
   journal: Journal of Chemical Theory and Computation
   volume: 10
-  issue: 10
-  pages: 4455-4464
+  issue: '10'
+  start: 4455
+  end: 4464
   doi: 10.1234/abcdef123456

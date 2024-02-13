@@ -1,9 +1,8 @@
 authors:
-- name: German Aerospace Center
+- name: Name1
   ror: https://ror.org/04bwf3e34
-- name: Netherlands eScience Center
+- name: Name2
   ror: https://ror.org/00rbjv475
 cff-version: 1.3.0
-message: The message
-title: The title
-
+message: Message
+title: Title
