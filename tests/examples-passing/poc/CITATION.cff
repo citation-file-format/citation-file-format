@@ -6,9 +6,9 @@ authors:
   country: NL
   email: me@email.org
   fax: 02323-3543-46256
-  orcid: https://orcid.org/1234-5678-9012-3456
   post-code: 12334 DVG
   region: My region
+  ror: "https://ror.org/012345678"
   tel: 1-34245-7346356-8467
   website: https://my.domain/website/
   date-start: 2021-05-16
@@ -35,7 +35,7 @@ commit: af34567890123458901234567890123456789012
 date-released: 2021-05-16
 identifiers:
 - type: doi
-  value: 
+  value:
     10.0000.1234/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._[]()\:;
   description: A pseudo-DOI testing all allowed characters.
 - type: other

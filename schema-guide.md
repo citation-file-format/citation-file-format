@@ -399,7 +399,7 @@ primary principle, "Importance", when others cite this work.
     preferred-citation:
       authors:
         - family-names: Famnames
-          given-names: "Given Nam E."
+          given-names: "Given Name I."
       title: "Title of the work."
       type: generic
       year: 2021
@@ -984,9 +984,9 @@ authors:
         fax: +12-3456-7890
         location: "Lovelace Building, room 0.42"
         name: "The Research Software Project"
-        orcid: "https://orcid.org/1234-5678-9101-1121"
         post-code: 90210
         region: Renfrewshire
+        ror: "https://ror.org/012345678"
         tel: +12-345-6789098
         website: "https://research-software-project.org"
     ```
@@ -1163,18 +1163,6 @@ authors:
     ```yaml
     authors:
       - name: "The Research Software Project"
-    ```
-
-### `$defs.entity.orcid`
-
-- **type**: [`$defs.orcid`](#defsorcid).
-- **required**: `false`
-- **description**: The entity's [ORCID](https://orcid.org) identifier.
-- **usage**:<br><br>
-    ```yaml
-    authors:
-      - name: "The Research Software Project"
-        orcid: "https://orcid.org/1234-5678-9101-1121"
     ```
 
 ### `$defs.entity.post-code`

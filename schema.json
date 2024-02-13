@@ -343,10 +343,6 @@
                     "$ref": "#/$defs/strictish-string",
                     "description": "The entity's name."
                 },
-                "orcid": {
-                    "$ref": "#/$defs/orcid",
-                    "description": "The entity's orcid."
-                },
                 "post-code": {
                     "$ref": "#/$defs/post-code",
                     "description": "The entity's post code."

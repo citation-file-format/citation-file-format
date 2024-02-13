@@ -1,3 +1,10 @@
+############################
+# DO NOT USE FOR CITATION! #
+############################
+# This is a key-complete   #
+# test file for validation #
+############################
+
 cff-version: 1.3.0
 message: Message
 abstract: Abstract
@@ -24,7 +31,6 @@ authors:
   region: Renfrewshire
   post-code: C13 7X7
   country: GB
-  orcid: https://orcid.org/1234-5678-9012-3456
   email: project@entity.com
   tel: +44(0)141-323 4567
   fax: +44(0)141-323 45678
@@ -32,6 +38,7 @@ authors:
   date-start: 2017-01-01
   date-end: 2017-01-31
   location: The team garage
+  ror: https://ror.org/012345678
 commit: 156a04c74a8a79d40c5d705cddf9d36735feab4d
 contact:
 - family-names: Familyname1
@@ -56,7 +63,6 @@ contact:
   region: Renfrewshire
   post-code: C13 7X7
   country: GB
-  orcid: https://orcid.org/1234-5678-9012-3456
   email: project@entity.com
   tel: +44(0)141-323 4567
   fax: +44(0)141-323 45678
@@ -64,6 +70,7 @@ contact:
   date-start: 2017-01-01
   date-end: 2017-01-31
   location: The team garage
+  ror: https://ror.org/012345678
 date-released: 2017-12-11
 doi: 10.1234/abcdef123456
 identifiers:
@@ -176,7 +183,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -184,6 +190,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   authors:
   - family-names: Real Person
     given-names: One Truly
@@ -207,7 +214,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -215,6 +221,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   contact:
   - family-names: Real Person
     given-names: One Truly
@@ -238,7 +245,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -246,6 +252,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   database-provider:
     name: Entity Project Team Conference entity
     address: 22 Acacia Avenue
@@ -253,7 +260,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -261,6 +267,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   editors:
   - family-names: Real Person
     given-names: One Truly
@@ -284,7 +291,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -292,6 +298,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   editors-series:
   - family-names: Real Person
     given-names: One Truly
@@ -315,7 +322,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -323,6 +329,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   institution:
     name: Entity Project Team Conference entity
     address: 22 Acacia Avenue
@@ -330,7 +337,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -338,6 +344,8 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
+
   location:
     name: Entity Project Team Conference entity
     address: 22 Acacia Avenue
@@ -345,7 +353,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -353,6 +360,8 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
+
   publisher:
     name: Entity Project Team Conference entity
     address: 22 Acacia Avenue
@@ -360,7 +369,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -368,6 +376,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   recipients:
   - family-names: Real Person
     given-names: One Truly
@@ -391,7 +400,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -399,6 +407,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   senders:
   - family-names: Real Person
     given-names: One Truly
@@ -422,7 +431,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -430,6 +438,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   translators:
   - family-names: Real Person
     given-names: One Truly
@@ -453,7 +462,6 @@ preferred-citation:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -461,6 +469,7 @@ preferred-citation:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
 references:
 - type: book
   title: Title
@@ -548,7 +557,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -556,6 +564,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   authors:
   - family-names: Familyname1
     given-names: Givenname1
@@ -579,7 +588,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/1234-5678-9012-3456
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -587,6 +595,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   contact:
   - family-names: Familyname1
     given-names: Givenname1
@@ -610,7 +619,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/1234-5678-9012-3456
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -618,6 +626,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   database-provider:
     name: Entity Project Team Conference entity
     address: 22 Acacia Avenue
@@ -625,7 +634,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -633,6 +641,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   editors:
   - family-names: Real Person
     given-names: One Truly
@@ -656,7 +665,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -664,6 +672,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   editors-series:
   - family-names: Real Person
     given-names: One Truly
@@ -687,7 +696,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -695,6 +703,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   institution:
     name: Entity Project Team Conference entity
     address: 22 Acacia Avenue
@@ -702,7 +711,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -710,6 +718,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   location:
     name: Entity Project Team Conference entity
     address: 22 Acacia Avenue
@@ -717,7 +726,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -725,6 +733,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   publisher:
     name: Entity Project Team Conference entity
     address: 22 Acacia Avenue
@@ -732,7 +741,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -740,6 +748,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   recipients:
   - family-names: Real Person
     given-names: One Truly
@@ -763,7 +772,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -771,6 +779,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   senders:
   - family-names: Real Person
     given-names: One Truly
@@ -794,7 +803,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -802,6 +810,7 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678
   translators:
   - family-names: Real Person
     given-names: One Truly
@@ -825,7 +834,6 @@ references:
     region: Renfrewshire
     post-code: C13 7X7
     country: GB
-    orcid: https://orcid.org/0000-0001-2345-6789
     email: project@entity.com
     tel: +44(0)141-323 4567
     fax: +44(0)141-323 45678
@@ -833,3 +841,4 @@ references:
     date-start: 2017-01-01
     date-end: 2017-01-31
     location: The team garage
+    ror: https://ror.org/012345678

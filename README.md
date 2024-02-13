@@ -107,7 +107,7 @@ The following table gives an overview of the tools that we know about. If there 
 | Python         |                                                                                 | • [doi2cff](https://github.com/citation-file-format/doi2cff)        | • [cffconvert](#validation-heavy_check_mark)                                    | • [cff-from-621](https://pypi.org/project/cff-from-621/)<br>• [cffconvert](https://github.com/citation-file-format/cff-converter-python)<br>• [doi2cff](https://github.com/citation-file-format/doi2cff)<br>• [openCARP-CI](https://git.opencarp.org/openCARP/openCARP-CI/-/tree/master/#create_cff)<br>• [py_bibtex_to_cff_converter](https://github.com/vdplasthijs/py_bibtex_to_cff_converter) |
 | R              |                                                                                 |                                                                     |                                                                                 | • [citation](https://cran.r-project.org/web/packages/citation/)<br>• [r2cff](https://github.com/ocbe-uio/RCFF)<br>• [handlr](https://github.com/ropensci/handlr)<br>• [cffr](https://CRAN.R-project.org/package=cffr)                                                                                                                                                                             |
 | Ruby           | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)                  | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)      | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)                  | • [ruby-cff](https://github.com/citation-file-format/ruby-cff)                                                                                                                                                                                                                                                                                                                                    |
-| Rust           |                                                                                 |                                                                     |                                                                                 | • [citeworks](https://github.com/passcod/citeworks)                                                                                                                                                                                                                                                                                                                                               |
+| Rust           | • [Aeruginous](https://github.com/kevinmatthes/aeruginous-rs)                   | • [Aeruginous](https://github.com/kevinmatthes/aeruginous-rs)       |                                                                                 | • [citeworks](https://github.com/passcod/citeworks)                                                                                                                                                                                                                                                                                                                                               |
 | TypeScript     |                                                                                 |                                                                     |                                                                                 | [#28](https://github.com/citation-file-format/citation-file-format/issues/28#issuecomment-892105342)                                                                                                                                                                                                                                                                                              |
 | Website        | • [cffinit](https://citation-file-format.github.io/cff-initializer-javascript/) |                                                                     |                                                                                 |                                                                                                                                                                                                                                                                                                                                                                                                   |
 
@@ -142,7 +142,7 @@ Please read the more detailed [contributing guidelines](CONTRIBUTING.md) and [op
 
 ## License :balance_scale:
 
-Copyright © 2016ff. The Citation File Format Contributors
+Copyright © 2016 - 2023. The Citation File Format Contributors
 
 This work is licensed under a [Creative Commons Attribution 4.0 International (CC-BY-4.0)](https://creativecommons.org/licenses/by/4.0/legalcode) license.
 
@@ -156,14 +156,3 @@ We gratefully acknowledge support from:
 - The [Institute for Software Technology](https://www.dlr.de/sc/en/desktopdefault.aspx/) of the [German Aerospace Center (DLR)](https://www.dlr.de/en/)
 - The [Netherlands eScience Center](https://www.esciencecenter.nl)
 - The [Software Sustainability Institute](https://software.ac.uk/)
-
-### Research notice
-Please note that this repository is participating in a study into sustainability
-of open source projects. Data will be gathered about this repository for
-approximately the next 12 months, starting from June 2021.
-
-Data collected will include number of contributors, number of PRs, time taken to
-close/merge these PRs, and issues closed.
-
-For more information, please visit
-[our informational page](https://sustainable-open-science-and-software.github.io/) or download the [participant information sheet](https://sustainable-open-science-and-software.github.io/assets/PIS_sustainable_software.pdf).
