@@ -1281,6 +1281,18 @@
         },
         "reference": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "required": [
+                        "authors"
+                    ]
+                },
+                {
+                    "required": [
+                        "editors"
+                    ]
+                }
+            ],
             "description": "A reference to a work.",
             "properties": {
                 "abbreviation": {
@@ -1843,18 +1855,6 @@
             "required": [
                 "title",
                 "type"
-            ],
-            "anyOf": [
-                {
-                    "required": [
-                        "authors"
-                    ]
-                },
-                {
-                    "required": [
-                        "editors"
-                    ]
-                }
             ],
             "type": "object"
         },
