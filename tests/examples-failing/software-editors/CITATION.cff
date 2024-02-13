@@ -1,0 +1,12 @@
+editors:
+  - name: The software authors
+cff-version: 1.3.0
+message: The message
+title: The software title
+references:
+  - editors:
+      - name: The editors
+      - family-names: Itor
+        given-names: Ed
+    title: The reference title
+    type: edited-work

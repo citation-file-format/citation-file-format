@@ -1,0 +1,1 @@
+Regression test for #334, which should fail with 1 error, as the root software authors must be defined, but references can exist without authors, but only editors instead.
