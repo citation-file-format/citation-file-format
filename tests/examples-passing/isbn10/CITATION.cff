@@ -1,0 +1,12 @@
+cff-version: 1.3.0
+message: Message
+title: Title
+authors:
+- name: Name1
+references:
+- authors:
+  - family-names: Familyname1
+    given-names: Givenname1
+  title: Title
+  type: book
+  isbn: 052145848X

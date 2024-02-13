@@ -1,4 +1,4 @@
-cff-version: 1.2.0
+cff-version: 1.3.0
 message: "If you use CFF in your research, please cite it using these metadata."
 abstract: CITATION.cff files are plain text files with human- and machine-readable citation information for software. Code developers can include them in their repositories to let others know how to correctly cite their software. This is the specification for the Citation File Format.
 authors:
@@ -31,16 +31,19 @@ authors:
   - family-names: Konovalov
     given-names: Olexandr
     orcid: https://orcid.org/0000-0001-5299-3292
+  - family-names: Li
+    given-names: Ambrose
+    orcid: "https://orcid.org/0000-0002-9996-7486"
 title: Citation File Format
-version: 1.2.0
+version: 1.3.0
 identifiers:
   - type: doi
     value: 10.5281/zenodo.1003149
     description: The concept DOI for the collection containing all versions of the Citation File Format.
   - type: doi
-    value: 10.5281/zenodo.5171937
-    description: The versioned DOI for the version 1.2.0 of the Citation File Format.
-date-released: "2021-08-09"
+    value: TODO
+    description: The versioned DOI for the version 1.3.0 of the Citation File Format.
+date-released: TODO
 keywords:
   - citation file format
   - CFF
@@ -52,7 +55,7 @@ keywords:
   - research software
   - credit
 license: "CC-BY-4.0"
-doi: 10.5281/zenodo.5171937
+doi: TODO
 references:
   - authors:
       - family-names: Smith

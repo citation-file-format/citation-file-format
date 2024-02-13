@@ -1,0 +1,8 @@
+cff-version: 1.3.0
+authors:
+- name: Name1
+contact:
+- alias: alias1
+- alias: alias2
+message: Message
+title: Title

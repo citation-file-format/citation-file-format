@@ -1,0 +1,12 @@
+cff-version: 1.3.0
+message: Message
+authors:
+- name: Name1
+  website: https://www.linguistik.hu-berlin.de/
+- family-names: Familyname2
+  given-names: Givenname2
+title: Title
+version: 1.0.4 (Iain M. Banks)
+url: https://url.com
+repository: https://hub.docker.hu-berlin.de/_/mrt-iain-m-banks/
+date-released: 2017-12-18

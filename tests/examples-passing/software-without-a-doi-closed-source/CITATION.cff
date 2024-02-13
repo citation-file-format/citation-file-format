@@ -1,0 +1,15 @@
+cff-version: 1.3.0
+message: Message
+authors:
+- family-names: Familyname1
+  name-suffix: né Skywalker
+  given-names: Givenname1
+title: Title
+version: opq-1234-XZVF-ACME-RLY
+date-released: 2017-02-28
+url: https://url.com
+contact:
+- name: Name1
+  address: DS-1 Orbital Battle Station, near Scarif
+  email: father@imperial-empire.com
+  tel: +850 (0)123-45-666

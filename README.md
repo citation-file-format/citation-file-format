@@ -14,7 +14,7 @@ You can specify citation metadata for your software (or dataset) in a file named
 This is what a typical `CITATION.cff` file may look like for research software:
 
 ```yaml
-cff-version: 1.2.0
+cff-version: 1.3.0
 message: If you use this software, please cite it using these metadata.
 title: My Research Software
 abstract: This is my awesome research software. It does many things.

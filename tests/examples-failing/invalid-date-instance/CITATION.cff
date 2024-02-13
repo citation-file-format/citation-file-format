@@ -1,0 +1,51 @@
+cff-version: 1.3.0
+message: Message
+title: Title
+url: https://url.com
+repository-code: https://repourl.com
+date-released: 2018-09-05T00:00:00.000Z
+commit: Revision 6473.
+version: Internal development version, situated between release 1.1.1 and prospective
+  future release 1.2
+license-url: https://licenseurl.com
+abstract: Abstract
+contact:
+- given-names: Givenname1
+  family-names: Familyname1
+authors:
+- name: Name1
+  country: DE
+references:
+- type: article
+  title: Title
+  year: 2014
+  authors:
+  - given-names: Givenname1
+    family-names: Familyname1
+  - given-names: Givenname2
+    family-names: Familyname2
+  - given-names: Givenname3
+    family-names: Familyname3
+  - given-names: Givenname4
+    family-names: Familyname4
+  - given-names: Givenname5
+    family-names: Familyname5
+  - given-names: Givenname6
+    family-names: Familyname6
+  - given-names: Givenname7
+    family-names: Familyname7
+  - given-names: Givenname8
+    family-names: Familyname8
+  - given-names: Givenname9
+    family-names: Familyname9
+  - given-names: Givenname10
+    family-names: Familyname10
+  - given-names: Givenname11
+    family-names: Familyname11
+  - given-names: Givenname12
+    family-names: Familyname12
+  journal: Journal of Chemical Theory and Computation
+  volume: 10
+  issue: 10
+  pages: 4455-4464
+  doi: 10.1234/abcdef123456

@@ -1,0 +1,8 @@
+authors:
+- name: Name1
+  ror: https://ror.org/04bwf3e34
+- name: Name2
+  ror: https://ror.org/00rbjv475
+cff-version: 1.3.0
+message: Message
+title: Title

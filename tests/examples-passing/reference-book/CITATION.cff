@@ -1,0 +1,21 @@
+cff-version: 1.3.0
+message: Message
+authors:
+- family-names: Familyname1
+  given-names: Givenname1
+  orcid: https://orcid.org/1234-5678-9012-3456
+title: Title
+version: 1.0.4
+doi: 10.1234/abcdef123456
+date-released: 2017-12-18
+references:
+- type: book
+  authors:
+  - family-names: Familyname1
+    given-names: Givenname1
+  title: Title
+  year: 2017
+  publisher:
+    name: Far Out Publications
+    city: Bielefeld
+  medium: print
