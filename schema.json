@@ -1582,6 +1582,10 @@
                 },
                 "number": {
                     "description": "The number of a work, e.g., an article identifier or an accession number.",
+                    "examples": [
+                        "123",
+                        "123ABC-4"
+                    ],
                     "oneOf": [
                         {
                             "$ref": "#/$defs/strictish-string"
