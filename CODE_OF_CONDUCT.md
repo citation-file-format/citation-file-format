@@ -70,7 +70,9 @@ The current Code of Conduct Committee consists of:
 - Neil Chue Hong ([N.ChueHong@epcc.ed.ac.uk](mailto:N.ChueHong@epcc.ed.ac.uk))
 - Robert Haines ([robert.haines@manchester.ac.uk](mailto:robert.haines@manchester.ac.uk))
 
-You may contact members individually or collectively. 
+You may contact members individually or collectively.
+Note that if you contact members individually, other members may still be involved in resolving the issue.
+If members are subject of a report themselves, they will not be involved in the resolution of the issue as members of the Code of Conduct Committee, but may be addressed by other members as reported subjects to resolve the issue.
 
 ## Attribution
 
