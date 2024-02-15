@@ -53,7 +53,7 @@ further defined and clarified by project maintainers.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at *cff-coc /at\ sdruskat \dot/ net*. All
+reported by contacting the [Code of Conduct Committee](#code-of-conduct-committee). All
 complaints will be reviewed and investigated and will result in a response that
 is deemed necessary and appropriate to the circumstances. The project team is
 obligated to maintain confidentiality with regard to the reporter of an incident.
@@ -62,6 +62,17 @@ Further details of specific enforcement policies may be posted separately.
 Project maintainers who do not follow or enforce the Code of Conduct in good
 faith may face temporary or permanent repercussions as determined by other
 members of the project's maintenance team.
+
+### Code of Conduct Committee
+
+The current Code of Conduct Committee consists of:
+
+- Neil Chue Hong ([N.ChueHong@epcc.ed.ac.uk](mailto:N.ChueHong@epcc.ed.ac.uk))
+- Robert Haines ([robert.haines@manchester.ac.uk](mailto:robert.haines@manchester.ac.uk))
+
+You may contact members individually or collectively.
+Note that if you contact members individually, other members may still be involved in resolving the issue.
+If members are subject of a report themselves, they will not be involved in the resolution of the issue as members of the Code of Conduct Committee, but may be addressed by other members as reported subjects to resolve the issue.
 
 ## Attribution
 
