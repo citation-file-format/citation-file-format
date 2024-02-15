@@ -24,7 +24,7 @@ python3 -m venv env
 source env/bin/activate
 pip install --upgrade pip wheel setuptools
 pip install -r requirements.txt
-pytest
+pytest -v
 <do other things>
 ```
 <!-- 
