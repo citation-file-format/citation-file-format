@@ -1277,6 +1277,18 @@
         },
         "reference": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "required": [
+                        "authors"
+                    ]
+                },
+                {
+                    "required": [
+                        "editors"
+                    ]
+                }
+            ],
             "description": "A reference to a work.",
             "properties": {
                 "abbreviation": {
@@ -1841,7 +1853,6 @@
                 }
             },
             "required": [
-                "authors",
                 "title",
                 "type"
             ],

@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added more license identifiers from SPDX. Issue [#454](https://github.com/citation-file-format/citation-file-format/issues/454); PR [#461](https://github.com/citation-file-format/citation-file-format/pull/461).
 - Added machine readable relation qualifiers to `identifiers` using terminology from DataCite v4.4; PR [#459](https://github.com/citation-file-format/citation-file-format/pull/459).
 - Added `contributors` field. Issue [#66](https://github.com/citation-file-format/citation-file-format/issues/66), [#84](https://github.com/citation-file-format/citation-file-format/issues/84); PR [#439](https://github.com/citation-file-format/citation-file-format/pull/439).
+- Loosen requirement of authors in references to allow for any of authors and/or editors. Issue [#334](https://github.com/citation-file-format/citation-file-format/issues/334); PR [#524](https://github.com/citation-file-format/citation-file-format/pull/524)
+
 
 ### Changed
 
@@ -36,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     9. `contact`
     10. `contributors`
 - Changed the regular expression for PMC ID to allow 8 digits in addition to the preexisting 7. Issue [#443](https://github.com/citation-file-format/citation-file-format/issues/443); PR [#469](https://github.com/citation-file-format/citation-file-format/pull/469)
-- Instances of `person` now explicitly require one of `alias`, `email`, `given-names`, `family-names` or `orcid` to avoid accidentally having empty person objects (notably, `authors`). PR [#462](https://github.com/citation-file-format/citation-file-format/pull/462)
+- Instances of `person` now explicitly require one of `alias`, `email`, `given-names`, `family-names` or `orcid` to avoid accidentally having empty person objects (notably, `authors`); PR [#462](https://github.com/citation-file-format/citation-file-format/pull/462)
 - Fixed the regular expression for ISBN (should only affect ISBN10 strings that didn't have any dashes or spaces, whose check digit is `X`). Issue [#323](https://github.com/citation-file-format/citation-file-format/issues/323); PR [#335](https://github.com/citation-file-format/citation-file-format/pull/335); PR [#337](https://github.com/citation-file-format/citation-file-format/pull/337)
 
 ## [1.2.0] - 2021-05-31
