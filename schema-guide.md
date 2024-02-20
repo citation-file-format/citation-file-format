@@ -409,7 +409,7 @@ primary principle, "Importance", when others cite this work.
 
 - **type**: Array of [`$defs.reference`](#defsreference) objects.
 - **required**: `false`
-- **description**: References to work that this work builds on, similar to a list of references in a paper. Importantly, references of the software or dataset may include other software (e.g., dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
+- **description**: References to work that this work builds on, similar to a list of references in a paper. Importantly, `references` may include other software (e.g., dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
 - **usage**:<br><br>
     ```yaml
     references:
