@@ -3,7 +3,7 @@
 ## Overview
 
 We maintain a collection of `.cff` files for testing. In these files we try to cover
-various possible scenarious described in the specification. During the test, these
+various possible scenarios described in the specification. During the test, these
 files are validated using `cffconvert` (a command line utility to read a `.cff` file
 and convert it to BibTex and other formats). We check that all files are validated or
 rejected as expected.
