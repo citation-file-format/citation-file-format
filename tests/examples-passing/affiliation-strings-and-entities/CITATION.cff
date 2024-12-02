@@ -1,0 +1,8 @@
+authors:
+  - affiliation:
+      - name: The first affiliation name
+      - The second affiliation name
+    name: The author name
+cff-version: "1.3.0"
+message: The message
+title: The title
