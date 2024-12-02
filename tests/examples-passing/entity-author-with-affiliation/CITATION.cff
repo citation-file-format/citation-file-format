@@ -1,6 +1,6 @@
 authors:
-- name: The Team
+- name: Name1
   affiliation: The University
 cff-version: 1.3.0
-message: The message
-title: The title
+message: Message
+title: Title

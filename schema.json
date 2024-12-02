@@ -368,10 +368,6 @@
                     "$ref": "#/$defs/strictish-string",
                     "description": "The entity's name."
                 },
-                "orcid": {
-                    "$ref": "#/$defs/orcid",
-                    "description": "The entity's orcid."
-                },
                 "post-code": {
                     "$ref": "#/$defs/post-code",
                     "description": "The entity's post code."
@@ -1306,6 +1302,18 @@
         },
         "reference": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "required": [
+                        "authors"
+                    ]
+                },
+                {
+                    "required": [
+                        "editors"
+                    ]
+                }
+            ],
             "description": "A reference to a work.",
             "properties": {
                 "abbreviation": {
@@ -1606,7 +1614,11 @@
                     "description": "Notes pertaining to the work."
                 },
                 "number": {
-                    "description": "The accession number for a work.",
+                    "description": "The number of a work, e.g., an article identifier or an accession number.",
+                    "examples": [
+                        "123",
+                        "123ABC-4"
+                    ],
                     "oneOf": [
                         {
                             "$ref": "#/$defs/strictish-string"
@@ -1866,7 +1878,6 @@
                 }
             },
             "required": [
-                "authors",
                 "title",
                 "type"
             ],
@@ -2039,10 +2050,10 @@
         },
         "preferred-citation": {
             "$ref": "#/$defs/reference",
-            "description": "A reference to another work that should be cited instead of the software or dataset itself."
+            "description": "A reference to another work that should be cited in addition to the software or dataset itself."
         },
         "references": {
-            "description": "Reference(s) to other creative works.",
+            "description": "References to other work that this work builds on.",
             "items": {
                 "$ref": "#/$defs/reference"
             },

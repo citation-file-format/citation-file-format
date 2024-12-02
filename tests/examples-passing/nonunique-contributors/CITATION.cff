@@ -1,8 +1,8 @@
 cff-version: 1.3.0
 authors:
-- name: The team
+- name: Name1
 contributors:
 - alias: jspaaks
 - alias: jspaaks
-message: The message
-title: The title
+message: Message
+title: Title

@@ -145,7 +145,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `abstract`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: A description of the software or dataset.
 - **usage**:<br><br>
@@ -155,7 +155,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `authors`
 
-- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **type**: Array of [`$defs.person`](#defsperson) and/or [`$defs.entity`](#defsentity) objects.
 - **required**: `true`
 - **description**: The authors of a software or dataset.
 (See also [How to deal with unknown individual authors?](#how-to-deal-with-unknown-individual-authors))
@@ -178,7 +178,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `cff-version`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `true`
 - **description**: The Citation File Format schema version that the `CITATION.cff` file adheres to for providing the citation metadata.
 - **usage**:<br><br>
@@ -191,7 +191,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `commit`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The commit hash or revision number of the software version.
 - **usage**:<br><br>
@@ -204,7 +204,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `contact`
 
-- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **type**: Array of [`$defs.person`](#defsperson) and/or [`$defs.entity`](#defsentity) objects.
 - **required**: `false`
 - **description**: The contact person, group, company, etc. for the software or dataset.
 - **usage**:<br><br>
@@ -231,7 +231,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `date-released`
 
-- **type**: [`definitions.date`](#definitionsdate)
+- **type**: [`$defs.date`](#defsdate)
 - **required**: `false`
 - **description**: The date the software or data set has been released. Format is 4-digit year, 2-digit month, 2-digit day of month, separated by dashes.
 - **usage**:<br><br>
@@ -241,7 +241,7 @@ This section describes the valid keys in a `CITATION.cff` file.
 
 ### `doi`
 
-- **type**: [`definitions.doi`](#definitionsdoi)
+- **type**: [`$defs.doi`](#defsdoi)
 - **required**: `false`
 - **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the software or dataset. This notation is most useful when there is just one DOI you want to include. In
 that case, `doi` can be used as shorthand for something like:<br><br>
@@ -268,7 +268,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `identifiers`
 
-- **type**: Array of [`definitions.identifier`](#definitionsidentifier) objects.
+- **type**: Array of [`$defs.identifier`](#defsidentifier) objects.
 - **required**: `false`
 - **description**: The identifiers of the software or dataset.
 - **usage**:<br><br>
@@ -317,7 +317,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `keywords`
 
-- **type**: Array of [strictish string](#definitionsstrictish-string)
+- **type**: Array of [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: Keywords that describe the work.
 - **usage**:<br><br>
@@ -330,7 +330,7 @@ that case, `doi` can be used as shorthand for something like:<br><br>
 
 ### `license`
 
-- **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
+- **type**: (Array of) [`$defs.license-enum`](#defslicense-enum).
 - **required**: `false`
 - **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which the work is made available. When there are multiple
 licenses, it is assumed their relationship is OR, not AND.
@@ -351,9 +351,9 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `license-url`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
-- **description**: The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the [SPDX License List](#definitionslicense-enum)).
+- **description**: The URL of the license text under which the software or dataset is licensed (only for non-standard licenses not included in the [SPDX License List](#defslicense-enum)).
 - **usage**:<br><br>
     ```yaml
     license-url: "https://obscure-licenses.com?id=1234"
@@ -361,7 +361,7 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `message`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `true`
 - **default**: `If you use this software, please cite it using the metadata from this file.`
 - **description**: A message to the human reader of the `CITATION.cff` file to let them know what to do with the citation metadata.
@@ -387,9 +387,9 @@ licenses, it is assumed their relationship is OR, not AND.
 
 ### `preferred-citation`
 
-- **type**: A [`definitions.reference`](#definitionsreference) object.
+- **type**: A [`$defs.reference`](#defsreference) object.
 - **required**: `false`
-- **description**: A reference to another work that should be cited instead of the software or dataset itself.
+- **description**: A reference to another work that should be cited in addition to the software or dataset itself.
 Note that the principles of [software citation](https://doi.org/10.7717/peerj-cs.86) and [data citation](https://doi.org/10.25490/a97f-egyk) require that
 software should be cited on the same basis as any other research product such as a paper or a book.
 Adding a different preferred citation may result in a violation of the respective
@@ -399,7 +399,7 @@ primary principle, "Importance", when others cite this work.
     preferred-citation:
       authors:
         - family-names: Famnames
-          given-names: "Given Nam E."
+          given-names: "Given Name I."
       title: "Title of the work."
       type: generic
       year: 2021
@@ -407,9 +407,9 @@ primary principle, "Importance", when others cite this work.
 
 ### `references`
 
-- **type**: Array of [`definitions.reference`](#definitionsreference) objects.
+- **type**: Array of [`$defs.reference`](#defsreference) objects.
 - **required**: `false`
-- **description**: Reference(s) to other creative works. Similar to a list of references in a paper, references of the software or dataset may include other software (dependencies), or other research products that the software or dataset builds on, but not work describing the software or dataset.
+- **description**: References to work that this work builds on, similar to a list of references in a paper. Importantly, `references` may include other software (e.g., dependencies), or other research products that the software or dataset builds on.
 - **usage**:<br><br>
     ```yaml
     references:
@@ -437,7 +437,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `repository`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
 - **description**: The URL of the software or dataset in a repository/archive (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
@@ -447,7 +447,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `repository-artifact`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
 - **description**: The URL of the work in a build artifact/binary repository (when the work is software).
 - **usage**:<br><br>
@@ -457,7 +457,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `repository-code`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
 - **description**: The URL of the work in a source code repository.
 - **usage**:<br><br>
@@ -467,7 +467,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `title`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `true`
 - **description**: The name of the software or dataset.
 - **usage**:<br><br>
@@ -491,7 +491,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `url`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
 - **description**: The URL of a landing page/website for the software or dataset.
 - **usage**:<br><br>
@@ -501,7 +501,7 @@ primary principle, "Importance", when others cite this work.
 
 ### `version`
 
-- **type**: [`definitions.version`](#definitionsversion)
+- **type**: [`$defs.version`](#defsversion)
 - **required**: `false`
 - **description**: The version of the software or dataset.
 - **usage**:<br><br>
@@ -520,22 +520,22 @@ primary principle, "Importance", when others cite this work.
 Some values in CFF files are valid in different keys.
 For example, `repository-code`, `url` and `license-url` all take URLs as values.
 
-The schema therefore has [*definitions*](https://json-schema.org/understanding-json-schema/structuring.html#definitions)
+The schema therefore has [*definitions*](https://json-schema.org/understanding-json-schema/structuring.html#defs)
 of smaller subschemas, that can be reused in the schema from the respective key,
 instead of having to duplicate them.
-For example, there is one definition for a valid URL value ([`definitions.url`](#definitionsurl)),
+For example, there is one definition for a valid URL value ([`$defs.url`](#defsurl)),
 that is being referenced from `repository-code`, `url` and `license-url`.
 
-**Note:** `definitions` and its subkeys like `definitions.alias` or `definitions.entity.alias` should not be used as keys in `CITATION.cff` files:
+**Note:** `$defs` and its subkeys like `$defs.alias` or `$defs.entity.alias` should not be used as keys in `CITATION.cff` files:
 ```yaml
 # incorrect
 authors:
-  - definitions.alias: sdruskat
+  - $defs.alias: sdruskat
 ```
 ```yaml
 # incorrect
 authors:
-  - definitions:
+  - $defs:
       alias: sdruskat
 ```
 ```yaml
@@ -546,35 +546,35 @@ authors:
 
 ### Index
 
-- [`definitions.address`](#definitionsaddress)
-- [`definitions.alias`](#definitionsalias)
-- [`definitions.city`](#definitionscity)
-- [`definitions.commit`](#definitionscommit)
-- [`definitions.country`](#definitionscountry)
-- [`definitions.date`](#definitionsdate)
-- [`definitions.doi`](#definitionsdoi)
-- [`definitions.email`](#definitionsemail)
-- [`definitions.entity`](#definitionsentity) (object)
-- [`definitions.fax`](#definitionsfax)
-- [`definitions.identifier`](#definitionsidentifier) (object)
-- [`definitions.identifier-description`](#definitionsidentifier-description)
-- [`definitions.license`](#definitionslicense)
-- [`definitions.license-enum`](#definitionslicense-enum)
-- [`definitions.orcid`](#definitionsorcid)
-- [`definitions.person`](#definitionsperson) (object)
-- [`definitions.post-code`](#definitionspost-code)
-- [`definitions.reference`](#definitionsreference) (object)
-- [`definitions.region`](#definitionsregion)
-- [`definitions.ror`](#definitionsror)
-- [`definitions.strictish-string`](#definitionsstrictish-string)
-- [`definitions.swh-identifier`](#definitionsswh-identifier)
-- [`definitions.tel`](#definitionstel)
-- [`definitions.url`](#definitionsurl)
-- [`definitions.version`](#definitionsversion)
+- [`$defs.address`](#defsaddress)
+- [`$defs.alias`](#defsalias)
+- [`$defs.city`](#defscity)
+- [`$defs.commit`](#defscommit)
+- [`$defs.country`](#defscountry)
+- [`$defs.date`](#defsdate)
+- [`$defs.doi`](#defsdoi)
+- [`$defs.email`](#defsemail)
+- [`$defs.entity`](#defsentity) (object)
+- [`$defs.fax`](#defsfax)
+- [`$defs.identifier`](#defsidentifier) (object)
+- [`$defs.identifier-description`](#defsidentifier-description)
+- [`$defs.license`](#defslicense)
+- [`$defs.license-enum`](#defslicense-enum)
+- [`$defs.orcid`](#defsorcid)
+- [`$defs.person`](#defsperson) (object)
+- [`$defs.post-code`](#defspost-code)
+- [`$defs.reference`](#defsreference) (object)
+- [`$defs.region`](#defsregion)
+- [`$defs.ror`](#defsror)
+- [`$defs.strictish-string`](#defsstrictish-string)
+- [`$defs.swh-identifier`](#defsswh-identifier)
+- [`$defs.tel`](#defstel)
+- [`$defs.url`](#defsurl)
+- [`$defs.version`](#defsversion)
 
-### `definitions.address`
+### `$defs.address`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: An address.
 - **usage**:<br><br>
@@ -584,9 +584,9 @@ authors:
         address: "742 Evergreen Terrace"
     ```
 
-### `definitions.alias`
+### `$defs.alias`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: An alias.
 - **usage**:<br><br>
@@ -596,9 +596,9 @@ authors:
         alias: "RSP"
     ```
 
-### `definitions.city`
+### `$defs.city`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: A city.
 - **usage**:<br><br>
@@ -608,9 +608,9 @@ authors:
         city: "Berlin"
     ```
 
-### `definitions.commit`
+### `$defs.commit`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 - **usage**:<br><br>
@@ -621,7 +621,7 @@ authors:
     commit: "Revision: 8612"
     ```
 
-### `definitions.country`
+### `$defs.country`
 
 - **type**: `enum` with values
     - `AD`
@@ -889,9 +889,9 @@ authors:
         type: conference
     ```
 
-### `definitions.date`
+### `$defs.date`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: A date. Format is 4-digit year, followed by 2-digit month, followed by 2-digit day of month, and separated by dashes. Note to tool implementers: it is necessary to cast YAML `date` objects to `string` objects when validating against the schema.
 - **usage**:<br><br>
@@ -927,9 +927,9 @@ authors:
         type: conference
     ```
 
-### `definitions.doi`
+### `$defs.doi`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the work (i.e., `10.5281/zenodo.1003150`, not the resolver URL `http://doi.org/10.5281/zenodo.1003150`).
 - **usage**:<br><br>
@@ -937,9 +937,9 @@ authors:
     doi: 10.5281/zenodo.1003150
     ```
 
-### `definitions.email`
+### `$defs.email`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: An email address.
 - **usage**:<br><br>
@@ -949,28 +949,28 @@ authors:
         name: "The Research Software project"
     ```
 
-### `definitions.entity`
+### `$defs.entity`
 
 - **type**: `object` with the following keys:
-    - [`address`](#definitionsentityaddress)
-    - [`affiliation`](#definitionsentityaffiliation)
-    - [`alias`](#definitionsentityalias)
-    - [`city`](#definitionsentitycity)
-    - [`country`](#definitionsentitycountry)
-    - [`date-end`](#definitionsentitydate-end)
-    - [`date-start`](#definitionsentitydate-start)
-    - [`email`](#definitionsentityemail)
-    - [`fax`](#definitionsentityfax)
-    - [`location`](#definitionsentitylocation)
-    - [`name`](#definitionsentityname)
-    - [`orcid`](#definitionsentityorcid)
-    - [`post-code`](#definitionsentitypost-code)
-    - [`region`](#definitionsentityregion)
-    - [`ror`](#definitionsentityror)
-    - [`tel`](#definitionsentitytel)
-    - [`website`](#definitionsentitywebsite)
+    - [`address`](#defsentityaddress)
+    - [`affiliation`](#defsentityaffiliation)
+    - [`alias`](#defsentityalias)
+    - [`city`](#defsentitycity)
+    - [`country`](#defsentitycountry)
+    - [`date-end`](#defsentitydate-end)
+    - [`date-start`](#defsentitydate-start)
+    - [`email`](#defsentityemail)
+    - [`fax`](#defsentityfax)
+    - [`location`](#defsentitylocation)
+    - [`name`](#defsentityname)
+    - [`orcid`](#defsentityorcid)
+    - [`post-code`](#defsentitypost-code)
+    - [`region`](#defsentityregion)
+    - [`ror`](#defsentityror)
+    - [`tel`](#defsentitytel)
+    - [`website`](#defsentitywebsite)
 - **required**: N/A
-- **description**: An entity. Entities are used in keys that can also take [`definitions.person`](#definitionsperson) objects. An entity can represent different types of entities, such as a team, an institution, a company, a conference, etc.
+- **description**: An entity. Entities are used in keys that can also take [`$defs.person`](#defsperson) objects. An entity can represent different types of entities, such as a team, an institution, a company, a conference, etc.
 - **usage**:<br><br>
     ```yaml
     authors:
@@ -984,9 +984,9 @@ authors:
         fax: +12-3456-7890
         location: "Lovelace Building, room 0.42"
         name: "The Research Software Project"
-        orcid: "https://orcid.org/1234-5678-9101-1121"
         post-code: 90210
         region: Renfrewshire
+        ror: "https://ror.org/012345678"
         tel: +12-345-6789098
         website: "https://research-software-project.org"
     ```
@@ -1024,9 +1024,9 @@ authors:
           - name: "Research Translators, Ltd."
     ```
 
-### `definitions.entity.address`
+### `$defs.entity.address`
 
-- **type**: [`definitions.address`](#definitionsaddress).
+- **type**: [`$defs.address`](#defsaddress).
 - **required**: `false`
 - **description**: The entity's address.
 - **usage**:<br><br>
@@ -1036,9 +1036,9 @@ authors:
         name: "The Research Software Project"
     ```
 
-### `definitions.entity.affiliation`
+### `$defs.entity.affiliation`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The entity's affiliation.
 - **usage**:<br><br>
@@ -1048,9 +1048,9 @@ authors:
         affiliation: "German Aerospace Center (DLR)"
     ```
 
-### `definitions.entity.alias`
+### `$defs.entity.alias`
 
-- **type**: [`definitions.alias`](#definitionsalias).
+- **type**: [`$defs.alias`](#defsalias).
 - **required**: `false`
 - **description**: The entity's alias.
 - **usage**:<br><br>
@@ -1060,9 +1060,9 @@ authors:
         name: "National Aeronautics and Space Administration"
     ```
 
-### `definitions.entity.city`
+### `$defs.entity.city`
 
-- **type**: [`definitions.city`](#definitionscity).
+- **type**: [`$defs.city`](#defscity).
 - **required**: `false`
 - **description**: The entity's city.
 - **usage**:<br><br>
@@ -1072,9 +1072,9 @@ authors:
         name: "The Research Software Project"
     ```
 
-### `definitions.entity.country`
+### `$defs.entity.country`
 
-- **type**: [`definitions.country`](#definitionscountry).
+- **type**: [`$defs.country`](#defscountry).
 - **required**: `false`
 - **description**: The entity's country.
 - **usage**:<br><br>
@@ -1084,9 +1084,9 @@ authors:
         country: DE
     ```
 
-### `definitions.entity.date-end`
+### `$defs.entity.date-end`
 
-- **type**: [`definitions.date`](#definitionsdate).
+- **type**: [`$defs.date`](#defsdate).
 - **required**: `false`
 - **description**: The entity's ending date, e.g. when the entity is a conference.
 - **usage**:<br><br>
@@ -1101,9 +1101,9 @@ authors:
         type: conference-paper
     ```
 
-### `definitions.entity.date-start`
+### `$defs.entity.date-start`
 
-- **type**: [`definitions.date`](#definitionsdate).
+- **type**: [`$defs.date`](#defsdate).
 - **required**: `false`
 - **description**: The entity's starting date, e.g. when the entity is a conference.
 - **usage**:<br><br>
@@ -1118,9 +1118,9 @@ authors:
           date-start: "2021-07-27"
     ```
 
-### `definitions.entity.email`
+### `$defs.entity.email`
 
-- **type**: [`definitions.email`](#definitionsemail).
+- **type**: [`$defs.email`](#defsemail).
 - **required**: `false`
 - **description**: The entity's email address.
 - **usage**:<br><br>
@@ -1130,9 +1130,9 @@ authors:
         name: "The Research Software Project"
     ```
 
-### `definitions.entity.fax`
+### `$defs.entity.fax`
 
-- **type**: [`definitions.fax`](#definitionsfax).
+- **type**: [`$defs.fax`](#defsfax).
 - **required**: `false`
 - **description**: The entity's fax number.
 - **usage**:<br><br>
@@ -1142,9 +1142,9 @@ authors:
         name: "The Research Software Project"
     ```
 
-### `definitions.entity.location`
+### `$defs.entity.location`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The entity's location.
 - **usage**:<br><br>
@@ -1154,9 +1154,9 @@ authors:
         name: "The Research Software Project"
     ```
 
-### `definitions.entity.name`
+### `$defs.entity.name`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `true`
 - **description**: The entity's name.
 - **usage**:<br><br>
@@ -1165,21 +1165,9 @@ authors:
       - name: "The Research Software Project"
     ```
 
-### `definitions.entity.orcid`
+### `$defs.entity.post-code`
 
-- **type**: [`definitions.orcid`](#definitionsorcid).
-- **required**: `false`
-- **description**: The entity's [ORCID](https://orcid.org) identifier.
-- **usage**:<br><br>
-    ```yaml
-    authors:
-      - name: "The Research Software Project"
-        orcid: "https://orcid.org/1234-5678-9101-1121"
-    ```
-
-### `definitions.entity.post-code`
-
-- **type**: [`definitions.post-code`](#definitionspost-code).
+- **type**: [`$defs.post-code`](#defspost-code).
 - **required**: `false`
 - **description**: The entity's post code.
 - **usage**:<br><br>
@@ -1195,9 +1183,9 @@ authors:
         post-code: "90210"
     ```
 
-### `definitions.entity.ror`
+### `$defs.entity.ror`
 
-- **type**: [`definitions.ror`](#definitionsror).
+- **type**: [`$defs.ror`](#defsror).
 - **required**: `false`
 - **description**: The entity's Research Organization Registry identifier, see https://ror.org.
 - **usage**:<br><br>
@@ -1209,9 +1197,9 @@ authors:
       ror: https://ror.org/00rbjv475
     ```
 
-### `definitions.entity.region`
+### `$defs.entity.region`
 
-- **type**: [`definitions.region`](#definitionsregion).
+- **type**: [`$defs.region`](#defsregion).
 - **required**: `false`
 - **description**: The entity's region.
 - **usage**:<br><br>
@@ -1221,9 +1209,9 @@ authors:
         region: Renfrewshire
     ```
 
-### `definitions.entity.tel`
+### `$defs.entity.tel`
 
-- **type**: [`definitions.tel`](#definitionstel).
+- **type**: [`$defs.tel`](#defstel).
 - **required**: `false`
 - **description**: The entity's telephone number.
 - **usage**:<br><br>
@@ -1233,9 +1221,9 @@ authors:
         tel: +12-345-6789098
     ```
 
-### `definitions.entity.website`
+### `$defs.entity.website`
 
-- **type**: [`definitions.url`](#definitionsurl).
+- **type**: [`$defs.url`](#defsurl).
 - **required**: `false`
 - **description**: The entity's website.
 - **usage**:<br><br>
@@ -1245,9 +1233,9 @@ authors:
         website: "https://research-software-project.org"
     ```
 
-### `definitions.fax`
+### `$defs.fax`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: A fax number.
 - **usage**:<br><br>
@@ -1263,7 +1251,7 @@ authors:
         given-names: Stephan
     ```
 
-### `definitions.identifier`
+### `$defs.identifier`
 
 - **type**: One of the following `object` types (click to expand/collapse):<br><br>
     1. <details>
@@ -1281,7 +1269,7 @@ authors:
             <li>
               <code>value</code>:
               <ul>
-                <li><strong>type</strong>: <a href="#definitionsdoi"><code>definitions.doi</code></a></li>
+                <li><strong>type</strong>: <a href="#defsdoi"><code>$defs.doi</code></a></li>
                 <li><strong>required</strong>: <code>true</code></li>
                 <li><strong>description</strong>: The value of the DOI, e.g. <code>10.5281/zenodo.1003149</code></li>
               </ul>
@@ -1289,7 +1277,7 @@ authors:
             <li>
               <code>description</code>:
               <ul>
-                <li><strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a></li>
+                <li><strong>type</strong>: <a href="#defsidentifier-description"><code>$defs.identifier-description</code></a></li>
                 <li><strong>required</strong>: <code>false</code></li>
                 <li><strong>description</strong>: The description of the DOI, e.g. <code>This is the DOI for version 0.11.4.</code></li>
               </ul>
@@ -1311,7 +1299,7 @@ authors:
             <li>
               <code>value</code>:
               <ul>
-                <li><strong>type</strong>: <a href="#definitionsurl"><code>definitions.url</code></a></li>
+                <li><strong>type</strong>: <a href="#defsurl"><code>$defs.url</code></a></li>
                 <li><strong>required</strong>: <code>true</code></li>
                 <li><strong>description</strong>: The value of the URL, e.g. <code>https://github.com/citation-file-format/citation-file-format</code>.</li>
               </ul>
@@ -1319,7 +1307,7 @@ authors:
             <li>
               <code>description</code>:
               <ul>
-                <li><strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a></li>
+                <li><strong>type</strong>: <a href="#defsidentifier-description"><code>$defs.identifier-description</code></a></li>
                 <li><strong>required</strong>: <code>false</code></li>
                 <li><strong>description</strong>: The description of the URL, e.g. <code>The homepage for the project</code>.</li>
               </ul>
@@ -1341,7 +1329,7 @@ authors:
             <li>
               <code>value</code>:
               <ul>
-                <li><strong>type</strong>: <a href="#definitionsswh-identifier"><code>definitions.swh-identifier</code></a></li>
+                <li><strong>type</strong>: <a href="#defsswh-identifier"><code>$defs.swh-identifier</code></a></li>
                 <li><strong>required</strong>: <code>true</code></li>
                 <li><strong>description</strong>: The value of the Software Heritage identifier, e.g. <code>swh:1:dir:bc286860f423ea7ced246ba7458eef4b4541cf2d</code>.</li>
               </ul>
@@ -1349,7 +1337,7 @@ authors:
             <li>
               <code>description</code>:
               <ul>
-                <li><strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a></li>
+                <li><strong>type</strong>: <a href="#defsidentifier-description"><code>$defs.identifier-description</code></a></li>
                 <li><strong>required</strong>: <code>false</code></li>
                 <li><strong>description</strong>: The description of the Software Heritage identifier, e.g. <code>The directory object of the repository as stored on Software Heritage.</code>.</li>
               </ul>
@@ -1371,7 +1359,7 @@ authors:
             <li>
               <code>value</code>:
               <ul>
-                <li><strong>type</strong>: <a href="#definitionsstrictish-string"><code>strictish string</code></a>.</li>
+                <li><strong>type</strong>: <a href="#defsstrictish-string"><code>strictish string</code></a>.</li>
                 <li><strong>required</strong>: <code>true</code></li>
                 <li><strong>description</strong>: The value of the identifier, e.g. <code>arXiv:2103.06681</code>.</li>
               </ul>
@@ -1379,7 +1367,7 @@ authors:
             <li>
               <code>description</code>:
               <ul>
-                <li><strong>type</strong>: <a href="#definitionsidentifier-description"><code>definitions.identifier-description</code></a></li>
+                <li><strong>type</strong>: <a href="#defsidentifier-description"><code>$defs.identifier-description</code></a></li>
                 <li><strong>required</strong>: <code>false</code></li>
                 <li><strong>description</strong>: The description of the identifier, e.g. <code>The ArXiv preprint of the paper.</code>.</li>
               </ul>
@@ -1436,9 +1424,9 @@ authors:
           description: The ArXiv preprint of the paper
     ```
 
-### `definitions.identifier-description`
+### `$defs.identifier-description`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: A description for a specific identifier value.
 - **usage**:<br><br>
@@ -1453,9 +1441,9 @@ authors:
         description: "The identifier provided by Archival Repository, which points to this version of the software."
     ```
 
-### `definitions.license`
+### `$defs.license`
 
-- **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum) objects.
+- **type**: (Array of) [`$defs.license-enum`](#defslicense-enum) objects.
 - **required**: N/A
 - **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which a work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
@@ -1468,12 +1456,13 @@ authors:
       - MIT
     ```
 
-### `definitions.license-enum`
+### `$defs.license-enum`
 
 - **type**: `enum` with values:
     - `0BSD`
     - `AAL`
     - `Abstyles`
+    - `AdaCore-doc`
     - `Adobe-2006`
     - `Adobe-Glyph`
     - `ADSL`
@@ -1500,22 +1489,31 @@ authors:
     - `Apache-2.0`
     - `APAFML`
     - `APL-1.0`
+    - `App-s2p`
     - `APSL-1.0`
     - `APSL-1.1`
     - `APSL-1.2`
     - `APSL-2.0`
+    - `Arphic-1999`
     - `Artistic-1.0`
     - `Artistic-1.0-cl8`
     - `Artistic-1.0-Perl`
     - `Artistic-2.0`
+    - `ASWF-Digital-Assets-1.0`
+    - `ASWF-Digital-Assets-1.1`
+    - `Baekmuk`
     - `Bahyph`
     - `Barr`
     - `Beerware`
+    - `Bitstream-Charter`
+    - `Bitstream-Vera`
     - `BitTorrent-1.0`
     - `BitTorrent-1.1`
     - `blessing`
     - `BlueOak-1.0.0`
+    - `Boehm-GC`
     - `Borceux`
+    - `Brian-Gladman-3-Clause`
     - `BSD-1-Clause`
     - `BSD-2-Clause`
     - `BSD-2-Clause-FreeBSD`
@@ -1527,15 +1525,23 @@ authors:
     - `BSD-3-Clause-Clear`
     - `BSD-3-Clause-LBNL`
     - `BSD-3-Clause-Modification`
+    - `BSD-3-Clause-No-Military-License`
     - `BSD-3-Clause-No-Nuclear-License`
     - `BSD-3-Clause-No-Nuclear-License-2014`
     - `BSD-3-Clause-No-Nuclear-Warranty`
     - `BSD-3-Clause-Open-MPI`
+    - `BSD-3-Clause-Sun`
     - `BSD-4-Clause`
     - `BSD-4-Clause-Shortened`
     - `BSD-4-Clause-UC`
+    - `BSD-4.3RENO`
+    - `BSD-4.3TAHOE`
+    - `BSD-Advertising-Acknowledgement`
+    - `BSD-Attribution-HPND-disclaimer`
+    - `BSD-Inferno-Nettverk`
     - `BSD-Protection`
     - `BSD-Source-Code`
+    - `BSD-Systemics`
     - `BSL-1.0`
     - `BUSL-1.1`
     - `bzip2-1.0.5`
@@ -1548,30 +1554,42 @@ authors:
     - `CC-BY-1.0`
     - `CC-BY-2.0`
     - `CC-BY-2.5`
+    - `CC-BY-2.5-AU`
     - `CC-BY-3.0`
     - `CC-BY-3.0-AT`
+    - `CC-BY-3.0-DE`
+    - `CC-BY-3.0-IGO`
+    - `CC-BY-3.0-NL`
     - `CC-BY-3.0-US`
     - `CC-BY-4.0`
     - `CC-BY-NC-1.0`
     - `CC-BY-NC-2.0`
     - `CC-BY-NC-2.5`
     - `CC-BY-NC-3.0`
+    - `CC-BY-NC-3.0-DE`
     - `CC-BY-NC-4.0`
     - `CC-BY-NC-ND-1.0`
     - `CC-BY-NC-ND-2.0`
     - `CC-BY-NC-ND-2.5`
     - `CC-BY-NC-ND-3.0`
+    - `CC-BY-NC-ND-3.0-DE`
     - `CC-BY-NC-ND-3.0-IGO`
     - `CC-BY-NC-ND-4.0`
     - `CC-BY-NC-SA-1.0`
     - `CC-BY-NC-SA-2.0`
+    - `CC-BY-NC-SA-2.0-DE`
+    - `CC-BY-NC-SA-2.0-FR`
+    - `CC-BY-NC-SA-2.0-UK`
     - `CC-BY-NC-SA-2.5`
     - `CC-BY-NC-SA-3.0`
+    - `CC-BY-NC-SA-3.0-DE`
+    - `CC-BY-NC-SA-3.0-IGO`
     - `CC-BY-NC-SA-4.0`
     - `CC-BY-ND-1.0`
     - `CC-BY-ND-2.0`
     - `CC-BY-ND-2.5`
     - `CC-BY-ND-3.0`
+    - `CC-BY-ND-3.0-DE`
     - `CC-BY-ND-4.0`
     - `CC-BY-SA-1.0`
     - `CC-BY-SA-2.0`
@@ -1580,6 +1598,8 @@ authors:
     - `CC-BY-SA-2.5`
     - `CC-BY-SA-3.0`
     - `CC-BY-SA-3.0-AT`
+    - `CC-BY-SA-3.0-DE`
+    - `CC-BY-SA-3.0-IGO`
     - `CC-BY-SA-4.0`
     - `CC-PDDC`
     - `CC0-1.0`
@@ -1587,6 +1607,7 @@ authors:
     - `CDDL-1.1`
     - `CDL-1.0`
     - `CDLA-Permissive-1.0`
+    - `CDLA-Permissive-2.0`
     - `CDLA-Sharing-1.0`
     - `CECILL-1.0`
     - `CECILL-1.1`
@@ -1599,16 +1620,25 @@ authors:
     - `CERN-OHL-P-2.0`
     - `CERN-OHL-S-2.0`
     - `CERN-OHL-W-2.0`
+    - `CFITSIO`
+    - `check-cvs`
+    - `checkmk`
     - `ClArtistic`
+    - `Clips`
+    - `CMU-Mach`
     - `CNRI-Jython`
     - `CNRI-Python`
     - `CNRI-Python-GPL-Compatible`
+    - `COIL-1.0`
+    - `Community-Spec-1.0`
     - `Condor-1.1`
     - `copyleft-next-0.3.0`
     - `copyleft-next-0.3.1`
+    - `Cornell-Lossless-JPEG`
     - `CPAL-1.0`
     - `CPL-1.0`
     - `CPOL-1.02`
+    - `Cronyx`
     - `Crossword`
     - `CrystalStacker`
     - `CUA-OPL-1.0`
@@ -1616,10 +1646,13 @@ authors:
     - `curl`
     - `D-FSL-1.0`
     - `diffmark`
+    - `DL-DE-BY-2.0`
+    - `DL-DE-ZERO-2.0`
     - `DOC`
     - `Dotseqn`
     - `DRL-1.0`
     - `DSDP`
+    - `dtoa`
     - `dvipdfm`
     - `ECL-1.0`
     - `ECL-2.0`
@@ -1627,6 +1660,7 @@ authors:
     - `EFL-1.0`
     - `EFL-2.0`
     - `eGenix`
+    - `Elastic-2.0`
     - `Entessa`
     - `EPICS`
     - `EPL-1.0`
@@ -1639,13 +1673,19 @@ authors:
     - `EUPL-1.2`
     - `Eurosym`
     - `Fair`
+    - `FBM`
+    - `FDK-AAC`
+    - `Ferguson-Twofish`
     - `Frameworx-1.0`
     - `FreeBSD-DOC`
     - `FreeImage`
     - `FSFAP`
     - `FSFUL`
     - `FSFULLR`
+    - `FSFULLRWD`
     - `FTL`
+    - `Furuseth`
+    - `fwlw`
     - `GD`
     - `GFDL-1.1`
     - `GFDL-1.1-invariants-only`
@@ -1673,6 +1713,7 @@ authors:
     - `Glide`
     - `Glulxe`
     - `GLWTPL`
+    - `GNU-compiler-exception`
     - `gnuplot`
     - `GPL-1.0`
     - `GPL-1.0-only`
@@ -1693,31 +1734,50 @@ authors:
     - `GPL-3.0-with-autoconf-exception`
     - `GPL-3.0-with-GCC-exception`
     - `GPL-3.0+`
+    - `Graphics-Gems`
     - `gSOAP-1.3b`
     - `HaskellReport`
     - `Hippocratic-2.1`
+    - `HP-1986`
+    - `HP-1989`
     - `HPND`
+    - `HPND-DEC`
+    - `HPND-export-US`
+    - `HPND-Markus-Kuhn`
+    - `HPND-Pbmplus`
+    - `HPND-sell-regexpr`
     - `HPND-sell-variant`
+    - `HPND-sell-variant-MIT-disclaimer`
+    - `HPND-UC`
     - `HTMLTIDY`
     - `IBM-pibs`
     - `ICU`
+    - `IEC-Code-Components-EULA`
     - `IJG`
+    - `IJG-short`
     - `ImageMagick`
     - `iMatix`
     - `Imlib2`
     - `Info-ZIP`
+    - `Inner-Net-2.0`
     - `Intel`
     - `Intel-ACPI`
     - `Interbase-1.0`
     - `IPA`
     - `IPL-1.0`
     - `ISC`
+    - `Jam`
     - `JasPer-2.0`
+    - `JPL-image`
     - `JPNIC`
     - `JSON`
+    - `Kastrup`
+    - `Kazlib`
+    - `Knuth-CTAN`
     - `LAL-1.2`
     - `LAL-1.3`
     - `Latex2e`
+    - `Latex2e-translated-notice`
     - `Leptonica`
     - `LGPL-2.0`
     - `LGPL-2.0-only`
@@ -1736,10 +1796,16 @@ authors:
     - `libpng-2.0`
     - `libselinux-1.0`
     - `libtiff`
+    - `libutil-David-Nugent`
     - `LiLiQ-P-1.1`
     - `LiLiQ-R-1.1`
     - `LiLiQ-Rplus-1.1`
+    - `Linux-man-pages-1-para`
+    - `Linux-man-pages-copyleft`
+    - `Linux-man-pages-copyleft-2-para`
+    - `Linux-man-pages-copyleft-var`
     - `Linux-OpenIB`
+    - `LOOP`
     - `LPL-1.0`
     - `LPL-1.02`
     - `LPPL-1.0`
@@ -1747,7 +1813,15 @@ authors:
     - `LPPL-1.2`
     - `LPPL-1.3a`
     - `LPPL-1.3c`
+    - `Lucida-Bitmap-Fonts`
+    - `LZMA-SDK-9.11-to-9.20`
+    - `LZMA-SDK-9.22`
+    - `magaz`
     - `MakeIndex`
+    - `Martin-Birgmeier`
+    - `McPhee-slideshow`
+    - `metamail`
+    - `Minpack`
     - `MirOS`
     - `MIT`
     - `MIT-0`
@@ -1755,15 +1829,23 @@ authors:
     - `MIT-CMU`
     - `MIT-enna`
     - `MIT-feh`
+    - `MIT-Festival`
     - `MIT-Modern-Variant`
     - `MIT-open-group`
+    - `MIT-testregex`
+    - `MIT-Wu`
     - `MITNFA`
+    - `MMIXware`
     - `Motosoto`
+    - `MPEG-SSG`
+    - `mpi-permissive`
     - `mpich2`
     - `MPL-1.0`
     - `MPL-1.1`
     - `MPL-2.0`
     - `MPL-2.0-no-copyleft-exception`
+    - `mplus`
+    - `MS-LPL`
     - `MS-PL`
     - `MS-RL`
     - `MTLL`
@@ -1781,9 +1863,12 @@ authors:
     - `NetCDF`
     - `Newsletr`
     - `NGPL`
+    - `NICTA-1.0`
     - `NIST-PD`
     - `NIST-PD-fallback`
+    - `NIST-Software`
     - `NLOD-1.0`
+    - `NLOD-2.0`
     - `NLPL`
     - `Nokia`
     - `NOSL`
@@ -1800,6 +1885,7 @@ authors:
     - `OCLC-2.0`
     - `ODbL-1.0`
     - `ODC-By-1.0`
+    - `OFFIS`
     - `OFL-1.0`
     - `OFL-1.0-no-RFN`
     - `OFL-1.0-RFN`
@@ -1829,9 +1915,13 @@ authors:
     - `OLDAP-2.6`
     - `OLDAP-2.7`
     - `OLDAP-2.8`
+    - `OLFL-1.3`
     - `OML`
+    - `OpenPBS-2.3`
     - `OpenSSL`
     - `OPL-1.0`
+    - `OPL-UK-3.0`
+    - `OPUBL-1.0`
     - `OSET-PL-2.1`
     - `OSL-1.0`
     - `OSL-1.1`
@@ -1844,6 +1934,7 @@ authors:
     - `PHP-3.0`
     - `PHP-3.01`
     - `Plexus`
+    - `pnmstitch`
     - `PolyForm-Noncommercial-1.0.0`
     - `PolyForm-Small-Business-1.0.0`
     - `PostgreSQL`
@@ -1851,8 +1942,10 @@ authors:
     - `psfrag`
     - `psutils`
     - `Python-2.0`
+    - `Python-2.0.1`
     - `Qhull`
     - `QPL-1.0`
+    - `QPL-1.0-INRIA-2004`
     - `Rdisc`
     - `RHeCos-1.1`
     - `RPL-1.1`
@@ -1861,67 +1954,96 @@ authors:
     - `RSA-MD`
     - `RSCPL`
     - `Ruby`
+    - `SANE-exception`
     - `SAX-PD`
     - `Saxpath`
     - `SCEA`
+    - `SchemeReport`
     - `Sendmail`
     - `Sendmail-8.23`
     - `SGI-B-1.0`
     - `SGI-B-1.1`
     - `SGI-B-2.0`
+    - `SGI-OpenGL`
+    - `SGP4`
     - `SHL-0.5`
     - `SHL-0.51`
     - `SimPL-2.0`
     - `SISSL`
     - `SISSL-1.2`
+    - `SL`
     - `Sleepycat`
     - `SMLNJ`
     - `SMPPL`
     - `SNIA`
+    - `snprintf`
+    - `Soundex`
     - `Spencer-86`
     - `Spencer-94`
     - `Spencer-99`
     - `SPL-1.0`
+    - `ssh-keyscan`
     - `SSH-OpenSSH`
     - `SSH-short`
     - `SSPL-1.0`
     - `StandardML-NJ`
+    - `stunnel-exception`
     - `SugarCRM-1.1.3`
+    - `SunPro`
     - `SWL`
+    - `swrule`
+    - `Symlinks`
     - `TAPR-OHL-1.0`
     - `TCL`
     - `TCP-wrappers`
+    - `TermReadKey`
+    - `Texinfo-exception`
     - `TMate`
     - `TORQUE-1.1`
     - `TOSL`
+    - `TPDL`
+    - `TPL-1.0`
+    - `TTWL`
+    - `TTYP0`
     - `TU-Berlin-1.0`
     - `TU-Berlin-2.0`
+    - `UCAR`
     - `UCL-1.0`
+    - `ulem`
     - `Unicode-DFS-2015`
     - `Unicode-DFS-2016`
     - `Unicode-TOU`
+    - `UnixCrypt`
     - `Unlicense`
     - `UPL-1.0`
+    - `URT-RLE`
     - `Vim`
     - `VOSTROM`
     - `VSL-1.0`
     - `W3C`
     - `W3C-19980720`
     - `W3C-20150513`
+    - `w3m`
     - `Watcom-1.0`
+    - `Widget-Workshop`
     - `Wsuipa`
     - `WTFPL`
     - `wxWindows`
     - `X11`
+    - `X11-distribute-modifications-variant`
+    - `Xdebug-1.03`
     - `Xerox`
+    - `Xfig`
     - `XFree86-1.1`
     - `xinetd`
+    - `xlock`
     - `Xnet`
     - `xpp`
     - `XSkat`
     - `YPL-1.0`
     - `YPL-1.1`
     - `Zed`
+    - `Zeeff`
     - `Zend-2.0`
     - `Zimbra-1.3`
     - `Zimbra-1.4`
@@ -1942,7 +2064,7 @@ authors:
       - MIT
     ```
 
-### `definitions.orcid`
+### `$defs.orcid`
 
 - **type**: `uri` with pattern [`^https://orcid\.org/[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]{1}$`](https://regex101.com/r/GLGGDO/1).
 - **required**: N/A
@@ -1955,25 +2077,25 @@ authors:
         orcid: "https://orcid.org/1234-5678-9101-1121"
     ```
 
-### `definitions.person`
+### `$defs.person`
 
 - **type**: `object` with the following keys:
-    - [`address`](#definitionspersonaddress)
-    - [`affiliation`](#definitionspersonaffiliation)
-    - [`alias`](#definitionspersonalias)
-    - [`city`](#definitionspersoncity)
-    - [`country`](#definitionspersoncountry)
-    - [`email`](#definitionspersonemail)
-    - [`family-names`](#definitionspersonfamily-names)
-    - [`fax`](#definitionspersonfax)
-    - [`given-names`](#definitionspersongiven-names)
-    - [`name-particle`](#definitionspersonname-particle)
-    - [`name-suffix`](#definitionspersonname-suffix)
-    - [`orcid`](#definitionspersonorcid)
-    - [`post-code`](#definitionspersonpost-code)
-    - [`region`](#definitionspersonregion)
-    - [`tel`](#definitionspersontel)
-    - [`website`](#definitionspersonwebsite)
+    - [`address`](#defspersonaddress)
+    - [`affiliation`](#defspersonaffiliation)
+    - [`alias`](#defspersonalias)
+    - [`city`](#defspersoncity)
+    - [`country`](#defspersoncountry)
+    - [`email`](#defspersonemail)
+    - [`family-names`](#defspersonfamily-names)
+    - [`fax`](#defspersonfax)
+    - [`given-names`](#defspersongiven-names)
+    - [`name-particle`](#defspersonname-particle)
+    - [`name-suffix`](#defspersonname-suffix)
+    - [`orcid`](#defspersonorcid)
+    - [`post-code`](#defspersonpost-code)
+    - [`region`](#defspersonregion)
+    - [`tel`](#defspersontel)
+    - [`website`](#defspersonwebsite)
 - **required**: N/A
 - **description**: A person.
 The Citation File Format aims to implement a culturally neutral model for personal names, according to the [suggestions on splitting personal names by the W3C](https://www.w3.org/International/questions/qa-personal-names) and the implementation of personal name splitting in BibTeX ([Hufflen, 2006](https://www.tug.org/TUGboat/tb27-2/tb87hufflen.pdf)). To this end, the Citation File Format provides four generic keys to specify personal names:
@@ -2005,9 +2127,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         website: "https://research-project.org"
     ```
 
-### `definitions.person.address`
+### `$defs.person.address`
 
-- **type**: [`definitions.address`](#definitionsaddress)
+- **type**: [`$defs.address`](#defsaddress)
 - **required**: `false`
 - **description**: The person's address.
 - **usage**:<br><br>
@@ -2018,9 +2140,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         address: "742 Evergreen Terrace"
     ```
 
-### `definitions.person.affiliation`
+### `$defs.person.affiliation`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The person's affiliation.
 - **usage**:<br><br>
@@ -2031,9 +2153,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         affiliation: "German Aerospace Center (DLR)"
     ```
 
-### `definitions.person.alias`
+### `$defs.person.alias`
 
-- **type**: [`definitions.alias`](#definitionsalias)
+- **type**: [`$defs.alias`](#defsalias)
 - **required**: `false`
 - **description**: The person's alias.
 - **usage**:<br><br>
@@ -2044,9 +2166,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         alias: sdruskat
     ```
 
-### `definitions.person.city`
+### `$defs.person.city`
 
-- **type**: [`definitions.city`](#definitionscity)
+- **type**: [`$defs.city`](#defscity)
 - **required**: `false`
 - **description**: The person's city.
 - **usage**:<br><br>
@@ -2057,9 +2179,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         city: Berlin
     ```
 
-### `definitions.person.country`
+### `$defs.person.country`
 
-- **type**: [`definitions.country`](#definitionscountry)
+- **type**: [`$defs.country`](#defscountry)
 - **required**: `false`
 - **description**: The person's country.
 - **usage**:<br><br>
@@ -2070,9 +2192,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         country: DE
     ```
 
-### `definitions.person.email`
+### `$defs.person.email`
 
-- **type**: [`definitions.email`](#definitionsemail)
+- **type**: [`$defs.email`](#defsemail)
 - **required**: `false`
 - **description**: The person's email address.
 - **usage**:<br><br>
@@ -2083,9 +2205,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         email: mail@research-project.org
     ```
 
-### `definitions.person.family-names`
+### `$defs.person.family-names`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The person's family names.
 - **usage**:<br><br>
@@ -2095,9 +2217,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         given-names: Stephan
     ```
 
-### `definitions.person.fax`
+### `$defs.person.fax`
 
-- **type**: [`definitions.fax`](#definitionsfax)
+- **type**: [`$defs.fax`](#defsfax)
 - **required**: `false`
 - **description**: The person's fax number.
 - **usage**:<br><br>
@@ -2108,9 +2230,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         fax: +12-3456-7890
     ```
 
-### `definitions.person.given-names`
+### `$defs.person.given-names`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The person's given names.
 - **usage**:<br><br>
@@ -2120,9 +2242,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         given-names: Stephan
     ```
 
-### `definitions.person.name-particle`
+### `$defs.person.name-particle`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The person's name particle, e.g., a [nobiliary particle](https://en.wikipedia.org/wiki/Nobiliary_particle) or a [preposition] meaning 'of' or 'from' (for example 'von' in 'Alexander von Humboldt').
 - **usage**:<br><br>
@@ -2133,9 +2255,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         name-particle: von
     ```
 
-### `definitions.person.name-suffix`
+### `$defs.person.name-suffix`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The person's [name suffix](https://en.wikipedia.org/wiki/Suffix_(name)), e.g. 'Jr.' for Sammy Davis Jr. or 'III' for Frank Edwin Wright III.
 - **usage**:<br><br>
@@ -2146,9 +2268,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         name-suffix: Jr.
     ```
 
-### `definitions.person.orcid`
+### `$defs.person.orcid`
 
-- **type**: [`definitions.orcid`](#definitionsorcid)
+- **type**: [`$defs.orcid`](#defsorcid)
 - **required**: `false`
 - **description**: The person's [ORCID](https://orcid.org) identifier.
 - **usage**:<br><br>
@@ -2159,9 +2281,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         orcid: "https://orcid.org/1234-5678-9101-1121"
     ```
 
-### `definitions.person.post-code`
+### `$defs.person.post-code`
 
-- **type**: [`definitions.post-code`](#definitionspost-code)
+- **type**: [`$defs.post-code`](#defspost-code)
 - **required**: `false`
 - **description**: The person's post code.
 - **usage**:<br><br>
@@ -2178,9 +2300,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         post-code: "90210"
     ```
 
-### `definitions.person.region`
+### `$defs.person.region`
 
-- **type**: [`definitions.region`](#definitionsregion)
+- **type**: [`$defs.region`](#defsregion)
 - **required**: `false`
 - **description**: The person's region.
 - **usage**:<br><br>
@@ -2191,9 +2313,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         region: Renfrewshire
     ```
 
-### `definitions.person.tel`
+### `$defs.person.tel`
 
-- **type**: [`definitions.tel`](#definitionstel)
+- **type**: [`$defs.tel`](#defstel)
 - **required**: `false`
 - **description**: The person's telephone number.
 - **usage**:<br><br>
@@ -2204,9 +2326,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         tel: +12-345-6789098
     ```
 
-### `definitions.person.website`
+### `$defs.person.website`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
 - **description**: The person's website.
 - **usage**:<br><br>
@@ -2217,7 +2339,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         website: "https://research-project.org"
     ```
 
-### `definitions.post-code`
+### `$defs.post-code`
 
 - **type**: `string` or `number`
 - **required**: N/A
@@ -2234,80 +2356,80 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         post-code: 12053
     ```
 
-### `definitions.reference`
+### `$defs.reference`
 
 - **type**: `object` with the following keys:
-    - [`abbreviation`](#definitionsreferenceabbreviation)
-    - [`abstract`](#definitionsreferenceabstract)
-    - [`authors`](#definitionsreferenceauthors)
-    - [`collection-doi`](#definitionsreferencecollection-doi)
-    - [`collection-title`](#definitionsreferencecollection-title)
-    - [`collection-type`](#definitionsreferencecollection-type)
-    - [`commit`](#definitionsreferencecommit)
-    - [`conference`](#definitionsreferenceconference)
-    - [`contact`](#definitionsreferencecontact)
-    - [`copyright`](#definitionsreferencecopyright)
-    - [`data-type`](#definitionsreferencedata-type)
-    - [`database-provider`](#definitionsreferencedatabase-provider)
-    - [`database`](#definitionsreferencedatabase)
-    - [`date-accessed`](#definitionsreferencedate-accessed)
-    - [`date-downloaded`](#definitionsreferencedate-downloaded)
-    - [`date-published`](#definitionsreferencedate-published)
-    - [`date-released`](#definitionsreferencedate-released)
-    - [`department`](#definitionsreferencedepartment)
-    - [`doi`](#definitionsreferencedoi)
-    - [`edition`](#definitionsreferenceedition)
-    - [`editors`](#definitionsreferenceeditors)
-    - [`editors-series`](#definitionsreferenceeditors-series)
-    - [`end`](#definitionsreferenceend)
-    - [`entry`](#definitionsreferenceentry)
-    - [`filename`](#definitionsreferencefilename)
-    - [`format`](#definitionsreferenceformat)
-    - [`identifiers`](#definitionsreferenceidentifiers)
-    - [`institution`](#definitionsreferenceinstitution)
-    - [`isbn`](#definitionsreferenceisbn)
-    - [`issn`](#definitionsreferenceissn)
-    - [`issue`](#definitionsreferenceissue)
-    - [`issue-date`](#definitionsreferenceissue-date)
-    - [`issue-title`](#definitionsreferenceissue-title)
-    - [`journal`](#definitionsreferencejournal)
-    - [`keywords`](#definitionsreferencekeywords)
-    - [`languages`](#definitionsreferencelanguages)
-    - [`license`](#definitionsreferencelicense)
-    - [`license-url`](#definitionsreferencelicense-url)
-    - [`loc-end`](#definitionsreferenceloc-end)
-    - [`loc-start`](#definitionsreferenceloc-start)
-    - [`location`](#definitionsreferencelocation)
-    - [`medium`](#definitionsreferencemedium)
-    - [`month`](#definitionsreferencemonth)
-    - [`nihmsid`](#definitionsreferencenihmsid)
-    - [`notes`](#definitionsreferencenotes)
-    - [`number`](#definitionsreferencenumber)
-    - [`number-volumes`](#definitionsreferencenumber-volumes)
-    - [`pages`](#definitionsreferencepages)
-    - [`patent-states`](#definitionsreferencepatent-states)
-    - [`pmcid`](#definitionsreferencepmcid)
-    - [`publisher`](#definitionsreferencepublisher)
-    - [`recipients`](#definitionsreferencerecipients)
-    - [`repository`](#definitionsreferencerepository)
-    - [`repository-artifact`](#definitionsreferencerepository-artifact)
-    - [`repository-code`](#definitionsreferencerepository-code)
-    - [`scope`](#definitionsreferencescope)
-    - [`section`](#definitionsreferencesection)
-    - [`senders`](#definitionsreferencesenders)
-    - [`start`](#definitionsreferencestart)
-    - [`status`](#definitionsreferencestatus)
-    - [`term`](#definitionsreferenceterm)
-    - [`thesis-type`](#definitionsreferencethesis-type)
-    - [`title`](#definitionsreferencetitle)
-    - [`translators`](#definitionsreferencetranslators)
-    - [`type`](#definitionsreferencetype)
-    - [`url`](#definitionsreferenceurl)
-    - [`version`](#definitionsreferenceversion)
-    - [`volume`](#definitionsreferencevolume)
-    - [`volume-title`](#definitionsreferencevolume-title)
-    - [`year`](#definitionsreferenceyear)
-    - [`year-original`](#definitionsreferenceyear-original)
+    - [`abbreviation`](#defsreferenceabbreviation)
+    - [`abstract`](#defsreferenceabstract)
+    - [`authors`](#defsreferenceauthors)
+    - [`collection-doi`](#defsreferencecollection-doi)
+    - [`collection-title`](#defsreferencecollection-title)
+    - [`collection-type`](#defsreferencecollection-type)
+    - [`commit`](#defsreferencecommit)
+    - [`conference`](#defsreferenceconference)
+    - [`contact`](#defsreferencecontact)
+    - [`copyright`](#defsreferencecopyright)
+    - [`data-type`](#defsreferencedata-type)
+    - [`database-provider`](#defsreferencedatabase-provider)
+    - [`database`](#defsreferencedatabase)
+    - [`date-accessed`](#defsreferencedate-accessed)
+    - [`date-downloaded`](#defsreferencedate-downloaded)
+    - [`date-published`](#defsreferencedate-published)
+    - [`date-released`](#defsreferencedate-released)
+    - [`department`](#defsreferencedepartment)
+    - [`doi`](#defsreferencedoi)
+    - [`edition`](#defsreferenceedition)
+    - [`editors`](#defsreferenceeditors)
+    - [`editors-series`](#defsreferenceeditors-series)
+    - [`end`](#defsreferenceend)
+    - [`entry`](#defsreferenceentry)
+    - [`filename`](#defsreferencefilename)
+    - [`format`](#defsreferenceformat)
+    - [`identifiers`](#defsreferenceidentifiers)
+    - [`institution`](#defsreferenceinstitution)
+    - [`isbn`](#defsreferenceisbn)
+    - [`issn`](#defsreferenceissn)
+    - [`issue`](#defsreferenceissue)
+    - [`issue-date`](#defsreferenceissue-date)
+    - [`issue-title`](#defsreferenceissue-title)
+    - [`journal`](#defsreferencejournal)
+    - [`keywords`](#defsreferencekeywords)
+    - [`languages`](#defsreferencelanguages)
+    - [`license`](#defsreferencelicense)
+    - [`license-url`](#defsreferencelicense-url)
+    - [`loc-end`](#defsreferenceloc-end)
+    - [`loc-start`](#defsreferenceloc-start)
+    - [`location`](#defsreferencelocation)
+    - [`medium`](#defsreferencemedium)
+    - [`month`](#defsreferencemonth)
+    - [`nihmsid`](#defsreferencenihmsid)
+    - [`notes`](#defsreferencenotes)
+    - [`number`](#defsreferencenumber)
+    - [`number-volumes`](#defsreferencenumber-volumes)
+    - [`pages`](#defsreferencepages)
+    - [`patent-states`](#defsreferencepatent-states)
+    - [`pmcid`](#defsreferencepmcid)
+    - [`publisher`](#defsreferencepublisher)
+    - [`recipients`](#defsreferencerecipients)
+    - [`repository`](#defsreferencerepository)
+    - [`repository-artifact`](#defsreferencerepository-artifact)
+    - [`repository-code`](#defsreferencerepository-code)
+    - [`scope`](#defsreferencescope)
+    - [`section`](#defsreferencesection)
+    - [`senders`](#defsreferencesenders)
+    - [`start`](#defsreferencestart)
+    - [`status`](#defsreferencestatus)
+    - [`term`](#defsreferenceterm)
+    - [`thesis-type`](#defsreferencethesis-type)
+    - [`title`](#defsreferencetitle)
+    - [`translators`](#defsreferencetranslators)
+    - [`type`](#defsreferencetype)
+    - [`url`](#defsreferenceurl)
+    - [`version`](#defsreferenceversion)
+    - [`volume`](#defsreferencevolume)
+    - [`volume-title`](#defsreferencevolume-title)
+    - [`year`](#defsreferenceyear)
+    - [`year-original`](#defsreferenceyear-original)
 - **required**: N/A
 - **description**: A reference.
 - **usage**:<br><br>
@@ -2445,9 +2567,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         year-original: 1978
     ```
 
-### `definitions.reference.abbreviation`
+### `$defs.reference.abbreviation`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The abbreviation of a work.
 - **usage**:<br><br>
@@ -2462,9 +2584,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         type: generic
     ```
 
-### `definitions.reference.abstract`
+### `$defs.reference.abstract`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The abstract of the work.
     - If the work is a journal paper or other academic work: The abstract of the work.
@@ -2481,9 +2603,9 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
         type: generic
     ```
 
-### `definitions.reference.authors`
+### `$defs.reference.authors`
 
-- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **type**: Array of [`$defs.person`](#defsperson) and/or [`$defs.entity`](#defsentity) objects.
 - **required**: `true`
 - **description**: The authors of the work.
 - **usage**:<br><br>
@@ -2509,11 +2631,11 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 To enable credit for the individuals that have created a work,
 it is good practice to cite the respective individuals as authors.
 Sometimes you may not be able to determine the person names of the relevant individuals to create
-[`definitions.person`](#definitionsperson) objects for them,
+[`$defs.person`](#defsperson) objects for them,
 for example when a software you cite does not provide a `CITATION.cff` file.
 Then, the next best thing is to refer to those that you could not determine person names for
 collectively as a "team" or "project" using the title of the work
-in a [`definitions.entity`](#definitionsentity) object:
+in a [`$defs.entity`](#defsentity) object:
 
 ```yaml
 authors:
@@ -2540,9 +2662,9 @@ authors:
   - name: anonymous
 ```
 
-### `definitions.reference.collection-doi`
+### `$defs.reference.collection-doi`
 
-- **type**: [`definitions.doi`](#definitionsdoi)
+- **type**: [`$defs.doi`](#defsdoi)
 - **required**: `false`
 - **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of a collection containing the work.
 - **usage**:<br><br>
@@ -2557,9 +2679,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.collection-title`
+### `$defs.reference.collection-title`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The title of a collection or proceedings.
 - **usage**:<br><br>
@@ -2574,9 +2696,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.collection-type`
+### `$defs.reference.collection-type`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The type of a collection.
 - **usage**:<br><br>
@@ -2591,9 +2713,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.commit`
+### `$defs.reference.commit`
 
-- **type**: [`definitions.commit`](#definitionscommit)
+- **type**: [`$defs.commit`](#defscommit)
 - **required**: `false`
 - **description**: The (e.g., Git) commit hash or (e.g., Subversion) revision number of the work.
 - **usage**:<br><br>
@@ -2608,9 +2730,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.conference`
+### `$defs.reference.conference`
 
-- **type**: [`definitions.entity`](#definitionsentity)
+- **type**: [`$defs.entity`](#defsentity)
 - **required**: `false`
 - **description**: The conference where the work was presented.
 - **usage**:<br><br>
@@ -2627,9 +2749,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.contact`
+### `$defs.reference.contact`
 
-- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **type**: Array of [`$defs.person`](#defsperson) and/or [`$defs.entity`](#defsentity) objects.
 - **required**: `false`
 - **description**: The contact person, group, company, etc. for a work.
 - **usage**:<br><br>
@@ -2650,9 +2772,9 @@ authors:
       type: generic
     ```
 
-### `definitions.reference.copyright`
+### `$defs.reference.copyright`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The copyright information pertaining to the work.
 - **usage**:<br><br>
@@ -2667,9 +2789,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.data-type`
+### `$defs.reference.data-type`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The data type of a data set.
 - **usage**:<br><br>
@@ -2684,9 +2806,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.database-provider`
+### `$defs.reference.database-provider`
 
-- **type**: [`definitions.entity`](#definitionsentity)
+- **type**: [`$defs.entity`](#defsentity)
 - **required**: `false`
 - **description**: The provider of the database where a work was accessed/is stored.
 - **usage**:<br><br>
@@ -2703,9 +2825,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.database`
+### `$defs.reference.database`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The name of the database where a work was accessed/is stored.
 - **usage**:<br><br>
@@ -2720,9 +2842,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.date-accessed`
+### `$defs.reference.date-accessed`
 
-- **type**: [`definitions.date`](#definitionsdate)
+- **type**: [`$defs.date`](#defsdate)
 - **required**: `false`
 - **description**: The date the work was accessed.
 - **usage**:<br><br>
@@ -2737,9 +2859,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.date-downloaded`
+### `$defs.reference.date-downloaded`
 
-- **type**: [`definitions.date`](#definitionsdate)
+- **type**: [`$defs.date`](#defsdate)
 - **required**: `false`
 - **description**: The date the work has been downloaded.
 - **usage**:<br><br>
@@ -2754,9 +2876,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.date-published`
+### `$defs.reference.date-published`
 
-- **type**: [`definitions.date`](#definitionsdate)
+- **type**: [`$defs.date`](#defsdate)
 - **required**: `false`
 - **description**: The date the work has been published.
 - **usage**:<br><br>
@@ -2771,9 +2893,9 @@ authors:
       type: generic
     ```
 
-### `definitions.reference.date-released`
+### `$defs.reference.date-released`
 
-- **type**: [`definitions.date`](#definitionsdate)
+- **type**: [`$defs.date`](#defsdate)
 - **required**: `false`
 - **description**: The date the work has been released.
 - **usage**:<br><br>
@@ -2788,9 +2910,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.department`
+### `$defs.reference.department`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The department where a work has been produced.
 - **usage**:<br><br>
@@ -2805,9 +2927,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.doi`
+### `$defs.reference.doi`
 
-- **type**: [`definitions.doi`](#definitionsdoi)
+- **type**: [`$defs.doi`](#defsdoi)
 - **required**: `false`
 - **description**: The [DOI](https://en.wikipedia.org/wiki/Digital_object_identifier) of the work.
 - **usage**:<br><br>
@@ -2822,9 +2944,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.edition`
+### `$defs.reference.edition`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The edition of the work.
 - **usage**:<br><br>
@@ -2839,9 +2961,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.editors`
+### `$defs.reference.editors`
 
-- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **type**: Array of [`$defs.person`](#defsperson) and/or [`$defs.entity`](#defsentity) objects.
 - **required**: `false`
 - **description**: The editor(s) of a work.
 - **usage**:<br><br>
@@ -2862,9 +2984,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.editors-series`
+### `$defs.reference.editors-series`
 
-- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **type**: Array of [`$defs.person`](#defsperson) and/or [`$defs.entity`](#defsentity) objects.
 - **required**: `false`
 - **description**: The editor(s) of a series in which a work has been published.
 - **usage**:<br><br>
@@ -2885,9 +3007,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.end`
+### `$defs.reference.end`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `integer`
+- **type**: [strictish string](#defsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The end page of the work.
 - **usage**:<br><br>
@@ -2912,9 +3034,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.entry`
+### `$defs.reference.entry`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: An entry in the collection that constitutes the work.
 - **usage**:<br><br>
@@ -2929,9 +3051,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.filename`
+### `$defs.reference.filename`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The name of the electronic file containing the work.
 - **usage**:<br><br>
@@ -2946,9 +3068,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.format`
+### `$defs.reference.format`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The format in which a work is represented.
 - **usage**:<br><br>
@@ -2963,9 +3085,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.identifiers`
+### `$defs.reference.identifiers`
 
-- **type**: Array of [`definitions.identifier`](#definitionsidentifier) objects.
+- **type**: Array of [`$defs.identifier`](#defsidentifier) objects.
 - **required**: `false`
 - **description**: The identifier(s) of the work.
 - **usage**:<br><br>
@@ -3004,9 +3126,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.institution`
+### `$defs.reference.institution`
 
-- **type**: [`definitions.entity`](#definitionsentity)
+- **type**: [`$defs.entity`](#defsentity)
 - **required**: `false`
 - **description**: The institution where a work has been produced or published.
 - **usage**:<br><br>
@@ -3023,7 +3145,7 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.isbn`
+### `$defs.reference.isbn`
 
 - **type**: `string` with pattern [`^[0-9\- ]{10,17}X?$`](https://regex101.com/library/6oS1PA)
 - **required**: `false`
@@ -3040,7 +3162,7 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.issn`
+### `$defs.reference.issn`
 
 - **type**: `string` with pattern [`^\d{4}-\d{3}[\dxX]$`](https://regex101.com/library/jqobq9)
 - **required**: `false`
@@ -3057,9 +3179,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.issue`
+### `$defs.reference.issue`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `number`
+- **type**: [strictish string](#defsstrictish-string) or `number`
 - **required**: `false`
 - **description**: The issue of a periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3084,9 +3206,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.issue-date`
+### `$defs.reference.issue-date`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The publication date of the issue of a periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3111,9 +3233,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.issue-title`
+### `$defs.reference.issue-title`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The name of the issue of a periodical in which the work appeared.
 - **usage**:<br><br>
@@ -3128,9 +3250,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.journal`
+### `$defs.reference.journal`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The name of the journal/magazine/newspaper/periodical where the work was published.
 - **usage**:<br><br>
@@ -3145,9 +3267,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.keywords`
+### `$defs.reference.keywords`
 
-- **type**: Array of [strictish string](#definitionsstrictish-string)
+- **type**: Array of [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: Keywords pertaining to the work.
 - **usage**:<br><br>
@@ -3168,7 +3290,7 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.languages`
+### `$defs.reference.languages`
 
 - **type**: Array of [ISO 639](https://en.wikipedia.org/wiki/ISO_639) `string` with 2 or 3 characters and pattern [`^[a-z]{2,3}$`](https://regex101.com/library/aMqWLH)
 - **required**: `false`
@@ -3189,9 +3311,9 @@ authors:
         type: generic
     ```
 
-### `definitions.reference.license`
+### `$defs.reference.license`
 
-- **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum).
+- **type**: (Array of) [`$defs.license-enum`](#defslicense-enum).
 - **required**: `false`
 - **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which the work is made available.
 When there are multiple licenses, it is assumed their relationship is OR, not AND.
@@ -3221,11 +3343,11 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.license-url`
+### `$defs.reference.license-url`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
-- **description**: The URL of the license text under which the work is licensed (only for non-standard licenses not included in the [SPDX License List](#definitionslicense-enum)).
+- **description**: The URL of the license text under which the work is licensed (only for non-standard licenses not included in the [SPDX License List](#defslicense-enum)).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3238,9 +3360,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.loc-end`
+### `$defs.reference.loc-end`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `integer`
+- **type**: [strictish string](#defsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work ends.
 - **usage**:<br><br>
@@ -3265,9 +3387,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.loc-start`
+### `$defs.reference.loc-start`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `integer`
+- **type**: [strictish string](#defsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The line of code in the file where the work starts.
 - **usage**:<br><br>
@@ -3292,9 +3414,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.location`
+### `$defs.reference.location`
 
-- **type**: [`definitions.entity`](#definitionsentity)
+- **type**: [`$defs.entity`](#defsentity)
 - **required**: `false`
 - **description**: The location of the work.
 - **usage**:<br><br>
@@ -3311,9 +3433,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.medium`
+### `$defs.reference.medium`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The medium of the work.
 - **usage**:<br><br>
@@ -3328,7 +3450,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.month`
+### `$defs.reference.month`
 
 - **type**: `integer` in range `1-12` or `enum` with values:
     - `1`
@@ -3367,9 +3489,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.nihmsid`
+### `$defs.reference.nihmsid`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The [NIHMSID](https://web.archive.org/web/20210802210057/https://www.ncbi.nlm.nih.gov/pmc/about/public-access-info/) of a work.
 - **usage**:<br><br>
@@ -3384,9 +3506,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.notes`
+### `$defs.reference.notes`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: Notes pertaining to the work. Note that this key should contain notes that may be picked up by some downstream tooling (e.g., reference managers), but not others (e.g., a software index).
 - **usage**:<br><br>
@@ -3401,11 +3523,11 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.number`
+### `$defs.reference.number`
 
 - **type**: `string` or `number`
 - **required**: `false`
-- **description**: The (library) [accession number](https://en.wikipedia.org/wiki/Accession_number) for a work.
+- **description**: The number of a work, e.g., an article identifier (such as *86* or *e86* for [this paper](https://doi.org/10.7717/peerj-cs.86)) or a (library) [accession number](https://en.wikipedia.org/wiki/Accession_number).
 - **usage**:<br><br>
     ```yaml
     preferred-citation:
@@ -3438,9 +3560,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.number-volumes`
+### `$defs.reference.number-volumes`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `integer`
+- **type**: [strictish string](#defsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The number of volumes making up the collection in which the work has been published.
 - **usage**:<br><br>
@@ -3465,9 +3587,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.pages`
+### `$defs.reference.pages`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `integer`
+- **type**: [strictish string](#defsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The number of pages of the work.
 - **usage**:<br><br>
@@ -3492,7 +3614,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.patent-states`
+### `$defs.reference.patent-states`
 
 - **type**: Array of nonemtpy `string`
 - **required**: `false`
@@ -3513,7 +3635,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.pmcid`
+### `$defs.reference.pmcid`
 
 - **type**: `string` with pattern [`^PMC[0-9]{7,8}$`](https://regex101.com/library/lMDdvW)
 - **required**: `false`
@@ -3530,9 +3652,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.publisher`
+### `$defs.reference.publisher`
 
-- **type**: [`definitions.entity`](#definitionsentity)
+- **type**: [`$defs.entity`](#defsentity)
 - **required**: `false`
 - **description**: The publisher who has published the work.
 - **usage**:<br><br>
@@ -3549,9 +3671,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.recipients`
+### `$defs.reference.recipients`
 
-- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **type**: Array of [`$defs.person`](#defsperson) and/or [`$defs.entity`](#defsentity) objects.
 - **required**: `false`
 - **description**: The recipient(s) of a personal communication.
 - **usage**:<br><br>
@@ -3572,9 +3694,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.repository`
+### `$defs.reference.repository`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
 - **description**: The URL of the work in a repository/archive (when the repository is neither a source code repository nor a build artifact repository).
 - **usage**:<br><br>
@@ -3589,9 +3711,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.repository-artifact`
+### `$defs.reference.repository-artifact`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
 - **description**: The URL of the work in a build artifact/binary repository.
 - **usage**:<br><br>
@@ -3606,9 +3728,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.repository-code`
+### `$defs.reference.repository-code`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
 - **description**: The URL of the work in a source code repository.
 - **usage**:<br><br>
@@ -3623,9 +3745,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.scope`
+### `$defs.reference.scope`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The scope of the reference, e.g., the section of the work it adheres to.
 - **usage**:<br><br>
@@ -3640,7 +3762,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.section`
+### `$defs.reference.section`
 
 - **type**: `string` or `number`
 - **required**: `false`
@@ -3677,9 +3799,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.senders`
+### `$defs.reference.senders`
 
-- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **type**: Array of [`$defs.person`](#defsperson) and/or [`$defs.entity`](#defsentity) objects.
 - **required**: `false`
 - **description**: The sender(s) of a personal communication.
 - **usage**:<br><br>
@@ -3700,9 +3822,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.start`
+### `$defs.reference.start`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `integer`
+- **type**: [strictish string](#defsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The start page of the work.
 - **usage**:<br><br>
@@ -3727,7 +3849,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.status`
+### `$defs.reference.status`
 
 - **type**: `enum` with values:
     - `abstract`
@@ -3750,9 +3872,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.term`
+### `$defs.reference.term`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The term being referenced if the work is a dictionary or encyclopedia.
 - **usage**:<br><br>
@@ -3767,9 +3889,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.thesis-type`
+### `$defs.reference.thesis-type`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The type of the thesis that is the work.
 - **usage**:<br><br>
@@ -3784,9 +3906,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.title`
+### `$defs.reference.title`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `true`
 - **description**: The title of the work.
 - **usage**:<br><br>
@@ -3801,9 +3923,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.translators`
+### `$defs.reference.translators`
 
-- **type**: Array of [`definitions.person`](#definitionsperson) and/or [`definitions.entity`](#definitionsentity) objects.
+- **type**: Array of [`$defs.person`](#defsperson) and/or [`$defs.entity`](#defsentity) objects.
 - **required**: `false`
 - **description**: The translator(s) of a work.
 - **usage**:<br><br>
@@ -3824,7 +3946,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         type: generic
     ```
 
-### `definitions.reference.type`
+### `$defs.reference.type`
 
 - **type**: `enum` with values:
     - `art`
@@ -3886,9 +4008,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
       - type: generic
     ```
 
-### `definitions.reference.url`
+### `$defs.reference.url`
 
-- **type**: [`definitions.url`](#definitionsurl)
+- **type**: [`$defs.url`](#defsurl)
 - **required**: `false`
 - **description**: The URL of the work.
 - **usage**:<br><br>
@@ -3903,9 +4025,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         url: "https://citation-file-format.github.io/"
     ```
 
-### `definitions.reference.version`
+### `$defs.reference.version`
 
-- **type**: [`definitions.version`](#definitionsversion)
+- **type**: [`$defs.version`](#defsversion)
 - **required**: `false`
 - **description**: The version of the work.
 - **usage**:<br><br>
@@ -3920,9 +4042,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         version: 0.3.12
     ```
 
-### `definitions.reference.volume`
+### `$defs.reference.volume`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `integer`
+- **type**: [strictish string](#defsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The volume of the periodical in which a work appeared.
 - **usage**:<br><br>
@@ -3947,9 +4069,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         volume: 5
     ```
 
-### `definitions.reference.volume-title`
+### `$defs.reference.volume-title`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: `false`
 - **description**: The title of the volume in which the work appeared.
 - **usage**:<br><br>
@@ -3964,9 +4086,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         volume-title: "Volume II: How it went on"
     ```
 
-### `definitions.reference.year`
+### `$defs.reference.year`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `integer`
+- **type**: [strictish string](#defsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The year in which a work has been published.
 - **usage**:<br><br>
@@ -3991,9 +4113,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         year: 2021
     ```
 
-### `definitions.reference.year-original`
+### `$defs.reference.year-original`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `integer`
+- **type**: [strictish string](#defsstrictish-string) or `integer`
 - **required**: `false`
 - **description**: The year of the original publication.
 - **usage**:<br><br>
@@ -4018,9 +4140,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         year-original: 1978
     ```
 
-### `definitions.region`
+### `$defs.region`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: A region.
 - **usage**:<br><br>
@@ -4030,7 +4152,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         region: Renfrewshire
     ```
 
-### `definitions.ror`
+### `$defs.ror`
 
 - **type**: string of length 25 with pattern `^https://ror.org/0[0-9|a-z]{8}$`
 - **required**: `false`
@@ -4044,7 +4166,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
       ror: https://ror.org/00rbjv475
     ```
 
-### `definitions.strictish-string`
+### `$defs.strictish-string`
 
 - **type**: `string` with pattern [`"^(\\S+)( \\S+)*$"`](https://regex101.com/r/SyW84W/1)
 - **required**: N/A
@@ -4054,7 +4176,7 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
     abstract: This is the abstract. It can't have leading spaces, trailing spaces, or doubles spaces.
     ```
 
-### `definitions.swh-identifier`
+### `$defs.swh-identifier`
 
 - **type**: `string` with pattern [`^swh:1:(snp|rel|rev|dir|cnt):[0-9a-fA-F]{40}$`](https://regex101.com/library/o399MX)
 - **required**: N/A
@@ -4066,9 +4188,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         value: "swh:1:rev:309cf2674ee7a0749978cf8265ab91a60aea0f7d"
     ```
 
-### `definitions.tel`
+### `$defs.tel`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: A telephone number.
 - **usage**:<br><br>
@@ -4084,9 +4206,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         tel: +12-345-6789098
     ```
 
-### `definitions.url`
+### `$defs.url`
 
-- **type**: [strictish string](#definitionsstrictish-string)
+- **type**: [strictish string](#defsstrictish-string)
 - **required**: N/A
 - **description**: A URL. Supported URLs start with one of:
     - `https://`
@@ -4108,9 +4230,9 @@ When there are multiple licenses, it is assumed their relationship is OR, not AN
         url: "sftp://files.research-software-project.org"
     ```
 
-### `definitions.version`
+### `$defs.version`
 
-- **type**: [strictish string](#definitionsstrictish-string) or `number`
+- **type**: [strictish string](#defsstrictish-string) or `number`
 - **required**: N/A
 - **description**: The version of a work.
 - **usage**:<br><br>

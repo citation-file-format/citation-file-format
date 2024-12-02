@@ -1,64 +1,57 @@
-# Testing 
+# Developer notes
 
-## Overview
+## Testing
 
-We maintain a collection of `.cff` files for testing. In these files we try to cover
-various possible scenarious described in the specification. During the test, these
-files are validated using `cffconvert` (a command line utility to read a `.cff` file
-and convert it to BibTex and other formats). We check that all files are validated or
-rejected as expected.
+The directories `tests/examples-failing` and `tests/examples-passing` contain a collection of `CITATION.cff` files used for
+testing. As their names suggest, `tests/examples-failing` contains examples of `CITATION.cff` files that should not pass
+validation, whereas `tests/examples-passing` contains files that should. In addition to these, we also extract CFF snippets from
+`schema-guide.md` and check that they are valid.
 
-## Dependencies
+Testing can be done using the regular `pytest` way. First, install the required dependencies used in testing:
 
-- Python 3.7 or higher
-
-You can install the development dependencies using the `requirements.txt` file from
-this directory by entering the following command:
-
-    python3 -m pip install -r requirements.txt
-
-in the root directory of the clone of this repository.
-
-## Files and directories
-
-The tests are organised into subdirectories named after minimal versions of the CFF
-specification supporting the tested features. 
-
-Each test is placed in a directory with some informative name. We suggest that a name
-of the directory with a test for failing validation should start with `fail-`, otherwise
-its name may be arbitrary, but we suggest to follow the same style as for existing tests.
-
-Inside the directory for a specific test, there should be two files: a `CITATION.cff`
-file to be validated during the test, and a Python script to run the test. The name of
-the latter must start with `test_`, followed by some string with underscores, based on
-the name of the directory for this specific test (see existing tests for some examples).
-To create such a Python script, you can copy and rename an existing test script from some
-other test directory, only paying attention whether it checks that validation should
-pass or fail - there are only two kinds of test scripts at the moment.
-
-## Running tests
-
-To run tests, enter
-
-    pytest
-
-You should expect to see output similar to this:
-
-```
-tests/validate.py::test[./tests/1.1.0/reference-article/CITATION.cff] PASSED                         [  2%]
-tests/validate.py::test[./tests/1.1.0/reference-art/CITATION.cff] PASSED                             [  5%]
-tests/validate.py::test[./tests/1.1.0/reference-book/CITATION.cff] PASSED                            [  7%]
-tests/validate.py::test[./tests/1.1.0/fail-bad-identifier-type-in-root/CITATION.cff] PASSED          [ 10%]
-
-...
-
-tests/validate.py::test[./tests/1.0.3/reference-blog/CITATION.cff] PASSED                            [ 94%]
-tests/validate.py::test[./tests/1.0.3/software-container/CITATION.cff] PASSED                        [ 97%]
-tests/validate.py::test[./tests/1.0.3/software-executable/CITATION.cff] PASSED                       [100%]
-
+```shell
+python3 -m pip install -r requirements.txt
 ```
 
-surrounded with some additional information messages.
+Then run the tests with:
+
+```shell
+pytest tests/ -v
+```
+
+During the test, `CITATION.cff` files are validated against the schema from `schema.json` using `jsonschema`. You should expect
+to see output similar to this:
+
+```
+tests/test_cff_files.py::test[pass:reference-conference-paper] PASSED     [  0%]
+tests/test_cff_files.py::test[pass:entity-author-with-affiliation] PASSED [  0%]
+tests/test_cff_files.py::test[pass:software-without-a-doi] PASSED         [  0%]
+tests/test_cff_files.py::test[pass:bso-toolbox] PASSED                    [  1%]
+tests/test_cff_files.py::test[pass:pcmid8] PASSED                         [  1%]
+
+... some output omitted...
+
+tests/test_cff_files.py::test[fail:orcid-trailing-chars] PASSED           [ 10%]
+tests/test_cff_files.py::test[fail:orcid-trailing-spaces] PASSED          [ 10%]
+tests/test_cff_files.py::test[fail:additional-key] PASSED                 [ 11%]
+```
+
+Followed by the output from testing the snippets:
+
+```
+tests/test_snippets_from_schema_guide.py::test[L25-L30] PASSED            [ 11%]
+tests/test_snippets_from_schema_guide.py::test[L38-L59] PASSED            [ 11%]
+tests/test_snippets_from_schema_guide.py::test[L73-L90] PASSED            [ 11%]
+tests/test_snippets_from_schema_guide.py::test[L102-L113] PASSED          [ 12%]
+tests/test_snippets_from_schema_guide.py::test[L153-L153] PASSED          [ 12%]
+
+... some output omitted ...
+
+tests/test_snippets_from_schema_guide.py::test[L4106-L4108] PASSED        [ 99%]
+tests/test_snippets_from_schema_guide.py::test[L4118-L4118] PASSED        [ 99%]
+tests/test_snippets_from_schema_guide.py::test[L4121-L4121] PASSED        [ 99%]
+tests/test_snippets_from_schema_guide.py::test[L4124-L4124] PASSED        [100%]
+```
 
 ## Publishing
 
@@ -68,3 +61,5 @@ The following is a non-exhaustive todo list when preparing a new release of the 
 2. Verify that the version strings are updated throughout the code base. Be careful with batch-changing the version string
    (e.g. with `sed`), because maybe not all version strings should be bumped, it may depend on context.
 3. Verify that the tests pass on a fresh download & venv & install & pytest
+4. Manually trigger the link checker
+5. Manually trigger other workflows if relevant
