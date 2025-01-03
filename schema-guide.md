@@ -6,7 +6,7 @@ Valid Citation File Format files
 
 1. must be named `CITATION.cff` (note the capitalization);
 1. are valid according to the Citation File Format schema version 1.2.0 outlined in [schema.json](schema.json);
-1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/)).
+1. are valid YAML 1.2 ([specification](http://yaml.org/spec/1.2/spec.html), [validator](http://www.yamllint.com/), [formatter](https://yamline.com/formatter/)).
 
 <a name="yaml-strings"></a>**String quoting:** Note that in YAML you generally don't need to quote strings.
 But you should use `"` quotes when a string value
