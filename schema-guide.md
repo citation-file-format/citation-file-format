@@ -1251,6 +1251,36 @@ authors:
         given-names: Stephan
     ```
 
+### `$defs.funding`
+
+- **type**: Array of objects
+- **required**: `false`
+- **description**: Funding information for the work.
+- **usage**:<br><br>
+    ```yaml
+    funding:
+      # String-based, encoded in only the required field     
+      - grant: "DFG grant 1234567"
+
+      # Lossy, but possible
+      - grant: "1234567"
+
+      # String-based, using both fields
+      - funder: "DFG" 
+        grant: "1234567"
+
+      # URI-based, encoded in only the required field
+      - grant: "https://doi.org/10.1234/dfg::1234567"
+
+      # URI+string-based
+      - funder: "https://doi.org/10.1234/dfg"  
+        grant: "1234567"
+
+      # Fully URI-based, if duplicating information
+      - funder: "https://doi.org/10.1234/dfg"  
+        grant: "https://doi.org/10.1234/dfg::1234567"
+    ```
+
 ### `$defs.identifier`
 
 - **type**: One of the following `object` types (click to expand/collapse):<br><br>
