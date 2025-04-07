@@ -153,6 +153,6 @@ They are listed in the [`CITATION.cff`](CITATION.cff) file for this repository. 
 
 We gratefully acknowledge support from:
 
-- The [Institute for Software Technology](https://www.dlr.de/sc/en/desktopdefault.aspx/) of the [German Aerospace Center (DLR)](https://www.dlr.de/en/)
+- The [Institute for Software Technology](https://www.dlr.de/en/sc) of the [German Aerospace Center (DLR)](https://www.dlr.de/en/)
 - The [Netherlands eScience Center](https://www.esciencecenter.nl)
 - The [Software Sustainability Institute](https://software.ac.uk/)
