@@ -37,6 +37,7 @@ def test():
         schema_path = os.path.join(os.path.dirname(__file__), "..", "schema.json")
         with open(schema_path, "r") as sf:
             schema_data = json.loads(sf.read())
+            validator = jsonschema.Draft7Validator(schema=schema_data, format_checker=jsonschema.FormatChecker())
             for i_snippet, snippet in enumerate(snippets):
                 if "# incorrect" in snippet["text"]:
                     continue
@@ -44,7 +45,7 @@ def test():
                 passes = False
                 while not passes:
                     try:
-                        jsonschema.validate(instance=instance, schema=schema_data, format_checker=jsonschema.FormatChecker())
+                        validator.validate(instance=instance)
                         passes = True
                         print("snippet {0}/{1} (chars {2}-{3}): OK".format(i_snippet + 1, len(snippets), snippet["start"], snippet["end"]))
                     except jsonschema.ValidationError as e:
