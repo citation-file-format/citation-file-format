@@ -10,7 +10,7 @@ rejected as expected.
 
 ## Dependencies
 
-- Python 3.6 or higher
+- Python 3.10 or higher
 - [cffconvert](https://pypi.org/project/cffconvert/) version 1.0.0 or higher
 - [pytest](https://pypi.org/project/pytest/)
 
