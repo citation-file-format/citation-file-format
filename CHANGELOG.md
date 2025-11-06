@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update Python versions run in CI to remove end-of-life versions and add newer releases
 - Replace real ORCID with example ORCID from https://orcid.org/1234-5678-9101-1121
 - Provide contact details for the Code of Conduct Committee in the CoC document
+- Speed up the test suite
 
 ## [1.2.0] - 2021-05-31
 
