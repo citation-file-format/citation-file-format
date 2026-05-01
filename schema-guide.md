@@ -42,11 +42,12 @@ authors:
     orcid: "https://orcid.org/1234-5678-9101-1121"
 cff-version: 1.2.0
 date-released: "2021-07-18"
+doi: 10.5281/zenodo.123457
 identifiers:
   - description: "This is the collection of archived snapshots of all versions of My Research Software"
     type: doi
     value: 10.5281/zenodo.123456
-  - description: "This is the archived snapshot of version 0.11.2 of My Research Software"
+  - description: "The versioned DOI of this release."
     type: doi
     value: 10.5281/zenodo.123457
 keywords:
