@@ -1423,7 +1423,7 @@ authors:
 
 ### `definitions.license`
 
-- **type**: (Array of) [`definitions.license-enum`](#definitions.license-enum) objects.
+- **type**: (Array of) [`definitions.license-enum`](#definitionslicense-enum) objects.
 - **required**: N/A
 - **description**: The [SPDX license identifier(s)](https://spdx.dev/ids/) for the license(s) under which a work is made available. When there are multiple licenses, it is assumed their relationship is OR, not AND.
 - **usage**:<br><br>
@@ -2027,7 +2027,7 @@ Note that these keys may still not be optimal for, e.g., Icelandic names which d
 
 ### `definitions.person.country`
 
-- **type**: [`definitions.country`](#definitioncountry)
+- **type**: [`definitions.country`](#definitionscountry)
 - **required**: `false`
 - **description**: The person's country.
 - **usage**:<br><br>
