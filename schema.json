@@ -398,6 +398,32 @@
             "$ref": "#/$defs/strictish-string",
             "description": "A fax number."
         },
+        "funding": {
+            "description": "Funding information for the work.",
+            "properties": {
+                "funder": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/ror"
+                        },
+                        {
+                            "$ref": "#/$defs/strictish-string"
+                        }
+                    ],
+                    "description": "The funder of the grant. Use a ROR URI whenever available; otherwise use a non-empty funder name."
+                },
+                "grant": {
+                    "description": "The grant identifier.",
+                    "minLength": 1,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "funder",
+                "grant"
+            ],
+            "type": "object"
+        },
         "identifier": {
             "description": "An identifier for a work.",
             "oneOf": [
@@ -2012,6 +2038,14 @@
         },
         "doi": {
             "$ref": "#/$defs/doi"
+        },
+        "funding": {
+            "description": "Funding information for the work.",
+            "items": {
+                "$ref": "#/$defs/funding"
+            },
+            "type": "array",
+            "uniqueItems": true
         },
         "identifiers": {
             "description": "The identifiers of the software or dataset.",

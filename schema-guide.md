@@ -1251,6 +1251,27 @@ authors:
         given-names: Stephan
     ```
 
+### `$defs.funding`
+
+- **type**: Array of objects
+- **required**: `false`
+- **description**: Funding information for the work.
+- **usage**:<br><br>
+    ```yaml
+    funding:
+      # Preferred form: ROR URI + grant
+      - funder: "https://ror.org/04bwf3e34"
+        grant: "1234567"
+
+      # Fallback form when no ROR exists: funder name + grant
+      - funder: "Example Community Foundation"
+        grant: "ABC-2026-42"
+
+      # Also valid: richer grant string
+      - funder: "https://ror.org/00rbjv475"
+        grant: "DFG grant 1234567"
+    ```
+
 ### `$defs.identifier`
 
 - **type**: One of the following `object` types (click to expand/collapse):<br><br>

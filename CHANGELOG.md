@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added machine readable relation qualifiers to `identifiers` using terminology from DataCite v4.4; PR [#459](https://github.com/citation-file-format/citation-file-format/pull/459).
 - Added `contributors` field. Issue [#66](https://github.com/citation-file-format/citation-file-format/issues/66), [#84](https://github.com/citation-file-format/citation-file-format/issues/84); PR [#439](https://github.com/citation-file-format/citation-file-format/pull/439).
 - Loosen requirement of authors in references to allow for any of authors and/or editors. Issue [#334](https://github.com/citation-file-format/citation-file-format/issues/334); PR [#524](https://github.com/citation-file-format/citation-file-format/pull/524)
-
+- Added `funding` field. Issue [#491](https://github.com/citation-file-format/citation-file-format/issues/491); PR [#549](https://github.com/citation-file-format/citation-file-format/pull/549).
 
 ### Changed
 
@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Narrowed definition of ORCID strings to raise error when trailing characters, notably whitespace, are used. Issue [#392](https://github.com/citation-file-format/citation-file-format/issues/392); PR [#467](https://github.com/citation-file-format/citation-file-format/pull/467).
 - Added regex to the schema to help avoid leading spaces, trailing spaces, and double spaces in many string fields. Issue [#380](https://github.com/citation-file-format/citation-file-format/issues/380); PR [#466](https://github.com/citation-file-format/citation-file-format/pull/466).
 - Clarified documentation for `reference.number` to include article identifiers (which aren't necessarily numbers). Issue [#347](https://github.com/citation-file-format/citation-file-format/issues/347); PR [#519](https://github.com/citation-file-format/citation-file-format/pull/519).
+- Tighten `funding` validation to require both `funder` and `grant`, preferring ROR URIs for `funder` while allowing a non-empty funder-name fallback
 
 ### Fixed
 
