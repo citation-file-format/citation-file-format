@@ -36,10 +36,16 @@ version: 1.2.0
 identifiers:
   - type: doi
     value: 10.5281/zenodo.1003149
+    relation: isPartOf
     description: The concept DOI for the collection containing all versions of the Citation File Format.
   - type: doi
     value: 10.5281/zenodo.5171937
+    relation: isNewVersionOf
     description: The versioned DOI for the version 1.2.0 of the Citation File Format.
+  - type: doi
+    value: 10.5281/zenodo.4813122
+    relation: isPreviousVersionOf
+    description: The versioned DOI for the version 1.1.0 of the Citation File Format.
 date-released: "2021-08-09"
 keywords:
   - citation file format
