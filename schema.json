@@ -994,7 +994,7 @@
                     "description": "The person's address."
                 },
                 "affiliation": {
-                    "description": "The person's affilitation.",
+                    "description": "The person's affiliation.",
                     "minLength": 1,
                     "type": "string"
                 },
