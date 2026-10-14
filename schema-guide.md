@@ -345,7 +345,7 @@ licenses, it is assumed their relationship is OR, not AND.
     ```
     ```yaml
     license:
-     - GPL-3.0
+     - AGPL-3.0-or-later
      - GPL-3.0-or-later
     ```
 
