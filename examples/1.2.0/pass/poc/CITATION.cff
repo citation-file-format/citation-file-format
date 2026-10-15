@@ -63,7 +63,7 @@ references:
       - 
         given-names: John
     title: this is the title
-    license: "GPL-2.0"
+    license: "GPL-3.0-only"
     issue-date: "2021-02-04"
   - 
     type: article

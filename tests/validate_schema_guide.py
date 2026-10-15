@@ -1,6 +1,6 @@
-import pytest
-import os
 import json
+import os
+
 import jsonschema
 from ruamel.yaml import YAML
 
@@ -23,17 +23,17 @@ def test():
             for line in text[8:-4].split("\n"):
                 unindented += line[indent_size:]
                 unindented += "\n"
-            snippets.append(dict(start=snippet_start, end=snippet_end + 4, text=unindented))
+            snippets.append({"start": snippet_start, "end": snippet_end + 4, "text": unindented})
             start = snippet_end + 4
         return snippets
 
     with open("schema-guide.md", "r") as f:
         markdown = f.read()
-        snippets = list()
+        snippets = []
         snippets = extract_snippets()
 
         yaml = YAML(typ='safe')
-        yaml.constructor.yaml_constructors[u'tag:yaml.org,2002:timestamp'] = yaml.constructor.yaml_constructors[u'tag:yaml.org,2002:str']
+        yaml.constructor.yaml_constructors['tag:yaml.org,2002:timestamp'] = yaml.constructor.yaml_constructors[u'tag:yaml.org,2002:str']
         schema_path = os.path.join(os.path.dirname(__file__), "..", "schema.json")
         with open(schema_path, "r") as sf:
             schema_data = json.loads(sf.read())
@@ -47,7 +47,7 @@ def test():
                     try:
                         validator.validate(instance=instance)
                         passes = True
-                        print("snippet {0}/{1} (chars {2}-{3}): OK".format(i_snippet + 1, len(snippets), snippet["start"], snippet["end"]))
+                        print("snippet {}/{} (chars {}-{}): OK".format(i_snippet + 1, len(snippets), snippet["start"], snippet["end"]))
                     except jsonschema.ValidationError as e:
                         path = "" if len(e.relative_path) == 0 else "/".join([str(p) for p in e.relative_path]) + "/"
                         if path == "":
@@ -93,5 +93,5 @@ def test():
                             else:
                                 raise Exception("undefined behavior: " + e.message)
                         else:
-                            print("Found a problem with snippet at char position {0}-{1}:\n {2}\n{3}".format(snippet["start"], snippet["end"], snippet["text"], e.message))
-                            raise e
+                            print("Found a problem with snippet at char position {}-{}:\n {}\n{}".format(snippet["start"], snippet["end"], snippet["text"], e.message))
+                            raise
