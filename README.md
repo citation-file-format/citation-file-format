@@ -11,7 +11,7 @@ in plaintext files that are easy to read by both humans and machines.
 ## Structure
 
 You can specify citation metadata for your software (or dataset) in a file named `CITATION.cff`. 
-This is what a typical `CITATION.cff` file may look like for research software:
+This is what a typical[^1] `CITATION.cff` file may look like for research software:
 
 ```yaml
 cff-version: 1.2.0
@@ -155,4 +155,8 @@ We gratefully acknowledge support from:
 
 - The [Institute for Software Technology](https://www.dlr.de/en/sc) of the [German Aerospace Center (DLR)](https://www.dlr.de/en/)
 - The [Netherlands eScience Center](https://www.esciencecenter.nl)
-- The [Software Sustainability Institute](https://software.ac.uk/)
+- The [Institute for Research Software](https://software.ac.uk/) (previously the Software Sustainability Institute (SSI))
+
+[^1]: Note that currently, for a DOI to show in GitHub's "Cite this repository" widget,
+the `CITATION.cff` file needs to include `doi` in addition/instead of `identifiers`,
+see the [example in the GitHub documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files#about-citation-files).
