@@ -59,6 +59,10 @@ title: "My Research Software"
 version: 0.11.2
 ```
 
+Note that currently, for a DOI to show in GitHub's "Cite this repository" widget,
+the `CITATION.cff` file needs to include `doi` in addition/instead of `identifiers`,
+see the [example in the GitHub documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files#about-citation-files).
+
 ### Referencing other work
 
 When your software or data builds on what others have already done, it is good practice to add a `references` section to your
