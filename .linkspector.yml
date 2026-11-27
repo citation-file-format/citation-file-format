@@ -1,0 +1,15 @@
+dirs:
+  - .
+
+useGitIgnore: true
+
+ignorePatterns:
+  - pattern: "^http://localhost"
+  - pattern: "^https://localhost"
+  - pattern: "^#" # local links are not checked reliably, skipping helps avoid false sense of security
+  - pattern: "^https://doi\\.org/10\\.25490/a97f-egyk" # Resolves fine, target may be behind a proxy server that doesn't allow this kind of automated access
+  - pattern: "^https://www\\.esciencecenter\\.nl" # Resolves fine, target may be behind a proxy server that doesn't allow this kind of automated access
+
+retryCount: 5
+
+timeout: 30000
